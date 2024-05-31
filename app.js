@@ -1,3 +1,4 @@
+const http = require('http');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -236,6 +237,12 @@ app.get("/a_propos", async (req, res) => {
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
+});
+
+const port = 8080;
+const server = http.createServer(app);
+server.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
 
 // // catch 404 and forward to error handler

@@ -7,6 +7,12 @@ const requireSession = require('../utils/requireSession');
 
 router.get("/profil", requireSession, async (req, res) => { // Page de profil
     var userInfos;
+    if (dbConnexion.state === 'disconnected') {
+        dbConnexion.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+        });
+    }
     await new Promise((resolve, reject) => {
         dbConnexion.query('SELECT * FROM users WHERE idUser = ?', [req.session.user.idUser], function (err, rows) {
             if (err) {
