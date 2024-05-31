@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>PLI - Pilotes Titrés</title>
+</head>
+<body class="font-F1Regular bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-4xl font-bold text-center my-8 text-gray-800">
+            Liste des pilotes titrés en Formule 1
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow-md p-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <% retro_titre.forEach(winner => { %>
+                    <div class="flex flex-col items-center justify-center bg-white border border-gray-200 p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+                        <div class="w-full border-l-4 border-green-500 pl-4">
+                            <div class="flex items-center justify-between w-full">
+                                <div>
+                                    <span class="text-2xl font-bold text-gray-800"><%= winner.firstName %> <%= winner.lastName %></span>
+                                    <div class="bg-green-500 h-1 w-12 mt-2"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center mt-4 text-gray-600">
+                                <span class="text-lg">Nombre de titres :</span>
+                                <span class="text-4xl font-semibold text-green-600 ml-2"><%= winner.wins %></span>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

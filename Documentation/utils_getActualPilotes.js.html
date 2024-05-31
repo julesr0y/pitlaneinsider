@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/getActualPilotes.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/getActualPilotes.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const getFromOpenF1 = require("./getFromOpenF1"); // Fonction permettant de récupérer des données depuis l'API OpenF1
+const fs = require('fs'); // Module permettant de gérer les fichiers
+const path = require('path'); // Module permettant de gérer les chemins de fichiers
+
+const driverMapping = {
+    "Verstappen": "max_verstappen",
+    "Magnussen": "kevin_magnussen",
+    "Sargeant": "sargeant",
+    "Ricciardo": "ricciardo",
+    "Gasly": "gasly",
+    "Hamilton": "hamilton",
+    "Sainz": "sainz",
+    "Leclerc": "leclerc",
+    "Bottas": "bottas",
+    "Russell": "russell",
+    "Perez": "perez",
+    "Norris": "norris",
+    "Stroll": "stroll",
+    "Alonso": "alonso",
+    "Ocon": "ocon",
+    "Albon": "albon",
+    "Tsunoda": "tsunoda",
+    "Piastri": "piastri",
+    "Zhou": "zhou",
+    "Hulkenberg": "hulkenberg",
+    "Bearman": "bearman",
+};
+
+const constructorMapping = {
+    "Mercedes": "mercedes",
+    "Red Bull Racing": "red_bull",
+    "McLaren": "mclaren",
+    "Aston Martin": "aston_martin",
+    "Alpine": "alpine",
+    "Ferrari": "ferrari",
+    "RB": "RB",
+    "Kick Sauber": "sauber",
+    "Haas F1 Team": "haas",
+    "Williams": "williams"
+};
+
+const nationalityMapping = {
+    "NED": "Dutch",
+    "DEN": "Danish",
+    "USA": "American",
+    "AUS": "Australian",
+    "GBR": "British",
+    "ESP": "Spanish",
+    "MEX": "Mexican",
+    "MON": "Monegasque",
+    "FIN": "Finnish",
+    "CAN": "Canadian",
+    "FRA": "French",
+    "CHN": "Chinese",
+    "THA": "Thai",
+    "JPN": "Japanese",
+    "GER": "German"
+}
+
+/**
+ * @function
+ * @description Fonction permettant de récupérer la liste des pilotes actuels avec les détails de leur écurie
+ * @returns {Promise} - Promesse contenant la réponse de l'API. Se présente sous la forme d'un tableau contenant les détails des pilotes et de leur écurie
+ */
+async function getActualPilotesWithConstructors() {
+    const filePath = path.join(__dirname, '../cache/getActualPilotes.json'); // On définit le chemin du fichier JSON
+    // Vérifier si le fichier existe
+    if (fs.existsSync(filePath)) {
+        // Lire le contenu du fichier
+        const dataF = fs.readFileSync(filePath, 'utf8');
+
+        // Vérifier si le fichier n'est pas vide
+        if (dataF) {
+            // Convertir les données en JSON et les retourner
+            return JSON.parse(dataF);
+        }
+    }
+
+    const actualPilotes = await getFromOpenF1('drivers?session_key=latest');
+
+    const dataPilotes = actualPilotes.map(pilote => {
+        const driver_id = driverMapping[pilote.last_name] || pilote.last_name || "null";
+        const constructor_id = constructorMapping[pilote.team_name] || pilote.team_name;
+        const nationality = nationalityMapping[pilote.country_code];
+
+        return {
+            id: driver_id,
+            firstName: pilote.first_name,
+            lastName: pilote.last_name,
+            nationality: nationality,
+            number: pilote.driver_number,
+            constructor: pilote.team_name,
+            constructorId: constructor_id
+        };
+    });
+
+    // Convertir les données en chaîne JSON
+    const dataJSON = JSON.stringify(dataPilotes, null, 2);
+    // Écrire les données dans un fichier JSON
+    fs.writeFile(filePath, dataJSON, (err) => {
+        if (err) {
+            console.error('Une erreur est survenue lors de l\'écriture du fichier JSON :', err);
+        } else {
+            console.log('Les données ont été écrites avec succès dans le fichier JSON.');
+        }
+    });
+
+    return dataPilotes;
+}
+
+module.exports = getActualPilotesWithConstructors;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#animatePositionChanges">animatePositionChanges</a></li><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#getActualPilotesWithConstructors">getActualPilotesWithConstructors</a></li><li><a href="global.html#getActualTeam">getActualTeam</a></li><li><a href="global.html#getActualTeams">getActualTeams</a></li><li><a href="global.html#getCalendrierActuel">getCalendrierActuel</a></li><li><a href="global.html#getCircuitIds">getCircuitIds</a></li><li><a href="global.html#getConstructorIds">getConstructorIds</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverHistoryData">getDriverHistoryData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromErgast">getFromErgast</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getLastPodium">getLastPodium</a></li><li><a href="global.html#getRetroAccueil">getRetroAccueil</a></li><li><a href="global.html#getRetroPilotes">getRetroPilotes</a></li><li><a href="global.html#getSeasonList">getSeasonList</a></li><li><a href="global.html#getSeasonRanking">getSeasonRanking</a></li><li><a href="global.html#getTeamInfo">getTeamInfo</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#getTrack">getTrack</a></li><li><a href="global.html#getTracks">getTracks</a></li><li><a href="global.html#getWinners">getWinners</a></li><li><a href="global.html#injectCSS">injectCSS</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#requireNoSession">requireNoSession</a></li><li><a href="global.html#requireSession">requireSession</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#updateClassement">updateClassement</a></li><li><a href="global.html#updateDriverAppearances">updateDriverAppearances</a></li><li><a href="global.html#updateLastCompound">updateLastCompound</a></li><li><a href="global.html#updateNextRaceInfo">updateNextRaceInfo</a></li><li><a href="global.html#updatePositionData">updatePositionData</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateStandings">updateStandings</a></li><li><a href="global.html#updateWeather">updateWeather</a></li><li><a href="global.html#verifySession">verifySession</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Thu May 30 2024 15:16:33 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

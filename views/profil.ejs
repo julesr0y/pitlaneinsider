@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <%- include('partials/header.ejs') %>
+            <title>PLI - Profil</title>
+</head>
+
+<body class="h-auto flex flex-col justify-center font-F1Regular">
+    <span class="font-F1Bold text-center pt-4">Votre compte</span>
+    <div class="pt-4 px-4">
+        <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+            <span>
+                <span class="text-gray-600">email : </span>
+                <%= userInfosFront.email %>
+            </span><br>
+            <span>
+                <span class="text-gray-600">nom : </span>
+                <%= userInfosFront.nom %>
+            </span><br>
+            <span>
+                <span class="text-gray-600">prénom : </span>
+                <%= userInfosFront.prenom %>
+            </span><br>
+            <span>
+                <span class="text-gray-600">naissance : </span>
+                <%= userInfosFront.naissance.toLocaleDateString() %>
+            </span><br>
+            <span>
+                <span class="text-gray-600">username : </span>
+                <%= userInfosFront.username %>
+            </span>
+        </div>
+    </div>
+    <div class="inline-flex flex-col items-center mt-4">
+        <a href="/edit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl mr-2 text-center w-44">
+            Modifier
+        </a>
+        <a href="/signout"
+            class="px-4 py-2 bg-deconnect text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
+            Déconnexion
+        </a>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

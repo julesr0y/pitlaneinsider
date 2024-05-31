@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <%- include('partials/header.ejs') %>
+            <title>PLI - Ecuries</title>
+            <style>
+                body {
+                    background-color: #f0f0f0;
+                    /* Couleur de fond neutre */
+                    font-family: 'F1Regular', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                }
+
+                .team-card {
+                    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+                    border-radius: 1.5rem;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    transition: transform 0.2s, box-shadow 0.2s;
+                    overflow: hidden;
+                    padding: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    border-top: 4px solid transparent;
+                }
+
+                .team-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                    border-top-color: #00796b;
+                }
+
+                .team-card img {
+                    max-height: 4rem;
+                    margin-bottom: 1rem;
+                }
+
+                .team-card-title {
+                    font-size: 1.5rem;
+                    font-family: 'F1Bold', sans-serif;
+                    color: #333;
+                    margin-top: 0.5rem;
+                }
+
+                .grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    /* Deux colonnes */
+                    gap: 2rem;
+                }
+
+                @media (max-width: 768px) {
+                    .grid {
+                        grid-template-columns: 1fr;
+                        /* Une seule colonne sur mobile */
+                    }
+                }
+            </style>
+</head>
+
+<body>
+    <div
+        class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        Saison 2024 - Ecuries
+    </div>
+    <div class="container">
+        <div class="grid">
+            <% teamsFront.forEach(function(ecurie) { %>
+                <a href="/ecurie/<%= ecurie.equipe_id %>" class="block text-center relative">
+                    <div class="team-card">
+                        <div class="relative mb-4">
+                            <img src="/img/2024/logo/<%= ecurie.equipe_id %>.webp" alt="<%= ecurie.equipe %>"
+                                class="w-full h-40 object-contain">
+                        </div>
+                        <div class="team-card-title">
+                            <%= ecurie.equipe %>
+                        </div>
+
+                    </div>
+                </a>
+                <% }); %>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

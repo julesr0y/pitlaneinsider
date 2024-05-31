@@ -1,0 +1,14 @@
+{
+    "source": {
+        "include": [
+            "./public/js",
+            "./routes",
+            "./utils"
+        ],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "opts": {
+        "destination": "./Documentation"
+    }
+}

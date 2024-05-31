@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/getDriverHistoryData.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/getDriverHistoryData.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
+
+/**
+ * @function
+ * @description Fonction permettant de récupérer les données historiques d'un pilote, y compris les noms des Grands Prix remportés et les années correspondantes
+ * @returns {Promise} - Promesse contenant la réponse de l'API. Se présente sous la forme d'un tableau :
+ *   0: totalVictoires,
+ *   1: totalPodiums,
+ *   2: totalPoints,
+ *   3: totalCourses,
+ *   4: totalPoles,
+ *   5: totalAbandons,
+ *   6: moyennePoints,
+ *   7: moyenneFinish,
+ *   8: moyenneQualif,
+ *   9: totalVictoiresThisSeason,
+ *   10: totalPodiumsThisSeason,
+ *   11: totalPointsThisSeason,
+ *   12: totalCoursesThisSeason,
+ *   13: firstSeason,
+ *   14: grandsPrixRemportes (tableau de sous-tableaux contenant le nom du Grand Prix remporté et les années correspondantes)
+ */
+async function getDriverHistoryData(driver_id) {
+    var driverHistoryData = await getFromErgast(`drivers/${driver_id}/results.json?limit=1000&amp;offset=0`);
+    const data = driverHistoryData.MRData.RaceTable.Races;
+
+    var totalVictoires = 0;
+    var totalPodiums = 0;
+    var totalPoints = 0;
+    var totalCourses = 0;
+    var totalPoles = 0;
+    var totalAbandons = 0;
+    var totalPositions = 0;
+    var totalGrids = 0;
+    const currentYear = new Date().getFullYear();
+    var totalVictoiresThisSeason = 0;
+    var totalPodiumsThisSeason = 0;
+    var totalPointsThisSeason = 0;
+    var totalCoursesThisSeason = 0;
+    var grandsPrixRemportes = [];
+
+    data.forEach(race => {
+        const position = parseInt(race.Results[0].position);
+        const points = parseInt(race.Results[0].points);
+        const grid = parseInt(race.Results[0].grid);
+        const isCurrentSeason = race.season === currentYear.toString();
+
+        if (position === 1) totalVictoires++;
+        if (position &lt;= 3) totalPodiums++;
+        if (!isNaN(points)) {
+            totalPoints += points;
+            totalCourses++;
+            if (isCurrentSeason) {
+                totalPointsThisSeason += points;
+                totalCoursesThisSeason++;
+            }
+        }
+        if (grid === 1) totalPoles++;
+        if (race.Results[0].status !== 'Finished' &amp;&amp; !race.Results[0].status.includes('Lap')) totalAbandons++;
+        if (!isNaN(position)) totalPositions += position;
+        if (!isNaN(grid)) totalGrids += grid;
+        if (position === 1 &amp;&amp; isCurrentSeason) totalVictoiresThisSeason++;
+        if (position === 1) {
+            const grandPrix = race.raceName;
+            const locality = (race.Circuit.Location.country).toLowerCase();
+            const year = race.season;
+            const foundGP = grandsPrixRemportes.find(gp => gp[0] === grandPrix);
+            if (foundGP) {
+                foundGP[2].push(year);
+            } else {
+                grandsPrixRemportes.push([grandPrix, locality, [year]]);
+            }
+        }
+        if (position &lt;= 3 &amp;&amp; isCurrentSeason) totalPodiumsThisSeason++;
+    });
+
+    var moyennePoints = Math.round(totalPoints / totalCourses);
+    var moyenneFinish = Math.round(totalPositions / data.length);
+    var moyenneQualif = Math.round(totalGrids / data.length);
+    var firstSeason = data[0].season;
+
+    return {
+        totalVictoires,
+        totalPodiums,
+        totalPoints,
+        totalCourses,
+        totalPoles,
+        totalAbandons,
+        moyennePoints,
+        moyenneFinish,
+        moyenneQualif,
+        totalVictoiresThisSeason,
+        totalPodiumsThisSeason,
+        totalPointsThisSeason,
+        totalCoursesThisSeason,
+        firstSeason,
+        grandsPrixRemportes
+    };
+}
+
+module.exports = getDriverHistoryData;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#animatePositionChanges">animatePositionChanges</a></li><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#getActualPilotesWithConstructors">getActualPilotesWithConstructors</a></li><li><a href="global.html#getActualTeam">getActualTeam</a></li><li><a href="global.html#getActualTeams">getActualTeams</a></li><li><a href="global.html#getCalendrierActuel">getCalendrierActuel</a></li><li><a href="global.html#getCircuitIds">getCircuitIds</a></li><li><a href="global.html#getConstructorIds">getConstructorIds</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverHistoryData">getDriverHistoryData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromErgast">getFromErgast</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getLastPodium">getLastPodium</a></li><li><a href="global.html#getRetroAccueil">getRetroAccueil</a></li><li><a href="global.html#getRetroPilotes">getRetroPilotes</a></li><li><a href="global.html#getSeasonList">getSeasonList</a></li><li><a href="global.html#getSeasonRanking">getSeasonRanking</a></li><li><a href="global.html#getTeamInfo">getTeamInfo</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#getTrack">getTrack</a></li><li><a href="global.html#getTracks">getTracks</a></li><li><a href="global.html#getWinners">getWinners</a></li><li><a href="global.html#injectCSS">injectCSS</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#requireNoSession">requireNoSession</a></li><li><a href="global.html#requireSession">requireSession</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#updateClassement">updateClassement</a></li><li><a href="global.html#updateDriverAppearances">updateDriverAppearances</a></li><li><a href="global.html#updateLastCompound">updateLastCompound</a></li><li><a href="global.html#updateNextRaceInfo">updateNextRaceInfo</a></li><li><a href="global.html#updatePositionData">updatePositionData</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateStandings">updateStandings</a></li><li><a href="global.html#updateWeather">updateWeather</a></li><li><a href="global.html#verifySession">verifySession</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Thu May 30 2024 15:16:33 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

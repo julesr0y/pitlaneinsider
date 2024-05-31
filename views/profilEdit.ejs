@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <%- include('partials/header.ejs') %>
+            <title>PLI - Profil édition</title>
+</head>
+
+<body class="font-F1Bold">
+    <span class="flex justify-center text-center pt-4">Modifier le compte</span>
+    <div class="flex items-center justify-center">
+        <form class="px-10 py-4 rounded-lg w-full max-w-sm" action="/profilEditProcess" method="post">
+            <div class="grid gap-4 mb-4">
+                <input type="email" name="email" placeholder="Email"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
+                    value="<%= userInfosFront.email %>" required>
+                <input type="text" name="nom" placeholder="Nom"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" value="<%= userInfosFront.nom %>"
+                    required>
+                <input type="text" name="prenom" placeholder="Prénom"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" value="<%= userInfosFront.prenom %>"
+                    required>
+                <input type="text" name="username" placeholder="Username"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
+                    value="<%= userInfosFront.username %>" required>
+                <input type="date" name="naissance" placeholder="Date de naissance"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
+                    value="<%= new Date(userInfosFront.naissance.getTime() - userInfosFront.naissance.getTimezoneOffset() * 60000).toISOString().split('T')[0] %>"
+                    required>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <button type="submit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl w-full mr-2">
+                    Sauvegarder
+                </button>
+            </div>
+        </form>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

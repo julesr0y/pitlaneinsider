@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <%- include('partials/header.ejs') %>
+            <title>PLI - Règlement</title>
+</head>
+
+<body class="font-F1Regular bg-gray-50">
+    <div class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        Règlement
+    </div>   
+    <main class="w-11/12 mx-auto mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/yellow_flag.png" alt="Drapeau Jaune"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Jaune</h2>
+                        <p class="text-gray-600">
+                            Indique un danger sur la piste, les pilotes doivent ralentir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/red_flag.png" alt="Drapeau Rouge"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Rouge</h2>
+                        <p class="text-gray-600">
+                            Indique que la course est arrêtée en raison d'une condition dangereuse.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/blue_flag.png" alt="Drapeau Bleu"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Bleu</h2>
+                        <p class="text-gray-600">
+                            Indique à un pilote qu'un autre pilote plus rapide cherche à le dépasser.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/black_flag.png" alt="Drapeau Noir"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Noir</h2>
+                        <p class="text-gray-600">
+                            Indique qu'un pilote est disqualifié et doit rentrer aux stands.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/green_flag.png" alt="Drapeau Vert"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Vert</h2>
+                        <p class="text-gray-600">
+                            Indique que la piste est libre et que la course peut continuer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/white_flag.png" alt="Drapeau Blanc"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Blanc</h2>
+                        <p class="text-gray-600">
+                            Indique qu'il reste un tour à compléter.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/chequered_flag.png" alt="Drapeau à Damier"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau à Damier</h2>
+                        <p class="text-gray-600">
+                            Indique la fin de la course.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/black_white_flag.png" alt="Drapeau Noir et Blanc"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Noir et Blanc</h2>
+                        <p class="text-gray-600">
+                            Avertissement pour conduite antisportive.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4">
+                <div class="text-center">
+                    <div class="relative mb-4">
+                        <img src="/img/flags/yellow_red_flag.png" alt="Drapeau rouge et jaune"
+                            class="w-full h-32 object-contain mx-auto">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-xl font-bold mb-2">Drapeau Rouge et Jaune</h2>
+                        <p class="text-gray-600">
+                            Indique une baisse d'adhérence sur la piste.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

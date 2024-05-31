@@ -1,0 +1,11 @@
+{
+    "database": {
+        "host": "mysql-pitlaneinsider.alwaysdata.net",
+        "name": "pitlaneinsider_db",
+        "user": "355843",
+        "password": "5ANkT9Sm8dmErfV"
+    },
+    "session": {
+        "secret": "ScuderiaLaRemonteeAMGPetronasAramcoCognizantSteakKickVisaCashAppOracleMoneygramBWTAWSFormula1RacingTeam"
+    }
+}

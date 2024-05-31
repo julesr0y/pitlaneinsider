@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <%- include('partials/header.ejs') %>
+            <title>PLI - <%= piloteFront2.surname %>
+                    <%= piloteFront2.name %>
+            </title>
+</head>
+
+<body class="h-auto flex flex-col justify-center font-F1Regular">
+    <div class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        Saison 2024 - Pilotes
+    </div>   
+    <div class="pt-10 px-4">
+        <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+            <div class="flex flex-row justify-between">
+                <div class="flex flex-col items-center w-1/2">
+                    <img src="/img/2024/drivers/<%= id %>.webp"
+                        alt="<%= piloteFront2.surname %> <%= piloteFront2.name %>" class="h-32 w-auto mb-0">
+                    <div class="bg-main-color text-white p-2 sm:p-4 shadow-md mt-0">
+                        <p class="text-base sm:text-lg font-F1Bold">Saison actuelle</p>
+                        <p class="text-sm sm:text-base">Courses: <%= piloteFront.totalCoursesThisSeason %>
+                        </p>
+                        <p class="text-sm sm:text-base">Points: <%= piloteFront.totalPointsThisSeason %>
+                        </p>
+                        <p class="text-sm sm:text-base">Podiums: <%= piloteFront.totalPodiumsThisSeason %>
+                        </p>
+                        <p class="text-sm sm:text-base">Victoires: <%= piloteFront.totalVictoiresThisSeason %>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center w-1/2">
+                    <h1 class="text-lg sm:text-xl font-semibold text-center">
+                        <%= piloteFront2.surname %>
+                            <%= piloteFront2.name %>
+                    </h1>
+                    <p class="text-sm sm:text-base text-gray-600 text-center">
+                        <%= piloteFront2.birthDate %> (<%= piloteFront2.age %> ans)
+                    </p>
+                    <div class="grid grid-cols-2 grid-rows-2 gap-x-4 justify-center items-center mt-16">
+                        <div class="flex items-center justify-center">
+                            <p class="text-green-500 text-4xl sm:text-5xl">
+                                <%= piloteFront2.permanentNumber %>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="/img/2024/logo/<%= teamInfo.equipe_id.toLowerCase() %>.webp"
+                                alt="<%= teamInfo.equipe %>" class="w-24 h-auto">
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="/img/countryFlags/<%= piloteFront2.nationality.toLowerCase() %>.svg"
+                                alt="<%= piloteFront2.nationality %>.svg" class="w-12 h-auto rounded-full">
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <img src="/img/2024/logo_pilote/<%= piloteFront2.name.toLowerCase() %>Logo.webp"
+                                alt=" Logo of <%= piloteFront2.surname %> <%= piloteFront2.name %>" class="w-20 h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career Info -->
+            <div class="text-center mt-4">
+                <h3 class="text-base sm:text-lg font-bold">Carrière:</h3>
+                <p class="mt-1 text-sm sm:text-base">Début carrière: <%= piloteFront.firstSeason %>
+                </p>
+                <p class="text-sm sm:text-base">Podiums: <%= piloteFront.totalPodiums %>
+                </p>
+                <p class="text-sm sm:text-base">Victoires: <%= piloteFront.totalVictoires %>
+                </p>
+                <p class="text-sm sm:text-base">Courses: <%= piloteFront.totalCourses %>
+                </p>
+                <p class="text-sm sm:text-base">Total points: <%= piloteFront.totalPoints %>
+                </p>
+                <p class="text-sm sm:text-base">Total poles: <%= piloteFront.totalPoles %>
+                </p>
+                <p class="text-sm sm:text-base">DNF: <%= piloteFront.totalAbandons %>
+                </p>
+            </div>
+
+            <% if(piloteFront.grandsPrixRemportes.length> 0) { %>
+
+                <div class="text-center mt-4">
+                    <h3 class="text-base sm:text-lg font-bold">Victoires:</h3>
+
+                    <% piloteFront.grandsPrixRemportes.forEach(function(victory) { %>
+
+                        <div class="flex justify-center items-center mt-2">
+                            <div class="flex items-center">
+                                <img src="/img/countryFlags/<%= victory[1] %>.svg"
+                                    class="w-4 sm:w-6 h-4 sm:h-6 rounded-md">
+                                <p class="text-sm sm:text-base ml-2">
+                                    <%= victory[0] %> (<%= victory[2].join(', ') %>)</p>
+                        </div>
+                    </div>
+
+                <% }); %>
+
+            </div>
+
+        <% } %>
+
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

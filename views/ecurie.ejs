@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <%- include('partials/header.ejs') %>
+            <title>PLI - <%= teamFront.teamName %>
+            </title>
+</head>
+
+<body class="h-auto flex flex-col justify-center font-F1Regular">
+    <div class="pt-10 px-4 sm:px-8">
+        <div class="bg-gray-200 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+            <div class="text-center">
+                <h1 class="text-lg font-F1Bold mb-2">
+                    <%= teamFront.teamName %>
+                </h1>
+            </div>
+
+            <div class="flex justify-center">
+                <img src="/img/2024/logo/<%= teamFront.teamid %>.webp" alt="Aston Martin" class="h-28 w-auto">
+            </div>
+
+            <!-- Text Content -->
+            <div class="text-center">
+                <p class="text-gray-600">Arrivée en F1 : <%= dataTeam.date_creation %>
+                </p>
+                <div class="my-4">
+                    <h3 class="font-bold">Pilotes :</h3>
+                    <% teamFront.drivers.forEach(function(driver){ %>
+                        <div class="flex items-center justify-center">
+                            <img src="/img/countryFlags/<%= driver.nationality %>.svg" alt="<%= driver.nationality %>"
+                                class="w-5 h-auto mr-2 rounded-xl">
+                            <p>
+                                <%= driver.name %> - <%= driver.number %>
+                            </p>
+                        </div>
+                        <% }) %>
+                </div>
+                <p class="text-gray-600">Podiums : <%= dataTeam.nbPodiums %>
+                </p>
+                <p class="text-gray-600">Victoires : <%= dataTeam.nbVictoires %>
+                </p>
+                <p class="text-gray-600">Points inscrits : <%= dataTeam.nbPoints %>
+                </p>
+                <p class="text-gray-600 mb-4">Courses disputées : <%= dataTeam.nbCourses %>
+                </p>
+
+                <div class="my-4">
+                    <h3 class="font-bold">Monoplace :</h3>
+                    <p class="text-gray-600">
+                        <%= dataTeam.monoplace %>
+                    </p>
+                    <span class="flex justify-center">
+                        <img src="/img/2024/monoplace/<%= dataTeam.monoplace %>.avif" alt="<%= dataTeam.monoplace %>"
+                            class="w-2/3 h-auto">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

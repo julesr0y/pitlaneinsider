@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/getDriversActualStanding.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/getDriversActualStanding.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
+const fs = require('fs'); // Module permettant de gérer les fichiers
+const path = require('path'); // Module permettant de gérer les chemins de fichiers
+
+/**
+    * @function
+    * @description Fonction permettant de récupérer le classement actuel des pilotes
+    * @returns {Promise} - Promesse contenant la réponse de l'API. Se présente sous la forme d'un tableau de tableaux : 0, Nom et prénom du pilote; 1, id de l'écurie; 2, Position du pilote dans le classement; 3, Nombre de points; 4, Nombre de victoires, 5, id du pilote, 6, code du pilote, 7, numéro du pilote
+    */
+async function getDriversActualStandings() {
+    const filePath = path.join(__dirname, '../cache/getDriversActualStandings.json'); // On définit le chemin du fichier JSON
+    // Vérifier si le fichier existe
+    if (fs.existsSync(filePath)) {
+        // Lire le contenu du fichier
+        const dataF = fs.readFileSync(filePath, 'utf8');
+
+        // Vérifier si le fichier n'est pas vide
+        if (dataF) {
+            // Convertir les données en JSON et les retourner
+            return JSON.parse(dataF);
+        }
+    }
+
+    const driversActualStandings = await getFromErgast('current/driverStandings.json'); // On récupère les données du classement actuel des pilotes
+
+    const driversStandings = driversActualStandings.MRData.StandingsTable.StandingsLists[0]; // On récupère le classement
+    var position = 1;
+    var classementDriversFront = []; // On créé un tableau pour stocker les pilotes du classement
+    driversStandings.DriverStandings.forEach(driver => { // Pour chaque pilote du classement
+        const pilote = {
+            nom: driver.Driver.familyName,
+            prenom: driver.Driver.givenName,
+            equipe: driver.Constructors[0].name,
+            equipe_id: driver.Constructors[0].constructorId,
+            position: position,
+            points: driver.points,
+            victoires: driver.wins,
+            pilote_id: driver.Driver.driverId,
+            code: driver.Driver.code,
+            numero: driver.Driver.permanentNumber
+        };
+        classementDriversFront.push(pilote); // On ajoute le sous tableau des informations du classement du pilote au tableau principal
+        position++; // On incrémente la position
+    });
+
+    // Convertir les données en chaîne JSON
+    const dataJSON = JSON.stringify(classementDriversFront, null, 2);
+    // Écrire les données dans un fichier JSON
+    fs.writeFile(filePath, dataJSON, (err) => {
+        if (err) {
+            console.error('Une erreur est survenue lors de l\'écriture du fichier JSON :', err);
+        } else {
+            console.log('Les données ont été écrites avec succès dans le fichier JSON.');
+        }
+    });
+
+    return classementDriversFront; // On retourne le tableau contenant les informations des pilotes
+}
+
+module.exports = getDriversActualStandings;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#animatePositionChanges">animatePositionChanges</a></li><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#getActualPilotesWithConstructors">getActualPilotesWithConstructors</a></li><li><a href="global.html#getActualTeam">getActualTeam</a></li><li><a href="global.html#getActualTeams">getActualTeams</a></li><li><a href="global.html#getCalendrierActuel">getCalendrierActuel</a></li><li><a href="global.html#getCircuitIds">getCircuitIds</a></li><li><a href="global.html#getConstructorIds">getConstructorIds</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverHistoryData">getDriverHistoryData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromErgast">getFromErgast</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getLastPodium">getLastPodium</a></li><li><a href="global.html#getRetroAccueil">getRetroAccueil</a></li><li><a href="global.html#getRetroPilotes">getRetroPilotes</a></li><li><a href="global.html#getSeasonList">getSeasonList</a></li><li><a href="global.html#getSeasonRanking">getSeasonRanking</a></li><li><a href="global.html#getTeamInfo">getTeamInfo</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#getTrack">getTrack</a></li><li><a href="global.html#getTracks">getTracks</a></li><li><a href="global.html#getWinners">getWinners</a></li><li><a href="global.html#injectCSS">injectCSS</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#requireNoSession">requireNoSession</a></li><li><a href="global.html#requireSession">requireSession</a></li><li><a href="global.html#startCountdown">startCountdown</a></li><li><a href="global.html#updateClassement">updateClassement</a></li><li><a href="global.html#updateDriverAppearances">updateDriverAppearances</a></li><li><a href="global.html#updateLastCompound">updateLastCompound</a></li><li><a href="global.html#updateNextRaceInfo">updateNextRaceInfo</a></li><li><a href="global.html#updatePositionData">updatePositionData</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateStandings">updateStandings</a></li><li><a href="global.html#updateWeather">updateWeather</a></li><li><a href="global.html#verifySession">verifySession</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Thu May 30 2024 15:16:33 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

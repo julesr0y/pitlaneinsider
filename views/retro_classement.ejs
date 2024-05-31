@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <meta charset="UTF-8">
+    <title>Rétro - Classement</title>
+    <link href="" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #3498db; /* Bleu */
+            --primary-color-rgb: 52, 152, 219;
+            --second-color: #058785; /* Vert pour le fond du sélecteur et du tableau */
+            --second-color-dark: #024644; /* Vert foncé pour le survol */
+            --gray-400: #ccc;
+            --gray-500: #b3b3b3;
+            --text-color: #333; /* Gris foncé pour le texte */
+            --white-color: #fff; /* Blanc pour le texte sur les fonds colorés */
+        }
+    
+        .custom-select {
+            background-color: var(--second-color);
+            border: 2px solid var(--gray-400);
+            border-radius: 9999px; /* rounded-full */
+            padding: 0.5rem 1rem; /* p-2 */
+            font-size: 1.25rem; /* text-xl */
+            width: 100%; /* w-full */
+            appearance: none;
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            color: var(--white-color); /* Texte blanc */
+        }
+    
+        .custom-select:hover {
+            background-color: var(--second-color-dark);
+            border-color: var(--gray-500);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .custom-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3);
+        }
+    
+        .custom-select option {
+            background-color: var(--white-color); /* Fond blanc pour les options */
+            color: var(--text-color); /* Texte gris foncé */
+        }
+    
+        /* Add a custom arrow */
+        .custom-select-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+    
+        .custom-select-container::after {
+            content: '▼';
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 1rem;
+            color: var(--white-color); /* Couleur blanche pour la flèche */
+        }
+    </style>
+</head>
+
+<body class="font-F1Regular">
+    <div class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        Rétro - Classement
+    </div>
+    <div class="app-container">
+        <div class="season-title text-3xl font-bold text-center my-8">
+            <div class="mx-4">
+                <div class="custom-select-container">
+                    <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
+                        <% for (let year = 2023; year >= 1950; year--) { %>
+                            <option value="<%= year %>" <% if (year == selectedYear) { %>selected<% } %>>Saison <%= year %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <script>
+                    function changeSeason(select) {
+                        var selectedYear = select.value;
+                        window.location.href = '/retro_classement/' + selectedYear;
+                    }
+
+                    function updateLinks() {
+                        var selectedYear = document.getElementById('seasonSelect').value;
+                        document.getElementById('classementLink').href = '/retro_classement/' + selectedYear;
+                        document.getElementById('calendrierLink').href = '/retro_calendrier/' + selectedYear;
+                    }
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        updateLinks();
+                        document.getElementById('seasonSelect').addEventListener('change', updateLinks);
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="tabs flex justify-center">
+            <div class="flex justify-center items-start pt-10">
+                <div class="flex mb-4">
+                    <a id="classementLink" href="/retro_classement/<%= selectedYear %>"
+                        class="mr-20 {{ Request::path() == 'retro_pilotes' ? 'font-bold border-b-2 border-black black' : '' }}">Classement</a>
+                    <a id="calendrierLink" href="/retro_calendrier/<%= selectedYear %>"
+                        class="{{ Request::path() == 'retro_calendrier' ? 'font-bold' : '' }}">Calendrier</a>
+                </div>
+            </div>
+        </div>
+        <div id="Pilotes" class="bg-second-color p-4 sm:p-8 shadow-md rounded-2xl mx-4 mt-8">
+            <div class="grid grid-cols-12">
+                <span class="sm:col-span-4 col-span-3 font-F1Bold sm:ml-16">Position</span>
+                <span class="sm:col-span-4 col-span-4 font-F1Bold">Pilotes</span>
+                <span class="sm:col-span-2 col-span-3 font-F1Bold">Victoires</span>
+                <span class="col-span-2 font-F1Bold sm:ml-16">Points</span>
+            </div>
+            <div class="pilot-list grid grid-cols-12 gap-y-2 mt-4">
+                <% retro_classement.forEach(function(pilot, index) { %>
+                    <span class="col-span-2 font-F1Bold sm:ml-20 ml-6">
+                        <%= String(index + 1).padStart(2, '0') %>.
+                    </span>
+                    <span class="col-span-4 text-left sm:ml-40 ml-6">
+                        <%= pilot.firstname %> <%= pilot.lastname %>
+                    </span>
+                    <span class="col-span-3 text-right sm:mr-12 mr-2">
+                        <%= pilot.wins %>
+                    </span>
+                    <span class="col-span-3 text-right font-F1Bold sm:mr-20 mr-4">
+                        <%= pilot.points %>
+                    </span>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <link rel="canonical" href="https://pitlaneinsider.fr/">
+        <meta name="description" content="Toute la Formule 1, par La Remontée ISEN Formula 1 Team">
+        <%- include('partials/header.ejs') %>
+            <title>PitLane Insider</title>
+            <style>
+                @keyframes slideUpDown {
+                    0% {
+                        transform: translateY(100%);
+                        opacity: 0;
+                    }
+
+                    50% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                .animation-slide {
+                    animation: slideUpDown 0.5s ease-in-out;
+                }
+
+                .gold {
+                    background-color: gold;
+                }
+
+                .silver {
+                    background-color: silver;
+                }
+
+                .bronze {
+                    background-color: #cd7f32;
+                }
+            </style>
+</head>
+
+<body class="font-F1Regular">
+
+    <div class="next text-center text-white bg-black py-2">
+        <h1>
+            <div class="flex items-center justify-center gap-1">
+                <span>Prochaine course</span>
+                <span>-</span>
+                <span id="race-location">Chargement...</span>
+                <span></span>
+                <span id="flag"></span>
+            </div>
+            <div id="countdown" class="flex justify-center mt-4">
+                <div class="flex flex-col items-center mx-2">
+                    <span class="text-sm text-center mb-1">J</span>
+                    <span id="days" class="inline-block w-12 text-center text-2xl">00</span>
+                </div>
+                <div class="flex flex-col items-center mx-2">
+                    <span class="text-sm text-center mb-1">H</span>
+                    <span id="hours" class="inline-block w-12 text-center text-2xl">00</span>
+                </div>
+                <div class="flex flex-col items-center mx-2">
+                    <span class="text-sm text-center mb-1">MIN</span>
+                    <span id="minutes" class="inline-block w-12 text-center text-2xl">00</span>
+                </div>
+                <div class="flex flex-col items-center mx-2">
+                    <span class="text-sm text-center mb-1">S</span>
+                    <span id="seconds" class="inline-block w-12 text-center text-2xl">00</span>
+                </div>
+            </div>
+        </h1>
+    </div>
+
+    <main class="px-4">
+        <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
+            <div id="chPilotes"
+                class="h-32 bg-second-color flex flex-col justify-center items-center font-F1Bold rounded-3xl">
+                <span class="text-center">Championnat pilotes</span>
+                <span class="flex justify-evenly items-center mt-auto gap-6">
+                    <span class="flex flex-col items-center text-xl">
+                        <span>
+                            <%= actualDriversStanding[0].code %>
+                        </span>
+                        <span class="text-<%= actualDriversStanding[0].equipe_id %>">
+                            <% if(actualDriversStanding[0].numero==33) { %>
+                                <%= 1 %>
+                                    <% } else { %>
+                                        <%= actualDriversStanding[0].numero %>
+                                            <% } %>
+                        </span>
+                    </span>
+                    <img src="/img/2024/drivers/<%= actualDriversStanding[0].pilote_id %>.webp" class="h-20 w-auto">
+                </span>
+            </div>
+            <div id="chContructeurs" class="h-32 bg-second-color flex flex-col items-center rounded-3xl">
+                <span class="text-center font-F1Bold">Championnat constructeurs</span>
+                <span>
+                    <img src="/img/2024/logo/<%= actualTeamsStanding[0].equipe_id %>.webp"
+                        class="h-12 md:h-20 w-auto mt-3">
+                </span>
+            </div>
+        </div>
+
+        <div class="w-full bg-second-color mt-4 rounded-3xl">
+            <span class="flex justify-center text-center mb-4 font-F1Bold">Dernier podium - <%=
+                    podiumDrivers[3].raceName %></span>
+            <div class="flex justify-evenly items-end h-full">
+                <div class="flex flex-col items-center">
+                    <img src="/img/2024/drivers/<%= podiumDrivers[1].id %>.webp" class="h-20 w-auto">
+                    <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
+                        <span class="text-lg font-bold">2</span>
+                        <span class="text-sm font-bold mt-2">
+                            <%= podiumDrivers[1].code %>
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="/img/2024/drivers/<%= podiumDrivers[0].id %>.webp" class="h-20 w-auto">
+                    <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
+                        <span class="text-lg font-bold">1</span>
+                        <span class="text-sm font-bold mt-2">
+                            <%= podiumDrivers[0].code %>
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="/img/2024/drivers/<%= podiumDrivers[2].id %>.webp" class="h-20 w-auto">
+                    <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
+                        <span class="text-lg font-bold">3</span>
+                        <span class="text-sm font-bold mt-2">
+                            <%= podiumDrivers[2].code %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="class" class="w-full bg-second-color mt-4 py-2 rounded-3xl">
+            <span class="flex justify-center text-center font-F1Bold">Classement pilotes</span>
+            <span class="flex justify-evenly">
+                <span>
+                    <% actualDriversStanding.slice(0, 10).forEach(function(pilote) { %>
+                        <span
+                            class="border border-<%= pilote.equipe_id %> h-auto w-1 box-border bg-<%= pilote.equipe_id %> rounded-3xl"></span>
+                        &nbsp;
+                        <span class="font-F1Bold">
+                            <%= String(pilote.position).padStart(2, '0' ) %> -
+                        </span>
+                        <%= pilote.nom %>
+                            <br>
+                            <% }); %>
+                </span>
+                <span class="border border-black h-auto w-0.3 box-border bg-black"></span>
+                <span>
+                    <% actualDriversStanding.slice(10, 20).forEach(function(pilote) { %>
+                        <span
+                            class="border border-<%= pilote.equipe_id %> h-auto w-1 box-border bg-<%= pilote.equipe_id %> rounded-3xl"></span>
+                        &nbsp;
+                        <span class="font-F1Bold">
+                            <%= String(pilote.position).padStart(2, '0' ) %> -
+                        </span>
+                        <%= pilote.nom %>
+                            <br>
+                            <% }); %>
+                </span>
+            </span>
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+<script src="/js/accueil.js"></script>
+
+</html>

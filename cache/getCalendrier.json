@@ -1,0 +1,746 @@
+{
+  "1": {
+    "raceName": "Bahrain Grand Prix",
+    "country": "bahrain",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "29/02",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "29/02",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "01/03",
+        "time": "12h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "01/03",
+        "time": "16h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "02/03",
+        "time": "15h"
+      }
+    }
+  },
+  "2": {
+    "raceName": "Saudi Arabian Grand Prix",
+    "country": "saudi arabia",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "07/03",
+        "time": "13h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "07/03",
+        "time": "17h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "08/03",
+        "time": "13h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "08/03",
+        "time": "17h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "09/03",
+        "time": "17h"
+      }
+    }
+  },
+  "3": {
+    "raceName": "Australian Grand Prix",
+    "country": "australia",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "22/03",
+        "time": "01h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "22/03",
+        "time": "05h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "23/03",
+        "time": "01h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "23/03",
+        "time": "05h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "24/03",
+        "time": "04h"
+      }
+    }
+  },
+  "4": {
+    "raceName": "Japanese Grand Prix",
+    "country": "japan",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "05/04",
+        "time": "02h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "05/04",
+        "time": "06h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "06/04",
+        "time": "02h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "06/04",
+        "time": "06h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "07/04",
+        "time": "05h"
+      }
+    }
+  },
+  "5": {
+    "raceName": "Chinese Grand Prix",
+    "country": "china",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "19/04",
+        "time": "03h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "19/04",
+        "time": "07h30"
+      },
+      "Sprint": {
+        "type": "S",
+        "date": "20/04",
+        "time": "03h"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "20/04",
+        "time": "07h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "21/04",
+        "time": "07h"
+      }
+    }
+  },
+  "6": {
+    "raceName": "Miami Grand Prix",
+    "country": "usa",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "03/05",
+        "time": "16h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "03/05",
+        "time": "20h30"
+      },
+      "Sprint": {
+        "type": "S",
+        "date": "04/05",
+        "time": "16h"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "04/05",
+        "time": "20h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "05/05",
+        "time": "20h"
+      }
+    }
+  },
+  "7": {
+    "raceName": "Emilia Romagna Grand Prix",
+    "country": "italy",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "17/05",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "17/05",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "18/05",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "18/05",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "19/05",
+        "time": "13h"
+      }
+    }
+  },
+  "8": {
+    "raceName": "Monaco Grand Prix",
+    "country": "monaco",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "24/05",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "24/05",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "25/05",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "25/05",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "26/05",
+        "time": "13h"
+      }
+    }
+  },
+  "9": {
+    "raceName": "Canadian Grand Prix",
+    "country": "canada",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "07/06",
+        "time": "17h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "07/06",
+        "time": "21h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "08/06",
+        "time": "16h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "08/06",
+        "time": "20h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "09/06",
+        "time": "18h"
+      }
+    }
+  },
+  "10": {
+    "raceName": "Spanish Grand Prix",
+    "country": "spain",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "21/06",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "21/06",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "22/06",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "22/06",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "23/06",
+        "time": "13h"
+      }
+    }
+  },
+  "11": {
+    "raceName": "Austrian Grand Prix",
+    "country": "austria",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "28/06",
+        "time": "10h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "28/06",
+        "time": "14h30"
+      },
+      "Sprint": {
+        "type": "S",
+        "date": "29/06",
+        "time": "10h"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "29/06",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "30/06",
+        "time": "13h"
+      }
+    }
+  },
+  "12": {
+    "raceName": "British Grand Prix",
+    "country": "uk",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "05/07",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "05/07",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "06/07",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "06/07",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "07/07",
+        "time": "14h"
+      }
+    }
+  },
+  "13": {
+    "raceName": "Hungarian Grand Prix",
+    "country": "hungary",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "19/07",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "19/07",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "20/07",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "20/07",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "21/07",
+        "time": "13h"
+      }
+    }
+  },
+  "14": {
+    "raceName": "Belgian Grand Prix",
+    "country": "belgium",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "26/07",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "26/07",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "27/07",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "27/07",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "28/07",
+        "time": "13h"
+      }
+    }
+  },
+  "15": {
+    "raceName": "Dutch Grand Prix",
+    "country": "netherlands",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "23/08",
+        "time": "10h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "23/08",
+        "time": "14h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "24/08",
+        "time": "09h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "24/08",
+        "time": "13h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "25/08",
+        "time": "13h"
+      }
+    }
+  },
+  "16": {
+    "raceName": "Italian Grand Prix",
+    "country": "italy",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "30/08",
+        "time": "11h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "30/08",
+        "time": "15h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "31/08",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "31/08",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "01/09",
+        "time": "13h"
+      }
+    }
+  },
+  "17": {
+    "raceName": "Azerbaijan Grand Prix",
+    "country": "azerbaijan",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "13/09",
+        "time": "09h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "13/09",
+        "time": "13h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "14/09",
+        "time": "08h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "14/09",
+        "time": "12h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "15/09",
+        "time": "11h"
+      }
+    }
+  },
+  "18": {
+    "raceName": "Singapore Grand Prix",
+    "country": "singapore",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "20/09",
+        "time": "09h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "20/09",
+        "time": "13h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "21/09",
+        "time": "09h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "21/09",
+        "time": "13h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "22/09",
+        "time": "12h"
+      }
+    }
+  },
+  "19": {
+    "raceName": "United States Grand Prix",
+    "country": "usa",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "18/10",
+        "time": "17h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "18/10",
+        "time": "21h30"
+      },
+      "Sprint": {
+        "type": "S",
+        "date": "19/10",
+        "time": "18h"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "19/10",
+        "time": "22h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "20/10",
+        "time": "19h"
+      }
+    }
+  },
+  "20": {
+    "raceName": "Mexico City Grand Prix",
+    "country": "mexico",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "25/10",
+        "time": "18h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "25/10",
+        "time": "22h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "26/10",
+        "time": "17h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "26/10",
+        "time": "21h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "27/10",
+        "time": "20h"
+      }
+    }
+  },
+  "21": {
+    "raceName": "São Paulo Grand Prix",
+    "country": "brazil",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "01/11",
+        "time": "14h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "01/11",
+        "time": "18h30"
+      },
+      "Sprint": {
+        "type": "S",
+        "date": "02/11",
+        "time": "14h"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "02/11",
+        "time": "18h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "03/11",
+        "time": "17h"
+      }
+    }
+  },
+  "22": {
+    "raceName": "Las Vegas Grand Prix",
+    "country": "united states",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "21/11",
+        "time": "02h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "21/11",
+        "time": "06h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "22/11",
+        "time": "02h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "22/11",
+        "time": "06h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "23/11",
+        "time": "06h"
+      }
+    }
+  },
+  "23": {
+    "raceName": "Qatar Grand Prix",
+    "country": "qatar",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "29/11",
+        "time": "13h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "29/11",
+        "time": "17h30"
+      },
+      "Sprint": {
+        "type": "S",
+        "date": "30/11",
+        "time": "13h"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "30/11",
+        "time": "17h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "01/12",
+        "time": "17h"
+      }
+    }
+  },
+  "24": {
+    "raceName": "Abu Dhabi Grand Prix",
+    "country": "uae",
+    "sessions": {
+      "FirstPractice": {
+        "type": "FP1",
+        "date": "06/12",
+        "time": "09h30"
+      },
+      "SecondPractice": {
+        "type": "FP2",
+        "date": "06/12",
+        "time": "13h"
+      },
+      "ThirdPractice": {
+        "type": "FP3",
+        "date": "07/12",
+        "time": "10h30"
+      },
+      "Qualifying": {
+        "type": "Q",
+        "date": "07/12",
+        "time": "14h"
+      },
+      "Race": {
+        "type": "R",
+        "date": "08/12",
+        "time": "13h"
+      }
+    }
+  }
+}
