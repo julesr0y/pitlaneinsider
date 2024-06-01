@@ -109,6 +109,36 @@ header {
         width: 15px;
     }
 
+    .span3 {
+        display: none;
+    }
+
+    .span1,
+    .span2,
+    .span3 {
+        transition: all 0.3s ease;
+    }
+
+    .cross .span1 {
+        transform: rotate(45deg) translate(1px, 8px);
+        width: 45px;
+    }
+
+    .cross .span2 {
+        transform: rotate(-45deg) translate(0, -8px);
+        opacity: 1;
+        width: 45px;
+    }
+
+    .cross .span3 {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .cross .span3.show {
+        opacity: 1;
+    }
+
     .nav-links {
         position: absolute;
         display: block;

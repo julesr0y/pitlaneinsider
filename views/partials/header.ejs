@@ -30,5 +30,7 @@
 <script>
     document.getElementById('nav-check').addEventListener('change', function () {
         document.body.classList.toggle('no-scroll', this.checked);
+        document.querySelector('.nav-btn').classList.toggle('cross', this.checked);
+        document.querySelector('.nav-links').classList.toggle('show', this.checked);
     });
 </script>
