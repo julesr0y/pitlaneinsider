@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-// fonctions
 const bcrypt = require('bcrypt');
 const requireNoSession = require('../utils/requireNoSession');
-const dbConnexion = require('../config/database');
+const dbPool = require('../config/database'); // Importer le pool de connexions
 
 // pages des formulaires
 router.get('/signup', requireNoSession, (req, res) => {
@@ -17,56 +15,49 @@ router.get('/signin', requireNoSession, (req, res) => {
 
 router.post("/signinProcess", async (req, res) => {
     const { email, mdp } = req.body; // récupération des données du formulaire
-    await new Promise((resolve, reject) => { //promesse pour la requête SQL
-        dbConnexion.query('SELECT * FROM users WHERE email = ?', [email], function (err, rows) {
-            if (err) { // si erreur
-                reject(err); // rejet de la promesse
-            } else {
-                resolve(rows[0]); // résolution de la promesse
-            }
-        });
-    })
-        .then(async (row) => { // si la promesse est résolue
-            if (row && (await bcrypt.compare(mdp, row.mdp))) { // si le mot de passe est correct
-                // Stocker les informations de l'utilisateur dans la session et les cookies
-                req.session.user = {
-                    idUser: row.idUser,
-                    email: email,
-                    username: row.username,
-                    nom: row.nom,
-                    prenom: row.prenom
-                };
-                // cookies pour la session (30 jours)
-                res.cookie("idUser", row.idUser, {
-                    maxAge: 30 * 24 * 60 * 60 * 1000,
-                    httpOnly: true,
-                });
-                res.cookie("email", email, {
-                    maxAge: 30 * 24 * 60 * 60 * 1000,
-                    httpOnly: true,
-                });
-                res.cookie("username", row.username, {
-                    maxAge: 30 * 24 * 60 * 60 * 1000,
-                    httpOnly: true,
-                });
-                res.cookie("nom", row.nom, {
-                    maxAge: 30 * 24 * 60 * 60 * 1000,
-                    httpOnly: true,
-                });
-                res.cookie("prenom", row.prenom, {
-                    maxAge: 30 * 24 * 60 * 60 * 1000,
-                    httpOnly: true,
-                });
-                res.redirect("/profil"); // redirection vers la page de profil
-            } else {
-                res.redirect("/signin?msg=mdporemailincorrect"); // redirection vers la page de connexion avec un message d'erreur
-            }
-        })
-        .catch((err) => {
-            // Gérer l'erreur
-            console.error(err);
-            res.redirect("/signin?msg=erreur"); // redirection vers la page de connexion avec un message d'erreur
-        });
+
+    try {
+        const [rows] = await dbPool.query('SELECT * FROM users WHERE email = ?', [email]);
+        const user = rows[0];
+
+        if (user && (await bcrypt.compare(mdp, user.mdp))) {
+            // Stocker les informations de l'utilisateur dans la session et les cookies
+            req.session.user = {
+                idUser: user.idUser,
+                email: email,
+                username: user.username,
+                nom: user.nom,
+                prenom: user.prenom
+            };
+            // cookies pour la session (30 jours)
+            res.cookie("idUser", user.idUser, {
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+                httpOnly: true,
+            });
+            res.cookie("email", email, {
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+                httpOnly: true,
+            });
+            res.cookie("username", user.username, {
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+                httpOnly: true,
+            });
+            res.cookie("nom", user.nom, {
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+                httpOnly: true,
+            });
+            res.cookie("prenom", user.prenom, {
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+                httpOnly: true,
+            });
+            res.redirect("/profil"); // redirection vers la page de profil
+        } else {
+            res.redirect("/signin?msg=mdporemailincorrect"); // redirection vers la page de connexion avec un message d'erreur
+        }
+    } catch (err) {
+        console.error('Erreur lors de la connexion de l\'utilisateur:', err);
+        res.redirect("/signin?msg=erreur"); // redirection vers la page de connexion avec un message d'erreur
+    }
 });
 
 router.post("/signupProcess", async (req, res) => {
@@ -76,51 +67,47 @@ router.post("/signupProcess", async (req, res) => {
         return;
     }
     const hashedPassword = bcrypt.hashSync(mdp, 10); // hachage du mot de passe
-    let id_user; // variable pour stocker l'id de l'utilisateur (depuis la db)
-    await new Promise((resolve, reject) => { // promesse pour la requête SQL
-        dbConnexion.query('INSERT INTO users(email, username, nom, prenom, naissance, mdp) VALUES(?, ?, ?, ?, ?, ?)', [email, username, nom, prenom, naissance, hashedPassword], function (err, rows) { // requête SQL
-            if (err) { // si erreur
-                reject(err); // rejet de la promesse
-            }
-            else { // si pas d'erreur
-                id_user = rows.insertId; // récupération de l'id de l'utilisateur (dernier inséré)
-                resolve(rows); // résolution de la promesse
-            }
+
+    try {
+        const [result] = await dbPool.query('INSERT INTO users(email, username, nom, prenom, naissance, mdp) VALUES(?, ?, ?, ?, ?, ?)', [email, username, nom, prenom, naissance, hashedPassword]);
+        const id_user = result.insertId;
+
+        // Stocker les informations de l'utilisateur dans la session et les cookies
+        req.session.user = {
+            idUser: id_user,
+            email: email,
+            username: username,
+            nom: nom,
+            prenom: prenom
+        };
+
+        // cookies pour la session (30 jours)
+        res.cookie("idUser", id_user, {
+            maxAge: 30 * 24 * 60 * 60 * 1000,
+            httpOnly: true,
         });
-    });
+        res.cookie("email", email, {
+            maxAge: 30 * 24 * 60 * 60 * 1000,
+            httpOnly: true,
+        });
+        res.cookie("username", username, {
+            maxAge: 30 * 24 * 60 * 60 * 1000,
+            httpOnly: true,
+        });
+        res.cookie("nom", nom, {
+            maxAge: 30 * 24 * 60 * 60 * 1000,
+            httpOnly: true,
+        });
+        res.cookie("prenom", prenom, {
+            maxAge: 30 * 24 * 60 * 60 * 1000,
+            httpOnly: true,
+        });
 
-    // Stocker les informations de l'utilisateur dans la session et les cookies
-    req.session.user = {
-        idUser: id_user,
-        email: email,
-        username: username,
-        nom: nom,
-        prenom: prenom
-    };
-
-    // cookies pour la session (30 jours)
-    res.cookie("idUser", id_user, {
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    });
-    res.cookie("email", email, {
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    });
-    res.cookie("username", username, {
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    });
-    res.cookie("nom", nom, {
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    });
-    res.cookie("prenom", prenom, {
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    });
-
-    res.redirect('/profil'); // redirection vers la page de profil
+        res.redirect('/profil'); // redirection vers la page de profil
+    } catch (err) {
+        console.error('Erreur lors de l\'inscription de l\'utilisateur:', err);
+        res.redirect("/signup?msg=erreur"); // redirection vers la page d'inscription avec un message d'erreur
+    }
 });
 
 // Déconnexion

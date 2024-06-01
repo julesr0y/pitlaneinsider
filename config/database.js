@@ -1,18 +1,13 @@
 const mysql = require('mysql2');
 
-const dbConnexion = mysql.createConnection({
+const pool = mysql.createPool({
     host: "mysql-pitlaneinsider.alwaysdata.net",
     user: "355843",
     password: "5ANkT9Sm8dmErfV",
-    database: "pitlaneinsider_db"
+    database: "pitlaneinsider_db",
+    waitForConnections: true,
+    connectionLimit: 10, // Le nombre maximum de connexions à créer
+    queueLimit: 0 // Pas de limite pour la file d'attente
 });
 
-dbConnexion.connect((err) => {
-    if (err) {
-        console.error('Erreur de connexion à la base de données :', err);
-    } else {
-        console.log('Connexion à la base de données établie');
-    }
-});
-
-module.exports = dbConnexion;
+module.exports = pool.promise(); // Utilisation de pool en mode promisifié pour plus de simplicité

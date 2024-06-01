@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const dbConnexion = require('./config/database');
+const dbPool = require('./config/database');
 
 // On importe les fonctions crées par l'équipe
 const getLastPodium = require("./utils/getLastPodium"); // Fonction permettant de récupérer le podium de la dernière course
@@ -73,27 +73,15 @@ app.get("/ecuries", async (req, res) => {
 });
 
 app.get("/ecurie/:ecurie_id", async (req, res) => {
-    var team = await getTeam(req.params.ecurie_id);
-    await new Promise((resolve, reject) => { //promesse pour la requête SQL
-        dbConnexion.query('SELECT * FROM teams WHERE nom = ?', [req.params.ecurie_id], function (err, rows) {
-            if (err) { // si erreur
-                reject(err); // rejet de la promesse
-            } else {
-                resolve(rows[0]); // résolution de la promesse
-            }
-        });
-    }).then(async (row) => { // si la promesse est résolue
-        var dataTeam = {
-            date_creation: row.date_creation,
-            nbVictoires: row.nbVictoires,
-            nbPodiums: row.nbPodiums,
-            nbPoints: row.nbPoints,
-            nbCourses: row.nbCourses,
-            monoplace: row.monoplace
-        }
-
+    try {
+        var team = await getTeam(req.params.ecurie_id);
+        const [rows] = await dbPool.query('SELECT * FROM teams WHERE nom = ?', [req.params.ecurie_id]);
+        const dataTeam = rows[0];
         res.render("ecurie", { teamFront: team, dataTeam: dataTeam });
-    });
+    } catch (err) {
+        console.error('Erreur lors de la récupération des informations de l\'écurie:', err);
+        res.status(500).send('Erreur interne du serveur');
+    }
 });
 
 app.get("/pilotes", async (req, res) => {
@@ -182,25 +170,15 @@ app.get("/calendrier", async (req, res) => {
 });
 
 app.get("/circuit/:circuit_id", async (req, res) => {
-    var track = await getTrack(req.params.circuit_id);
-    await new Promise((resolve, reject) => { //promesse pour la requête SQL
-        dbConnexion.query('SELECT * FROM circuits WHERE id_circuit = ?', [req.params.circuit_id], function (err, rows) {
-            if (err) { // si erreur
-                reject(err); // rejet de la promesse
-            } else {
-                resolve(rows[0]); // résolution de la promesse
-            }
-        });
-    }).then(async (row) => { // si la promesse est résolue
-        var dataCircuit = {
-            oneLapDistance: row.oneLapDistance,
-            lapRecord: row.lapRecord,
-            totalDistance: row.totalDistance,
-            lapsNumber: row.lapsNumber,
-            creationYear: row.creationYear
-        }
+    try {
+        var track = await getTrack(req.params.circuit_id);
+        const [rows] = await dbPool.query('SELECT * FROM circuits WHERE id_circuit = ?', [req.params.circuit_id]);
+        const dataCircuit = rows[0];
         res.render("circuit", { trackFront: track, dataCircuit: dataCircuit });
-    });
+    } catch (err) {
+        console.error('Erreur lors de la récupération des informations du circuit:', err);
+        res.status(500).send('Erreur interne du serveur');
+    }
 });
 
 app.get("/classement", async (req, res) => {
@@ -239,26 +217,10 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
-const port = 8080;
+const port = 3000;
 const server = http.createServer(app);
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-// // catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//     next(createError(404));
-// });
-
-// // error handler
-// app.use(function (err, req, res, next) {
-//     // set locals, only providing error in development
-//     res.locals.message = err.message;
-//     res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-//     // render the error page
-//     res.status(err.status || 500);
-//     res.render('error');
-// });
 
 module.exports = app;
