@@ -6,93 +6,104 @@ const path = require('path'); // Module permettant de gérer les chemins de fich
 /**
     * @function
     * @description Fonction permettant de récupérer le calendrier de la saison actuelle
+    * @param {boolean} update - Détermine si les données doivent être mises à jour
     * @returns {Promise} - Promesse contenant la réponse de l'API.
     */
-async function getCalendrierActuel() {
+async function getCalendrierActuel(update) {
     const filePath = path.join(__dirname, '../cache/getCalendrier.json'); // On définit le chemin du fichier JSON
-    // Vérifier si le fichier existe
-    if (fs.existsSync(filePath)) {
-        // Lire le contenu du fichier
-        const data = fs.readFileSync(filePath, 'utf8');
+    const filePathUpdate = path.join(__dirname, '../cache/updates/getCalendrier.json');
 
-        // Vérifier si le fichier n'est pas vide
-        if (data) {
-            // Convertir les données en JSON et les retourner
-            return JSON.parse(data);
+    if (!update) {
+        // Vérifier si le fichier existe
+        if (fs.existsSync(filePath)) {
+            // Lire le contenu du fichier
+            const data = fs.readFileSync(filePath, 'utf8');
+
+            // Vérifier si le fichier n'est pas vide
+            if (data) {
+                // Convertir les données en JSON et les retourner
+                return JSON.parse(data);
+            }
+        }
+    } else {
+        var dataCalendar = await getFromErgast('current.json'); // On récupère les données du calendrier actuel
+
+        var calendrierActuelFront = {}; // On créé un objet pour stocker les courses du calendrier
+        const calendrierActuel = dataCalendar.MRData.RaceTable.Races; // On récupère le calendrier
+        calendrierActuel.forEach(round => {
+            let raceCalendar = {}; // On créé un objet pour stocker les informations de la course
+            raceCalendar.raceName = round.raceName; // On ajoute le nom de la course
+            const countryName = (round.Circuit.Location.country).toLowerCase(); // On récupère le nom du pays de la course
+            raceCalendar.country = countryName; // On ajoute le nom du pays de la course
+
+            let session = {};
+
+            if (round.hasOwnProperty('FirstPractice')) {
+                session.FirstPractice = {
+                    type: 'FP1',
+                    date: convertDate(round.FirstPractice.date),
+                    time: convertTime(round.FirstPractice.time)
+                };
+            }
+            if (round.hasOwnProperty('SecondPractice')) {
+                session.SecondPractice = {
+                    type: 'FP2',
+                    date: convertDate(round.SecondPractice.date),
+                    time: convertTime(round.SecondPractice.time)
+                };
+            }
+            if (round.hasOwnProperty('ThirdPractice')) {
+                session.ThirdPractice = {
+                    type: 'FP3',
+                    date: convertDate(round.ThirdPractice.date),
+                    time: convertTime(round.ThirdPractice.time)
+                };
+            }
+            if (round.hasOwnProperty('Sprint')) {
+                session.Sprint = {
+                    type: 'S',
+                    date: convertDate(round.Sprint.date),
+                    time: convertTime(round.Sprint.time)
+                };
+            }
+            if (round.hasOwnProperty('Qualifying')) {
+                session.Qualifying = {
+                    type: 'Q',
+                    date: convertDate(round.Qualifying.date),
+                    time: convertTime(round.Qualifying.time)
+                };
+            }
+
+            session.Race = {
+                type: 'R',
+                date: convertDate(round.date),
+                time: convertTime(round.time)
+            };
+
+            raceCalendar.sessions = session;
+            calendrierActuelFront[round.round] = raceCalendar;
+        });
+
+        // Convertir les données en chaîne JSON
+        const dataJSON = JSON.stringify(calendrierActuelFront, null, 2);
+
+        // Vérifier si les données récupérées depuis l'API ne sont pas vides
+        if (Object.keys(calendrierActuelFront).length === 0) {
+            // Si les données de l'API sont vides, copier les données de filePath dans filePathUpdate
+            if (fs.existsSync(filePath)) {
+                const originalData = fs.readFileSync(filePath, 'utf8');
+                if (originalData) {
+                    fs.writeFileSync(filePathUpdate, originalData);
+                }
+            }
+        } else {
+            // Écrire les données dans le fichier de mise à jour
+            fs.writeFileSync(filePathUpdate, dataJSON);
+            // Vider et écrire les données dans le fichier principal
+            fs.writeFileSync(filePath, dataJSON);
         }
     }
-
-    var dataCalendar = await getFromErgast('current.json'); // On récupère les données du calendrier actuel
-
-    var calendrierActuelFront = {}; // On créé un objet pour stocker les courses du calendrier
-    const calendrierActuel = dataCalendar.MRData.RaceTable.Races; // On récupère le calendrier
-    calendrierActuel.forEach(round => {
-        let raceCalendar = {} // On créé un objet pour stocker les informations de la course
-        raceCalendar.raceName = round.raceName; // On ajoute le nom de la course
-        const countryName = (round.Circuit.Location.country).toLowerCase(); // On récupère le nom du pays de la course
-        raceCalendar.country = countryName; // On ajoute le nom du pays de la course
-
-        let session = {};
-
-        if (round.hasOwnProperty('FirstPractice')) {
-            session.FirstPractice = {
-                type: 'FP1',
-                date: convertDate(round.FirstPractice.date),
-                time: convertTime(round.FirstPractice.time)
-            };
-        }
-        if (round.hasOwnProperty('SecondPractice')) {
-            session.SecondPractice = {
-                type: 'FP2',
-                date: convertDate(round.SecondPractice.date),
-                time: convertTime(round.SecondPractice.time)
-            };
-        }
-        if (round.hasOwnProperty('ThirdPractice')) {
-            session.ThirdPractice = {
-                type: 'FP3',
-                date: convertDate(round.ThirdPractice.date),
-                time: convertTime(round.ThirdPractice.time)
-            };
-        }
-        if (round.hasOwnProperty('Sprint')) {
-            session.Sprint = {
-                type: 'S',
-                date: convertDate(round.Sprint.date),
-                time: convertTime(round.Sprint.time)
-            };
-        }
-        if (round.hasOwnProperty('Qualifying')) {
-            session.Qualifying = {
-                type: 'Q',
-                date: convertDate(round.Qualifying.date),
-                time: convertTime(round.Qualifying.time)
-            };
-        }
-
-        session.Race = {
-            type: 'R',
-            date: convertDate(round.date),
-            time: convertTime(round.time)
-        }
-
-        raceCalendar.sessions = session;
-        calendrierActuelFront[round.round] = raceCalendar;
-    });
-
-    // Convertir les données en chaîne JSON
-    const dataJSON = JSON.stringify(calendrierActuelFront, null, 2);
-
-    // Écrire les données dans un fichier JSON
-    fs.writeFile(filePath, dataJSON, (err) => {
-        if (err) {
-            console.error('Une erreur est survenue lors de l\'écriture du fichier JSON :', err);
-        } else {
-            console.log('Les données ont été écrites avec succès dans le fichier JSON.');
-        }
-    });
-
-    return calendrierActuelFront;
+    return;
 }
 
 function convertDate(dateString) {

@@ -85,7 +85,7 @@ app.get("/ecurie/:ecurie_id", async (req, res) => {
 });
 
 app.get("/pilotes", async (req, res) => {
-    var pilotes = await getActualPilotes(); // Récupération des pilotes actuels
+    var pilotes = await getActualPilotes(false); // Récupération des pilotes actuels
     res.render("pilotes", { pilotesFront: pilotes });
 });
 
@@ -99,7 +99,7 @@ app.get("/pilote/:driver_id", async (req, res) => {
 app.get("/calendrier", async (req, res) => {
     try {
         const tracks = await getTracks();
-        const calendrier = await getCalendrier();
+        const calendrier = await getCalendrier(false);
 
         // Mapping des noms des Grands Prix aux identifiants des circuits
         const grandPrixToTrackId = {
