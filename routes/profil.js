@@ -7,7 +7,8 @@ router.get("/profil", requireSession, async (req, res) => {
     try {
         const [rows] = await dbPool.query('SELECT * FROM users WHERE idUser = ?', [req.session.user.idUser]);
         const userInfos = rows[0];
-        res.render("profil", { userInfosFront: userInfos });
+        const adminValue = rows[0].admin;
+        res.render("profil", { userInfosFront: userInfos, adminValue: adminValue });
     } catch (err) {
         console.error('Erreur lors de la récupération des informations utilisateur:', err);
         res.status(500).send('Erreur interne du serveur');

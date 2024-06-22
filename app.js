@@ -208,6 +208,9 @@ app.use('/', authRoutes);
 const profilRoutes = require('./routes/profil'); // Importation des routes de profil
 app.use('/', profilRoutes);
 
+const adminRoutes = require('./routes/admin'); // Importation des routes d'administration
+app.use('/', adminRoutes);
+
 app.get("/a_propos", async (req, res) => {
     res.render("a_propos");
 });
