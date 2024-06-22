@@ -54,7 +54,7 @@ app.use((req, res, next) => {
         "default-src 'self'; " +
         "connect-src 'self' https://api.openf1.org https://ergast.com; " +
         "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; " +
-        "script-src 'self' 'unsafe-inline'; " +
+        "script-src 'self' 'unsafe-inline' https://ajax.googleapis.com; " +
         "media-src 'self' https://api.openf1.org https://livetiming.formula1.com;"
     );
     next();
