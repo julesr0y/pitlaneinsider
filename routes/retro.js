@@ -13,7 +13,7 @@ const getEcuries = require('../utils/getEcuries');
 const getCircuits = require('../utils/getCircuits');
 
 router.get("/retro_accueil", cors(), async (req, res) => {
-    var retro_accueil = await getRetroAccueil();
+    var retro_accueil = await getRetroAccueil(false);
     res.render("retro_accueil", { retro_accueil: retro_accueil })
 })
 
@@ -64,17 +64,17 @@ router.get("/retro_gpdetail/:season_id/:gp_id", cors(), async (req, res) => {
 });
 
 router.get("/retro_pilotes", cors(), async (req, res) => {
-    var retro_pilotes = await getRetroPilotes();
+    var retro_pilotes = await getRetroPilotes(false);
     res.render("retro_pilotes", { retro_pilotes: retro_pilotes })
 });
 
 router.get("/retro_ecuries", cors(), async (req, res) => {
-    var retro_ecuries = await getEcuries();
+    var retro_ecuries = await getEcuries(false);
     res.render("retro_ecuries", { retro_ecuries: retro_ecuries })
 });
 
 router.get("/retro_circuits", cors(), async (req, res) => {
-    var retro_circuits = await getCircuits();
+    var retro_circuits = await getCircuits(false);
     res.render("retro_circuits", { retro_circuits: retro_circuits })
 });
 

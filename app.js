@@ -61,14 +61,14 @@ app.use((req, res, next) => {
 }); // Middleware permettant de configurer la Content Security Policy (CSP)
 
 app.get("/", async (req, res) => {
-    var podiumDriversFront = await getLastPodium(); // Récupération du podium de la dernière course
-    var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
-    var actualTeamsStanding = await getTeamsActualStandings(); // Récupération du classement actuel des écuries
+    var podiumDriversFront = await getLastPodium(false); // Récupération du podium de la dernière course
+    var actualDriversStanding = await getDriversActualStandings(false); // Récupération du classement actuel des pilotes
+    var actualTeamsStanding = await getTeamsActualStandings(false); // Récupération du classement actuel des écuries
     res.render("accueil", { podiumDrivers: podiumDriversFront, actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
 });
 
 app.get("/ecuries", async (req, res) => {
-    var teams = await getActualTeams();
+    var teams = await getActualTeams(false);
     res.render("ecuries", { teamsFront: teams });
 });
 
@@ -182,8 +182,8 @@ app.get("/circuit/:circuit_id", async (req, res) => {
 });
 
 app.get("/classement", async (req, res) => {
-    var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
-    var actualTeamsStanding = await getTeamsActualStandings(); // Récupération du classement actuel des écuries
+    var actualDriversStanding = await getDriversActualStandings(false); // Récupération du classement actuel des pilotes
+    var actualTeamsStanding = await getTeamsActualStandings(false); // Récupération du classement actuel des écuries
     res.render("classement", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
 });
 

@@ -4,16 +4,18 @@ const path = require('path'); // Module permettant de gérer les chemins de fich
 
 /**
  * @function
- * @description Fonction permettant de récupérer l'ensemble des pilotes ayant courus en F1
- * @returns {Promise<Array>}
+ * @description Fonction permettant de récupérer l'ensemble des pilotes ayant couru en F1
+ * @param {boolean} update - Détermine si les données doivent être mises à jour.
+ * @returns {Promise<Array>} - Une promesse contenant un tableau d'objets représentant chaque pilote avec son prénom, nom, date de naissance, nationalité et identifiant.
  */
-async function getRetroPilotes() {
+async function getRetroPilotes(update) {
     try {
-
         const filePath = path.join(__dirname, '../cache/getRetroPilotes.json'); // On définit le chemin du fichier JSON
-        // Vérifier si le fichier existe
-        if (fs.existsSync(filePath)) {
-            // Lire le contenu du fichier
+        const filePathUpdate = path.join(__dirname, '../cache/updates/getRetroPilotes.json'); // Chemin du fichier JSON de mise à jour
+
+        // Vérifier si le fichier principal existe et que l'option update est désactivée
+        if (!update && fs.existsSync(filePath)) {
+            // Lire le contenu du fichier principal
             const dataF = fs.readFileSync(filePath, 'utf8');
 
             // Vérifier si le fichier n'est pas vide
@@ -23,10 +25,11 @@ async function getRetroPilotes() {
             }
         }
 
-        const data = await getFromErgast('drivers.json?limit=859');
-        const driverLists = data.MRData.DriverTable.Drivers;
+        // Récupérer les données depuis l'API Ergast
+        const response = await getFromErgast('drivers.json?limit=859');
+        const driverLists = response.MRData.DriverTable.Drivers;
 
-        // Array pour stocker les données des pilotes
+        // Array pour stocker les informations des pilotes
         let drivers = [];
 
         driverLists.forEach(driverList => {
@@ -48,7 +51,7 @@ async function getRetroPilotes() {
             drivers.push(driver); // Ajout du pilote au tableau
         });
 
-        // Sort drivers by age
+        // Trier les pilotes par âge croissant
         drivers.sort((a, b) => {
             const ageA = new Date().getFullYear() - new Date(a.birthday).getFullYear();
             const ageB = new Date().getFullYear() - new Date(b.birthday).getFullYear();
@@ -57,16 +60,14 @@ async function getRetroPilotes() {
 
         // Convertir les données en chaîne JSON
         const dataJSON = JSON.stringify(drivers, null, 2);
-        // Écrire les données dans un fichier JSON
-        fs.writeFile(filePath, dataJSON, (err) => {
-            if (err) {
-                console.error('Une erreur est survenue lors de l\'écriture du fichier JSON :', err);
-            } else {
-                console.log('Les données ont été écrites avec succès dans le fichier JSON.');
-            }
-        });
 
-        return drivers;
+        // Écrire les données dans le fichier JSON de mise à jour
+        fs.writeFileSync(filePathUpdate, dataJSON);
+
+        // Copier les données du fichier de mise à jour vers le fichier principal
+        fs.copyFileSync(filePathUpdate, filePath);
+
+        return;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
         throw error; // Propager l'erreur pour que le code appelant puisse la gérer

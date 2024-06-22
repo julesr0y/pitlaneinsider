@@ -14,7 +14,11 @@ const getActualTeam = require("../utils/getActualTeam"); // Fonction permettant 
 const getActualTeams = require("../utils/getActualTeams"); // Fonction permettant de récupérer les équipes de la saison actuelle
 const getTeam = require("../utils/getTeam"); // Fonction permettant de récupérer une équipe
 const getTracks = require("../utils/getTracks"); // Fonction permettant de récupérer les circuits de la saison actuelle
-const getTrack = require("../utils/getTrack"); // Fonction permettant de récupérer un circuit
+const getEcuries = require("../utils/getEcuries"); // Fonction permettant de récupérer les écuries retro
+const getRetroAccueil = require("../utils/getRetroAccueil"); // Fonction permettant de récupérer les infos présentes sur la page Retro - Accueil
+const getWinners = require("../utils/getWinners"); // Fonction permettant de récupérer les gagnants
+const getCircuits = require('../utils/getCircuits'); // Fonction permettant de récupérer les circuits
+const getRetroPilotes = require('../utils/getRetroPilotes'); // Fonction permettant de récupérer les pilotes retro
 
 router.get("/administration/panel", requireSession, requireAdmin, async (req, res) => {
     res.render("admin_panel");
@@ -22,7 +26,16 @@ router.get("/administration/panel", requireSession, requireAdmin, async (req, re
 
 router.get("/administration/updateCaches", requireSession, requireAdmin, async (req, res) => {
     await getActualPilotes(true);
+    await getDriversActualStandings(true);
     await getCalendrier(true);
+    await getActualTeams(true);
+    await getEcuries(true);
+    await getLastPodium(true);
+    await getRetroAccueil(true);
+    await getWinners(true);
+    await getCircuits(true);
+    await getRetroPilotes(true);
+    await getTeamsActualStandings(true);
 
     res.send("Caches mis à jour");
 });

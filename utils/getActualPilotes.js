@@ -118,9 +118,7 @@ async function getActualPilotesWithConstructors(update) {
         }
     }
 
-    // Lire les données finales depuis le fichier principal et les retourner
-    const finalData = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(finalData);
+    return;
 }
 
 module.exports = getActualPilotesWithConstructors;
