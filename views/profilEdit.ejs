@@ -28,6 +28,11 @@
                     class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
                     value="<%= new Date(userInfosFront.naissance.getTime() - userInfosFront.naissance.getTimezoneOffset() * 60000).toISOString().split('T')[0] %>"
                     required>
+                <select name="language" id="language"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" placeholder="Langue" required>
+                    <option value="en" <%=userInfosFront.language==='en' ? 'selected' : '' %>>Anglais</option>
+                    <option value="fr" <%=userInfosFront.language==='fr' ? 'selected' : '' %>>Français</option>
+                </select>
             </div>
             <div class="flex items-center justify-between mb-4">
                 <button type="submit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl w-full mr-2">

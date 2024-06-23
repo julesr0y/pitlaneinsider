@@ -1,13 +1,13 @@
 {
 	"header": {
-		"teams": "header.teams",
-		"drivers": "header.drivers",
-		"calendar": "header.calendar",
-		"standings": "header.standings",
-		"reglementation": "header.reglementation",
-		"retro_f1": "header.retro_f1",
-		"live": "header.live",
-		"account": "header.account"
+		"teams": "ECURIES",
+		"drivers": "PILOTES",
+		"calendar": "CALENDRIER",
+		"standings": "CLASSEMENTS",
+		"reglementation": "REGLES",
+		"retro_f1": "RETRO F1",
+		"live": "LIVE",
+		"account": "COMPTE"
 	},
 	"home": {
 		"next_race": "Prochaine course",
