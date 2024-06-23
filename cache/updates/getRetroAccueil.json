@@ -1,0 +1,20 @@
+[
+  {
+    "firstName": "Michael",
+    "lastName": "Schumacher",
+    "year": "2004",
+    "wins": 7
+  },
+  {
+    "firstName": "Lewis",
+    "lastName": "Hamilton",
+    "year": "2020",
+    "wins": 7
+  },
+  {
+    "firstName": "Juan",
+    "lastName": "Fangio",
+    "year": "1957",
+    "wins": 5
+  }
+]

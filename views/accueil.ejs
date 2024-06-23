@@ -43,27 +43,39 @@
     <div class="next text-center text-white bg-black py-2">
         <h1>
             <div class="flex items-center justify-center gap-1">
-                <span>Prochaine course</span>
+                <span>
+                    <%= __('home.next_race') %>
+                </span>
                 <span>-</span>
-                <span id="race-location">Chargement...</span>
+                <span id="race-location">
+                    <%= __('home.loading') %>
+                </span>
                 <span></span>
                 <span id="flag"></span>
             </div>
             <div id="countdown" class="flex justify-center mt-4">
                 <div class="flex flex-col items-center mx-2">
-                    <span class="text-sm text-center mb-1">J</span>
+                    <span class="text-sm text-center mb-1">
+                        <%= __('home.days') %>
+                    </span>
                     <span id="days" class="inline-block w-12 text-center text-2xl">00</span>
                 </div>
                 <div class="flex flex-col items-center mx-2">
-                    <span class="text-sm text-center mb-1">H</span>
+                    <span class="text-sm text-center mb-1">
+                        <%= __('home.hours') %>
+                    </span>
                     <span id="hours" class="inline-block w-12 text-center text-2xl">00</span>
                 </div>
                 <div class="flex flex-col items-center mx-2">
-                    <span class="text-sm text-center mb-1">MIN</span>
+                    <span class="text-sm text-center mb-1">
+                        <%= __('home.minutes') %>
+                    </span>
                     <span id="minutes" class="inline-block w-12 text-center text-2xl">00</span>
                 </div>
                 <div class="flex flex-col items-center mx-2">
-                    <span class="text-sm text-center mb-1">S</span>
+                    <span class="text-sm text-center mb-1">
+                        <%= __('home.seconds') %>
+                    </span>
                     <span id="seconds" class="inline-block w-12 text-center text-2xl">00</span>
                 </div>
             </div>
@@ -74,7 +86,9 @@
         <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
             <div id="chPilotes"
                 class="h-32 bg-second-color flex flex-col justify-center items-center font-F1Bold rounded-3xl">
-                <span class="text-center">Championnat pilotes</span>
+                <span class="text-center">
+                    <%= __('home.drivers_championship') %>
+                </span>
                 <span class="flex justify-evenly items-center mt-auto gap-6">
                     <span class="flex flex-col items-center text-xl">
                         <span>
@@ -92,7 +106,9 @@
                 </span>
             </div>
             <div id="chContructeurs" class="h-32 bg-second-color flex flex-col items-center rounded-3xl">
-                <span class="text-center font-F1Bold">Championnat constructeurs</span>
+                <span class="text-center font-F1Bold">
+                    <%= __('home.teams_championship') %>
+                </span>
                 <span>
                     <img src="/img/2024/logo/<%= actualTeamsStanding[0].equipe_id %>.webp"
                         class="h-12 md:h-20 w-auto mt-3">
@@ -101,8 +117,9 @@
         </div>
 
         <div class="w-full bg-second-color mt-4 rounded-3xl">
-            <span class="flex justify-center text-center mb-4 font-F1Bold">Dernier podium - <%=
-                    podiumDrivers[3].raceName %></span>
+            <span class="flex justify-center text-center mb-4 font-F1Bold">
+                <%= __('home.last_podium') %> - <%= podiumDrivers[3].raceName %>
+            </span>
             <div class="flex justify-evenly items-end h-full">
                 <div class="flex flex-col items-center">
                     <img src="/img/2024/drivers/<%= podiumDrivers[1].id %>.webp" class="h-20 w-auto">
@@ -135,7 +152,9 @@
         </div>
 
         <div id="class" class="w-full bg-second-color mt-4 py-2 rounded-3xl">
-            <span class="flex justify-center text-center font-F1Bold">Classement pilotes</span>
+            <span class="flex justify-center text-center font-F1Bold">
+                <%= __('home.drivers_standings') %>
+            </span>
             <span class="flex justify-evenly">
                 <span>
                     <% actualDriversStanding.slice(0, 10).forEach(function(pilote) { %>

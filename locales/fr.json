@@ -1,0 +1,24 @@
+{
+	"header": {
+		"teams": "header.teams",
+		"drivers": "header.drivers",
+		"calendar": "header.calendar",
+		"standings": "header.standings",
+		"reglementation": "header.reglementation",
+		"retro_f1": "header.retro_f1",
+		"live": "header.live",
+		"account": "header.account"
+	},
+	"home": {
+		"next_race": "Prochaine course",
+		"loading": "Chargement...",
+		"days": "J",
+		"hours": "H",
+		"minutes": "MIN",
+		"seconds": "S",
+		"drivers_championship": "Championnat pilotes",
+		"teams_championship": "Championnat constructeurs",
+		"last_podium": "Dernier podium",
+		"drivers_standings": "Classement pilotes"
+	}
+}

@@ -3,6 +3,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const i18n = require('i18n');
 var logger = require('morgan');
 const cors = require("cors");
 const helmet = require("helmet");
@@ -59,6 +60,43 @@ app.use((req, res, next) => {
     );
     next();
 }); // Middleware permettant de configurer la Content Security Policy (CSP)
+i18n.configure({
+    locales: ['en', 'fr'], // Langues supportées
+    directory: path.join(__dirname, 'locales'), // Répertoire des fichiers de langue
+    defaultLocale: 'en', // Langue par défaut
+    queryParameter: 'lang', // Paramètre de requête pour définir la langue (optionnel)
+    autoReload: true, // Rechargement automatique des fichiers de langue lorsqu'ils sont modifiés (optionnel)
+    syncFiles: true, // Synchronisation des fichiers de langue (optionnel)
+    cookie: 'lang', // Nom du cookie pour stocker la langue sélectionnée par l'utilisateur (optionnel)
+    objectNotation: true, // Utilisation de la notation d'objet pour accéder aux clés de traduction (optionnel)
+});
+app.use(i18n.init);
+
+// Middleware pour gérer la langue de l'utilisateur
+app.use(async (req, res, next) => {
+    if (verifySession(req)) {
+        try {
+            const [rows] = await dbPool.query('SELECT language FROM users WHERE idUser = ?', [req.session.user.idUser]);
+            if (rows.length > 0) {
+                const userLanguage = rows[0].language;
+                req.setLocale(userLanguage); // Définir la langue de l'utilisateur
+            } else {
+                req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n
+            }
+        } catch (err) {
+            console.error('Erreur lors de la récupération de la langue utilisateur:', err);
+            req.setLocale(i18n.getLocale()); // En cas d'erreur, utiliser la langue par défaut de i18n
+        }
+    } else {
+        req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n pour les utilisateurs non authentifiés
+    }
+
+    // Affecter i18n à res.locals pour le rendre disponible dans les templates EJS
+    res.locals.i18n = i18n;
+
+    next();
+});
+
 
 app.get("/", async (req, res) => {
     var podiumDriversFront = await getLastPodium(false); // Récupération du podium de la dernière course

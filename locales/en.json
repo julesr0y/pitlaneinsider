@@ -1,0 +1,24 @@
+{
+	"header": {
+		"teams": "TEAMS",
+		"drivers": "DRIVERS",
+		"calendar": "CALENDAR",
+		"standings": "STANDINGS",
+		"reglementation": "REGLEMENTATION",
+		"retro_f1": "RETRO F1",
+		"live": "LIVE",
+		"account": "ACCOUNT"
+	},
+	"home": {
+		"next_race": "Next race",
+		"loading": "Loading...",
+		"days": "D",
+		"hours": "H",
+		"minutes": "M",
+		"seconds": "S",
+		"drivers_championship": "Drivers championship",
+		"teams_championship": "Teams championship",
+		"last_podium": "Last podium",
+		"drivers_standings": "Drivers standings"
+	}
+}
