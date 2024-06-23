@@ -52,5 +52,16 @@
 		"total_poles": "Poles",
 		"total_dnf": "DNF",
 		"victories_title": "Victoires"
+	},
+	"calendar": {
+		"season": "Saison 2024 - Calendrier",
+		"next_race": "Prochaine course"
+	},
+	"calendar_element": {
+		"creation_year": "Création",
+		"laps": "Tours",
+		"one_lap_length": "Distance sur un tour",
+		"length": "Distance totale",
+		"pole_record": "Pole record"
 	}
 }

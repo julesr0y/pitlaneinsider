@@ -9,11 +9,7 @@
 </head>
 
 <body class="bg-gray-100 h-auto flex flex-col justify-center font-F1Regular">
-    <div
-        class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-        Saison 2024 - Circuits
-    </div>
-    <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+    <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3 mt-8">
         <div class="flex items-center justify-center gap-4">
             <img src="/img/countryFlags/<%= trackFront.trackCountry.toLowerCase() %>.svg" alt="Drapeau de l'Italie"
                 class="h-12 w-auto">
@@ -30,19 +26,29 @@
 
         <!-- Race Info -->
         <div class="text-center mt-4">
-            <p><strong>Création : </strong>
+            <p><strong>
+                    <%= __('calendar_element.creation_year') %> :
+                </strong>
                 <%= dataCircuit.creationYear %>
             </p>
-            <p><strong>Tours : </strong>
+            <p><strong>
+                    <%= __('calendar_element.laps') %> :
+                </strong>
                 <%= dataCircuit.lapsNumber %>
             </p>
-            <p><strong>Distance sur un tour : </strong>
+            <p><strong>
+                    <%= __('calendar_element.one_lap_length') %> :
+                </strong>
                 <%= dataCircuit.oneLapDistance %>km
             </p>
-            <p><strong>Distance totale : </strong>
+            <p><strong>
+                    <%= __('calendar_element.length') %> :
+                </strong>
                 <%= dataCircuit.totalDistance %>km
             </p>
-            <p><strong>Pole record : </strong>
+            <p><strong>
+                    <%= __('calendar_element.pole_record') %> :
+                </strong>
                 <%= dataCircuit.lapRecord %>
             </p>
         </div>

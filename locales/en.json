@@ -52,5 +52,16 @@
 		"total_poles": "Poles",
 		"total_dnf": "DNF",
 		"victories_title": "Victories"
+	},
+	"calendar": {
+		"season": "2024 Season - Calendar",
+		"next_race": "Next race"
+	},
+	"calendar_element": {
+		"creation_year": "Creation year",
+		"laps": "Laps",
+		"one_lap_length": "One lap length",
+		"length": "Length",
+		"pole_record": "Pole record"
 	}
 }
