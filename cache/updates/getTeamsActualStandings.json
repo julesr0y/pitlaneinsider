@@ -3,25 +3,25 @@
     "nom": "Red Bull",
     "equipe_id": "red_bull",
     "position": 1,
-    "points": "301"
+    "points": "330"
   },
   {
     "nom": "Ferrari",
     "equipe_id": "ferrari",
     "position": 2,
-    "points": "252"
+    "points": "270"
   },
   {
     "nom": "McLaren",
     "equipe_id": "mclaren",
     "position": 3,
-    "points": "212"
+    "points": "237"
   },
   {
     "nom": "Mercedes",
     "equipe_id": "mercedes",
     "position": 4,
-    "points": "124"
+    "points": "215"
   },
   {
     "nom": "Aston Martin",
@@ -36,16 +36,16 @@
     "points": "28"
   },
   {
-    "nom": "Haas F1 Team",
-    "equipe_id": "haas",
-    "position": 7,
-    "points": "7"
-  },
-  {
     "nom": "Alpine F1 Team",
     "equipe_id": "alpine",
+    "position": 7,
+    "points": "8"
+  },
+  {
+    "nom": "Haas F1 Team",
+    "equipe_id": "haas",
     "position": 8,
-    "points": "5"
+    "points": "7"
   },
   {
     "nom": "Williams",
