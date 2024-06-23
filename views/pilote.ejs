@@ -10,9 +10,6 @@
 </head>
 
 <body class="h-auto flex flex-col justify-center font-F1Regular">
-    <div class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-        Saison 2024 - Pilotes
-    </div>   
     <div class="pt-10 px-4">
         <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
             <div class="flex flex-row justify-between">
@@ -20,14 +17,20 @@
                     <img src="/img/2024/drivers/<%= id %>.webp"
                         alt="<%= piloteFront2.surname %> <%= piloteFront2.name %>" class="h-32 w-auto mb-0">
                     <div class="bg-main-color text-white p-2 sm:p-4 shadow-md mt-0">
-                        <p class="text-base sm:text-lg font-F1Bold">Saison actuelle</p>
-                        <p class="text-sm sm:text-base">Courses: <%= piloteFront.totalCoursesThisSeason %>
+                        <p class="text-base sm:text-lg font-F1Bold">
+                            <%= __('driver.actual_season') %>
                         </p>
-                        <p class="text-sm sm:text-base">Points: <%= piloteFront.totalPointsThisSeason %>
+                        <p class="text-sm sm:text-base">
+                            <%= __('driver.races') %>: <%= piloteFront.totalCoursesThisSeason %>
                         </p>
-                        <p class="text-sm sm:text-base">Podiums: <%= piloteFront.totalPodiumsThisSeason %>
+                        <p class="text-sm sm:text-base">
+                            <%= __('driver.points') %>: <%= piloteFront.totalPointsThisSeason %>
                         </p>
-                        <p class="text-sm sm:text-base">Victoires: <%= piloteFront.totalVictoiresThisSeason %>
+                        <p class="text-sm sm:text-base">
+                            <%= __('driver.podiums') %>: <%= piloteFront.totalPodiumsThisSeason %>
+                        </p>
+                        <p class="text-sm sm:text-base">
+                            <%= __('driver.victories') %>: <%= piloteFront.totalVictoiresThisSeason %>
                         </p>
                     </div>
                 </div>
@@ -37,7 +40,8 @@
                             <%= piloteFront2.name %>
                     </h1>
                     <p class="text-sm sm:text-base text-gray-600 text-center">
-                        <%= piloteFront2.birthDate %> (<%= piloteFront2.age %> ans)
+                        <%= piloteFront2.birthDate %> (<%= piloteFront2.age %>
+                                <%= __('driver.age') %>)
                     </p>
                     <div class="grid grid-cols-2 grid-rows-2 gap-x-4 justify-center items-center mt-16">
                         <div class="flex items-center justify-center">
@@ -63,27 +67,38 @@
 
             <!-- Career Info -->
             <div class="text-center mt-4">
-                <h3 class="text-base sm:text-lg font-bold">Carrière:</h3>
-                <p class="mt-1 text-sm sm:text-base">Début carrière: <%= piloteFront.firstSeason %>
+                <h3 class="text-base sm:text-lg font-bold">
+                    <%= __('driver.carreer_title') %>:
+                </h3>
+                <p class="mt-1 text-sm sm:text-base">
+                    <%= __('driver.carreer_start') %>: <%= piloteFront.firstSeason %>
                 </p>
-                <p class="text-sm sm:text-base">Podiums: <%= piloteFront.totalPodiums %>
+                <p class="text-sm sm:text-base">
+                    <%= __('driver.total_podiums') %>: <%= piloteFront.totalPodiums %>
                 </p>
-                <p class="text-sm sm:text-base">Victoires: <%= piloteFront.totalVictoires %>
+                <p class="text-sm sm:text-base">
+                    <%= __('driver.total_victories') %>: <%= piloteFront.totalVictoires %>
                 </p>
-                <p class="text-sm sm:text-base">Courses: <%= piloteFront.totalCourses %>
+                <p class="text-sm sm:text-base">
+                    <%= __('driver.total_races') %>: <%= piloteFront.totalCourses %>
                 </p>
-                <p class="text-sm sm:text-base">Total points: <%= piloteFront.totalPoints %>
+                <p class="text-sm sm:text-base">
+                    <%= __('driver.total_points') %>: <%= piloteFront.totalPoints %>
                 </p>
-                <p class="text-sm sm:text-base">Total poles: <%= piloteFront.totalPoles %>
+                <p class="text-sm sm:text-base">
+                    <%= __('driver.total_poles') %>: <%= piloteFront.totalPoles %>
                 </p>
-                <p class="text-sm sm:text-base">DNF: <%= piloteFront.totalAbandons %>
+                <p class="text-sm sm:text-base">
+                    <%= __('driver.total_dnf') %>: <%= piloteFront.totalAbandons %>
                 </p>
             </div>
 
             <% if(piloteFront.grandsPrixRemportes.length> 0) { %>
 
                 <div class="text-center mt-4">
-                    <h3 class="text-base sm:text-lg font-bold">Victoires:</h3>
+                    <h3 class="text-base sm:text-lg font-bold">
+                        <%= __('driver.victories_title') %>:
+                    </h3>
 
                     <% piloteFront.grandsPrixRemportes.forEach(function(victory) { %>
 
@@ -104,7 +119,7 @@
 
         </div>
     </div>
-    <%- include('partials/footer.ejs') %>
+    <%- include("partials/footer.ejs") %>
 </body>
 
 </html>

@@ -20,5 +20,25 @@
 		"teams_championship": "Teams championship",
 		"last_podium": "Last podium",
 		"drivers_standings": "Drivers standings"
+	},
+	"drivers": {
+		"season": "2024 Season - Drivers"
+	},
+	"driver": {
+		"age": "years old",
+		"actual_season": "Actual season",
+		"races": "Races",
+		"points": "Points",
+		"podiums": "Podiums",
+		"victories": "Victories",
+		"carreer_title": "Carreer",
+		"carreer_start": "Carreer start",
+		"total_podiums": "Podiums",
+		"total_victories": "Victories",
+		"total_races": "Races",
+		"total_points": "Points",
+		"total_poles": "Poles",
+		"total_dnf": "DNF",
+		"victories_title": "Victories"
 	}
 }

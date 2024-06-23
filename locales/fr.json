@@ -20,5 +20,25 @@
 		"teams_championship": "Championnat constructeurs",
 		"last_podium": "Dernier podium",
 		"drivers_standings": "Classement pilotes"
+	},
+	"drivers": {
+		"season": "Saison 2024 - Pilotes"
+	},
+	"driver": {
+		"actual_season": "Saison actuelle",
+		"races": "Courses",
+		"points": "Points",
+		"podiums": "Podiums",
+		"victories": "Victoires",
+		"age": "ans",
+		"carreer_title": "Carrière",
+		"carreer_start": "Début carrière",
+		"total_podiums": "Podiums",
+		"total_victories": "Victoires",
+		"total_races": "Courses",
+		"total_points": "Points",
+		"total_poles": "Poles",
+		"total_dnf": "DNF",
+		"victories_title": "Victoires"
 	}
 }

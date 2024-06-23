@@ -8,7 +8,6 @@ const getFromErgast = require("./getFromErgast"); // Fonction permettant de réc
 async function getDriverData(driver_id) {
     var driverData = await getFromErgast(`drivers/${driver_id}.json`);
     return await new Promise((resolve, reject) => {
-        console.log(driverData);
         const driver = driverData.MRData.DriverTable.Drivers[0];
         var name = driver.familyName;
         var surname = driver.givenName;
