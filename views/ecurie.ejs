@@ -23,10 +23,13 @@
 
             <!-- Text Content -->
             <div class="text-center">
-                <p class="text-gray-600">Arrivée en F1 : <%= dataTeam.date_creation %>
+                <p class="text-gray-600">
+                    <%= __('team.team_start') %> : <%= dataTeam.date_creation %>
                 </p>
                 <div class="my-4">
-                    <h3 class="font-bold">Pilotes :</h3>
+                    <h3 class="font-bold">
+                        <%= __('team.drivers') %> :
+                    </h3>
                     <% teamFront.drivers.forEach(function(driver){ %>
                         <div class="flex items-center justify-center">
                             <img src="/img/countryFlags/<%= driver.nationality %>.svg" alt="<%= driver.nationality %>"
@@ -37,17 +40,23 @@
                         </div>
                         <% }) %>
                 </div>
-                <p class="text-gray-600">Podiums : <%= dataTeam.nbPodiums %>
+                <p class="text-gray-600">
+                    <%= __('team.podiums') %> : <%= dataTeam.nbPodiums %>
                 </p>
-                <p class="text-gray-600">Victoires : <%= dataTeam.nbVictoires %>
+                <p class="text-gray-600">
+                    <%= __('team.victories') %> : <%= dataTeam.nbVictoires %>
                 </p>
-                <p class="text-gray-600">Points inscrits : <%= dataTeam.nbPoints %>
+                <p class="text-gray-600">
+                    <%= __('team.points') %> : <%= dataTeam.nbPoints %>
                 </p>
-                <p class="text-gray-600 mb-4">Courses disputées : <%= dataTeam.nbCourses %>
+                <p class="text-gray-600 mb-4">
+                    <%= __('team.races') %> : <%= dataTeam.nbCourses %>
                 </p>
 
                 <div class="my-4">
-                    <h3 class="font-bold">Monoplace :</h3>
+                    <h3 class="font-bold">
+                        <%= __('team.single_seater') %> :
+                    </h3>
                     <p class="text-gray-600">
                         <%= dataTeam.monoplace %>
                     </p>

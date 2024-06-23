@@ -21,6 +21,18 @@
 		"last_podium": "Dernier podium",
 		"drivers_standings": "Classement pilotes"
 	},
+	"teams": {
+		"season": "Saison 2024 - Ecuries"
+	},
+	"team": {
+		"team_start": "Arrivée en F1",
+		"drivers": "Pilotes",
+		"podiums": "Podiums",
+		"victories": "Victoires",
+		"points": "Points inscrits",
+		"races": "Courses disputées",
+		"single_seater": "Monoplace"
+	},
 	"drivers": {
 		"season": "Saison 2024 - Pilotes"
 	},

@@ -21,6 +21,18 @@
 		"last_podium": "Last podium",
 		"drivers_standings": "Drivers standings"
 	},
+	"teams": {
+		"season": "2024 Season - Teams"
+	},
+	"team": {
+		"team_start": "Beginnings in F1",
+		"drivers": "Drivers",
+		"podiums": "Podiums",
+		"victories": "Victories",
+		"points": "Points",
+		"races": "Races",
+		"single_seater": "Single-seater"
+	},
 	"drivers": {
 		"season": "2024 Season - Drivers"
 	},
