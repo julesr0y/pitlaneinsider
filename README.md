@@ -1,6 +1,6 @@
 # PitLane Insider
 
-##### *Groupe 03 - La Remontée ISEN Formula 1 Team*
+##### *Groupe 03 - La Remontée Formula 1 Team*
 
 ### Projet CIR2 - ROY Jules, DUMAS Antonin, HU Lucas, HUBERT Matthieu, DELRUE Cyprien, BASSET Maxime, BERGHE Nathan
 

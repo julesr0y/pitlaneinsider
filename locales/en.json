@@ -63,5 +63,82 @@
 		"one_lap_length": "One lap length",
 		"length": "Length",
 		"pole_record": "Pole record"
+	},
+	"standings": {
+		"season": "2024 Season - Standings",
+		"drivers": "Drivers",
+		"teams": "Teams",
+		"position": "Position",
+		"points": "Points"
+	},
+	"reglementation": {
+		"reglementation_title": "Reglementation",
+		"yellow_flag_title": "Yellow flag",
+		"yellow_flag_description": "Indicates danger on the runway, drivers must slow down.",
+		"red_flag_title": "Red flag",
+		"red_flag_description": "Indicates that the race is stopped due to a dangerous condition.",
+		"blue_flag_title": "Blue flag",
+		"blue_flag_description": "Indicates that a faster driver is approaching, the driver must let him pass.",
+		"black_flag_title": "Black flag",
+		"black_flag_description": "Indicates that a driver is disqualified and must return to the pits.",
+		"green_flag_title": "Green flag",
+		"green_flag_description": "Indicates that the track is clear and the race can continue.",
+		"white_flag_title": "White flag",
+		"white_flag_description": "Indicates that one lap remains to be completed.",
+		"chequered_flag_title": "Chequered flag",
+		"chequered_flag_description": "Indicates the end of the race.",
+		"black_and_white_flag_title": "Black and white flag",
+		"black_and_white_flag_description": "Indicates that a driver is warned for unsportsmanlike behavior.",
+		"yellow_and_red_flag_title": "Yellow and red flag",
+		"yellow_and_red_flag_description": "Indicates reduced grip on the track."
+	},
+	"retro_f1": {
+		"home": {
+			"title": "Retro - Home",
+			"winners_title": "List of world champions drivers",
+			"driver_titles": "titles",
+			"all_data": "All Drivers | Teams | Tracks",
+			"all_seasons": "All seasons"
+		},
+		"winners": {
+			"title": "Formula 1 world champions drivers",
+			"number_of_titles": "Number of titles"
+		},
+		"all_data": {
+			"title_drivers": "Retro - Drivers",
+			"title_teams": "Retro - Teams",
+			"title_tracks": "Retro - Tracks",
+			"link_drivers": "Drivers",
+			"link_teams": "Teams",
+			"link_tracks": "Tracks",
+			"search_driver": "Search a driver",
+			"search_team": "Search a team",
+			"search_track": "Search a track",
+			"born": "Born",
+			"no_result": "No result"
+		},
+		"all_seasons": {
+			"season": "Season",
+			"link_standings": "Standing",
+			"link_calendar": "Calendar",
+			"standings": {
+				"title": "Retro - Standings",
+				"position": "Position",
+				"drivers": "Drivers",
+				"victories": "Victories",
+				"points": "Points"
+			},
+			"calendar": {
+				"title": "Retro - Calendar",
+				"winner": "Winner"
+			},
+			"gp_details": {
+				"title": "Retro - GP Details",
+				"position": "Position",
+				"drivers": "Drivers",
+				"starting_grid": "Starting grid",
+				"time": "Time"
+			}
+		}
 	}
 }

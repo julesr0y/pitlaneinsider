@@ -63,5 +63,82 @@
 		"one_lap_length": "Distance sur un tour",
 		"length": "Distance totale",
 		"pole_record": "Pole record"
+	},
+	"standings": {
+		"season": "Saison 2024 - Classements",
+		"drivers": "Pilotes",
+		"teams": "Constructeurs",
+		"position": "Position",
+		"points": "Points"
+	},
+	"reglementation": {
+		"reglementation_title": "Règlementation",
+		"yellow_flag_title": "Drapeau jaune",
+		"yellow_flag_description": "Indique un danger sur la piste, les pilotes doivent ralentir et ne pas dépasser.",
+		"red_flag_title": "Drapeau rouge",
+		"red_flag_description": "Indique l'arrêt de la course, les pilotes doivent rentrer aux stands.",
+		"blue_flag_title": "Drapeau bleu",
+		"blue_flag_description": "Indique qu'un pilote est sur le point de se faire dépasser par un pilote en tête de course.",
+		"black_flag_title": "Drapeau noir",
+		"black_flag_description": "Indique qu'un pilote est disqualifié de la course, il doit rentrer aux stands.",
+		"green_flag_title": "Drapeau vert",
+		"green_flag_description": "Indique que la piste est libre et que la course peut commencer/continuer.",
+		"white_flag_title": "Drapeau blanc",
+		"white_flag_description": "Indique que le pilote est sur son dernier tour.",
+		"chequered_flag_title": "Drapeau à damier",
+		"chequered_flag_description": "Indique la fin de la course.",
+		"black_and_white_flag_title": "Drapeau noir et blanc",
+		"black_and_white_flag_description": "Indique un avertissement pour comportement antisportif.",
+		"yellow_and_red_flag_title": "Drapeau jaune et rouge",
+		"yellow_and_red_flag_description": "Indique une baisse d'adhérence sur la piste."
+	},
+	"retro_f1": {
+		"home": {
+			"title": "Rétro - Accueil",
+			"winners_title": "Liste des pilotes titrés",
+			"driver_titles": "titres",
+			"all_data": "Liste des Pilotes | Ecuries | Circuits",
+			"all_seasons": "Liste des saisons"
+		},
+		"winners": {
+			"title": "Liste des pilotes titrés en Formule 1",
+			"number_of_titles": "Nombre de titres"
+		},
+		"all_data": {
+			"title_drivers": "Rétro - Pilotes",
+			"title_teams": "Rétro - Ecuries",
+			"title_tracks": "Rétro - Circuits",
+			"link_drivers": "Pilotes",
+			"link_teams": "Ecuries",
+			"link_tracks": "Circuits",
+			"search_driver": "Rechercher un pilote",
+			"search_team": "Rechercher une écurie",
+			"search_track": "Rechercher un circuit",
+			"born": "Né le",
+			"no_result": "retro_f1.all_data.no_result"
+		},
+		"all_seasons": {
+			"season": "Saison",
+			"link_standings": "Classement",
+			"link_calendar": "Calendrier",
+			"standings": {
+				"title": "Rétro - Classements",
+				"position": "Position",
+				"drivers": "Pilotes",
+				"victories": "Victoires",
+				"points": "Points"
+			},
+			"calendar": {
+				"title": "Rétro - Calendrier",
+				"winner": "Vainqueur"
+			},
+			"gp_details": {
+				"title": "Rétro - Détails du GP",
+				"position": "Position",
+				"drivers": "Pilotes",
+				"starting_grid": "Grille de départ",
+				"time": "Temps"
+			}
+		}
 	}
 }

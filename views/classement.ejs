@@ -11,22 +11,31 @@
     <div class="app-container">
         <div
             class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-            Saison 2024 - Classements
+            <%= __('standings.season') %>
         </div>
         <div class="tabs flex justify-center">
             <div class="tab">
-                <button id="btnPilotes" class="tablink active mr-4 underline"
-                    onclick="openTab('Pilotes')">Pilotes</button>
-                <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')">Constructeurs</button>
+                <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')">
+                    <%= __('standings.drivers') %>
+                </button>
+                <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')">
+                    <%= __('standings.teams') %>
+                </button>
             </div>
         </div>
         <main class="flex justify-center">
             <div id="Pilotes" class="bg-second-color p-4 sm:p-8 rounded-3xl mx-4 mt-8 w-9/10 md:w-2/3 text-center">
                 <div id="header-classement-pilotes" class="grid grid-cols-12">
                     <span class="col-span-1"></span>
-                    <span class="col-span-2 font-F1Bold">Position</span>
-                    <span class="col-span-6 font-F1Bold">Pilotes</span>
-                    <span class="col-span-3 font-F1Bold">Points</span>
+                    <span class="col-span-2 font-F1Bold">
+                        <%= __('standings.position') %>
+                    </span>
+                    <span class="col-span-6 font-F1Bold">
+                        <%= __('standings.drivers') %>
+                    </span>
+                    <span class="col-span-3 font-F1Bold">
+                        <%= __('standings.points') %>
+                    </span>
                 </div>
                 <div class="pilot-list grid grid-cols-12 gap-y-2">
                     <% actualDriversStanding.forEach(function(pilote) { %>
@@ -51,9 +60,15 @@
                 class="hidden bg-second-color p-4 sm:p-8 rounded-3xl mx-4 mt-8 w-9/10 md:w-2/3 text-center">
                 <div id="header-classement-pilotes" class="grid grid-cols-12">
                     <span class="col-span-1"></span>
-                    <span class="col-span-2 font-F1Bold">Position</span>
-                    <span class="col-span-6 font-F1Bold sm:ml-8 mr-8">Ecuries</span>
-                    <span class="col-span-3 font-F1Bold">Points</span>
+                    <span class="col-span-2 font-F1Bold">
+                        <%= __('standings.position') %>
+                    </span>
+                    <span class="col-span-6 font-F1Bold sm:ml-8 mr-8">
+                        <%= __('standings.teams') %>
+                    </span>
+                    <span class="col-span-3 font-F1Bold">
+                        <%= __('standings.points') %>
+                    </span>
                 </div>
                 <div class="team-list grid grid-cols-12 gap-y-2">
                     <% actualTeamsStanding.forEach(function(team) { %>

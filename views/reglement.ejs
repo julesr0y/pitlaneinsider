@@ -8,9 +8,10 @@
 </head>
 
 <body class="font-F1Regular bg-gray-50">
-    <div class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-        Règlement
-    </div>   
+    <div
+        class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        <%= __('reglementation.reglementation_title') %>
+    </div>
     <main class="w-11/12 mx-auto mt-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
@@ -21,9 +22,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Jaune</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.yellow_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique un danger sur la piste, les pilotes doivent ralentir.
+                            <%= __('reglementation.yellow_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -36,9 +39,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Rouge</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.red_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique que la course est arrêtée en raison d'une condition dangereuse.
+                            <%= __('reglementation.red_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -51,9 +56,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Bleu</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.blue_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique à un pilote qu'un autre pilote plus rapide cherche à le dépasser.
+                            <%= __('reglementation.blue_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -66,9 +73,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Noir</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.black_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique qu'un pilote est disqualifié et doit rentrer aux stands.
+                            <%= __('reglementation.black_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -81,9 +90,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Vert</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.green_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique que la piste est libre et que la course peut continuer.
+                            <%= __('reglementation.green_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -96,9 +107,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Blanc</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.white_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique qu'il reste un tour à compléter.
+                            <%= __('reglementation.white_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -111,9 +124,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau à Damier</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.chequered_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique la fin de la course.
+                            <%= __('reglementation.chequered_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -126,9 +141,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Noir et Blanc</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.black_and_white_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Avertissement pour conduite antisportive.
+                            <%= __('reglementation.black_and_white_flag_description') %>
                         </p>
                     </div>
                 </div>
@@ -141,9 +158,11 @@
                             class="w-full h-32 object-contain mx-auto">
                     </div>
                     <div class="flex flex-col items-center">
-                        <h2 class="text-xl font-bold mb-2">Drapeau Rouge et Jaune</h2>
+                        <h2 class="text-xl font-bold mb-2">
+                            <%= __('reglementation.yellow_and_red_flag_title') %>
+                        </h2>
                         <p class="text-gray-600">
-                            Indique une baisse d'adhérence sur la piste.
+                            <%= __('reglementation.yellow_and_red_flag_description') %>
                         </p>
                     </div>
                 </div>
