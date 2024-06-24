@@ -4,22 +4,31 @@
 <head>
     <%- include('partials/head.ejs') %>
         <%- include('partials/header.ejs') %>
-            <title>PLI - Live</title>
+            <title>PLI - <%= __('live.tab_title') %>
+            </title>
 </head>
 
 <body class="bg-gray-100 font-F1Regular">
     <div class="text-center text-2xl font-bold my-8">
         <span>
             <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
-            <span class="text-red-500">Live</span> -
+            <span class="text-red-500">
+                <%= __('live.live_title') %>
+            </span> -
             <span id="frontLocation"></span>
         </span> - <span id="frontSession"></span>
     </div>
 
     <div class="flex justify-center mb-8">
-        <button id="btnClassement" class="mr-4 underline" onclick="openTab('Classement')">Classement</button>
-        <button id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')">Race Control</button>
-        <button id="btnRadio" onclick="openTab('Radio')">Radio</button>
+        <button id="btnClassement" class="mr-4 underline" onclick="openTab('Classement')">
+            <%= __('live.link_standings') %>
+        </button>
+        <button id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')">
+            <%= __('live.link_race_control') %>
+        </button>
+        <button id="btnRadio" onclick="openTab('Radio')">
+            <%= __('live.link_radio') %>
+        </button>
     </div>
 
     <div class="flex justify-evenly">

@@ -22,6 +22,7 @@
 		"drivers_standings": "Drivers standings"
 	},
 	"teams": {
+		"tab_title": "Teams",
 		"season": "2024 Season - Teams"
 	},
 	"team": {
@@ -34,6 +35,7 @@
 		"single_seater": "Single-seater"
 	},
 	"drivers": {
+		"tab_title": "Drivers",
 		"season": "2024 Season - Drivers"
 	},
 	"driver": {
@@ -54,6 +56,7 @@
 		"victories_title": "Victories"
 	},
 	"calendar": {
+		"tab_title": "Calendar",
 		"season": "2024 Season - Calendar",
 		"next_race": "Next race"
 	},
@@ -65,6 +68,7 @@
 		"pole_record": "Pole record"
 	},
 	"standings": {
+		"tab_title": "Standings",
 		"season": "2024 Season - Standings",
 		"drivers": "Drivers",
 		"teams": "Teams",
@@ -72,6 +76,7 @@
 		"points": "Points"
 	},
 	"reglementation": {
+		"tab_title": "Reglementation",
 		"reglementation_title": "Reglementation",
 		"yellow_flag_title": "Yellow flag",
 		"yellow_flag_description": "Indicates danger on the runway, drivers must slow down.",
@@ -94,6 +99,7 @@
 	},
 	"retro_f1": {
 		"home": {
+			"tab_title": "Retro F1",
 			"title": "Retro - Home",
 			"winners_title": "List of world champions drivers",
 			"driver_titles": "titles",
@@ -101,10 +107,14 @@
 			"all_seasons": "All seasons"
 		},
 		"winners": {
+			"tab_title": "Retro Winners",
 			"title": "Formula 1 world champions drivers",
 			"number_of_titles": "Number of titles"
 		},
 		"all_data": {
+			"tab_title_drivers": "Retro Drivers",
+			"tab_title_teams": "Retro Teams",
+			"tab_title_tracks": "Retro Tracks",
 			"title_drivers": "Retro - Drivers",
 			"title_teams": "Retro - Teams",
 			"title_tracks": "Retro - Tracks",
@@ -118,10 +128,12 @@
 			"no_result": "No result"
 		},
 		"all_seasons": {
+			"tab_title": "Retro Seasons",
 			"season": "Season",
 			"link_standings": "Standing",
 			"link_calendar": "Calendar",
 			"standings": {
+				"tab_title": "Retro Standings",
 				"title": "Retro - Standings",
 				"position": "Position",
 				"drivers": "Drivers",
@@ -129,15 +141,57 @@
 				"points": "Points"
 			},
 			"calendar": {
+				"tab_title": "Retro Calendar",
 				"title": "Retro - Calendar",
 				"winner": "Winner"
 			},
 			"gp_details": {
+				"tab_title": "Retro GP Details",
 				"title": "Retro - GP Details",
 				"position": "Position",
 				"drivers": "Drivers",
 				"starting_grid": "Starting grid",
 				"time": "Time"
+			}
+		}
+	},
+	"live": {
+		"tab_title": "Live",
+		"live_title": "Live",
+		"link_standings": "Standings",
+		"link_race_control": "Race control",
+		"link_radio": "Radio"
+	},
+	"account": {
+		"profile": {
+			"tab_title": "Account",
+			"profile_title": "Your account",
+			"email": "Email",
+			"name": "Name",
+			"surname": "Surname",
+			"birthdate": "Birthdate",
+			"username": "Username",
+			"lang": "Language",
+			"btn_modify": "Modify",
+			"btn_log_out": "Log out",
+			"btn_admin": "Administration"
+		},
+		"profile_edit": {
+			"tab_title": "Edit Account",
+			"edit_title": "Modify your account",
+			"email": "Email",
+			"name": "Name",
+			"surname": "Surname",
+			"birthdate": "Birthdate",
+			"username": "Username",
+			"lang": "Language",
+			"btn_save": "Save",
+			"languages": {
+				"fr": "French",
+				"en": "English",
+				"es": "Spanish",
+				"de": "German",
+				"it": "Italian"
 			}
 		}
 	}

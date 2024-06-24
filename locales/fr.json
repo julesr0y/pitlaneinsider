@@ -22,6 +22,7 @@
 		"drivers_standings": "Classement pilotes"
 	},
 	"teams": {
+		"tab_title": "Ecuries",
 		"season": "Saison 2024 - Ecuries"
 	},
 	"team": {
@@ -34,6 +35,7 @@
 		"single_seater": "Monoplace"
 	},
 	"drivers": {
+		"tab_title": "Pilotes",
 		"season": "Saison 2024 - Pilotes"
 	},
 	"driver": {
@@ -54,6 +56,7 @@
 		"victories_title": "Victoires"
 	},
 	"calendar": {
+		"tab_title": "Calendrier",
 		"season": "Saison 2024 - Calendrier",
 		"next_race": "Prochaine course"
 	},
@@ -65,6 +68,7 @@
 		"pole_record": "Pole record"
 	},
 	"standings": {
+		"tab_title": "Classements",
 		"season": "Saison 2024 - Classements",
 		"drivers": "Pilotes",
 		"teams": "Constructeurs",
@@ -72,6 +76,7 @@
 		"points": "Points"
 	},
 	"reglementation": {
+		"tab_title": "Règlementation",
 		"reglementation_title": "Règlementation",
 		"yellow_flag_title": "Drapeau jaune",
 		"yellow_flag_description": "Indique un danger sur la piste, les pilotes doivent ralentir et ne pas dépasser.",
@@ -94,6 +99,7 @@
 	},
 	"retro_f1": {
 		"home": {
+			"tab_title": "Retro F1",
 			"title": "Rétro - Accueil",
 			"winners_title": "Liste des pilotes titrés",
 			"driver_titles": "titres",
@@ -101,10 +107,14 @@
 			"all_seasons": "Liste des saisons"
 		},
 		"winners": {
+			"tab_title": "Retro Titrés",
 			"title": "Liste des pilotes titrés en Formule 1",
 			"number_of_titles": "Nombre de titres"
 		},
 		"all_data": {
+			"tab_title_drivers": "Retro Pilotes",
+			"tab_title_teams": "Retro Ecuries",
+			"tab_title_tracks": "Retro Circuits",
 			"title_drivers": "Rétro - Pilotes",
 			"title_teams": "Rétro - Ecuries",
 			"title_tracks": "Rétro - Circuits",
@@ -115,13 +125,15 @@
 			"search_team": "Rechercher une écurie",
 			"search_track": "Rechercher un circuit",
 			"born": "Né le",
-			"no_result": "retro_f1.all_data.no_result"
+			"no_result": "Aucun résultat"
 		},
 		"all_seasons": {
+			"tab_title": "Retro Saisons",
 			"season": "Saison",
 			"link_standings": "Classement",
 			"link_calendar": "Calendrier",
 			"standings": {
+				"tab_title": "Retro Classements",
 				"title": "Rétro - Classements",
 				"position": "Position",
 				"drivers": "Pilotes",
@@ -129,15 +141,57 @@
 				"points": "Points"
 			},
 			"calendar": {
+				"tab_title": "Retro Calendrier",
 				"title": "Rétro - Calendrier",
 				"winner": "Vainqueur"
 			},
 			"gp_details": {
+				"tab_title": "Retro Détails GP",
 				"title": "Rétro - Détails du GP",
 				"position": "Position",
 				"drivers": "Pilotes",
 				"starting_grid": "Grille de départ",
 				"time": "Temps"
+			}
+		}
+	},
+	"live": {
+		"tab_title": "Direct",
+		"live_title": "Direct",
+		"link_standings": "Classement",
+		"link_race_control": "Contrôle de course",
+		"link_radio": "Radio"
+	},
+	"account": {
+		"profile": {
+			"tab_title": "Compte",
+			"profile_title": "Votre compte",
+			"email": "Email",
+			"name": "Nom",
+			"surname": "Prénom",
+			"birthdate": "Naissance",
+			"username": "Nom d'utilisateur",
+			"lang": "Langue",
+			"btn_modify": "Modifier",
+			"btn_log_out": "Déconnexion",
+			"btn_admin": "Administration"
+		},
+		"profile_edit": {
+			"tab_title": "Modifier le compte",
+			"edit_title": "Modifier votre compte",
+			"email": "Email",
+			"name": "Nom",
+			"surname": "Prénom",
+			"birthdate": "Naissance",
+			"username": "Nom d'utilisateur",
+			"lang": "Langue",
+			"btn_save": "Sauvegarder",
+			"languages": {
+				"fr": "Français",
+				"en": "Anglais",
+				"es": "Espagnol",
+				"de": "Allemand",
+				"it": "Italien"
 			}
 		}
 	}

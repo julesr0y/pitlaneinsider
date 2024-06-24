@@ -4,51 +4,66 @@
 <head>
     <%- include('partials/head.ejs') %>
         <%- include('partials/header.ejs') %>
-            <title>PLI - Profil</title>
+            <title>PLI - <%= __('account.profile.tab_title') %>
+            </title>
 </head>
 
 <body class="h-auto flex flex-col justify-center font-F1Regular">
-    <span class="font-F1Bold text-center pt-4">Votre compte</span>
+    <span class="font-F1Bold text-center pt-4">
+        <%= __('account.profile.profile_title') %>
+    </span>
     <div class="pt-4 px-4">
         <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
             <span>
-                <span class="text-gray-600">email : </span>
+                <span class="text-gray-600">
+                    <%= __('account.profile.email') %> :
+                </span>
                 <%= userInfosFront.email %>
             </span><br>
             <span>
-                <span class="text-gray-600">nom : </span>
+                <span class="text-gray-600">
+                    <%= __('account.profile.name') %> :
+                </span>
                 <%= userInfosFront.nom %>
             </span><br>
             <span>
-                <span class="text-gray-600">prénom : </span>
+                <span class="text-gray-600">
+                    <%= __('account.profile.surname') %> :
+                </span>
                 <%= userInfosFront.prenom %>
             </span><br>
             <span>
-                <span class="text-gray-600">naissance : </span>
+                <span class="text-gray-600">
+                    <%= __('account.profile.birthdate') %> :
+                </span>
                 <%= userInfosFront.naissance.toLocaleDateString() %>
             </span><br>
             <span>
-                <span class="text-gray-600">username : </span>
+                <span class="text-gray-600">
+                    <%= __('account.profile.username') %> :
+                </span>
                 <%= userInfosFront.username %>
             </span><br>
             <span>
-                <span class="text-gray-600">langue : </span>
+                <span class="text-gray-600">
+                    <%= __('account.profile.lang') %> :
+                </span>
                 <%= userInfosFront.language %>
             </span>
         </div>
     </div>
     <div class="inline-flex flex-col items-center mt-4">
         <a href="/edit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl mr-2 text-center w-44">
-            Modifier
+            <%= __('account.profile.btn_modify') %>
         </a>
         <a href="/signout"
             class="px-4 py-2 bg-deconnect text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
-            Déconnexion
+            <%= __('account.profile.btn_log_out') %>
         </a>
         <% if (adminValue==1) { %>
             <a href="/administration/panel"
                 class="px-4 py-2 bg-red-600 text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
-                Administration
+                <%= __('account.profile.btn_admin') %>
             </a>
             <% } %>
     </div>

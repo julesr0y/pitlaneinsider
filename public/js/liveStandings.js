@@ -248,10 +248,10 @@ function updateClassement(containerId, top20) {
     const titles = document.createElement('div');
     titles.classList.add('grid', 'grid-cols-4', 'justify-center', 'items-center', 'pb-4', 'font-F1Bold');
     titles.innerHTML = `
-        <span>Rank</span>
-        <span>Pilot</span>
+        <span>Position</span>
+        <span>Drivers</span>
         <span>Pits</span>
-        <span>Pneus</span>`;
+        <span>Tyres</span>`;
     container.appendChild(titles);
     top20.forEach((driver, index) => {
         const driverDiv = document.createElement('div');
