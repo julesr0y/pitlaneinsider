@@ -61,7 +61,7 @@ app.use((req, res, next) => {
     next();
 }); // Middleware permettant de configurer la Content Security Policy (CSP)
 i18n.configure({
-    locales: ['en', 'fr'], // Langues supportées
+    locales: ['en', 'fr', 'de', 'es', 'it'], // Langues supportées
     directory: path.join(__dirname, 'locales'), // Répertoire des fichiers de langue
     defaultLocale: 'en', // Langue par défaut
     queryParameter: 'lang', // Paramètre de requête pour définir la langue (optionnel)

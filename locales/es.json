@@ -1,0 +1,198 @@
+{
+    "header": {
+        "teams": "EQUIPOS",
+        "drivers": "PILOTOS",
+        "calendar": "CALENDARIO",
+        "standings": "CLASIFICACIONES",
+        "reglementation": "REGLAS",
+        "retro_f1": "RETRO F1",
+        "live": "EN VIVO",
+        "account": "CUENTA"
+    },
+    "home": {
+        "next_race": "Próxima carrera",
+        "loading": "Cargando...",
+        "days": "D",
+        "hours": "H",
+        "minutes": "MIN",
+        "seconds": "S",
+        "drivers_championship": "Campeonato de pilotos",
+        "teams_championship": "Campeonato de constructores",
+        "last_podium": "Último podio",
+        "drivers_standings": "Clasificación de pilotos"
+    },
+    "teams": {
+        "tab_title": "Equipos",
+        "season": "Temporada 2024 - Equipos"
+    },
+    "team": {
+        "team_start": "Debut en F1",
+        "drivers": "Pilotos",
+        "podiums": "Podios",
+        "victories": "Victorias",
+        "points": "Puntos",
+        "races": "Carreras disputadas",
+        "single_seater": "Monoplaza"
+    },
+    "drivers": {
+        "tab_title": "Pilotos",
+        "season": "Temporada 2024 - Pilotos"
+    },
+    "driver": {
+        "actual_season": "Temporada actual",
+        "races": "Carreras",
+        "points": "Puntos",
+        "podiums": "Podios",
+        "victories": "Victorias",
+        "age": "años",
+        "carreer_title": "Carrera",
+        "carreer_start": "Inicio de carrera",
+        "total_podiums": "Podios",
+        "total_victories": "Victorias",
+        "total_races": "Carreras",
+        "total_points": "Puntos",
+        "total_poles": "Poles",
+        "total_dnf": "DNF",
+        "victories_title": "Victorias"
+    },
+    "calendar": {
+        "tab_title": "Calendario",
+        "season": "Temporada 2024 - Calendario",
+        "next_race": "Próxima carrera"
+    },
+    "calendar_element": {
+        "creation_year": "Creación",
+        "laps": "Vueltas",
+        "one_lap_length": "Distancia por vuelta",
+        "length": "Distancia total",
+        "pole_record": "Récord de pole"
+    },
+    "standings": {
+        "tab_title": "Clasificaciones",
+        "season": "Temporada 2024 - Clasificaciones",
+        "drivers": "Pilotos",
+        "teams": "Constructores",
+        "position": "Posición",
+        "points": "Puntos"
+    },
+    "reglementation": {
+        "tab_title": "Reglas",
+        "reglementation_title": "Reglas",
+        "yellow_flag_title": "Bandera amarilla",
+        "yellow_flag_description": "Indica un peligro en la pista, los pilotos deben reducir la velocidad y no adelantar.",
+        "red_flag_title": "Bandera roja",
+        "red_flag_description": "Indica la detención de la carrera, los pilotos deben entrar a boxes.",
+        "blue_flag_title": "Bandera azul",
+        "blue_flag_description": "Indica que un piloto está a punto de ser adelantado por un piloto líder de la carrera.",
+        "black_flag_title": "Bandera negra",
+        "black_flag_description": "Indica que un piloto está descalificado de la carrera, debe entrar a boxes.",
+        "green_flag_title": "Bandera verde",
+        "green_flag_description": "Indica que la pista está libre y la carrera puede comenzar/continuar.",
+        "white_flag_title": "Bandera blanca",
+        "white_flag_description": "Indica que el piloto está en su última vuelta.",
+        "chequered_flag_title": "Bandera a cuadros",
+        "chequered_flag_description": "Indica el final de la carrera.",
+        "black_and_white_flag_title": "Bandera negra y blanca",
+        "black_and_white_flag_description": "Indica una advertencia por comportamiento antideportivo.",
+        "yellow_and_red_flag_title": "Bandera amarilla y roja",
+        "yellow_and_red_flag_description": "Indica una reducción de adherencia en la pista."
+    },
+    "retro_f1": {
+        "home": {
+            "tab_title": "Retro F1",
+            "title": "Retro - Inicio",
+            "winners_title": "Lista de pilotos campeones",
+            "driver_titles": "títulos",
+            "all_data": "Lista de Pilotos | Equipos | Circuitos",
+            "all_seasons": "Lista de temporadas"
+        },
+        "winners": {
+            "tab_title": "Retro Campeones",
+            "title": "Lista de pilotos campeones en Fórmula 1",
+            "number_of_titles": "Número de títulos"
+        },
+        "all_data": {
+            "tab_title_drivers": "Retro Pilotos",
+            "tab_title_teams": "Retro Equipos",
+            "tab_title_tracks": "Retro Circuitos",
+            "title_drivers": "Retro - Pilotos",
+            "title_teams": "Retro - Equipos",
+            "title_tracks": "Retro - Circuitos",
+            "link_drivers": "Pilotos",
+            "link_teams": "Equipos",
+            "link_tracks": "Circuitos",
+            "search_driver": "Buscar un piloto",
+            "search_team": "Buscar un equipo",
+            "search_track": "Buscar un circuito",
+            "born": "Nacido el",
+            "no_result": "Sin resultados"
+        },
+        "all_seasons": {
+            "tab_title": "Retro Temporadas",
+            "season": "Temporada",
+            "link_standings": "Clasificación",
+            "link_calendar": "Calendario",
+            "standings": {
+                "tab_title": "Retro Clasificaciones",
+                "title": "Retro - Clasificaciones",
+                "position": "Posición",
+                "drivers": "Pilotos",
+                "victories": "Victorias",
+                "points": "Puntos"
+            },
+            "calendar": {
+                "tab_title": "Retro Calendario",
+                "title": "Retro - Calendario",
+                "winner": "Ganador"
+            },
+            "gp_details": {
+                "tab_title": "Retro Detalles GP",
+                "title": "Retro - Detalles del GP",
+                "position": "Posición",
+                "drivers": "Pilotos",
+                "starting_grid": "Parrilla de salida",
+                "time": "Tiempo"
+            }
+        }
+    },
+    "live": {
+        "tab_title": "En Vivo",
+        "live_title": "En Vivo",
+        "link_standings": "Clasificación",
+        "link_race_control": "Control de carrera",
+        "link_radio": "Radio"
+    },
+    "account": {
+        "profile": {
+            "tab_title": "Cuenta",
+            "profile_title": "Tu cuenta",
+            "email": "Correo electrónico",
+            "name": "Nombre",
+            "surname": "Apellido",
+            "birthdate": "Fecha de nacimiento",
+            "username": "Nombre de usuario",
+            "lang": "Idioma",
+            "btn_modify": "Modificar",
+            "btn_log_out": "Cerrar sesión",
+            "btn_admin": "Administración"
+        },
+        "profile_edit": {
+            "tab_title": "Modificar cuenta",
+            "edit_title": "Modificar tu cuenta",
+            "email": "Correo electrónico",
+            "name": "Nombre",
+            "surname": "Apellido",
+            "birthdate": "Fecha de nacimiento",
+            "username": "Nombre de usuario",
+            "lang": "Idioma",
+            "btn_save": "Guardar",
+            "languages": {
+                "fr": "Francés",
+                "en": "Inglés",
+                "es": "Español",
+                "de": "Alemán",
+                "it": "Italiano"
+            }
+        }
+    }
+}

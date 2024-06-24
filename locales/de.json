@@ -1,0 +1,198 @@
+{
+    "header": {
+        "teams": "TEAMS",
+        "drivers": "FAHRER",
+        "calendar": "KALENDER",
+        "standings": "RANGLISTEN",
+        "reglementation": "REGELN",
+        "retro_f1": "RETRO F1",
+        "live": "LIVE",
+        "account": "KONTO"
+    },
+    "home": {
+        "next_race": "Nächstes Rennen",
+        "loading": "Laden...",
+        "days": "T",
+        "hours": "STD",
+        "minutes": "MIN",
+        "seconds": "S",
+        "drivers_championship": "Fahrerwertung",
+        "teams_championship": "Konstrukteurswertung",
+        "last_podium": "Letztes Podium",
+        "drivers_standings": "Fahrerstand"
+    },
+    "teams": {
+        "tab_title": "Teams",
+        "season": "Saison 2024 - Teams"
+    },
+    "team": {
+        "team_start": "Eintritt in die F1",
+        "drivers": "Fahrer",
+        "podiums": "Podien",
+        "victories": "Siege",
+        "points": "Punkte",
+        "races": "Rennen",
+        "single_seater": "Einsitzer"
+    },
+    "drivers": {
+        "tab_title": "Fahrer",
+        "season": "Saison 2024 - Fahrer"
+    },
+    "driver": {
+        "actual_season": "Aktuelle Saison",
+        "races": "Rennen",
+        "points": "Punkte",
+        "podiums": "Podien",
+        "victories": "Siege",
+        "age": "Jahre",
+        "carreer_title": "Karriere",
+        "carreer_start": "Karrierebeginn",
+        "total_podiums": "Podien",
+        "total_victories": "Siege",
+        "total_races": "Rennen",
+        "total_points": "Punkte",
+        "total_poles": "Poles",
+        "total_dnf": "DNF",
+        "victories_title": "Siege"
+    },
+    "calendar": {
+        "tab_title": "Kalender",
+        "season": "Saison 2024 - Kalender",
+        "next_race": "Nächstes Rennen"
+    },
+    "calendar_element": {
+        "creation_year": "Erstellung",
+        "laps": "Runden",
+        "one_lap_length": "Rundendistanz",
+        "length": "Gesamtdistanz",
+        "pole_record": "Pole-Rekord"
+    },
+    "standings": {
+        "tab_title": "Ranglisten",
+        "season": "Saison 2024 - Ranglisten",
+        "drivers": "Fahrer",
+        "teams": "Konstrukteure",
+        "position": "Position",
+        "points": "Punkte"
+    },
+    "reglementation": {
+        "tab_title": "Regeln",
+        "reglementation_title": "Regeln",
+        "yellow_flag_title": "Gelbe Flagge",
+        "yellow_flag_description": "Zeigt eine Gefahr auf der Strecke an, die Fahrer müssen langsamer fahren und dürfen nicht überholen.",
+        "red_flag_title": "Rote Flagge",
+        "red_flag_description": "Zeigt den Abbruch des Rennens an, die Fahrer müssen an die Box zurückkehren.",
+        "blue_flag_title": "Blaue Flagge",
+        "blue_flag_description": "Zeigt an, dass ein Fahrer überrundet wird und Platz machen muss.",
+        "black_flag_title": "Schwarze Flagge",
+        "black_flag_description": "Zeigt die Disqualifikation eines Fahrers an, er muss an die Box zurückkehren.",
+        "green_flag_title": "Grüne Flagge",
+        "green_flag_description": "Zeigt an, dass die Strecke frei ist und das Rennen beginnen/fortsetzen kann.",
+        "white_flag_title": "Weiße Flagge",
+        "white_flag_description": "Zeigt an, dass der Fahrer in der letzten Runde ist.",
+        "chequered_flag_title": "Zielflagge",
+        "chequered_flag_description": "Zeigt das Ende des Rennens an.",
+        "black_and_white_flag_title": "Schwarz-weiße Flagge",
+        "black_and_white_flag_description": "Zeigt eine Verwarnung wegen unsportlichen Verhaltens an.",
+        "yellow_and_red_flag_title": "Gelb-rote Flagge",
+        "yellow_and_red_flag_description": "Zeigt eine rutschige Strecke an."
+    },
+    "retro_f1": {
+        "home": {
+            "tab_title": "Retro F1",
+            "title": "Retro - Startseite",
+            "winners_title": "Liste der Titelträger",
+            "driver_titles": "Titel",
+            "all_data": "Liste der Fahrer | Teams | Strecken",
+            "all_seasons": "Liste der Saisons"
+        },
+        "winners": {
+            "tab_title": "Retro Titelträger",
+            "title": "Liste der Titelträger in der Formel 1",
+            "number_of_titles": "Anzahl der Titel"
+        },
+        "all_data": {
+            "tab_title_drivers": "Retro Fahrer",
+            "tab_title_teams": "Retro Teams",
+            "tab_title_tracks": "Retro Strecken",
+            "title_drivers": "Retro - Fahrer",
+            "title_teams": "Retro - Teams",
+            "title_tracks": "Retro - Strecken",
+            "link_drivers": "Fahrer",
+            "link_teams": "Teams",
+            "link_tracks": "Strecken",
+            "search_driver": "Einen Fahrer suchen",
+            "search_team": "Ein Team suchen",
+            "search_track": "Eine Strecke suchen",
+            "born": "Geboren am",
+            "no_result": "Kein Ergebnis"
+        },
+        "all_seasons": {
+            "tab_title": "Retro Saisons",
+            "season": "Saison",
+            "link_standings": "Rangliste",
+            "link_calendar": "Kalender",
+            "standings": {
+                "tab_title": "Retro Ranglisten",
+                "title": "Retro - Ranglisten",
+                "position": "Position",
+                "drivers": "Fahrer",
+                "victories": "Siege",
+                "points": "Punkte"
+            },
+            "calendar": {
+                "tab_title": "Retro Kalender",
+                "title": "Retro - Kalender",
+                "winner": "Gewinner"
+            },
+            "gp_details": {
+                "tab_title": "Retro GP-Details",
+                "title": "Retro - GP-Details",
+                "position": "Position",
+                "drivers": "Fahrer",
+                "starting_grid": "Startaufstellung",
+                "time": "Zeit"
+            }
+        }
+    },
+    "live": {
+        "tab_title": "Live",
+        "live_title": "Live",
+        "link_standings": "Rangliste",
+        "link_race_control": "Rennkontrolle",
+        "link_radio": "Radio"
+    },
+    "account": {
+        "profile": {
+            "tab_title": "Konto",
+            "profile_title": "Ihr Konto",
+            "email": "Email",
+            "name": "Name",
+            "surname": "Vorname",
+            "birthdate": "Geburtstag",
+            "username": "Benutzername",
+            "lang": "Sprache",
+            "btn_modify": "Ändern",
+            "btn_log_out": "Abmelden",
+            "btn_admin": "Verwaltung"
+        },
+        "profile_edit": {
+            "tab_title": "Konto bearbeiten",
+            "edit_title": "Ihr Konto bearbeiten",
+            "email": "Email",
+            "name": "Name",
+            "surname": "Vorname",
+            "birthdate": "Geburtstag",
+            "username": "Benutzername",
+            "lang": "Sprache",
+            "btn_save": "Speichern",
+            "languages": {
+                "fr": "Französisch",
+                "en": "Englisch",
+                "es": "Spanisch",
+                "de": "Deutsch",
+                "it": "Italienisch"
+            }
+        }
+    }
+}
