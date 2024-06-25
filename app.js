@@ -97,6 +97,28 @@ app.use(async (req, res, next) => {
     next();
 });
 
+// Middleware pour gérer le thème de l'utilisateur
+app.use(async (req, res, next) => {
+    if (verifySession(req)) {
+        try {
+            const [rows] = await dbPool.query('SELECT theme FROM users WHERE idUser = ?', [req.session.user.idUser]);
+            if (rows.length > 0) {
+                let userTheme = rows[0].theme;
+                userTheme = userTheme === 0 ? "light" : "dark";
+                req.session.theme = userTheme;
+            } else {
+                req.session.theme = "light";
+            }
+        } catch (err) {
+            console.error('Erreur lors de la récupération du thème utilisateur:', err);
+            req.session.theme = "light";
+        }
+    } else {
+        req.session.theme = "light";
+    }
+    res.locals.theme = req.session.theme;
+    next();
+});
 
 app.get("/", async (req, res) => {
     var podiumDriversFront = await getLastPodium(false); // Récupération du podium de la dernière course

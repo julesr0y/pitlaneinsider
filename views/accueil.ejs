@@ -38,7 +38,7 @@
             </style>
 </head>
 
-<body class="font-F1Regular">
+<body class="font-F1Regular text-<%= theme %>">
 
     <div class="next text-center text-white bg-black py-2">
         <h1>
@@ -82,10 +82,10 @@
         </h1>
     </div>
 
-    <main class="px-4">
+    <main class="px-4 bg-back-<%= theme %>">
         <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
             <div id="chPilotes"
-                class="h-32 bg-second-color flex flex-col justify-center items-center font-F1Bold rounded-3xl">
+                class="h-32 bg-second-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
                 <span class="text-center">
                     <%= __('home.drivers_championship') %>
                 </span>
@@ -105,7 +105,7 @@
                     <img src="/img/2024/drivers/<%= actualDriversStanding[0].pilote_id %>.webp" class="h-20 w-auto">
                 </span>
             </div>
-            <div id="chContructeurs" class="h-32 bg-second-color flex flex-col items-center rounded-3xl">
+            <div id="chContructeurs" class="h-32 bg-second-<%= theme %> flex flex-col items-center rounded-3xl">
                 <span class="text-center font-F1Bold">
                     <%= __('home.teams_championship') %>
                 </span>
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <div class="w-full bg-second-color mt-4 rounded-3xl">
+        <div class="w-full bg-second-<%= theme %> mt-4 rounded-3xl">
             <span class="flex justify-center text-center mb-4 font-F1Bold">
                 <%= __('home.last_podium') %> - <%= podiumDrivers[3].raceName %>
             </span>
@@ -151,7 +151,7 @@
             </div>
         </div>
 
-        <div id="class" class="w-full bg-second-color mt-4 py-2 rounded-3xl">
+        <div id="class" class="w-full bg-second-<%= theme %> mt-4 py-2 rounded-3xl">
             <span class="flex justify-center text-center font-F1Bold">
                 <%= __('home.drivers_standings') %>
             </span>
@@ -168,7 +168,7 @@
                             <br>
                             <% }); %>
                 </span>
-                <span class="border border-black h-auto w-0.3 box-border bg-black"></span>
+                <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
                 <span>
                     <% actualDriversStanding.slice(10, 20).forEach(function(pilote) { %>
                         <span

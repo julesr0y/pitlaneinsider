@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./views/**/*.ejs', './public/**/*.js'],
-  safelist: ['text-red_bull', 'text-williams', 'text-rb', 'text-mclaren', 'text-alpine', 'text-ferrari', 'text-mercedes', 'text-aston_martin', 'text-haas', 'text-sauber', 'stewardsTxt', 'stewardsBg', 'bg-red_bull', 'bg-williams', 'bg-rb', 'bg-mclaren', 'bg-alpine', 'bg-ferrari', 'bg-mercedes', 'bg-aston_martin', 'bg-haas', 'bg-sauber', 'border-red_bull', 'border-williams', 'border-rb', 'border-mclaren', 'border-alpine', 'border-ferrari', 'border-mercedes', 'border-aston_martin', 'border-haas', 'border-sauber'],
+  safelist: ['text-red_bull', 'text-williams', 'text-rb', 'text-mclaren', 'text-alpine', 'text-ferrari', 'text-mercedes', 'text-aston_martin', 'text-haas', 'text-sauber', 'stewardsTxt', 'stewardsBg', 'bg-red_bull', 'bg-williams', 'bg-rb', 'bg-mclaren', 'bg-alpine', 'bg-ferrari', 'bg-mercedes', 'bg-aston_martin', 'bg-haas', 'bg-sauber', 'border-red_bull', 'border-williams', 'border-rb', 'border-mclaren', 'border-alpine', 'border-ferrari', 'border-mercedes', 'border-aston_martin', 'border-haas', 'border-sauber',
+    'main-color', 'bg-light', 'bg-back-light', 'bg-second-light', 'text-light', 'border-light', 'bg-dark', 'bg-back-dark', 'bg-second-dark', 'text-dark', 'border-dark'],
   theme: {
     extend: {
       fontFamily: {
@@ -11,7 +12,12 @@ module.exports = {
       },
       colors: {
         'main-color': '#058785',
-        'second-color': '#E9E9E7',
+        'back-light': 'white',
+        'second-light': '#E9E9E7',
+        'light': 'black',
+        'back-dark': '#191919',
+        'second-dark': '#333333',
+        'dark': 'white',
         'deconnect': '#F6A60B',
         'red_bull': '#3671C6',
         'williams': '#64C4FF',
