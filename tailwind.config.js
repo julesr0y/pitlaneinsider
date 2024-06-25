@@ -2,7 +2,7 @@
 module.exports = {
   content: ['./views/**/*.ejs', './public/**/*.js'],
   safelist: ['text-red_bull', 'text-williams', 'text-rb', 'text-mclaren', 'text-alpine', 'text-ferrari', 'text-mercedes', 'text-aston_martin', 'text-haas', 'text-sauber', 'stewardsTxt', 'stewardsBg', 'bg-red_bull', 'bg-williams', 'bg-rb', 'bg-mclaren', 'bg-alpine', 'bg-ferrari', 'bg-mercedes', 'bg-aston_martin', 'bg-haas', 'bg-sauber', 'border-red_bull', 'border-williams', 'border-rb', 'border-mclaren', 'border-alpine', 'border-ferrari', 'border-mercedes', 'border-aston_martin', 'border-haas', 'border-sauber',
-    'main-color', 'bg-light', 'bg-back-light', 'bg-second-light', 'text-light', 'border-light', 'bg-dark', 'bg-back-dark', 'bg-second-dark', 'text-dark', 'border-dark'],
+    'main-color', 'bg-light', 'bg-b-light', 'bg-s-light', 'text-t-s-light', 'text-light', 'border-light', 'bg-dark', 'bg-b-dark', 'bg-s-dark', 'text-t-s-dark', 'text-dark', 'border-dark'],
   theme: {
     extend: {
       fontFamily: {
@@ -12,11 +12,13 @@ module.exports = {
       },
       colors: {
         'main-color': '#058785',
-        'back-light': 'white',
-        'second-light': '#E9E9E7',
+        'b-light': 'white',
+        's-light': '#E9E9E7',
+        't-s-light': '#4b5563',
         'light': 'black',
-        'back-dark': '#191919',
-        'second-dark': '#333333',
+        'b-dark': '#191919',
+        's-dark': '#333333',
+        't-s-dark': '#4b5563',
         'dark': 'white',
         'deconnect': '#F6A60B',
         'red_bull': '#3671C6',

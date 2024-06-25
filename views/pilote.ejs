@@ -9,9 +9,9 @@
             </title>
 </head>
 
-<body class="h-auto flex flex-col justify-center font-F1Regular">
-    <div class="pt-10 px-4">
-        <div class="bg-gray-200 p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="pt-10 px-4 h-auto flex flex-col justify-center">
+        <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col items-center w-1/2">
                     <img src="/img/2024/drivers/<%= id %>.webp"
@@ -39,13 +39,13 @@
                         <%= piloteFront2.surname %>
                             <%= piloteFront2.name %>
                     </h1>
-                    <p class="text-sm sm:text-base text-gray-600 text-center">
+                    <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center">
                         <%= piloteFront2.birthDate %> (<%= piloteFront2.age %>
                                 <%= __('driver.age') %>)
                     </p>
                     <div class="grid grid-cols-2 grid-rows-2 gap-x-4 justify-center items-center mt-16">
                         <div class="flex items-center justify-center">
-                            <p class="text-green-500 text-4xl sm:text-5xl">
+                            <p class="text-<%= teamInfo.equipe_id %> text-4xl sm:text-5xl">
                                 <%= piloteFront2.permanentNumber %>
                             </p>
                         </div>

@@ -31,7 +31,7 @@
             </style>
 </head>
 
-<body class="font-F1Regular bg-gray-50">
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
     <div
         class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
         <%= __('calendar.season') %>
@@ -48,7 +48,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
                 <% tracksFront.forEach(function(track, index) { %>
                     <div id="race-<%= index %>"
-                        class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= track.isNextRace ? 'highlight' : '' %>">
+                        class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= track.isNextRace ? 'highlight' : '' %>">
                         <a href="/circuit/<%= track.trackId %>" class="block text-center">
                             <div class="relative mb-4">
                                 <img src="/img/2024/circuit/<%= track.trackId %>.webp"
@@ -62,11 +62,11 @@
                                 </span>
                             </div>
                         </a>
-                        <div class="mt-4 bg-second-color rounded-2xl p-4">
+                        <div class="mt-4 rounded-2xl p-4">
                             <h2 class="text-lg font-F1Bold mb-3">
                                 <%= track.roundDetails.raceName %>
                             </h2>
-                            <ul class="text-gray-600">
+                            <ul class="text-t-s-<%= theme %>">
                                 <% for (let session in track.roundDetails.sessions) { let
                                     currentSession=track.roundDetails.sessions[session]; %>
                                     <li><strong>

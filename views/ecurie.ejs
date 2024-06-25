@@ -8,9 +8,9 @@
             </title>
 </head>
 
-<body class="h-auto flex flex-col justify-center font-F1Regular">
-    <div class="pt-10 px-4 sm:px-8">
-        <div class="bg-gray-200 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="pt-10 px-4 sm:px-8 h-auto flex flex-col justify-center">
+        <div class="bg-s-<%= theme %> rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
             <div class="text-center">
                 <h1 class="text-lg font-F1Bold mb-2">
                     <%= teamFront.teamName %>
@@ -23,7 +23,7 @@
 
             <!-- Text Content -->
             <div class="text-center">
-                <p class="text-gray-600">
+                <p class="text-t-s-<%= theme %>">
                     <%= __('team.team_start') %> : <%= dataTeam.date_creation %>
                 </p>
                 <div class="my-4">
@@ -40,16 +40,16 @@
                         </div>
                         <% }) %>
                 </div>
-                <p class="text-gray-600">
+                <p class="text-t-s-<%= theme %>">
                     <%= __('team.podiums') %> : <%= dataTeam.nbPodiums %>
                 </p>
-                <p class="text-gray-600">
+                <p class="text-t-s-<%= theme %>">
                     <%= __('team.victories') %> : <%= dataTeam.nbVictoires %>
                 </p>
-                <p class="text-gray-600">
+                <p class="text-t-s-<%= theme %>">
                     <%= __('team.points') %> : <%= dataTeam.nbPoints %>
                 </p>
-                <p class="text-gray-600 mb-4">
+                <p class="text-t-s-<%= theme %> mb-4">
                     <%= __('team.races') %> : <%= dataTeam.nbCourses %>
                 </p>
 
@@ -57,7 +57,7 @@
                     <h3 class="font-bold">
                         <%= __('team.single_seater') %> :
                     </h3>
-                    <p class="text-gray-600">
+                    <p class="text-t-s-<%= theme %>">
                         <%= dataTeam.monoplace %>
                     </p>
                     <span class="flex justify-center">
