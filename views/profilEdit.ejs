@@ -8,7 +8,7 @@
             </title>
 </head>
 
-<body class="font-F1Bold">
+<body class="font-F1Bold text-<%= theme %> bg-b-<%= theme %>">
     <span class="flex justify-center text-center pt-4">
         <%= __('account.profile_edit.edit_title') %>
     </span>
@@ -16,23 +16,24 @@
         <form class="px-10 py-4 rounded-lg w-full max-w-sm" action="/profilEditProcess" method="post">
             <div class="grid gap-4 mb-4">
                 <input type="email" name="email" placeholder="<%= __('account.profile_edit.email') %>"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-s-<%= theme %>"
                     value="<%= userInfosFront.email %>" required>
                 <input type="text" name="nom" placeholder="<%= __('account.profile_edit.name') %>"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" value="<%= userInfosFront.nom %>"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-s-<%= theme %>" value="<%= userInfosFront.nom %>"
                     required>
                 <input type="text" name="prenom" placeholder="<%= __('account.profile_edit.surname') %>"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" value="<%= userInfosFront.prenom %>"
-                    required>
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-s-<%= theme %>"
+                    value="<%= userInfosFront.prenom %>" required>
                 <input type="text" name="username" placeholder="<%= __('account.profile_edit.username') %>"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-s-<%= theme %>"
                     value="<%= userInfosFront.username %>" required>
                 <input type="date" name="naissance" placeholder="<%= __('account.profile_edit.birthdate') %>"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-s-<%= theme %>"
                     value="<%= new Date(userInfosFront.naissance.getTime() - userInfosFront.naissance.getTimezoneOffset() * 60000).toISOString().split('T')[0] %>"
                     required>
                 <select name="language" id="<%= __('account.profile_edit.lang') %>"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" placeholder="Langue" required>
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-s-<%= theme %>" placeholder="Langue"
+                    required>
                     <option value="en" <%=userInfosFront.language==='en' ? 'selected' : '' %>><%=
                             __('account.profile_edit.languages.en') %>
                     </option>
@@ -47,6 +48,15 @@
                     </option>
                     <option value="it" <%=userInfosFront.language==='it' ? 'selected' : '' %>><%=
                             __('account.profile_edit.languages.it') %>
+                    </option>
+                </select>
+                <select name="theme" id="theme"
+                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-s-<%= theme %>" placeholder="Theme">
+                    <option value="0" <%=userInfosFront.theme===0 ? 'selected' : '' %>><%=
+                            __('account.profile_edit.theme.theme_light') %>
+                    </option>
+                    <option value="1" <%=userInfosFront.theme===1 ? 'selected' : '' %>><%=
+                            __('account.profile_edit.theme.theme_dark') %>
                     </option>
                 </select>
             </div>

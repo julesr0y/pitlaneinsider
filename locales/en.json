@@ -174,7 +174,10 @@
 			"lang": "Language",
 			"btn_modify": "Modify",
 			"btn_log_out": "Log out",
-			"btn_admin": "Administration"
+			"btn_admin": "Administration",
+			"theme": "Theme",
+			"theme_dark": "Dark",
+			"theme_light": "Light"
 		},
 		"profile_edit": {
 			"tab_title": "Edit Account",
@@ -192,6 +195,10 @@
 				"es": "Spanish",
 				"de": "German",
 				"it": "Italian"
+			},
+			"theme": {
+				"theme_light": "Light",
+				"theme_dark": "Dark"
 			}
 		}
 	}

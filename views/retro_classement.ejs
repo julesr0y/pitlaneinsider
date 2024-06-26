@@ -78,14 +78,12 @@
                     pointer-events: none;
                     font-size: 1rem;
                     color: var(--white-color);
-                    /* Couleur blanche pour la flèche */
                 }
             </style>
 </head>
 
-<body class="font-F1Regular">
-    <div
-        class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
         <%= __('retro_f1.all_seasons.standings.title') %>
     </div>
     <div class="app-container">
@@ -124,7 +122,7 @@
             <div class="flex justify-center items-start pt-10">
                 <div class="flex mb-4">
                     <a id="classementLink" href="/retro_classement/<%= selectedYear %>"
-                        class="mr-20 {{ Request::path() == 'retro_pilotes' ? 'font-bold border-b-2 border-black black' : '' }}">
+                        class="mr-20 {{ Request::path() == 'retro_pilotes' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
                         <%= __('retro_f1.all_seasons.link_standings') %>
                     </a>
                     <a id="calendrierLink" href="/retro_calendrier/<%= selectedYear %>"
@@ -134,7 +132,7 @@
                 </div>
             </div>
         </div>
-        <div id="Pilotes" class="bg-second-color p-4 sm:p-8 shadow-md rounded-2xl mx-4 mt-8">
+        <div id="Pilotes" class="bg-s-<%= theme %> p-4 sm:p-8 shadow-md rounded-2xl mx-4 mt-8">
             <div class="grid grid-cols-12">
                 <span class="sm:col-span-4 col-span-3 font-F1Bold sm:ml-16">
                     <%= __('retro_f1.all_seasons.standings.position') %>

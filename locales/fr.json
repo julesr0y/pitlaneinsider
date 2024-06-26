@@ -174,7 +174,10 @@
 			"lang": "Langue",
 			"btn_modify": "Modifier",
 			"btn_log_out": "Déconnexion",
-			"btn_admin": "Administration"
+			"btn_admin": "Administration",
+			"theme": "Thème",
+			"theme_light": "Clair",
+			"theme_dark": "Sombre"
 		},
 		"profile_edit": {
 			"tab_title": "Modifier le compte",
@@ -192,6 +195,10 @@
 				"es": "Espagnol",
 				"de": "Allemand",
 				"it": "Italien"
+			},
+			"theme": {
+				"theme_light": "Clair",
+				"theme_dark": "Sombre"
 			}
 		}
 	}

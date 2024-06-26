@@ -27,10 +27,10 @@ router.get("/edit", requireSession, async (req, res) => {
 });
 
 router.post("/profilEditProcess", requireSession, async (req, res) => {
-    const { nom, prenom, username, email, naissance, language } = req.body;
+    const { nom, prenom, username, email, naissance, language, theme } = req.body;
     try {
-        await dbPool.query('UPDATE users SET nom = ?, prenom = ?, username = ?, email = ?, naissance = ?, language = ? WHERE idUser = ?',
-            [nom, prenom, username, email, naissance, language, req.session.user.idUser]);
+        await dbPool.query('UPDATE users SET nom = ?, prenom = ?, username = ?, email = ?, naissance = ?, language = ?, theme = ? WHERE idUser = ?',
+            [nom, prenom, username, email, naissance, language, theme, req.session.user.idUser]);
         res.redirect("/profil");
     } catch (err) {
         console.error('Erreur lors de la mise à jour des informations utilisateur:', err);

@@ -1,198 +1,205 @@
 {
-    "header": {
-        "teams": "SCUDERIE",
-        "drivers": "PILOTI",
-        "calendar": "CALENDARIO",
-        "standings": "CLASSIFICHE",
-        "reglementation": "REGOLE",
-        "retro_f1": "RETRO F1",
-        "live": "LIVE",
-        "account": "ACCOUNT"
-    },
-    "home": {
-        "next_race": "Prossima gara",
-        "loading": "Caricamento...",
-        "days": "G",
-        "hours": "O",
-        "minutes": "MIN",
-        "seconds": "S",
-        "drivers_championship": "Campionato piloti",
-        "teams_championship": "Campionato costruttori",
-        "last_podium": "Ultimo podio",
-        "drivers_standings": "Classifica piloti"
-    },
-    "teams": {
-        "tab_title": "Scuderie",
-        "season": "Stagione 2024 - Scuderie"
-    },
-    "team": {
-        "team_start": "Debutto in F1",
-        "drivers": "Piloti",
-        "podiums": "Podii",
-        "victories": "Vittorie",
-        "points": "Punti",
-        "races": "Gare disputate",
-        "single_seater": "Monoposto"
-    },
-    "drivers": {
-        "tab_title": "Piloti",
-        "season": "Stagione 2024 - Piloti"
-    },
-    "driver": {
-        "actual_season": "Stagione attuale",
-        "races": "Gare",
-        "points": "Punti",
-        "podiums": "Podii",
-        "victories": "Vittorie",
-        "age": "anni",
-        "carreer_title": "Carriera",
-        "carreer_start": "Inizio carriera",
-        "total_podiums": "Podii",
-        "total_victories": "Vittorie",
-        "total_races": "Gare",
-        "total_points": "Punti",
-        "total_poles": "Pole",
-        "total_dnf": "DNF",
-        "victories_title": "Vittorie"
-    },
-    "calendar": {
-        "tab_title": "Calendario",
-        "season": "Stagione 2024 - Calendario",
-        "next_race": "Prossima gara"
-    },
-    "calendar_element": {
-        "creation_year": "Creazione",
-        "laps": "Giri",
-        "one_lap_length": "Distanza per giro",
-        "length": "Distanza totale",
-        "pole_record": "Record pole"
-    },
-    "standings": {
-        "tab_title": "Classifiche",
-        "season": "Stagione 2024 - Classifiche",
-        "drivers": "Piloti",
-        "teams": "Costruttori",
-        "position": "Posizione",
-        "points": "Punti"
-    },
-    "reglementation": {
-        "tab_title": "Regole",
-        "reglementation_title": "Regole",
-        "yellow_flag_title": "Bandiera gialla",
-        "yellow_flag_description": "Indica un pericolo in pista, i piloti devono rallentare e non sorpassare.",
-        "red_flag_title": "Bandiera rossa",
-        "red_flag_description": "Indica l'interruzione della gara, i piloti devono tornare ai box.",
-        "blue_flag_title": "Bandiera blu",
-        "blue_flag_description": "Indica che un pilota sta per essere sorpassato da un pilota in testa alla gara.",
-        "black_flag_title": "Bandiera nera",
-        "black_flag_description": "Indica che un pilota è squalificato dalla gara, deve tornare ai box.",
-        "green_flag_title": "Bandiera verde",
-        "green_flag_description": "Indica che la pista è libera e la gara può iniziare/continuare.",
-        "white_flag_title": "Bandiera bianca",
-        "white_flag_description": "Indica che il pilota è all'ultimo giro.",
-        "chequered_flag_title": "Bandiera a scacchi",
-        "chequered_flag_description": "Indica la fine della gara.",
-        "black_and_white_flag_title": "Bandiera nera e bianca",
-        "black_and_white_flag_description": "Indica un avvertimento per comportamento antisportivo.",
-        "yellow_and_red_flag_title": "Bandiera gialla e rossa",
-        "yellow_and_red_flag_description": "Indica una riduzione di aderenza sulla pista."
-    },
-    "retro_f1": {
-        "home": {
-            "tab_title": "Retro F1",
-            "title": "Retro - Home",
-            "winners_title": "Elenco dei piloti titolati",
-            "driver_titles": "titoli",
-            "all_data": "Elenco Piloti | Scuderie | Circuiti",
-            "all_seasons": "Elenco delle stagioni"
-        },
-        "winners": {
-            "tab_title": "Retro Titolati",
-            "title": "Elenco dei piloti titolati in Formula 1",
-            "number_of_titles": "Numero di titoli"
-        },
-        "all_data": {
-            "tab_title_drivers": "Retro Piloti",
-            "tab_title_teams": "Retro Scuderie",
-            "tab_title_tracks": "Retro Circuiti",
-            "title_drivers": "Retro - Piloti",
-            "title_teams": "Retro - Scuderie",
-            "title_tracks": "Retro - Circuiti",
-            "link_drivers": "Piloti",
-            "link_teams": "Scuderie",
-            "link_tracks": "Circuiti",
-            "search_driver": "Cerca un pilota",
-            "search_team": "Cerca una scuderia",
-            "search_track": "Cerca un circuito",
-            "born": "Nato il",
-            "no_result": "Nessun risultato"
-        },
-        "all_seasons": {
-            "tab_title": "Retro Stagioni",
-            "season": "Stagione",
-            "link_standings": "Classifica",
-            "link_calendar": "Calendario",
-            "standings": {
-                "tab_title": "Retro Classifiche",
-                "title": "Retro - Classifiche",
-                "position": "Posizione",
-                "drivers": "Piloti",
-                "victories": "Vittorie",
-                "points": "Punti"
-            },
-            "calendar": {
-                "tab_title": "Retro Calendario",
-                "title": "Retro - Calendario",
-                "winner": "Vincitore"
-            },
-            "gp_details": {
-                "tab_title": "Retro Dettagli GP",
-                "title": "Retro - Dettagli GP",
-                "position": "Posizione",
-                "drivers": "Piloti",
-                "starting_grid": "Griglia di partenza",
-                "time": "Tempo"
-            }
-        }
-    },
-    "live": {
-        "tab_title": "Diretta",
-        "live_title": "Diretta",
-        "link_standings": "Classifica",
-        "link_race_control": "Controllo gara",
-        "link_radio": "Radio"
-    },
-    "account": {
-        "profile": {
-            "tab_title": "Account",
-            "profile_title": "Il tuo account",
-            "email": "Email",
-            "name": "Nome",
-            "surname": "Cognome",
-            "birthdate": "Data di nascita",
-            "username": "Nome utente",
-            "lang": "Lingua",
-            "btn_modify": "Modifica",
-            "btn_log_out": "Disconnetti",
-            "btn_admin": "Amministrazione"
-        },
-        "profile_edit": {
-            "tab_title": "Modifica account",
-            "edit_title": "Modifica il tuo account",
-            "email": "Email",
-            "name": "Nome",
-            "surname": "Cognome",
-            "birthdate": "Data di nascita",
-            "username": "Nome utente",
-            "lang": "Lingua",
-            "btn_save": "Salva",
-            "languages": {
-                "fr": "Francese",
-                "en": "Inglese",
-                "es": "Spagnolo",
-                "de": "Tedesco",
-                "it": "Italiano"
-            }
-        }
-    }
+	"header": {
+		"teams": "SCUDERIE",
+		"drivers": "PILOTI",
+		"calendar": "CALENDARIO",
+		"standings": "CLASSIFICHE",
+		"reglementation": "REGOLE",
+		"retro_f1": "RETRO F1",
+		"live": "LIVE",
+		"account": "ACCOUNT"
+	},
+	"home": {
+		"next_race": "Prossima gara",
+		"loading": "Caricamento...",
+		"days": "G",
+		"hours": "O",
+		"minutes": "MIN",
+		"seconds": "S",
+		"drivers_championship": "Campionato piloti",
+		"teams_championship": "Campionato costruttori",
+		"last_podium": "Ultimo podio",
+		"drivers_standings": "Classifica piloti"
+	},
+	"teams": {
+		"tab_title": "Scuderie",
+		"season": "Stagione 2024 - Scuderie"
+	},
+	"team": {
+		"team_start": "Debutto in F1",
+		"drivers": "Piloti",
+		"podiums": "Podii",
+		"victories": "Vittorie",
+		"points": "Punti",
+		"races": "Gare disputate",
+		"single_seater": "Monoposto"
+	},
+	"drivers": {
+		"tab_title": "Piloti",
+		"season": "Stagione 2024 - Piloti"
+	},
+	"driver": {
+		"actual_season": "Stagione attuale",
+		"races": "Gare",
+		"points": "Punti",
+		"podiums": "Podii",
+		"victories": "Vittorie",
+		"age": "anni",
+		"carreer_title": "Carriera",
+		"carreer_start": "Inizio carriera",
+		"total_podiums": "Podii",
+		"total_victories": "Vittorie",
+		"total_races": "Gare",
+		"total_points": "Punti",
+		"total_poles": "Pole",
+		"total_dnf": "DNF",
+		"victories_title": "Vittorie"
+	},
+	"calendar": {
+		"tab_title": "Calendario",
+		"season": "Stagione 2024 - Calendario",
+		"next_race": "Prossima gara"
+	},
+	"calendar_element": {
+		"creation_year": "Creazione",
+		"laps": "Giri",
+		"one_lap_length": "Distanza per giro",
+		"length": "Distanza totale",
+		"pole_record": "Record pole"
+	},
+	"standings": {
+		"tab_title": "Classifiche",
+		"season": "Stagione 2024 - Classifiche",
+		"drivers": "Piloti",
+		"teams": "Costruttori",
+		"position": "Posizione",
+		"points": "Punti"
+	},
+	"reglementation": {
+		"tab_title": "Regole",
+		"reglementation_title": "Regole",
+		"yellow_flag_title": "Bandiera gialla",
+		"yellow_flag_description": "Indica un pericolo in pista, i piloti devono rallentare e non sorpassare.",
+		"red_flag_title": "Bandiera rossa",
+		"red_flag_description": "Indica l'interruzione della gara, i piloti devono tornare ai box.",
+		"blue_flag_title": "Bandiera blu",
+		"blue_flag_description": "Indica che un pilota sta per essere sorpassato da un pilota in testa alla gara.",
+		"black_flag_title": "Bandiera nera",
+		"black_flag_description": "Indica che un pilota è squalificato dalla gara, deve tornare ai box.",
+		"green_flag_title": "Bandiera verde",
+		"green_flag_description": "Indica che la pista è libera e la gara può iniziare/continuare.",
+		"white_flag_title": "Bandiera bianca",
+		"white_flag_description": "Indica che il pilota è all'ultimo giro.",
+		"chequered_flag_title": "Bandiera a scacchi",
+		"chequered_flag_description": "Indica la fine della gara.",
+		"black_and_white_flag_title": "Bandiera nera e bianca",
+		"black_and_white_flag_description": "Indica un avvertimento per comportamento antisportivo.",
+		"yellow_and_red_flag_title": "Bandiera gialla e rossa",
+		"yellow_and_red_flag_description": "Indica una riduzione di aderenza sulla pista."
+	},
+	"retro_f1": {
+		"home": {
+			"tab_title": "Retro F1",
+			"title": "Retro - Home",
+			"winners_title": "Elenco dei piloti titolati",
+			"driver_titles": "titoli",
+			"all_data": "Elenco Piloti | Scuderie | Circuiti",
+			"all_seasons": "Elenco delle stagioni"
+		},
+		"winners": {
+			"tab_title": "Retro Titolati",
+			"title": "Elenco dei piloti titolati in Formula 1",
+			"number_of_titles": "Numero di titoli"
+		},
+		"all_data": {
+			"tab_title_drivers": "Retro Piloti",
+			"tab_title_teams": "Retro Scuderie",
+			"tab_title_tracks": "Retro Circuiti",
+			"title_drivers": "Retro - Piloti",
+			"title_teams": "Retro - Scuderie",
+			"title_tracks": "Retro - Circuiti",
+			"link_drivers": "Piloti",
+			"link_teams": "Scuderie",
+			"link_tracks": "Circuiti",
+			"search_driver": "Cerca un pilota",
+			"search_team": "Cerca una scuderia",
+			"search_track": "Cerca un circuito",
+			"born": "Nato il",
+			"no_result": "Nessun risultato"
+		},
+		"all_seasons": {
+			"tab_title": "Retro Stagioni",
+			"season": "Stagione",
+			"link_standings": "Classifica",
+			"link_calendar": "Calendario",
+			"standings": {
+				"tab_title": "Retro Classifiche",
+				"title": "Retro - Classifiche",
+				"position": "Posizione",
+				"drivers": "Piloti",
+				"victories": "Vittorie",
+				"points": "Punti"
+			},
+			"calendar": {
+				"tab_title": "Retro Calendario",
+				"title": "Retro - Calendario",
+				"winner": "Vincitore"
+			},
+			"gp_details": {
+				"tab_title": "Retro Dettagli GP",
+				"title": "Retro - Dettagli GP",
+				"position": "Posizione",
+				"drivers": "Piloti",
+				"starting_grid": "Griglia di partenza",
+				"time": "Tempo"
+			}
+		}
+	},
+	"live": {
+		"tab_title": "Diretta",
+		"live_title": "Diretta",
+		"link_standings": "Classifica",
+		"link_race_control": "Controllo gara",
+		"link_radio": "Radio"
+	},
+	"account": {
+		"profile": {
+			"tab_title": "Account",
+			"profile_title": "Il tuo account",
+			"email": "Email",
+			"name": "Nome",
+			"surname": "Cognome",
+			"birthdate": "Data di nascita",
+			"username": "Nome utente",
+			"lang": "Lingua",
+			"btn_modify": "Modifica",
+			"btn_log_out": "Disconnetti",
+			"btn_admin": "Amministrazione",
+			"theme": "Tema",
+			"theme_dark": "Scuro",
+			"theme_light": "Chiaro"
+		},
+		"profile_edit": {
+			"tab_title": "Modifica account",
+			"edit_title": "Modifica il tuo account",
+			"email": "Email",
+			"name": "Nome",
+			"surname": "Cognome",
+			"birthdate": "Data di nascita",
+			"username": "Nome utente",
+			"lang": "Lingua",
+			"btn_save": "Salva",
+			"languages": {
+				"fr": "Francese",
+				"en": "Inglese",
+				"es": "Spagnolo",
+				"de": "Tedesco",
+				"it": "Italiano"
+			},
+			"theme": {
+				"theme_light": "Chiaro",
+				"theme_dark": "Scuro"
+			}
+		}
+	}
 }
