@@ -18,7 +18,7 @@ module.exports = {
         'light': 'black',
         'b-dark': '#191919',
         's-dark': '#333333',
-        't-s-dark': '#4b5563',
+        't-s-dark': '#d1d5db',
         'dark': 'white',
         'deconnect': '#F6A60B',
         'red_bull': '#3671C6',
