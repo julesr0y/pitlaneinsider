@@ -50,16 +50,15 @@ app.use(
         cookie: { secure: true },
     })
 ); // Session middleware, permet de gérer les sessions utilisateurs
-app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy',
-        "default-src 'self'; " +
-        "connect-src 'self' https://api.openf1.org https://ergast.com; " +
-        "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; " +
-        "script-src 'self' 'unsafe-inline' https://ajax.googleapis.com; " +
-        "media-src 'self' https://api.openf1.org https://livetiming.formula1.com;"
-    );
-    next();
-}); // Middleware permettant de configurer la Content Security Policy (CSP)
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: ["'self'", "https://api.openf1.org", "https://ergast.com"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com"],
+        mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"]
+    }
+})); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
 i18n.configure({
     locales: ['en', 'fr', 'de', 'es', 'it'], // Langues supportées
     directory: path.join(__dirname, 'locales'), // Répertoire des fichiers de langue
