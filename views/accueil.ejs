@@ -84,27 +84,29 @@
 
     <main class="px-4 bg-b-<%= theme %>">
         <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
-            <div id="chPilotes"
-                class="h-32 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
-                <span class="text-center">
-                    <%= __('home.drivers_championship') %>
-                </span>
-                <span class="flex justify-evenly items-center mt-auto gap-6">
-                    <span class="flex flex-col items-center text-xl">
-                        <span>
-                            <%= actualDriversStanding[0].code %>
-                        </span>
-                        <span class="text-<%= actualDriversStanding[0].equipe_id %>">
-                            <% if(actualDriversStanding[0].numero==33) { %>
-                                <%= 1 %>
-                                    <% } else { %>
-                                        <%= actualDriversStanding[0].numero %>
-                                            <% } %>
-                        </span>
+            <a href="/pilote/<%= actualDriversStanding[0].pilote_id %>">
+                <div id="chPilotes"
+                    class="h-32 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
+                    <span class="text-center">
+                        <%= __('home.drivers_championship') %>
                     </span>
-                    <img src="/img/2024/drivers/<%= actualDriversStanding[0].pilote_id %>.webp" class="h-20 w-auto">
-                </span>
-            </div>
+                    <span class="flex justify-evenly items-center mt-auto gap-6">
+                        <span class="flex flex-col items-center text-xl">
+                            <span>
+                                <%= actualDriversStanding[0].code %>
+                            </span>
+                            <span class="text-<%= actualDriversStanding[0].equipe_id %>">
+                                <% if(actualDriversStanding[0].numero==33) { %>
+                                    <%= 1 %>
+                                        <% } else { %>
+                                            <%= actualDriversStanding[0].numero %>
+                                                <% } %>
+                            </span>
+                        </span>
+                        <img src="/img/2024/drivers/<%= actualDriversStanding[0].pilote_id %>.webp" class="h-20 w-auto">
+                    </span>
+                </div>
+            </a>
             <div id="chContructeurs" class="h-32 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
                 <span class="text-center font-F1Bold">
                     <%= __('home.teams_championship') %>
