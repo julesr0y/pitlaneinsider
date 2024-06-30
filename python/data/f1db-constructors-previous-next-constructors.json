@@ -1,0 +1,1190 @@
+[
+    {
+        "parentConstructorId": "alfa-romeo",
+        "constructorId": "sauber",
+        "yearFrom": 1993,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "alfa-romeo",
+        "constructorId": "bmw-sauber",
+        "yearFrom": 2006,
+        "yearTo": 2010
+    },
+    {
+        "parentConstructorId": "alfa-romeo",
+        "constructorId": "sauber",
+        "yearFrom": 2011,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "alfa-romeo",
+        "constructorId": "alfa-romeo",
+        "yearFrom": 2019,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "alfa-romeo",
+        "constructorId": "kick-sauber",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "alphatauri",
+        "constructorId": "minardi",
+        "yearFrom": 1985,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "alphatauri",
+        "constructorId": "toro-rosso",
+        "yearFrom": 2006,
+        "yearTo": 2019
+    },
+    {
+        "parentConstructorId": "alphatauri",
+        "constructorId": "alphatauri",
+        "yearFrom": 2020,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "alphatauri",
+        "constructorId": "rb",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "alpine",
+        "constructorId": "toleman",
+        "yearFrom": 1981,
+        "yearTo": 1985
+    },
+    {
+        "parentConstructorId": "alpine",
+        "constructorId": "benetton",
+        "yearFrom": 1986,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "alpine",
+        "constructorId": "renault",
+        "yearFrom": 2002,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "alpine",
+        "constructorId": "lotus-f1",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "alpine",
+        "constructorId": "renault",
+        "yearFrom": 2016,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "alpine",
+        "constructorId": "alpine",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "andrea-moda",
+        "constructorId": "coloni",
+        "yearFrom": 1987,
+        "yearTo": 1991
+    },
+    {
+        "parentConstructorId": "andrea-moda",
+        "constructorId": "andrea-moda",
+        "yearFrom": 1992,
+        "yearTo": 1992
+    },
+    {
+        "parentConstructorId": "arrows",
+        "constructorId": "arrows",
+        "yearFrom": 1978,
+        "yearTo": 1990
+    },
+    {
+        "parentConstructorId": "arrows",
+        "constructorId": "footwork",
+        "yearFrom": 1991,
+        "yearTo": 1996
+    },
+    {
+        "parentConstructorId": "arrows",
+        "constructorId": "arrows",
+        "yearFrom": 1997,
+        "yearTo": 2002
+    },
+    {
+        "parentConstructorId": "aston-martin",
+        "constructorId": "jordan",
+        "yearFrom": 1991,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "aston-martin",
+        "constructorId": "midland",
+        "yearFrom": 2006,
+        "yearTo": 2006
+    },
+    {
+        "parentConstructorId": "aston-martin",
+        "constructorId": "spyker",
+        "yearFrom": 2007,
+        "yearTo": 2007
+    },
+    {
+        "parentConstructorId": "aston-martin",
+        "constructorId": "force-india",
+        "yearFrom": 2008,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "aston-martin",
+        "constructorId": "racing-point",
+        "yearFrom": 2019,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "aston-martin",
+        "constructorId": "aston-martin",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "bar",
+        "constructorId": "tyrrell",
+        "yearFrom": 1970,
+        "yearTo": 1998
+    },
+    {
+        "parentConstructorId": "bar",
+        "constructorId": "bar",
+        "yearFrom": 1999,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "bar",
+        "constructorId": "honda",
+        "yearFrom": 2006,
+        "yearTo": 2008
+    },
+    {
+        "parentConstructorId": "bar",
+        "constructorId": "brawn",
+        "yearFrom": 2009,
+        "yearTo": 2009
+    },
+    {
+        "parentConstructorId": "bar",
+        "constructorId": "mercedes",
+        "yearFrom": 2010,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "benetton",
+        "constructorId": "toleman",
+        "yearFrom": 1981,
+        "yearTo": 1985
+    },
+    {
+        "parentConstructorId": "benetton",
+        "constructorId": "benetton",
+        "yearFrom": 1986,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "benetton",
+        "constructorId": "renault",
+        "yearFrom": 2002,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "benetton",
+        "constructorId": "lotus-f1",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "benetton",
+        "constructorId": "renault",
+        "yearFrom": 2016,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "benetton",
+        "constructorId": "alpine",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "bmw-sauber",
+        "constructorId": "sauber",
+        "yearFrom": 1993,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "bmw-sauber",
+        "constructorId": "bmw-sauber",
+        "yearFrom": 2006,
+        "yearTo": 2010
+    },
+    {
+        "parentConstructorId": "bmw-sauber",
+        "constructorId": "sauber",
+        "yearFrom": 2011,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "bmw-sauber",
+        "constructorId": "alfa-romeo",
+        "yearFrom": 2019,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "bmw-sauber",
+        "constructorId": "kick-sauber",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "brawn",
+        "constructorId": "tyrrell",
+        "yearFrom": 1970,
+        "yearTo": 1998
+    },
+    {
+        "parentConstructorId": "brawn",
+        "constructorId": "bar",
+        "yearFrom": 1999,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "brawn",
+        "constructorId": "honda",
+        "yearFrom": 2006,
+        "yearTo": 2008
+    },
+    {
+        "parentConstructorId": "brawn",
+        "constructorId": "brawn",
+        "yearFrom": 2009,
+        "yearTo": 2009
+    },
+    {
+        "parentConstructorId": "brawn",
+        "constructorId": "mercedes",
+        "yearFrom": 2010,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "caterham",
+        "constructorId": "lotus-racing",
+        "yearFrom": 2010,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "caterham",
+        "constructorId": "caterham",
+        "yearFrom": 2012,
+        "yearTo": 2014
+    },
+    {
+        "parentConstructorId": "coloni",
+        "constructorId": "coloni",
+        "yearFrom": 1987,
+        "yearTo": 1991
+    },
+    {
+        "parentConstructorId": "coloni",
+        "constructorId": "andrea-moda",
+        "yearFrom": 1992,
+        "yearTo": 1992
+    },
+    {
+        "parentConstructorId": "fondmetal",
+        "constructorId": "osella",
+        "yearFrom": 1980,
+        "yearTo": 1990
+    },
+    {
+        "parentConstructorId": "fondmetal",
+        "constructorId": "fondmetal",
+        "yearFrom": 1991,
+        "yearTo": 1992
+    },
+    {
+        "parentConstructorId": "footwork",
+        "constructorId": "arrows",
+        "yearFrom": 1978,
+        "yearTo": 1990
+    },
+    {
+        "parentConstructorId": "footwork",
+        "constructorId": "footwork",
+        "yearFrom": 1991,
+        "yearTo": 1996
+    },
+    {
+        "parentConstructorId": "footwork",
+        "constructorId": "arrows",
+        "yearFrom": 1997,
+        "yearTo": 2002
+    },
+    {
+        "parentConstructorId": "force-india",
+        "constructorId": "jordan",
+        "yearFrom": 1991,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "force-india",
+        "constructorId": "midland",
+        "yearFrom": 2006,
+        "yearTo": 2006
+    },
+    {
+        "parentConstructorId": "force-india",
+        "constructorId": "spyker",
+        "yearFrom": 2007,
+        "yearTo": 2007
+    },
+    {
+        "parentConstructorId": "force-india",
+        "constructorId": "force-india",
+        "yearFrom": 2008,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "force-india",
+        "constructorId": "racing-point",
+        "yearFrom": 2019,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "force-india",
+        "constructorId": "aston-martin",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "frank-williams-racing-cars",
+        "constructorId": "politoys",
+        "yearFrom": 1972,
+        "yearTo": 1972
+    },
+    {
+        "parentConstructorId": "frank-williams-racing-cars",
+        "constructorId": "iso-marlboro",
+        "yearFrom": 1973,
+        "yearTo": 1974
+    },
+    {
+        "parentConstructorId": "frank-williams-racing-cars",
+        "constructorId": "frank-williams-racing-cars",
+        "yearFrom": 1975,
+        "yearTo": 1975
+    },
+    {
+        "parentConstructorId": "frank-williams-racing-cars",
+        "constructorId": "wolf-williams",
+        "yearFrom": 1976,
+        "yearTo": 1976
+    },
+    {
+        "parentConstructorId": "frank-williams-racing-cars",
+        "constructorId": "wolf",
+        "yearFrom": 1977,
+        "yearTo": 1979
+    },
+    {
+        "parentConstructorId": "honda",
+        "constructorId": "tyrrell",
+        "yearFrom": 1970,
+        "yearTo": 1998
+    },
+    {
+        "parentConstructorId": "honda",
+        "constructorId": "bar",
+        "yearFrom": 1999,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "honda",
+        "constructorId": "honda",
+        "yearFrom": 2006,
+        "yearTo": 2008
+    },
+    {
+        "parentConstructorId": "honda",
+        "constructorId": "brawn",
+        "yearFrom": 2009,
+        "yearTo": 2009
+    },
+    {
+        "parentConstructorId": "honda",
+        "constructorId": "mercedes",
+        "yearFrom": 2010,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "iso-marlboro",
+        "constructorId": "politoys",
+        "yearFrom": 1972,
+        "yearTo": 1972
+    },
+    {
+        "parentConstructorId": "iso-marlboro",
+        "constructorId": "iso-marlboro",
+        "yearFrom": 1973,
+        "yearTo": 1974
+    },
+    {
+        "parentConstructorId": "iso-marlboro",
+        "constructorId": "frank-williams-racing-cars",
+        "yearFrom": 1975,
+        "yearTo": 1975
+    },
+    {
+        "parentConstructorId": "iso-marlboro",
+        "constructorId": "wolf-williams",
+        "yearFrom": 1976,
+        "yearTo": 1976
+    },
+    {
+        "parentConstructorId": "iso-marlboro",
+        "constructorId": "wolf",
+        "yearFrom": 1977,
+        "yearTo": 1979
+    },
+    {
+        "parentConstructorId": "jaguar",
+        "constructorId": "stewart",
+        "yearFrom": 1997,
+        "yearTo": 1999
+    },
+    {
+        "parentConstructorId": "jaguar",
+        "constructorId": "jaguar",
+        "yearFrom": 2000,
+        "yearTo": 2004
+    },
+    {
+        "parentConstructorId": "jaguar",
+        "constructorId": "red-bull",
+        "yearFrom": 2005,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "jordan",
+        "constructorId": "jordan",
+        "yearFrom": 1991,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "jordan",
+        "constructorId": "midland",
+        "yearFrom": 2006,
+        "yearTo": 2006
+    },
+    {
+        "parentConstructorId": "jordan",
+        "constructorId": "spyker",
+        "yearFrom": 2007,
+        "yearTo": 2007
+    },
+    {
+        "parentConstructorId": "jordan",
+        "constructorId": "force-india",
+        "yearFrom": 2008,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "jordan",
+        "constructorId": "racing-point",
+        "yearFrom": 2019,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "jordan",
+        "constructorId": "aston-martin",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "kick-sauber",
+        "constructorId": "sauber",
+        "yearFrom": 1993,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "kick-sauber",
+        "constructorId": "bmw-sauber",
+        "yearFrom": 2006,
+        "yearTo": 2010
+    },
+    {
+        "parentConstructorId": "kick-sauber",
+        "constructorId": "sauber",
+        "yearFrom": 2011,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "kick-sauber",
+        "constructorId": "alfa-romeo",
+        "yearFrom": 2019,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "kick-sauber",
+        "constructorId": "kick-sauber",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "leyton-house",
+        "constructorId": "march",
+        "yearFrom": 1970,
+        "yearTo": 1989
+    },
+    {
+        "parentConstructorId": "leyton-house",
+        "constructorId": "leyton-house",
+        "yearFrom": 1990,
+        "yearTo": 1991
+    },
+    {
+        "parentConstructorId": "leyton-house",
+        "constructorId": "march",
+        "yearFrom": 1992,
+        "yearTo": 1992
+    },
+    {
+        "parentConstructorId": "ligier",
+        "constructorId": "ligier",
+        "yearFrom": 1976,
+        "yearTo": 1996
+    },
+    {
+        "parentConstructorId": "ligier",
+        "constructorId": "prost",
+        "yearFrom": 1997,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "lotus-f1",
+        "constructorId": "toleman",
+        "yearFrom": 1981,
+        "yearTo": 1985
+    },
+    {
+        "parentConstructorId": "lotus-f1",
+        "constructorId": "benetton",
+        "yearFrom": 1986,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "lotus-f1",
+        "constructorId": "renault",
+        "yearFrom": 2002,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "lotus-f1",
+        "constructorId": "lotus-f1",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "lotus-f1",
+        "constructorId": "renault",
+        "yearFrom": 2016,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "lotus-f1",
+        "constructorId": "alpine",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "lotus-racing",
+        "constructorId": "lotus-racing",
+        "yearFrom": 2010,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "lotus-racing",
+        "constructorId": "caterham",
+        "yearFrom": 2012,
+        "yearTo": 2014
+    },
+    {
+        "parentConstructorId": "manor",
+        "constructorId": "virgin",
+        "yearFrom": 2010,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "manor",
+        "constructorId": "marussia",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "manor",
+        "constructorId": "manor",
+        "yearFrom": 2016,
+        "yearTo": 2016
+    },
+    {
+        "parentConstructorId": "march",
+        "constructorId": "march",
+        "yearFrom": 1970,
+        "yearTo": 1989
+    },
+    {
+        "parentConstructorId": "march",
+        "constructorId": "leyton-house",
+        "yearFrom": 1990,
+        "yearTo": 1991
+    },
+    {
+        "parentConstructorId": "march",
+        "constructorId": "march",
+        "yearFrom": 1992,
+        "yearTo": 1992
+    },
+    {
+        "parentConstructorId": "marussia",
+        "constructorId": "virgin",
+        "yearFrom": 2010,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "marussia",
+        "constructorId": "marussia",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "marussia",
+        "constructorId": "manor",
+        "yearFrom": 2016,
+        "yearTo": 2016
+    },
+    {
+        "parentConstructorId": "mercedes",
+        "constructorId": "tyrrell",
+        "yearFrom": 1970,
+        "yearTo": 1998
+    },
+    {
+        "parentConstructorId": "mercedes",
+        "constructorId": "bar",
+        "yearFrom": 1999,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "mercedes",
+        "constructorId": "honda",
+        "yearFrom": 2006,
+        "yearTo": 2008
+    },
+    {
+        "parentConstructorId": "mercedes",
+        "constructorId": "brawn",
+        "yearFrom": 2009,
+        "yearTo": 2009
+    },
+    {
+        "parentConstructorId": "mercedes",
+        "constructorId": "mercedes",
+        "yearFrom": 2010,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "midland",
+        "constructorId": "jordan",
+        "yearFrom": 1991,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "midland",
+        "constructorId": "midland",
+        "yearFrom": 2006,
+        "yearTo": 2006
+    },
+    {
+        "parentConstructorId": "midland",
+        "constructorId": "spyker",
+        "yearFrom": 2007,
+        "yearTo": 2007
+    },
+    {
+        "parentConstructorId": "midland",
+        "constructorId": "force-india",
+        "yearFrom": 2008,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "midland",
+        "constructorId": "racing-point",
+        "yearFrom": 2019,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "midland",
+        "constructorId": "aston-martin",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "minardi",
+        "constructorId": "minardi",
+        "yearFrom": 1985,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "minardi",
+        "constructorId": "toro-rosso",
+        "yearFrom": 2006,
+        "yearTo": 2019
+    },
+    {
+        "parentConstructorId": "minardi",
+        "constructorId": "alphatauri",
+        "yearFrom": 2020,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "minardi",
+        "constructorId": "rb",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "osella",
+        "constructorId": "osella",
+        "yearFrom": 1980,
+        "yearTo": 1990
+    },
+    {
+        "parentConstructorId": "osella",
+        "constructorId": "fondmetal",
+        "yearFrom": 1991,
+        "yearTo": 1992
+    },
+    {
+        "parentConstructorId": "politoys",
+        "constructorId": "politoys",
+        "yearFrom": 1972,
+        "yearTo": 1972
+    },
+    {
+        "parentConstructorId": "politoys",
+        "constructorId": "iso-marlboro",
+        "yearFrom": 1973,
+        "yearTo": 1974
+    },
+    {
+        "parentConstructorId": "politoys",
+        "constructorId": "frank-williams-racing-cars",
+        "yearFrom": 1975,
+        "yearTo": 1975
+    },
+    {
+        "parentConstructorId": "politoys",
+        "constructorId": "wolf-williams",
+        "yearFrom": 1976,
+        "yearTo": 1976
+    },
+    {
+        "parentConstructorId": "politoys",
+        "constructorId": "wolf",
+        "yearFrom": 1977,
+        "yearTo": 1979
+    },
+    {
+        "parentConstructorId": "prost",
+        "constructorId": "ligier",
+        "yearFrom": 1976,
+        "yearTo": 1996
+    },
+    {
+        "parentConstructorId": "prost",
+        "constructorId": "prost",
+        "yearFrom": 1997,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "racing-point",
+        "constructorId": "jordan",
+        "yearFrom": 1991,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "racing-point",
+        "constructorId": "midland",
+        "yearFrom": 2006,
+        "yearTo": 2006
+    },
+    {
+        "parentConstructorId": "racing-point",
+        "constructorId": "spyker",
+        "yearFrom": 2007,
+        "yearTo": 2007
+    },
+    {
+        "parentConstructorId": "racing-point",
+        "constructorId": "force-india",
+        "yearFrom": 2008,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "racing-point",
+        "constructorId": "racing-point",
+        "yearFrom": 2019,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "racing-point",
+        "constructorId": "aston-martin",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "rb",
+        "constructorId": "minardi",
+        "yearFrom": 1985,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "rb",
+        "constructorId": "toro-rosso",
+        "yearFrom": 2006,
+        "yearTo": 2019
+    },
+    {
+        "parentConstructorId": "rb",
+        "constructorId": "alphatauri",
+        "yearFrom": 2020,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "rb",
+        "constructorId": "rb",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "red-bull",
+        "constructorId": "stewart",
+        "yearFrom": 1997,
+        "yearTo": 1999
+    },
+    {
+        "parentConstructorId": "red-bull",
+        "constructorId": "jaguar",
+        "yearFrom": 2000,
+        "yearTo": 2004
+    },
+    {
+        "parentConstructorId": "red-bull",
+        "constructorId": "red-bull",
+        "yearFrom": 2005,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "renault",
+        "constructorId": "toleman",
+        "yearFrom": 1981,
+        "yearTo": 1985
+    },
+    {
+        "parentConstructorId": "renault",
+        "constructorId": "benetton",
+        "yearFrom": 1986,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "renault",
+        "constructorId": "renault",
+        "yearFrom": 2002,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "renault",
+        "constructorId": "lotus-f1",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "renault",
+        "constructorId": "renault",
+        "yearFrom": 2016,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "renault",
+        "constructorId": "alpine",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "sauber",
+        "constructorId": "sauber",
+        "yearFrom": 1993,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "sauber",
+        "constructorId": "bmw-sauber",
+        "yearFrom": 2006,
+        "yearTo": 2010
+    },
+    {
+        "parentConstructorId": "sauber",
+        "constructorId": "sauber",
+        "yearFrom": 2011,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "sauber",
+        "constructorId": "alfa-romeo",
+        "yearFrom": 2019,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "sauber",
+        "constructorId": "kick-sauber",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "spyker",
+        "constructorId": "jordan",
+        "yearFrom": 1991,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "spyker",
+        "constructorId": "midland",
+        "yearFrom": 2006,
+        "yearTo": 2006
+    },
+    {
+        "parentConstructorId": "spyker",
+        "constructorId": "spyker",
+        "yearFrom": 2007,
+        "yearTo": 2007
+    },
+    {
+        "parentConstructorId": "spyker",
+        "constructorId": "force-india",
+        "yearFrom": 2008,
+        "yearTo": 2018
+    },
+    {
+        "parentConstructorId": "spyker",
+        "constructorId": "racing-point",
+        "yearFrom": 2019,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "spyker",
+        "constructorId": "aston-martin",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "stewart",
+        "constructorId": "stewart",
+        "yearFrom": 1997,
+        "yearTo": 1999
+    },
+    {
+        "parentConstructorId": "stewart",
+        "constructorId": "jaguar",
+        "yearFrom": 2000,
+        "yearTo": 2004
+    },
+    {
+        "parentConstructorId": "stewart",
+        "constructorId": "red-bull",
+        "yearFrom": 2005,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "toleman",
+        "constructorId": "toleman",
+        "yearFrom": 1981,
+        "yearTo": 1985
+    },
+    {
+        "parentConstructorId": "toleman",
+        "constructorId": "benetton",
+        "yearFrom": 1986,
+        "yearTo": 2001
+    },
+    {
+        "parentConstructorId": "toleman",
+        "constructorId": "renault",
+        "yearFrom": 2002,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "toleman",
+        "constructorId": "lotus-f1",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "toleman",
+        "constructorId": "renault",
+        "yearFrom": 2016,
+        "yearTo": 2020
+    },
+    {
+        "parentConstructorId": "toleman",
+        "constructorId": "alpine",
+        "yearFrom": 2021,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "toro-rosso",
+        "constructorId": "minardi",
+        "yearFrom": 1985,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "toro-rosso",
+        "constructorId": "toro-rosso",
+        "yearFrom": 2006,
+        "yearTo": 2019
+    },
+    {
+        "parentConstructorId": "toro-rosso",
+        "constructorId": "alphatauri",
+        "yearFrom": 2020,
+        "yearTo": 2023
+    },
+    {
+        "parentConstructorId": "toro-rosso",
+        "constructorId": "rb",
+        "yearFrom": 2024,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "tyrrell",
+        "constructorId": "tyrrell",
+        "yearFrom": 1970,
+        "yearTo": 1998
+    },
+    {
+        "parentConstructorId": "tyrrell",
+        "constructorId": "bar",
+        "yearFrom": 1999,
+        "yearTo": 2005
+    },
+    {
+        "parentConstructorId": "tyrrell",
+        "constructorId": "honda",
+        "yearFrom": 2006,
+        "yearTo": 2008
+    },
+    {
+        "parentConstructorId": "tyrrell",
+        "constructorId": "brawn",
+        "yearFrom": 2009,
+        "yearTo": 2009
+    },
+    {
+        "parentConstructorId": "tyrrell",
+        "constructorId": "mercedes",
+        "yearFrom": 2010,
+        "yearTo": null
+    },
+    {
+        "parentConstructorId": "virgin",
+        "constructorId": "virgin",
+        "yearFrom": 2010,
+        "yearTo": 2011
+    },
+    {
+        "parentConstructorId": "virgin",
+        "constructorId": "marussia",
+        "yearFrom": 2012,
+        "yearTo": 2015
+    },
+    {
+        "parentConstructorId": "virgin",
+        "constructorId": "manor",
+        "yearFrom": 2016,
+        "yearTo": 2016
+    },
+    {
+        "parentConstructorId": "wolf-williams",
+        "constructorId": "politoys",
+        "yearFrom": 1972,
+        "yearTo": 1972
+    },
+    {
+        "parentConstructorId": "wolf-williams",
+        "constructorId": "iso-marlboro",
+        "yearFrom": 1973,
+        "yearTo": 1974
+    },
+    {
+        "parentConstructorId": "wolf-williams",
+        "constructorId": "frank-williams-racing-cars",
+        "yearFrom": 1975,
+        "yearTo": 1975
+    },
+    {
+        "parentConstructorId": "wolf-williams",
+        "constructorId": "wolf-williams",
+        "yearFrom": 1976,
+        "yearTo": 1976
+    },
+    {
+        "parentConstructorId": "wolf-williams",
+        "constructorId": "wolf",
+        "yearFrom": 1977,
+        "yearTo": 1979
+    },
+    {
+        "parentConstructorId": "wolf",
+        "constructorId": "politoys",
+        "yearFrom": 1972,
+        "yearTo": 1972
+    },
+    {
+        "parentConstructorId": "wolf",
+        "constructorId": "iso-marlboro",
+        "yearFrom": 1973,
+        "yearTo": 1974
+    },
+    {
+        "parentConstructorId": "wolf",
+        "constructorId": "frank-williams-racing-cars",
+        "yearFrom": 1975,
+        "yearTo": 1975
+    },
+    {
+        "parentConstructorId": "wolf",
+        "constructorId": "wolf-williams",
+        "yearFrom": 1976,
+        "yearTo": 1976
+    },
+    {
+        "parentConstructorId": "wolf",
+        "constructorId": "wolf",
+        "yearFrom": 1977,
+        "yearTo": 1979
+    }
+]

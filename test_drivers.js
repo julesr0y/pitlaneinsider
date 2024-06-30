@@ -17,29 +17,35 @@ function getDrivers() {
 }
 
 function getDriversStats(driverId) {
-    const currentDriversDetailedData = fs.readFileSync(path.join(__dirname, './data/f1db-drivers.json'), 'utf8');
-    const allRacesResults = fs.readFileSync(path.join(__dirname, './data/f1db-races-race-results.json'), 'utf-8');
-    var victoriesLocalisationAndYear = JSON.parse(allRacesResults).filter(item => item.driverId === driverId && item.positionNumber === 1);
+    const currentDriversDetailedData = fs.readFileSync(path.join(__dirname, './python/dataPython/all_drivers_stats.json'), 'utf8');
     var driverData = JSON.parse(currentDriversDetailedData).find(item => item.id === driverId);
+
     return {
-        id: driverData.id || "Unknown",
-        firstName: driverData.firstName || "Unknown",
-        lastName: driverData.lastName || "Unknown",
-        dateOfBirth: driverData.dateOfBirth || "Unknown",
-        permanentNumber: driverData.permanentNumber || "Unknown",
-        totalRaceStarts: driverData.totalRaceStarts || "Unknown",
-        totalRaceWins: driverData.totalRaceWins || "Unknown",
-        totalPodiums: driverData.totalPodiums || "Unknown",
-        totalPoints: driverData.totalPoints || "Unknown",
-        totalPolePositions: driverData.totalPolePositions || "Unknown",
-        totalFastestLaps: driverData.totalFastestLaps || "Unknown",
-        totalDriverOfTheDay: driverData.totalDriverOfTheDay || "Unknown",
-        bestStartingGridPosition: driverData.bestStartingGridPosition || "Unknown",
-        bestRaceResult: driverData.bestRaceResult || "Unknown",
-        bestChampionshipPosition: driverData.bestChampionshipPosition || "Unknown",
-        allVictories: victoriesLocalisationAndYear
+        id: driverData.id,
+        firstName: driverData.firstName,
+        lastName: driverData.lastName,
+        dateOfBirth: driverData.dateOfBirth,
+        nationality: driverData.nationality,
+        permanentNumber: driverData.permanentNumber,
+        totalRaceStarts: driverData.totalRaceStarts,
+        totalRaceWins: driverData.totalRaceWins,
+        totalPodiums: driverData.totalPodiums,
+        totalPoints: driverData.totalPoints,
+        totalPolePositions: driverData.totalPolePositions,
+        totalFastestLaps: driverData.totalFastestLaps,
+        totalDriverOfTheDay: driverData.totalDriverOfTheDay,
+        bestStartingGridPosition: driverData.bestStartingGridPosition,
+        bestRaceResult: driverData.bestRaceResult,
+        bestChampionshipPosition: driverData.bestChampionshipPosition,
+        currentSeasonDriver: driverData.currentSeasonDriver,
+        numberOfRacesCurrentSeason: driverData.numberOfRacesCurrentSeason,
+        numberOfWinsCurrentSeason: driverData.numberOfWinsCurrentSeason,
+        numberOfPodiumsCurrentSeason: driverData.numberOfPodiumsCurrentSeason,
+        numberOfPointsCurrentSeason: driverData.numberOfPointsCurrentSeason,
+        actualTeam: driverData.actualTeam,
+        allVictories: driverData.allVictories
     }
 }
 
 // getDrivers();
-console.log(getDriversStats("lando-norris"));
+console.log(getDriversStats("charles-leclerc"));
