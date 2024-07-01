@@ -649,9 +649,6 @@ video {
 .mt-0 {
   margin-top: 0px;
 }
-.mt-1 {
-  margin-top: 0.25rem;
-}
 .mt-16 {
   margin-top: 4rem;
 }
@@ -919,9 +916,6 @@ video {
 .rounded-lg {
   border-radius: 0.5rem;
 }
-.rounded-md {
-  border-radius: 0.375rem;
-}
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -951,7 +945,7 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(0 147 204 / var(--tw-border-opacity));
 }
-.border-aston_martin {
+.border-aston-martin {
   --tw-border-opacity: 1;
   border-color: rgb(34 153 113 / var(--tw-border-opacity));
 }
@@ -979,6 +973,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(182 186 189 / var(--tw-border-opacity));
 }
+.border-kick-sauber {
+  --tw-border-opacity: 1;
+  border-color: rgb(82 226 82 / var(--tw-border-opacity));
+}
 .border-light {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -999,13 +997,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(102 146 255 / var(--tw-border-opacity));
 }
-.border-red_bull {
+.border-red-bull {
   --tw-border-opacity: 1;
   border-color: rgb(54 113 198 / var(--tw-border-opacity));
-}
-.border-sauber {
-  --tw-border-opacity: 1;
-  border-color: rgb(82 226 82 / var(--tw-border-opacity));
 }
 .border-stewardsTxt {
   --tw-border-opacity: 1;
@@ -1022,7 +1016,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 147 204 / var(--tw-bg-opacity));
 }
-.bg-aston_martin {
+.bg-aston-martin {
   --tw-bg-opacity: 1;
   background-color: rgb(34 153 113 / var(--tw-bg-opacity));
 }
@@ -1074,6 +1068,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(182 186 189 / var(--tw-bg-opacity));
 }
+.bg-kick-sauber {
+  --tw-bg-opacity: 1;
+  background-color: rgb(82 226 82 / var(--tw-bg-opacity));
+}
 .bg-light {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1102,7 +1100,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
-.bg-red_bull {
+.bg-red-bull {
   --tw-bg-opacity: 1;
   background-color: rgb(54 113 198 / var(--tw-bg-opacity));
 }
@@ -1113,10 +1111,6 @@ video {
 .bg-s-light {
   --tw-bg-opacity: 1;
   background-color: rgb(233 233 231 / var(--tw-bg-opacity));
-}
-.bg-sauber {
-  --tw-bg-opacity: 1;
-  background-color: rgb(82 226 82 / var(--tw-bg-opacity));
 }
 .bg-stewardsBg {
   --tw-bg-opacity: 1;
@@ -1269,7 +1263,7 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 147 204 / var(--tw-text-opacity));
 }
-.text-aston_martin {
+.text-aston-martin {
   --tw-text-opacity: 1;
   color: rgb(34 153 113 / var(--tw-text-opacity));
 }
@@ -1309,6 +1303,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(182 186 189 / var(--tw-text-opacity));
 }
+.text-kick-sauber {
+  --tw-text-opacity: 1;
+  color: rgb(82 226 82 / var(--tw-text-opacity));
+}
 .text-light {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1337,13 +1335,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
-.text-red_bull {
+.text-red-bull {
   --tw-text-opacity: 1;
   color: rgb(54 113 198 / var(--tw-text-opacity));
-}
-.text-sauber {
-  --tw-text-opacity: 1;
-  color: rgb(82 226 82 / var(--tw-text-opacity));
 }
 .text-stewardsTxt {
   --tw-text-opacity: 1;
@@ -1522,14 +1516,6 @@ video {
 
   .sm\:mr-28 {
     margin-right: 7rem;
-  }
-
-  .sm\:h-6 {
-    height: 1.5rem;
-  }
-
-  .sm\:w-6 {
-    width: 1.5rem;
   }
 
   .sm\:max-w-xl {

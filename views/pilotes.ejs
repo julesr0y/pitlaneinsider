@@ -16,9 +16,9 @@
         <% pilotesFront.forEach(function(pilote) { %>
             <div
                 class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
-                <a href="/pilote/<%= pilote.id %>" class="block text-center relative">
+                <a href="/driver/<%= pilote.id %>" class="block text-center relative">
                     <div class="relative mb-4">
-                        <img src="/img/2024/drivers/<%= pilote.id %>.webp" alt="<%= pilote.id %>"
+                        <img src="/img/drivers/<%= pilote.id %>.webp" alt="<%= pilote.id %>"
                             class="w-full h-40 object-contain">
                         <div class="absolute top-2 right-2 w-16 h-16">
                             <img src="/img/countryFlags/<%= pilote.nationality.toLowerCase() %>.svg"
@@ -31,10 +31,10 @@
                         </div>
                     </div>
                     <div>
-                        <img src="/img/2024/logo/<%= pilote.constructorId.toLowerCase() %>.webp"
+                        <img src="/img/teams/<%= pilote.constructorId.toLowerCase() %>.webp"
                             alt="<%= pilote.constructorId %>" class="h-10 w-auto mx-auto mb-2">
                         <div class="font-F1Bold text-2xl text-<%= pilote.constructorId.toLowerCase() %> mb-1">
-                            <%= pilote.number %>
+                            <%= pilote.permanentNumber %>
                         </div>
                         <div class="text-xl font-semibold">
                             <%= pilote.firstName %> <br>

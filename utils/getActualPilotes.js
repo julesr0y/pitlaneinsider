@@ -64,61 +64,31 @@ const nationalityMapping = {
  * @returns {Promise} - Promesse contenant la réponse de l'API. Se présente sous la forme d'un tableau contenant les détails des pilotes et de leur écurie
  */
 async function getActualPilotesWithConstructors(update) {
-    const filePath = path.join(__dirname, '../cache/getActualPilotes.json'); // On définit le chemin du fichier JSON
-    const filePathUpdate = path.join(__dirname, '../cache/updates/getActualPilotes.json');
+    try {
+        const filePath = path.join(__dirname, '../python/dataPython/all_drivers_stats.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(file); // On définit le chemin du fichier JSON
+        var drivers = [];
+        data.forEach(item => {
+            if (item.currentSeasonDriver === true) {
+                const driver = {
+                    id: item.id,
+                    firstName: item.firstName,
+                    lastName: item.lastName,
+                    nationality: item.nationality,
+                    permanentNumber: item.permanentNumber,
+                    constructorId: item.actualTeam
+                };
 
-    if (!update) {
-        // Vérifier si le fichier existe
-        if (fs.existsSync(filePath)) {
-            // Lire le contenu du fichier
-            const dataF = fs.readFileSync(filePath, 'utf8');
-
-            // Vérifier si le fichier n'est pas vide
-            if (dataF) {
-                // Convertir les données en JSON et les retourner
-                return JSON.parse(dataF);
+                drivers.push(driver); // Ajout du pilote au tableau
             }
-        }
-    } else {
-        const actualPilotes = await getFromOpenF1('drivers?session_key=latest');
-
-        const dataPilotes = actualPilotes.map(pilote => {
-            const driver_id = driverMapping[pilote.last_name] || pilote.last_name || "null";
-            const constructor_id = constructorMapping[pilote.team_name] || pilote.team_name;
-            const nationality = nationalityMapping[pilote.country_code];
-
-            return {
-                id: driver_id,
-                firstName: pilote.first_name,
-                lastName: pilote.last_name,
-                nationality: nationality,
-                number: pilote.driver_number,
-                constructor: pilote.team_name,
-                constructorId: constructor_id
-            };
         });
 
-        // Convertir les données en chaîne JSON
-        const dataJSON = JSON.stringify(dataPilotes, null, 2);
-
-        // Vérifier si les données récupérées depuis l'API ne sont pas vides
-        if (dataPilotes.length === 0) {
-            // Si les données de l'API sont vides, copier les données de filePath dans filePathUpdate
-            if (fs.existsSync(filePath)) {
-                const originalData = fs.readFileSync(filePath, 'utf8');
-                if (originalData) {
-                    fs.writeFileSync(filePathUpdate, originalData);
-                }
-            }
-        } else {
-            // Vider et écrire les données dans le fichier de mise à jour
-            fs.writeFileSync(filePathUpdate, dataJSON);
-            // Vider et écrire les données dans le fichier principal
-            fs.writeFileSync(filePath, dataJSON);
-        }
+        return drivers;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
     }
-
-    return;
 }
 
 module.exports = getActualPilotesWithConstructors;

@@ -44,32 +44,34 @@
         </div>
         <div class="w-9/10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="elems">
             <% retro_pilotes.forEach(function(driver) { %>
-                <div
-                    class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
-                    <a class="block text-center relative">
-                        <div class="relative mb-4" id="<%= driver.firstName %> <%= driver.lastName %>">
-                            <img src="/img/drivers/<%= driver.driverId.toLowerCase() %>.webp"
-                                alt="<%= driver.firstName %> <%= driver.lastName %>"
-                                onerror="this.onerror=null; this.src='/img/drivers/unknown.webp'"
-                                class="w-full h-40 object-contain">
-                            <div class="absolute top-2 right-2 w-16 h-16">
-                                <img src="/img/countryFlags/<%= driver.nationality.toLowerCase() %>.svg"
-                                    alt="<%= driver.nationality %>" class="w-12 h-auto">
+                <a href="/driver/<%= driver.driverId.toLowerCase() %>" class="block">
+                    <div
+                        class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
+                        <div class="text-center relative">
+                            <div class="relative mb-4" id="<%= driver.firstName %> <%= driver.lastName %>">
+                                <img src="/img/drivers/<%= driver.driverId.toLowerCase() %>.webp"
+                                    alt="<%= driver.firstName %> <%= driver.lastName %>"
+                                    onerror="this.onerror=null; this.src='/img/drivers/unknown.webp'"
+                                    class="w-full h-40 object-contain">
+                                <div class="absolute top-2 right-2 w-16 h-16">
+                                    <img src="/img/countryFlags/<%= driver.nationality.toLowerCase() %>.svg"
+                                        alt="<%= driver.nationality %>" class="w-12 h-auto">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-semibold">
+                                    <%= driver.firstName %> <br>
+                                        <span class="font-F1Bold text-2xl">
+                                            <%= driver.lastName %>
+                                        </span>
+                                </div>
+                                <div class="text-lg">
+                                    <%= __('retro_f1.all_data.born') %> : <%= driver.birthday %>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="text-xl font-semibold">
-                                <%= driver.firstName %> <br>
-                                    <span class="font-F1Bold text-2xl">
-                                        <%= driver.lastName %>
-                                    </span>
-                            </div>
-                            <div class="text-lg">
-                                <%= __('retro_f1.all_data.born') %> : <%= driver.birthday %>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
                 <% }); %>
         </div>
         <div id="noResults" class="text-center text-xl text-gray-500 mt-4" style="display: none;">

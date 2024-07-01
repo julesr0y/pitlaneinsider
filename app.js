@@ -144,16 +144,14 @@ app.get("/ecurie/:ecurie_id", async (req, res) => {
     }
 });
 
-app.get("/pilotes", async (req, res) => {
+app.get("/drivers", async (req, res) => {
     var pilotes = await getActualPilotes(false); // Récupération des pilotes actuels
     res.render("pilotes", { pilotesFront: pilotes });
 });
 
-app.get("/pilote/:driver_id", async (req, res) => {
-    var pilote = await getDriverHistoryData(req.params.driver_id);
-    var pilote2 = await getDriverData(req.params.driver_id);
-    var teamInfo = await getActualTeam(req.params.driver_id);
-    res.render("pilote", { piloteFront: pilote, id: req.params.driver_id, piloteFront2: pilote2, teamInfo: teamInfo });
+app.get("/driver/:driver_id", async (req, res) => {
+    var driverData = await getDriverData(req.params.driver_id);
+    res.render("pilote", { dataDriver: driverData });
 });
 
 app.get("/calendrier", async (req, res) => {
