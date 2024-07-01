@@ -56,6 +56,7 @@ app.use(helmet.contentSecurityPolicy({
         connectSrc: ["'self'", "https://api.openf1.org", "https://ergast.com"],
         styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
         scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com"],
+        scriptSrcAttr: ["'unsafe-inline'"],
         mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"]
     }
 })); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet

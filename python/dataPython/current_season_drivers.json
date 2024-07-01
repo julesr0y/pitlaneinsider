@@ -1,0 +1,149 @@
+[
+    {
+        "driverId": "alexander-albon",
+        "firstName": "Alexander",
+        "lastName": "Albon",
+        "nationality": "thailand",
+        "permanentNumber": "23"
+    },
+    {
+        "driverId": "carlos-sainz-jr",
+        "firstName": "Carlos",
+        "lastName": "Sainz Jr.",
+        "nationality": "spain",
+        "permanentNumber": "55"
+    },
+    {
+        "driverId": "charles-leclerc",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "nationality": "monaco",
+        "permanentNumber": "16"
+    },
+    {
+        "driverId": "daniel-ricciardo",
+        "firstName": "Daniel",
+        "lastName": "Ricciardo",
+        "nationality": "australia",
+        "permanentNumber": "3"
+    },
+    {
+        "driverId": "esteban-ocon",
+        "firstName": "Esteban",
+        "lastName": "Ocon",
+        "nationality": "france",
+        "permanentNumber": "31"
+    },
+    {
+        "driverId": "fernando-alonso",
+        "firstName": "Fernando",
+        "lastName": "Alonso",
+        "nationality": "spain",
+        "permanentNumber": "14"
+    },
+    {
+        "driverId": "george-russell",
+        "firstName": "George",
+        "lastName": "Russell",
+        "nationality": "united-kingdom",
+        "permanentNumber": "63"
+    },
+    {
+        "driverId": "guanyu-zhou",
+        "firstName": "Guanyu",
+        "lastName": "Zhou",
+        "nationality": "china",
+        "permanentNumber": "24"
+    },
+    {
+        "driverId": "kevin-magnussen",
+        "firstName": "Kevin",
+        "lastName": "Magnussen",
+        "nationality": "denmark",
+        "permanentNumber": "20"
+    },
+    {
+        "driverId": "lance-stroll",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "nationality": "canada",
+        "permanentNumber": "18"
+    },
+    {
+        "driverId": "lando-norris",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "nationality": "united-kingdom",
+        "permanentNumber": "4"
+    },
+    {
+        "driverId": "lewis-hamilton",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "nationality": "united-kingdom",
+        "permanentNumber": "44"
+    },
+    {
+        "driverId": "logan-sargeant",
+        "firstName": "Logan",
+        "lastName": "Sargeant",
+        "nationality": "united-states-of-america",
+        "permanentNumber": "2"
+    },
+    {
+        "driverId": "max-verstappen",
+        "firstName": "Max",
+        "lastName": "Verstappen",
+        "nationality": "netherlands",
+        "permanentNumber": "33"
+    },
+    {
+        "driverId": "nico-hulkenberg",
+        "firstName": "Nico",
+        "lastName": "Hülkenberg",
+        "nationality": "germany",
+        "permanentNumber": "27"
+    },
+    {
+        "driverId": "oliver-bearman",
+        "firstName": "Oliver",
+        "lastName": "Bearman",
+        "nationality": "united-kingdom",
+        "permanentNumber": null
+    },
+    {
+        "driverId": "oscar-piastri",
+        "firstName": "Oscar",
+        "lastName": "Piastri",
+        "nationality": "australia",
+        "permanentNumber": "81"
+    },
+    {
+        "driverId": "pierre-gasly",
+        "firstName": "Pierre",
+        "lastName": "Gasly",
+        "nationality": "france",
+        "permanentNumber": "10"
+    },
+    {
+        "driverId": "sergio-perez",
+        "firstName": "Sergio",
+        "lastName": "Pérez",
+        "nationality": "mexico",
+        "permanentNumber": "11"
+    },
+    {
+        "driverId": "valtteri-bottas",
+        "firstName": "Valtteri",
+        "lastName": "Bottas",
+        "nationality": "finland",
+        "permanentNumber": "77"
+    },
+    {
+        "driverId": "yuki-tsunoda",
+        "firstName": "Yuki",
+        "lastName": "Tsunoda",
+        "nationality": "japan",
+        "permanentNumber": "22"
+    }
+]

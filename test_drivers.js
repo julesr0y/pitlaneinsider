@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function getDrivers() {
+function getDrivers(output_file) {
     var currentDrivers = fs.readFileSync(path.join(__dirname, './data/f1db-seasons-entrants-drivers.json'), 'utf8');
     currentDrivers = JSON.parse(currentDrivers).filter(item => item.year === 2024 && item.testDriver === false);
     const currentDriversDetailedData = fs.readFileSync(path.join(__dirname, './data/f1db-drivers.json'), 'utf8');
