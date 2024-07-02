@@ -115,17 +115,24 @@
                         <%= __('driver.victories_title') %>:
                     </h3>
 
-                    <% dataDriver.allVictories.forEach(function(victory) { %>
+                    <% for(const year in dataDriver.allVictories) { %>
+                        <div class="mt-6">
+                            <p class="text-xl">
+                                <%= year %>
+                            </p>
+                            <% (dataDriver.allVictories[year]).forEach(function(victory) { %>
 
-                        <div class="flex justify-center items-center mt-2">
-                            <div class="flex items-center">
-                                <p class="text-sm sm:text-base ml-2">
-                                    <%= victory.raceName %>
-                                </p>
-                            </div>
+                                <div class="flex justify-center items-center mt-2">
+                                    <div class="flex items-center">
+                                        <p class="text-sm sm:text-base ml-2">
+                                            <%= victory %>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <% }); %>
                         </div>
-
-                        <% }); %>
+                        <% }; %>
 
                 </div>
 

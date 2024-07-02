@@ -83,6 +83,15 @@ def getDriversStats(output_file):
             # Check if the driver is a test driver for the current season
             if current_season_entry.get('testDriver', False):
                 is_a_test_driver = True
+
+        # calculation of ratios
+        victory_ratio = 0
+        podium_ratio = 0
+        pole_ratio = 0
+        if (driver_data).get('totalRaceStarts') != 0:
+            victory_ratio = round(((driver_data.get('totalRaceWins') / driver_data.get('totalRaceStarts')) * 100), 2)
+            podium_ratio = round(((driver_data.get('totalPodiums') / driver_data.get('totalRaceStarts')) * 100), 2)
+            pole_ratio = round(((driver_data.get('totalPolePositions') / driver_data.get('totalRaceStarts')) * 100), 2)
         
         # Compile all driver stats
         driver_stats = {
@@ -109,7 +118,10 @@ def getDriversStats(output_file):
             'numberOfPodiumsCurrentSeason': number_of_podiums_current_season,
             'numberOfPointsCurrentSeason': number_of_points_current_season,
             'actualTeam': actual_team,
-            'allVictories': victories_by_year if victories_by_year else None
+            'allVictories': victories_by_year if victories_by_year else None,
+            'victoryRatio': victory_ratio,
+            'podiumRatio': podium_ratio,
+            'poleRatio': pole_ratio
         }
         
         all_drivers_stats.append(driver_stats)
