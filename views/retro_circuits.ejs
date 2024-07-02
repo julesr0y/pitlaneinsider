@@ -44,7 +44,7 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="elems">
             <% retro_circuits.forEach(function(circuit) { %>
-                <a href="/circuit/<%= circuit.id %>">
+                <a href="/circuit/<%= circuit.id %>" class="block">
                     <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4"
                         id="<%= circuit.name %>">
                         <div class="block text-center">

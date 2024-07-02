@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', function () {
         const query = this.value.toLowerCase();
         const items = elemsContainer.querySelectorAll('div[id]');
+
         let visibleCount = 0;
 
         items.forEach(item => {
             const itemId = item.id.toLowerCase();
             if (itemId.includes(query)) {
-                item.closest('.transform').style.display = 'block';
+                item.closest('.block').style.display = 'block';
                 visibleCount++;
             } else {
-                item.closest('.transform').style.display = 'none';
+                item.closest('.block').style.display = 'none';
             }
         });
 
