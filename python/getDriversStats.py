@@ -39,14 +39,15 @@ def getDriversStats(output_file):
         ]
         
         # Add race information to the victories
-        victories_with_race_info = []
+        victories_by_year = {}
         for victory in victories_localisation_and_year:
             race_info = next((race for race in all_races if race['id'] == victory['raceId']), None)
             if race_info:
-                victories_with_race_info.append({
-                    'raceId': race_info['id'],
-                    'raceName': race_info['officialName']
-                })
+                # Supposons que 'year' est une clé dans race_info qui contient l'année de la course
+                year = race_info['year']
+                if year not in victories_by_year:
+                    victories_by_year[year] = []
+                victories_by_year[year].append(race_info['officialName'])
 
         # Initialize current season stats
         is_a_current_season_driver = False
@@ -108,7 +109,7 @@ def getDriversStats(output_file):
             'numberOfPodiumsCurrentSeason': number_of_podiums_current_season,
             'numberOfPointsCurrentSeason': number_of_points_current_season,
             'actualTeam': actual_team,
-            'allVictories': victories_with_race_info if victories_with_race_info else None
+            'allVictories': victories_by_year if victories_by_year else None
         }
         
         all_drivers_stats.append(driver_stats)
