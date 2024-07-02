@@ -50,6 +50,7 @@ def getDriversStats(output_file):
 
         # Initialize current season stats
         is_a_current_season_driver = False
+        is_a_test_driver = False
         number_of_races_current_season = None
         number_of_wins_current_season = 0
         number_of_podiums_current_season = 0
@@ -77,13 +78,10 @@ def getDriversStats(output_file):
                 for item in actual_driver_points:
                     if item['driverId'] == driver_id:
                         number_of_points_current_season = item['points']
-        else:
-            is_a_current_season_driver = False
-            number_of_races_current_season = None
-            number_of_wins_current_season = None
-            number_of_podiums_current_season = None
-            number_of_points_current_season = None
-            actual_team = None
+            
+            # Check if the driver is a test driver for the current season
+            if current_season_entry.get('testDriver', False):
+                is_a_test_driver = True
         
         # Compile all driver stats
         driver_stats = {
@@ -104,6 +102,7 @@ def getDriversStats(output_file):
             'bestRaceResult': driver_data.get('bestRaceResult', 'Unknown'),
             'bestChampionshipPosition': driver_data.get('bestChampionshipPosition', 'Unknown'),
             'currentSeasonDriver': is_a_current_season_driver,
+            'testDriver': is_a_test_driver,
             'numberOfRacesCurrentSeason': number_of_races_current_season,
             'numberOfWinsCurrentSeason': number_of_wins_current_season,
             'numberOfPodiumsCurrentSeason': number_of_podiums_current_season,

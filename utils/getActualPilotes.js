@@ -70,7 +70,7 @@ async function getActualPilotesWithConstructors(update) {
         const data = JSON.parse(file); // On définit le chemin du fichier JSON
         var drivers = [];
         data.forEach(item => {
-            if (item.currentSeasonDriver === true) {
+            if (item.currentSeasonDriver === true && item.testDriver == false) {
                 const driver = {
                     id: item.id,
                     firstName: item.firstName,

@@ -38,30 +38,32 @@
                     </svg>
                 </div>
 
-                <input class="bg-s-<%= theme %> peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text"
+                <input class="bg-s-<%= theme %> peer h-full w-full outline-none text-sm text-gray-300 pr-2" type="text"
                     id="search" placeholder="<%= __('retro_f1.all_data.search_track') %>" />
             </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="elems">
             <% retro_circuits.forEach(function(circuit) { %>
-                <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4"
-                    id="<%= circuit.name %>">
-                    <a class="block text-center">
-                        <div class="relative mb-4">
-                            <img src="/img/circuits/<%= circuit.id %>.webp" alt="Circuit <%= circuit.name %>"
-                                onerror="this.onerror=null; this.src='/img/circuits/unknown.webp'"
-                                class="w-full h-32 object-contain mx-auto">
+                <a href="/circuit/<%= circuit.id %>">
+                    <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4"
+                        id="<%= circuit.name %>">
+                        <div class="block text-center">
+                            <div class="relative mb-4">
+                                <img src="/img/circuits/<%= circuit.id %>.webp" alt="Circuit <%= circuit.name %>"
+                                    onerror="this.onerror=null; this.src='/img/circuits/unknown.webp'"
+                                    class="w-full h-32 object-contain mx-auto">
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="/img/countryFlags/<%= circuit.pays.toLowerCase() %>.svg"
+                                    alt="<%= circuit.pays %>" class="mb-2 h-12 w-auto">
+                                <span class="text-xl font-F1Bold">
+                                    <%= circuit.name %>
+                                </span>
+                            </div>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img src="/img/countryFlags/<%= circuit.pays.toLowerCase() %>.svg" alt="<%= circuit.pays %>"
-                                class="mb-2 h-12 w-auto">
-                            <span class="text-xl font-F1Bold">
-                                <%= circuit.name %>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <% }); %>
+                    </div>
+                    <% }); %>
+                </a>
         </div>
         <div id="noResults" class="text-center text-xl text-gray-500 mt-4" style="display: none;">
             <%= __('retro_f1.all_data.no_result') %>

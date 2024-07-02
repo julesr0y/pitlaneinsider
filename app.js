@@ -127,12 +127,12 @@ app.get("/", async (req, res) => {
     res.render("accueil", { podiumDrivers: podiumDriversFront, actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
 });
 
-app.get("/ecuries", async (req, res) => {
+app.get("/teams", async (req, res) => {
     var teams = await getActualTeams(false);
     res.render("ecuries", { teamsFront: teams });
 });
 
-app.get("/ecurie/:ecurie_id", async (req, res) => {
+app.get("/team/:ecurie_id", async (req, res) => {
     try {
         var team = await getTeam(req.params.ecurie_id);
         const [rows] = await dbPool.query('SELECT * FROM teams WHERE nom = ?', [req.params.ecurie_id]);

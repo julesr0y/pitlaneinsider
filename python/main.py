@@ -7,7 +7,7 @@ from getAllDriverIds import allIds
 
 def main():
     outputFileDriversStats = "./python/dataPython/all_drivers_stats.json"
-    # getDriversStats(outputFileDriversStats)
+    getDriversStats(outputFileDriversStats)
     outputFileCurrentSeasonDrivers = "./python/dataPython/current_season_drivers.json"
     # getDriversCurrentSeason(outputFileCurrentSeasonDrivers)
     # print(f"All current season drivers saved to {outputFileDriversStats}")
@@ -15,7 +15,7 @@ def main():
     # getDriversAllSeasons(outputFileAllSeasonDrivers)
     # print(f"All seasons drivers saved to {outputFileAllSeasonDrivers}")
     outputFileAllDriversIds = "./python/dataPython/all_drivers_ids.json"
-    allIds(outputFileAllDriversIds)
-    print(f"All drivers ids saved to {outputFileAllDriversIds}")
+    # allIds(outputFileAllDriversIds)
+    # print(f"All drivers ids saved to {outputFileAllDriversIds}")
 
 main()
