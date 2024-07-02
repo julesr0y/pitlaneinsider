@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 def getDriversStats(output_file):
     # Get the base directory of the script
@@ -20,7 +21,7 @@ def getDriversStats(output_file):
 
     with open(os.path.join(base_dir, './data/f1db-seasons-entrants-drivers.json'), 'r', encoding='utf-8') as f:
         entrants_drivers = json.load(f)
-
+  
     # Filter drivers for the current season (2024)
     current_season_year = 2024
     current_season_drivers = [
@@ -32,7 +33,23 @@ def getDriversStats(output_file):
     # Iterate through each driver in the detailed data
     for driver_data in current_drivers_detailed_data:
         driver_id = driver_data['id']
-        
+
+        # calculate age
+        age = 0
+        birth = driver_data.get('dateOfBirth')
+        death = driver_data.get('dateOfDeath')
+
+        if death != None:
+            birth = datetime.strptime(birth, "%Y-%m-%d")
+            death = datetime.strptime(death, "%Y-%m-%d")
+            age = death.year - birth.year
+        else:
+            birth = datetime.strptime(birth, "%Y-%m-%d")
+            now = datetime.now()
+            age = now.year - birth.year
+            if (now.month, now.day) < (birth.month, birth.day):
+                age -= 1
+
         # Filter victories for the driver
         victories_localisation_and_year = [
             item for item in all_races_results if item['driverId'] == driver_id and item['positionNumber'] == 1
@@ -99,6 +116,8 @@ def getDriversStats(output_file):
             'firstName': driver_data.get('firstName', 'Unknown'),
             'lastName': driver_data.get('lastName', 'Unknown'),
             'dateOfBirth': driver_data.get('dateOfBirth', 'Unknown'),
+            'dateOfDeath': driver_data.get('dateOfDeath', 'Unknown') if driver_data.get('dateOfDeath', 'Unknown') else None,
+            'age': age,
             'nationality': driver_data.get('nationalityCountryId', 'Unknown'),
             'permanentNumber': driver_data.get('permanentNumber', 'Unknown'),
             'totalRaceStarts': driver_data.get('totalRaceStarts', 'Unknown'),

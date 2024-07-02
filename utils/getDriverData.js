@@ -17,6 +17,8 @@ async function getDriverData(driver_id) {
             firstName: data[0].firstName,
             lastName: data[0].lastName,
             dateOfBirth: data[0].dateOfBirth,
+            dateOfDeath: data[0].dateOfDeath,
+            age: data[0].age,
             nationality: data[0].nationality,
             permanentNumber: data[0].permanentNumber,
             totalRaceStarts: data[0].totalRaceStarts,

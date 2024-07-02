@@ -41,8 +41,20 @@
                                 <%= dataDriver.lastName %>
                         </h1>
                         <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center">
-                            <%= dataDriver.dateOfBirth %> (<%= 0 %>
-                                    <%= __('driver.age') %>)
+                            <% if (dataDriver.dateOfDeath===null) { %>
+                                <span>
+                                    <%= dataDriver.dateOfBirth %> (<%= dataDriver.age %>
+                                            <%= __('driver.age') %>)
+                                </span>
+                                <% } else { %>
+                                    <span>
+                                        <%= dataDriver.dateOfBirth %>
+                                    </span>
+                                    <span>
+                                        <%= dataDriver.dateOfDeath %> (<%= dataDriver.age %>
+                                                <%= __('driver.age') %>)
+                                    </span>
+                                    <% } %>
                         </p>
                         <div class="grid grid-cols-2 grid-rows-2 gap-x-4 justify-center items-center mt-16">
                             <div class="flex items-center justify-center">
@@ -51,7 +63,7 @@
                                 </p>
                             </div>
                             <div class="flex items-center justify-center">
-                                <img src="/img/2024/logo/<%= dataDriver.actualTeam.toLowerCase() %>.webp"
+                                <img src="/img/teams/<%= dataDriver.actualTeam.toLowerCase() %>.webp"
                                     alt="<%= dataDriver.actualTeam %>" class="w-24 h-auto">
                             </div>
                             <div class="flex items-center justify-center">
@@ -78,8 +90,20 @@
                                         <%= dataDriver.lastName %>
                                 </h1>
                                 <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center">
-                                    <%= dataDriver.dateOfBirth %> (<%= 0 %>
-                                            <%= __('driver.age') %>)
+                                    <% if (dataDriver.dateOfDeath===null) { %>
+                                        <span>
+                                            <%= dataDriver.dateOfBirth %> (<%= dataDriver.age %>
+                                                    <%= __('driver.age') %>)
+                                        </span>
+                                        <% } else { %>
+                                            <span>
+                                                <%= dataDriver.dateOfBirth %> -
+                                            </span>
+                                            <span>
+                                                <%= dataDriver.dateOfDeath %> (<%= dataDriver.age %>
+                                                        <%= __('driver.age') %>)
+                                            </span>
+                                            <% } %>
                                 </p>
                             </div>
                         </div>
