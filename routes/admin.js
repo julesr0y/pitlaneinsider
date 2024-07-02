@@ -30,10 +30,10 @@ router.get("/administration/updateCaches", requireSession, requireAdmin, async (
 // Fonction pour mettre à jour les caches en arrière-plan
 async function updateCaches(taskId) {
     try {
-        await getActualPilotes(true);
+        // await getActualPilotes(true);
         await getDriversActualStandings(true);
         await getCalendrier(true);
-        await getActualTeams(true);
+        // await getActualTeams(true);
         await getEcuries(true);
         await getLastPodium(true);
         await getRetroAccueil(true);
