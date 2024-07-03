@@ -24,52 +24,52 @@ def getDriversStats(output_file):
   
     # Filter drivers for the current season (2024)
     current_season_year = 2024
-    current_season_drivers = [
-        entry['driverId'] for entry in entrants_drivers if entry['year'] == current_season_year
-    ]
+    current_season_drivers = {entry['driverId'] for entry in entrants_drivers if entry['year'] == current_season_year}
     
     all_drivers_stats = []
+
+    # Preprocess all races for quick lookup by raceId
+    races_by_id = {race['id']: race for race in all_races}
+
+    # Preprocess all results by driverId
+    results_by_driver = {}
+    for result in all_races_results:
+        driver_id = result['driverId']
+        if driver_id not in results_by_driver:
+            results_by_driver[driver_id] = []
+        results_by_driver[driver_id].append(result)
 
     # Iterate through each driver in the detailed data
     for driver_data in current_drivers_detailed_data:
         driver_id = driver_data['id']
 
-        # calculate age
-        age = 0
-        birth = driver_data.get('dateOfBirth')
-        death = driver_data.get('dateOfDeath')
-
-        if death != None:
-            birth = datetime.strptime(birth, "%Y-%m-%d")
-            death = datetime.strptime(death, "%Y-%m-%d")
+        # Calculate age
+        birth = datetime.strptime(driver_data['dateOfBirth'], "%Y-%m-%d")
+        if driver_data.get('dateOfDeath'):
+            death = datetime.strptime(driver_data['dateOfDeath'], "%Y-%m-%d")
             age = death.year - birth.year
         else:
-            birth = datetime.strptime(birth, "%Y-%m-%d")
             now = datetime.now()
             age = now.year - birth.year
             if (now.month, now.day) < (birth.month, birth.day):
                 age -= 1
 
         # Filter victories for the driver
-        victories_localisation_and_year = [
-            item for item in all_races_results if item['driverId'] == driver_id and item['positionNumber'] == 1
-        ]
-        
-        # Add race information to the victories
         victories_by_year = {}
-        for victory in victories_localisation_and_year:
-            race_info = next((race for race in all_races if race['id'] == victory['raceId']), None)
-            if race_info:
-                # Supposons que 'year' est une clé dans race_info qui contient l'année de la course
-                year = race_info['year']
-                if year not in victories_by_year:
-                    victories_by_year[year] = []
-                victories_by_year[year].append(race_info['officialName'])
+        if driver_id in results_by_driver:
+            for result in results_by_driver[driver_id]:
+                if result['positionNumber'] == 1:
+                    race_info = races_by_id.get(result['raceId'])
+                    if race_info:
+                        year = race_info['year']
+                        if year not in victories_by_year:
+                            victories_by_year[year] = []
+                        victories_by_year[year].append(race_info['officialName'])
 
         # Initialize current season stats
         is_a_current_season_driver = False
         is_a_test_driver = False
-        number_of_races_current_season = None
+        number_of_races_current_season = 0
         number_of_wins_current_season = 0
         number_of_podiums_current_season = 0
         number_of_points_current_season = 0
@@ -77,50 +77,74 @@ def getDriversStats(output_file):
 
         # Check if the driver is in the current season
         if driver_id in current_season_drivers:
-            current_season_entry = next(
-                (entry for entry in entrants_drivers if entry['driverId'] == driver_id and entry['year'] == current_season_year), 
-                None
-            )
-            if current_season_entry:
-                is_a_current_season_driver = True
-                number_of_races_current_season = len(current_season_entry['rounds'])
-                actual_team = current_season_entry['constructorId']
-                # Filter podiums (positions 1, 2, and 3) for the current season (2024)
-                for item in all_races_results:
-                    if item['driverId'] == driver_id and item['positionNumber'] in [1, 2, 3] and item['year'] == current_season_year:
-                        if item['positionNumber'] == 1:
-                            number_of_wins_current_season += 1
-                        number_of_podiums_current_season += 1
-
-                # Get the driver's points for the current season
-                for item in actual_driver_points:
-                    if item['driverId'] == driver_id:
-                        number_of_points_current_season = item['points']
+            for entry in entrants_drivers:
+                if entry['driverId'] == driver_id and entry['year'] == current_season_year:
+                    is_a_current_season_driver = True
+                    number_of_races_current_season += len(entry['rounds'])
+                    actual_team = entry['constructorId']
+                    if entry.get('testDriver', False):
+                        is_a_test_driver = True
+                    break
             
-            # Check if the driver is a test driver for the current season
-            if current_season_entry.get('testDriver', False):
-                is_a_test_driver = True
+            # Calculate current season stats
+            for result in results_by_driver.get(driver_id, []):
+                if result['year'] == current_season_year:
+                    if result['positionNumber'] in [1, 2, 3]:
+                        number_of_podiums_current_season += 1
+                        if result['positionNumber'] == 1:
+                            number_of_wins_current_season += 1
+            
+            for points in actual_driver_points:
+                if points['driverId'] == driver_id:
+                    number_of_points_current_season = points['points']
+                    break
 
-        # calculation of ratios
-        victory_ratio = 0
-        podium_ratio = 0
-        pole_ratio = 0
-        if (driver_data).get('totalRaceStarts') != 0:
-            victory_ratio = round(((driver_data.get('totalRaceWins') / driver_data.get('totalRaceStarts')) * 100), 2)
-            podium_ratio = round(((driver_data.get('totalPodiums') / driver_data.get('totalRaceStarts')) * 100), 2)
-            pole_ratio = round(((driver_data.get('totalPolePositions') / driver_data.get('totalRaceStarts')) * 100), 2)
-        
+        # Calculation of ratios
+        total_race_starts = driver_data.get('totalRaceStarts', 0)
+        victory_ratio = round((driver_data.get('totalRaceWins', 0) / total_race_starts) * 100, 2) if total_race_starts else 0
+        podium_ratio = round((driver_data.get('totalPodiums', 0) / total_race_starts) * 100, 2) if total_race_starts else 0
+        pole_ratio = round((driver_data.get('totalPolePositions', 0) / total_race_starts) * 100, 2) if total_race_starts else 0
+
+        # Group consecutive years for the same team
+        teams_of_driver = []
+        driver_entries = [entry for entry in entrants_drivers if entry['driverId'] == driver_id]
+        driver_entries.sort(key=lambda x: x['year'])
+
+        current_team = None
+        start_year = None
+        end_year = None
+        for entry in driver_entries:
+            team = entry['constructorId']
+            year = entry['year']
+            if current_team is None:
+                current_team = team
+                start_year = year
+                end_year = year
+            elif team == current_team and year == end_year + 1:
+                end_year = year
+            else:
+                teams_of_driver.append({'year': f"{start_year}-{end_year}" if start_year != end_year else str(start_year), 'teamId': current_team})
+                current_team = team
+                start_year = year
+                end_year = year
+        if current_team is not None:
+            teams_of_driver.append({'year': f"{start_year}-{end_year}" if start_year != end_year else str(start_year), 'teamId': current_team})
+
+        number_of_seasons = len(set(entry['year'] for entry in driver_entries))
+
         # Compile all driver stats
         driver_stats = {
             'id': driver_data.get('id', 'Unknown'),
             'firstName': driver_data.get('firstName', 'Unknown'),
             'lastName': driver_data.get('lastName', 'Unknown'),
             'dateOfBirth': driver_data.get('dateOfBirth', 'Unknown'),
-            'dateOfDeath': driver_data.get('dateOfDeath', 'Unknown') if driver_data.get('dateOfDeath', 'Unknown') else None,
+            'dateOfDeath': driver_data.get('dateOfDeath', 'Unknown') if driver_data.get('dateOfDeath') else None,
             'age': age,
             'nationality': driver_data.get('nationalityCountryId', 'Unknown'),
             'permanentNumber': driver_data.get('permanentNumber', 'Unknown'),
-            'totalRaceStarts': driver_data.get('totalRaceStarts', 'Unknown'),
+            'firstYear': driver_entries[0]['year'] if driver_entries else 'Unknown',
+            'numberOfSeasons': number_of_seasons,
+            'totalRaceStarts': total_race_starts,
             'totalRaceWins': driver_data.get('totalRaceWins', 'Unknown'),
             'totalPodiums': driver_data.get('totalPodiums', 'Unknown'),
             'totalPoints': driver_data.get('totalPoints', 'Unknown'),
@@ -130,6 +154,7 @@ def getDriversStats(output_file):
             'bestStartingGridPosition': driver_data.get('bestStartingGridPosition', 'Unknown'),
             'bestRaceResult': driver_data.get('bestRaceResult', 'Unknown'),
             'bestChampionshipPosition': driver_data.get('bestChampionshipPosition', 'Unknown'),
+            'teams': teams_of_driver,
             'currentSeasonDriver': is_a_current_season_driver,
             'testDriver': is_a_test_driver,
             'numberOfRacesCurrentSeason': number_of_races_current_season,
