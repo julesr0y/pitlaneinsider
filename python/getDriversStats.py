@@ -137,6 +137,7 @@ def getDriversStats(output_file):
             'id': driver_data.get('id', 'Unknown'),
             'firstName': driver_data.get('firstName', 'Unknown'),
             'lastName': driver_data.get('lastName', 'Unknown'),
+            'abbreviation': driver_data.get('abbreviation', 'Unknown'),
             'dateOfBirth': driver_data.get('dateOfBirth', 'Unknown'),
             'dateOfDeath': driver_data.get('dateOfDeath', 'Unknown') if driver_data.get('dateOfDeath') else None,
             'age': age,
