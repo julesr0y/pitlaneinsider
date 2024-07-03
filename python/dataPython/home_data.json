@@ -1,0 +1,308 @@
+[
+    {
+        "lastPodiumLocalisation": [
+            {
+                "id": "austria",
+                "raceId": 1112,
+                "country": "austria",
+                "name": "Austrian GP"
+            }
+        ],
+        "lastPodium": [
+            {
+                "position": 1,
+                "driverId": "george-russell",
+                "abbreviation": "RUS"
+            },
+            {
+                "position": 2,
+                "driverId": "oscar-piastri",
+                "abbreviation": "PIA"
+            },
+            {
+                "position": 3,
+                "driverId": "carlos-sainz-jr",
+                "abbreviation": "SAI"
+            }
+        ],
+        "driverStandings": [
+            {
+                "year": 2024,
+                "driverId": "max-verstappen",
+                "firstName": "Max",
+                "lastName": "Verstappen",
+                "abbreviation": "VER",
+                "position": 1,
+                "points": 237
+            },
+            {
+                "year": 2024,
+                "driverId": "lando-norris",
+                "firstName": "Lando",
+                "lastName": "Norris",
+                "abbreviation": "NOR",
+                "position": 2,
+                "points": 156
+            },
+            {
+                "year": 2024,
+                "driverId": "charles-leclerc",
+                "firstName": "Charles",
+                "lastName": "Leclerc",
+                "abbreviation": "LEC",
+                "position": 3,
+                "points": 150
+            },
+            {
+                "year": 2024,
+                "driverId": "carlos-sainz-jr",
+                "firstName": "Carlos",
+                "lastName": "Sainz Jr.",
+                "abbreviation": "SAI",
+                "position": 4,
+                "points": 135
+            },
+            {
+                "year": 2024,
+                "driverId": "sergio-perez",
+                "firstName": "Sergio",
+                "lastName": "Pérez",
+                "abbreviation": "PER",
+                "position": 5,
+                "points": 118
+            },
+            {
+                "year": 2024,
+                "driverId": "oscar-piastri",
+                "firstName": "Oscar",
+                "lastName": "Piastri",
+                "abbreviation": "PIA",
+                "position": 6,
+                "points": 112
+            },
+            {
+                "year": 2024,
+                "driverId": "george-russell",
+                "firstName": "George",
+                "lastName": "Russell",
+                "abbreviation": "RUS",
+                "position": 7,
+                "points": 111
+            },
+            {
+                "year": 2024,
+                "driverId": "lewis-hamilton",
+                "firstName": "Lewis",
+                "lastName": "Hamilton",
+                "abbreviation": "HAM",
+                "position": 8,
+                "points": 85
+            },
+            {
+                "year": 2024,
+                "driverId": "fernando-alonso",
+                "firstName": "Fernando",
+                "lastName": "Alonso",
+                "abbreviation": "ALO",
+                "position": 9,
+                "points": 41
+            },
+            {
+                "year": 2024,
+                "driverId": "yuki-tsunoda",
+                "firstName": "Yuki",
+                "lastName": "Tsunoda",
+                "abbreviation": "TSU",
+                "position": 10,
+                "points": 19
+            },
+            {
+                "year": 2024,
+                "driverId": "lance-stroll",
+                "firstName": "Lance",
+                "lastName": "Stroll",
+                "abbreviation": "STR",
+                "position": 11,
+                "points": 17
+            },
+            {
+                "year": 2024,
+                "driverId": "nico-hulkenberg",
+                "firstName": "Nico",
+                "lastName": "Hülkenberg",
+                "abbreviation": "HUL",
+                "position": 12,
+                "points": 14
+            },
+            {
+                "year": 2024,
+                "driverId": "daniel-ricciardo",
+                "firstName": "Daniel",
+                "lastName": "Ricciardo",
+                "abbreviation": "RIC",
+                "position": 13,
+                "points": 11
+            },
+            {
+                "year": 2024,
+                "driverId": "oliver-bearman",
+                "firstName": "Oliver",
+                "lastName": "Bearman",
+                "abbreviation": "BEA",
+                "position": 14,
+                "points": 6
+            },
+            {
+                "year": 2024,
+                "driverId": "pierre-gasly",
+                "firstName": "Pierre",
+                "lastName": "Gasly",
+                "abbreviation": "GAS",
+                "position": 15,
+                "points": 6
+            },
+            {
+                "year": 2024,
+                "driverId": "kevin-magnussen",
+                "firstName": "Kevin",
+                "lastName": "Magnussen",
+                "abbreviation": "MAG",
+                "position": 16,
+                "points": 5
+            },
+            {
+                "year": 2024,
+                "driverId": "esteban-ocon",
+                "firstName": "Esteban",
+                "lastName": "Ocon",
+                "abbreviation": "OCO",
+                "position": 17,
+                "points": 3
+            },
+            {
+                "year": 2024,
+                "driverId": "alexander-albon",
+                "firstName": "Alexander",
+                "lastName": "Albon",
+                "abbreviation": "ALB",
+                "position": 18,
+                "points": 2
+            },
+            {
+                "year": 2024,
+                "driverId": "guanyu-zhou",
+                "firstName": "Guanyu",
+                "lastName": "Zhou",
+                "abbreviation": "ZHO",
+                "position": 19,
+                "points": 0
+            },
+            {
+                "year": 2024,
+                "driverId": "valtteri-bottas",
+                "firstName": "Valtteri",
+                "lastName": "Bottas",
+                "abbreviation": "BOT",
+                "position": 20,
+                "points": 0
+            },
+            {
+                "year": 2024,
+                "driverId": "logan-sargeant",
+                "firstName": "Logan",
+                "lastName": "Sargeant",
+                "abbreviation": "SAR",
+                "position": 21,
+                "points": 0
+            }
+        ],
+        "constructorStandings": [
+            {
+                "year": 2024,
+                "contructorId": "red-bull",
+                "name": "Red Bull",
+                "position": 1,
+                "points": 355
+            },
+            {
+                "year": 2024,
+                "contructorId": "ferrari",
+                "name": "Ferrari",
+                "position": 2,
+                "points": 291
+            },
+            {
+                "year": 2024,
+                "contructorId": "mclaren",
+                "name": "McLaren",
+                "position": 3,
+                "points": 268
+            },
+            {
+                "year": 2024,
+                "contructorId": "mercedes",
+                "name": "Mercedes",
+                "position": 4,
+                "points": 196
+            },
+            {
+                "year": 2024,
+                "contructorId": "aston-martin",
+                "name": "Aston Martin",
+                "position": 5,
+                "points": 58
+            },
+            {
+                "year": 2024,
+                "contructorId": "rb",
+                "name": "RB",
+                "position": 6,
+                "points": 30
+            },
+            {
+                "year": 2024,
+                "contructorId": "haas",
+                "name": "Haas",
+                "position": 7,
+                "points": 19
+            },
+            {
+                "year": 2024,
+                "contructorId": "alpine",
+                "name": "Alpine",
+                "position": 8,
+                "points": 9
+            },
+            {
+                "year": 2024,
+                "contructorId": "williams",
+                "name": "Williams",
+                "position": 9,
+                "points": 2
+            },
+            {
+                "year": 2024,
+                "contructorId": "kick-sauber",
+                "name": "Kick Sauber",
+                "position": 10,
+                "points": 0
+            }
+        ],
+        "driverLeader": {
+            "year": 2024,
+            "driverId": "max-verstappen",
+            "firstName": "Max",
+            "lastName": "Verstappen",
+            "abbreviation": "VER",
+            "position": 1,
+            "points": 237
+        },
+        "constructorLeader": {
+            "year": 2024,
+            "contructorId": "red-bull",
+            "name": "Red Bull",
+            "position": 1,
+            "points": 355
+        }
+    }
+]
