@@ -1602,7 +1602,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 92,
+        "numberOfPointsCurrentSeason": 2,
         "actualTeam": "williams",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -6439,7 +6439,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 1,
         "numberOfPodiumsCurrentSeason": 5,
-        "numberOfPointsCurrentSeason": 18,
+        "numberOfPointsCurrentSeason": 135,
         "actualTeam": "ferrari",
         "allVictories": {
             "2022": [
@@ -6703,7 +6703,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 1,
         "numberOfPodiumsCurrentSeason": 5,
-        "numberOfPointsCurrentSeason": 39,
+        "numberOfPointsCurrentSeason": 150,
         "actualTeam": "ferrari",
         "allVictories": {
             "2019": [
@@ -8636,7 +8636,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 0,
+        "numberOfPointsCurrentSeason": 11,
         "actualTeam": "rb",
         "allVictories": {
             "2014": [
@@ -12440,7 +12440,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 0,
+        "numberOfPointsCurrentSeason": 3,
         "actualTeam": "alpine",
         "allVictories": {
             "2021": [
@@ -13041,7 +13041,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 0,
+        "numberOfPointsCurrentSeason": 41,
         "actualTeam": "aston-martin",
         "allVictories": {
             "2003": [
@@ -14637,7 +14637,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 1,
         "numberOfPodiumsCurrentSeason": 2,
-        "numberOfPointsCurrentSeason": 0,
+        "numberOfPointsCurrentSeason": 111,
         "actualTeam": "mercedes",
         "allVictories": {
             "2022": [
@@ -16221,7 +16221,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 6,
+        "numberOfPointsCurrentSeason": 0,
         "actualTeam": "kick-sauber",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -25453,7 +25453,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 55,
+        "numberOfPointsCurrentSeason": 5,
         "actualTeam": "haas",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -25892,7 +25892,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 40,
+        "numberOfPointsCurrentSeason": 17,
         "actualTeam": "aston-martin",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -25931,7 +25931,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 1,
         "numberOfPodiumsCurrentSeason": 6,
-        "numberOfPointsCurrentSeason": 49,
+        "numberOfPointsCurrentSeason": 156,
         "actualTeam": "mclaren",
         "allVictories": {
             "2024": [
@@ -26459,7 +26459,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 1,
-        "numberOfPointsCurrentSeason": 109,
+        "numberOfPointsCurrentSeason": 85,
         "actualTeam": "mercedes",
         "allVictories": {
             "2007": [
@@ -26718,7 +26718,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 1,
+        "numberOfPointsCurrentSeason": 0,
         "actualTeam": "williams",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -29332,7 +29332,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 7,
         "numberOfPodiumsCurrentSeason": 8,
-        "numberOfPointsCurrentSeason": 49,
+        "numberOfPointsCurrentSeason": 237,
         "actualTeam": "red-bull",
         "allVictories": {
             "2016": [
@@ -31587,7 +31587,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 22,
+        "numberOfPointsCurrentSeason": 14,
         "actualTeam": "haas",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -32714,7 +32714,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 2,
-        "numberOfPointsCurrentSeason": 97,
+        "numberOfPointsCurrentSeason": 112,
         "actualTeam": "mclaren",
         "allVictories": null,
         "victoryRatio": 0.0,
@@ -35655,7 +35655,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 0,
+        "numberOfPointsCurrentSeason": 6,
         "actualTeam": "alpine",
         "allVictories": {
             "2020": [
@@ -39648,7 +39648,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 4,
-        "numberOfPointsCurrentSeason": 14,
+        "numberOfPointsCurrentSeason": 118,
         "actualTeam": "red-bull",
         "allVictories": {
             "2020": [
@@ -42527,7 +42527,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 4,
+        "numberOfPointsCurrentSeason": 0,
         "actualTeam": "kick-sauber",
         "allVictories": {
             "2017": [
@@ -43729,7 +43729,7 @@
         "numberOfRacesCurrentSeason": 11,
         "numberOfWinsCurrentSeason": 0,
         "numberOfPodiumsCurrentSeason": 0,
-        "numberOfPointsCurrentSeason": 32,
+        "numberOfPointsCurrentSeason": 19,
         "actualTeam": "rb",
         "allVictories": null,
         "victoryRatio": 0.0,

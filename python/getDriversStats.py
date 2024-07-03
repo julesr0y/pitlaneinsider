@@ -95,7 +95,7 @@ def getDriversStats(output_file):
                             number_of_wins_current_season += 1
             
             for points in actual_driver_points:
-                if points['driverId'] == driver_id:
+                if points['driverId'] == driver_id and points['year'] == current_season_year:
                     number_of_points_current_season = points['points']
                     break
 
