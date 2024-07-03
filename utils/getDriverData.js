@@ -21,6 +21,8 @@ async function getDriverData(driver_id) {
             age: data[0].age,
             nationality: data[0].nationality,
             permanentNumber: data[0].permanentNumber,
+            firstYear: data[0].firstYear,
+            numberOfSeasons: data[0].numberOfSeasons,
             totalRaceStarts: data[0].totalRaceStarts,
             totalRaceWins: data[0].totalRaceWins,
             totalPodiums: data[0].totalPodiums,
@@ -31,13 +33,17 @@ async function getDriverData(driver_id) {
             bestStartingGridPosition: data[0].bestStartingGridPosition,
             bestRaceResult: data[0].bestRaceResult,
             bestChampionshipPosition: data[0].bestChampionshipPosition,
+            teams: data[0].teams,
             currentSeasonDriver: data[0].currentSeasonDriver,
             numberOfRacesCurrentSeason: data[0].numberOfRacesCurrentSeason,
             numberOfWinsCurrentSeason: data[0].numberOfWinsCurrentSeason,
             numberOfPodiumsCurrentSeason: data[0].numberOfPodiumsCurrentSeason,
             numberOfPointsCurrentSeason: data[0].numberOfPointsCurrentSeason,
             actualTeam: data[0].actualTeam,
-            allVictories: data[0].allVictories
+            allVictories: data[0].allVictories,
+            victoryRatio: data[0].victoryRatio,
+            podiumRatio: data[0].podiumRatio,
+            poleRatio: data[0].poleRatio
         }
 
         return driverData;

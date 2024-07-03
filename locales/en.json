@@ -53,7 +53,16 @@
 		"total_points": "Points",
 		"total_poles": "Poles",
 		"total_dnf": "DNF",
-		"victories_title": "Victories"
+		"victories_title": "Victories",
+		"victory_ratio": "driver.victory_ratio",
+		"podium_ratio": "driver.podium_ratio",
+		"pole_ratio": "driver.pole_ratio",
+		"fisrt_year": "driver.fisrt_year",
+		"number_of_seasons": "driver.number_of_seasons",
+		"first_year": "driver.first_year",
+		"total_driver_of_the_day": "driver.total_driver_of_the_day",
+		"total_fastest_laps": "driver.total_fastest_laps",
+		"teams_title": "driver.teams_title"
 	},
 	"calendar": {
 		"tab_title": "Calendar",
