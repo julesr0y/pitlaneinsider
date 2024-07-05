@@ -140,26 +140,20 @@
                 <span class="sm:col-span-4 col-span-4 font-F1Bold">
                     <%= __('retro_f1.all_seasons.standings.drivers') %>
                 </span>
-                <span class="sm:col-span-2 col-span-3 font-F1Bold">
-                    <%= __('retro_f1.all_seasons.standings.victories') %>
-                </span>
-                <span class="col-span-2 font-F1Bold sm:ml-16">
+                <span class="col-span-4 font-F1Bold sm:ml-16">
                     <%= __('retro_f1.all_seasons.standings.points') %>
                 </span>
             </div>
             <div class="pilot-list grid grid-cols-12 gap-y-2 mt-4">
-                <% retro_classement.forEach(function(pilot, index) { %>
-                    <span class="col-span-2 font-F1Bold sm:ml-20 ml-6">
-                        <%= String(index + 1).padStart(2, '0' ) %>.
+                <% retro_classement.forEach(function(pilot) { %>
+                    <span class="col-span-4 font-F1Bold sm:ml-20 ml-6">
+                        <%= String(pilot.position).padStart(2, '0' ) %>
                     </span>
                     <span class="col-span-4 text-left sm:ml-40 ml-6">
-                        <%= pilot.firstname %>
-                            <%= pilot.lastname %>
+                        <%= pilot.firstName %>
+                            <%= pilot.lastName %>
                     </span>
-                    <span class="col-span-3 text-right sm:mr-12 mr-2">
-                        <%= pilot.wins %>
-                    </span>
-                    <span class="col-span-3 text-right font-F1Bold sm:mr-20 mr-4">
+                    <span class="col-span-4 text-right font-F1Bold sm:mr-20 mr-4">
                         <%= pilot.points %>
                     </span>
                     <% }); %>

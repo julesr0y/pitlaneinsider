@@ -1,39 +1,30 @@
-const getFromErgast = require("./getFromErgast");
+const fs = require('fs'); // Module permettant de gérer les fichiers
+const path = require('path'); // Module permettant de gérer les chemins de fichiers
 
-/**
-    * @function
-    * @description Fonction permettant de récupérer le classement d'une saison
-    * @param {string} season_id
-    * @returns {Promise<Array>}
-    */
 async function getSeasonRanking(season_id) {
     try {
-        const dataSeasonRanking = await getFromErgast(`${season_id}/driverstandings.json?limit=500`);
-        const standingsLists = dataSeasonRanking.MRData.StandingsTable.StandingsLists;
+        const filePath = path.join(__dirname, '../python/dataPython/all_driver_standings.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(file); // On définit le chemin du fichier JSON
+
+        var sortedData = data.filter(item => item.year == season_id);
 
         let ranking = [];
+        sortedData.forEach(function (element) {
+            const driverInfo = {
+                position: element.position,
+                firstName: element.firstName,
+                lastName: element.lastName,
+                points: element.points
+            };
 
-        standingsLists.forEach(standingsList => {
-            standingsList.DriverStandings.forEach(driverStanding => {
-                const driver = driverStanding.Driver;
-                const wins = driverStanding.wins;
-                const points = driverStanding.points;
+            ranking.push(driverInfo);
+        })
 
-                const driverInfo = {
-                    position: driverStanding.position,
-                    firstname: driver.givenName,
-                    lastname: driver.familyName,
-                    wins: wins,
-                    points: points
-                };
-
-                ranking.push(driverInfo);
-            });
-        });
         return ranking;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error;
+        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
     }
 }
 

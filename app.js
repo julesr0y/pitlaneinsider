@@ -26,6 +26,7 @@ const dbPool = require('./config/database');
 
 // On importe les fonctions crées par l'équipe
 const getLastPodium = require("./utils/getLastPodium"); // Fonction permettant de récupérer le podium de la dernière course
+const getHomeData = require("./utils/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
 const getDriversActualStandings = require("./utils/getDriversActualStanding"); // Fonction permettant de récupérer le classement actuel des pilotes
 const getTeamsActualStandings = require("./utils/getTeamsActualStandings"); // Fonction permettant de récupérer le classement actuel des écuries
 const getCalendrier = require("./utils/getCalendrier"); // Fonction permettant de récupérer le calendrier de la saison actuelle
@@ -119,10 +120,9 @@ app.use(async (req, res, next) => {
 });
 
 app.get("/", async (req, res) => {
-    var podiumDriversFront = await getLastPodium(false); // Récupération du podium de la dernière course
-    var actualDriversStanding = await getDriversActualStandings(false); // Récupération du classement actuel des pilotes
-    var actualTeamsStanding = await getTeamsActualStandings(false); // Récupération du classement actuel des écuries
-    res.render("accueil", { podiumDrivers: podiumDriversFront, actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
+    var homeData = await getHomeData();
+    // console.log(homeData)
+    res.render("accueil", { homeData: homeData });
 });
 
 app.get("/teams", async (req, res) => {
@@ -238,7 +238,7 @@ app.get("/circuit/:circuit_id", async (req, res) => {
 });
 
 app.get("/classement", async (req, res) => {
-    var actualDriversStanding = await getDriversActualStandings(false); // Récupération du classement actuel des pilotes
+    var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
     var actualTeamsStanding = await getTeamsActualStandings(false); // Récupération du classement actuel des écuries
     res.render("classement", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
 });

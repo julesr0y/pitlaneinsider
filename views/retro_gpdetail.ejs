@@ -133,17 +133,17 @@
             <div class="gp-detail-list grid grid-cols-12 gap-y-2 mt-4">
                 <% gpDetails.forEach(detail=> { %>
                     <span class="col-span-2 font-F1Bold sm:ml-28 ml-6">
-                        <%= detail.position %>.
+                        <%= String(detail.position).padStart(2, '0' ) %>
                     </span>
                     <span class="col-span-4 text-left sm:ml-40 ml-6">
-                        <%= detail.fname %>
-                            <%= detail.lname %>
+                        <%= detail.firstName %>
+                            <%= detail.lastName %>
                     </span>
                     <span class="col-span-3 text-right sm:mr-28 mr-10">
                         <%= detail.grid %>
                     </span>
                     <span class="col-span-3 text-right sm:mr-20">
-                        <%= detail.time %>
+                        <%= detail.gap %>
                     </span>
                     <% }); %>
             </div>

@@ -1,6 +1,9 @@
 from getDriversStats import getDriversStats
 from getActualStandings import getStandings
 from getHomeData import getHomeData
+from getTitledDrivers import getTitledDrivers
+from getCalendar import getCalendar
+from getAllRacesQualiAndResults import getAllRacesQualiAndResults
 
 def main():
     outputFileDriversStats = "./python/dataPython/all_drivers_stats.json"
@@ -13,5 +16,14 @@ def main():
     output_file_home_data = "./python/dataPython/home_data.json"
     getHomeData(output_file_home_data)
     print(f"All homepage data saved to {output_file_home_data}")
+    output_file_titled_drivers = "./python/dataPython/titled_drivers.json"
+    getTitledDrivers(output_file_titled_drivers)
+    print(f"All homepage data saved to {output_file_titled_drivers}")
+    output_file_calendar = "./python/dataPython/all_calendar.json"
+    getCalendar(output_file_calendar)
+    print(f"All calendar data saved to {output_file_calendar}")
+    output_file_races_results = "./python/dataPython/all_races_and_quali_results.json"
+    getAllRacesQualiAndResults(output_file_races_results)
+    print(f"All races and quali data saved to {output_file_races_results}")
 
 main()

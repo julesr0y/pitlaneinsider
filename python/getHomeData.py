@@ -15,7 +15,7 @@ def getHomeData(output_file):
     with open(os.path.join(base_dir, './data/f1db-grands-prix.json'), 'r', encoding='utf-8') as f:
         all_gp = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-drivers.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, './dataPython/all_drivers_stats.json'), 'r', encoding='utf-8') as f:
         drivers_data = json.load(f)
 
     with open(os.path.join(base_dir, './dataPython/all_driver_standings.json'), 'r', encoding='utf-8') as f:

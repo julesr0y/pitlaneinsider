@@ -1,40 +1,29 @@
-const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
+const fs = require('fs'); // Module permettant de gérer les fichiers
+const path = require('path'); // Module permettant de gérer les chemins de fichiers
 
-/**
-    * @function
-    * @description Fonction permettant de récupérer la liste des saisons
-    * @param {string} season_id
-    * @returns {Promise<Array>}
-    */
 async function getSeasonList(season_id) {
     try {
-        const dataSeasonList = await getFromErgast(`${season_id}/results.json?limit=500`);
-        const races = dataSeasonList.MRData.RaceTable.Races;
+        const filePath = path.join(__dirname, '../python/dataPython/all_calendar.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(file); // On définit le chemin du fichier JSON
 
-        // array pour stocker le classement des saisons
-        let seasons = [];
+        var sortedData = data.filter(race => race[0].raceDetails.some(detail => detail.year == season_id));
 
-        races.forEach(race => {
-            const year = race.season;
-            const round = race.round;
-            const name = race.raceName;
-            const date = race.date;
-            const loc = race.Circuit.Location.country;
-            const win = race.Results[0];
-
-            // Création d'un objet contenant les informations de la saison
+        let calendar = [];
+        sortedData.forEach(function (calendarElement) {
+            const raceDetail = calendarElement[0].raceDetails.find(detail => detail.year == season_id);
             const seasonInfo = {
-                year: year,
-                round: round,
-                name: name,
-                date: date,
-                country: loc,
-                winfname: win.Driver.givenName,
-                winlname: win.Driver.familyName
+                year: raceDetail.year,
+                name: raceDetail.name,
+                country: raceDetail.country,
+                date: raceDetail.date,
+                raceId: raceDetail.raceId,
+                id: raceDetail.id
             };
-            seasons.push(seasonInfo); // Ajout des informations au tableau
+            calendar.push(seasonInfo); // Ajout des informations au tableau
         });
-        return seasons;
+
+        return calendar;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
         throw error; // Propager l'erreur pour que le code appelant puisse la gérer

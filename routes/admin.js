@@ -11,7 +11,6 @@ const getCalendrier = require("../utils/getCalendrier"); // Fonction permettant 
 const getActualPilotes = require("../utils/getActualPilotes"); // Fonction permettant de récupérer les pilotes actuels
 const getActualTeams = require("../utils/getActualTeams"); // Fonction permettant de récupérer les équipes de la saison actuelle
 const getEcuries = require("../utils/getEcuries"); // Fonction permettant de récupérer les écuries retro
-const getRetroAccueil = require("../utils/getRetroAccueil"); // Fonction permettant de récupérer les infos présentes sur la page Retro - Accueil
 const getWinners = require("../utils/getWinners"); // Fonction permettant de récupérer les gagnants
 const getCircuits = require('../utils/getCircuits'); // Fonction permettant de récupérer les circuits
 const getRetroPilotes = require('../utils/getRetroPilotes'); // Fonction permettant de récupérer les pilotes retro
@@ -36,7 +35,6 @@ async function updateCaches(taskId) {
         // await getActualTeams(true);
         await getEcuries(true);
         await getLastPodium(true);
-        await getRetroAccueil(true);
         await getWinners(true);
         await getCircuits(true);
         await getRetroPilotes(true);

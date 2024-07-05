@@ -9,7 +9,7 @@ def getStandings(output_file_drivers, output_file_constructors):
     with open(os.path.join(base_dir, './data/f1db-seasons-driver-standings.json'), 'r', encoding='utf-8') as f:
         current_season_driver_standings = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-drivers.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, './dataPython/all_drivers_stats.json'), 'r', encoding='utf-8') as f:
         drivers_data = json.load(f)
 
     with open(os.path.join(base_dir, './data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
@@ -23,11 +23,15 @@ def getStandings(output_file_drivers, output_file_constructors):
         firstName = ""
         lastName = ""
         abbreviation = ""
+        permanentNumber = None
+        actualTeam = None
         for item in drivers_data:
             if item['id'] == driver['driverId']:
                 firstName = item['firstName']
                 lastName = item['lastName']
                 abbreviation = item['abbreviation']
+                permanentNumber = item['permanentNumber']
+                actualTeam = item['actualTeam']
         driver_entry = {
             'year': driver['year'],
             'driverId': driver['driverId'],
@@ -35,7 +39,9 @@ def getStandings(output_file_drivers, output_file_constructors):
             'lastName': lastName,
             'abbreviation': abbreviation,
             'position': driver['positionDisplayOrder'],
-            'points': driver['points']
+            'points': driver['points'],
+            'permanentNumber': permanentNumber,
+            'actualTeam': actualTeam
         }
         driver_standings.append(driver_entry)
 
@@ -47,7 +53,7 @@ def getStandings(output_file_drivers, output_file_constructors):
                 constructorName = item['name']
         constructor_entry = {
             'year': constructor['year'],
-            'contructorId': constructor['constructorId'],
+            'constructorId': constructor['constructorId'],
             'name': constructorName,
             'position': constructor['positionDisplayOrder'],
             'points': constructor['points']

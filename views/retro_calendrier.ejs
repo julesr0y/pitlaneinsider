@@ -7,7 +7,6 @@
             <meta charset="UTF-8">
             <title>PLI - <%= __('retro_f1.all_seasons.calendar.tab_title') %>
             </title>
-            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
             <style>
                 :root {
@@ -105,22 +104,6 @@
                         var selectedYear = select.value;
                         window.location.href = '/retro_calendrier/' + selectedYear;
                     }
-
-                    function updateLinks() {
-                        var selectedYear = document.getElementById('seasonSelect').value;
-                        document.getElementById('classementLink').href = '/retro_classement/' + selectedYear;
-                        document.getElementById('calendrierLink').href = '/retro_calendrier/' + selectedYear;
-                        var gpDetailLinks = document.querySelectorAll('.gp-detail-link');
-                        gpDetailLinks.forEach(function (link) {
-                            var round = link.getAttribute('data-round');
-                            link.href = '/retro_gpdetail/' + selectedYear + '/' + round;
-                        });
-                    }
-
-                    document.addEventListener('DOMContentLoaded', function () {
-                        updateLinks();
-                        document.getElementById('seasonSelect').addEventListener('change', updateLinks);
-                    });
                 </script>
             </div>
         </div>
@@ -143,24 +126,18 @@
         <div class="grid md:grid-cols-2 gap-4 justify-center">
             <% retro_calendrier.forEach(course=> { %>
                 <% if (course.year==selectedYear) { %>
-                    <a href="/retro_gpdetail/<%= selectedYear %>/<%= course.round %>" data-round="<%= course.round %>"
+                    <a href="/retro_gpdetail/<%= selectedYear %>/<%= String(course.raceId) %>"
+                        data-round="<%= course.round %>"
                         class="gp-detail-link bg-s-<%= theme %> p-4 sm:p-8 shadow-md rounded-2xl mt-8 focus:outline-none focus:ring-2 focus:ring-gray-500">
                         <div class="flex flex-col items-center w-full">
-                            <img src="/img/countryFlags/<%= course.country.toLowerCase() %>.svg"
-                                alt="<%= course.country %>" class="h-56 w-auto my-auto rounded-xl">
+                            <img src="/img/countryFlags/<%= course.country %>.svg" alt="<%= course.country %>"
+                                class="h-56 w-auto my-auto rounded-xl">
                             <ul class="text-t-s-<%= theme %>">
                                 <li class="text-xl text-center">
                                     <%= course.name %>
                                 </li>
                                 <li class="text-xl text-center">
                                     <%= course.date %>
-                                </li>
-                                <li class="text-xl">
-                                    <%= __('retro_f1.all_seasons.calendar.winner') %> :
-                                        <strong>
-                                            <%= course.winfname %>
-                                                <%= course.winlname %>
-                                        </strong>
                                 </li>
                             </ul>
                         </div>

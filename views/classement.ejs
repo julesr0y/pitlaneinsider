@@ -41,14 +41,14 @@
                     <% actualDriversStanding.forEach(function(pilote) { %>
                         <span class="flex justify-center">
                             <span
-                                class="border border-<%= pilote.equipe_id %> h-auto w-1 box-border bg-<%= pilote.equipe_id %> rounded-3xl col-span-1">
+                                class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl col-span-1">
                             </span>
                         </span>
                         <span class="font-F1Bold col-span-2">
                             <%= String(pilote.position).padStart(2, '0' ) %>
                         </span>
                         <span class="col-span-6 text-left sm:ml-36 ml-10">
-                            <%= pilote.nom %>
+                            <%= pilote.lastName %>
                         </span>
                         <span class="col-span-3 text-right sm:mr-20 mr-8">
                             <%= pilote.points %>
@@ -74,14 +74,14 @@
                     <% actualTeamsStanding.forEach(function(team) { %>
                         <span class="flex justify-center">
                             <span
-                                class="border border-<%= team.equipe_id %> h-auto w-1 box-border bg-<%= team.equipe_id %> rounded-3xl col-span-1">
+                                class="border border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl col-span-1">
                             </span>
                         </span>
                         <span class="font-F1Bold col-span-2">
                             <%= String(team.position).padStart(2, '0' ) %>
                         </span>
                         <span class="col-span-6 text-left sm:ml-40 ml-10">
-                            <%= team.nom %>
+                            <%= team.name %>
                         </span>
                         <span class="col-span-3 text-right sm:mr-20 mr-6">
                             <%= team.points %>

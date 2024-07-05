@@ -84,7 +84,7 @@
 
     <main class="px-4 bg-b-<%= theme %>">
         <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
-            <a href="/pilote/<%= actualDriversStanding[0].pilote_id %>">
+            <a href="/driver/<%= homeData[0].driverLeader.driverId %>">
                 <div id="chPilotes"
                     class="h-32 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
                     <span class="text-center">
@@ -93,17 +93,17 @@
                     <span class="flex justify-evenly items-center mt-auto gap-2">
                         <span class="flex flex-col items-center text-xl">
                             <span>
-                                <%= actualDriversStanding[0].code %>
+                                <%= homeData[0].driverLeader.abbreviation %>
                             </span>
-                            <span class="text-<%= actualDriversStanding[0].equipe_id %>">
-                                <% if(actualDriversStanding[0].numero==33) { %>
+                            <span class="text-<%= homeData[0].driverLeader.actualTeam %>">
+                                <% if(homeData[0].driverLeader.permanentNumber==33) { %>
                                     <%= 1 %>
                                         <% } else { %>
-                                            <%= actualDriversStanding[0].numero %>
+                                            <%= homeData[0].driverLeader.permanentNumber %>
                                                 <% } %>
                             </span>
                         </span>
-                        <img src="/img/2024/drivers/<%= actualDriversStanding[0].pilote_id %>.webp" class="h-20 w-auto">
+                        <img src="/img/drivers/<%= homeData[0].driverLeader.driverId %>.webp" class="h-20 w-auto">
                     </span>
                 </div>
             </a>
@@ -112,7 +112,7 @@
                     <%= __('home.teams_championship') %>
                 </span>
                 <span>
-                    <img src="/img/2024/logo/<%= actualTeamsStanding[0].equipe_id %>.webp"
+                    <img src="/img/teams/<%= homeData[0].constructorLeader.constructorId %>.webp"
                         class="h-12 md:h-20 w-auto mt-3">
                 </span>
             </div>
@@ -120,33 +120,33 @@
 
         <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
             <span class="flex justify-center text-center mb-4 font-F1Bold">
-                <%= __('home.last_podium') %> - <%= podiumDrivers[3].raceName %>
+                <%= __('home.last_podium') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
             </span>
             <div class="flex justify-evenly items-end h-full">
                 <div class="flex flex-col items-center">
-                    <img src="/img/2024/drivers/<%= podiumDrivers[1].id %>.webp" class="h-20 w-auto">
+                    <img src="/img/drivers/<%= homeData[0].lastPodium[1].driverId %>.webp" class="h-20 w-auto">
                     <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
                         <span class="text-lg font-bold">2</span>
                         <span class="text-sm font-bold mt-2">
-                            <%= podiumDrivers[1].code %>
+                            <%= homeData[0].lastPodium[1].abbreviation %>
                         </span>
                     </div>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="/img/2024/drivers/<%= podiumDrivers[0].id %>.webp" class="h-20 w-auto">
+                    <img src="/img/drivers/<%= homeData[0].lastPodium[0].driverId %>.webp" class="h-20 w-auto">
                     <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
                         <span class="text-lg font-bold">1</span>
                         <span class="text-sm font-bold mt-2">
-                            <%= podiumDrivers[0].code %>
+                            <%= homeData[0].lastPodium[0].abbreviation %>
                         </span>
                     </div>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="/img/2024/drivers/<%= podiumDrivers[2].id %>.webp" class="h-20 w-auto">
+                    <img src="/img/drivers/<%= homeData[0].lastPodium[2].driverId %>.webp" class="h-20 w-auto">
                     <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
                         <span class="text-lg font-bold">3</span>
                         <span class="text-sm font-bold mt-2">
-                            <%= podiumDrivers[2].code %>
+                            <%= homeData[0].lastPodium[2].abbreviation %>
                         </span>
                     </div>
                 </div>
@@ -159,27 +159,27 @@
             </span>
             <span class="flex justify-evenly">
                 <span>
-                    <% actualDriversStanding.slice(0, 10).forEach(function(pilote) { %>
+                    <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
                         <span
-                            class="border border-<%= pilote.equipe_id %> h-auto w-1 box-border bg-<%= pilote.equipe_id %> rounded-3xl"></span>
+                            class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
                         &nbsp;
                         <span class="font-F1Bold">
                             <%= String(pilote.position).padStart(2, '0' ) %> -
                         </span>
-                        <%= pilote.nom %>
+                        <%= pilote.lastName %>
                             <br>
                             <% }); %>
                 </span>
                 <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
                 <span>
-                    <% actualDriversStanding.slice(10, 20).forEach(function(pilote) { %>
+                    <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
                         <span
-                            class="border border-<%= pilote.equipe_id %> h-auto w-1 box-border bg-<%= pilote.equipe_id %> rounded-3xl"></span>
+                            class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
                         &nbsp;
                         <span class="font-F1Bold">
                             <%= String(pilote.position).padStart(2, '0' ) %> -
                         </span>
-                        <%= pilote.nom %>
+                        <%= pilote.lastName %>
                             <br>
                             <% }); %>
                 </span>

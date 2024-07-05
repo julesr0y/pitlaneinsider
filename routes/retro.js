@@ -3,7 +3,6 @@ const router = express.Router();
 const cors = require("cors");
 
 // fonctions
-const getRetroAccueil = require('../utils/getRetroAccueil');
 const getWinners = require('../utils/getWinners');
 const getSeasonRanking = require('../utils/getSeasonRanking');
 const getSeasonList = require('../utils/getSeasonList');
@@ -13,8 +12,8 @@ const getEcuries = require('../utils/getEcuries');
 const getCircuits = require('../utils/getCircuits');
 
 router.get("/retro_accueil", cors(), async (req, res) => {
-    var retro_accueil = await getRetroAccueil(false);
-    res.render("retro_accueil", { retro_accueil: retro_accueil })
+    var retroHome = await getWinners();
+    res.render("retro_accueil", { retroHome: retroHome })
 })
 
 router.get("/retro_titre", cors(), async (req, res) => {
@@ -56,7 +55,7 @@ router.get("/retro_gpdetail", cors(), (req, res) => {
 
 router.get("/retro_gpdetail/:season_id/:gp_id", cors(), async (req, res) => {
     try {
-        var GP_detail = await getGPDetail(req.params.season_id, req.params.gp_id);
+        var GP_detail = await getGPDetail(req.params.gp_id);
         res.render('retro_gpdetail', { gpDetails: GP_detail, selectedYear: req.params.season_id });
     } catch (error) {
         res.status(500).send('Erreur lors de la récupération des données');
