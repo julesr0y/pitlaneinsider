@@ -4,7 +4,7 @@
 <head>
     <%- include('partials/head.ejs') %>
         <%- include('partials/header.ejs') %>
-            <title>PLI - <%= teamFront.teamName %>
+            <title>PLI - <%= teamFront.name %>
             </title>
 </head>
 
@@ -13,58 +13,101 @@
         <div class="bg-s-<%= theme %> rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
             <div class="text-center">
                 <h1 class="text-lg font-F1Bold mb-2">
-                    <%= teamFront.teamName %>
+                    <%= teamFront.fullName %>
                 </h1>
             </div>
 
             <div class="flex justify-center">
-                <img src="/img/2024/logo/<%= teamFront.teamid %>.webp" alt="Aston Martin" class="h-28 w-auto">
+                <img src="/img/teams/<%= teamFront.constructorId %>.webp" alt="<%= teamFront.constructorId %>"
+                    class="h-28 w-auto">
             </div>
 
             <!-- Text Content -->
             <div class="text-center">
                 <p class="text-t-s-<%= theme %>">
-                    <%= __('team.team_start') %> : <%= dataTeam.date_creation %>
+                    <%= __('team.team_start') %> : <%= "unknown" %>
                 </p>
-                <div class="my-4">
+                <!-- <div class="my-4">
                     <h3 class="font-bold">
-                        <%= __('team.drivers') %> :
+                        <%= // __('team.drivers') %> :
                     </h3>
-                    <% teamFront.drivers.forEach(function(driver){ %>
+                    <% // teamFront.drivers.forEach(function(driver){ %>
                         <div class="flex items-center justify-center">
-                            <img src="/img/countryFlags/<%= driver.nationality %>.svg" alt="<%= driver.nationality %>"
-                                class="w-5 h-auto mr-2">
+                            <img src="/img/countryFlags/<%= // driver.nationality %>.svg"
+                                alt="<%= // driver.nationality %>" class="w-5 h-auto mr-2">
                             <p>
-                                <%= driver.name %> - <%= driver.number %>
+                                <%= // driver.name %> - <%= // driver.number %>
                             </p>
                         </div>
-                        <% }) %>
-                </div>
-                <p class="text-t-s-<%= theme %>">
-                    <%= __('team.podiums') %> : <%= dataTeam.nbPodiums %>
-                </p>
-                <p class="text-t-s-<%= theme %>">
-                    <%= __('team.victories') %> : <%= dataTeam.nbVictoires %>
-                </p>
-                <p class="text-t-s-<%= theme %>">
-                    <%= __('team.points') %> : <%= dataTeam.nbPoints %>
-                </p>
-                <p class="text-t-s-<%= theme %> mb-4">
-                    <%= __('team.races') %> : <%= dataTeam.nbCourses %>
-                </p>
+                        <% // }) %>
+                </div> -->
 
-                <div class="my-4">
+                <span class="grid grid-cols-12 mt-4">
+                    <span class="col-span-4 flex flex-col">
+                        <span>
+                            <%= teamFront.totalRaceStarts %>
+                        </span>
+                        <span class="text-t-s-<%= theme %> text-xs">
+                            <%= __('team.total_races') %>
+                        </span>
+                    </span>
+                    <span class="col-span-4 flex flex-col">
+                        <span>
+                            <%= teamFront.totalRaceWins %>
+                        </span>
+                        <span class="text-t-s-<%= theme %> text-xs">
+                            <%= __('team.total_wins') %>
+                        </span>
+                    </span>
+                    <span class="col-span-4 flex flex-col">
+                        <span>
+                            <%= teamFront.totalPodiumRaces %>
+                        </span>
+                        <span class="text-t-s-<%= theme %> text-xs">
+                            <%= __('team.total_podiums') %>
+                        </span>
+                    </span>
+                </span>
+
+                <span class="grid grid-cols-12 mt-4">
+                    <span class="col-span-4 flex flex-col">
+                        <span>
+                            <%= teamFront.totalChampionshipPoints %>
+                        </span>
+                        <span class="text-t-s-<%= theme %> text-xs">
+                            <%= __('team.total_points') %>
+                        </span>
+                    </span>
+                    <span class="col-span-4 flex flex-col">
+                        <span>
+                            <%= teamFront.totalPolePositions %>
+                        </span>
+                        <span class="text-t-s-<%= theme %> text-xs">
+                            <%= __('team.total_poles') %>
+                        </span>
+                    </span>
+                    <span class="col-span-4 flex flex-col">
+                        <span>
+                            <%= teamFront.totalFastestLaps %>
+                        </span>
+                        <span class="text-t-s-<%= theme %> text-xs">
+                            <%= __('team.total_fastest_laps') %>
+                        </span>
+                    </span>
+                </span>
+
+                <!-- <div class="my-4">
                     <h3 class="font-bold">
-                        <%= __('team.single_seater') %> :
+                        <%= // __('team.single_seater') %> :
                     </h3>
-                    <p class="text-t-s-<%= theme %>">
-                        <%= dataTeam.monoplace %>
+                    <p class="text-t-s-<%= // theme %>">
+                        <%= // dataTeam.monoplace %>
                     </p>
                     <span class="flex justify-center">
-                        <img src="/img/2024/monoplace/<%= dataTeam.monoplace %>.avif" alt="<%= dataTeam.monoplace %>"
+                        <img src="/img/2024/monoplace/<%= // dataTeam.monoplace %>.avif" alt="<%= // dataTeam.monoplace %>"
                             class="w-2/3 h-auto">
                     </span>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

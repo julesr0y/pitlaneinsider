@@ -8,7 +8,7 @@ const getSeasonRanking = require('../utils/getSeasonRanking');
 const getSeasonList = require('../utils/getSeasonList');
 const getGPDetail = require('../utils/getGPDetail');
 const getRetroPilotes = require('../utils/getRetroPilotes');
-const getEcuries = require('../utils/getEcuries');
+const getTeams = require('../utils/getEcuries');
 const getCircuits = require('../utils/getCircuits');
 
 router.get("/retro_accueil", cors(), async (req, res) => {
@@ -63,12 +63,12 @@ router.get("/retro_gpdetail/:season_id/:gp_id", cors(), async (req, res) => {
 });
 
 router.get("/retro_pilotes", cors(), async (req, res) => {
-    var retro_pilotes = await getRetroPilotes(false);
+    var retro_pilotes = await getRetroPilotes();
     res.render("retro_pilotes", { retro_pilotes: retro_pilotes })
 });
 
 router.get("/retro_ecuries", cors(), async (req, res) => {
-    var retro_ecuries = await getEcuries(false);
+    var retro_ecuries = await getTeams();
     res.render("retro_ecuries", { retro_ecuries: retro_ecuries })
 });
 

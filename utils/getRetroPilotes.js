@@ -8,7 +8,7 @@ const path = require('path'); // Module permettant de gérer les chemins de fich
  * @param {boolean} update - Détermine si les données doivent être mises à jour.
  * @returns {Promise<Array>} - Une promesse contenant un tableau d'objets représentant chaque pilote avec son prénom, nom, date de naissance, nationalité et identifiant.
  */
-async function getRetroPilotes(update) {
+async function getRetroPilotes() {
     try {
         const filePath = path.join(__dirname, '../python/dataPython/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');

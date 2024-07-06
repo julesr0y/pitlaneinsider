@@ -107,15 +107,18 @@
                     </span>
                 </div>
             </a>
-            <div id="chContructeurs" class="h-32 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
-                <span class="text-center font-F1Bold">
-                    <%= __('home.teams_championship') %>
-                </span>
-                <span>
-                    <img src="/img/teams/<%= homeData[0].constructorLeader.constructorId %>.webp"
-                        class="h-12 md:h-20 w-auto mt-3">
-                </span>
-            </div>
+
+            <a href="/team/<%= homeData[0].constructorLeader.constructorId %>">
+                <div id="chContructeurs" class="h-32 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
+                    <span class="text-center font-F1Bold">
+                        <%= __('home.teams_championship') %>
+                    </span>
+                    <span>
+                        <img src="/img/teams/<%= homeData[0].constructorLeader.constructorId %>.webp"
+                            class="h-12 md:h-20 w-auto mt-3">
+                    </span>
+                </div>
+            </a>
         </div>
 
         <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">

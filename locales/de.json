@@ -32,7 +32,13 @@
 		"victories": "Siege",
 		"points": "Punkte",
 		"races": "Rennen",
-		"single_seater": "Einsitzer"
+		"single_seater": "Einsitzer",
+		"total_races": "team.total_races",
+		"total_wins": "team.total_wins",
+		"total_podiums": "team.total_podiums",
+		"total_points": "team.total_points",
+		"total_poles": "team.total_poles",
+		"total_fastest_laps": "team.total_fastest_laps"
 	},
 	"drivers": {
 		"tab_title": "Fahrer",

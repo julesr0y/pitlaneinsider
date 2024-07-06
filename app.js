@@ -133,9 +133,7 @@ app.get("/teams", async (req, res) => {
 app.get("/team/:ecurie_id", async (req, res) => {
     try {
         var team = await getTeam(req.params.ecurie_id);
-        const [rows] = await dbPool.query('SELECT * FROM teams WHERE nom = ?', [req.params.ecurie_id]);
-        const dataTeam = rows[0];
-        res.render("ecurie", { teamFront: team, dataTeam: dataTeam });
+        res.render("ecurie", { teamFront: team });
     } catch (err) {
         console.error('Erreur lors de la récupération des informations de l\'écurie:', err);
         res.status(500).send('Erreur interne du serveur');

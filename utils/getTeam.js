@@ -1,4 +1,5 @@
-const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
+const fs = require('fs'); // Module permettant de gérer les fichiers
+const path = require('path'); // Module permettant de gérer les chemins de fichiers
 
 /**
  * @function
@@ -6,35 +7,34 @@ const getFromErgast = require("./getFromErgast"); // Fonction permettant de réc
  * @param {string} teamId - L'identifiant de l'écurie
  * @returns {Promise} - Promesse contenant les informations de l'écurie
  */
-async function getTeamInfo(teamId) {
+async function getTeamData(teamId) {
     try {
-        const dataTeam = await getFromErgast(`current/constructors/${teamId}.json`);
-        const team = dataTeam.MRData.ConstructorTable.Constructors[0];
-        const teamName = team.name;
-        const teamid = team.constructorId;
-        const teamNationality = team.nationality;
+        const filePath = path.join(__dirname, '../python/dataPython/all_teams_stats.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        var data = JSON.parse(file); // On définit le chemin du fichier JSON
+        data = data.filter(item => item.constructorId === teamId);
+        data = data[0]
+        var teamData = {
+            constructorId: data['constructorId'],
+            fullName: data['fullName'],
+            name: data['name'],
+            country: data['countryId'],
+            currentSeasonTeam: data['currentSeasonTeam'],
+            totalRaceStarts: data['totalRaceStarts'],
+            totalRaceWins: data['totalRaceWins'],
+            totalPodiumRaces: data['totalPodiumRaces'],
+            totalChampionshipPoints: data['totalChampionshipPoints'],
+            totalPolePositions: data['totalPolePositions'],
+            totalFastestLaps: data['totalFastestLaps'],
+            totalChampionshipWins: data['totalChampionshipWins'],
+            totalRaceLaps: data['totalRaceLaps']
+        }
 
-        const dataDrivers = await getFromErgast(`current/constructors/${teamId}/drivers.json`);
-
-        const drivers = dataDrivers.MRData.DriverTable.Drivers;
-        const driversInfo = drivers.map(driver => ({
-            name: `${driver.givenName} ${driver.familyName}`,
-            number: driver.permanentNumber,
-            nationality: (driver.nationality).toLowerCase(),
-            driverId: driver.driverId
-        }));
-
-        const teamInfo = {
-            teamName,
-            teamid,
-            teamNationality,
-            drivers: driversInfo
-        };
-
-        return teamInfo;
+        return teamData;
     } catch (error) {
-        throw error;
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
     }
 }
 
-module.exports = getTeamInfo;
+module.exports = getTeamData;

@@ -1,4 +1,5 @@
 from getDriversStats import getDriversStats
+from getTeamsStats import getTeamsStats
 from getActualStandings import getStandings
 from getHomeData import getHomeData
 from getTitledDrivers import getTitledDrivers
@@ -9,6 +10,9 @@ def main():
     outputFileDriversStats = "./python/dataPython/all_drivers_stats.json"
     getDriversStats(outputFileDriversStats)
     print(f"All drivers stats saved to {outputFileDriversStats}")
+    outputFileTeamsStats = "./python/dataPython/all_teams_stats.json"
+    getTeamsStats(outputFileTeamsStats)
+    print(f"All teams stats saved to {outputFileTeamsStats}")
     output_file_drivers = "./python/dataPython/all_driver_standings.json"
     output_file_constructors = "./python/dataPython/all_constructor_standings.json"
     getStandings(output_file_drivers, output_file_constructors)

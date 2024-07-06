@@ -28,11 +28,13 @@
 	"team": {
 		"team_start": "Arrivée en F1",
 		"drivers": "Pilotes",
-		"podiums": "Podiums",
-		"victories": "Victoires",
-		"points": "Points inscrits",
-		"races": "Courses disputées",
-		"single_seater": "Monoplace"
+		"single_seater": "Monoplace",
+		"total_races": "Courses disputées",
+		"total_wins": "Victoires",
+		"total_podiums": "Podiums",
+		"total_points": "Points inscrits",
+		"total_poles": "Poles",
+		"total_fastest_laps": "Tour le plus rapide"
 	},
 	"drivers": {
 		"tab_title": "Pilotes",
