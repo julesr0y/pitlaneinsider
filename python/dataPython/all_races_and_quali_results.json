@@ -265508,5 +265508,205 @@
         "grid": 2,
         "position": 20,
         "gap": "DNF"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "lewis-hamilton",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "grid": 2,
+        "position": 1,
+        "gap": null
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "max-verstappen",
+        "firstName": "Max",
+        "lastName": "Verstappen",
+        "grid": 4,
+        "position": 2,
+        "gap": "+1.465"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "lando-norris",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "grid": 3,
+        "position": 3,
+        "gap": "+7.547"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "oscar-piastri",
+        "firstName": "Oscar",
+        "lastName": "Piastri",
+        "grid": 5,
+        "position": 4,
+        "gap": "+12.429"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "carlos-sainz-jr",
+        "firstName": "Carlos",
+        "lastName": "Sainz Jr.",
+        "grid": 7,
+        "position": 5,
+        "gap": "+47.318"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "nico-hulkenberg",
+        "firstName": "Nico",
+        "lastName": "Hülkenberg",
+        "grid": 6,
+        "position": 6,
+        "gap": "+55.722"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "lance-stroll",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "grid": 8,
+        "position": 7,
+        "gap": "+56.569"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "fernando-alonso",
+        "firstName": "Fernando",
+        "lastName": "Alonso",
+        "grid": 10,
+        "position": 8,
+        "gap": "+1:03.577"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "alexander-albon",
+        "firstName": "Alexander",
+        "lastName": "Albon",
+        "grid": 9,
+        "position": 9,
+        "gap": "+1:08.387"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "yuki-tsunoda",
+        "firstName": "Yuki",
+        "lastName": "Tsunoda",
+        "grid": 13,
+        "position": 10,
+        "gap": "+1:19.303"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "logan-sargeant",
+        "firstName": "Logan",
+        "lastName": "Sargeant",
+        "grid": 12,
+        "position": 11,
+        "gap": "+1:28.960"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "kevin-magnussen",
+        "firstName": "Kevin",
+        "lastName": "Magnussen",
+        "grid": 17,
+        "position": 12,
+        "gap": "+1:30.153"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "daniel-ricciardo",
+        "firstName": "Daniel",
+        "lastName": "Ricciardo",
+        "grid": 15,
+        "position": 13,
+        "gap": "+1 lap"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "charles-leclerc",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "grid": 11,
+        "position": 14,
+        "gap": "+1 lap"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "valtteri-bottas",
+        "firstName": "Valtteri",
+        "lastName": "Bottas",
+        "grid": 16,
+        "position": 15,
+        "gap": "+1 lap"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "esteban-ocon",
+        "firstName": "Esteban",
+        "lastName": "Ocon",
+        "grid": 18,
+        "position": 16,
+        "gap": "+2 laps"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "sergio-perez",
+        "firstName": "Sergio",
+        "lastName": "Pérez",
+        "grid": null,
+        "position": 17,
+        "gap": "+2 laps"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "guanyu-zhou",
+        "firstName": "Guanyu",
+        "lastName": "Zhou",
+        "grid": 14,
+        "position": 18,
+        "gap": "+2 laps"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "george-russell",
+        "firstName": "George",
+        "lastName": "Russell",
+        "grid": 1,
+        "position": 19,
+        "gap": "DNF"
+    },
+    {
+        "year": 2024,
+        "raceId": 1113,
+        "driverId": "pierre-gasly",
+        "firstName": "Pierre",
+        "lastName": "Gasly",
+        "grid": 19,
+        "position": 20,
+        "gap": "DNF"
     }
 ]

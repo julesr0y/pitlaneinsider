@@ -95,14 +95,14 @@
         "name": "Alpine",
         "country": "france",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 77,
+        "totalRaceStarts": 78,
         "totalRaceWins": 1,
         "totalPodiumRaces": 4,
         "totalChampionshipPoints": 457,
         "totalPolePositions": 0,
         "totalFastestLaps": 0,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 8351
+        "totalRaceLaps": 8401
     },
     {
         "constructorId": "alta",
@@ -215,14 +215,14 @@
         "name": "Aston Martin",
         "country": "united-kingdom",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 82,
+        "totalRaceStarts": 83,
         "totalRaceWins": 0,
         "totalPodiumRaces": 9,
-        "totalChampionshipPoints": 470,
+        "totalChampionshipPoints": 480,
         "totalPolePositions": 0,
         "totalFastestLaps": 3,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 9155
+        "totalRaceLaps": 9259
     },
     {
         "constructorId": "ats-wheels",
@@ -845,14 +845,14 @@
         "name": "Ferrari",
         "country": "italy",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 1085,
+        "totalRaceStarts": 1086,
         "totalRaceWins": 245,
         "totalPodiumRaces": 623,
-        "totalChampionshipPoints": 9916.0,
+        "totalChampionshipPoints": 9927.0,
         "totalPolePositions": 250,
-        "totalFastestLaps": 263,
+        "totalFastestLaps": 264,
         "totalChampionshipWins": 16,
-        "totalRaceLaps": 122490
+        "totalRaceLaps": 122593
     },
     {
         "constructorId": "first",
@@ -1040,14 +1040,14 @@
         "name": "Haas",
         "country": "united-states-of-america",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 177,
+        "totalRaceStarts": 178,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
-        "totalChampionshipPoints": 268,
+        "totalChampionshipPoints": 276,
         "totalPolePositions": 1,
         "totalFastestLaps": 2,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 18426
+        "totalRaceLaps": 18530
     },
     {
         "constructorId": "hall",
@@ -1235,14 +1235,14 @@
         "name": "Kick Sauber",
         "country": "germany",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 11,
+        "totalRaceStarts": 12,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
         "totalChampionshipPoints": 0,
         "totalPolePositions": 0,
         "totalFastestLaps": 0,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 1262
+        "totalRaceLaps": 1363
     },
     {
         "constructorId": "klenk",
@@ -1670,14 +1670,14 @@
         "name": "McLaren",
         "country": "united-kingdom",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 957,
+        "totalRaceStarts": 958,
         "totalRaceWins": 184,
-        "totalPodiumRaces": 414,
-        "totalChampionshipPoints": 6552.5,
+        "totalPodiumRaces": 415,
+        "totalChampionshipPoints": 6579.5,
         "totalPolePositions": 157,
         "totalFastestLaps": 167,
         "totalChampionshipWins": 8,
-        "totalRaceLaps": 101491
+        "totalRaceLaps": 101595
     },
     {
         "constructorId": "mercedes",
@@ -1685,14 +1685,14 @@
         "name": "Mercedes",
         "country": "germany",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 304,
-        "totalRaceWins": 126,
-        "totalPodiumRaces": 196,
-        "totalChampionshipPoints": 7418.5,
-        "totalPolePositions": 138,
+        "totalRaceStarts": 305,
+        "totalRaceWins": 127,
+        "totalPodiumRaces": 197,
+        "totalChampionshipPoints": 7443.5,
+        "totalPolePositions": 139,
         "totalFastestLaps": 108,
         "totalChampionshipWins": 8,
-        "totalRaceLaps": 35098
+        "totalRaceLaps": 35183
     },
     {
         "constructorId": "merzario",
@@ -2075,14 +2075,14 @@
         "name": "RB",
         "country": "italy",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 11,
+        "totalRaceStarts": 12,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
-        "totalChampionshipPoints": 30,
+        "totalChampionshipPoints": 31,
         "totalPolePositions": 0,
         "totalFastestLaps": 0,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 1238
+        "totalRaceLaps": 1341
     },
     {
         "constructorId": "rebaque",
@@ -2105,14 +2105,14 @@
         "name": "Red Bull",
         "country": "austria",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 380,
+        "totalRaceStarts": 381,
         "totalRaceWins": 120,
-        "totalPodiumRaces": 212,
-        "totalChampionshipPoints": 7603.0,
+        "totalPodiumRaces": 213,
+        "totalChampionshipPoints": 7621.0,
         "totalPolePositions": 103,
         "totalFastestLaps": 97,
         "totalChampionshipWins": 6,
-        "totalRaceLaps": 40629
+        "totalRaceLaps": 40731
     },
     {
         "constructorId": "renault",
@@ -2690,14 +2690,14 @@
         "name": "Williams",
         "country": "united-kingdom",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 813,
+        "totalRaceStarts": 814,
         "totalRaceWins": 114,
         "totalPodiumRaces": 243,
-        "totalChampionshipPoints": 3616.0,
+        "totalChampionshipPoints": 3618.0,
         "totalPolePositions": 128,
         "totalFastestLaps": 133,
         "totalChampionshipWins": 9,
-        "totalRaceLaps": 83982
+        "totalRaceLaps": 84086
     },
     {
         "constructorId": "wolf-williams",
