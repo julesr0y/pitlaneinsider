@@ -15,6 +15,7 @@ async function getGPDetail(gp_id) {
                 driverId: driver.driverId,
                 firstName: driver.firstName,
                 lastName: driver.lastName,
+                abbreviation: driver.abbreviation,
                 position: driver.position,
                 grid: driver.grid,
                 gap: driver.gap

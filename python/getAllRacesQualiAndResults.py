@@ -23,10 +23,12 @@ def getAllRacesQualiAndResults(output_file):
         # Get first name and last name
         firstName = ""
         lastName = ""
+        abbreviation = ""
         for driver in drivers_data:
             if driver['id'] == driverResult['driverId']:
                 firstName = driver['firstName']
                 lastName = driver['lastName']
+                abbreviation = driver["abbreviation"]
 
         # Get gap or DNF
         gap = driverResult['gap']
@@ -39,6 +41,7 @@ def getAllRacesQualiAndResults(output_file):
             'driverId': driverResult['driverId'],
             'firstName': firstName,
             'lastName': lastName,
+            'abbreviation': abbreviation,
             'grid': driverResult['gridPositionNumber'],
             'position': driverResult['positionDisplayOrder'],
             'gap': gap

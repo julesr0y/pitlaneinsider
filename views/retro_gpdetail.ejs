@@ -84,87 +84,78 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-        <%= __('retro_f1.all_seasons.gp_details.title') %>
-    </div>
     <div class="app-container">
-        <div class="season-title text-3xl font-bold text-center my-8">
-            <div class="mx-4">
-                <div class="custom-select-container">
-                    <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
-                        <% for (let year=2023; year>= 1950; year--) { %>
-                            <option value="<%= year %>" <% if (year==selectedYear) { %>selected<% } %>><%=
-                                        __('retro_f1.all_seasons.season') %>
-                                        <%= year %>
-                            </option>
-                            <% } %>
-                    </select>
+        <div class="text-xl font-bold text-center my-4 w-full lg:font-bold">
+            <%= __('retro_f1.all_seasons.gp_details.title') %>
+        </div>
+        <div class="flex mt-4">
+            <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-5/12">
+                <div class="grid grid-cols-12 text-left">
+                    <span class="col-span-6 font-F1Bold">
+                        <%= __('retro_f1.all_seasons.gp_details.position') %>
+                    </span>
+                    <span class="col-span-6 font-F1Bold">
+                        <%= __('retro_f1.all_seasons.gp_details.drivers') %>
+                    </span>
+                </div>
+
+                <div class="gp-detail-list grid grid-cols-12 mt-4 text-base text-left">
+                    <% gpDetails.forEach(detail=> { %>
+                        <span class="col-span-6 font-F1Bold">
+                            <%= String(detail.position).padStart(2, '0' ) %>
+                        </span>
+                        <span class="col-span-6">
+                            <%= detail.abbreviation %>
+                        </span>
+                        <% }); %>
+                </div>
+            </div>
+
+            <div class="w-7/12 grid grid-rows-12 gap-4">
+                <div
+                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                    <% gpDetails.forEach(function(grid){ if (grid.grid==1) { %>
+                        <span>Pole position</span>
+                        <img src="/img/drivers/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>"
+                            class="h-24 w-auto">
+                        <% }}) %>
+                </div>
+                <div
+                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                    <% gpDetails.forEach(function(grid){ if (grid.position==1) { %>
+                        <span>Vainqueur</span>
+                        <img src="/img/drivers/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>"
+                            class="h-24 w-auto">
+                        <% }}) %>
+                </div>
+                <div
+                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                    <span>Tour le plus rapide</span>
+                    <span>Soon</span>
+                </div>
+                <div
+                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                    <span>PitStop le plus rapide</span>
+                    <span>Soon</span>
                 </div>
             </div>
         </div>
-        <div class="tabs flex justify-center">
-            <div class="flex justify-center items-start pt-10">
-                <div class="flex mb-4">
-                    <a id="classementLink" href="/retro_classement/<%= selectedYear %>" class="mr-20">
-                        <%= __('retro_f1.all_seasons.link_standings') %>
-                    </a>
-                    <a id="calendrierLink" href="/retro_calendrier/<%= selectedYear %>"
-                        class="font-bold border-b-2 border-<%= theme %>">
-                        <%= __('retro_f1.all_seasons.link_calendar') %>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div id="GPDetails" class="bg-s-<%= theme %> p-4 sm:p-8 shadow-md rounded-2xl mx-4 mt-8">
-            <div class="grid grid-cols-12">
-                <span class="col-span-2 font-F1Bold sm:ml-20">
-                    <%= __('retro_f1.all_seasons.gp_details.position') %>
-                </span>
-                <span class="sm:col-span-4 col-span-3 font-F1Bold text-left sm:ml-48 ml-6">
-                    <%= __('retro_f1.all_seasons.gp_details.drivers') %>
-                </span>
-                <span class="sm:col-span-3 col-span-5 font-F1Bold text-right sm:mr-12 mr-2">
-                    <%= __('retro_f1.all_seasons.gp_details.starting_grid') %>
-                </span>
-                <span class="sm:col-span-3 font-F1Bold text-right sm:mr-20">
-                    <%= __('retro_f1.all_seasons.gp_details.time') %>
-                </span>
-            </div>
-            <div class="gp-detail-list grid grid-cols-12 gap-y-2 mt-4">
-                <% gpDetails.forEach(detail=> { %>
-                    <span class="col-span-2 font-F1Bold sm:ml-28 ml-6">
-                        <%= String(detail.position).padStart(2, '0' ) %>
-                    </span>
-                    <span class="col-span-4 text-left sm:ml-40 ml-6">
-                        <%= detail.firstName %>
-                            <%= detail.lastName %>
-                    </span>
-                    <span class="col-span-3 text-right sm:mr-28 mr-10">
-                        <%= detail.grid %>
-                    </span>
-                    <span class="col-span-3 text-right sm:mr-20">
-                        <%= detail.gap %>
-                    </span>
-                    <% }); %>
-            </div>
-        </div>
-    </div>
-    <script>
-        function changeSeason(select) {
-            var selectedYear = select.value;
-            window.location.href = '/retro_calendrier/' + selectedYear;
-        }
-        function updateLinks() {
-            var selectedYear = document.getElementById('seasonSelect').value;
-            document.getElementById('classementLink').href = '/retro_classement/' + selectedYear;
-            document.getElementById('calendrierLink').href = '/retro_calendrier/' + selectedYear;
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            updateLinks();
-            document.getElementById('seasonSelect').addEventListener('change', updateLinks);
-        });
-    </script>
-    <%- include('partials/footer.ejs') %>
+        <script>
+            function changeSeason(select) {
+                var selectedYear = select.value;
+                window.location.href = '/retro_calendrier/' + selectedYear;
+            }
+            function updateLinks() {
+                var selectedYear = document.getElementById('seasonSelect').value;
+                document.getElementById('classementLink').href = '/retro_classement/' + selectedYear;
+                document.getElementById('calendrierLink').href = '/retro_calendrier/' + selectedYear;
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                updateLinks();
+                document.getElementById('seasonSelect').addEventListener('change', updateLinks);
+            });
+        </script>
+        <%- include('partials/footer.ejs') %>
 </body>
 
 </html>

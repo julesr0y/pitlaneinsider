@@ -36,9 +36,9 @@ def main():
     output_file_races_results = "./python/dataPython/all_races_and_quali_results.json"
     getAllRacesQualiAndResults(output_file_races_results)
     print(f"All races and quali data saved to {output_file_races_results}")
-    
+
     output_file_cars = "./python/dataPython/all_cars.json"
     getCarsData(output_file_cars)
-    print(f"All races and quali data saved to {output_file_cars}")
+    print(f"All cars data saved to {output_file_cars}")
 
 main()

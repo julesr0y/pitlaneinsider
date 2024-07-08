@@ -145,7 +145,7 @@
 			"standings": {
 				"tab_title": "Retro Classements",
 				"title": "Rétro - Classements",
-				"position": "Position",
+				"position": "Pos",
 				"drivers": "Pilotes",
 				"victories": "Victoires",
 				"points": "Points"
@@ -158,7 +158,7 @@
 			"gp_details": {
 				"tab_title": "Retro Détails GP",
 				"title": "Rétro - Détails du GP",
-				"position": "Position",
+				"position": "Pos",
 				"drivers": "Pilotes",
 				"starting_grid": "Grille de départ",
 				"time": "Temps"
