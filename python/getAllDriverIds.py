@@ -6,7 +6,7 @@ def allIds(output):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Load the necessary JSON data files
-    with open(os.path.join(base_dir, './data/f1db-drivers.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-drivers.json'), 'r', encoding='utf-8') as f:
         current_drivers_detailed_data = json.load(f)
 
     all_ids = []

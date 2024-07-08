@@ -7,10 +7,10 @@ def getTeamsStats(output_file):
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Load the necessary JSON data files
-    with open(os.path.join(base_dir, './data/f1db-constructors.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-constructors.json'), 'r', encoding='utf-8') as f:
         teamsFile = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
         teamsStandingsFile = json.load(f)
 
     current_season_year = 2024

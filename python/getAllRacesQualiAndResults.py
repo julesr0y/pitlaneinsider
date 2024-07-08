@@ -6,16 +6,16 @@ def getAllRacesQualiAndResults(output_file):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Load the necessary JSON data files
-    with open(os.path.join(base_dir, './data/f1db-races-race-results.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-races-race-results.json'), 'r', encoding='utf-8') as f:
         race_results = json.load(f)
 
     with open(os.path.join(base_dir, './dataPython/all_drivers_stats.json'), 'r', encoding='utf-8') as f:
         drivers_data = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
         races_quali = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-constructors.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-constructors.json'), 'r', encoding='utf-8') as f:
         constructors_data = json.load(f)
 
     allResults = []

@@ -22,7 +22,7 @@ def main():
     print(f"All homepage data saved to {output_file_home_data}")
     output_file_titled_drivers = "./python/dataPython/titled_drivers.json"
     getTitledDrivers(output_file_titled_drivers)
-    print(f"All homepage data saved to {output_file_titled_drivers}")
+    print(f"All titled drivers data saved to {output_file_titled_drivers}")
     output_file_calendar = "./python/dataPython/all_calendar.json"
     getCalendar(output_file_calendar)
     print(f"All calendar data saved to {output_file_calendar}")

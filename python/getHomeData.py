@@ -6,13 +6,13 @@ def getHomeData(output_file):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Load the necessary JSON data files
-    with open(os.path.join(base_dir, './data/f1db-races-race-results.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-races-race-results.json'), 'r', encoding='utf-8') as f:
         all_races_standings = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-races.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-races.json'), 'r', encoding='utf-8') as f:
         all_races = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-grands-prix.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-grands-prix.json'), 'r', encoding='utf-8') as f:
         all_gp = json.load(f)
 
     with open(os.path.join(base_dir, './dataPython/all_drivers_stats.json'), 'r', encoding='utf-8') as f:

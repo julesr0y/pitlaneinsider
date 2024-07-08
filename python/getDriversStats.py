@@ -7,19 +7,19 @@ def getDriversStats(output_file):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Load the necessary JSON data files
-    with open(os.path.join(base_dir, './data/f1db-drivers.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-drivers.json'), 'r', encoding='utf-8') as f:
         current_drivers_detailed_data = json.load(f)
         
-    with open(os.path.join(base_dir, './data/f1db-races-race-results.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-races-race-results.json'), 'r', encoding='utf-8') as f:
         all_races_results = json.load(f)
         
-    with open(os.path.join(base_dir, './data/f1db-races.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-races.json'), 'r', encoding='utf-8') as f:
         all_races = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-seasons-driver-standings.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-driver-standings.json'), 'r', encoding='utf-8') as f:
         actual_driver_points = json.load(f)
 
-    with open(os.path.join(base_dir, './data/f1db-seasons-entrants-drivers.json'), 'r', encoding='utf-8') as f:
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-entrants-drivers.json'), 'r', encoding='utf-8') as f:
         entrants_drivers = json.load(f)
   
     # Filter drivers for the current season (2024)
