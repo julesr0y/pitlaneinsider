@@ -130,13 +130,17 @@
                 </div>
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
-                    <span>Tour le plus rapide</span>
-                    <span>Soon</span>
+                    <% gpDetails.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
+                        <span>Tour le plus rapide</span>
+                        <img src="/img/drivers/<%= lap.driverId %>.webp" alt="<%= lap.lastName %>" class="h-24 w-auto">
+                        <% }}) %>
                 </div>
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
-                    <span>PitStop le plus rapide</span>
-                    <span>Soon</span>
+                    <% gpDetails.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
+                        <span>PitStop le plus rapide</span>
+                        <img src="/img/drivers/<%= pit.driverId %>.webp" alt="<%= pit.lastName %>" class="h-24 w-auto">
+                        <% }}) %>
                 </div>
             </div>
         </div>

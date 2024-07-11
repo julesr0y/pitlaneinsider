@@ -18,7 +18,9 @@ async function getGPDetail(gp_id) {
                 abbreviation: driver.abbreviation,
                 position: driver.position,
                 grid: driver.grid,
-                gap: driver.gap
+                gap: driver.gap,
+                fastestLapTime: driver.fastestLapTime,
+                fastestPitTime: driver.fastestPitTime
             };
             raceData.push(gpInfo);
         });
