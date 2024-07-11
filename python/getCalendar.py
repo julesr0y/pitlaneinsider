@@ -12,8 +12,15 @@ def getCalendar(output_file):
     with open(os.path.join(base_dir, '../../f1db/data/f1db-grands-prix.json'), 'r', encoding='utf-8') as f:
         all_gp = json.load(f)
 
+    with open(os.path.join(base_dir, './dataPython/all_races_and_quali_results.json'), 'r', encoding='utf-8') as f:
+        last_gp = json.load(f)
+
+    last_gp_id = last_gp[-1]['raceId']
     all_events = []
     for event in calendar:
+        nextGp = False
+        if event['id'] == last_gp_id + 1:
+            nextGp = True
         localisationDetails = []
         for gp in all_gp:
             if gp['id'] == event['grandPrixId']:
@@ -23,7 +30,9 @@ def getCalendar(output_file):
                     'name': gp['shortName'],
                     'year': event['year'],
                     'date': event['date'],
-                    'raceId': event['id']
+                    'raceId': event['id'],
+                    'circuitId': event['circuitId'],
+                    'isNextGp': nextGp
                 }
                 localisationDetails.append(details)
 

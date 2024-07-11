@@ -152,71 +152,9 @@ app.get("/driver/:driver_id", async (req, res) => {
 
 app.get("/calendrier", async (req, res) => {
     try {
-        const tracks = await getTracks();
-        const calendrier = await getCalendrier(false);
+        const calendrier = await getCalendrier();
 
-        // Mapping des noms des Grands Prix aux identifiants des circuits
-        const grandPrixToTrackId = {
-            'Bahrain Grand Prix': 'bahrain',
-            'Saudi Arabian Grand Prix': 'jeddah',
-            'Australian Grand Prix': 'albert_park',
-            'Japanese Grand Prix': 'suzuka',
-            'Chinese Grand Prix': 'shanghai',
-            'Miami Grand Prix': 'miami',
-            'Emilia Romagna Grand Prix': 'imola',
-            'Monaco Grand Prix': 'monaco',
-            'Canadian Grand Prix': 'villeneuve',
-            'Spanish Grand Prix': 'catalunya',
-            'Austrian Grand Prix': 'red_bull_ring',
-            'British Grand Prix': 'silverstone',
-            'Hungarian Grand Prix': 'hungaroring',
-            'Belgian Grand Prix': 'spa',
-            'Dutch Grand Prix': 'zandvoort',
-            'Italian Grand Prix': 'monza',
-            'Azerbaijan Grand Prix': 'baku',
-            'Singapore Grand Prix': 'marina_bay',
-            'United States Grand Prix': 'americas',
-            'Mexico City Grand Prix': 'rodriguez',
-            'São Paulo Grand Prix': 'interlagos',
-            'Las Vegas Grand Prix': 'vegas',
-            'Qatar Grand Prix': 'losail',
-            'Abu Dhabi Grand Prix': 'yas_marina'
-        };
-
-        // Fonction pour convertir une date et une heure au format "DD/MM" et "HHhMM" en objet Date
-        const convertToFullDate = (dateString, timeString) => {
-            const [day, month] = dateString.split('/');
-            const [hour, minute] = timeString.includes('h') ? timeString.split('h') : [timeString, '00'];
-            const year = new Date().getFullYear();
-            return new Date(year, month - 1, day, hour, minute);
-        };
-
-        let calendrierArray = [];
-
-        for (let round in calendrier) {
-            let race = calendrier[round];
-            race.fullDate = convertToFullDate(race.sessions.Race.date, race.sessions.Race.time);
-            calendrierArray.push(race);
-        }
-
-        const sortedTracks = calendrierArray.map((round, index) => {
-            const trackId = grandPrixToTrackId[round.raceName];
-            const track = tracks.find(track => track.trackId === trackId);
-            if (track) {
-                track.roundDetails = round; // Ajouter les détails du round au track
-                track.fullDate = round.fullDate;
-            }
-            return track;
-        }).filter(track => track); // Filtrer les valeurs nulles
-
-        // Déterminer le prochain Grand Prix
-        const now = new Date();
-        const nextRace = sortedTracks.find(track => track.fullDate > now);
-        if (nextRace) {
-            nextRace.isNextRace = true;
-        }
-
-        res.render("circuits", { tracksFront: sortedTracks });
+        res.render("circuits", { tracksFront: calendrier });
     } catch (error) {
         console.error("Error fetching data:", error);
         res.status(500).send("Internal Server Error");

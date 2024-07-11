@@ -18,12 +18,6 @@ def getAllRacesQualiAndResults(output_file):
     with open(os.path.join(base_dir, '../../f1db/data/f1db-races-pit-stops.json'), 'r', encoding='utf-8') as f:
         pit_stops = json.load(f)
 
-    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
-        races_quali = json.load(f)
-
-    with open(os.path.join(base_dir, '../../f1db/data/f1db-constructors.json'), 'r', encoding='utf-8') as f:
-        constructors_data = json.load(f)
-
     # Create a dictionary to store the fastest lap for each race
     fastest_laps_by_race = {}
     for lap in fastests_laps:

@@ -29,13 +29,13 @@ def main():
     getTitledDrivers(output_file_titled_drivers)
     print(f"All titled drivers data saved to {output_file_titled_drivers}")
 
-    output_file_calendar = "./python/dataPython/all_calendar.json"
-    getCalendar(output_file_calendar)
-    print(f"All calendar data saved to {output_file_calendar}")
-
     output_file_races_results = "./python/dataPython/all_races_and_quali_results.json"
     getAllRacesQualiAndResults(output_file_races_results)
     print(f"All races and quali data saved to {output_file_races_results}")
+
+    output_file_calendar = "./python/dataPython/all_calendar.json"
+    getCalendar(output_file_calendar)
+    print(f"All calendar data saved to {output_file_calendar}")
 
     output_file_cars = "./python/dataPython/all_cars.json"
     getCarsData(output_file_cars)

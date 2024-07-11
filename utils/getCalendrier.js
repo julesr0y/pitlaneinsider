@@ -1,110 +1,67 @@
-const { name } = require("ejs");
-const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
 const fs = require('fs'); // Module permettant de gérer les fichiers
 const path = require('path'); // Module permettant de gérer les chemins de fichiers
 
-/**
-    * @function
-    * @description Fonction permettant de récupérer le calendrier de la saison actuelle
-    * @param {boolean} update - Détermine si les données doivent être mises à jour
-    * @returns {Promise} - Promesse contenant la réponse de l'API.
-    */
-async function getCalendrierActuel(update) {
-    const filePath = path.join(__dirname, '../cache/getCalendrier.json'); // On définit le chemin du fichier JSON
-    const filePathUpdate = path.join(__dirname, '../cache/updates/getCalendrier.json');
-
-    if (!update) {
-        // Vérifier si le fichier existe
-        if (fs.existsSync(filePath)) {
-            // Lire le contenu du fichier
-            const data = fs.readFileSync(filePath, 'utf8');
-
-            // Vérifier si le fichier n'est pas vide
-            if (data) {
-                // Convertir les données en JSON et les retourner
-                return JSON.parse(data);
-            }
-        }
-    } else {
-        var dataCalendar = await getFromErgast('current.json'); // On récupère les données du calendrier actuel
-
-        var calendrierActuelFront = {}; // On créé un objet pour stocker les courses du calendrier
-        const calendrierActuel = dataCalendar.MRData.RaceTable.Races; // On récupère le calendrier
-        calendrierActuel.forEach(round => {
-            let raceCalendar = {}; // On créé un objet pour stocker les informations de la course
-            raceCalendar.raceName = round.raceName; // On ajoute le nom de la course
-            const countryName = (round.Circuit.Location.country).toLowerCase(); // On récupère le nom du pays de la course
-            raceCalendar.country = countryName; // On ajoute le nom du pays de la course
-
-            let session = {};
-
-            if (round.hasOwnProperty('FirstPractice')) {
-                session.FirstPractice = {
-                    type: 'FP1',
-                    date: convertDate(round.FirstPractice.date),
-                    time: convertTime(round.FirstPractice.time)
-                };
-            }
-            if (round.hasOwnProperty('SecondPractice')) {
-                session.SecondPractice = {
-                    type: 'FP2',
-                    date: convertDate(round.SecondPractice.date),
-                    time: convertTime(round.SecondPractice.time)
-                };
-            }
-            if (round.hasOwnProperty('ThirdPractice')) {
-                session.ThirdPractice = {
-                    type: 'FP3',
-                    date: convertDate(round.ThirdPractice.date),
-                    time: convertTime(round.ThirdPractice.time)
-                };
-            }
-            if (round.hasOwnProperty('Sprint')) {
-                session.Sprint = {
-                    type: 'S',
-                    date: convertDate(round.Sprint.date),
-                    time: convertTime(round.Sprint.time)
-                };
-            }
-            if (round.hasOwnProperty('Qualifying')) {
-                session.Qualifying = {
-                    type: 'Q',
-                    date: convertDate(round.Qualifying.date),
-                    time: convertTime(round.Qualifying.time)
-                };
-            }
-
-            session.Race = {
-                type: 'R',
-                date: convertDate(round.date),
-                time: convertTime(round.time)
-            };
-
-            raceCalendar.sessions = session;
-            calendrierActuelFront[round.round] = raceCalendar;
+async function getCalendrierActuel() {
+    try {
+        const filePath = path.join(__dirname, '../python/dataPython/all_calendar.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        var data = JSON.parse(file); // On définit le chemin du fichier JSON
+        data = data.filter(raceArray => {
+            return raceArray.some(element => {
+                return element.raceDetails && element.raceDetails.some(detail => detail.year === 2024);
+            });
         });
 
-        // Convertir les données en chaîne JSON
-        const dataJSON = JSON.stringify(calendrierActuelFront, null, 2);
+        const simplifiedData = data.map(raceArray => {
+            const race = {};
 
-        // Vérifier si les données récupérées depuis l'API ne sont pas vides
-        if (Object.keys(calendrierActuelFront).length === 0) {
-            // Si les données de l'API sont vides, copier les données de filePath dans filePathUpdate
-            if (fs.existsSync(filePath)) {
-                const originalData = fs.readFileSync(filePath, 'utf8');
-                if (originalData) {
-                    fs.writeFileSync(filePathUpdate, originalData);
+            raceArray.forEach(element => {
+                if (element.raceDetails) {
+                    element.raceDetails.forEach(detail => {
+                        if (detail.year === 2024) {
+                            race.id = detail.id;
+                            race.country = detail.country;
+                            race.name = detail.name;
+                            race.year = detail.year;
+                            race.date = detail.date;
+                            race.raceId = detail.raceId;
+                            race.circuitId = detail.circuitId;
+                            race.isNextGp = detail.isNextGp;
+                        }
+                    });
                 }
-            }
-        } else {
-            // Écrire les données dans le fichier de mise à jour
-            fs.writeFileSync(filePathUpdate, dataJSON);
-            // Vider et écrire les données dans le fichier principal
-            fs.writeFileSync(filePath, dataJSON);
-        }
+                if (element.dateDetails) {
+                    element.dateDetails.forEach(dateDetail => {
+                        // Appliquer une fonction à l'heure si elle n'est pas nulle
+                        for (let key in dateDetail) {
+                            if (dateDetail[key] !== null && key.endsWith('Time')) {
+                                dateDetail[key] = convertTime(dateDetail[key]);
+                            }
+                        }
+
+                        for (let key in dateDetail) {
+                            if (dateDetail[key] !== null && key.endsWith('Date')) {
+                                dateDetail[key] = convertDate(dateDetail[key]);
+                            }
+                        }
+                        // Ajouter les détails de la date directement à l'objet de la course
+                        Object.assign(race, dateDetail);
+                    });
+                }
+            });
+
+            return race;
+        });
+
+        return simplifiedData;
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
     }
-    return;
 }
+
+module.exports = getCalendrierActuel;
 
 function convertDate(dateString) {
     var date = new Date(dateString);
@@ -119,5 +76,3 @@ function convertTime(timeString) {
     var minute = timeParts[1];
     return minute === '00' ? hour + 'h' : hour + 'h' + minute;
 }
-
-module.exports = getCalendrierActuel;

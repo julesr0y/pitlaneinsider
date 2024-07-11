@@ -32,8 +32,7 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div
-        class="text-3xl font-bold text-center my-8 text-lg font-semibold mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+    <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
         <%= __('calendar.season') %>
     </div>
 
@@ -46,38 +45,104 @@
     <div class="w-9/10 mx-auto p-4">
         <% if (tracksFront && tracksFront.length> 0) { %>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
-                <% tracksFront.forEach(function(track, index) { %>
-                    <div id="race-<%= index %>"
-                        class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= track.isNextRace ? 'highlight' : '' %>">
-                        <a href="/circuit/<%= track.trackId %>" class="block text-center">
+                <% tracksFront.forEach(function(race) { %>
+                    <div id="race-<%= race.raceId %>"
+                        class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
+                        <a href="/retro_gpdetail/2024/<%= race.raceId %>" class="block text-center">
                             <div class="relative mb-4">
-                                <img src="/img/2024/circuit/<%= track.trackId %>.webp"
-                                    alt="Circuit <%= track.trackLocality %>" class="w-full h-32 object-contain mx-auto">
+                                <img src="/img/circuits/<%= race.circuitId %>.webp" alt="Circuit <%= race.circuitId %>"
+                                    class="w-full h-32 object-contain mx-auto">
                             </div>
                             <div class="flex flex-col items-center">
-                                <img src="/img/countryFlags/<%= track.trackCountry.toLowerCase() %>.svg"
-                                    alt="<%= track.trackCountry %>" class="mb-2 h-12 w-auto">
-                                <span class="text-xl font-F1Bold">
-                                    <%= track.trackLocality %>
-                                </span>
+                                <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg"
+                                    alt="<%= race.country %>" class="mb-2 h-12 w-auto">
+                                <h2 class="text-lg font-F1Bold mb-3">
+                                    <%= race.name %>
+                                </h2>
                             </div>
                         </a>
                         <div class="mt-4 rounded-2xl p-4">
-                            <h2 class="text-lg font-F1Bold mb-3">
-                                <%= track.roundDetails.raceName %>
-                            </h2>
                             <ul class="text-t-s-<%= theme %>">
-                                <% for (let session in track.roundDetails.sessions) { let
-                                    currentSession=track.roundDetails.sessions[session]; %>
+                                <% if(race.freePractice1Time !=null) { %>
                                     <li><strong>
-                                            <%= currentSession.type %>:
+                                            FP1:
                                         </strong>
-                                        <span class="event-time" data-date="<%= currentSession.date %>"
-                                            data-time="<%= currentSession.time %>">
-                                            <%= currentSession.date %> - <%= currentSession.time %>
+                                        <span class="event-time" data-date="<%= race.freePractice1Date %>"
+                                            data-time="<%= race.freePractice1Time %>">
+                                            <%= race.freePractice1Date %> - <%= race.freePractice1Time %>
                                         </span>
                                     </li>
-                                    <% }; %>
+                                    <% } %>
+                                        <% if(race.freePractice2Time !=null) { %>
+                                            <li><strong>
+                                                    FP2:
+                                                </strong>
+                                                <span class="event-time" data-date="<%= race.freePractice2Date %>"
+                                                    data-time="<%= race.freePractice2Time %>">
+                                                    <%= race.freePractice2Date %> - <%= race.freePractice2Time %>
+                                                </span>
+                                            </li>
+                                            <% } %>
+                                                <% if(race.freePractice3Time !=null) { %>
+                                                    <li><strong>
+                                                            FP3:
+                                                        </strong>
+                                                        <span class="event-time"
+                                                            data-date="<%= race.freePractice3Date %>"
+                                                            data-time="<%= race.freePractice3Time %>">
+                                                            <%= race.freePractice3Date %> - <%= race.freePractice3Time
+                                                                    %>
+                                                        </span>
+                                                    </li>
+                                                    <% } %>
+                                                        <% if(race.sprintQualifyingTime !=null) { %>
+                                                            <li><strong>
+                                                                    SQ:
+                                                                </strong>
+                                                                <span class="event-time"
+                                                                    data-date="<%= race.sprintQualifyingDate %>"
+                                                                    data-time="<%= race.sprintQualifyingTime %>">
+                                                                    <%= race.sprintQualifyingDate %> - <%=
+                                                                            race.sprintQualifyingTime %>
+                                                                </span>
+                                                            </li>
+                                                            <% } %>
+                                                                <% if(race.sprintRaceTime !=null) { %>
+                                                                    <li><strong>
+                                                                            S:
+                                                                        </strong>
+                                                                        <span class="event-time"
+                                                                            data-date="<%= race.sprintRaceDate %>"
+                                                                            data-time="<%= race.sprintRaceTime %>">
+                                                                            <%= race.sprintRaceDate %> - <%=
+                                                                                    race.sprintRaceTime %>
+                                                                        </span>
+                                                                    </li>
+                                                                    <% } %>
+                                                                        <% if(race.qualifyingTime !=null) { %>
+                                                                            <li><strong>
+                                                                                    Q:
+                                                                                </strong>
+                                                                                <span class="event-time"
+                                                                                    data-date="<%= race.qualifyingDate %>"
+                                                                                    data-time="<%= race.qualifyingTime %>">
+                                                                                    <%= race.qualifyingDate %> - <%=
+                                                                                            race.qualifyingTime %>
+                                                                                </span>
+                                                                            </li>
+                                                                            <% } %>
+                                                                                <% if(race.raceTime !=null) { %>
+                                                                                    <li><strong>
+                                                                                            R:
+                                                                                        </strong>
+                                                                                        <span class="event-time"
+                                                                                            data-date="<%= race.raceDate %>"
+                                                                                            data-time="<%= race.raceTime %>">
+                                                                                            <%= race.raceDate %> -
+                                                                                                <%= race.raceTime %>
+                                                                                        </span>
+                                                                                    </li>
+                                                                                    <% } %>
                             </ul>
                         </div>
                     </div>
