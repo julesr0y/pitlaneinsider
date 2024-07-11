@@ -1299,6 +1299,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(232 0 32 / var(--tw-text-opacity));
 }
+.text-fuchsia-700 {
+  --tw-text-opacity: 1;
+  color: rgb(162 28 175 / var(--tw-text-opacity));
+}
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));

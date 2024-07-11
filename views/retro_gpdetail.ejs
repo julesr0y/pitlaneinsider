@@ -129,17 +129,25 @@
                         <% }}) %>
                 </div>
                 <div
-                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
                     <% gpDetails.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
-                        <span>Tour le plus rapide</span>
-                        <img src="/img/drivers/<%= lap.driverId %>.webp" alt="<%= lap.lastName %>" class="h-24 w-auto">
+                        <span class="text-center">Tour le plus rapide</span>
+                        <div class="flex flex-col items-center flex-grow justify-center w-full">
+                            <div>
+                                <%= lap.abbreviation %> - <span class="text-fuchsia-700">
+                                        <%= lap.fastestLapTime %>
+                                    </span>
+                            </div>
+                        </div>
                         <% }}) %>
                 </div>
                 <div
-                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
                     <% gpDetails.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
-                        <span>PitStop le plus rapide</span>
-                        <img src="/img/drivers/<%= pit.driverId %>.webp" alt="<%= pit.lastName %>" class="h-24 w-auto">
+                        <span class="text-center">PitStop le plus rapide (temps total)</span>
+                        <div class="flex flex-col items-center flex-grow justify-center w-full">
+                            <%= pit.abbreviation %> - <%= pit.fastestPitTime %>
+                        </div>
                         <% }}) %>
                 </div>
             </div>
