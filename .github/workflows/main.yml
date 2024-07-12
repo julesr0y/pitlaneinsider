@@ -20,7 +20,8 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
-          cd www/pitlaneinsider/src
+          cd www/pitlaneinsider
           git reset --hard
           git pull
+          cd src
           npm install
