@@ -8,3 +8,5 @@ automatic_scaling:
 handlers:
   - url: /.*
     script: auto
+
+entrypoint: npm start --prefix src
