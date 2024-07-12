@@ -71,12 +71,6 @@
                 class="px-4 py-2 bg-deconnect text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
                 <%= __('account.profile.btn_log_out') %>
             </a>
-            <% if (adminValue==1) { %>
-                <a href="/administration/panel"
-                    class="px-4 py-2 bg-red-600 text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
-                    <%= __('account.profile.btn_admin') %>
-                </a>
-                <% } %>
         </div>
     </div>
     <%- include('partials/footer.ejs') %>
