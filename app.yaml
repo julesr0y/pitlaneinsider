@@ -9,4 +9,4 @@ handlers:
   - url: /.*
     script: auto
 
-entrypoint: npm start --prefix src
+entrypoint: npm install && npm start --prefix src
