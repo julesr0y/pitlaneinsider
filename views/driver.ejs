@@ -59,7 +59,11 @@
                         <div class="grid grid-cols-2 grid-rows-2 gap-x-4 justify-center items-center mt-16">
                             <div class="flex items-center justify-center">
                                 <p class="text-<%= dataDriver.actualTeam %> text-4xl font-F1Bold">
-                                    <%= dataDriver.permanentNumber %>
+                                    <% if (dataDriver.permanentNumber !=33) { %>
+                                        <%= dataDriver.permanentNumber %>
+                                            <% } else { %>
+                                                <%= 1 %>
+                                                    <% } %>
                                 </p>
                             </div>
                             <div class="flex items-center justify-center">

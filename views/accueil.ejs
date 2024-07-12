@@ -123,8 +123,10 @@
 
         <a href="/retro_gpdetail/2024/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
             <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
-                <span class="flex justify-center text-center mb-4 font-F1Bold">
-                    <%= __('home.last_podium') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
+                <span class="flex justify-center text-center mb-4 font-F1Bold gap-2">
+                    <%= __('home.last_podium') %> - <%= homeData[0].lastPodiumLocalisation[0].name %> <img
+                                src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg"
+                                alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto">
                 </span>
                 <div class="flex justify-evenly items-end h-full">
                     <div class="flex flex-col items-center">
@@ -158,42 +160,134 @@
             </div>
         </a>
 
-        <div id="class" class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-            <span class="flex justify-center text-center font-F1Bold">
-                <%= __('home.drivers_standings') %>
-            </span>
-            <span class="flex justify-evenly">
-                <span>
-                    <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
-                        <span
-                            class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
-                        &nbsp;
-                        <span class="font-F1Bold">
-                            <%= String(pilote.position).padStart(2, '0' ) %> -
-                        </span>
-                        <%= pilote.lastName %>
-                            <br>
-                            <% }); %>
+        <a href="/standings">
+            <div id="class" class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
+                <span class="flex justify-center text-center font-F1Bold">
+                    <%= __('home.drivers_standings') %>
                 </span>
-                <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
-                <span>
-                    <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
-                        <span
-                            class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
-                        &nbsp;
-                        <span class="font-F1Bold">
-                            <%= String(pilote.position).padStart(2, '0' ) %> -
-                        </span>
-                        <%= pilote.lastName %>
-                            <br>
-                            <% }); %>
+                <span class="flex justify-evenly">
+                    <span>
+                        <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
+                            <span
+                                class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
+                            &nbsp;
+                            <span class="font-F1Bold">
+                                <%= String(pilote.position).padStart(2, '0' ) %> -
+                            </span>
+                            <%= pilote.lastName %>
+                                <br>
+                                <% }); %>
+                    </span>
+                    <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
+                    <span>
+                        <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
+                            <span
+                                class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
+                            &nbsp;
+                            <span class="font-F1Bold">
+                                <%= String(pilote.position).padStart(2, '0' ) %> -
+                            </span>
+                            <%= pilote.lastName %>
+                                <br>
+                                <% }); %>
+                    </span>
                 </span>
-            </span>
-        </div>
+            </div>
+        </a>
     </main>
     <%- include('partials/footer.ejs') %>
 </body>
 
-<script src="/js/accueil.js"></script>
+<script>
+
+    function updateNextRaceInfo() {
+        document.getElementById('race-location').textContent = "<%= homeData[0].nextRaceInfo[0].name %>";
+        const flagElement = document.getElementById('flag');
+        flagElement.innerHTML = ''; // Clear any existing flag
+        const img = document.createElement('img');
+        img.setAttribute('class', 'h-6 w-auto');
+        img.setAttribute('src', `/img/countryFlags/${"<%= homeData[0].nextRaceInfo[0].country %>"}.svg`);
+        flagElement.appendChild(img);
+
+        // Inclure l'heure de la course dans le démarrage du compte à rebours
+        startCountdown("<%= homeData[0].nextRaceInfo[0].raceDate %>", "<%= homeData[0].nextRaceInfo[0].raceTime %>");
+    }
+
+    /**
+     * @description Démarre le compte à rebours pour la prochaine course
+     * @param {string} raceDate
+     * @param {string} raceTime
+     * @returns {void}
+     */
+    function startCountdown(raceDate, raceTime) {
+        // Convertit la date et l'heure de la course en UTC+2 (heure d'été française)
+        const offset = 2; // UTC+2 pour l'heure d'été française
+        const raceDateTime = new Date(`${raceDate}T${raceTime}`).getTime();
+        const adjustedRaceDateTime = raceDateTime + (offset * 60 * 60 * 1000); // Ajuste pour le fuseau horaire français
+
+        let previousDays, previousHours, previousMinutes, previousSeconds;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = adjustedRaceDateTime - now;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = `<div class="col-span-12">La course a commencée</div>`;
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (days !== previousDays) {
+                updateTimeElement('days', days);
+                previousDays = days;
+            }
+            if (hours !== previousHours) {
+                updateTimeElement('hours', hours);
+                previousHours = hours;
+            }
+            if (minutes !== previousMinutes) {
+                updateTimeElement('minutes', minutes);
+                previousMinutes = minutes;
+            }
+            if (seconds !== previousSeconds) {
+                updateTimeElement('seconds', seconds);
+                previousSeconds = seconds;
+            }
+        }
+
+        function updateTimeElement(id, value) {
+            const element = document.getElementById(id);
+            element.classList.remove('animation-slide');
+            void element.offsetWidth; // Trigger reflow to restart the animation
+            element.classList.add('animation-slide');
+            element.textContent = String(value).padStart(2, '0');
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    }
+
+
+    function convertDate(dateString) {
+        var date = new Date(dateString);
+        var day = date.getDate();
+        var month = date.getMonth() + 1; // Les mois sont indexés à partir de 0 en JavaScript
+        return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
+    }
+
+    function convertTime(timeString) {
+        var timeParts = timeString.split(':'); // Les heures sont le premier élément, les minutes sont le deuxième
+        var hour = timeParts[0];
+        var minute = timeParts[1];
+        return minute === '00' ? hour + 'h' : hour + 'h' + minute;
+    }
+
+    updateNextRaceInfo();
+</script>
 
 </html>

@@ -1,10 +1,8 @@
 const http = require('http');
-var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 const i18n = require('i18n');
-var logger = require('morgan');
 const cors = require("cors");
 const helmet = require("helmet");
 const session = require("express-session");
@@ -25,7 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const dbPool = require('./config/database');
 
 // On importe les fonctions crées par l'équipe
-const getLastPodium = require("./utils/getLastPodium"); // Fonction permettant de récupérer le podium de la dernière course
 const getHomeData = require("./utils/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
 const getDriversActualStandings = require("./utils/getDriversActualStanding"); // Fonction permettant de récupérer le classement actuel des pilotes
 const getTeamsActualStandings = require("./utils/getTeamsActualStandings"); // Fonction permettant de récupérer le classement actuel des écuries
@@ -127,13 +124,13 @@ app.get("/", async (req, res) => {
 
 app.get("/teams", async (req, res) => {
     var teams = await getActualTeams(false);
-    res.render("ecuries", { teamsFront: teams });
+    res.render("teams", { teamsFront: teams });
 });
 
 app.get("/team/:ecurie_id", async (req, res) => {
     try {
         var team = await getTeam(req.params.ecurie_id);
-        res.render("ecurie", { teamFront: team });
+        res.render("team", { teamFront: team });
     } catch (err) {
         console.error('Erreur lors de la récupération des informations de l\'écurie:', err);
         res.status(500).send('Erreur interne du serveur');
@@ -142,19 +139,19 @@ app.get("/team/:ecurie_id", async (req, res) => {
 
 app.get("/drivers", async (req, res) => {
     var pilotes = await getActualPilotes(false); // Récupération des pilotes actuels
-    res.render("pilotes", { pilotesFront: pilotes });
+    res.render("drivers", { pilotesFront: pilotes });
 });
 
 app.get("/driver/:driver_id", async (req, res) => {
     var driverData = await getDriverData(req.params.driver_id);
-    res.render("pilote", { dataDriver: driverData });
+    res.render("driver", { dataDriver: driverData });
 });
 
-app.get("/calendrier", async (req, res) => {
+app.get("/calendar", async (req, res) => {
     try {
         const calendrier = await getCalendrier();
 
-        res.render("circuits", { tracksFront: calendrier });
+        res.render("calendar", { tracksFront: calendrier });
     } catch (error) {
         console.error("Error fetching data:", error);
         res.status(500).send("Internal Server Error");
@@ -173,10 +170,10 @@ app.get("/circuit/:circuit_id", async (req, res) => {
     }
 });
 
-app.get("/classement", async (req, res) => {
+app.get("/standings", async (req, res) => {
     var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
     var actualTeamsStanding = await getTeamsActualStandings(false); // Récupération du classement actuel des écuries
-    res.render("classement", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
+    res.render("standings", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
 });
 
 app.get("/reglement", async (req, res) => {

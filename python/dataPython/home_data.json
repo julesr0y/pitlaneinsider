@@ -1,5 +1,15 @@
 [
     {
+        "nextRaceInfo": [
+            {
+                "id": "hungary",
+                "raceId": 1114,
+                "country": "hungary",
+                "name": "Hungarian GP",
+                "raceDate": "2024-07-21",
+                "raceTime": "13:00"
+            }
+        ],
         "lastPodiumLocalisation": [
             {
                 "id": "great-britain",

@@ -28,7 +28,11 @@ def getHomeData(output_file):
     index = len(all_races_standings) - 1
     race_id = all_races_standings[index]['raceId']
 
+    # Get next race id
+    next_race_id = race_id + 1
+
     home_data = []
+    next_race_info = []
     lastPodiumLocalisation = []
     gpId = ""
     lastPodium = []
@@ -44,6 +48,20 @@ def getHomeData(output_file):
                         'name': gp['shortName']
                     }
                     lastPodiumLocalisation.append(gpDetails)
+        elif event['id'] == next_race_id:
+            gpId = event['grandPrixId']
+            for gp in all_gp:
+                if gp['id'] == gpId:
+                    nextGpDetails = {
+                        'id': gp['id'],
+                        'raceId': event['id'],
+                        'country': gp['countryId'],
+                        'name': gp['shortName'],
+                        'raceDate': event['date'],
+                        'raceTime': event['time']
+                    }
+                    next_race_info.append(nextGpDetails)
+
     for race in all_races_standings:
         if race['raceId'] == race_id and race['positionDisplayOrder'] in [1, 2, 3]:
             abbreviation = ""
@@ -73,6 +91,7 @@ def getHomeData(output_file):
     constructorLeader = constructor_s[0]
 
     elem = {
+        'nextRaceInfo': next_race_info,
         'lastPodiumLocalisation': lastPodiumLocalisation,
         'lastPodium': lastPodium,
         'driverStandings': driver_s,

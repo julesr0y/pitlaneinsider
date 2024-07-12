@@ -34,7 +34,11 @@
                         <img src="/img/teams/<%= pilote.constructorId.toLowerCase() %>.webp"
                             alt="<%= pilote.constructorId %>" class="h-10 w-auto mx-auto mb-2">
                         <div class="font-F1Bold text-2xl text-<%= pilote.constructorId.toLowerCase() %> mb-1">
-                            <%= pilote.permanentNumber %>
+                            <% if (pilote.permanentNumber !=33) { %>
+                                <%= pilote.permanentNumber %>
+                                    <% } else { %>
+                                        <%= 1 %>
+                                            <% } %>
                         </div>
                         <div class="text-xl font-semibold">
                             <%= pilote.firstName %> <br>
