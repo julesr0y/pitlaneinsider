@@ -8,3 +8,6 @@ automatic_scaling:
 handlers:
   - url: /.*
     script: auto
+
+env_variables:
+  NODE_ENV: production

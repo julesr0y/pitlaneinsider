@@ -8,7 +8,12 @@ const session = require("express-session");
 const credits = require("./config/credits.json");
 
 const app = express();
-require('dotenv').config();
+
+if (process.env.NODE_ENV === 'production') {
+    require('dotenv').config({ path: '.env.production' });
+} else {
+    require('dotenv').config();
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
