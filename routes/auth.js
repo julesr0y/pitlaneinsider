@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const requireNoSession = require('../utils/requireNoSession');
+const requireNoSession = require('../utils/security/requireNoSession');
 const dbPool = require('../config/database'); // Importer le pool de connexions
 
 // pages des formulaires

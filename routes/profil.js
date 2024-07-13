@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dbPool = require('../config/database'); // Importer le pool de connexions
-const requireSession = require('../utils/requireSession'); // Importer le middleware de session
+const requireSession = require('../utils/security/requireSession'); // Importer le middleware de session
 
 router.get("/profil", requireSession, async (req, res) => {
     try {

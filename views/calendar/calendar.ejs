@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= __('calendar.tab_title') %>
+            </title>
+            <style>
+                .highlight {
+                    animation: pulse 2s infinite;
+                }
+
+                .color {
+                    background-color: #058785;
+                }
+
+                @keyframes pulse {
+                    0% {
+                        box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7);
+                    }
+
+                    70% {
+                        box-shadow: 0 0 0 10px rgba(255, 99, 71, 0);
+                    }
+
+                    100% {
+                        box-shadow: 0 0 0 0 rgba(255, 99, 71, 0);
+                    }
+                }
+            </style>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        <%= __('calendar.season') %>
+    </div>
+
+    <div class="text-center my-8">
+        <button id="nextRaceButton" class="text-white py-2 px-4 rounded color">
+            <%= __('calendar.next_race') %>
+        </button>
+    </div>
+
+    <div class="w-9/10 mx-auto p-4">
+        <% if (tracksFront && tracksFront.length> 0) { %>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+                <% tracksFront.forEach(function(race) { %>
+                    <div id="race-<%= race.raceId %>"
+                        class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
+                        <a href="/retro_gpdetail/2024/<%= race.raceId %>" class="block text-center">
+                            <div class="relative mb-4">
+                                <img src="/img/circuits/<%= race.circuitId %>.webp" alt="Circuit <%= race.circuitId %>"
+                                    class="w-full h-32 object-contain mx-auto">
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg"
+                                    alt="<%= race.country %>" class="mb-2 h-12 w-auto">
+                                <h2 class="text-lg font-F1Bold mb-3">
+                                    <%= race.name %>
+                                </h2>
+                            </div>
+                        </a>
+                        <div class="mt-4 rounded-2xl p-4">
+                            <ul class="text-t-s-<%= theme %>">
+                                <% if(race.freePractice1Time !=null) { %>
+                                    <li><strong>
+                                            FP1:
+                                        </strong>
+                                        <span class="event-time" data-date="<%= race.freePractice1Date %>"
+                                            data-time="<%= race.freePractice1Time %>">
+                                            <%= race.freePractice1Date %> - <%= race.freePractice1Time %>
+                                        </span>
+                                    </li>
+                                    <% } %>
+                                        <% if(race.freePractice2Time !=null) { %>
+                                            <li><strong>
+                                                    FP2:
+                                                </strong>
+                                                <span class="event-time" data-date="<%= race.freePractice2Date %>"
+                                                    data-time="<%= race.freePractice2Time %>">
+                                                    <%= race.freePractice2Date %> - <%= race.freePractice2Time %>
+                                                </span>
+                                            </li>
+                                            <% } %>
+                                                <% if(race.freePractice3Time !=null) { %>
+                                                    <li><strong>
+                                                            FP3:
+                                                        </strong>
+                                                        <span class="event-time"
+                                                            data-date="<%= race.freePractice3Date %>"
+                                                            data-time="<%= race.freePractice3Time %>">
+                                                            <%= race.freePractice3Date %> - <%= race.freePractice3Time
+                                                                    %>
+                                                        </span>
+                                                    </li>
+                                                    <% } %>
+                                                        <% if(race.sprintQualifyingTime !=null) { %>
+                                                            <li><strong>
+                                                                    SQ:
+                                                                </strong>
+                                                                <span class="event-time"
+                                                                    data-date="<%= race.sprintQualifyingDate %>"
+                                                                    data-time="<%= race.sprintQualifyingTime %>">
+                                                                    <%= race.sprintQualifyingDate %> - <%=
+                                                                            race.sprintQualifyingTime %>
+                                                                </span>
+                                                            </li>
+                                                            <% } %>
+                                                                <% if(race.sprintRaceTime !=null) { %>
+                                                                    <li><strong>
+                                                                            S:
+                                                                        </strong>
+                                                                        <span class="event-time"
+                                                                            data-date="<%= race.sprintRaceDate %>"
+                                                                            data-time="<%= race.sprintRaceTime %>">
+                                                                            <%= race.sprintRaceDate %> - <%=
+                                                                                    race.sprintRaceTime %>
+                                                                        </span>
+                                                                    </li>
+                                                                    <% } %>
+                                                                        <% if(race.qualifyingTime !=null) { %>
+                                                                            <li><strong>
+                                                                                    Q:
+                                                                                </strong>
+                                                                                <span class="event-time"
+                                                                                    data-date="<%= race.qualifyingDate %>"
+                                                                                    data-time="<%= race.qualifyingTime %>">
+                                                                                    <%= race.qualifyingDate %> - <%=
+                                                                                            race.qualifyingTime %>
+                                                                                </span>
+                                                                            </li>
+                                                                            <% } %>
+                                                                                <% if(race.raceTime !=null) { %>
+                                                                                    <li><strong>
+                                                                                            R:
+                                                                                        </strong>
+                                                                                        <span class="event-time"
+                                                                                            data-date="<%= race.raceDate %>"
+                                                                                            data-time="<%= race.raceTime %>">
+                                                                                            <%= race.raceDate %> -
+                                                                                                <%= race.raceTime %>
+                                                                                        </span>
+                                                                                    </li>
+                                                                                    <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+            <% } else { %>
+                <div class="text-center text-red-500">Aucun circuit à afficher</div>
+                <% } %>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const eventTimes = document.querySelectorAll('.event-time');
+            eventTimes.forEach(eventTime => {
+                const date = eventTime.getAttribute('data-date');
+                const time = eventTime.getAttribute('data-time');
+
+                // Assuming the date is in DD/MM format and time is in HHhMM format
+                const [day, month] = date.split('/');
+                const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
+                const year = new Date().getFullYear();
+
+                // Create a date string in ISO format
+                const isoDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
+
+                // Convert to local time
+                const eventDate = new Date(isoDateString);
+
+                // Format the date to the local timezone in the desired format
+                const formattedDate = eventDate.toLocaleDateString('fr-FR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                });
+
+                const formattedTime = eventDate.toLocaleTimeString('fr-FR', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                }).replace(':', 'h');
+
+                // Display the formatted date and time
+                eventTime.textContent = `${formattedDate} - ${formattedTime}`;
+            });
+
+            const nextRaceButton = document.getElementById('nextRaceButton');
+            const highlightElement = document.querySelector('.highlight');
+            if (nextRaceButton && highlightElement) {
+                nextRaceButton.addEventListener('click', () => {
+                    const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({
+                        top: topOffset,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

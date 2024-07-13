@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>PLI - <%= __('retro_f1.winners.tab_title') %>
+            </title>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="container mx-auto px-4">
+        <div class="text-4xl font-bold text-center my-8">
+            <%= __('retro_f1.winners.title') %>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <% for (let index in retro_titre) { %>
+                <a href="/driver/<%= retro_titre[index].driverId %>">
+                    <div
+                        class="bg-s-<%= theme %> flex flex-col items-center justify-center p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+                        <div class="w-full border-l-4 border-green-500 pl-4">
+                            <div class="flex items-center justify-between w-full">
+                                <div>
+                                    <span class="text-2xl font-bold">
+                                        <%= retro_titre[index].firstName %>
+                                            <%= retro_titre[index].lastName %>
+                                    </span>
+                                    <div class="bg-green-500 h-1 w-12 mt-2"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center mt-4 text-t-s-<%= theme %>">
+                                <span class="text-lg">
+                                    <%= __('retro_f1.winners.number_of_titles') %> :
+                                </span>
+                                <span class="text-4xl font-semibold text-green-600 ml-2">
+                                    <%= retro_titre[index].titles %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= __('retro_f1.all_data.tab_title_drivers') %>
+            </title>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+        <%= __('retro_f1.all_data.title_drivers') %>
+    </div>
+    <div class="w-9/10 mx-auto p-4">
+        <div class="flex justify-center items-start">
+            <div class="flex mb-4">
+                <a href="retrodrivers"
+                    class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
+                    <%= __('retro_f1.all_data.link_drivers') %>
+                </a>
+                <a href="retroconstructors"
+                    class="mr-20 {{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}">
+                    <%= __('retro_f1.all_data.link_teams') %>
+                </a>
+                <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}">
+                    <%= __('retro_f1.all_data.link_tracks') %>
+                </a>
+            </div>
+        </div>
+        <div class='max-w-md mx-auto'>
+            <div
+                class="bg-s-<%= theme %> relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg overflow-hidden my-4">
+                <div class="grid place-items-center h-full w-12 text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+
+                <input class="bg-s-<%= theme %> peer h-full w-full outline-none text-sm text-gray-300 pr-2" type="text"
+                    id="search" placeholder="<%= __('retro_f1.all_data.search_driver') %>" />
+            </div>
+        </div>
+        <div class="w-9/10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="elems">
+            <% retro_pilotes.forEach(function(driver) { %>
+                <a href="/driver/<%= driver.driverId.toLowerCase() %>" class="block">
+                    <div
+                        class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
+                        <div class="text-center relative">
+                            <div class="relative mb-4" id="<%= driver.firstName %> <%= driver.lastName %>">
+                                <img src="/img/drivers/<%= driver.driverId.toLowerCase() %>.webp"
+                                    alt="<%= driver.firstName %> <%= driver.lastName %>"
+                                    onerror="this.onerror=null; this.src='/img/drivers/unknown.webp'"
+                                    class="w-full h-40 object-contain">
+                                <div class="absolute top-2 right-2 w-16 h-16">
+                                    <img src="/img/countryFlags/<%= driver.nationality.toLowerCase() %>.svg"
+                                        alt="<%= driver.nationality %>" class="w-12 h-auto">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-semibold">
+                                    <%= driver.firstName %> <br>
+                                        <span class="font-F1Bold text-2xl">
+                                            <%= driver.lastName %>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <% }); %>
+        </div>
+        <div id="noResults" class="text-center text-xl text-gray-500 mt-4" style="display: none;">
+            <%= __('retro_f1.all_data.no_result') %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+        <script src="/js/recherche_retro.js"></script>
+</body>
+
+</html>

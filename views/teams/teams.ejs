@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= __('teams.tab_title') %>
+            </title>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="text-3xl font-bold text-center my-8 lg:text-3xl lg:font-bold lg:my-8">
+        <%= __('teams.season') %>
+    </div>
+    <div class="w-9/10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 pt-10">
+        <% teamsFront.forEach(function(team) { %>
+            <div
+                class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
+                <a href="/team/<%= team.constructorId %>" class="block text-center relative">
+                    <div class="relative mb-4">
+                        <img src="/img/teams/<%= team.constructorId %>.webp" alt="<%= team.constructorId %>"
+                            class="w-full h-40 object-contain">
+                    </div>
+                    <div>
+                        <span class="font-F1Bold text-2xl">
+                            <%= team.name %>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <% }); %>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

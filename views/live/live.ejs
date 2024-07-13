@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= __('live.tab_title') %>
+            </title>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="text-center text-2xl font-bold my-8">
+        <span>
+            <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
+            <span class="text-red-500">
+                <%= __('live.live_title') %>
+            </span> -
+            <span id="frontLocation"></span>
+        </span> - <span id="frontSession"></span>
+    </div>
+
+    <div class="text-center text-2xl font-bold my-8">
+        <span id="lap"></span>
+    </div>
+
+
+    <div class="flex justify-center mb-8">
+        <button id="btnClassement" class="mr-4 underline" onclick="openTab('Classement')">
+            <%= __('live.link_standings') %>
+        </button>
+        <button id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')">
+            <%= __('live.link_race_control') %>
+        </button>
+        <button id="btnRadio" onclick="openTab('Radio')">
+            <%= __('live.link_radio') %>
+        </button>
+    </div>
+
+    <div class="flex justify-evenly">
+        <span id="track_temp"></span>
+        <span id="air_temp"></span>
+        <span id="rain_fall"></span>
+        <span id="wind_speed"></span>
+    </div>
+
+    <div id="Classement" class="bg-s-<%= theme %> p-4 sm:pt-8 shadow rounded-3xl mx-4 mt-8">
+    </div>
+
+
+    <div id="RaceControl" class="hidden flex flex-col items-center justify-center p-4 sm:pt-8">
+        <div class="bg-green-400 text-white text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2">GREEN FLAG
+        </div>
+        <div class="bg-yellow-300 text-black text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2">YELLOW
+            FLAG</div>
+        <div class="bg-red-500 text-white text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2">RED FLAG
+        </div>
+        <div
+            class="bg-gray-300 text-black text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2 border-2 border-black">
+            FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - Driving for Alpine</div>
+        <div
+            class="bg-white text-black text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2 border-2 border-black">
+            CHECKERED FLAG</div>
+        <div
+            class="bg-black flex flex-col items-center justify-center text-white text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2">
+            <span>BLACK FLAG</span>Nicholas Latifi - L45
+        </div>
+    </div>
+
+    <div id="Radio" class="hidden flex flex-col items-center justify-center p-4 sm:pt-8">
+
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+<script src="/js/liveButtons.js" nonce="randomNonceValue"></script>
+<script src="/js/liveStandings.js"></script>
+<script src="/js/liveUpdates.js"></script>
+<script src="/js/liveRadio.js"></script>
+
+</html>

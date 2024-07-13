@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cors = require("cors");
 
-// fonctions
+// functions
 const getWinners = require('../utils/getWinners');
 const getWinnersConstructors = require('../utils/getWinnersConstructors');
 const getSeasonRanking = require('../utils/getSeasonRanking');
@@ -12,76 +12,72 @@ const getRetroPilotes = require('../utils/getRetroPilotes');
 const getTeams = require('../utils/getEcuries');
 const getCircuits = require('../utils/getCircuits');
 
-router.get("/retro_accueil", cors(), async (req, res) => {
+router.get("/retrohome", cors(), async (req, res) => {
     var retroHome = await getWinners();
     var constructorWinners = await getWinnersConstructors();
-    res.render("retro_accueil", { retroHome: retroHome, constructorWinners: constructorWinners });
+    res.render("retro/retroHome", { retroHome: retroHome, constructorWinners: constructorWinners });
 });
 
-router.get("/retro_titre", cors(), async (req, res) => {
+router.get("/retrodriverwinners", cors(), async (req, res) => {
     var retro_titre = await getWinners();
-    res.render("retro_titre", { retro_titre: retro_titre });
+    res.render("retro/retroDriverWinners", { retro_titre: retro_titre });
 });
 
 router.get("/retroconstructorwinners", cors(), async (req, res) => {
     var constructorWinners = await getWinnersConstructors();
-    res.render("retroconstructorwinners", { constructorWinners: constructorWinners });
+    res.render("retro/retroConstructorWinners", { constructorWinners: constructorWinners });
 });
 
-router.get("/retro_classement", cors(), (req, res) => {
-    res.redirect("/retro_classement/2023");
+router.get("/retrostandings", cors(), (req, res) => {
+    res.redirect("retrostandings/2023");
 });
 
-router.get("/retro_classement/:season_id", cors(), async (req, res) => {
+router.get("/retrostandings/:season_id", cors(), async (req, res) => {
     try {
         const retro_classement = await getSeasonRanking(req.params.season_id);
-        res.render("retro_classement", { retro_classement: retro_classement, selectedYear: req.params.season_id });
+        res.render("retro/retroStandings", { retro_classement: retro_classement, selectedYear: req.params.season_id });
     } catch (error) {
         console.error('Erreur lors de la récupération du classement de la saison :', error);
         res.status(500).send('Erreur lors de la récupération du classement de la saison');
     }
 });
 
-router.get("/retro_calendrier", cors(), (req, res) => {
-    res.redirect("/retro_calendrier/2023");
+router.get("/retrocalendar", cors(), (req, res) => {
+    res.redirect("/retroCalendar/2023");
 });
 
-router.get("/retro_calendrier/:season_id", cors(), async (req, res) => {
+router.get("/retrocalendar/:season_id", cors(), async (req, res) => {
     try {
         const retro_calendrier = await getSeasonList(req.params.season_id);
-        res.render("retro_calendrier", { retro_calendrier: retro_calendrier, selectedYear: req.params.season_id });
+        res.render("retro/retroCalendar", { retro_calendrier: retro_calendrier, selectedYear: req.params.season_id });
     } catch (error) {
         console.error('Erreur lors de la récupération du classement de la saison :', error);
         res.status(500).send('Erreur lors de la récupération du classement de la saison ');
     }
 });
 
-router.get("/retro_gpdetail", cors(), (req, res) => {
-    res.redirect("/retro_gp_detail/2023/1");
-});
-
-router.get("/retro_gpdetail/:season_id/:gp_id", cors(), async (req, res) => {
+router.get("/retrogpdetails/:season_id/:gp_id", cors(), async (req, res) => {
     try {
         var GP_detail = await getGPDetail(req.params.gp_id);
-        res.render('retro_gpdetail', { gpDetails: GP_detail, selectedYear: req.params.season_id });
+        res.render('retro/retroGpDetails', { gpDetails: GP_detail, selectedYear: req.params.season_id });
     } catch (error) {
         res.status(500).send('Erreur lors de la récupération des données');
     }
 });
 
-router.get("/retro_pilotes", cors(), async (req, res) => {
+router.get("/retrodrivers", cors(), async (req, res) => {
     var retro_pilotes = await getRetroPilotes();
-    res.render("retro_pilotes", { retro_pilotes: retro_pilotes });
+    res.render("retro/retroDrivers", { retro_pilotes: retro_pilotes });
 });
 
-router.get("/retro_ecuries", cors(), async (req, res) => {
+router.get("/retroconstructors", cors(), async (req, res) => {
     var retro_ecuries = await getTeams();
-    res.render("retro_ecuries", { retro_ecuries: retro_ecuries });
+    res.render("retro/retroConstructors", { retro_ecuries: retro_ecuries });
 });
 
-router.get("/retro_circuits", cors(), async (req, res) => {
+router.get("/retrotracks", cors(), async (req, res) => {
     var retro_circuits = await getCircuits(false);
-    res.render("retro_circuits", { retro_circuits: retro_circuits });
+    res.render("retro/retroTracks", { retro_circuits: retro_circuits });
 });
 
 module.exports = router;

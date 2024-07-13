@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 const i18n = require('i18n');
-const cors = require("cors");
 const helmet = require("helmet");
 const session = require("express-session");
 const credits = require("./config/credits.json");
@@ -14,7 +13,6 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -24,16 +22,7 @@ const dbPool = require('./config/database');
 
 // On importe les fonctions crées par l'équipe
 const getHomeData = require("./utils/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
-const getDriversActualStandings = require("./utils/getDriversActualStanding"); // Fonction permettant de récupérer le classement actuel des pilotes
-const getTeamsActualStandings = require("./utils/getTeamsActualStandings"); // Fonction permettant de récupérer le classement actuel des écuries
-const getCalendrier = require("./utils/getCalendrier"); // Fonction permettant de récupérer le calendrier de la saison actuelle
-const getActualPilotes = require("./utils/getActualPilotes"); // Fonction permettant de récupérer les pilotes actuels
-const getDriverData = require("./utils/getDriverData"); // Fonction permettant de récupérer les données d'un pilote
-const getActualTeams = require("./utils/getActualTeams"); // Fonction permettant de récupérer les équipes de la saison actuelle
-const getTeam = require("./utils/getTeam"); // Fonction permettant de récupérer une équipe
-const getTracks = require("./utils/getTracks"); // Fonction permettant de récupérer les circuits de la saison actuelle
-const getTrack = require("./utils/getTrack"); // Fonction permettant de récupérer un circuit
-const verifySession = require("./utils/verifySession"); // Fonction permettant de vérifier si une session est bien existante
+const verifySession = require("./utils/security/verifySession"); // Fonction permettant de vérifier si une session est bien existante
 
 // Configuration des middlewares
 app.use(helmet()); // Helmet middleware, permet de sécuriser l'application en configurant des en-têtes HTTP de manière sécurisée
@@ -116,90 +105,52 @@ app.use(async (req, res, next) => {
     next();
 });
 
-app.get("/", async (req, res) => {
+app.get("/", async (req, res) => { // home page
     var homeData = await getHomeData();
-    // console.log(homeData)
-    res.render("accueil", { homeData: homeData });
+    res.render("home", { homeData: homeData });
 });
 
-app.get("/teams", async (req, res) => {
-    var teams = await getActualTeams(false);
-    res.render("teams", { teamsFront: teams });
-});
+const teamsRoutes = require('./routes/teams'); // Importation des routes concernant les écuries
+app.use('/', teamsRoutes);
 
-app.get("/team/:ecurie_id", async (req, res) => {
-    try {
-        var team = await getTeam(req.params.ecurie_id);
-        res.render("team", { teamFront: team });
-    } catch (err) {
-        console.error('Erreur lors de la récupération des informations de l\'écurie:', err);
-        res.status(500).send('Erreur interne du serveur');
-    }
-});
+const driversRoutes = require('./routes/drivers'); // Importation des routes concernant les pilotes
+app.use('/', driversRoutes);
 
-app.get("/drivers", async (req, res) => {
-    var pilotes = await getActualPilotes(false); // Récupération des pilotes actuels
-    res.render("drivers", { pilotesFront: pilotes });
-});
+const calendarRoutes = require('./routes/calendar'); // Importation des routes concernant le calendrier
+app.use('/', calendarRoutes);
 
-app.get("/driver/:driver_id", async (req, res) => {
-    var driverData = await getDriverData(req.params.driver_id);
-    res.render("driver", { dataDriver: driverData });
-});
+const standingsRoutes = require('./routes/standings'); // Importation des routes concernant les écuries
+app.use('/', standingsRoutes);
 
-app.get("/calendar", async (req, res) => {
-    try {
-        const calendrier = await getCalendrier();
-
-        res.render("calendar", { tracksFront: calendrier });
-    } catch (error) {
-        console.error("Error fetching data:", error);
-        res.status(500).send("Internal Server Error");
-    }
-});
-
-app.get("/circuit/:circuit_id", async (req, res) => {
-    try {
-        var track = await getTrack(req.params.circuit_id);
-        const [rows] = await dbPool.query('SELECT * FROM circuits WHERE id_circuit = ?', [req.params.circuit_id]);
-        const dataCircuit = rows[0];
-        res.render("circuit", { trackFront: track, dataCircuit: dataCircuit });
-    } catch (err) {
-        console.error('Erreur lors de la récupération des informations du circuit:', err);
-        res.status(500).send('Erreur interne du serveur');
-    }
-});
-
-app.get("/standings", async (req, res) => {
-    var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
-    var actualTeamsStanding = await getTeamsActualStandings(false); // Récupération du classement actuel des écuries
-    res.render("standings", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
-});
-
-app.get("/reglement", async (req, res) => {
-    res.render("reglement");
-});
+const retroReglementations = require('./routes/reglementations'); // Importation des routes de la partie reglementations
+app.use('/', retroReglementations);
 
 const retroRoutes = require('./routes/retro'); // Importation des routes de la partie rétro
 app.use('/', retroRoutes);
 
-app.get("/live", cors(), async (req, res) => {
-    if (verifySession(req)) {
-        res.render("live");
-    } else {
-        res.render("needAccount");
-    }
-});
-
-const authRoutes = require('./routes/auth'); // Importation des routes d'authentification
-app.use('/', authRoutes);
+const liveRoutes = require('./routes/live'); // Importation des routes concernant le live
+app.use('/', liveRoutes);
 
 const profilRoutes = require('./routes/profil'); // Importation des routes de profil
 app.use('/', profilRoutes);
 
-app.get("/a_propos", async (req, res) => {
-    res.render("a_propos");
-});
+const aboutRoutes = require('./routes/about'); // Importation des routes de la partie  a propos
+app.use('/', aboutRoutes);
+
+const authRoutes = require('./routes/auth'); // Importation des routes d'authentification
+app.use('/', authRoutes);
+
+// app.get("/circuit/:circuit_id", async (req, res) => {
+//     try {
+//         var track = await getTrack(req.params.circuit_id);
+//         const [rows] = await dbPool.query('SELECT * FROM circuits WHERE id_circuit = ?', [req.params.circuit_id]);
+//         const dataCircuit = rows[0];
+//         res.render("circuit", { trackFront: track, dataCircuit: dataCircuit });
+//     } catch (err) {
+//         console.error('Erreur lors de la récupération des informations du circuit:', err);
+//         res.status(500).send('Erreur interne du serveur');
+//     }
+// });
 
 // Middleware pour gérer les routes inexistantes
 app.use((req, res, next) => {
