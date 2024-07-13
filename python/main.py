@@ -3,6 +3,7 @@ from getTeamsStats import getTeamsStats
 from getActualStandings import getStandings
 from getHomeData import getHomeData
 from getTitledDrivers import getTitledDrivers
+from getTitledConstructors import getTitledConstructors
 from getCalendar import getCalendar
 from getAllRacesQualiAndResults import getAllRacesQualiAndResults
 from getCarsData import getCarsData
@@ -28,6 +29,10 @@ def main():
     output_file_titled_drivers = "./python/dataPython/titled_drivers.json"
     getTitledDrivers(output_file_titled_drivers)
     print(f"All titled drivers data saved to {output_file_titled_drivers}")
+
+    output_file_titled_constructors = "./python/dataPython/titled_constructors.json"
+    getTitledConstructors(output_file_titled_constructors)
+    print(f"All titled constructors data saved to {output_file_titled_constructors}")
 
     output_file_races_results = "./python/dataPython/all_races_and_quali_results.json"
     getAllRacesQualiAndResults(output_file_races_results)

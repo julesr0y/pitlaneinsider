@@ -28,6 +28,41 @@
     <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
         <%= __('retro_f1.home.title') %>
     </div>
+
+    <div>
+        <div class="flex flex-col md:flex-row justify-center items-start mt-4 space-y-4 md:space-y-0 md:space-x-4 px-4">
+            <a href="retro_classement" class="bg-s-<%= theme %> w-full md:w-1/2 lg:w-1/3 rounded-3xl pt-4 flex-grow">
+                <h2 class="text-center font-F1Bold mb-4">
+                    <%= __('retro_f1.home.all_seasons') %>
+                </h2>
+                <div class="flex flex-col items-center justify-around h-full">
+                    <div class="flex flex-col justify-evenly items-center">
+                        <p class="font-F1Bold">2023</p>
+                        <img src="/img/2024/circuit/monza.webp" alt="Monza" class="w-48">
+                        <p class="text-center">Vainqueur : Max Verstappen</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="retro_pilotes" class="bg-s-<%= theme %> w-full md:w-1/2 lg:w-1/3 rounded-3xl pt-4 flex-grow">
+                <h2 class="text-center font-F1Bold mb-4">
+                    <%= __('retro_f1.home.all_data') %>
+                </h2>
+                <div class="flex flex-col items-center justify-around h-full">
+                    <img src="/img/teams/aston-martin.webp" alt="Aston Martin" class="h-8 md:h-16">
+                    <div class="flex items-center">
+                        <div class="flex-row">
+                            <p class="font-F1Bold text-aston-martin">ALO</p>
+                        </div>
+                        <div>
+                            <img src="img/2024/drivers/alonso.webp" alt="Alonso" class="h-20 md:h-24 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <div class="space-y-4 md:space-y-0 md:space-x-4 px-4">
         <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
             <a href="retro_titre">
@@ -81,40 +116,59 @@
         </div>
     </div>
 
-    <div>
-        <div class="flex flex-col md:flex-row justify-center items-start mt-4 space-y-4 md:space-y-0 md:space-x-4 px-4">
-            <a href="retro_pilotes" class="bg-s-<%= theme %> w-full md:w-1/2 lg:w-1/3 rounded-3xl pt-4 flex-grow">
-                <h2 class="text-center font-F1Bold mb-4">
-                    <%= __('retro_f1.home.all_data') %>
-                </h2>
-                <div class="flex flex-col items-center justify-around h-full">
-                    <img src="/img/teams/aston-martin.webp" alt="Aston Martin" class="h-8 md:h-16">
-                    <div class="flex items-center">
-                        <div class="flex-row">
-                            <p class="font-F1Bold text-aston-martin">ALO</p>
-                        </div>
-                        <div>
-                            <img src="img/2024/drivers/alonso.webp" alt="Alonso" class="h-20 md:h-24 object-cover">
+    <div class="space-y-4 md:space-y-0 md:space-x-4 px-4">
+        <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
+            <a href="retroconstructorwinners">
+                <span class="flex justify-center text-center mb-4 font-F1Bold">
+                    <h2 class="text-center font-F1Bold mt-4">
+                        Liste des écuries titrées
+                    </h2>
+                </span>
+                <div class="flex justify-evenly items-end h-full">
+                    <div class="flex flex-col items-center gap-y-2">
+                        <img src="/img/teams/<%= constructorWinners[1].key %>.webp" class="h-12 w-auto">
+                        <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
+                            <span class="text-lg font-bold">2</span>
+                            <span class="text-sm font-bold mt-2">
+                                <%= constructorWinners[1].name %>
+                            </span>
+                            <span>
+                                <%= constructorWinners[1].titles %>
+                                    <%= __('retro_f1.home.driver_titles') %>
+                            </span>
                         </div>
                     </div>
-                </div>
-            </a>
-
-            <a href="retro_classement" class="bg-s-<%= theme %> w-full md:w-1/2 lg:w-1/3 rounded-3xl pt-4 flex-grow">
-                <h2 class="text-center font-F1Bold mb-4">
-                    <%= __('retro_f1.home.all_seasons') %>
-                </h2>
-                <div class="flex flex-col items-center justify-around h-full">
-                    <div class="flex flex-col justify-evenly items-center">
-                        <p class="font-F1Bold">2023</p>
-                        <img src="/img/2024/circuit/monza.webp" alt="Monza" class="w-48">
-                        <p class="text-center">Vainqueur : Max Verstappen</p>
+                    <div class="flex flex-col items-center gap-y-2">
+                        <img src="/img/teams/<%= constructorWinners[0].key %>.webp" class="h-12 w-auto">
+                        <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
+                            <span class="text-lg font-bold">1</span>
+                            <span class="text-sm font-bold mt-2">
+                                <%= constructorWinners[0].name %>
+                            </span>
+                            <span>
+                                <%= constructorWinners[0].titles %>
+                                    <%= __('retro_f1.home.driver_titles') %>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-y-2">
+                        <img src="/img/teams/<%= constructorWinners[2].key %>.webp" class="h-12 w-auto">
+                        <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
+                            <span class="text-lg font-bold">3</span>
+                            <span class="text-sm font-bold mt-2">
+                                <%= constructorWinners[2].name %>
+                            </span>
+                            <span>
+                                <%= constructorWinners[2].titles %>
+                                    <%= __('retro_f1.home.driver_titles') %>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </a>
         </div>
     </div>
-    </div>
+
     <%- include('partials/footer.ejs') %>
 </body>
 

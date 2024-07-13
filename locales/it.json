@@ -168,6 +168,11 @@
 				"starting_grid": "Griglia di partenza",
 				"time": "Tempo"
 			}
+		},
+		"constructorwinners": {
+			"tab_title": "retro_f1.constructorwinners.tab_title",
+			"title": "retro_f1.constructorwinners.title",
+			"number_of_titles": "retro_f1.constructorwinners.number_of_titles"
 		}
 	},
 	"live": {

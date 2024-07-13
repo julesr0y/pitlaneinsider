@@ -4,6 +4,7 @@ const cors = require("cors");
 
 // fonctions
 const getWinners = require('../utils/getWinners');
+const getWinnersConstructors = require('../utils/getWinnersConstructors');
 const getSeasonRanking = require('../utils/getSeasonRanking');
 const getSeasonList = require('../utils/getSeasonList');
 const getGPDetail = require('../utils/getGPDetail');
@@ -13,13 +14,19 @@ const getCircuits = require('../utils/getCircuits');
 
 router.get("/retro_accueil", cors(), async (req, res) => {
     var retroHome = await getWinners();
-    res.render("retro_accueil", { retroHome: retroHome })
-})
+    var constructorWinners = await getWinnersConstructors();
+    res.render("retro_accueil", { retroHome: retroHome, constructorWinners: constructorWinners });
+});
 
 router.get("/retro_titre", cors(), async (req, res) => {
     var retro_titre = await getWinners();
-    res.render("retro_titre", { retro_titre: retro_titre })
-})
+    res.render("retro_titre", { retro_titre: retro_titre });
+});
+
+router.get("/retroconstructorwinners", cors(), async (req, res) => {
+    var constructorWinners = await getWinnersConstructors();
+    res.render("retroconstructorwinners", { constructorWinners: constructorWinners });
+});
 
 router.get("/retro_classement", cors(), (req, res) => {
     res.redirect("/retro_classement/2023");
@@ -64,17 +71,17 @@ router.get("/retro_gpdetail/:season_id/:gp_id", cors(), async (req, res) => {
 
 router.get("/retro_pilotes", cors(), async (req, res) => {
     var retro_pilotes = await getRetroPilotes();
-    res.render("retro_pilotes", { retro_pilotes: retro_pilotes })
+    res.render("retro_pilotes", { retro_pilotes: retro_pilotes });
 });
 
 router.get("/retro_ecuries", cors(), async (req, res) => {
     var retro_ecuries = await getTeams();
-    res.render("retro_ecuries", { retro_ecuries: retro_ecuries })
+    res.render("retro_ecuries", { retro_ecuries: retro_ecuries });
 });
 
 router.get("/retro_circuits", cors(), async (req, res) => {
     var retro_circuits = await getCircuits(false);
-    res.render("retro_circuits", { retro_circuits: retro_circuits })
+    res.render("retro_circuits", { retro_circuits: retro_circuits });
 });
 
 module.exports = router;

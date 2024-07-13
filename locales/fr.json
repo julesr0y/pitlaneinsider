@@ -163,6 +163,11 @@
 				"starting_grid": "Grille de départ",
 				"time": "Temps"
 			}
+		},
+		"constructorwinners": {
+			"tab_title": "Retro Titrées",
+			"title": "Liste des écuries titrées en Formule 1",
+			"number_of_titles": "Nombre de titres"
 		}
 	},
 	"live": {
