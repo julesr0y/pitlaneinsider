@@ -1,9 +1,10 @@
 const mysql = require('mysql2');
+require('dotenv').config();
 
 const pool = mysql.createPool({
-    host: "mysql-pitlaneinsider.alwaysdata.net",
-    user: "355843",
-    password: "5ANkT9Sm8dmErfV",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     database: "pitlaneinsider_db",
     waitForConnections: true,
     connectionLimit: 10, // Le nombre maximum de connexions à créer

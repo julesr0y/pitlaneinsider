@@ -8,6 +8,7 @@ const session = require("express-session");
 const credits = require("./config/credits.json");
 
 const app = express();
+require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -162,7 +163,7 @@ app.use((err, req, res, next) => {
     res.status(500).send(err.stack);
 });
 
-const port = 3000;
+const port = process.env.port;
 const server = http.createServer(app);
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
