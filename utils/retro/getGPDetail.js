@@ -1,9 +1,15 @@
-const fs = require('fs'); // Module permettant de gérer les fichiers
-const path = require('path'); // Module permettant de gérer les chemins de fichiers
+const fs = require('fs');
+const path = require('path');
 
+/**
+ * @description Returns data of a specific GP
+ * @async
+ * @param {Int} gp_id
+ * @returns {Array}
+ */
 async function getGPDetail(gp_id) {
     try {
-        const filePath = path.join(__dirname, '../python/dataPython/all_races_and_quali_results.json');
+        const filePath = path.join(__dirname, '../../python/dataPython/all_races_and_quali_results.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file); // On définit le chemin du fichier JSON
 
@@ -28,7 +34,7 @@ async function getGPDetail(gp_id) {
         return raceData;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+        throw error;
     }
 }
 

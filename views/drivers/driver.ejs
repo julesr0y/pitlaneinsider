@@ -17,7 +17,7 @@
                     <div class="flex flex-col items-center w-1/2">
                         <img src="/img/drivers/<%= dataDriver.id %>.webp"
                             alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-32 w-auto mb-0">
-                        <div class="bg-main-color text-white p-2 sm:p-4 shadow-md mt-0">
+                        <div class="bg-<%= dataDriver.actualTeam %> text-white p-2 sm:p-4 shadow-md mt-0">
                             <p class="text-base sm:text-lg font-F1Bold">
                                 <%= __('driver.actual_season') %>
                             </p>

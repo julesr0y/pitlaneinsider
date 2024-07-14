@@ -110,8 +110,8 @@ app.get("/", async (req, res) => { // home page
     res.render("home", { homeData: homeData });
 });
 
-const teamsRoutes = require('./routes/teams'); // Importation des routes concernant les écuries
-app.use('/', teamsRoutes);
+const constructorsRoutes = require('./routes/constructors'); // Importation des routes concernant les écuries
+app.use('/', constructorsRoutes);
 
 const driversRoutes = require('./routes/drivers'); // Importation des routes concernant les pilotes
 app.use('/', driversRoutes);

@@ -1,16 +1,17 @@
-const fs = require('fs'); // Module permettant de gérer les fichiers
-const path = require('path'); // Module permettant de gérer les chemins de fichiers
+const fs = require('fs');
+const path = require('path');
 
 /**
-    * @function
-    * @description Fonction permettant de récupérer les données d'un pilote
-    * @returns {Promise} - Promesse contenant la réponse de l'API. Se présente sous la forme d'un objet JSON : name, surname, birthDate, age, permanentNumber, nationality
-    */
+ * @description Returns data of a specific driver
+ * @async
+ * @param {String} driver_id 
+ * @returns {Array}
+ */
 async function getDriverData(driver_id) {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
-        var data = JSON.parse(file); // On définit le chemin du fichier JSON
+        var data = JSON.parse(file);
         data = data.filter(item => item.id === driver_id);
         var driverData = {
             id: data[0].id,
@@ -49,7 +50,7 @@ async function getDriverData(driver_id) {
         return driverData;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+        throw error;
     }
 }
 

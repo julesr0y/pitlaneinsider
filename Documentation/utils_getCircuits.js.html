@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/getCircuits.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/getCircuits.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
+const fs = require('fs'); // Module permettant de gérer les fichiers
+const path = require('path'); // Module permettant de gérer les chemins de fichiers
+
+/**
+ * @function
+ * @description Fonction permettant de récupérer les identifiants de tous les circuits à partir de l'API Ergast.
+ * @param {boolean} update - Détermine si les données doivent être mises à jour.
+ * @returns {Promise&lt;Array>} - Une promesse contenant un tableau d'objets représentant chaque circuit avec son nom, pays et identifiant.
+ */
+async function getCircuitIds(update) {
+    try {
+        const filePath = path.join(__dirname, '../cache/getRetroCircuits.json'); // On définit le chemin du fichier JSON
+        const filePathUpdate = path.join(__dirname, '../cache/updates/getRetroCircuits.json'); // Chemin du fichier JSON de mise à jour
+
+        // Vérifier si le fichier principal existe et que l'option update est désactivée
+        if (!update &amp;&amp; fs.existsSync(filePath)) {
+            // Lire le contenu du fichier principal
+            const dataF = fs.readFileSync(filePath, 'utf8');
+
+            // Vérifier si le fichier n'est pas vide
+            if (dataF) {
+                // Convertir les données en JSON et les retourner
+                return JSON.parse(dataF);
+            }
+        }
+
+        // Récupérer les données depuis l'API Ergast
+        const response = await getFromErgast('circuits.json?limit=77');
+        const circuits = response.MRData.CircuitTable.Circuits;
+
+        // Array pour stocker les informations des circuits
+        let circuitInfos = [];
+
+        circuits.forEach(circuit => {
+            const name = circuit.circuitName;
+            const pays = circuit.Location.country;
+            const id = circuit.circuitId;
+
+            const circuitInfo = {
+                name: name,
+                pays: pays,
+                id: id
+            };
+            circuitInfos.push(circuitInfo);
+        });
+
+        // Convertir les données en chaîne JSON
+        const dataJSON = JSON.stringify(circuitInfos, null, 2);
+
+        // Écrire les données dans le fichier JSON de mise à jour
+        fs.writeFileSync(filePathUpdate, dataJSON);
+
+        // Copier les données du fichier de mise à jour vers le fichier principal
+        fs.copyFileSync(filePathUpdate, filePath);
+
+        return;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des identifiants des circuits :', error);
+        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+    }
+}
+
+module.exports = getCircuitIds;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#animatePositionChanges">animatePositionChanges</a></li><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getCircuitIds">getCircuitIds</a></li><li><a href="global.html#getFromErgast">getFromErgast</a></li><li><a href="global.html#getTrack">getTrack</a></li><li><a href="global.html#getTracks">getTracks</a></li><li><a href="global.html#injectCSS">injectCSS</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#updateClassement">updateClassement</a></li><li><a href="global.html#updateDriverAppearances">updateDriverAppearances</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateLastCompound">updateLastCompound</a></li><li><a href="global.html#updatePositionData">updatePositionData</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateStandings">updateStandings</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Sat Jul 13 2024 22:20:21 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

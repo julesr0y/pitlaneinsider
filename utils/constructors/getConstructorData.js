@@ -1,13 +1,13 @@
-const fs = require('fs'); // Module permettant de gérer les fichiers
-const path = require('path'); // Module permettant de gérer les chemins de fichiers
+const fs = require('fs');
+const path = require('path');
 
 /**
- * @function
- * @description Fonction permettant de récupérer les informations d'une écurie spécifique
- * @param {string} teamId - L'identifiant de l'écurie
- * @returns {Promise} - Promesse contenant les informations de l'écurie
+ * @description Returns data of a specific constructor
+ * @async
+ * @param {String} teamId 
+ * @returns {Array}
  */
-async function getTeamData(teamId) {
+async function getConstructorData(teamId) {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_teams_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
@@ -37,4 +37,4 @@ async function getTeamData(teamId) {
     }
 }
 
-module.exports = getTeamData;
+module.exports = getConstructorData;

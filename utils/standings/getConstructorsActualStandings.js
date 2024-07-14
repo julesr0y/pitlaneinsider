@@ -2,11 +2,11 @@ const fs = require('fs'); // Module permettant de gérer les fichiers
 const path = require('path'); // Module permettant de gérer les chemins de fichiers
 
 /**
- * @function
- * @description Fonction permettant de récupérer le classement actuel des écuries de Formule 1
- * @returns {Promise<Array>} - Une promesse contenant un tableau d'objets représentant chaque équipe avec son nom, identifiant, position et points.
+ * @description Returns constructor's championship standings from the actual season
+ * @async
+ * @returns {Array}
  */
-async function getTeamsActualStandings() {
+async function getConstructorsActualStandings() {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_constructor_standings.json');
         const file = fs.readFileSync(filePath, 'utf-8');
@@ -19,4 +19,4 @@ async function getTeamsActualStandings() {
     }
 }
 
-module.exports = getTeamsActualStandings;
+module.exports = getConstructorsActualStandings;

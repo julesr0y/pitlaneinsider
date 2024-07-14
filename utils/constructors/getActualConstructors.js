@@ -1,15 +1,20 @@
-const fs = require('fs'); // Module permettant de gérer les fichiers
-const path = require('path'); // Module permettant de gérer les chemins de fichiers
+const fs = require('fs');
+const path = require('path');
 
-async function getActualTeams() {
+/**
+ * @description Returns all constructors from the actual season
+ * @async
+ * @returns {Array}
+ */
+async function getActualConstructors() {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_teams_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file); // On définit le chemin du fichier JSON
+        const constructors = JSON.parse(file);
 
         var actualTeams = []
-        var sortedData = data.filter(item => item.currentSeasonTeam == true);
-        sortedData.forEach(function (team) {
+        var actualSeasonConstructors = constructors.filter(item => item.currentSeasonTeam == true);
+        actualSeasonConstructors.forEach(function (team) {
             const teamData = {
                 constructorId: team.constructorId,
                 name: team.name,
@@ -21,8 +26,8 @@ async function getActualTeams() {
         return actualTeams;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+        throw error;
     }
 }
 
-module.exports = getActualTeams;
+module.exports = getActualConstructors;

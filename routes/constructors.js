@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 // fonctions
-const getActualTeams = require("../utils/teams/getActualTeams"); // Fonction permettant de récupérer les équipes de la saison actuelle
-const getTeam = require("../utils/teams/getTeamData"); // Fonction permettant de récupérer une équipe
+const getActualTeams = require("../utils/constructors/getActualConstructors"); // Fonction permettant de récupérer les équipes de la saison actuelle
+const getTeam = require("../utils/constructors/getConstructorData"); // Fonction permettant de récupérer une équipe
 
 router.get("/teams", async (req, res) => {
     var teams = await getActualTeams(false);

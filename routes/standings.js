@@ -3,7 +3,7 @@ const router = express.Router();
 
 // fonctions
 const getDriversActualStandings = require("../utils/standings/getDriversActualStanding"); // Fonction permettant de récupérer le classement actuel des pilotes
-const getTeamsActualStandings = require("../utils/standings/getTeamsActualStandings"); // Fonction permettant de récupérer le classement actuel des écuries
+const getTeamsActualStandings = require("../utils/standings/getConstructorsActualStandings"); // Fonction permettant de récupérer le classement actuel des écuries
 
 router.get("/standings", async (req, res) => {
     var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes

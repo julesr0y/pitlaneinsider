@@ -2,11 +2,11 @@ const fs = require('fs'); // Module permettant de gérer les fichiers
 const path = require('path'); // Module permettant de gérer les chemins de fichiers
 
 /**
- * @function
- * @description Fonction permettant de récupérer la liste des pilotes actuels avec les détails de leur écurie
- * @returns {Promise} - Promesse contenant la réponse de l'API. Se présente sous la forme d'un tableau contenant les détails des pilotes et de leur écurie
+ * @description Returns all drivers from the actual season
+ * @async
+ * @returns {Array} 
  */
-async function getActualPilotesWithConstructors() {
+async function getActualDrivers() {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
@@ -34,4 +34,4 @@ async function getActualPilotesWithConstructors() {
     }
 }
 
-module.exports = getActualPilotesWithConstructors;
+module.exports = getActualDrivers;

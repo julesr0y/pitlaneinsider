@@ -3,13 +3,13 @@ const router = express.Router();
 const cors = require("cors");
 
 // functions
-const getWinners = require('../utils/getWinners');
-const getWinnersConstructors = require('../utils/getWinnersConstructors');
+const getWinners = require('../utils/retro/getDriverWinners');
+const getWinnersConstructors = require('../utils/retro/getConstructorWinners');
 const getSeasonRanking = require('../utils/getSeasonRanking');
 const getSeasonList = require('../utils/getSeasonList');
-const getGPDetail = require('../utils/getGPDetail');
-const getRetroPilotes = require('../utils/getRetroPilotes');
-const getTeams = require('../utils/getEcuries');
+const getGPDetail = require('../utils/retro/getGPDetail');
+const getRetroPilotes = require('../utils/retro/getRetroDrivers');
+const getTeams = require('../utils/retro/getRetroConstructors');
 const getCircuits = require('../utils/getCircuits');
 
 router.get("/retrohome", cors(), async (req, res) => {
