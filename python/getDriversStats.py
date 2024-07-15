@@ -2,6 +2,18 @@ import json
 import os
 from datetime import datetime
 
+def get_team_name(team_id):
+    # Get the base directory of the script
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-constructors.json'), 'r', encoding='utf-8') as f:
+        teamsFile = json.load(f)
+
+    for constructor in teamsFile:
+        if constructor['id'] == team_id:
+            return constructor['name']
+    return ""
+
 def getDriversStats(output_file):
     # Get the base directory of the script
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -42,6 +54,9 @@ def getDriversStats(output_file):
     # Iterate through each driver in the detailed data
     for driver_data in current_drivers_detailed_data:
         driver_id = driver_data['id']
+
+        # Get championship wins number
+        totalChampionshipWins = driver_data['totalChampionshipWins']
 
         # Calculate age
         birth = datetime.strptime(driver_data['dateOfBirth'], "%Y-%m-%d")
@@ -120,15 +135,20 @@ def getDriversStats(output_file):
                 current_team = team
                 start_year = year
                 end_year = year
+                name = get_team_name(team)  # Obtient le nom de l'équipe initiale
             elif team == current_team and year == end_year + 1:
                 end_year = year
             else:
-                teams_of_driver.append({'year': f"{start_year}-{end_year}" if start_year != end_year else str(start_year), 'teamId': current_team})
+                # Ajoute l'équipe précédente avec le bon nom avant de passer à la suivante
+                teams_of_driver.append({'year': f"{start_year}-{end_year}" if start_year != end_year else str(start_year), 'teamId': current_team, 'teamName': name})
                 current_team = team
                 start_year = year
                 end_year = year
+                name = get_team_name(team)  # Met à jour le nom pour la nouvelle équipe
         if current_team is not None:
-            teams_of_driver.append({'year': f"{start_year}-{end_year}" if start_year != end_year else str(start_year), 'teamId': current_team})
+            # Assurez-vous que le dernier nom d'équipe est correct
+            teams_of_driver.append({'year': f"{start_year}-{end_year}" if start_year != end_year else str(start_year), 'teamId': current_team, 'teamName': name})
+
 
         number_of_seasons = len(set(entry['year'] for entry in driver_entries))
 
@@ -154,6 +174,7 @@ def getDriversStats(output_file):
             'totalDriverOfTheDay': driver_data.get('totalDriverOfTheDay', 'Unknown'),
             'bestStartingGridPosition': driver_data.get('bestStartingGridPosition', 'Unknown'),
             'bestRaceResult': driver_data.get('bestRaceResult', 'Unknown'),
+            'totalChampionshipWins': totalChampionshipWins,
             'bestChampionshipPosition': driver_data.get('bestChampionshipPosition', 'Unknown'),
             'teams': teams_of_driver,
             'currentSeasonDriver': is_a_current_season_driver,

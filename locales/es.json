@@ -73,7 +73,8 @@
 		"number_of_seasons": "driver.number_of_seasons",
 		"total_driver_of_the_day": "driver.total_driver_of_the_day",
 		"total_fastest_laps": "driver.total_fastest_laps",
-		"teams_title": "driver.teams_title"
+		"teams_title": "driver.teams_title",
+		"totalChampionshipWins": "driver.totalChampionshipWins"
 	},
 	"calendar": {
 		"tab_title": "Calendario",

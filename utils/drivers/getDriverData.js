@@ -34,6 +34,7 @@ async function getDriverData(driver_id) {
             bestStartingGridPosition: data[0].bestStartingGridPosition,
             bestRaceResult: data[0].bestRaceResult,
             bestChampionshipPosition: data[0].bestChampionshipPosition,
+            totalChampionshipWins: data[0].totalChampionshipWins,
             teams: data[0].teams,
             currentSeasonDriver: data[0].currentSeasonDriver,
             numberOfRacesCurrentSeason: data[0].numberOfRacesCurrentSeason,
