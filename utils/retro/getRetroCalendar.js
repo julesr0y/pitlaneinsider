@@ -3,7 +3,7 @@ const path = require('path'); // Module permettant de gérer les chemins de fich
 
 async function getSeasonList(season_id) {
     try {
-        const filePath = path.join(__dirname, '../python/dataPython/all_calendar.json');
+        const filePath = path.join(__dirname, '../../python/dataPython/all_calendar.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file); // On définit le chemin du fichier JSON
 

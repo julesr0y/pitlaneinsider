@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // functions
-const getCalendrier = require("../utils/getCalendar"); // Fonction permettant de récupérer le calendrier de la saison actuelle
+const getCalendrier = require("../utils/calendar/getCalendar"); // Fonction permettant de récupérer le calendrier de la saison actuelle
 
 router.get("/calendar", async (req, res) => {
     try {

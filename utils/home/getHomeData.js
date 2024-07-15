@@ -3,7 +3,7 @@ const path = require('path'); // Module permettant de gérer les chemins de fich
 
 async function getHomeData() {
     try {
-        const filePath = path.join(__dirname, '../python/dataPython/home_data.json');
+        const filePath = path.join(__dirname, '../../python/dataPython/home_data.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file); // On définit le chemin du fichier JSON
         return data;

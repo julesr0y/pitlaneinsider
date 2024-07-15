@@ -1,4 +1,4 @@
-const getFromErgast = require("./getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
+const getFromErgast = require("../getFromErgast"); // Fonction permettant de récupérer des données depuis l'API Ergast
 
 /**
  * @function

@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const dbPool = require('./config/database');
 
 // On importe les fonctions crées par l'équipe
-const getHomeData = require("./utils/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
+const getHomeData = require("./utils/home/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
 const verifySession = require("./utils/security/verifySession"); // Fonction permettant de vérifier si une session est bien existante
 
 // Configuration des middlewares

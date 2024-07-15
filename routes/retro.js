@@ -5,12 +5,11 @@ const cors = require("cors");
 // functions
 const getWinners = require('../utils/retro/getDriverWinners');
 const getWinnersConstructors = require('../utils/retro/getConstructorWinners');
-const getSeasonRanking = require('../utils/getSeasonRanking');
-const getSeasonList = require('../utils/getSeasonList');
+const getSeasonRanking = require('../utils/retro/getRetroStandings');
+const getSeasonList = require('../utils/retro/getRetroCalendar');
 const getGPDetail = require('../utils/retro/getGPDetail');
 const getRetroPilotes = require('../utils/retro/getRetroDrivers');
 const getTeams = require('../utils/retro/getRetroConstructors');
-const getCircuits = require('../utils/getCircuits');
 
 router.get("/retrohome", cors(), async (req, res) => {
     var retroHome = await getWinners();
@@ -76,7 +75,6 @@ router.get("/retroconstructors", cors(), async (req, res) => {
 });
 
 router.get("/retrotracks", cors(), async (req, res) => {
-    var retro_circuits = await getCircuits(false);
     res.render("retro/retroTracks", { retro_circuits: retro_circuits });
 });
 
