@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: public/js/liveButtons.js</title>
+    <title>JSDoc: Source: utils/live/getFromOpenF1.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: public/js/liveButtons.js</h1>
+    <h1 class="page-title">Source: utils/live/getFromOpenF1.js</h1>
 
     
 
@@ -26,44 +26,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @function openTab
- * @description Permet de choisir l'affichage en cours en mode Live
- * @returns {void}
+            <pre class="prettyprint source linenums"><code>const options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+};
+
+/**
+ * @description Get requested data (with the endpoint) from OpenF1 API
+ * @async
+ * @param {String} endpoint 
+ * @returns {Array}
  */
-function openTab(tabName) {
-    if (tabName === 'Classement') {
-        document.getElementById('Classement').classList.remove('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnClassement').classList.add('active');
-        document.getElementById('btnClassement').classList.add('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'RaceControl') {
-        document.getElementById('RaceControl').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnRaceControl').classList.add('active');
-        document.getElementById('btnRaceControl').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'Radio') {
-        document.getElementById('Radio').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('btnRadio').classList.add('active');
-        document.getElementById('btnRadio').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
-    }
-}</code></pre>
+async function getFromOpenF1(endpoint) {
+    var url = 'https://api.openf1.org/v1/' + endpoint;
+    return fetch(url, options)
+        .then((response) => {
+            return response.json();
+        })
+        .catch((error) => {
+            console.log(
+                "Il y a eu un problème avec l'opération fetch: " + error.message
+            );
+        });
+}
+
+module.exports = getFromOpenF1;</code></pre>
         </article>
     </section>
 

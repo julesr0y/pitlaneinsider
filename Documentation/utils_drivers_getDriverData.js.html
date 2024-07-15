@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: public/js/liveButtons.js</title>
+    <title>JSDoc: Source: utils/drivers/getDriverData.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: public/js/liveButtons.js</h1>
+    <h1 class="page-title">Source: utils/drivers/getDriverData.js</h1>
 
     
 
@@ -26,44 +26,64 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @function openTab
- * @description Permet de choisir l'affichage en cours en mode Live
- * @returns {void}
+            <pre class="prettyprint source linenums"><code>const fs = require('fs');
+const path = require('path');
+
+/**
+ * @description Returns data of a specific driver
+ * @async
+ * @param {String} driver_id 
+ * @returns {Array}
  */
-function openTab(tabName) {
-    if (tabName === 'Classement') {
-        document.getElementById('Classement').classList.remove('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnClassement').classList.add('active');
-        document.getElementById('btnClassement').classList.add('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'RaceControl') {
-        document.getElementById('RaceControl').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnRaceControl').classList.add('active');
-        document.getElementById('btnRaceControl').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'Radio') {
-        document.getElementById('Radio').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('btnRadio').classList.add('active');
-        document.getElementById('btnRadio').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
+async function getDriverData(driver_id) {
+    try {
+        const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        var data = JSON.parse(file);
+        data = data.filter(item => item.id === driver_id);
+        var driverData = {
+            id: data[0].id,
+            firstName: data[0].firstName,
+            lastName: data[0].lastName,
+            dateOfBirth: data[0].dateOfBirth,
+            dateOfDeath: data[0].dateOfDeath,
+            age: data[0].age,
+            nationality: data[0].nationality,
+            permanentNumber: data[0].permanentNumber,
+            firstYear: data[0].firstYear,
+            numberOfSeasons: data[0].numberOfSeasons,
+            totalRaceStarts: data[0].totalRaceStarts,
+            totalRaceWins: data[0].totalRaceWins,
+            totalPodiums: data[0].totalPodiums,
+            totalPoints: data[0].totalPoints,
+            totalPolePositions: data[0].totalPolePositions,
+            totalFastestLaps: data[0].totalFastestLaps,
+            totalDriverOfTheDay: data[0].totalDriverOfTheDay,
+            bestStartingGridPosition: data[0].bestStartingGridPosition,
+            bestRaceResult: data[0].bestRaceResult,
+            bestChampionshipPosition: data[0].bestChampionshipPosition,
+            totalChampionshipWins: data[0].totalChampionshipWins,
+            teams: data[0].teams,
+            currentSeasonDriver: data[0].currentSeasonDriver,
+            numberOfRacesCurrentSeason: data[0].numberOfRacesCurrentSeason,
+            numberOfWinsCurrentSeason: data[0].numberOfWinsCurrentSeason,
+            numberOfPodiumsCurrentSeason: data[0].numberOfPodiumsCurrentSeason,
+            numberOfPointsCurrentSeason: data[0].numberOfPointsCurrentSeason,
+            actualTeam: data[0].actualTeam,
+            allVictories: data[0].allVictories,
+            victoryRatio: data[0].victoryRatio,
+            podiumRatio: data[0].podiumRatio,
+            poleRatio: data[0].poleRatio
+        }
+
+        return driverData;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error;
     }
-}</code></pre>
+}
+
+module.exports = getDriverData;</code></pre>
         </article>
     </section>
 

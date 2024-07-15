@@ -2,8 +2,15 @@
     "source": {
         "include": [
             "./public/js",
-            "./routes",
-            "./utils"
+            "./utils",
+            "./utils/calendar",
+            "./utils/constructors",
+            "./utils/drivers",
+            "./utils/home",
+            "./utils/live",
+            "./utils/retro",
+            "./utils/security",
+            "./utils/standings"
         ],
         "includePattern": ".js$",
         "excludePattern": "(node_modules/|docs)"

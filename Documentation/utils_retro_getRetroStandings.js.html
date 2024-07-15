@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: public/js/liveButtons.js</title>
+    <title>JSDoc: Source: utils/retro/getRetroStandings.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: public/js/liveButtons.js</h1>
+    <h1 class="page-title">Source: utils/retro/getRetroStandings.js</h1>
 
     
 
@@ -26,44 +26,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @function openTab
- * @description Permet de choisir l'affichage en cours en mode Live
- * @returns {void}
+            <pre class="prettyprint source linenums"><code>const fs = require('fs');
+const path = require('path');
+
+/**
+ * @description Returns standings of a specific season
+ * @async
+ * @param {String} season_id 
+ * @returns {Array}
  */
-function openTab(tabName) {
-    if (tabName === 'Classement') {
-        document.getElementById('Classement').classList.remove('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnClassement').classList.add('active');
-        document.getElementById('btnClassement').classList.add('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'RaceControl') {
-        document.getElementById('RaceControl').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnRaceControl').classList.add('active');
-        document.getElementById('btnRaceControl').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'Radio') {
-        document.getElementById('Radio').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('btnRadio').classList.add('active');
-        document.getElementById('btnRadio').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
+async function getRetroStandings(season_id) {
+    try {
+        const filePath = path.join(__dirname, '../../python/dataPython/all_driver_standings.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(file);
+
+        var sortedData = data.filter(item => item.year == season_id);
+
+        let ranking = [];
+        sortedData.forEach(function (element) {
+            const driverInfo = {
+                position: element.position,
+                firstName: element.firstName,
+                lastName: element.lastName,
+                points: element.points
+            };
+
+            ranking.push(driverInfo);
+        })
+
+        return ranking;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error;
     }
-}</code></pre>
+}
+
+module.exports = getRetroStandings;</code></pre>
         </article>
     </section>
 

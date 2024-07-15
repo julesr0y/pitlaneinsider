@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: public/js/liveButtons.js</title>
+    <title>JSDoc: Source: utils/security/requireSession.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: public/js/liveButtons.js</h1>
+    <h1 class="page-title">Source: utils/security/requireSession.js</h1>
 
     
 
@@ -27,43 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @function openTab
- * @description Permet de choisir l'affichage en cours en mode Live
- * @returns {void}
- */
-function openTab(tabName) {
-    if (tabName === 'Classement') {
-        document.getElementById('Classement').classList.remove('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnClassement').classList.add('active');
-        document.getElementById('btnClassement').classList.add('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'RaceControl') {
-        document.getElementById('RaceControl').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('Radio').classList.add('hidden');
-        document.getElementById('btnRaceControl').classList.add('active');
-        document.getElementById('btnRaceControl').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRadio').classList.remove('active');
-        document.getElementById('btnRadio').classList.remove('underline');
-    } else if (tabName === 'Radio') {
-        document.getElementById('Radio').classList.remove('hidden');
-        document.getElementById('Classement').classList.add('hidden');
-        document.getElementById('RaceControl').classList.add('hidden');
-        document.getElementById('btnRadio').classList.add('active');
-        document.getElementById('btnRadio').classList.add('underline');
-        document.getElementById('btnClassement').classList.remove('active');
-        document.getElementById('btnClassement').classList.remove('underline');
-        document.getElementById('btnRaceControl').classList.remove('active');
-        document.getElementById('btnRaceControl').classList.remove('underline');
+    * @description Used for pages accessible only if user is connected to his account (live pages). Also recreates the session with cookies if session is destroyed and cookies are valid
+    */
+function requireSession(req, res, next) {
+    if (req.session.user) {
+        next();
+    } else if (
+        !req.session.user &amp;&amp;
+        req.cookies.idUser &amp;&amp;
+        req.cookies.email &amp;&amp;
+        req.cookies.username &amp;&amp;
+        req.cookies.nom &amp;&amp;
+        req.cookies.prenom
+    ) {
+        req.session.user = {
+            idUser: req.cookies.idUser,
+            email: req.cookies.email,
+            username: req.cookies.username,
+            nom: req.cookies.nom,
+            prenom: req.cookies.prenom
+        };
+        next();
+    } else {
+        res.redirect("/signin");
     }
-}</code></pre>
+}
+
+module.exports = requireSession;</code></pre>
         </article>
     </section>
 

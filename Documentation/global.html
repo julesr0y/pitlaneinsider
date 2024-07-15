@@ -466,7 +466,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_getCalendar.js.html">utils/getCalendar.js</a>, <a href="utils_getCalendar.js.html#line76">line 76</a>
+        <a href="utils_calendar_getCalendar.js.html">utils/calendar/getCalendar.js</a>, <a href="utils_calendar_getCalendar.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -621,7 +621,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_getCalendar.js.html">utils/getCalendar.js</a>, <a href="utils_getCalendar.js.html#line88">line 88</a>
+        <a href="utils_calendar_getCalendar.js.html">utils/calendar/getCalendar.js</a>, <a href="utils_calendar_getCalendar.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -781,7 +781,7 @@
     
 
     
-    <h4 class="name" id="getActualSeasonCalendar"><span class="type-signature">(async) </span>getActualSeasonCalendar<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id="getActualConstructors"><span class="type-signature">(async) </span>getActualConstructors<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -789,7 +789,7 @@
 
 
 <div class="description">
-    Returns the actual season calendar from all time races
+    Returns all constructors from the actual season
 </div>
 
 
@@ -833,7 +833,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_getCalendar.js.html">utils/getCalendar.js</a>, <a href="utils_getCalendar.js.html#line9">line 9</a>
+        <a href="utils_constructors_getActualConstructors.js.html">utils/constructors/getActualConstructors.js</a>, <a href="utils_constructors_getActualConstructors.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -887,7 +887,7 @@
     
 
     
-    <h4 class="name" id="getCircuitIds"><span class="type-signature">(async) </span>getCircuitIds<span class="signature">(update)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span></h4>
+    <h4 class="name" id="getActualDrivers"><span class="type-signature">(async) </span>getActualDrivers<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -895,7 +895,219 @@
 
 
 <div class="description">
-    Fonction permettant de récupérer les identifiants de tous les circuits à partir de l'API Ergast.
+    Returns all drivers from the actual season
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_drivers_getActualDrivers.js.html">utils/drivers/getActualDrivers.js</a>, <a href="utils_drivers_getActualDrivers.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getActualSeasonCalendar"><span class="type-signature">(async) </span>getActualSeasonCalendar<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns the actual season calendar from all time races
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar_getCalendar.js.html">utils/calendar/getCalendar.js</a>, <a href="utils_calendar_getCalendar.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getConstructorData"><span class="type-signature">(async) </span>getConstructorData<span class="signature">(teamId)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns data of a specific constructor
 </div>
 
 
@@ -931,13 +1143,13 @@
 
         <tr>
             
-                <td class="name"><code>update</code></td>
+                <td class="name"><code>teamId</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">String</span>
 
 
             
@@ -947,7 +1159,7 @@
 
             
 
-            <td class="description last">Détermine si les données doivent être mises à jour.</td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -988,7 +1200,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_getCircuits.js.html">utils/getCircuits.js</a>, <a href="utils_getCircuits.js.html#line11">line 11</a>
+        <a href="utils_constructors_getConstructorData.js.html">utils/constructors/getConstructorData.js</a>, <a href="utils_constructors_getConstructorData.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -1016,10 +1228,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    - Une promesse contenant un tableau d'objets représentant chaque circuit avec son nom, pays et identifiant.
-</div>
-
 
 
 <dl>
@@ -1028,7 +1236,480 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise.&lt;Array></span>
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getConstructorsActualStandings"><span class="type-signature">(async) </span>getConstructorsActualStandings<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns constructor's championship standings from the actual season
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_standings_getConstructorsActualStandings.js.html">utils/standings/getConstructorsActualStandings.js</a>, <a href="utils_standings_getConstructorsActualStandings.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getDriverData"><span class="type-signature">(async) </span>getDriverData<span class="signature">(driver_id)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns data of a specific driver
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>driver_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_drivers_getDriverData.js.html">utils/drivers/getDriverData.js</a>, <a href="utils_drivers_getDriverData.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getDriverWinners"><span class="type-signature">(async) </span>getDriverWinners<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns an array with driver's championship winners and their number of titles
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getDriverWinners.js.html">utils/retro/getDriverWinners.js</a>, <a href="utils_retro_getDriverWinners.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getDriversActualStandings"><span class="type-signature">(async) </span>getDriversActualStandings<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns driver's championship standings from the actual season
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_standings_getDriversActualStanding.js.html">utils/standings/getDriversActualStanding.js</a>, <a href="utils_standings_getDriversActualStanding.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
 
 
     </dd>
@@ -1205,7 +1886,7 @@
     
 
     
-    <h4 class="name" id="getTrack"><span class="type-signature">(async) </span>getTrack<span class="signature">(circuitId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="getFromOpenF1"><span class="type-signature">(async) </span>getFromOpenF1<span class="signature">(endpoint)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1213,7 +1894,7 @@
 
 
 <div class="description">
-    Fonction permettant de récupérer les informations d'un circuit spécifique
+    Get requested data (with the endpoint) from OpenF1 API
 </div>
 
 
@@ -1249,13 +1930,13 @@
 
         <tr>
             
-                <td class="name"><code>circuitId</code></td>
+                <td class="name"><code>endpoint</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -1265,7 +1946,7 @@
 
             
 
-            <td class="description last">L'identifiant du circuit</td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -1306,7 +1987,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_getTrack.js.html">utils/getTrack.js</a>, <a href="utils_getTrack.js.html#line9">line 9</a>
+        <a href="utils_live_getFromOpenF1.js.html">utils/live/getFromOpenF1.js</a>, <a href="utils_live_getFromOpenF1.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -1334,10 +2015,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    - Promesse contenant les informations du circuit
-</div>
-
 
 
 <dl>
@@ -1346,7 +2023,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Array</span>
 
 
     </dd>
@@ -1364,7 +2041,7 @@
     
 
     
-    <h4 class="name" id="getTracks"><span class="type-signature">(async) </span>getTracks<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="getGPDetail"><span class="type-signature">(async) </span>getGPDetail<span class="signature">(gp_id)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1372,7 +2049,162 @@
 
 
 <div class="description">
-    Fonction permettant de récupérer les circuits
+    Returns data of a specific GP
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gp_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getGPDetail.js.html">utils/retro/getGPDetail.js</a>, <a href="utils_retro_getGPDetail.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getHomeData"><span class="type-signature">(async) </span>getHomeData<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns data needed for home page
 </div>
 
 
@@ -1416,7 +2248,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_getTracks.js.html">utils/getTracks.js</a>, <a href="utils_getTracks.js.html#line8">line 8</a>
+        <a href="utils_home_getHomeData.js.html">utils/home/getHomeData.js</a>, <a href="utils_home_getHomeData.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -1452,7 +2284,635 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getRetroCalendar"><span class="type-signature">(async) </span>getRetroCalendar<span class="signature">(season_id)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns the calendar of a specific season
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>season_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getRetroCalendar.js.html">utils/retro/getRetroCalendar.js</a>, <a href="utils_retro_getRetroCalendar.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getRetroConstructors"><span class="type-signature">(async) </span>getRetroConstructors<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns all constructors from F1 history
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getRetroConstructors.js.html">utils/retro/getRetroConstructors.js</a>, <a href="utils_retro_getRetroConstructors.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getRetroDrivers"><span class="type-signature">(async) </span>getRetroDrivers<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns all drivers from F1 history
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getRetroDrivers.js.html">utils/retro/getRetroDrivers.js</a>, <a href="utils_retro_getRetroDrivers.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getRetroStandings"><span class="type-signature">(async) </span>getRetroStandings<span class="signature">(season_id)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns standings of a specific season
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>season_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getRetroStandings.js.html">utils/retro/getRetroStandings.js</a>, <a href="utils_retro_getRetroStandings.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getWinnersConstructors"><span class="type-signature">(async) </span>getWinnersConstructors<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns an array with constructor's championship winners and their number of titles
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_retro_getConstructorWinners.js.html">utils/retro/getConstructorWinners.js</a>, <a href="utils_retro_getConstructorWinners.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
 
 
     </dd>
@@ -1671,6 +3131,270 @@
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="requireAdmin"><span class="type-signature">(async) </span>requireAdmin<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Verify if user has admin permissions
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_security_requireAdmin.js.html">utils/security/requireAdmin.js</a>, <a href="utils_security_requireAdmin.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="requireNoSession"><span class="type-signature"></span>requireNoSession<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Used for pages accessible only if user is disconnected from his account (auth pages for example)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_security_requireNoSession.js.html">utils/security/requireNoSession.js</a>, <a href="utils_security_requireNoSession.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="requireSession"><span class="type-signature"></span>requireSession<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Used for pages accessible only if user is connected to his account (live pages). Also recreates the session with cookies if session is destroyed and cookies are valid
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_security_requireSession.js.html">utils/security/requireSession.js</a>, <a href="utils_security_requireSession.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3005,6 +4729,94 @@
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="verifySession"><span class="type-signature"></span>verifySession<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Verify if session exists
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_security_verifySession.js.html">utils/security/verifySession.js</a>, <a href="utils_security_verifySession.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -3020,13 +4832,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#animatePositionChanges">animatePositionChanges</a></li><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getCircuitIds">getCircuitIds</a></li><li><a href="global.html#getFromErgast">getFromErgast</a></li><li><a href="global.html#getTrack">getTrack</a></li><li><a href="global.html#getTracks">getTracks</a></li><li><a href="global.html#injectCSS">injectCSS</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#updateClassement">updateClassement</a></li><li><a href="global.html#updateDriverAppearances">updateDriverAppearances</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateLastCompound">updateLastCompound</a></li><li><a href="global.html#updatePositionData">updatePositionData</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateStandings">updateStandings</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#animatePositionChanges">animatePositionChanges</a></li><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromErgast">getFromErgast</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroStandings">getRetroStandings</a></li><li><a href="global.html#getWinnersConstructors">getWinnersConstructors</a></li><li><a href="global.html#injectCSS">injectCSS</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#requireAdmin">requireAdmin</a></li><li><a href="global.html#requireNoSession">requireNoSession</a></li><li><a href="global.html#requireSession">requireSession</a></li><li><a href="global.html#updateClassement">updateClassement</a></li><li><a href="global.html#updateDriverAppearances">updateDriverAppearances</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateLastCompound">updateLastCompound</a></li><li><a href="global.html#updatePositionData">updatePositionData</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateStandings">updateStandings</a></li><li><a href="global.html#updateWeather">updateWeather</a></li><li><a href="global.html#verifySession">verifySession</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Sat Jul 13 2024 22:20:21 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Jul 15 2024 19:25:23 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
