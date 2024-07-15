@@ -20,7 +20,7 @@ function requireNoSession(req, res, next) {
             nom: req.cookies.nom,
             prenom: req.cookies.prenom
         };
-        res.redirect("/profil"); // On redirige vers la page de profil
+        res.redirect("/profile"); // On redirige vers la page de profil
     }
 }
 

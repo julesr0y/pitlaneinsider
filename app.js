@@ -99,7 +99,7 @@ app.use(async (req, res, next) => {
             req.session.theme = "light";
         }
     } else {
-        req.session.theme = "light";
+        req.session.theme = "dark"; // theme if user not connected to an account
     }
     res.locals.theme = req.session.theme;
     next();
@@ -107,7 +107,7 @@ app.use(async (req, res, next) => {
 
 app.get("/", async (req, res) => { // home page
     var homeData = await getHomeData();
-    res.render("home", { homeData: homeData });
+    res.render("home/home", { homeData: homeData });
 });
 
 const constructorsRoutes = require('./routes/constructors'); // Importation des routes concernant les écuries
@@ -131,13 +131,13 @@ app.use('/', retroRoutes);
 const liveRoutes = require('./routes/live'); // Importation des routes concernant le live
 app.use('/', liveRoutes);
 
-const profilRoutes = require('./routes/profil'); // Importation des routes de profil
+const profilRoutes = require('./routes/account/profile'); // Importation des routes de profil
 app.use('/', profilRoutes);
 
 const aboutRoutes = require('./routes/about'); // Importation des routes de la partie  a propos
 app.use('/', aboutRoutes);
 
-const authRoutes = require('./routes/auth'); // Importation des routes d'authentification
+const authRoutes = require('./routes/account/auth'); // Importation des routes d'authentification
 app.use('/', authRoutes);
 
 // app.get("/circuit/:circuit_id", async (req, res) => {
@@ -154,7 +154,7 @@ app.use('/', authRoutes);
 
 // Middleware pour gérer les routes inexistantes
 app.use((req, res, next) => {
-    res.status(404).render('notFound');
+    res.status(404).render('security/notFound');
 });
 
 app.use((err, req, res, next) => {

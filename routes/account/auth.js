@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const requireNoSession = require('../utils/security/requireNoSession');
-const dbPool = require('../config/database'); // Importer le pool de connexions
+const requireNoSession = require('../../utils/security/requireNoSession');
+const dbPool = require('../../config/database'); // Importer le pool de connexions
 
 // pages des formulaires
 router.get('/signup', requireNoSession, (req, res) => {
-    res.render('signup', { msg: req.query.msg }); // affichage de la page d'inscription
+    res.render('account/signup', { msg: req.query.msg }); // affichage de la page d'inscription
 });
 
 router.get('/signin', requireNoSession, (req, res) => {
-    res.render('signin', { msg: req.query.msg }); // affichage de la page de connexion
+    res.render('account/signin', { msg: req.query.msg }); // affichage de la page de connexion
 });
 
 router.post("/signinProcess", async (req, res) => {
@@ -50,7 +50,7 @@ router.post("/signinProcess", async (req, res) => {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
             });
-            res.redirect("/profil"); // redirection vers la page de profil
+            res.redirect("/profile"); // redirection vers la page de profil
         } else {
             res.redirect("/signin?msg=mdporemailincorrect"); // redirection vers la page de connexion avec un message d'erreur
         }
@@ -103,7 +103,7 @@ router.post("/signupProcess", async (req, res) => {
             httpOnly: true,
         });
 
-        res.redirect('/profil'); // redirection vers la page de profil
+        res.redirect('/profile'); // redirection vers la page de profil
     } catch (err) {
         console.error('Erreur lors de l\'inscription de l\'utilisateur:', err);
         res.redirect("/signup?msg=erreur"); // redirection vers la page d'inscription avec un message d'erreur

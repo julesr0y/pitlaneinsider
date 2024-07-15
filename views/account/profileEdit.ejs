@@ -2,8 +2,8 @@
 <html lang="fr">
 
 <head>
-    <%- include('partials/head.ejs') %>
-        <%- include('partials/header.ejs') %>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
             <title>PLI - <%= __('account.profile_edit.tab_title') %>
             </title>
 </head>
@@ -13,7 +13,7 @@
         <%= __('account.profile_edit.edit_title') %>
     </span>
     <div class="flex items-center justify-center">
-        <form class="px-10 py-4 rounded-lg w-full max-w-sm" action="/profilEditProcess" method="post">
+        <form class="px-10 py-4 rounded-lg w-full max-w-sm" action="/profileEditProcess" method="post">
             <div class="grid gap-4 mb-4">
                 <input type="email" name="email" placeholder="<%= __('account.profile_edit.email') %>"
                     class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-s-<%= theme %>"
@@ -67,7 +67,7 @@
             </div>
         </form>
     </div>
-    <%- include('partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

@@ -12,7 +12,7 @@ async function requireAdmin(req, res, next) {
             next();
         }
         else {
-            res.redirect("/profil");
+            res.redirect("/profile");
         }
     } catch (err) {
         console.error('Erreur lors de la récupération des informations:', err);
