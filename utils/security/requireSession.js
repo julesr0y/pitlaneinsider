@@ -1,11 +1,10 @@
 /**
-    * @function
-    * @description Fonction permettant de vérifier si une session est bien existante, si non mais que les cookies existent, alors créé la session avec, sinon, redirige vers la page de connexion
+    * @description Used for pages accessible only if user is connected to his account (live pages). Also recreates the session with cookies if session is destroyed and cookies are valid
     */
 function requireSession(req, res, next) {
-    if (req.session.user) { // Si la session existe
-        next(); // On laisse passer la requête
-    } else if ( // Sinon, si la session n'existe pas, mais que les cookies existent, alors on crée la session avec les cookies et on laisse passer la requête
+    if (req.session.user) {
+        next();
+    } else if (
         !req.session.user &&
         req.cookies.idUser &&
         req.cookies.email &&
@@ -13,17 +12,17 @@ function requireSession(req, res, next) {
         req.cookies.nom &&
         req.cookies.prenom
     ) {
-        req.session.user = { // On crée la session avec les cookies
+        req.session.user = {
             idUser: req.cookies.idUser,
             email: req.cookies.email,
             username: req.cookies.username,
             nom: req.cookies.nom,
             prenom: req.cookies.prenom
         };
-        next(); // On laisse passer la requête
+        next();
     } else {
-        res.redirect("/signin"); // Sinon, on redirige vers la page de connexion
+        res.redirect("/signin");
     }
 }
 
-module.exports = requireSession; //on exporte la fonction
+module.exports = requireSession;

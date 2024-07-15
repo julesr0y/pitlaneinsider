@@ -49,7 +49,7 @@ async function getActualSeasonCalendar() {
                                 dateDetail[key] = convertDate(dateDetail[key]);
                             }
                         }
-                        // Ajouter les détails de la date directement à l'objet de la course
+
                         Object.assign(race, dateDetail);
                     });
                 }
@@ -62,7 +62,7 @@ async function getActualSeasonCalendar() {
 
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+        throw error;
     }
 }
 

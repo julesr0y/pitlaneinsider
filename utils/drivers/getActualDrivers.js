@@ -1,5 +1,5 @@
-const fs = require('fs'); // Module permettant de gérer les fichiers
-const path = require('path'); // Module permettant de gérer les chemins de fichiers
+const fs = require('fs');
+const path = require('path');
 
 /**
  * @description Returns all drivers from the actual season
@@ -10,7 +10,7 @@ async function getActualDrivers() {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file); // On définit le chemin du fichier JSON
+        const data = JSON.parse(file);
         var drivers = [];
         data.forEach(item => {
             if (item.currentSeasonDriver === true && item.testDriver == false) {
@@ -23,14 +23,14 @@ async function getActualDrivers() {
                     constructorId: item.actualTeam
                 };
 
-                drivers.push(driver); // Ajout du pilote au tableau
+                drivers.push(driver);
             }
         });
 
         return drivers;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+        throw error;
     }
 }
 

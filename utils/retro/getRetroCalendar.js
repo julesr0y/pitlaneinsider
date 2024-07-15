@@ -1,11 +1,17 @@
-const fs = require('fs'); // Module permettant de gérer les fichiers
-const path = require('path'); // Module permettant de gérer les chemins de fichiers
+const fs = require('fs');
+const path = require('path');
 
-async function getSeasonList(season_id) {
+/**
+ * @description Returns the calendar of a specific season
+ * @async
+ * @param {String} season_id 
+ * @returns {Array}
+ */
+async function getRetroCalendar(season_id) {
     try {
         const filePath = path.join(__dirname, '../../python/dataPython/all_calendar.json');
         const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file); // On définit le chemin du fichier JSON
+        const data = JSON.parse(file);
 
         var sortedData = data.filter(race => race[0].raceDetails.some(detail => detail.year == season_id));
 
@@ -20,14 +26,14 @@ async function getSeasonList(season_id) {
                 raceId: raceDetail.raceId,
                 id: raceDetail.id
             };
-            calendar.push(seasonInfo); // Ajout des informations au tableau
+            calendar.push(seasonInfo);
         });
 
         return calendar;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
-        throw error; // Propager l'erreur pour que le code appelant puisse la gérer
+        throw error;
     }
 }
 
-module.exports = getSeasonList;
+module.exports = getRetroCalendar;

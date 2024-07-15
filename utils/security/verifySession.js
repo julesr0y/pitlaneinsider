@@ -1,11 +1,10 @@
 /**
- * @function
- * @description Fonction permettant de vérifier si une session est bien existante
+ * @description Verify if session exists
  */
 function verifySession(req) {
-    if (req.session.user) { // Si la session existe
+    if (req.session.user) {
         return true;
-    } else if ( // Sinon, si la session n'existe pas, mais que les cookies existent, alors on crée la session avec les cookies
+    } else if (
         !req.session.user &&
         req.cookies.idUser &&
         req.cookies.email &&
@@ -13,7 +12,7 @@ function verifySession(req) {
         req.cookies.nom &&
         req.cookies.prenom
     ) {
-        req.session.user = { // On crée la session avec les cookies
+        req.session.user = {
             idUser: req.cookies.idUser,
             email: req.cookies.email,
             username: req.cookies.username,
@@ -26,4 +25,4 @@ function verifySession(req) {
     }
 }
 
-module.exports = verifySession; //on exporte la fonction
+module.exports = verifySession;

@@ -1,8 +1,8 @@
 const dbPool = require('../../config/database');
 
 /**
-    * @function
-    * @description Fonction permettant de vérifier si l'utilisateur est bien un admin
+    * @description Verify if user has admin permissions
+    * @async
     */
 async function requireAdmin(req, res, next) {
     try {
@@ -20,4 +20,4 @@ async function requireAdmin(req, res, next) {
     }
 }
 
-module.exports = requireAdmin; //on exporte la fonction
+module.exports = requireAdmin;
