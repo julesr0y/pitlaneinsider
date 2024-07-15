@@ -18532,7 +18532,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1983,
                     "date": "1983-09-25",
@@ -19300,7 +19300,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1984,
                     "date": "1984-10-07",
@@ -20020,7 +20020,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1985,
                     "date": "1985-10-06",
@@ -25636,7 +25636,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1993,
                     "date": "1993-04-11",
@@ -26932,7 +26932,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1994,
                     "date": "1994-10-16",
@@ -27700,7 +27700,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1995,
                     "date": "1995-10-01",
@@ -28036,7 +28036,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1996,
                     "date": "1996-04-28",
@@ -29428,7 +29428,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1997,
                     "date": "1997-10-26",
@@ -30868,7 +30868,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 1999,
                     "date": "1999-09-26",
@@ -31252,7 +31252,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2000,
                     "date": "2000-05-21",
@@ -32212,7 +32212,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2001,
                     "date": "2001-06-24",
@@ -33028,7 +33028,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2002,
                     "date": "2002-06-23",
@@ -33844,7 +33844,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2003,
                     "date": "2003-06-29",
@@ -34516,7 +34516,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2004,
                     "date": "2004-05-30",
@@ -35380,7 +35380,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2005,
                     "date": "2005-05-29",
@@ -36196,7 +36196,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2006,
                     "date": "2006-05-07",
@@ -37300,7 +37300,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2007,
                     "date": "2007-07-22",
@@ -38212,7 +38212,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2008,
                     "date": "2008-08-24",
@@ -39028,7 +39028,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2009,
                     "date": "2009-08-23",
@@ -39748,7 +39748,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2010,
                     "date": "2010-06-27",
@@ -40612,7 +40612,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2011,
                     "date": "2011-06-26",
@@ -41524,7 +41524,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2012,
                     "date": "2012-06-24",
@@ -45220,7 +45220,7 @@
             "raceDetails": [
                 {
                     "id": "europe",
-                    "country": null,
+                    "country": "europe",
                     "name": "European GP",
                     "year": 2016,
                     "date": "2016-06-19",

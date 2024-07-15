@@ -21,8 +21,11 @@ def getCalendar(output_file):
         nextGp = False
         if event['id'] == last_gp_id + 1:
             nextGp = True
+
         localisationDetails = []
         for gp in all_gp:
+            if gp['id'] == "europe":
+                gp['countryId'] = gp['id']
             if gp['id'] == event['grandPrixId']:
                 details = {
                     'id': gp['id'],
