@@ -16,6 +16,9 @@ def getTeamsStats(output_file):
     with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-entrants-constructors.json'), 'r', encoding='utf-8') as f:
         entrants_constructors = json.load(f)
 
+    with open(os.path.join(base_dir, './dataPython/all_drivers_stats.json'), 'r', encoding='utf-8') as f:
+        all_drivers = json.load(f)
+
     with open(os.path.join(base_dir, './dataPython/all_cars.json'), 'r', encoding='utf-8') as f:
         cars = json.load(f)
 
@@ -37,6 +40,22 @@ def getTeamsStats(output_file):
         podium_ratio = round((team.get('totalPodiumRaces', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
         pole_ratio = round((team.get('totalPolePositions', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
 
+        # Get team's actual drivers
+        drivers = []
+        for driver in all_drivers:
+            if driver['currentSeasonDriver'] and driver['actualTeam'] == team['id'] and driver['testDriver'] == False:
+                driverTeam = {
+                    'id': driver['id'],
+                    'firstName': driver['firstName'],
+                    'lastName': driver['lastName'],
+                    'nationality': driver['nationality'],
+                    'permanentNumber': driver['permanentNumber']
+                }
+                drivers.append(driverTeam)
+        if drivers == []:
+            drivers = None
+
+        # Get team's actual car
         carId = None
         carName = None
         if is_current_season_team:
@@ -65,6 +84,7 @@ def getTeamsStats(output_file):
             'podiumRatio': podium_ratio,
             'poleRatio': pole_ratio,
             'currentCarId': carId[0] if carId else None,
+            'currentDrivers': drivers,
             'currentCarName': carName
         }
         teamsData.append(teamObject)

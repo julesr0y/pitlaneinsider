@@ -19,6 +19,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -41,6 +42,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -63,6 +65,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -85,6 +88,7 @@
         "podiumRatio": 8.41,
         "poleRatio": 5.61,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -107,6 +111,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -129,6 +134,7 @@
         "podiumRatio": 2.41,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -151,6 +157,22 @@
         "podiumRatio": 5.13,
         "poleRatio": 0.0,
         "currentCarId": "alpine-a524",
+        "currentDrivers": [
+            {
+                "id": "esteban-ocon",
+                "firstName": "Esteban",
+                "lastName": "Ocon",
+                "nationality": "france",
+                "permanentNumber": "31"
+            },
+            {
+                "id": "pierre-gasly",
+                "firstName": "Pierre",
+                "lastName": "Gasly",
+                "nationality": "france",
+                "permanentNumber": "10"
+            }
+        ],
         "currentCarName": "Alpine A524 Renault"
     },
     {
@@ -173,6 +195,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -195,6 +218,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -217,6 +241,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -239,6 +264,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -261,6 +287,7 @@
         "podiumRatio": 2.75,
         "poleRatio": 0.34,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -283,6 +310,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -305,6 +333,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -327,6 +356,22 @@
         "podiumRatio": 10.84,
         "poleRatio": 0.0,
         "currentCarId": "aston-martin-amr24",
+        "currentDrivers": [
+            {
+                "id": "fernando-alonso",
+                "firstName": "Fernando",
+                "lastName": "Alonso",
+                "nationality": "spain",
+                "permanentNumber": "14"
+            },
+            {
+                "id": "lance-stroll",
+                "firstName": "Lance",
+                "lastName": "Stroll",
+                "nationality": "canada",
+                "permanentNumber": "18"
+            }
+        ],
         "currentCarName": "Aston Martin AMR24 Mercedes"
     },
     {
@@ -349,6 +394,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -371,6 +417,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -393,6 +440,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -415,6 +463,7 @@
         "podiumRatio": 12.82,
         "poleRatio": 1.71,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -437,6 +486,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -459,6 +509,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -481,6 +532,7 @@
         "podiumRatio": 36.15,
         "poleRatio": 5.77,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -503,6 +555,7 @@
         "podiumRatio": 22.86,
         "poleRatio": 1.43,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -525,6 +578,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -547,6 +601,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -569,6 +624,7 @@
         "podiumRatio": 26.9,
         "poleRatio": 9.9,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -591,6 +647,7 @@
         "podiumRatio": 64.71,
         "poleRatio": 29.41,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -613,6 +670,7 @@
         "podiumRatio": 26.9,
         "poleRatio": 5.58,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -635,6 +693,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -657,6 +716,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -679,6 +739,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -701,6 +762,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -723,6 +785,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -745,6 +808,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -767,6 +831,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -789,6 +854,7 @@
         "podiumRatio": 5.88,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -811,6 +877,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -833,6 +900,7 @@
         "podiumRatio": 31.78,
         "poleRatio": 8.53,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -855,6 +923,7 @@
         "podiumRatio": 2.56,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -877,6 +946,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -899,6 +969,7 @@
         "podiumRatio": 33.33,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -921,6 +992,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -943,6 +1015,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -965,6 +1038,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -987,6 +1061,7 @@
         "podiumRatio": 8.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1009,6 +1084,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1031,6 +1107,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1053,6 +1130,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1075,6 +1153,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1097,6 +1176,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1119,6 +1199,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1141,6 +1222,7 @@
         "podiumRatio": 60.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1163,6 +1245,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1185,6 +1268,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1207,6 +1291,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 50.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1229,6 +1314,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1251,6 +1337,22 @@
         "podiumRatio": 57.37,
         "poleRatio": 23.02,
         "currentCarId": "ferrari-sf-24",
+        "currentDrivers": [
+            {
+                "id": "carlos-sainz-jr",
+                "firstName": "Carlos",
+                "lastName": "Sainz Jr.",
+                "nationality": "spain",
+                "permanentNumber": "55"
+            },
+            {
+                "id": "charles-leclerc",
+                "firstName": "Charles",
+                "lastName": "Leclerc",
+                "nationality": "monaco",
+                "permanentNumber": "16"
+            }
+        ],
         "currentCarName": "Ferrari SF-24"
     },
     {
@@ -1273,6 +1375,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1295,6 +1398,7 @@
         "podiumRatio": 2.91,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1317,6 +1421,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1339,6 +1444,7 @@
         "podiumRatio": 1.1,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1361,6 +1467,7 @@
         "podiumRatio": 2.83,
         "poleRatio": 0.47,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1383,6 +1490,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1405,6 +1513,7 @@
         "podiumRatio": 8.33,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1427,6 +1536,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1449,6 +1559,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1471,6 +1582,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1493,6 +1605,7 @@
         "podiumRatio": 6.06,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1515,6 +1628,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1537,6 +1651,22 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.56,
         "currentCarId": "haas-vf-24",
+        "currentDrivers": [
+            {
+                "id": "kevin-magnussen",
+                "firstName": "Kevin",
+                "lastName": "Magnussen",
+                "nationality": "denmark",
+                "permanentNumber": "20"
+            },
+            {
+                "id": "nico-hulkenberg",
+                "firstName": "Nico",
+                "lastName": "Hülkenberg",
+                "nationality": "germany",
+                "permanentNumber": "27"
+            }
+        ],
         "currentCarName": "Haas VF-24 Ferrari"
     },
     {
@@ -1559,6 +1689,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1581,6 +1712,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1603,6 +1735,7 @@
         "podiumRatio": 13.46,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1625,6 +1758,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1647,6 +1781,7 @@
         "podiumRatio": 10.23,
         "poleRatio": 2.27,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1669,6 +1804,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1691,6 +1827,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1713,6 +1850,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1735,6 +1873,7 @@
         "podiumRatio": 2.35,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1757,6 +1896,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1779,6 +1919,7 @@
         "podiumRatio": 6.8,
         "poleRatio": 0.8,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1801,6 +1942,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1823,6 +1965,22 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": "kick-sauber-c44",
+        "currentDrivers": [
+            {
+                "id": "guanyu-zhou",
+                "firstName": "Guanyu",
+                "lastName": "Zhou",
+                "nationality": "china",
+                "permanentNumber": "24"
+            },
+            {
+                "id": "valtteri-bottas",
+                "firstName": "Valtteri",
+                "lastName": "Bottas",
+                "nationality": "finland",
+                "permanentNumber": "77"
+            }
+        ],
         "currentCarName": "Kick Sauber C44 Ferrari"
     },
     {
@@ -1845,6 +2003,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1867,6 +2026,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1889,6 +2049,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1911,6 +2072,7 @@
         "podiumRatio": 66.67,
         "poleRatio": 50.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1933,6 +2095,7 @@
         "podiumRatio": 30.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1955,6 +2118,7 @@
         "podiumRatio": 25.0,
         "poleRatio": 50.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1977,6 +2141,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -1999,6 +2164,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2021,6 +2187,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2043,6 +2210,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2065,6 +2233,7 @@
         "podiumRatio": 11.11,
         "poleRatio": 11.11,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2087,6 +2256,7 @@
         "podiumRatio": 3.33,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2109,6 +2279,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2131,6 +2302,7 @@
         "podiumRatio": 13.8,
         "poleRatio": 2.76,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2153,6 +2325,7 @@
         "podiumRatio": 2.01,
         "poleRatio": 0.67,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2175,6 +2348,7 @@
         "podiumRatio": 25.97,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2197,6 +2371,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2219,6 +2394,7 @@
         "podiumRatio": 31.98,
         "poleRatio": 21.79,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2241,6 +2417,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2263,6 +2440,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2285,6 +2463,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2307,6 +2486,7 @@
         "podiumRatio": 10.15,
         "poleRatio": 2.54,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2329,6 +2509,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2351,6 +2532,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2373,6 +2555,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2395,6 +2578,7 @@
         "podiumRatio": 40.0,
         "poleRatio": 14.29,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2417,6 +2601,7 @@
         "podiumRatio": 27.42,
         "poleRatio": 6.45,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2439,6 +2624,7 @@
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2461,6 +2647,22 @@
         "podiumRatio": 43.32,
         "poleRatio": 16.39,
         "currentCarId": "mclaren-mcl38",
+        "currentDrivers": [
+            {
+                "id": "lando-norris",
+                "firstName": "Lando",
+                "lastName": "Norris",
+                "nationality": "united-kingdom",
+                "permanentNumber": "4"
+            },
+            {
+                "id": "oscar-piastri",
+                "firstName": "Oscar",
+                "lastName": "Piastri",
+                "nationality": "australia",
+                "permanentNumber": "81"
+            }
+        ],
         "currentCarName": "McLaren MCL38 Mercedes"
     },
     {
@@ -2483,6 +2685,22 @@
         "podiumRatio": 64.59,
         "poleRatio": 45.57,
         "currentCarId": "mercedes-f1-w15",
+        "currentDrivers": [
+            {
+                "id": "george-russell",
+                "firstName": "George",
+                "lastName": "Russell",
+                "nationality": "united-kingdom",
+                "permanentNumber": "63"
+            },
+            {
+                "id": "lewis-hamilton",
+                "firstName": "Lewis",
+                "lastName": "Hamilton",
+                "nationality": "united-kingdom",
+                "permanentNumber": "44"
+            }
+        ],
         "currentCarName": "Mercedes F1 W15 E Performance"
     },
     {
@@ -2505,6 +2723,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2527,6 +2746,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2549,6 +2769,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2571,6 +2792,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2593,6 +2815,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2615,6 +2838,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2637,6 +2861,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2659,6 +2884,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2681,6 +2907,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2703,6 +2930,7 @@
         "podiumRatio": 5.88,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2725,6 +2953,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2747,6 +2976,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2769,6 +2999,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2791,6 +3022,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2813,6 +3045,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2835,6 +3068,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2857,6 +3091,7 @@
         "podiumRatio": 7.5,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2879,6 +3114,7 @@
         "podiumRatio": 14.29,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2901,6 +3137,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2923,6 +3160,7 @@
         "podiumRatio": 15.62,
         "poleRatio": 3.12,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2945,6 +3183,7 @@
         "podiumRatio": 3.61,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2967,6 +3206,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -2989,6 +3229,7 @@
         "podiumRatio": 7.89,
         "poleRatio": 2.63,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3011,6 +3252,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3033,6 +3275,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3055,6 +3298,22 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": "racing-bulls-vcarb01",
+        "currentDrivers": [
+            {
+                "id": "daniel-ricciardo",
+                "firstName": "Daniel",
+                "lastName": "Ricciardo",
+                "nationality": "australia",
+                "permanentNumber": "3"
+            },
+            {
+                "id": "yuki-tsunoda",
+                "firstName": "Yuki",
+                "lastName": "Tsunoda",
+                "nationality": "japan",
+                "permanentNumber": "22"
+            }
+        ],
         "currentCarName": "Racing Bulls VCARB01"
     },
     {
@@ -3077,6 +3336,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3099,6 +3359,22 @@
         "podiumRatio": 55.91,
         "poleRatio": 27.03,
         "currentCarId": "red-bull-rb20",
+        "currentDrivers": [
+            {
+                "id": "max-verstappen",
+                "firstName": "Max",
+                "lastName": "Verstappen",
+                "nationality": "netherlands",
+                "permanentNumber": "33"
+            },
+            {
+                "id": "sergio-perez",
+                "firstName": "Sergio",
+                "lastName": "Pérez",
+                "nationality": "mexico",
+                "permanentNumber": "11"
+            }
+        ],
         "currentCarName": "Red Bull RB20 RBPT"
     },
     {
@@ -3121,6 +3397,7 @@
         "podiumRatio": 22.75,
         "poleRatio": 12.75,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3143,6 +3420,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3165,6 +3443,7 @@
         "podiumRatio": 2.55,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3187,6 +3466,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3209,6 +3489,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3231,6 +3512,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3253,6 +3535,7 @@
         "podiumRatio": 6.73,
         "poleRatio": 2.88,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3275,6 +3558,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3297,6 +3581,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3319,6 +3604,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3341,6 +3627,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3363,6 +3650,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3385,6 +3673,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3407,6 +3696,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3429,6 +3719,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3451,6 +3742,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 16.67,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3473,6 +3765,7 @@
         "podiumRatio": 8.16,
         "poleRatio": 2.04,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3495,6 +3788,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3517,6 +3811,7 @@
         "podiumRatio": 1.69,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3539,6 +3834,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3561,6 +3857,7 @@
         "podiumRatio": 15.38,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3583,6 +3880,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3605,6 +3903,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3627,6 +3926,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3649,6 +3949,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3671,6 +3972,7 @@
         "podiumRatio": 5.26,
         "poleRatio": 1.75,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3693,6 +3995,7 @@
         "podiumRatio": 1.12,
         "poleRatio": 0.37,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3715,6 +4018,7 @@
         "podiumRatio": 9.35,
         "poleRatio": 2.16,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3737,6 +4041,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3759,6 +4064,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3781,6 +4087,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3803,6 +4110,7 @@
         "podiumRatio": 15.31,
         "poleRatio": 3.25,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3825,6 +4133,7 @@
         "podiumRatio": 39.29,
         "poleRatio": 25.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3847,6 +4156,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3869,6 +4179,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3891,6 +4202,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3913,6 +4225,7 @@
         "podiumRatio": 33.33,
         "poleRatio": 22.22,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3935,6 +4248,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -3957,6 +4271,22 @@
         "podiumRatio": 29.85,
         "poleRatio": 15.72,
         "currentCarId": "williams-fw46",
+        "currentDrivers": [
+            {
+                "id": "alexander-albon",
+                "firstName": "Alexander",
+                "lastName": "Albon",
+                "nationality": "thailand",
+                "permanentNumber": "23"
+            },
+            {
+                "id": "logan-sargeant",
+                "firstName": "Logan",
+                "lastName": "Sargeant",
+                "nationality": "united-states-of-america",
+                "permanentNumber": "2"
+            }
+        ],
         "currentCarName": "Williams FW46 Mercedes"
     },
     {
@@ -3979,6 +4309,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -4001,6 +4332,7 @@
         "podiumRatio": 27.66,
         "poleRatio": 2.13,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     },
     {
@@ -4023,6 +4355,7 @@
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
         "currentCarId": null,
+        "currentDrivers": null,
         "currentCarName": null
     }
 ]

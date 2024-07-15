@@ -34,6 +34,7 @@ async function getConstructorData(teamId) {
             podiumRatio: data['podiumRatio'],
             poleRatio: data['poleRatio'],
             currentCarId: data['currentCarId'],
+            currentDrivers: data['currentDrivers'],
             currentCarName: data['currentCarName']
         }
 

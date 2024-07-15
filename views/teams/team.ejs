@@ -22,23 +22,7 @@
                     class="h-28 w-auto">
             </div>
 
-            <!-- Text Content -->
             <div class="text-center">
-                <!-- <div class="my-4">
-                    <h3 class="font-bold">
-                        <%= // __('team.drivers') %> :
-                    </h3>
-                    <% // teamFront.drivers.forEach(function(driver){ %>
-                        <div class="flex items-center justify-center">
-                            <img src="/img/countryFlags/<%= // driver.nationality %>.svg"
-                                alt="<%= // driver.nationality %>" class="w-5 h-auto mr-2">
-                            <p>
-                                <%= // driver.name %> - <%= // driver.number %>
-                            </p>
-                        </div>
-                        <% // }) %>
-                </div> -->
-
                 <% if(teamFront.totalChampionshipWins !==0) { %>
                     <span class="grid grid-cols-12 mt-4">
                         <span class="col-span-12 flex flex-col items-center">
@@ -152,7 +136,24 @@
                             </span>
                         </span>
 
-                        <% if (teamFront.currentCarId !==null) { %>
+                        <% if (teamFront.currentSeasonTeam !==false) { %>
+                            <div class="my-4">
+                                <h3 class="font-bold">
+                                    <%= __('team.drivers') %> :
+                                </h3>
+                                <% teamFront.currentDrivers.forEach(function(driver){ %>
+                                    <div class="flex items-center justify-center">
+                                        <img src="/img/countryFlags/<%= driver.nationality %>.svg"
+                                            alt="<%= driver.nationality %>" class="w-5 h-auto mr-2">
+                                        <a href="/driver/<%= driver.id %>">
+                                            <p>
+                                                <%= driver.firstName %>
+                                                    <%= driver.lastName %> - <%= driver.permanentNumber %>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <% }) %>
+                            </div>
                             <div class="text-center mt-4">
                                 <h3 class="text-base sm:text-lg font-bold">
                                     <%= __('team.single_seater') %>:
