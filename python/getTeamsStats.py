@@ -13,14 +13,35 @@ def getTeamsStats(output_file):
     with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-constructor-standings.json'), 'r', encoding='utf-8') as f:
         teamsStandingsFile = json.load(f)
 
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-entrants-constructors.json'), 'r', encoding='utf-8') as f:
+        entrants_constructors = json.load(f)
+
+    with open(os.path.join(base_dir, './dataPython/all_cars.json'), 'r', encoding='utf-8') as f:
+        cars = json.load(f)
+
     current_season_year = 2024
     teamsData = []
 
     for team in teamsFile:
         is_current_season_team = False
+        constructor_entries = [entry for entry in entrants_constructors if entry['constructorId'] == team['id']]
+        number_of_seasons = len(set(entry['year'] for entry in constructor_entries))
         for entry in teamsStandingsFile:
             if entry['year'] == current_season_year and entry['constructorId'] == team['id']:
                 is_current_season_team = True
+
+        victory_ratio = round((team.get('totalRaceWins', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
+        podium_ratio = round((team.get('totalPodiums', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
+        pole_ratio = round((team.get('totalPolePositions', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
+
+        carId = None
+        carName = None
+        if is_current_season_team:
+            for car in cars:
+                if car['year'] == current_season_year and car['constructorId'] == team['id']:
+                    carId = car['id'],
+                    carName = car['name']
+
         teamObject = {
             'constructorId': team['id'],
             'fullName': team['fullName'],
@@ -34,7 +55,14 @@ def getTeamsStats(output_file):
             'totalPolePositions': team['totalPolePositions'],
             'totalFastestLaps': team['totalFastestLaps'],
             'totalChampionshipWins': team['totalChampionshipWins'],
-            'totalRaceLaps': team['totalRaceLaps']
+            'totalRaceLaps': team['totalRaceLaps'],
+            'firstYear': constructor_entries[0]['year'],
+            'numberOfSeasons': number_of_seasons,
+            'victoryRatio': victory_ratio,
+            'podiumRatio': podium_ratio,
+            'poleRatio': pole_ratio,
+            'currentCarId': carId[0] if carId else None,
+            'currentCarName': carName
         }
         teamsData.append(teamObject)
 

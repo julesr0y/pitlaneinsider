@@ -27,7 +27,14 @@ async function getConstructorData(teamId) {
             totalPolePositions: data['totalPolePositions'],
             totalFastestLaps: data['totalFastestLaps'],
             totalChampionshipWins: data['totalChampionshipWins'],
-            totalRaceLaps: data['totalRaceLaps']
+            totalRaceLaps: data['totalRaceLaps'],
+            firstYear: data['firstYear'],
+            numberOfSeasons: data['numberOfSeasons'],
+            victoryRatio: data['victoryRatio'],
+            podiumRatio: data['podiumRatio'],
+            poleRatio: data['poleRatio'],
+            currentCarId: data['currentCarId'],
+            currentCarName: data['currentCarName']
         }
 
         return teamData;

@@ -1303,6 +1303,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(162 28 175 / var(--tw-text-opacity));
 }
+.text-gold {
+  --tw-text-opacity: 1;
+  color: rgb(255 215 0 / var(--tw-text-opacity));
+}
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));

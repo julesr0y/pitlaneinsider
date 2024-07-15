@@ -38,7 +38,12 @@
 		"total_podiums": "team.total_podiums",
 		"total_points": "team.total_points",
 		"total_poles": "team.total_poles",
-		"total_fastest_laps": "team.total_fastest_laps"
+		"total_fastest_laps": "team.total_fastest_laps",
+		"number_of_seasons": "team.number_of_seasons",
+		"victory_ratio": "team.victory_ratio",
+		"podium_ratio": "team.podium_ratio",
+		"pole_ratio": "team.pole_ratio",
+		"totalChampionshipWins": "team.totalChampionshipWins"
 	},
 	"drivers": {
 		"tab_title": "Pilotos",

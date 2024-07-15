@@ -34,7 +34,12 @@
 		"total_podiums": "Podiums",
 		"total_points": "Points inscrits",
 		"total_poles": "Poles",
-		"total_fastest_laps": "Tour le plus rapide"
+		"total_fastest_laps": "Tour le plus rapide",
+		"number_of_seasons": "Saisons",
+		"victory_ratio": "Ratio de victoires",
+		"podium_ratio": "Ratio de podiums",
+		"pole_ratio": "Ratio de poles",
+		"totalChampionshipWins": "Titres"
 	},
 	"drivers": {
 		"tab_title": "Pilotes",

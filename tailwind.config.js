@@ -35,7 +35,8 @@ module.exports = {
         'kick-sauber': '#52E252',
         'sauber': '#52E252', // id pour api OpenF1 (live)
         'stewardsTxt': '#011132',
-        'stewardsBg': '#E1E8F2'
+        'stewardsBg': '#E1E8F2',
+        'gold': 'gold'
       }
     },
   },

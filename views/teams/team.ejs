@@ -10,7 +10,7 @@
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
     <div class="pt-10 px-4 sm:px-8 h-auto flex flex-col justify-center">
-        <div class="bg-s-<%= theme %> rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+        <div class="bg-s-<%= theme %> p-4 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
             <div class="text-center">
                 <h1 class="text-lg font-F1Bold mb-2">
                     <%= teamFront.fullName %>
@@ -24,9 +24,6 @@
 
             <!-- Text Content -->
             <div class="text-center">
-                <p class="text-t-s-<%= theme %>">
-                    <%= __('team.team_start') %> : <%= "unknown" %>
-                </p>
                 <!-- <div class="my-4">
                     <h3 class="font-bold">
                         <%= // __('team.drivers') %> :
@@ -42,72 +39,133 @@
                         <% // }) %>
                 </div> -->
 
-                <span class="grid grid-cols-12 mt-4">
-                    <span class="col-span-4 flex flex-col">
-                        <span>
-                            <%= teamFront.totalRaceStarts %>
-                        </span>
-                        <span class="text-t-s-<%= theme %> text-xs">
-                            <%= __('team.total_races') %>
-                        </span>
-                    </span>
-                    <span class="col-span-4 flex flex-col">
-                        <span>
-                            <%= teamFront.totalRaceWins %>
-                        </span>
-                        <span class="text-t-s-<%= theme %> text-xs">
-                            <%= __('team.total_wins') %>
+                <% if(teamFront.totalChampionshipWins !==0) { %>
+                    <span class="grid grid-cols-12 mt-4">
+                        <span class="col-span-12 flex flex-col items-center">
+                            <span class="text-gold">
+                                <%= teamFront.totalChampionshipWins %>
+                            </span>
+                            <span class="text-t-s-<%= theme %> text-xs">
+                                <%= __('team.totalChampionshipWins') %>
+                            </span>
                         </span>
                     </span>
-                    <span class="col-span-4 flex flex-col">
-                        <span>
-                            <%= teamFront.totalPodiumRaces %>
-                        </span>
-                        <span class="text-t-s-<%= theme %> text-xs">
-                            <%= __('team.total_podiums') %>
-                        </span>
-                    </span>
-                </span>
+                    <% } %>
 
-                <span class="grid grid-cols-12 mt-4">
-                    <span class="col-span-4 flex flex-col">
-                        <span>
-                            <%= teamFront.totalChampionshipPoints %>
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.firstYear %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.team_start') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.numberOfSeasons %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.number_of_seasons') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalRaceStarts %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.total_races') %>
+                                </span>
+                            </span>
                         </span>
-                        <span class="text-t-s-<%= theme %> text-xs">
-                            <%= __('team.total_points') %>
-                        </span>
-                    </span>
-                    <span class="col-span-4 flex flex-col">
-                        <span>
-                            <%= teamFront.totalPolePositions %>
-                        </span>
-                        <span class="text-t-s-<%= theme %> text-xs">
-                            <%= __('team.total_poles') %>
-                        </span>
-                    </span>
-                    <span class="col-span-4 flex flex-col">
-                        <span>
-                            <%= teamFront.totalFastestLaps %>
-                        </span>
-                        <span class="text-t-s-<%= theme %> text-xs">
-                            <%= __('team.total_fastest_laps') %>
-                        </span>
-                    </span>
-                </span>
 
-                <!-- <div class="my-4">
-                    <h3 class="font-bold">
-                        <%= // __('team.single_seater') %> :
-                    </h3>
-                    <p class="text-t-s-<%= // theme %>">
-                        <%= // dataTeam.monoplace %>
-                    </p>
-                    <span class="flex justify-center">
-                        <img src="/img/2024/monoplace/<%= // dataTeam.monoplace %>.avif" alt="<%= // dataTeam.monoplace %>"
-                            class="w-2/3 h-auto">
-                    </span>
-                </div> -->
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalRaceWins %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.total_wins') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalPodiumRaces %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.total_podiums') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalPolePositions %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.total_poles') %>
+                                </span>
+                            </span>
+                        </span>
+
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalChampionshipPoints %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.total_points') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalFastestLaps %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.total_fastest_laps') %>
+                                </span>
+                            </span>
+                        </span>
+
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.victoryRatio %>%
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.victory_ratio') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.podiumRatio %>%
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.podium_ratio') %>
+                                </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.poleRatio %>%
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= __('team.pole_ratio') %>
+                                </span>
+                            </span>
+                        </span>
+
+                        <% if (teamFront.currentCarId !==null) { %>
+                            <div class="text-center mt-4">
+                                <h3 class="text-base sm:text-lg font-bold">
+                                    <%= __('team.single_seater') %>:
+                                </h3>
+                                <p class="text-t-s-<%= theme %>">
+                                    <%= teamFront.currentCarName %>
+                                </p>
+                                <span class="flex justify-center">
+                                    <img src="/img/2024/monoplace/<%= teamFront.currentCarId %>.avif"
+                                        alt="<%= teamFront.currentCarName %>" class="w-2/3 h-auto">
+                                </span>
+                            </div>
+                            <% } %>
             </div>
         </div>
     </div>
