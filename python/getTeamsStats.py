@@ -22,6 +22,9 @@ def getTeamsStats(output_file):
     current_season_year = 2024
     teamsData = []
 
+    victory_ratio = 0
+    podium_ratio = 0
+    pole_ratio = 0
     for team in teamsFile:
         is_current_season_team = False
         constructor_entries = [entry for entry in entrants_constructors if entry['constructorId'] == team['id']]
@@ -31,7 +34,7 @@ def getTeamsStats(output_file):
                 is_current_season_team = True
 
         victory_ratio = round((team.get('totalRaceWins', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
-        podium_ratio = round((team.get('totalPodiums', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
+        podium_ratio = round((team.get('totalPodiumRaces', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
         pole_ratio = round((team.get('totalPolePositions', 0) / team['totalRaceStarts']) * 100, 2) if team['totalRaceStarts'] else 0
 
         carId = None

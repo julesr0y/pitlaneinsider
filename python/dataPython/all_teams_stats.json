@@ -82,7 +82,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 14,
         "victoryRatio": 4.67,
-        "podiumRatio": 12.15,
+        "podiumRatio": 8.41,
         "poleRatio": 5.61,
         "currentCarId": null,
         "currentCarName": null
@@ -478,7 +478,7 @@
         "firstYear": 1986,
         "numberOfSeasons": 16,
         "victoryRatio": 10.38,
-        "podiumRatio": 39.23,
+        "podiumRatio": 36.15,
         "poleRatio": 5.77,
         "currentCarId": null,
         "currentCarName": null
@@ -500,7 +500,7 @@
         "firstYear": 2006,
         "numberOfSeasons": 4,
         "victoryRatio": 1.43,
-        "podiumRatio": 24.29,
+        "podiumRatio": 22.86,
         "poleRatio": 1.43,
         "currentCarId": null,
         "currentCarName": null
@@ -566,7 +566,7 @@
         "firstYear": 1962,
         "numberOfSeasons": 30,
         "victoryRatio": 8.88,
-        "podiumRatio": 31.47,
+        "podiumRatio": 26.9,
         "poleRatio": 9.9,
         "currentCarId": null,
         "currentCarName": null
@@ -588,7 +588,7 @@
         "firstYear": 2009,
         "numberOfSeasons": 1,
         "victoryRatio": 47.06,
-        "podiumRatio": 88.24,
+        "podiumRatio": 64.71,
         "poleRatio": 29.41,
         "currentCarId": null,
         "currentCarName": null
@@ -610,7 +610,7 @@
         "firstYear": 1951,
         "numberOfSeasons": 23,
         "victoryRatio": 8.63,
-        "podiumRatio": 30.96,
+        "podiumRatio": 26.9,
         "poleRatio": 5.58,
         "currentCarId": null,
         "currentCarName": null
@@ -830,7 +830,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 19,
         "victoryRatio": 12.4,
-        "podiumRatio": 44.96,
+        "podiumRatio": 31.78,
         "poleRatio": 8.53,
         "currentCarId": null,
         "currentCarName": null
@@ -896,7 +896,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 3,
         "victoryRatio": 0.0,
-        "podiumRatio": 66.67,
+        "podiumRatio": 33.33,
         "poleRatio": 0.0,
         "currentCarId": null,
         "currentCarName": null
@@ -1138,7 +1138,7 @@
         "firstYear": 1955,
         "numberOfSeasons": 5,
         "victoryRatio": 40.0,
-        "podiumRatio": 100.0,
+        "podiumRatio": 60.0,
         "poleRatio": 0.0,
         "currentCarId": null,
         "currentCarName": null
@@ -1248,7 +1248,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 75,
         "victoryRatio": 22.56,
-        "podiumRatio": 75.23,
+        "podiumRatio": 57.37,
         "poleRatio": 23.02,
         "currentCarId": "ferrari-sf-24",
         "currentCarName": "Ferrari SF-24"
@@ -1776,7 +1776,7 @@
         "firstYear": 1991,
         "numberOfSeasons": 15,
         "victoryRatio": 1.6,
-        "podiumRatio": 7.6,
+        "podiumRatio": 6.8,
         "poleRatio": 0.8,
         "currentCarId": null,
         "currentCarName": null
@@ -1908,7 +1908,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 11,
         "victoryRatio": 41.67,
-        "podiumRatio": 133.33,
+        "podiumRatio": 66.67,
         "poleRatio": 50.0,
         "currentCarId": null,
         "currentCarName": null
@@ -2128,7 +2128,7 @@
         "firstYear": 1976,
         "numberOfSeasons": 21,
         "victoryRatio": 2.76,
-        "podiumRatio": 15.34,
+        "podiumRatio": 13.8,
         "poleRatio": 2.76,
         "currentCarId": null,
         "currentCarName": null
@@ -2172,7 +2172,7 @@
         "firstYear": 2012,
         "numberOfSeasons": 4,
         "victoryRatio": 2.6,
-        "podiumRatio": 32.47,
+        "podiumRatio": 25.97,
         "poleRatio": 0.0,
         "currentCarId": null,
         "currentCarName": null
@@ -2216,7 +2216,7 @@
         "firstYear": 1958,
         "numberOfSeasons": 37,
         "victoryRatio": 16.09,
-        "podiumRatio": 35.03,
+        "podiumRatio": 31.98,
         "poleRatio": 21.79,
         "currentCarId": null,
         "currentCarName": null
@@ -2304,7 +2304,7 @@
         "firstYear": 1970,
         "numberOfSeasons": 16,
         "victoryRatio": 1.52,
-        "podiumRatio": 10.66,
+        "podiumRatio": 10.15,
         "poleRatio": 2.54,
         "currentCarId": null,
         "currentCarName": null
@@ -2392,7 +2392,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 11,
         "victoryRatio": 12.86,
-        "podiumRatio": 52.86,
+        "podiumRatio": 40.0,
         "poleRatio": 14.29,
         "currentCarId": null,
         "currentCarName": null
@@ -2414,7 +2414,7 @@
         "firstYear": 1966,
         "numberOfSeasons": 7,
         "victoryRatio": 14.52,
-        "podiumRatio": 33.87,
+        "podiumRatio": 27.42,
         "poleRatio": 6.45,
         "currentCarId": null,
         "currentCarName": null
@@ -2458,7 +2458,7 @@
         "firstYear": 1966,
         "numberOfSeasons": 59,
         "victoryRatio": 19.21,
-        "podiumRatio": 53.44,
+        "podiumRatio": 43.32,
         "poleRatio": 16.39,
         "currentCarId": "mclaren-mcl38",
         "currentCarName": "McLaren MCL38 Mercedes"
@@ -2480,7 +2480,7 @@
         "firstYear": 1954,
         "numberOfSeasons": 17,
         "victoryRatio": 41.64,
-        "podiumRatio": 96.07,
+        "podiumRatio": 64.59,
         "poleRatio": 45.57,
         "currentCarId": "mercedes-f1-w15",
         "currentCarName": "Mercedes F1 W15 E Performance"
@@ -2986,7 +2986,7 @@
         "firstYear": 2019,
         "numberOfSeasons": 2,
         "victoryRatio": 2.63,
-        "podiumRatio": 10.53,
+        "podiumRatio": 7.89,
         "poleRatio": 2.63,
         "currentCarId": null,
         "currentCarName": null
@@ -3096,7 +3096,7 @@
         "firstYear": 2005,
         "numberOfSeasons": 20,
         "victoryRatio": 31.5,
-        "podiumRatio": 72.7,
+        "podiumRatio": 55.91,
         "poleRatio": 27.03,
         "currentCarId": "red-bull-rb20",
         "currentCarName": "Red Bull RB20 RBPT"
@@ -3118,7 +3118,7 @@
         "firstYear": 1977,
         "numberOfSeasons": 24,
         "victoryRatio": 8.75,
-        "podiumRatio": 25.75,
+        "podiumRatio": 22.75,
         "poleRatio": 12.75,
         "currentCarId": null,
         "currentCarName": null
@@ -3470,7 +3470,7 @@
         "firstYear": 1997,
         "numberOfSeasons": 3,
         "victoryRatio": 2.04,
-        "podiumRatio": 10.2,
+        "podiumRatio": 8.16,
         "poleRatio": 2.04,
         "currentCarId": null,
         "currentCarName": null
@@ -3800,7 +3800,7 @@
         "firstYear": 1970,
         "numberOfSeasons": 29,
         "victoryRatio": 5.34,
-        "podiumRatio": 17.87,
+        "podiumRatio": 15.31,
         "poleRatio": 3.25,
         "currentCarId": null,
         "currentCarName": null
@@ -3822,7 +3822,7 @@
         "firstYear": 1954,
         "numberOfSeasons": 7,
         "victoryRatio": 32.14,
-        "podiumRatio": 46.43,
+        "podiumRatio": 39.29,
         "poleRatio": 25.0,
         "currentCarId": null,
         "currentCarName": null
@@ -3910,7 +3910,7 @@
         "firstYear": 1950,
         "numberOfSeasons": 9,
         "victoryRatio": 33.33,
-        "podiumRatio": 55.56,
+        "podiumRatio": 33.33,
         "poleRatio": 22.22,
         "currentCarId": null,
         "currentCarName": null
@@ -3954,7 +3954,7 @@
         "firstYear": 1976,
         "numberOfSeasons": 48,
         "victoryRatio": 14.0,
-        "podiumRatio": 38.33,
+        "podiumRatio": 29.85,
         "poleRatio": 15.72,
         "currentCarId": "williams-fw46",
         "currentCarName": "Williams FW46 Mercedes"
