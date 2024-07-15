@@ -48,7 +48,7 @@
                 <% tracksFront.forEach(function(race) { %>
                     <div id="race-<%= race.raceId %>"
                         class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
-                        <a href="/retro_gpdetail/2024/<%= race.raceId %>" class="block text-center">
+                        <a href="/retrogpdetails/2024/<%= race.raceId %>" class="block text-center">
                             <div class="relative mb-4">
                                 <img src="/img/circuits/<%= race.circuitId %>.webp" alt="Circuit <%= race.circuitId %>"
                                     class="w-full h-32 object-contain mx-auto">
