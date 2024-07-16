@@ -45,7 +45,9 @@ async function getDriverData(driver_id) {
             allVictories: data[0].allVictories,
             victoryRatio: data[0].victoryRatio,
             podiumRatio: data[0].podiumRatio,
-            poleRatio: data[0].poleRatio
+            poleRatio: data[0].poleRatio,
+            allPointsData: data[0].allPointsData,
+            allPositionsData: data[0].allPositionsData
         }
 
         return driverData;

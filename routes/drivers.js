@@ -12,6 +12,7 @@ router.get("/drivers", async (req, res) => {
 
 router.get("/driver/:driver_id", async (req, res) => {
     var driverData = await getDriverData(req.params.driver_id);
+
     res.render("drivers/driver", { dataDriver: driverData });
 });
 
