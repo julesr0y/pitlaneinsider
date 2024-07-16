@@ -74,6 +74,44 @@ def sortDriverTeamsCareer(data):
     output.sort(key=lambda x: (int(x["year"].split("-")[0]), int(x["year"].split("-")[-1])))
     return output
 
+def getPointsBySeason(driverId):
+    # Get the base directory of the script
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-driver-standings.json'), 'r', encoding='utf-8') as f:
+        points = json.load(f)
+
+    dataPointsDriver = []  # Utilisez une liste pour stocker les dictionnaires de données
+    for driver in points:
+        if driver['driverId'] == driverId:
+            # Créez un dictionnaire pour chaque saison avec les clés "year" et "points"
+            pointsSeason = {
+                "year": driver['year'],
+                "points": driver['points']
+            }
+            dataPointsDriver.append(pointsSeason)  # Ajoutez le dictionnaire à la liste
+
+    return dataPointsDriver
+
+def getStandingPositionBySeason(driverId):
+    # Get the base directory of the script
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-driver-standings.json'), 'r', encoding='utf-8') as f:
+        positions = json.load(f)
+
+    dataPositionsDriver = []  # Utilisez une liste pour stocker les dictionnaires de données
+    for driver in positions:
+        if driver['driverId'] == driverId:
+            # Créez un dictionnaire pour chaque saison avec les clés "year" et "points"
+            positionSeason = {
+                "year": driver['year'],
+                "position": driver['positionDisplayOrder']
+            }
+            dataPositionsDriver.append(positionSeason)  # Ajoutez le dictionnaire à la liste
+
+    return dataPositionsDriver
+
 def getDriversStats(output_file):
     # Get the base directory of the script
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -213,6 +251,13 @@ def getDriversStats(output_file):
 
         number_of_seasons = len(set(entry['year'] for entry in driver_entries))
 
+        pointsSeason = getPointsBySeason(entry['driverId'])
+        # Avant d'ajouter pointsSeason à driver_stats, convertissez-le en liste si c'est un set
+        if isinstance(pointsSeason, set):
+            pointsSeason = list(pointsSeason)
+
+        positionSeason = getStandingPositionBySeason(entry['driverId'])
+
         # Compile all driver stats
         driver_stats = {
             'id': driver_data.get('id', 'Unknown'),
@@ -248,7 +293,9 @@ def getDriversStats(output_file):
             'allVictories': victories_by_year if victories_by_year else None,
             'victoryRatio': victory_ratio,
             'podiumRatio': podium_ratio,
-            'poleRatio': pole_ratio
+            'poleRatio': pole_ratio,
+            'allPointsData': pointsSeason,
+            'allPositionsData': positionSeason
         }
         
         all_drivers_stats.append(driver_stats)
