@@ -297,69 +297,69 @@
                         const rootStyle = getComputedStyle(document.documentElement);
                         const backgroundColor = rootStyle.getPropertyValue('--team-<%- dataDriver.actualTeam %>').trim();
                     </script>
+                    <div class="px-4">
+                        <canvas id="myChart" width="400" height="200" class="pt-2"></canvas>
+                        <script>
+                            '<% tableYears = [] %>'
+                            '<% tablePoints = [] %>'
+                            '<% dataDriver.allPointsData.forEach(function(season) { %>'
+                            '<% tableYears.push(season.year) %>'
+                            '<% tablePoints.push(season.points) %>'
+                            '<% }) %>'
 
-                    <canvas id="myChart" width="400" height="200"></canvas>
-                    <script>
-                        '<% tableYears = [] %>'
-                        '<% tablePoints = [] %>'
-                        '<% dataDriver.allPointsData.forEach(function(season) { %>'
-                        '<% tableYears.push(season.year) %>'
-                        '<% tablePoints.push(season.points) %>'
-                        '<% }) %>'
+                            const labelYears = JSON.parse('<%- JSON.stringify(tableYears) %>');
+                            const dataPoints = JSON.parse('<%- JSON.stringify(tablePoints) %>');
+                            // Récupérer les données injectées par le serveur
+                            const chartData = {
+                                labels: labelYears,
+                                datasets: [{
+                                    label: 'Points',
+                                    data: dataPoints,
+                                    backgroundColor: [
+                                        backgroundColor
+                                    ],
+                                    borderColor: [
+                                        backgroundColor
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            };
 
-                        const labelYears = JSON.parse('<%- JSON.stringify(tableYears) %>');
-                        const dataPoints = JSON.parse('<%- JSON.stringify(tablePoints) %>');
-                        // Récupérer les données injectées par le serveur
-                        const chartData = {
-                            labels: labelYears,
-                            datasets: [{
-                                label: 'Points',
-                                data: dataPoints,
-                                backgroundColor: [
-                                    backgroundColor
-                                ],
-                                borderColor: [
-                                    backgroundColor
-                                ],
-                                borderWidth: 1
-                            }]
-                        };
+                            // Initialiser le graphique avec les données
+                            window.initChart(chartData);
+                        </script>
 
-                        // Initialiser le graphique avec les données
-                        window.initChart(chartData);
-                    </script>
+                        <canvas id="myChart2" width="400" height="200" class="pt-2"></canvas>
+                        <script>
+                            '<% tableYears = [] %>'
+                            '<% tablePositions = [] %>'
+                            '<% dataDriver.allPositionsData.forEach(function(season) { %>'
+                            '<% tableYears.push(season.year) %>'
+                            '<% tablePositions.push(season.position) %>'
+                            '<% }) %>'
 
-                    <canvas id="myChart2" width="400" height="200"></canvas>
-                    <script>
-                        '<% tableYears = [] %>'
-                        '<% tablePositions = [] %>'
-                        '<% dataDriver.allPositionsData.forEach(function(season) { %>'
-                        '<% tableYears.push(season.year) %>'
-                        '<% tablePositions.push(season.position) %>'
-                        '<% }) %>'
+                            const labelYears2 = JSON.parse('<%- JSON.stringify(tableYears) %>');
+                            const dataPositions = JSON.parse('<%- JSON.stringify(tablePositions) %>');
+                            // Récupérer les données injectées par le serveur
+                            const chartData2 = {
+                                labels: labelYears2,
+                                datasets: [{
+                                    label: 'Final standing positions',
+                                    data: dataPositions,
+                                    backgroundColor: [
+                                        backgroundColor
+                                    ],
+                                    borderColor: [
+                                        backgroundColor
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            };
 
-                        const labelYears2 = JSON.parse('<%- JSON.stringify(tableYears) %>');
-                        const dataPositions = JSON.parse('<%- JSON.stringify(tablePositions) %>');
-                        // Récupérer les données injectées par le serveur
-                        const chartData2 = {
-                            labels: labelYears2,
-                            datasets: [{
-                                label: 'Final standing positions',
-                                data: dataPositions,
-                                backgroundColor: [
-                                    backgroundColor
-                                ],
-                                borderColor: [
-                                    backgroundColor
-                                ],
-                                borderWidth: 1
-                            }]
-                        };
-
-                        // Initialiser le graphique avec les données
-                        window.initChart2(chartData2);
-                    </script>
-
+                            // Initialiser le graphique avec les données
+                            window.initChart2(chartData2);
+                        </script>
+                    </div>
         </div>
     </div>
     <%- include("../partials/footer.ejs") %>
