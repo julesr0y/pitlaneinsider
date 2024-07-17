@@ -9,6 +9,14 @@ const initChart = (chartData) => {
             plugins: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 20,
+                        right: 20,
+                        bottom: 30,
+                        left: 40
+                    }
+                },
                 legend: {
                     labels: {
                         font: {
@@ -58,6 +66,14 @@ const initChart2 = (chartData) => {
             plugins: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 20,
+                        right: 20,
+                        bottom: 30,
+                        left: 40
+                    }
+                },
                 legend: {
                     labels: {
                         font: {
