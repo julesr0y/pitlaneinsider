@@ -297,8 +297,8 @@
                         const rootStyle = getComputedStyle(document.documentElement);
                         const backgroundColor = rootStyle.getPropertyValue('--team-<%- dataDriver.actualTeam %>').trim();
                     </script>
-                    <div>
-                        <canvas id="myChart" width="400" height="200" class="pt-2"></canvas>
+                    <div class="w-full flex flex-col items-center justify-center">
+                        <canvas id="myChart" width="1000" height="500" class="pt-2 mx-auto"></canvas>
                         <script>
                             '<% tableYears = [] %>'
                             '<% tablePoints = [] %>'
@@ -329,7 +329,7 @@
                             window.initChart(chartData);
                         </script>
 
-                        <canvas id="myChart2" width="400" height="200" class="pt-2"></canvas>
+                        <canvas id="myChart2" width="1000" height="500" class="pt-2 mx-auto"></canvas>
                         <script>
                             '<% tableYears = [] %>'
                             '<% tablePositions = [] %>'
