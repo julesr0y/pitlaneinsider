@@ -309,7 +309,7 @@
                             '<% tablePoints.push(season.points) %>'
                             '<% }) %>'
 
-                            const labelYears = JSON.parse('<%- JSON.stringify(tableYears) %>');
+                            const labelYears = JSON.parse('<%- JSON.stringify(tableYears) %>').map(label => ' ' + label + ' ');
                             const dataPoints = JSON.parse('<%- JSON.stringify(tablePoints) %>');
                             // Récupérer les données injectées par le serveur
                             const chartData = {
@@ -342,7 +342,7 @@
                             '<% tablePositions.push(season.position) %>'
                             '<% }) %>'
 
-                            const labelYears2 = JSON.parse('<%- JSON.stringify(tableYears) %>');
+                            const labelYears2 = JSON.parse('<%- JSON.stringify(tableYears) %>').map(label => ' ' + label + ' ');
                             const dataPositions = JSON.parse('<%- JSON.stringify(tablePositions) %>');
                             // Récupérer les données injectées par le serveur
                             const chartData2 = {

@@ -9,14 +9,6 @@ const initChart = (chartData) => {
             plugins: {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: {
-                    padding: {
-                        top: 20,
-                        right: 20,
-                        bottom: 30,
-                        left: 40
-                    }
-                },
                 legend: {
                     labels: {
                         font: {
@@ -40,6 +32,9 @@ const initChart = (chartData) => {
                         font: {
                             family: 'F1Regular',
                             size: 12,
+                        },
+                        callback: function (value) {
+                            return '   ' + value;
                         }
                     },
                     beginAtZero: true
@@ -66,14 +61,6 @@ const initChart2 = (chartData) => {
             plugins: {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: {
-                    padding: {
-                        top: 20,
-                        right: 20,
-                        bottom: 30,
-                        left: 40
-                    }
-                },
                 legend: {
                     labels: {
                         font: {
@@ -97,6 +84,9 @@ const initChart2 = (chartData) => {
                         font: {
                             family: 'F1Regular',
                             size: 12,
+                        },
+                        callback: function (value) {
+                            return '   ' + value;
                         }
                     },
                     beginAtZero: true
