@@ -7,6 +7,8 @@ const initChart = (chartData) => {
         data: chartData,
         options: {
             plugins: {
+                responsive: true,
+                maintainAspectRatio: false,
                 legend: {
                     labels: {
                         font: {
@@ -54,6 +56,8 @@ const initChart2 = (chartData) => {
         data: chartData,
         options: {
             plugins: {
+                responsive: true,
+                maintainAspectRatio: false,
                 legend: {
                     labels: {
                         font: {
