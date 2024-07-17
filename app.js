@@ -5,9 +5,11 @@ var cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 const helmet = require("helmet");
 const session = require("express-session");
+const compression = require('compression');
 const credits = require("./config/credits.json");
 
 const app = express();
+app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

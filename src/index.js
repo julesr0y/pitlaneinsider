@@ -3,12 +3,44 @@ import Chart from 'chart.js/auto';
 const initChart = (chartData) => {
     const ctx = document.getElementById('myChart').getContext('2d');
     new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: chartData,
         options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'F1Regular',
+                        }
+                    }
+                }
+            },
             scales: {
+                x: {
+                    ticks: {
+                        font: {
+                            family: 'F1Regular',
+                            size: 12,
+                        }
+                    }
+                },
                 y: {
+                    ticks: {
+                        font: {
+                            family: 'F1Regular',
+                            size: 12,
+                        }
+                    },
                     beginAtZero: true
+                }
+            },
+            elements: {
+                line: {
+                    tension: 0
+                },
+                point: {
+                    radius: 5
                 }
             }
         }
@@ -18,15 +50,47 @@ const initChart = (chartData) => {
 const initChart2 = (chartData) => {
     const ctx = document.getElementById('myChart2').getContext('2d');
     new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: chartData,
         options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'F1Regular',
+                        }
+                    }
+                }
+            },
             scales: {
+                x: {
+                    ticks: {
+                        font: {
+                            family: 'F1Regular',
+                            size: 12,
+                        }
+                    }
+                },
                 y: {
+                    ticks: {
+                        font: {
+                            family: 'F1Regular',
+                            size: 12,
+                        }
+                    },
                     beginAtZero: true
                 }
+            },
+            elements: {
+                line: {
+                    tension: 0
+                },
+                point: {
+                    radius: 5
+                }
             }
-        }
+        },
     });
 };
 
