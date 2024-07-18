@@ -247,22 +247,26 @@
                     <%= __('driver.teams_title') %>:
                 </h3>
 
-                <% dataDriver.teams.forEach(function(team) { %>
-                    <div class="mt-6">
-                        <p class="text-xl">
-                            <%= team.year %>
-                        </p>
-                        <div class="flex justify-center items-center mt-2">
-                            <div class="flex items-center">
-                                <a href="/team/<%= team.teamId %>">
-                                    <p class="text-sm sm:text-base ml-2">
-                                        <%= team.teamName %>
-                                    </p>
+                <div class="mt-6">
+                    <span class="grid grid-cols-12">
+                        <% dataDriver.teams.forEach(function(team) { %>
+                            <span class="col-span-4 flex flex-col items-center mt-4">
+                                <a href="/team/<%= team.teamId %>" class="flex flex-col items-center">
+                                    <img src="/img/teams/<%= team.teamId %>.webp" alt="<%= team.teamId %>"
+                                        class="w-auto h-10">
+                                    <span class="text-sm">
+                                        <p class="text-sm sm:text-base ml-2">
+                                            <%= team.teamName %>
+                                        </p>
+                                    </span>
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                    <% }); %>
+                                <span class="text-t-s-<%= theme %> text-xs">
+                                    <%= team.year %>
+                                </span>
+                            </span>
+                            <% }); %>
+                    </span>
+                </div>
             </div>
 
             <% if(dataDriver.allVictories !==null) { %>
