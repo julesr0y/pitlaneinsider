@@ -42,7 +42,7 @@ app.use(helmet.contentSecurityPolicy({
         defaultSrc: ["'self'"],
         connectSrc: ["'self'", "https://api.openf1.org", "https://ergast.com"],
         styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com", "https://cdn.jsdelivr.net/npm/apexcharts"],
         scriptSrcAttr: ["'unsafe-inline'"],
         mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"]
     }

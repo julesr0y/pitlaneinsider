@@ -9,6 +9,7 @@
             </title>
             <link rel="stylesheet" href="/stylesheets/constructorscolors.css">
             <script src="/js/bundle.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
@@ -293,80 +294,103 @@
                 </div>
 
                 <% } %>
-                    <script>
-                        const rootStyle = getComputedStyle(document.documentElement);
-                        const backgroundColor = rootStyle.getPropertyValue('--team-<%- dataDriver.actualTeam %>').trim();
-                    </script>
-                    <div class="w-full flex flex-col items-center justify-center px-2">
-                        <div class="w-full max-w-full overflow-hidden">
-                            <canvas id="myChart" class="pt-2 w-full max-w-full"></canvas>
+                    <br>
+                    <div class="flex justify-center">
+                        <div class="max-w-sm w-full rounded-lg">
+                            <div class="flex justify-center">Points</div>
+                            <div id="area-chart"></div>
                         </div>
-                        <script>
-                            '<% tableYears = [] %>'
-                            '<% tablePoints = [] %>'
-                            '<% dataDriver.allPointsData.forEach(function(season) { %>'
-                            '<% tableYears.push(season.year) %>'
-                            '<% tablePoints.push(season.points) %>'
-                            '<% }) %>'
 
-                            const labelYears = JSON.parse('<%- JSON.stringify(tableYears) %>').map(label => ' ' + label + ' ');
-                            const dataPoints = JSON.parse('<%- JSON.stringify(tablePoints) %>');
-                            // Récupérer les données injectées par le serveur
-                            const chartData = {
-                                labels: labelYears,
-                                datasets: [{
-                                    label: 'Points',
-                                    data: dataPoints,
-                                    backgroundColor: [
-                                        backgroundColor
-                                    ],
-                                    borderColor: [
-                                        backgroundColor
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            };
-
-                            // Initialiser le graphique avec les données
-                            window.initChart(chartData);
-                        </script>
-
-                        <div class="w-full max-w-full overflow-hidden">
-                            <canvas id="myChart2" class="pt-2 w-full max-w-full"></canvas>
-                        </div>
-                        <script>
-                            '<% tableYears = [] %>'
-                            '<% tablePositions = [] %>'
-                            '<% dataDriver.allPositionsData.forEach(function(season) { %>'
-                            '<% tableYears.push(season.year) %>'
-                            '<% tablePositions.push(season.position) %>'
-                            '<% }) %>'
-
-                            const labelYears2 = JSON.parse('<%- JSON.stringify(tableYears) %>').map(label => ' ' + label + ' ');
-                            const dataPositions = JSON.parse('<%- JSON.stringify(tablePositions) %>');
-                            // Récupérer les données injectées par le serveur
-                            const chartData2 = {
-                                labels: labelYears2,
-                                datasets: [{
-                                    label: 'Final standing positions',
-                                    data: dataPositions,
-                                    backgroundColor: [
-                                        backgroundColor
-                                    ],
-                                    borderColor: [
-                                        backgroundColor
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            };
-
-                            // Initialiser le graphique avec les données
-                            window.initChart2(chartData2);
-                        </script>
                     </div>
         </div>
     </div>
     <%- include("../partials/footer.ejs") %>
 </body>
+<script>
+    '<% tableYears = [] %>'
+    '<% tablePoints = [] %>'
+    '<% var i = 0; %>'
+    '<% dataDriver.allPointsData.forEach(function(season) { %>'
+    '<% if (i%2 == 0) { %>'
+    '<% tableYears.push(season.year) %>'
+    '<% } else { %>'
+    '<% tableYears.push("") %>'
+    '<% } %>'
+    '<% tablePoints.push(season.points) %>'
+    '<% i++; %>'
+    '<% }) %>'
+
+    const labelYears = JSON.parse('<%- JSON.stringify(tableYears) %>');
+    const dataPoints = JSON.parse('<%- JSON.stringify(tablePoints) %>');
+
+    const options = {
+        chart: {
+            height: "100%",
+            maxWidth: "100%",
+            type: "line",
+            fontFamily: "F1Regular",
+            dropShadow: {
+                enabled: false,
+            },
+            toolbar: {
+                show: false,
+            },
+        },
+        tooltip: {
+            enabled: true,
+            x: {
+                show: false,
+            },
+        },
+        dataLabels: {
+            enabled: false,
+        },
+        stroke: {
+            width: 3,
+        },
+        grid: {
+            show: false,
+            strokeDashArray: 4,
+        },
+        series: [
+            {
+                name: "New users",
+                data: dataPoints,
+                color: "#1A56DB",
+            },
+        ],
+        xaxis: {
+            categories: labelYears,
+            axisTicks: {
+                show: false,
+            },
+            labels: {
+                style: {
+                    colors: '#FFFFFF',
+                }
+            }
+        },
+        yaxis: {
+            axisBorder: {
+                show: true,
+            },
+            axisTicks: {
+                show: false,
+            },
+            labels: {
+                style: {
+                    colors: '#FFFFFF',
+                    fontSize: '12px',
+                }
+            }
+        },
+    }
+
+    if (document.getElementById("area-chart") && typeof ApexCharts !== 'undefined') {
+        const chart = new ApexCharts(document.getElementById("area-chart"), options);
+        chart.render();
+    }
+
+</script>
 
 </html>
