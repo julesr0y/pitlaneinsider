@@ -6,8 +6,7 @@
         "start": "node ./bin/www",
         "dev": "nodemon",
         "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
-        "doc": "npx jsdoc -c Documentation.json",
-        "build": "webpack"
+        "doc": "npx jsdoc -c Documentation.json"
     },
     "dependencies": {
         "autoprefixer": "^10.4.19",
@@ -30,8 +29,6 @@
         "tailwindcss": "^3.4.5"
     },
     "devDependencies": {
-        "jsdoc": "^4.0.3",
-        "webpack": "^5.93.0",
-        "webpack-cli": "^5.1.4"
+        "jsdoc": "^4.0.3"
     }
 }
