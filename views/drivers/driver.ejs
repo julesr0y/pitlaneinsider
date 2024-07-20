@@ -303,7 +303,12 @@
                             <div class="flex justify-center">Points par saison</div>
                             <div id="area-chart"></div>
                         </div>
-
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="max-w-sm w-full rounded-lg">
+                            <div class="flex justify-center">Classement par saison</div>
+                            <div id="area-chart2"></div>
+                        </div>
                     </div>
         </div>
     </div>
@@ -407,6 +412,109 @@
 
         if (document.getElementById("area-chart") && typeof ApexCharts !== 'undefined') {
             const chart = new ApexCharts(document.getElementById("area-chart"), options);
+            chart.render();
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+
+        const tableYears = [];
+        const allYears = [];
+        const tableStandings = [];
+        let i = 0;
+
+        '<% dataDriver.allPositionsData.forEach(function(season) { %>'
+        allYears.push('<%= season.year %>');
+        if (i % 2 == 0) {
+            tableYears.push('<%= season.year %>');
+        } else {
+            tableYears.push('');
+        }
+        tableStandings.push('<%= season.position %>');
+        i++;
+        '<% }) %>'
+
+        const labelYears = tableYears;
+        const dataStandings = tableStandings;
+
+        const options = {
+            chart: {
+                height: "100%",
+                maxWidth: "100%",
+                type: "line",
+                fontFamily: "F1Regular",
+                dropShadow: {
+                    enabled: false,
+                },
+                toolbar: {
+                    show: false,
+                },
+            },
+            tooltip: {
+                enabled: true,
+                x: {
+                    show: false,
+                    formatter: function (value, { series, seriesIndex, dataPointIndex, w }) {
+                        return allYears[dataPointIndex]; // Afficher toutes les années dans le tooltip
+                    }
+                },
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'F1Regular',
+                    color: '#FFFFFF', // Changez cette couleur pour celle que vous souhaitez
+                },
+                theme: 'dark'
+            },
+            colors: [chartColor],
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                width: 3,
+            },
+            grid: {
+                show: false,
+                strokeDashArray: 4,
+            },
+            series: [
+                {
+                    name: "Position",
+                    data: dataStandings,
+                    color: chartColor,
+                },
+            ],
+            xaxis: {
+                categories: labelYears,
+                axisTicks: {
+                    show: false,
+                },
+                labels: {
+                    style: {
+                        colors: '#FFFFFF',
+                    }
+                }
+            },
+            yaxis: {
+                axisBorder: {
+                    show: true,
+                },
+                axisTicks: {
+                    show: false,
+                },
+                labels: {
+                    style: {
+                        colors: '#FFFFFF',
+                        fontSize: '12px',
+                    }
+                }
+            },
+        };
+
+        if (document.getElementById("area-chart2") && typeof ApexCharts !== 'undefined') {
+            const chart = new ApexCharts(document.getElementById("area-chart2"), options);
             chart.render();
         }
     });

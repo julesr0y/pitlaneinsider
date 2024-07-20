@@ -148,7 +148,12 @@
                                         <a href="/driver/<%= driver.id %>">
                                             <p>
                                                 <%= driver.firstName %>
-                                                    <%= driver.lastName %> - <%= driver.permanentNumber %>
+                                                    <%= driver.lastName %> -
+                                                        <% if (driver.permanentNumber==33) { %>
+                                                            <%= 1 %>
+                                                                <% } else { %>
+                                                                    <%= driver.permanentNumber %>
+                                                                        <% } %>
                                             </p>
                                         </a>
                                     </div>
