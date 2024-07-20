@@ -1,25 +1,36 @@
-const getFromErgast = require("../getFromErgast");
+const fs = require('fs');
+const path = require('path');
 
-async function getTracks() {
-    var tracksData = await getFromErgast(`current/circuits.json?limit=1000&offset=0`);
-    return await new Promise((resolve, reject) => {
-        const data = tracksData.MRData.CircuitTable.Circuits;
-        var tracksFront = [];
-        data.forEach(track => {
-            const trackId = track.circuitId;
-            const trackName = track.circuitName;
-            const trackLocality = track.Location.locality;
-            const trackCountry = track.Location.country;
-            tracksFront.push({
-                trackId,
-                trackName,
-                trackLocality,
-                trackCountry
-            });
-        });
+/**
+ * @description Returns all tracks from F1 history
+ * @async
+ * @returns {Array}
+ */
+async function getRetroTracks() {
+    try {
+        const filePath = path.join(__dirname, '../../python/dataPython/all_tracks.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(file);
 
-        resolve(tracksFront);
-    });
+        var allTracks = []
+        data.forEach(function (track) {
+            const trackData = {
+                "id": track.id,
+                "name": track.name,
+                "fullName": track.fullName,
+                "type": track.type,
+                "placeName": track.placeName,
+                "countryId": track.countryId,
+                "totalRacesHeld": track.totalRacesHeld
+            }
+            allTracks.push(trackData);
+        })
+
+        return allTracks;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error;
+    }
 }
 
-module.exports = getTracks;
+module.exports = getRetroTracks;

@@ -10,6 +10,8 @@ const getSeasonList = require('../utils/retro/getRetroCalendar');
 const getGPDetail = require('../utils/retro/getGPDetail');
 const getRetroPilotes = require('../utils/retro/getRetroDrivers');
 const getTeams = require('../utils/retro/getRetroConstructors');
+const getRetroTracks = require('../utils/retro/getRetroTracks');
+const getTrackData = require('../utils/retro/getRetroTrackData');
 
 router.get("/retrohome", cors(), async (req, res) => {
     var retroHome = await getWinners();
@@ -79,7 +81,13 @@ router.get("/retroconstructors", cors(), async (req, res) => {
 });
 
 router.get("/retrotracks", cors(), async (req, res) => {
+    var retro_circuits = await getRetroTracks();
     res.render("retro/retroTracks", { retro_circuits: retro_circuits });
+});
+
+router.get("/track/:track_id", cors(), async (req, res) => {
+    var trackData = await getTrackData(req.params.track_id);
+    res.render("tracks/track", { trackData: trackData });
 });
 
 module.exports = router;

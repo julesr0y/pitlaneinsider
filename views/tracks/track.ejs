@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= trackData.name %>
+            </title>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="h-auto flex flex-col justify-center">
+        <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3 mt-8">
+            <div class="flex items-center justify-center gap-4">
+                <img src="/img/countryFlags/<%= trackData.countryId %>.svg" alt="<%= trackData.countryId %>"
+                    class="h-12 w-auto">
+                <h1 class="text-lg font-F1Bold mb-2">
+                    <%= trackData.fullName %>
+                </h1>
+            </div>
+
+            <!-- Circuit Map -->
+            <div class="flex justify-center">
+                <img src="/img/circuits/<%= trackData.id %>.webp" alt="<%= trackData.id %>" class="w-full h-auto">
+            </div>
+
+            <!-- Race Info -->
+            <div class="text-center mt-4">
+                <p><strong>Total races held: </strong></p>
+                <p>
+                    <%= trackData.totalRacesHeld %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

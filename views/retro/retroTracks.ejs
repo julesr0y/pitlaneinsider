@@ -45,7 +45,7 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="elems">
             <% retro_circuits.forEach(function(circuit) { %>
-                <a href="/circuit/<%= circuit.id %>" class="block">
+                <a href="/track/<%= circuit.id %>" class="block">
                     <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4"
                         id="<%= circuit.name %>">
                         <div class="block text-center">
@@ -55,8 +55,8 @@
                                     class="w-full h-32 object-contain mx-auto">
                             </div>
                             <div class="flex flex-col items-center">
-                                <img src="/img/countryFlags/<%= circuit.pays.toLowerCase() %>.svg"
-                                    alt="<%= circuit.pays %>" class="mb-2 h-12 w-auto">
+                                <img src="/img/countryFlags/<%= circuit.countryId %>.svg" alt="<%= circuit.countryId %>"
+                                    class="mb-2 h-12 w-auto">
                                 <span class="text-xl font-F1Bold">
                                     <%= circuit.name %>
                                 </span>

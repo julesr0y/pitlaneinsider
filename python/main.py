@@ -7,6 +7,7 @@ from getTitledConstructors import getTitledConstructors
 from getCalendar import getCalendar
 from getAllRacesQualiAndResults import getAllRacesQualiAndResults
 from getCarsData import getCarsData
+from getAllTracks import getAllTracks
 
 def main():
     outputFileDriversStats = "./python/dataPython/all_drivers_stats.json"
@@ -45,5 +46,9 @@ def main():
     output_file_cars = "./python/dataPython/all_cars.json"
     getCarsData(output_file_cars)
     print(f"All cars data saved to {output_file_cars}")
+
+    output_file_tracks = "./python/dataPython/all_tracks.json"
+    getAllTracks(output_file_tracks)
+    print(f"All tracks data saved to {output_file_tracks}")
 
 main()

@@ -1,23 +1,36 @@
-const getFromErgast = require("../getFromErgast");
+const fs = require('fs');
+const path = require('path');
 
-async function getTrack(circuitId) {
-    var trackData = await getFromErgast(`current/circuits/${circuitId}.json?limit=1000&offset=0`);
-    return await new Promise((resolve, reject) => {
-        const data = trackData.MRData.CircuitTable.Circuits[0];
-        const trackId = data.circuitId;
-        const trackName = data.circuitName;
-        const trackLocality = data.Location.locality;
-        const trackCountry = data.Location.country;
+/**
+ * @description Returns data of a specific track
+ * @async
+ * @param {String} trackId 
+ * @returns {Array}
+ */
+async function getRetroTrackData(trackId) {
+    try {
+        const filePath = path.join(__dirname, '../../python/dataPython/all_tracks.json');
+        const file = fs.readFileSync(filePath, 'utf-8');
+        var data = JSON.parse(file);
+        data = data.filter(item => item.id === trackId);
+        data = data[0]
 
-        var trackFront = {
-            trackId,
-            trackName,
-            trackLocality,
-            trackCountry
-        };
+        const trackData = {
+            id: data.id,
+            name: data.name,
+            fullName: data.fullName,
+            type: data.type,
+            placeName: data.placeName,
+            countryId: data.countryId,
+            totalRacesHeld: data.totalRacesHeld
+        }
 
-        resolve(trackFront);
-    });
+        return trackData;
+    }
+    catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        throw error;
+    }
 }
 
-module.exports = getTrack;
+module.exports = getRetroTrackData;
