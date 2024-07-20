@@ -131,6 +131,9 @@ def getDriversStats(output_file):
 
     with open(os.path.join(base_dir, '../../f1db/data/f1db-seasons-entrants-drivers.json'), 'r', encoding='utf-8') as f:
         entrants_drivers = json.load(f)
+
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-grands-prix.json'), 'r', encoding='utf-8') as f:
+        all_gps = json.load(f)
   
     # Filter drivers for the current season (2024)
     current_season_year = 2024
@@ -174,10 +177,25 @@ def getDriversStats(output_file):
                 if result['positionNumber'] == 1:
                     race_info = races_by_id.get(result['raceId'])
                     if race_info:
+                        country = ""
+                        for item in all_races:
+                            if item['id'] == result['raceId']:
+                                gp_id = item['grandPrixId']
+                                for item2 in all_gps:
+                                    if item2['id'] == gp_id:
+                                        country = item2['countryId']
+                                if gp_id == "europe":
+                                    country = "europe"
+                                
                         year = race_info['year']
                         if year not in victories_by_year:
                             victories_by_year[year] = []
-                        victories_by_year[year].append(race_info['officialName'])
+                        victoryData = {
+                            'id': result['raceId'],
+                            'country': country,
+                            'officialName': race_info['officialName']
+                        }
+                        victories_by_year[year].append(victoryData)
 
         # Initialize current season stats
         is_a_current_season_driver = False

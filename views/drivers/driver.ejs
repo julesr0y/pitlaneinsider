@@ -276,21 +276,26 @@
                     </h3>
 
                     <% for(const year in dataDriver.allVictories) { %>
-                        <div class="mt-6">
+                        <div class="mt-6 flex flex-col justify-start">
                             <p class="text-xl">
                                 <%= year %>
                             </p>
-                            <% (dataDriver.allVictories[year]).forEach(function(victory) { %>
+                            <span class="grid grid-cols-12">
+                                <% (dataDriver.allVictories[year]).forEach(function(victory) { %>
+                                    <span class="col-span-3">
+                                        <a href="/retrogpdetails/<%= year %>/<%= victory.id %>">
+                                            <span class="flex flex-col items-center mt-4">
+                                                <img src="/img/countryFlags/<%= victory.country %>.svg"
+                                                    alt="<%= victory.country %>" class="w-auto h-12">
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    Race <%= victory.id %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </span>
 
-                                <div class="flex justify-center items-center mt-2">
-                                    <div class="flex items-center">
-                                        <p class="text-sm sm:text-base ml-2">
-                                            <%= victory %>
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <% }); %>
+                                    <% }); %>
+                            </span>
                         </div>
                         <% }; %>
 
