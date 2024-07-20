@@ -236,31 +236,131 @@ function animatePositionChanges(top20) {
 }
 
 /**
+ * @function convertToMMSSDDD
+ * @description Convertit un temps en secondes en format mm:ss:ddd (minutes:secondes:millisecondes)
+ * @param {number} seconds Le temps en secondes
+ * @returns {string} Le temps formaté en mm:ss:ddd
+ */
+function convertToMMSSDDD(seconds) {
+    // Convertir le temps en secondes en minutes, secondes, et millisecondes
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    const milliseconds = Math.floor((seconds % 1) * 1000);
+
+    // Formatage avec deux chiffres pour les minutes et secondes et trois chiffres pour les millisecondes
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`;
+}
+const bestLapsTimes = {}; // Pour stocker les meilleurs temps de chaque pilote
+
+/**
+ * @function updateBestLaps
+ * @description Récupère les temps au tour des pilotes et détermine leur meilleur temps
+ * @returns {void}
+ */
+async function updateBestLaps() {
+    try {
+        const lapsResponse = await fetch('https://api.openf1.org/v1/laps?session_key=latest');
+        const lapsData = await lapsResponse.json();
+
+        // Réinitialiser les meilleurs temps
+        const currentBestLaps = {};
+
+        lapsData.forEach(({ driver_number, lap_duration }) => {
+            const lapDuration = parseFloat(lap_duration); // Assurez-vous que c'est un nombre
+
+            // Vérifier si nous avons déjà un meilleur temps pour ce pilote
+            if (!currentBestLaps[driver_number] || lapDuration < currentBestLaps[driver_number]) {
+                currentBestLaps[driver_number] = lapDuration;
+            }
+        });
+
+        // Mettre à jour bestLapsTimes avec les meilleurs temps trouvés, formatés
+        Object.keys(currentBestLaps).forEach(driver => {
+            bestLapsTimes[driver] = convertToMMSSDDD(currentBestLaps[driver]);
+        });
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des temps au tour:', error);
+    }
+}
+
+
+let maxLapsOverall = 0; // Variable pour stocker le nombre de tours maximum
+
+function updateLaps() {
+    if (session_type === 'Race') {
+    fetch('https://api.openf1.org/v1/laps?session_key=latest')
+        .then(response => response.json())
+        .then(data => {
+            data = data.reverse(); // On inverse l'ordre des données pour récupérer le dernier élément en premier
+            
+                // Vérifiez si les données sont valides et si lap_number existe
+                if (data && data.length > 0 && data[0].lap_number !== undefined) {
+                    const laps = data[0].lap_number; // Récupère le nombre de tours du dernier élément
+
+                    // Si le nouveau nombre de tours est supérieur à maxLapsOverall, mettez à jour maxLapsOverall
+                    if (laps > maxLapsOverall) {
+                        maxLapsOverall = laps;
+                    }
+                    
+                    // Affichez le nombre de tours dans l'élément HTML avec l'id 'lap'
+                    const lapElement = document.getElementById('lap');
+                    if (lapElement) {
+                        lapElement.textContent = `Tour ${maxLapsOverall}`;
+                    }
+                } else {
+                    console.error('Les données de tours reçues sont invalides.');
+                }
+            })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des données de tours:', error);
+        });
+    }
+}
+
+// appel et mise à jour périodique
+updateLaps();
+setInterval(updateLaps, 10000);
+
+
+
+/**
  * @function updateClassement
- * @description Réalise l'animation de changement de position d'un pilote
- * @param {*} containerIdtop20
- * @param {*} top20
+ * @description Met à jour le classement avec les meilleures performances
+ * @param {*} containerId Identifiant du conteneur HTML pour le classement
+ * @param {*} top20 Liste des pilotes à afficher
  * @returns {void}
  */
 function updateClassement(containerId, top20) {
     const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Element with ID "${containerId}" not found`);
+        return;
+    }
+    
     container.innerHTML = '';
+
     const titles = document.createElement('div');
-    titles.classList.add('grid', 'grid-cols-4', 'justify-center', 'items-center', 'pb-4', 'font-F1Bold');
+    titles.classList.add('grid', 'grid-cols-5', 'justify-center', 'items-center', 'pb-4', 'font-F1Bold');
     titles.innerHTML = `
         <span>Position</span>
         <span>Drivers</span>
+        <span>Best Lap</span>
         <span>Pits</span>
-        <span>Tyres</span>`;
+        <span>Tyres</span>
+        
+    `;
     container.appendChild(titles);
+
     top20.forEach((driver, index) => {
         const driverDiv = document.createElement('div');
-        driverDiv.classList.add('grid', 'grid-cols-4', 'justify-center', 'items-center', 'py-2', 'border-b', 'border-gray-300');
+        driverDiv.classList.add('grid', 'grid-cols-5', 'justify-center', 'items-center', 'py-2', 'border-b', 'border-gray-300');
         driverDiv.classList.add('driver');
         driverDiv.setAttribute('data-driver-number', driver.driver_number);
         driverDiv.innerHTML = `
             <span class="rank font-bold">${index + 1}.</span>
             <span class="pilot-name">${driverMapping[driver.driver_number]}</span>
+            <span class="best-lap">${bestLapsTimes[driver.driver_number] || 'N/A'}</span>
             <span class="pits">${driverAppearances[driver.driver_number]}</span>
             <span class="pneus"><img class="h-6 w-auto" src="/img/tires/${(result[driver.driver_number]).toLowerCase() || 'n/a'}.svg"></span>
         `;
@@ -287,17 +387,14 @@ function updateClassement(containerId, top20) {
     });
 }
 
-/**
- * @function updateStandings
- * @description Met à jour l'affichage du classement en direct avec les fonctions ci-dessus
- * @returns {void}
- */
 async function updateStandings() {
     const data = await fetchData();
     if (data) {
         updateSessionInfo(data.sessionData);
         updateLastCompound(data.stintData);
         updateDriverAppearances(data.pitData);
+        await updateBestLaps();
+        await updateLaps();
         updatePositionData(data.positionData);
     }
 }

@@ -70,34 +70,7 @@ function updateRcAndLs() {
         });
 }
 
-/**
- * @function updateLaps
- * @description Fonction pour récupérer et mettre à jour le nombre de tours
- * @returns {void}
- */
-function updateLaps() {
-    fetch('https://api.openf1.org/v1/laps?session_key=latest')
-        .then(response => response.json())
-        .then(data => {
-            data = data.reverse(); // On inverse l'ordre des données pour récuérer le dernier élément en premier
-            
-            // Vérifiez si les données sont valides et si lap_number existe
-            if (data && data.length > 0 && data[0].lap_number !== undefined) {
-                const laps = data[0].lap_number; // Récupère le nombre de tours du dernier élément
 
-                // Affichez le nombre de tours dans l'élément HTML avec l'id 'lap'
-                const lapElement = document.getElementById('lap');
-                if (lapElement) {
-                    lapElement.textContent = `Tour ${laps}`;
-                }
-            } else {
-                console.error('Les données de tours reçues sont invalides.');
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors de la récupération des données de tours:', error);
-        });
-}
 
 
 
