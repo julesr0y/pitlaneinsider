@@ -1,139 +1,137 @@
 {
+	"lang": {
+		"lang": "en"
+	},
 	"header": {
 		"teams": "TEAMS",
 		"drivers": "DRIVERS",
 		"calendar": "CALENDAR",
 		"standings": "STANDINGS",
-		"reglementation": "REGLEMENTATION",
+		"reglementation": "REGULATIONS",
 		"retro_f1": "RETRO F1",
 		"live": "LIVE",
 		"account": "ACCOUNT"
 	},
 	"home": {
-		"next_race": "Next race",
+		"next_race": "Next Race",
 		"loading": "Loading...",
 		"days": "D",
 		"hours": "H",
-		"minutes": "M",
+		"minutes": "MIN",
 		"seconds": "S",
-		"drivers_championship": "Drivers championship",
-		"teams_championship": "Teams championship",
-		"last_podium": "Last podium",
-		"drivers_standings": "Drivers standings"
+		"drivers_championship": "Drivers Championship",
+		"teams_championship": "Constructors Championship",
+		"last_podium": "Last Podium",
+		"drivers_standings": "Drivers Standings"
 	},
 	"teams": {
 		"tab_title": "Teams",
-		"season": "2024 Season - Teams"
+		"season": "Season 2024 - Teams"
 	},
 	"team": {
-		"team_start": "Beginnings in F1",
+		"team_start": "F1 Debut",
 		"drivers": "Drivers",
-		"podiums": "Podiums",
-		"victories": "Victories",
-		"points": "Points",
-		"races": "Races",
-		"single_seater": "Single-seater",
-		"total_races": "team.total_races",
-		"total_wins": "team.total_wins",
-		"total_podiums": "team.total_podiums",
-		"total_points": "team.total_points",
-		"total_poles": "team.total_poles",
-		"total_fastest_laps": "team.total_fastest_laps",
-		"number_of_seasons": "team.number_of_seasons",
-		"victory_ratio": "team.victory_ratio",
-		"podium_ratio": "team.podium_ratio",
-		"pole_ratio": "team.pole_ratio",
-		"totalChampionshipWins": "team.totalChampionshipWins"
+		"single_seater": "Single Seater",
+		"total_races": "Races",
+		"total_wins": "Wins",
+		"total_podiums": "Podiums",
+		"total_points": "Points",
+		"total_poles": "Poles",
+		"total_fastest_laps": "Fastest Laps",
+		"number_of_seasons": "Seasons",
+		"victory_ratio": "Victory Ratio",
+		"podium_ratio": "Podium Ratio",
+		"pole_ratio": "Pole Ratio",
+		"totalChampionshipWins": "Titles"
 	},
 	"drivers": {
 		"tab_title": "Drivers",
-		"season": "2024 Season - Drivers"
+		"season": "Season 2024 - Drivers"
 	},
 	"driver": {
-		"age": "years old",
-		"actual_season": "Actual season",
+		"actual_season": "Current Season",
 		"races": "Races",
 		"points": "Points",
 		"podiums": "Podiums",
-		"victories": "Victories",
-		"carreer_title": "Carreer",
-		"carreer_start": "Carreer start",
+		"victories": "Wins",
+		"age": "years",
+		"carreer_title": "Career",
+		"carreer_start": "Career Start",
 		"total_podiums": "Podiums",
-		"total_victories": "Victories",
+		"total_victories": "Wins",
 		"total_races": "Races",
 		"total_points": "Points",
 		"total_poles": "Poles",
 		"total_dnf": "DNF",
-		"victories_title": "Victories",
-		"victory_ratio": "driver.victory_ratio",
-		"podium_ratio": "driver.podium_ratio",
-		"pole_ratio": "driver.pole_ratio",
-		"fisrt_year": "driver.fisrt_year",
-		"number_of_seasons": "driver.number_of_seasons",
-		"first_year": "driver.first_year",
-		"total_driver_of_the_day": "driver.total_driver_of_the_day",
-		"total_fastest_laps": "driver.total_fastest_laps",
-		"teams_title": "driver.teams_title",
-		"totalChampionshipWins": "driver.totalChampionshipWins",
-		"points_by_season": "driver.points_by_season",
-		"standing_by_season": "driver.standing_by_season"
+		"victories_title": "Wins",
+		"victory_ratio": "Victory Ratio",
+		"podium_ratio": "Podium Ratio",
+		"pole_ratio": "Pole Ratio",
+		"number_of_seasons": "Seasons",
+		"first_year": "First Appearance",
+		"total_driver_of_the_day": "DOTD",
+		"total_fastest_laps": "Fastest Laps",
+		"teams_title": "Teams",
+		"totalChampionshipWins": "Titles",
+		"points_by_season": "Points by Season",
+		"standing_by_season": "Standings by Season"
 	},
 	"calendar": {
 		"tab_title": "Calendar",
-		"season": "2024 Season - Calendar",
-		"next_race": "Next race"
+		"season": "Season 2024 - Calendar",
+		"next_race": "Next Race"
 	},
 	"calendar_element": {
-		"creation_year": "Creation year",
+		"creation_year": "Creation Year",
 		"laps": "Laps",
-		"one_lap_length": "One lap length",
-		"length": "Length",
-		"pole_record": "Pole record"
+		"one_lap_length": "Lap Distance",
+		"length": "Total Distance",
+		"pole_record": "Pole Record"
 	},
 	"standings": {
 		"tab_title": "Standings",
-		"season": "2024 Season - Standings",
+		"season": "Season 2024 - Standings",
 		"drivers": "Drivers",
-		"teams": "Teams",
+		"teams": "Constructors",
 		"position": "Position",
 		"points": "Points"
 	},
 	"reglementation": {
-		"tab_title": "Reglementation",
-		"reglementation_title": "Reglementation",
-		"yellow_flag_title": "Yellow flag",
-		"yellow_flag_description": "Indicates danger on the runway, drivers must slow down.",
-		"red_flag_title": "Red flag",
-		"red_flag_description": "Indicates that the race is stopped due to a dangerous condition.",
-		"blue_flag_title": "Blue flag",
-		"blue_flag_description": "Indicates that a faster driver is approaching, the driver must let him pass.",
-		"black_flag_title": "Black flag",
-		"black_flag_description": "Indicates that a driver is disqualified and must return to the pits.",
-		"green_flag_title": "Green flag",
-		"green_flag_description": "Indicates that the track is clear and the race can continue.",
-		"white_flag_title": "White flag",
-		"white_flag_description": "Indicates that one lap remains to be completed.",
-		"chequered_flag_title": "Chequered flag",
+		"tab_title": "Regulations",
+		"reglementation_title": "Regulations",
+		"yellow_flag_title": "Yellow Flag",
+		"yellow_flag_description": "Indicates a hazard on the track; drivers must slow down and not overtake.",
+		"red_flag_title": "Red Flag",
+		"red_flag_description": "Indicates the race is stopped; drivers must return to the pits.",
+		"blue_flag_title": "Blue Flag",
+		"blue_flag_description": "Indicates a driver is about to be lapped by a leading car.",
+		"black_flag_title": "Black Flag",
+		"black_flag_description": "Indicates a driver is disqualified from the race; they must return to the pits.",
+		"green_flag_title": "Green Flag",
+		"green_flag_description": "Indicates the track is clear and the race can start/resume.",
+		"white_flag_title": "White Flag",
+		"white_flag_description": "Indicates the driver is on their last lap.",
+		"chequered_flag_title": "Chequered Flag",
 		"chequered_flag_description": "Indicates the end of the race.",
-		"black_and_white_flag_title": "Black and white flag",
-		"black_and_white_flag_description": "Indicates that a driver is warned for unsportsmanlike behavior.",
-		"yellow_and_red_flag_title": "Yellow and red flag",
-		"yellow_and_red_flag_description": "Indicates reduced grip on the track."
+		"black_and_white_flag_title": "Black and White Flag",
+		"black_and_white_flag_description": "Indicates a warning for unsporting behavior.",
+		"yellow_and_red_flag_title": "Yellow and Red Flag",
+		"yellow_and_red_flag_description": "Indicates a drop in track grip."
 	},
 	"retro_f1": {
 		"home": {
 			"tab_title": "Retro F1",
 			"title": "Retro - Home",
-			"winners_title": "List of world champions drivers",
+			"winners_title": "List of Championship Drivers",
 			"driver_titles": "titles",
-			"all_data": "All Drivers | Teams | Tracks",
-			"all_seasons": "All seasons",
-			"winners_constructors_title": "retro_f1.home.winners_constructors_title"
+			"all_data": "List of Drivers | Teams | Tracks",
+			"all_seasons": "List of Seasons",
+			"winners_constructors_title": "List of Championship Teams"
 		},
 		"winners": {
-			"tab_title": "Retro Winners",
-			"title": "Formula 1 world champions drivers",
-			"number_of_titles": "Number of titles"
+			"tab_title": "Retro Champions",
+			"title": "List of F1 Championship Drivers",
+			"number_of_titles": "Number of Titles"
 		},
 		"all_data": {
 			"tab_title_drivers": "Retro Drivers",
@@ -145,23 +143,23 @@
 			"link_drivers": "Drivers",
 			"link_teams": "Teams",
 			"link_tracks": "Tracks",
-			"search_driver": "Search a driver",
-			"search_team": "Search a team",
-			"search_track": "Search a track",
-			"born": "Born",
-			"no_result": "No result"
+			"search_driver": "Search for a Driver",
+			"search_team": "Search for a Team",
+			"search_track": "Search for a Track",
+			"born": "Born on",
+			"no_result": "No Result"
 		},
 		"all_seasons": {
 			"tab_title": "Retro Seasons",
 			"season": "Season",
-			"link_standings": "Standing",
+			"link_standings": "Standings",
 			"link_calendar": "Calendar",
 			"standings": {
 				"tab_title": "Retro Standings",
 				"title": "Retro - Standings",
-				"position": "Position",
+				"position": "Pos",
 				"drivers": "Drivers",
-				"victories": "Victories",
+				"victories": "Wins",
 				"points": "Points"
 			},
 			"calendar": {
@@ -171,55 +169,55 @@
 			},
 			"gp_details": {
 				"tab_title": "Retro GP Details",
-				"title": "Retro - GP Details",
-				"position": "Position",
+				"title": "Retro - Race",
+				"position": "Pos",
 				"drivers": "Drivers",
-				"starting_grid": "Starting grid",
+				"starting_grid": "Starting Grid",
 				"time": "Time",
-				"officialName": "retro_f1.all_seasons.gp_details.officialName",
-				"circuitDetails": "retro_f1.all_seasons.gp_details.circuitDetails",
-				"poleposition": "retro_f1.all_seasons.gp_details.poleposition",
-				"winner": "retro_f1.all_seasons.gp_details.winner",
-				"fastestLap": "retro_f1.all_seasons.gp_details.fastestLap",
-				"fastestPit": "retro_f1.all_seasons.gp_details.fastestPit"
+				"officialName": "Official Name",
+				"circuitDetails": "See Circuit Details",
+				"poleposition": "Pole Position",
+				"winner": "Winner",
+				"fastestLap": "Fastest Lap",
+				"fastestPit": "Fastest Pit Stop (total time)"
 			}
 		},
 		"constructorwinners": {
-			"tab_title": "retro_f1.constructorwinners.tab_title",
-			"title": "retro_f1.constructorwinners.title",
-			"number_of_titles": "retro_f1.constructorwinners.number_of_titles"
+			"tab_title": "Retro Champions",
+			"title": "List of F1 Championship Teams",
+			"number_of_titles": "Number of Titles"
 		}
 	},
 	"live": {
 		"tab_title": "Live",
 		"live_title": "Live",
 		"link_standings": "Standings",
-		"link_race_control": "Race control",
+		"link_race_control": "Race Control",
 		"link_radio": "Radio"
 	},
 	"account": {
 		"profile": {
 			"tab_title": "Account",
-			"profile_title": "Your account",
+			"profile_title": "Your Account",
 			"email": "Email",
-			"name": "Name",
-			"surname": "Surname",
+			"name": "Last Name",
+			"surname": "First Name",
 			"birthdate": "Birthdate",
 			"username": "Username",
 			"lang": "Language",
 			"btn_modify": "Modify",
-			"btn_log_out": "Log out",
+			"btn_log_out": "Log Out",
 			"btn_admin": "Administration",
 			"theme": "Theme",
-			"theme_dark": "Dark",
-			"theme_light": "Light"
+			"theme_light": "Light",
+			"theme_dark": "Dark"
 		},
 		"profile_edit": {
 			"tab_title": "Edit Account",
-			"edit_title": "Modify your account",
+			"edit_title": "Edit Your Account",
 			"email": "Email",
-			"name": "Name",
-			"surname": "Surname",
+			"name": "Last Name",
+			"surname": "First Name",
 			"birthdate": "Birthdate",
 			"username": "Username",
 			"lang": "Language",
@@ -237,30 +235,27 @@
 			}
 		}
 	},
-	"lang": {
-		"lang": "lang.lang"
-	},
 	"about": {
-		"tab_title": "about.tab_title",
-		"devteam": "about.devteam",
-		"disclaimer": "about.disclaimer",
-		"dataorigin_title": "about.dataorigin_title",
-		"dataorigin_beginning": "about.dataorigin_beginning",
-		"dataorigin_link1": "about.dataorigin_link1",
-		"dataorigin_explanation_link_1": "about.dataorigin_explanation_link_1",
-		"dataorigin_explanation_link_2": "about.dataorigin_explanation_link_2",
-		"dataorigin_explanation_link_3": "about.dataorigin_explanation_link_3",
-		"dataorigin_cookie_policy_title": "about.dataorigin_cookie_policy_title",
-		"dataorigin_cookie_policy_introduction_title": "about.dataorigin_cookie_policy_introduction_title",
-		"dataorigin_cookie_policy_introduction": "about.dataorigin_cookie_policy_introduction",
-		"dataorigin_cookie_policy_explanantion1_title": "about.dataorigin_cookie_policy_explanantion1_title",
-		"dataorigin_cookie_policy_explanantion1": "about.dataorigin_cookie_policy_explanantion1",
-		"dataorigin_cookie_policy_explanantion2_title": "about.dataorigin_cookie_policy_explanantion2_title",
-		"dataorigin_cookie_policy_explanantion2": "about.dataorigin_cookie_policy_explanantion2",
-		"dataorigin_cookie_policy_explanantion3_title": "about.dataorigin_cookie_policy_explanantion3_title",
-		"dataorigin_cookie_policy_explanantion3": "about.dataorigin_cookie_policy_explanantion3"
+		"tab_title": "About",
+		"devteam": "Development Team",
+		"disclaimer": "This project/website is not official and is not in any way associated with Formula 1 companies. F1, FORMULA ONE, FORMULE 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trademarks of Formula One Licensing B.V.",
+		"dataorigin_title": "Data Origin",
+		"dataorigin_beginning": "The data processed by this site comes from two ",
+		"dataorigin_link1": "APIs (Application Programming Interface)",
+		"dataorigin_explanation_link_1": "free and Open Source ",
+		"dataorigin_explanation_link_2": "for data (among others) on current standings and historical data.",
+		"dataorigin_explanation_link_3": "for real-time data (Live section).",
+		"dataorigin_cookie_policy_title": "Cookie Policy",
+		"dataorigin_cookie_policy_introduction_title": "Introduction",
+		"dataorigin_cookie_policy_introduction": "Our site uses cookies to improve your user experience, analyze site traffic, and personalize content. By using our site, you consent to the use of cookies in accordance with this cookie policy.",
+		"dataorigin_cookie_policy_explanantion1_title": "What is a cookie?",
+		"dataorigin_cookie_policy_explanantion1": "A cookie is a small text file that is stored on your device (computer, tablet, smartphone) when you visit a website. Cookies are widely used to make websites work efficiently and improve user experience, as well as to provide information to the site owners.",
+		"dataorigin_cookie_policy_explanantion2_title": "Managing cookies",
+		"dataorigin_cookie_policy_explanantion2": "You can accept or refuse cookies by modifying your browser settings. However, if you disable cookies, some parts of our site may not function properly.",
+		"dataorigin_cookie_policy_explanantion3_title": "Changes to this cookie policy",
+		"dataorigin_cookie_policy_explanantion3": "We may update this cookie policy from time to time to reflect, for example, changes to our cookies or for other operational, legal, or regulatory reasons. Therefore, please review it regularly to stay informed about our use of cookies and related technologies."
 	},
 	"track": {
-		"total_race_held": "track.total_race_held"
+		"total_race_held": "Total GP Hosted"
 	}
 }

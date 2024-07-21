@@ -1,49 +1,48 @@
 {
+	"lang": {
+		"lang": "es"
+	},
 	"header": {
-		"teams": "EQUIPOS",
-		"drivers": "PILOTOS",
-		"calendar": "CALENDARIO",
-		"standings": "CLASIFICACIONES",
-		"reglementation": "REGLAS",
-		"retro_f1": "RETRO F1",
-		"live": "EN VIVO",
-		"account": "CUENTA"
+		"teams": "Equipos",
+		"drivers": "Pilotos",
+		"calendar": "Calendario",
+		"standings": "Clasificaciones",
+		"reglementation": "Reglas",
+		"retro_f1": "Retro F1",
+		"live": "En Vivo",
+		"account": "Cuenta"
 	},
 	"home": {
 		"next_race": "Próxima carrera",
 		"loading": "Cargando...",
 		"days": "D",
 		"hours": "H",
-		"minutes": "MIN",
+		"minutes": "Min",
 		"seconds": "S",
-		"drivers_championship": "Campeonato de pilotos",
-		"teams_championship": "Campeonato de constructores",
+		"drivers_championship": "Campeonato de Pilotos",
+		"teams_championship": "Campeonato de Constructores",
 		"last_podium": "Último podio",
-		"drivers_standings": "Clasificación de pilotos"
+		"drivers_standings": "Clasificación de Pilotos"
 	},
 	"teams": {
 		"tab_title": "Equipos",
 		"season": "Temporada 2024 - Equipos"
 	},
 	"team": {
-		"team_start": "Debut en F1",
+		"team_start": "Entrada en F1",
 		"drivers": "Pilotos",
-		"podiums": "Podios",
-		"victories": "Victorias",
-		"points": "Puntos",
-		"races": "Carreras disputadas",
 		"single_seater": "Monoplaza",
-		"total_races": "team.total_races",
-		"total_wins": "team.total_wins",
-		"total_podiums": "team.total_podiums",
-		"total_points": "team.total_points",
-		"total_poles": "team.total_poles",
-		"total_fastest_laps": "team.total_fastest_laps",
-		"number_of_seasons": "team.number_of_seasons",
-		"victory_ratio": "team.victory_ratio",
-		"podium_ratio": "team.podium_ratio",
-		"pole_ratio": "team.pole_ratio",
-		"totalChampionshipWins": "team.totalChampionshipWins"
+		"total_races": "Carreras",
+		"total_wins": "Victorias",
+		"total_podiums": "Podios",
+		"total_points": "Puntos",
+		"total_poles": "Poles",
+		"total_fastest_laps": "Vuelta más rápida",
+		"number_of_seasons": "Temporadas",
+		"victory_ratio": "Ratio de victorias",
+		"podium_ratio": "Ratio de podios",
+		"pole_ratio": "Ratio de poles",
+		"totalChampionshipWins": "Títulos"
 	},
 	"drivers": {
 		"tab_title": "Pilotos",
@@ -65,18 +64,17 @@
 		"total_poles": "Poles",
 		"total_dnf": "DNF",
 		"victories_title": "Victorias",
-		"victory_ratio": "driver.victory_ratio",
-		"podium_ratio": "driver.podium_ratio",
-		"pole_ratio": "driver.pole_ratio",
-		"fisrt_year": "driver.fisrt_year",
-		"first_year": "driver.first_year",
-		"number_of_seasons": "driver.number_of_seasons",
-		"total_driver_of_the_day": "driver.total_driver_of_the_day",
-		"total_fastest_laps": "driver.total_fastest_laps",
-		"teams_title": "driver.teams_title",
-		"totalChampionshipWins": "driver.totalChampionshipWins",
-		"points_by_season": "driver.points_by_season",
-		"standing_by_season": "driver.standing_by_season"
+		"victory_ratio": "Ratio de victorias",
+		"podium_ratio": "Ratio de podios",
+		"pole_ratio": "Ratio de poles",
+		"number_of_seasons": "Temporadas",
+		"first_year": "Primera aparición",
+		"total_driver_of_the_day": "DOTD",
+		"total_fastest_laps": "Vuelta más rápida",
+		"teams_title": "Equipos",
+		"totalChampionshipWins": "Títulos",
+		"points_by_season": "Puntos por temporada",
+		"standing_by_season": "Clasificación por temporada"
 	},
 	"calendar": {
 		"tab_title": "Calendario",
@@ -99,16 +97,16 @@
 		"points": "Puntos"
 	},
 	"reglementation": {
-		"tab_title": "Reglas",
-		"reglementation_title": "Reglas",
+		"tab_title": "Reglamento",
+		"reglementation_title": "Reglamento",
 		"yellow_flag_title": "Bandera amarilla",
-		"yellow_flag_description": "Indica un peligro en la pista, los pilotos deben reducir la velocidad y no adelantar.",
+		"yellow_flag_description": "Indica peligro en la pista, los pilotos deben reducir la velocidad y no adelantar.",
 		"red_flag_title": "Bandera roja",
-		"red_flag_description": "Indica la detención de la carrera, los pilotos deben entrar a boxes.",
+		"red_flag_description": "Indica la detención de la carrera, los pilotos deben regresar a boxes.",
 		"blue_flag_title": "Bandera azul",
-		"blue_flag_description": "Indica que un piloto está a punto de ser adelantado por un piloto líder de la carrera.",
+		"blue_flag_description": "Indica que un piloto está a punto de ser adelantado por un piloto líder.",
 		"black_flag_title": "Bandera negra",
-		"black_flag_description": "Indica que un piloto está descalificado de la carrera, debe entrar a boxes.",
+		"black_flag_description": "Indica que un piloto está descalificado de la carrera, debe regresar a boxes.",
 		"green_flag_title": "Bandera verde",
 		"green_flag_description": "Indica que la pista está libre y la carrera puede comenzar/continuar.",
 		"white_flag_title": "Bandera blanca",
@@ -118,7 +116,7 @@
 		"black_and_white_flag_title": "Bandera negra y blanca",
 		"black_and_white_flag_description": "Indica una advertencia por comportamiento antideportivo.",
 		"yellow_and_red_flag_title": "Bandera amarilla y roja",
-		"yellow_and_red_flag_description": "Indica una reducción de adherencia en la pista."
+		"yellow_and_red_flag_description": "Indica una disminución de la adherencia en la pista."
 	},
 	"retro_f1": {
 		"home": {
@@ -128,7 +126,7 @@
 			"driver_titles": "títulos",
 			"all_data": "Lista de Pilotos | Equipos | Circuitos",
 			"all_seasons": "Lista de temporadas",
-			"winners_constructors_title": "retro_f1.home.winners_constructors_title"
+			"winners_constructors_title": "Lista de equipos campeones"
 		},
 		"winners": {
 			"tab_title": "Retro Campeones",
@@ -159,7 +157,7 @@
 			"standings": {
 				"tab_title": "Retro Clasificaciones",
 				"title": "Retro - Clasificaciones",
-				"position": "Posición",
+				"position": "Pos",
 				"drivers": "Pilotos",
 				"victories": "Victorias",
 				"points": "Puntos"
@@ -171,96 +169,93 @@
 			},
 			"gp_details": {
 				"tab_title": "Retro Detalles GP",
-				"title": "Retro - Detalles del GP",
-				"position": "Posición",
+				"title": "Retro - Carrera",
+				"position": "Pos",
 				"drivers": "Pilotos",
 				"starting_grid": "Parrilla de salida",
 				"time": "Tiempo",
-				"officialName": "retro_f1.all_seasons.gp_details.officialName",
-				"circuitDetails": "retro_f1.all_seasons.gp_details.circuitDetails",
-				"poleposition": "retro_f1.all_seasons.gp_details.poleposition",
-				"winner": "retro_f1.all_seasons.gp_details.winner",
-				"fastestLap": "retro_f1.all_seasons.gp_details.fastestLap",
-				"fastestPit": "retro_f1.all_seasons.gp_details.fastestPit"
-			}
-		},
-		"constructorwinners": {
-			"tab_title": "retro_f1.constructorwinners.tab_title",
-			"title": "retro_f1.constructorwinners.title",
-			"number_of_titles": "retro_f1.constructorwinners.number_of_titles"
-		}
-	},
-	"live": {
-		"tab_title": "En Vivo",
-		"live_title": "En Vivo",
-		"link_standings": "Clasificación",
-		"link_race_control": "Control de carrera",
-		"link_radio": "Radio"
-	},
-	"account": {
-		"profile": {
-			"tab_title": "Cuenta",
-			"profile_title": "Tu cuenta",
-			"email": "Correo electrónico",
-			"name": "Nombre",
-			"surname": "Apellido",
-			"birthdate": "Fecha de nacimiento",
-			"username": "Nombre de usuario",
-			"lang": "Idioma",
-			"btn_modify": "Modificar",
-			"btn_log_out": "Cerrar sesión",
-			"btn_admin": "Administración",
-			"theme": "Tema",
-			"theme_dark": "Oscuro",
-			"theme_light": "Claro"
-		},
-		"profile_edit": {
-			"tab_title": "Modificar cuenta",
-			"edit_title": "Modificar tu cuenta",
-			"email": "Correo electrónico",
-			"name": "Nombre",
-			"surname": "Apellido",
-			"birthdate": "Fecha de nacimiento",
-			"username": "Nombre de usuario",
-			"lang": "Idioma",
-			"btn_save": "Guardar",
-			"languages": {
-				"fr": "Francés",
-				"en": "Inglés",
-				"es": "Español",
-				"de": "Alemán",
-				"it": "Italiano"
+				"officialName": "Nombre oficial",
+				"circuitDetails": "Ver detalles del circuito",
+				"poleposition": "Pole position",
+				"winner": "Ganador",
+				"fastestLap": "Vuelta más rápida",
+				"fastestPit": "PitStop más rápido (tiempo total)"
 			},
-			"theme": {
-				"theme_light": "Claro",
-				"theme_dark": "Oscuro"
+			"constructorwinners": {
+				"tab_title": "Retro Campeones Constructores",
+				"title": "Lista de equipos campeones en Fórmula 1",
+				"number_of_titles": "Número de títulos"
+			},
+			"live": {
+				"tab_title": "En Vivo",
+				"live_title": "En Vivo",
+				"link_standings": "Clasificación",
+				"link_race_control": "Control de carrera",
+				"link_radio": "Radio"
+			},
+			"account": {
+				"profile": {
+					"tab_title": "Cuenta",
+					"profile_title": "Tu cuenta",
+					"email": "Correo electrónico",
+					"name": "Nombre",
+					"surname": "Apellido",
+					"birthdate": "Nacimiento",
+					"username": "Nombre de usuario",
+					"lang": "Idioma",
+					"btn_modify": "Modificar",
+					"btn_log_out": "Cerrar sesión",
+					"btn_admin": "Administración",
+					"theme": "Tema",
+					"theme_light": "Claro",
+					"theme_dark": "Oscuro"
+				},
+				"profile_edit": {
+					"tab_title": "Editar cuenta",
+					"edit_title": "Editar tu cuenta",
+					"email": "Correo electrónico",
+					"name": "Nombre",
+					"surname": "Apellido",
+					"birthdate": "Nacimiento",
+					"username": "Nombre de usuario",
+					"lang": "Idioma",
+					"btn_save": "Guardar",
+					"languages": {
+						"fr": "Francés",
+						"en": "Inglés",
+						"es": "Español",
+						"de": "Alemán",
+						"it": "Italiano"
+					},
+					"theme": {
+						"theme_light": "Claro",
+						"theme_dark": "Oscuro"
+					}
+				},
+				"about": {
+					"tab_title": "Acerca de",
+					"devteam": "Equipo de desarrollo",
+					"disclaimer": "Este proyecto/sitio web no es oficial y no está asociado de ninguna manera con las empresas de Fórmula 1. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX y las marcas relacionadas son marcas comerciales de Formula One Licensing B.V.",
+					"dataorigin_title": "Origen de los datos",
+					"dataorigin_beginning": "Los datos procesados por este sitio provienen de dos ",
+					"dataorigin_link1": "API (Application Programming Interface)",
+					"dataorigin_explanation_link_1": "gratuitas y de código abierto ",
+					"dataorigin_explanation_link_2": " para los datos (entre otros) de clasificaciones actuales y datos históricos.",
+					"dataorigin_explanation_link_3": "para los datos en tiempo real (parte En Vivo).",
+					"dataorigin_cookie_policy_title": "Política de cookies",
+					"dataorigin_cookie_policy_introduction_title": "Introducción",
+					"dataorigin_cookie_policy_introduction": "Nuestro sitio utiliza cookies para mejorar su experiencia de usuario, analizar el tráfico del sitio y personalizar el contenido. Al utilizar nuestro sitio, usted acepta el uso de cookies de acuerdo con esta política de cookies.",
+					"dataorigin_cookie_policy_explanantion1_title": "¿Qué es una cookie?",
+					"dataorigin_cookie_policy_explanantion1": "Una cookie es un pequeño archivo de texto que se almacena en su dispositivo (computadora, tableta, teléfono inteligente) cuando visita un sitio web. Las cookies se utilizan ampliamente para permitir que los sitios web funcionen de manera eficiente y mejoren la experiencia del usuario, así como para proporcionar información a los propietarios del sitio.",
+					"dataorigin_cookie_policy_explanantion2_title": "Gestión de cookies",
+					"dataorigin_cookie_policy_explanantion2": "Usted tiene la opción de aceptar o rechazar las cookies modificando la configuración de su navegador. Sin embargo, si desactiva las cookies, algunas partes de nuestro sitio pueden no funcionar correctamente.",
+					"dataorigin_cookie_policy_explanantion3_title": "Cambios en esta política de cookies",
+					"dataorigin_cookie_policy_explanantion3": "Podemos actualizar esta política de cookies de vez en cuando para reflejar, por ejemplo, cambios en nuestras cookies o por otras razones operativas, legales o regulatorias. Por lo tanto, consulte esta política regularmente para mantenerse informado sobre nuestro uso de cookies y tecnologías relacionadas."
+				},
+				"track": {
+					"total_race_held": "Total de GP celebrados"
+				}
 			}
 		}
-	},
-	"lang": {
-		"lang": "lang.lang"
-	},
-	"about": {
-		"tab_title": "about.tab_title",
-		"devteam": "about.devteam",
-		"disclaimer": "about.disclaimer",
-		"dataorigin_title": "about.dataorigin_title",
-		"dataorigin_beginning": "about.dataorigin_beginning",
-		"dataorigin_link1": "about.dataorigin_link1",
-		"dataorigin_explanation_link_1": "about.dataorigin_explanation_link_1",
-		"dataorigin_explanation_link_2": "about.dataorigin_explanation_link_2",
-		"dataorigin_explanation_link_3": "about.dataorigin_explanation_link_3",
-		"dataorigin_cookie_policy_title": "about.dataorigin_cookie_policy_title",
-		"dataorigin_cookie_policy_introduction_title": "about.dataorigin_cookie_policy_introduction_title",
-		"dataorigin_cookie_policy_introduction": "about.dataorigin_cookie_policy_introduction",
-		"dataorigin_cookie_policy_explanantion1_title": "about.dataorigin_cookie_policy_explanantion1_title",
-		"dataorigin_cookie_policy_explanantion1": "about.dataorigin_cookie_policy_explanantion1",
-		"dataorigin_cookie_policy_explanantion2_title": "about.dataorigin_cookie_policy_explanantion2_title",
-		"dataorigin_cookie_policy_explanantion2": "about.dataorigin_cookie_policy_explanantion2",
-		"dataorigin_cookie_policy_explanantion3_title": "about.dataorigin_cookie_policy_explanantion3_title",
-		"dataorigin_cookie_policy_explanantion3": "about.dataorigin_cookie_policy_explanantion3"
-	},
-	"track": {
-		"total_race_held": "track.total_race_held"
 	}
 }
