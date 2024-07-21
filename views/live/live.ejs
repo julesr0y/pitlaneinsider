@@ -23,7 +23,6 @@
         <span id="lap"></span>
     </div>
 
-
     <div class="flex justify-center mb-8">
         <button id="btnClassement" class="mr-4 underline" onclick="openTab('Classement')">
             <%= __('live.link_standings') %>
@@ -45,8 +44,6 @@
 
     <div id="Classement" class="bg-s-<%= theme %> p-4 sm:pt-8 shadow rounded-3xl mx-4 mt-8"></div>
 
-
-
     <div id="RaceControl" class="hidden flex flex-col items-center justify-center p-4 sm:pt-8">
         <div class="bg-green-400 text-white text-center font-bold py-4 px-6 rounded-3xl my-3 w-3/4 md:w-1/2">GREEN FLAG
         </div>
@@ -66,8 +63,10 @@
         </div>
     </div>
 
-    <div id="Radio" class="hidden flex flex-col items-center justify-center p-4 sm:pt-8">
+    <div id="Radio" class="hidden flex flex-col items-center justify-center p-4 sm:pt-8"></div>
 
+   <!--  <div id="mapContainer" class="relative bg-gray-200 mt-8 mx-4 rounded-3xl shadow-md" style="height: 500px;"> -->
+        <!-- Les points des pilotes seront ajoutés ici -->
     </div>
 
     <%- include('../partials/footer.ejs') %>
@@ -76,5 +75,6 @@
 <script src="/js/liveStandings.js"></script>
 <script src="/js/liveUpdates.js"></script>
 <script src="/js/liveRadio.js"></script>
+<!-- <script src="/js/liveLocation.js"></script>  Nouveau script pour gérer les localisations des pilotes --> 
 
 </html>

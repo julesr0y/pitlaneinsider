@@ -323,6 +323,25 @@ updateLaps();
 setInterval(updateLaps, 10000);
 
 
+const driverIntervals = {};
+
+async function updateIntervals() {
+    try {
+        const intervalsResponse = await fetch('https://api.openf1.org/v1/intervals?session_key=latest');
+        const intervalsData = await intervalsResponse.json();
+
+        // Réinitialiser les intervalles
+        intervalsData.forEach(({ driver_number, interval }) => {
+            
+            driverIntervals[driver_number] = interval;
+        });
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des intervalles:', error);
+    }
+}
+
+
 
 /**
  * @function updateClassement
@@ -337,33 +356,52 @@ function updateClassement(containerId, top20) {
         console.error(`Element with ID "${containerId}" not found`);
         return;
     }
-    
+
     container.innerHTML = '';
 
     const titles = document.createElement('div');
-    titles.classList.add('grid', 'grid-cols-5', 'justify-center', 'items-center', 'pb-4', 'font-F1Bold');
+    titles.classList.add('grid', 'grid-cols-5', 'justify-center', 'items-center', 'pb-4', 'font-F1Bold'); 
+    if (session_type === 'Race'){
     titles.innerHTML = `
+        <span>Position</span>
+        <span>Drivers</span>
+        <span>Gap</span> 
+        <span>Pits</span>
+        <span>Tyres</span>
+    `;
+    }else if (session_type === 'Practice' || session_type === 'Qualifying'){
+        titles.innerHTML = `
         <span>Position</span>
         <span>Drivers</span>
         <span>Best Lap</span>
         <span>Pits</span>
         <span>Tyres</span>
-        
     `;
+    }
     container.appendChild(titles);
 
     top20.forEach((driver, index) => {
         const driverDiv = document.createElement('div');
-        driverDiv.classList.add('grid', 'grid-cols-5', 'justify-center', 'items-center', 'py-2', 'border-b', 'border-gray-300');
+        driverDiv.classList.add('grid', 'grid-cols-5', 'justify-center', 'items-center', 'py-2', 'border-b', 'border-gray-300'); // Changement à 6 colonnes
         driverDiv.classList.add('driver');
         driverDiv.setAttribute('data-driver-number', driver.driver_number);
+        if (session_type === 'Race'){
         driverDiv.innerHTML = `
+            <span class="rank font-bold">${index + 1}.</span>
+            <span class="pilot-name">${driverMapping[driver.driver_number]}</span>
+            <span class="gap">${driverIntervals[driver.driver_number] !== undefined ? driverIntervals[driver.driver_number] + 's' : 'N/A'}</span> 
+            <span class="pits">${driverAppearances[driver.driver_number]}</span>
+            <span class="pneus"><img class="h-6 w-auto" src="/img/tires/${(result[driver.driver_number] || 'n/a').toLowerCase()}.svg"></span>
+        `;
+        }else if (session_type === 'Practice' || session_type === 'Qualifying'){
+            driverDiv.innerHTML = `
             <span class="rank font-bold">${index + 1}.</span>
             <span class="pilot-name">${driverMapping[driver.driver_number]}</span>
             <span class="best-lap">${bestLapsTimes[driver.driver_number] || 'N/A'}</span>
             <span class="pits">${driverAppearances[driver.driver_number]}</span>
-            <span class="pneus"><img class="h-6 w-auto" src="/img/tires/${(result[driver.driver_number]).toLowerCase() || 'n/a'}.svg"></span>
+            <span class="pneus"><img class="h-6 w-auto" src="/img/tires/${(result[driver.driver_number] || 'n/a').toLowerCase()}.svg"></span>
         `;
+        }
 
         if (previousStandings[driver.driver_number] !== undefined && previousStandings[driver.driver_number] !== driver.last_position) {
             const rankSpan = driverDiv.querySelector('.rank');
@@ -387,6 +425,7 @@ function updateClassement(containerId, top20) {
     });
 }
 
+
 async function updateStandings() {
     const data = await fetchData();
     if (data) {
@@ -402,3 +441,4 @@ async function updateStandings() {
 // appel et mise à jour périodique
 updateStandings();
 setInterval(updateStandings, 10000);
+setInterval(updateIntervals, 10000);
