@@ -4834,42 +4834,42 @@
         "constructorId": "red-bull",
         "name": "Red Bull",
         "position": 1,
-        "points": 373
-    },
-    {
-        "year": 2024,
-        "constructorId": "ferrari",
-        "name": "Ferrari",
-        "position": 2,
-        "points": 302
+        "points": 389
     },
     {
         "year": 2024,
         "constructorId": "mclaren",
         "name": "McLaren",
+        "position": 2,
+        "points": 338
+    },
+    {
+        "year": 2024,
+        "constructorId": "ferrari",
+        "name": "Ferrari",
         "position": 3,
-        "points": 295
+        "points": 322
     },
     {
         "year": 2024,
         "constructorId": "mercedes",
         "name": "Mercedes",
         "position": 4,
-        "points": 221
+        "points": 241
     },
     {
         "year": 2024,
         "constructorId": "aston-martin",
         "name": "Aston Martin",
         "position": 5,
-        "points": 68
+        "points": 69
     },
     {
         "year": 2024,
         "constructorId": "rb",
         "name": "RB",
         "position": 6,
-        "points": 31
+        "points": 33
     },
     {
         "year": 2024,

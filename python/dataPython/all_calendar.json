@@ -53434,7 +53434,7 @@
                     "date": "2024-07-21",
                     "raceId": 1114,
                     "circuitId": "hungaroring",
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -53482,7 +53482,7 @@
                     "date": "2024-07-28",
                     "raceId": 1115,
                     "circuitId": "spa-francorchamps",
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
