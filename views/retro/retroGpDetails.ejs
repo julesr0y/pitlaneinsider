@@ -85,8 +85,26 @@
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
     <div class="app-container">
-        <div class="text-xl font-bold text-center my-4 w-full lg:font-bold">
-            <%= __('retro_f1.all_seasons.gp_details.title') %>
+        <div class="flex flex-col items-center text-center my-4 w-full font-F1Regular">
+            <span class="text-xl font-F1Bold">Rétro - Course <%= gpDetails.gpInfo.raceId %></span>
+            <span>
+                <%= gpDetails.gpInfo.date %>
+            </span>
+            <span class="flex gap-2">
+                <span>
+                    <%= gpDetails.gpInfo.gpFullName %>
+                </span>
+                <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
+                    alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+
+            </span>
+            <span>
+                Nom officiel : <%= gpDetails.gpInfo.gpOfficialName %>
+            </span>
+            <span>
+                <a href="/track/<%= gpDetails.gpInfo.circuitId %>" class="text-blue-500 hover:text-blue-800">Voir les
+                    détails du circuit</a>
+            </span>
         </div>
         <div class="flex mt-4">
             <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-5/12">
@@ -100,7 +118,7 @@
                 </div>
 
                 <div class="gp-detail-list grid grid-cols-12 mt-4 text-base text-left">
-                    <% gpDetails.forEach(detail=> { %>
+                    <% gpDetails.raceData.forEach(detail=> { %>
                         <span class="col-span-6 font-F1Bold">
                             <%= String(detail.position).padStart(2, '0' ) %>
                         </span>
@@ -114,7 +132,7 @@
             <div class="w-7/12 grid grid-rows-12 gap-4">
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
-                    <% gpDetails.forEach(function(grid){ if (grid.grid==1) { %>
+                    <% gpDetails.raceData.forEach(function(grid){ if (grid.grid==1) { %>
                         <span>Pole position</span>
                         <img src="/img/drivers/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>"
                             class="h-24 w-auto">
@@ -122,7 +140,7 @@
                 </div>
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
-                    <% gpDetails.forEach(function(grid){ if (grid.position==1) { %>
+                    <% gpDetails.raceData.forEach(function(grid){ if (grid.position==1) { %>
                         <span>Vainqueur</span>
                         <img src="/img/drivers/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>"
                             class="h-24 w-auto">
@@ -130,7 +148,7 @@
                 </div>
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
-                    <% gpDetails.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
+                    <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
                         <span class="text-center">Tour le plus rapide</span>
                         <div class="flex flex-col items-center flex-grow justify-center w-full">
                             <div>
@@ -143,7 +161,7 @@
                 </div>
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
-                    <% gpDetails.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
+                    <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
                         <span class="text-center">PitStop le plus rapide (temps total)</span>
                         <div class="flex flex-col items-center flex-grow justify-center w-full">
                             <%= pit.abbreviation %> - <%= pit.fastestPitTime %>

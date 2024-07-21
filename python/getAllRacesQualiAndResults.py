@@ -1,6 +1,26 @@
 import json
 import os
 
+def getRaceInfo(race_id, all_gps, all_races):
+    gp_info = []
+    for race in all_races:
+        if race['id'] == race_id:
+            circuitId = race['circuitId']
+            for gp in all_gps:
+                if gp['id'] == race['grandPrixId']:
+                    raceInfoObject = {
+                        'raceId': race_id,
+                        'gpId': gp['id'],
+                        'gpOfficialName': race['officialName'],
+                        'gpShortName': gp['shortName'],
+                        'gpFullName': gp['fullName'],
+                        'countryId': gp['countryId'],
+                        'circuitId': circuitId,
+                        'date': race['date']
+                    }
+                    gp_info.append(raceInfoObject)
+    return gp_info
+
 def getAllRacesQualiAndResults(output_file):
     # Get the base directory of the script
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -18,6 +38,12 @@ def getAllRacesQualiAndResults(output_file):
     with open(os.path.join(base_dir, '../../f1db/data/f1db-races-pit-stops.json'), 'r', encoding='utf-8') as f:
         pit_stops = json.load(f)
 
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-grands-prix.json'), 'r', encoding='utf-8') as f:
+        all_gps = json.load(f)
+
+    with open(os.path.join(base_dir, '../../f1db/data/f1db-races.json'), 'r', encoding='utf-8') as f:
+        all_races = json.load(f)
+
     # Create a dictionary to store the fastest lap for each race
     fastest_laps_by_race = {}
     for lap in fastests_laps:
@@ -32,50 +58,69 @@ def getAllRacesQualiAndResults(output_file):
         if pit['timeMillis'] is not None and (race_id not in fastest_pit_stops_by_race or pit['timeMillis'] < fastest_pit_stops_by_race[race_id]['timeMillis']):
             fastest_pit_stops_by_race[race_id] = pit
 
-    allResults = []
+    all_data = []
+    races_processed = set()
+
     for driverResult in race_results:
         race_id = driverResult['raceId']
+
+        if race_id in races_processed:
+            continue
         
-        # Get driver details
-        firstName = ""
-        lastName = ""
-        abbreviation = ""
-        for driver in drivers_data:
-            if driver['id'] == driverResult['driverId']:
-                firstName = driver['firstName']
-                lastName = driver['lastName']
-                abbreviation = driver["abbreviation"]
-                break
+        races_processed.add(race_id)
 
-        # Get fastest lap time if the driver has it
-        fastestLapTime = None
-        if race_id in fastest_laps_by_race and fastest_laps_by_race[race_id]['driverId'] == driverResult['driverId']:
-            fastestLapTime = fastest_laps_by_race[race_id]['time']
+        # Get race info for the current race ID
+        gp_info = getRaceInfo(race_id, all_gps, all_races)
 
-        fastestPitTime = None
-        if race_id in fastest_pit_stops_by_race and fastest_pit_stops_by_race[race_id]['driverId'] == driverResult['driverId']:
-            fastestPitTime = fastest_pit_stops_by_race[race_id]['time']
+        allResults = []
+        for result in race_results:
+            if result['raceId'] == race_id:
+                # Get driver details
+                firstName = ""
+                lastName = ""
+                abbreviation = ""
+                for driver in drivers_data:
+                    if driver['id'] == result['driverId']:
+                        firstName = driver['firstName']
+                        lastName = driver['lastName']
+                        abbreviation = driver["abbreviation"]
+                        break
 
-        # Get gap or DNF
-        gap = driverResult['gap']
-        if driverResult['reasonRetired'] != None:
-            gap = "DNF"
+                # Get fastest lap time if the driver has it
+                fastestLapTime = None
+                if race_id in fastest_laps_by_race and fastest_laps_by_race[race_id]['driverId'] == result['driverId']:
+                    fastestLapTime = fastest_laps_by_race[race_id]['time']
 
-        result = {
-            'year': driverResult['year'],
-            'raceId': driverResult['raceId'],
-            'driverId': driverResult['driverId'],
-            'firstName': firstName,
-            'lastName': lastName,
-            'abbreviation': abbreviation,
-            'grid': driverResult['gridPositionNumber'],
-            'position': driverResult['positionDisplayOrder'],
-            'gap': gap,
-            'fastestLapTime': fastestLapTime,
-            'fastestPitTime': fastestPitTime
+                fastestPitTime = None
+                if race_id in fastest_pit_stops_by_race and fastest_pit_stops_by_race[race_id]['driverId'] == result['driverId']:
+                    fastestPitTime = fastest_pit_stops_by_race[race_id]['time']
+
+                # Get gap or DNF
+                gap = result['gap']
+                if result['reasonRetired'] != None:
+                    gap = "DNF"
+
+                race_result = {
+                    'year': result['year'],
+                    'raceId': result['raceId'],
+                    'driverId': result['driverId'],
+                    'firstName': firstName,
+                    'lastName': lastName,
+                    'abbreviation': abbreviation,
+                    'grid': result['gridPositionNumber'],
+                    'position': result['positionDisplayOrder'],
+                    'gap': gap,
+                    'fastestLapTime': fastestLapTime,
+                    'fastestPitTime': fastestPitTime
+                }
+                allResults.append(race_result)
+
+        data = {
+            'raceInfo': gp_info,
+            'results': allResults
         }
-        allResults.append(result)
+        all_data.append(data)
     
     # Save all standings to the output file
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(allResults, f, ensure_ascii=False, indent=4)
+        json.dump(all_data, f, ensure_ascii=False, indent=4)
