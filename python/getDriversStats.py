@@ -178,12 +178,14 @@ def getDriversStats(output_file):
                     race_info = races_by_id.get(result['raceId'])
                     if race_info:
                         country = ""
+                        shortName = ""
                         for item in all_races:
                             if item['id'] == result['raceId']:
                                 gp_id = item['grandPrixId']
                                 for item2 in all_gps:
                                     if item2['id'] == gp_id:
                                         country = item2['countryId']
+                                        shortName = item2['shortName']
                                 if gp_id == "europe":
                                     country = "europe"
                                 
@@ -193,7 +195,8 @@ def getDriversStats(output_file):
                         victoryData = {
                             'id': result['raceId'],
                             'country': country,
-                            'officialName': race_info['officialName']
+                            'officialName': race_info['officialName'],
+                            'shortName': shortName
                         }
                         victories_by_year[year].append(victoryData)
 
