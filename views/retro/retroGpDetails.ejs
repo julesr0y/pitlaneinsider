@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<%= __('lang.lang') %>">
 
 <head>
     <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
             <meta charset="UTF-8">
             <title>PLI - <%= __('retro_f1.all_seasons.gp_details.tab_title') %>
+                    <%= gpDetails.gpInfo.raceId %>
             </title>
             <link href="" rel="stylesheet">
 
@@ -86,7 +87,10 @@
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
     <div class="app-container">
         <div class="flex flex-col items-center text-center my-4 w-full font-F1Regular">
-            <span class="text-xl font-F1Bold">Rétro - Course <%= gpDetails.gpInfo.raceId %></span>
+            <span class="text-xl font-F1Bold">
+                <%= __('retro_f1.all_seasons.gp_details.title') %>
+                    <%= gpDetails.gpInfo.raceId %>
+            </span>
             <span>
                 <%= gpDetails.gpInfo.date %>
             </span>
@@ -99,11 +103,12 @@
 
             </span>
             <span>
-                Nom officiel : <%= gpDetails.gpInfo.gpOfficialName %>
+                <%= __('retro_f1.all_seasons.gp_details.officialName') %> : <%= gpDetails.gpInfo.gpOfficialName %>
             </span>
             <span>
-                <a href="/track/<%= gpDetails.gpInfo.circuitId %>" class="text-blue-500 hover:text-blue-800">Voir les
-                    détails du circuit</a>
+                <a href="/track/<%= gpDetails.gpInfo.circuitId %>" class="text-blue-500 hover:text-blue-800">
+                    <%= __('retro_f1.all_seasons.gp_details.circuitDetails') %>
+                </a>
             </span>
         </div>
         <div class="flex mt-4">
@@ -133,7 +138,9 @@
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
                     <% gpDetails.raceData.forEach(function(grid){ if (grid.grid==1) { %>
-                        <span>Pole position</span>
+                        <span>
+                            <%= __('retro_f1.all_seasons.gp_details.poleposition') %>
+                        </span>
                         <img src="/img/drivers/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>"
                             class="h-24 w-auto">
                         <% }}) %>
@@ -141,7 +148,9 @@
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
                     <% gpDetails.raceData.forEach(function(grid){ if (grid.position==1) { %>
-                        <span>Vainqueur</span>
+                        <span>
+                            <%= __('retro_f1.all_seasons.gp_details.winner') %>
+                        </span>
                         <img src="/img/drivers/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>"
                             class="h-24 w-auto">
                         <% }}) %>
@@ -149,7 +158,9 @@
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
                     <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
-                        <span class="text-center">Tour le plus rapide</span>
+                        <span class="text-center">
+                            <%= __('retro_f1.all_seasons.gp_details.fastestLap') %>
+                        </span>
                         <div class="flex flex-col items-center flex-grow justify-center w-full">
                             <div>
                                 <%= lap.abbreviation %> - <span class="text-fuchsia-700">
@@ -162,7 +173,9 @@
                 <div
                     class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
                     <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
-                        <span class="text-center">PitStop le plus rapide (temps total)</span>
+                        <span class="text-center">
+                            <%= __('retro_f1.all_seasons.gp_details.fastestPit') %>
+                        </span>
                         <div class="flex flex-col items-center flex-grow justify-center w-full">
                             <%= pit.abbreviation %> - <%= pit.fastestPitTime %>
                         </div>

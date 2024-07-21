@@ -1,4 +1,7 @@
 {
+	"lang": {
+		"lang": "fr"
+	},
 	"header": {
 		"teams": "ECURIES",
 		"drivers": "PILOTES",
@@ -29,10 +32,10 @@
 		"team_start": "Arrivée en F1",
 		"drivers": "Pilotes",
 		"single_seater": "Monoplace",
-		"total_races": "Courses disputées",
+		"total_races": "Courses",
 		"total_wins": "Victoires",
 		"total_podiums": "Podiums",
-		"total_points": "Points inscrits",
+		"total_points": "Points",
 		"total_poles": "Poles",
 		"total_fastest_laps": "Tour le plus rapide",
 		"number_of_seasons": "Saisons",
@@ -69,7 +72,9 @@
 		"total_driver_of_the_day": "DOTD",
 		"total_fastest_laps": "Tour le plus rapide",
 		"teams_title": "Ecuries",
-		"totalChampionshipWins": "Titres"
+		"totalChampionshipWins": "Titres",
+		"points_by_season": "Points par saison",
+		"standing_by_season": "Classement par saison"
 	},
 	"calendar": {
 		"tab_title": "Calendrier",
@@ -120,7 +125,8 @@
 			"winners_title": "Liste des pilotes titrés",
 			"driver_titles": "titres",
 			"all_data": "Liste des Pilotes | Ecuries | Circuits",
-			"all_seasons": "Liste des saisons"
+			"all_seasons": "Liste des saisons",
+			"winners_constructors_title": "Liste des écuries titrées"
 		},
 		"winners": {
 			"tab_title": "Retro Titrés",
@@ -163,11 +169,17 @@
 			},
 			"gp_details": {
 				"tab_title": "Retro Détails GP",
-				"title": "Rétro - Détails du GP",
+				"title": "Rétro - Course",
 				"position": "Pos",
 				"drivers": "Pilotes",
 				"starting_grid": "Grille de départ",
-				"time": "Temps"
+				"time": "Temps",
+				"officialName": "Nom officiel",
+				"circuitDetails": "Voir les détails du circuit",
+				"poleposition": "Pole position",
+				"winner": "Vainqueur",
+				"fastestLap": "Tour le plus rapide",
+				"fastestPit": "PitStop le plus rapide (temps total)"
 			}
 		},
 		"constructorwinners": {
@@ -222,5 +234,28 @@
 				"theme_dark": "Sombre"
 			}
 		}
+	},
+	"about": {
+		"tab_title": "A propos",
+		"devteam": "Equipe de développement",
+		"disclaimer": "Ce projet/site web n'est pas officiel et n'est pas associé de quelconque manière aux sociétés de Formule 1. F1, FORMULA ONE, FORMULE 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX et les marques apparentées sont des marques commerciales de Formula One Licensing B.V.",
+		"dataorigin_title": "Origine des données",
+		"dataorigin_beginning": "Les données traitées par ce site proviennent de deux ",
+		"dataorigin_link1": "API (Application Programming Interface)",
+		"dataorigin_explanation_link_1": "gratuites et Open Source ",
+		"dataorigin_explanation_link_2": " pour les données (entre autres) de classements actuels et de données historiques.",
+		"dataorigin_explanation_link_3": "pour les données en temps réel (partie Live).",
+		"dataorigin_cookie_policy_title": "Politique de cookies ",
+		"dataorigin_cookie_policy_introduction_title": "Introduction",
+		"dataorigin_cookie_policy_introduction": "Notre site utilise des cookies pour améliorer votre expérience utilisateur, analyser le trafic du site et personnaliser le contenu. En utilisant notre site, vous consentez à l'utilisation des cookies conformément à cette politique de cookies.",
+		"dataorigin_cookie_policy_explanantion1_title": "Qu'est-ce qu'un cookie ?",
+		"dataorigin_cookie_policy_explanantion1": "Un cookie est un petit fichier texte qui est stocké sur votre appareil (ordinateur, tablette, smartphone) lorsque vous visitez un site internet. Les cookies sont largement utilisés pour permettre aux sites internet de fonctionner efficacement et d'améliorer l'expérience utilisateur, ainsi que pour fournir des informations aux propriétaires du site.",
+		"dataorigin_cookie_policy_explanantion2_title": "Gestion des cookies",
+		"dataorigin_cookie_policy_explanantion2": "Vous avez la possibilité d'accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur. Cependant, si vous désactivez les cookies, certaines parties de notre site peuvent ne pas fonctionner correctement.",
+		"dataorigin_cookie_policy_explanantion3_title": "Modifications de cette politique de cookies",
+		"dataorigin_cookie_policy_explanantion3": "Nous pouvons mettre à jour cette politique de cookies de temps à autre pour refléter, par exemple, des changements apportés à nos cookies ou pour d'autres raisons opérationnelles, légales ou réglementaires. Par conséquent, veuillez la consulter régulièrement pour rester informé de notre utilisation des cookies et des technologies associées."
+	},
+	"track": {
+		"total_race_held": "Total GP accueillis"
 	}
 }

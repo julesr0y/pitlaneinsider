@@ -74,7 +74,9 @@
 		"total_driver_of_the_day": "driver.total_driver_of_the_day",
 		"total_fastest_laps": "driver.total_fastest_laps",
 		"teams_title": "driver.teams_title",
-		"totalChampionshipWins": "driver.totalChampionshipWins"
+		"totalChampionshipWins": "driver.totalChampionshipWins",
+		"points_by_season": "driver.points_by_season",
+		"standing_by_season": "driver.standing_by_season"
 	},
 	"calendar": {
 		"tab_title": "Kalender",
@@ -125,7 +127,8 @@
 			"winners_title": "Liste der Titelträger",
 			"driver_titles": "Titel",
 			"all_data": "Liste der Fahrer | Teams | Strecken",
-			"all_seasons": "Liste der Saisons"
+			"all_seasons": "Liste der Saisons",
+			"winners_constructors_title": "retro_f1.home.winners_constructors_title"
 		},
 		"winners": {
 			"tab_title": "Retro Titelträger",
@@ -172,7 +175,13 @@
 				"position": "Position",
 				"drivers": "Fahrer",
 				"starting_grid": "Startaufstellung",
-				"time": "Zeit"
+				"time": "Zeit",
+				"officialName": "retro_f1.all_seasons.gp_details.officialName",
+				"circuitDetails": "retro_f1.all_seasons.gp_details.circuitDetails",
+				"poleposition": "retro_f1.all_seasons.gp_details.poleposition",
+				"winner": "retro_f1.all_seasons.gp_details.winner",
+				"fastestLap": "retro_f1.all_seasons.gp_details.fastestLap",
+				"fastestPit": "retro_f1.all_seasons.gp_details.fastestPit"
 			}
 		},
 		"constructorwinners": {
@@ -227,5 +236,31 @@
 				"theme_dark": "Dunkles"
 			}
 		}
+	},
+	"lang": {
+		"lang": "lang.lang"
+	},
+	"about": {
+		"tab_title": "about.tab_title",
+		"devteam": "about.devteam",
+		"disclaimer": "about.disclaimer",
+		"dataorigin_title": "about.dataorigin_title",
+		"dataorigin_beginning": "about.dataorigin_beginning",
+		"dataorigin_link1": "about.dataorigin_link1",
+		"dataorigin_explanation_link_1": "about.dataorigin_explanation_link_1",
+		"dataorigin_explanation_link_2": "about.dataorigin_explanation_link_2",
+		"dataorigin_explanation_link_3": "about.dataorigin_explanation_link_3",
+		"dataorigin_cookie_policy_title": "about.dataorigin_cookie_policy_title",
+		"dataorigin_cookie_policy_introduction_title": "about.dataorigin_cookie_policy_introduction_title",
+		"dataorigin_cookie_policy_introduction": "about.dataorigin_cookie_policy_introduction",
+		"dataorigin_cookie_policy_explanantion1_title": "about.dataorigin_cookie_policy_explanantion1_title",
+		"dataorigin_cookie_policy_explanantion1": "about.dataorigin_cookie_policy_explanantion1",
+		"dataorigin_cookie_policy_explanantion2_title": "about.dataorigin_cookie_policy_explanantion2_title",
+		"dataorigin_cookie_policy_explanantion2": "about.dataorigin_cookie_policy_explanantion2",
+		"dataorigin_cookie_policy_explanantion3_title": "about.dataorigin_cookie_policy_explanantion3_title",
+		"dataorigin_cookie_policy_explanantion3": "about.dataorigin_cookie_policy_explanantion3"
+	},
+	"track": {
+		"total_race_held": "track.total_race_held"
 	}
 }
