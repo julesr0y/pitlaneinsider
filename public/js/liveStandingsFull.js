@@ -119,8 +119,6 @@ const previousStandings = {};
  */
 async function fetchData() {
     try {
-        const sessionResponse = await fetch('https://api.openf1.org/v1/sessions?session_key=latest');
-        const sessionData = await sessionResponse.json();
         const stintResponse = await fetch('https://api.openf1.org/v1/stints?session_key=latest');
         const stintData = await stintResponse.json();
         const pitResponse = await fetch('https://api.openf1.org/v1/pit?session_key=latest');
@@ -128,25 +126,10 @@ async function fetchData() {
         const positionResponse = await fetch('https://api.openf1.org/v1/position?session_key=latest');
         const positionData = await positionResponse.json();
 
-        return { sessionData, stintData, pitData, positionData };
+        return { stintData, pitData, positionData };
     } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
         return null;
-    }
-}
-
-/**
- * @function updateSessionInfo
- * @description Met à jour les informations de la session en cours
- * @param {*} data
- * @returns {void}
- */
-function updateSessionInfo(data) {
-    if (data && data.length > 0) {
-        const { location, session_name, session_type: type } = data[0];
-        session_type = type;
-        frontLocation.textContent = location;
-        frontSession.textContent = session_name;
     }
 }
 
@@ -295,7 +278,6 @@ function updateClassement(containerId, top20) {
 async function updateStandings() {
     const data = await fetchData();
     if (data) {
-        updateSessionInfo(data.sessionData);
         updateLastCompound(data.stintData);
         updateDriverAppearances(data.pitData);
         updatePositionData(data.positionData);

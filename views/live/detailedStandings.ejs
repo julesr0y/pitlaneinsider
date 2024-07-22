@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="<%= __('lang.lang') %>">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= __('live.tab_title') %>
+            </title>
+</head>
+
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <div class="text-center text-2xl font-bold my-8">
+        <span>
+            <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
+            <span class="text-red-500">
+                <%= __('live.live_title') %>
+            </span> -
+            <span id="frontLocation"></span>
+        </span> - <span id="frontSession"></span>
+    </div>
+
+    <div class="text-center text-2xl font-bold my-8">
+        <span id="lap"></span>
+    </div>
+
+
+    <div class="flex justify-center mb-8">
+        <a href="/live" id="btnClassement" class="mr-4 underline">
+            <%= __('live.link_standings') %>
+        </a>
+        <a href="/live/racecontrol" id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')">
+            <%= __('live.link_race_control') %>
+        </a>
+        <a href="/live/radio" id="btnRadio" onclick="openTab('Radio')">
+            <%= __('live.link_radio') %>
+        </a>
+    </div>
+
+    <div class="flex justify-evenly">
+        <span id="track_temp"></span>
+        <span id="air_temp"></span>
+        <span id="rain_fall"></span>
+        <span id="wind_speed"></span>
+    </div>
+
+    <div id="Classement" class="bg-s-<%= theme %> p-4 sm:pt-8 shadow rounded-3xl mx-4 mt-8">
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+<script src="/js/liveTitle.js"></script>
+<script src="/js/liveStandingsFull.js"></script>
+<script src="/js/liveWeather.js"></script>
+
+</html>
