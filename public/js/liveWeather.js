@@ -16,10 +16,10 @@ function updateWeather() {
         .then(data => {
             data = data.reverse(); // On inverse l'ordre des données pour récuérer le dernier élément en premier
             data = data[0]; // On récupère le premier élément du tableau (le dernier élément)
-            air_temp.textContent = "AT: " + data.air_temperature + "°C"; // On met à jour la température de l'air
-            track_temp.textContent = "TT: " + data.track_temperature + "°C"; // On met à jour la température de la piste
-            rain_fall.textContent = "RF: " + data.rainfall + "%"; // On met à jour la quantité de pluie
-            wind_speed.textContent = "WS: " + data.wind_speed + "km/h"; // On met à jour la vitesse du vent
+            air_temp.textContent = "Air: " + data.air_temperature + "°C"; // On met à jour la température de l'air
+            track_temp.textContent = "Track: " + data.track_temperature + "°C"; // On met à jour la température de la piste
+            rain_fall.textContent = "Rain: " + data.rainfall + "%"; // On met à jour la quantité de pluie
+            wind_speed.textContent = "Wind: " + data.wind_speed + "m/s"; // On met à jour la vitesse du vent
         })
         .catch(error => {
             console.error('Erreur lors de la récupération des données:', error);

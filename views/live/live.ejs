@@ -16,14 +16,15 @@
 </style>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="text-center text-2xl font-bold my-8">
+    <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
         <span>
             <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
             <span class="text-red-500">
                 <%= __('live.live_title') %>
-            </span> -
-            <span id="frontLocation"></span>
-        </span> - <span id="frontSession"></span>
+            </span>
+        </span>
+        <span id="frontSession"></span>
+        <span id="frontLocation"></span>
     </div>
 
     <!-- <div class="text-center text-2xl font-bold my-8">
@@ -31,7 +32,7 @@
     </div> -->
 
 
-    <div class="flex justify-center mb-8">
+    <div class="flex justify-center mb-4">
         <a href="/live" id="btnClassement" class="mr-4 underline">
             <%= __('live.link_standings') %>
         </a>
@@ -43,13 +44,6 @@
         </a>
     </div>
 
-    <!-- <div class="flex justify-evenly">
-        <span id="track_temp"></span>
-        <span id="air_temp"></span>
-        <span id="rain_fall"></span>
-        <span id="wind_speed"></span>
-    </div> -->
-
     <div class="flex mt-4">
         <div id="Classement" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-5/12">
             <div class="grid grid-cols-2 justify-center items-center pb-4 font-F1Bold text-base">
@@ -60,19 +54,23 @@
 
         <div class="w-7/12 grid grid-rows-12 gap-4">
             <div
-                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
+                <img src="/img/assets/track-<%= theme %>.svg" alt="track" class="h-16 w-auto">
                 <span id="track_temp"></span>
             </div>
             <div
-                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
+                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
+                <img src="/img/assets/temperature-<%= theme %>.svg" alt="air-temp" class="h-16 w-auto">
                 <span id="air_temp"></span>
             </div>
             <div
-                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
+                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
+                <img src="/img/assets/rain-<%= theme %>.svg" alt="rain" class="h-16 w-auto">
                 <span id="rain_fall"></span>
             </div>
             <div
-                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
+                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
+                <img src="/img/assets/wind-<%= theme %>.svg" alt="wind" class="h-16 w-auto">
                 <span id="wind_speed"></span>
             </div>
         </div>

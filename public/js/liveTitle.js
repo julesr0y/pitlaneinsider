@@ -9,7 +9,7 @@ function updateSessionInfo() {
             data = data.reverse();
             data = data[0];
             session_type = data.session_type;
-            frontLocation.textContent = data.location;
+            frontLocation.innerHTML = `<img src="/img/countryFlags/${data.country_name.toLowerCase()}.svg" alt="${data.country_name}" class="h-6 w-auto">`;
             frontSession.textContent = data.session_name;
         })
         .catch(error => {
