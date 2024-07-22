@@ -257,5 +257,17 @@
 	},
 	"track": {
 		"total_race_held": "Total GP accueillis"
+	},
+	"security": {
+		"notHappened": {
+			"tab_title": "GP non trouvé",
+			"not_happened": "Ce GP n'a pas encore eu lieu",
+			"calendar": "Retour au calendrier"
+		},
+		"notFound": {
+			"tab_title": "Page indisponible",
+			"not_found": "Cette page est indisponible",
+			"home": "Retour à l'accueil"
+		}
 	}
 }

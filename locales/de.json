@@ -3,24 +3,24 @@
 		"lang": "de"
 	},
 	"header": {
-		"teams": "Teams",
-		"drivers": "Fahrer",
-		"calendar": "Kalender",
-		"standings": "Wertungen",
-		"reglementation": "Regeln",
-		"retro_f1": "Retro F1",
-		"live": "Live",
-		"account": "Konto"
+		"teams": "TEAMS",
+		"drivers": "FAHRER",
+		"calendar": "KALENDER",
+		"standings": "WERTUNGEN",
+		"reglementation": "REGELN",
+		"retro_f1": "RETRO F1",
+		"live": "LIVE",
+		"account": "KONTO"
 	},
 	"home": {
 		"next_race": "Nächstes Rennen",
 		"loading": "Laden...",
 		"days": "T",
-		"hours": "Std",
-		"minutes": "Min",
-		"seconds": "Sek",
-		"drivers_championship": "Fahrermeisterschaft",
-		"teams_championship": "Konstrukteursmeisterschaft",
+		"hours": "STD",
+		"minutes": "MIN",
+		"seconds": "S",
+		"drivers_championship": "Fahrerwertung",
+		"teams_championship": "Teamwertung",
 		"last_podium": "Letztes Podium",
 		"drivers_standings": "Fahrerwertung"
 	},
@@ -34,14 +34,14 @@
 		"single_seater": "Einsitzer",
 		"total_races": "Rennen",
 		"total_wins": "Siege",
-		"total_podiums": "Podien",
+		"total_podiums": "Podiumsplätze",
 		"total_points": "Punkte",
 		"total_poles": "Poles",
 		"total_fastest_laps": "Schnellste Runden",
 		"number_of_seasons": "Saisons",
-		"victory_ratio": "Siegquote",
-		"podium_ratio": "Podiumsquote",
-		"pole_ratio": "Pole-Quote",
+		"victory_ratio": "Siegratio",
+		"podium_ratio": "Podiumratio",
+		"pole_ratio": "Poleratio",
 		"totalChampionshipWins": "Titel"
 	},
 	"drivers": {
@@ -52,29 +52,29 @@
 		"actual_season": "Aktuelle Saison",
 		"races": "Rennen",
 		"points": "Punkte",
-		"podiums": "Podien",
+		"podiums": "Podiumsplätze",
 		"victories": "Siege",
 		"age": "Jahre",
 		"carreer_title": "Karriere",
-		"carreer_start": "Karrierebeginn",
-		"total_podiums": "Podien",
+		"carreer_start": "Karrierestart",
+		"total_podiums": "Podiumsplätze",
 		"total_victories": "Siege",
 		"total_races": "Rennen",
 		"total_points": "Punkte",
 		"total_poles": "Poles",
 		"total_dnf": "DNF",
 		"victories_title": "Siege",
-		"victory_ratio": "Siegquote",
-		"podium_ratio": "Podiumsquote",
-		"pole_ratio": "Pole-Quote",
+		"victory_ratio": "Siegratio",
+		"podium_ratio": "Podiumratio",
+		"pole_ratio": "Poleratio",
 		"number_of_seasons": "Saisons",
-		"first_year": "Erstes Auftreten",
+		"first_year": "Erstes Erscheinungsjahr",
 		"total_driver_of_the_day": "DOTD",
 		"total_fastest_laps": "Schnellste Runden",
 		"teams_title": "Teams",
 		"totalChampionshipWins": "Titel",
 		"points_by_season": "Punkte pro Saison",
-		"standing_by_season": "Wertung pro Saison"
+		"standing_by_season": "Platzierung pro Saison"
 	},
 	"calendar": {
 		"tab_title": "Kalender",
@@ -82,9 +82,9 @@
 		"next_race": "Nächstes Rennen"
 	},
 	"calendar_element": {
-		"creation_year": "Erstellungsjahr",
+		"creation_year": "Gründungsjahr",
 		"laps": "Runden",
-		"one_lap_length": "Rundenlänge",
+		"one_lap_length": "Länge einer Runde",
 		"length": "Gesamtlänge",
 		"pole_record": "Pole-Rekord"
 	},
@@ -92,7 +92,7 @@
 		"tab_title": "Wertungen",
 		"season": "Saison 2024 - Wertungen",
 		"drivers": "Fahrer",
-		"teams": "Konstrukteure",
+		"teams": "Teams",
 		"position": "Position",
 		"points": "Punkte"
 	},
@@ -102,35 +102,35 @@
 		"yellow_flag_title": "Gelbe Flagge",
 		"yellow_flag_description": "Zeigt eine Gefahr auf der Strecke an, die Fahrer müssen langsamer fahren und dürfen nicht überholen.",
 		"red_flag_title": "Rote Flagge",
-		"red_flag_description": "Zeigt den Rennabbruch an, die Fahrer müssen an die Box zurückkehren.",
+		"red_flag_description": "Zeigt den Stopp des Rennens an, die Fahrer müssen in die Boxengasse zurückkehren.",
 		"blue_flag_title": "Blaue Flagge",
-		"blue_flag_description": "Zeigt an, dass ein Fahrer gleich von einem führenden Fahrer überholt wird.",
+		"blue_flag_description": "Zeigt an, dass ein Fahrer kurz davor ist, von einem Fahrer überholt zu werden, der das Rennen anführt.",
 		"black_flag_title": "Schwarze Flagge",
-		"black_flag_description": "Zeigt an, dass ein Fahrer disqualifiziert ist und an die Box zurückkehren muss.",
+		"black_flag_description": "Zeigt an, dass ein Fahrer disqualifiziert wurde und in die Boxengasse zurückkehren muss.",
 		"green_flag_title": "Grüne Flagge",
-		"green_flag_description": "Zeigt an, dass die Strecke frei ist und das Rennen beginnen/fortsetzen kann.",
+		"green_flag_description": "Zeigt an, dass die Strecke frei ist und das Rennen beginnen/fortgesetzt werden kann.",
 		"white_flag_title": "Weiße Flagge",
 		"white_flag_description": "Zeigt an, dass der Fahrer in seiner letzten Runde ist.",
-		"chequered_flag_title": "Zielflagge",
+		"chequered_flag_title": "Karierte Flagge",
 		"chequered_flag_description": "Zeigt das Ende des Rennens an.",
 		"black_and_white_flag_title": "Schwarz-weiße Flagge",
 		"black_and_white_flag_description": "Zeigt eine Verwarnung für unsportliches Verhalten an.",
 		"yellow_and_red_flag_title": "Gelb-rote Flagge",
-		"yellow_and_red_flag_description": "Zeigt eine Abnahme der Haftung auf der Strecke an."
+		"yellow_and_red_flag_description": "Zeigt einen Haftungsverlust auf der Strecke an."
 	},
 	"retro_f1": {
 		"home": {
 			"tab_title": "Retro F1",
 			"title": "Retro - Startseite",
-			"winners_title": "Liste der Titelträger",
+			"winners_title": "Liste der Meisterfahrer",
 			"driver_titles": "Titel",
 			"all_data": "Liste der Fahrer | Teams | Strecken",
 			"all_seasons": "Liste der Saisons",
-			"winners_constructors_title": "Liste der Konstrukteurstitel"
+			"winners_constructors_title": "Liste der Meisterteams"
 		},
 		"winners": {
-			"tab_title": "Retro Titelträger",
-			"title": "Liste der Titelträger in der Formel 1",
+			"tab_title": "Retro Meister",
+			"title": "Liste der Meisterfahrer in der Formel 1",
 			"number_of_titles": "Anzahl der Titel"
 		},
 		"all_data": {
@@ -143,16 +143,16 @@
 			"link_drivers": "Fahrer",
 			"link_teams": "Teams",
 			"link_tracks": "Strecken",
-			"search_driver": "Suche einen Fahrer",
-			"search_team": "Suche ein Team",
-			"search_track": "Suche eine Strecke",
+			"search_driver": "Nach Fahrer suchen",
+			"search_team": "Nach Team suchen",
+			"search_track": "Nach Strecke suchen",
 			"born": "Geboren am",
 			"no_result": "Kein Ergebnis"
 		},
 		"all_seasons": {
 			"tab_title": "Retro Saisons",
 			"season": "Saison",
-			"link_standings": "Wertung",
+			"link_standings": "Wertungen",
 			"link_calendar": "Kalender",
 			"standings": {
 				"tab_title": "Retro Wertungen",
@@ -165,136 +165,109 @@
 			"calendar": {
 				"tab_title": "Retro Kalender",
 				"title": "Retro - Kalender",
-				"winner": "Sieger"
+				"winner": "Gewinner"
 			},
 			"gp_details": {
-				"tab_title": "Retro GP Details",
+				"tab_title": "Retro GP-Details",
 				"title": "Retro - Rennen",
 				"position": "Pos",
 				"drivers": "Fahrer",
 				"starting_grid": "Startaufstellung",
 				"time": "Zeit",
 				"officialName": "Offizieller Name",
-				"circuitDetails": "Siehe Streckendetails",
-				"poleposition": "Pole Position",
-				"winner": "Sieger",
+				"circuitDetails": "Streckendetails anzeigen",
+				"poleposition": "Pole-Position",
+				"winner": "Gewinner",
 				"fastestLap": "Schnellste Runde",
 				"fastestPit": "Schnellster Boxenstopp (Gesamtzeit)"
-			},
-			"constructorwinners": {
-				"tab_title": "Retro Konstrukteurstitel",
-				"title": "Liste der Konstrukteurstitel in der Formel 1",
-				"number_of_titles": "Anzahl der Titel"
-			},
-			"live": {
-				"tab_title": "Live",
-				"live_title": "Live",
-				"link_standings": "Wertung",
-				"link_race_control": "Rennkontrolle",
-				"link_radio": "Radio"
-			},
-			"account": {
-				"profile": {
-					"tab_title": "Konto",
-					"profile_title": "Ihr Konto",
-					"email": "Email",
-					"name": "Name",
-					"surname": "Nachname",
-					"birthdate": "Geburtstag",
-					"username": "Benutzername",
-					"lang": "Sprache",
-					"btn_modify": "Ändern",
-					"btn_log_out": "Abmelden",
-					"btn_admin": "Verwaltung",
-					"theme": "Thema",
-					"theme_light": "Hell",
-					"theme_dark": "Dunkel"
-				},
-				"profile_edit": {
-					"tab_title": "Konto bearbeiten",
-					"edit_title": "Ihr Konto bearbeiten",
-					"email": "Email",
-					"name": "Name",
-					"surname": "Nachname",
-					"birthdate": "Geburtstag",
-					"username": "Benutzername",
-					"lang": "Sprache",
-					"btn_save": "Speichern",
-					"languages": {
-						"fr": "Französisch",
-						"en": "Englisch",
-						"es": "Spanisch",
-						"de": "Deutsch",
-						"it": "Italienisch"
-					},
-					"theme": {
-						"theme_light": "Hell",
-						"theme_dark": "Dunkel"
-					}
-				},
-				"about": {
-					"tab_title": "Über uns",
-					"devteam": "Entwicklungsteam",
-					"disclaimer": "Dieses Projekt/diese Website ist nicht offiziell und steht in keiner Verbindung zu den Unternehmen der Formel 1. F1, FORMULA ONE, FORMEL 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX und verwandte Marken sind Warenzeichen von Formula One Licensing B.V.",
-					"dataorigin_title": "Datenherkunft",
-					"dataorigin_beginning": "Die von dieser Website verarbeiteten Daten stammen aus zwei ",
-					"dataorigin_link1": "API (Application Programming Interface)",
-					"dataorigin_explanation_link_1": "kostenlos und Open Source ",
-					"dataorigin_explanation_link_2": " für die Daten (unter anderem) der aktuellen Wertungen und historischen Daten.",
-					"dataorigin_explanation_link_3": "für die Echtzeitdaten (Live-Teil).",
-					"dataorigin_cookie_policy_title": "Cookie-Richtlinie",
-					"dataorigin_cookie_policy_introduction_title": "Einführung",
-					"dataorigin_cookie_policy_introduction": "Unsere Website verwendet Cookies, um Ihre Benutzererfahrung zu verbessern, den Website-Verkehr zu analysieren und Inhalte zu personalisieren. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies gemäß dieser Cookie-Richtlinie zu.",
-					"dataorigin_cookie_policy_explanantion1_title": "Was ist ein Cookie?",
-					"dataorigin_cookie_policy_explanantion1": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät (Computer, Tablet, Smartphone) gespeichert wird, wenn Sie eine Website besuchen. Cookies werden weit verbreitet eingesetzt, um Websites effizient arbeiten zu lassen und die Benutzererfahrung zu verbessern sowie um Informationen an die Website-Betreiber zu liefern.",
-					"dataorigin_cookie_policy_explanantion2_title": "Verwaltung von Cookies",
-					"dataorigin_cookie_policy_explanantion2": "Sie haben die Möglichkeit, Cookies zu akzeptieren oder abzulehnen, indem Sie die Einstellungen Ihres Browsers ändern. Wenn Sie jedoch Cookies deaktivieren, funktionieren einige Teile unserer Website möglicherweise nicht ordnungsgemäß.",
-					"dataorigin_cookie_policy_explanantion3_title": "Änderungen dieser Cookie-Richtlinie",
-					"dataorigin_cookie_policy_explanantion3": "Wir können diese Cookie-Richtlinie von Zeit zu Zeit aktualisieren, um beispielsweise Änderungen an unseren Cookies oder aus anderen betrieblichen, rechtlichen oder regulatorischen Gründen widerzuspiegeln. Bitte besuchen Sie diese Richtlinie regelmäßig, um auf dem Laufenden zu bleiben, wie wir Cookies und verwandte Technologien verwenden."
-				},
-				"track": {
-					"total_race_held": "Gesamtzahl der ausgetragenen GP"
-				}
 			}
+		},
+		"constructorwinners": {
+			"tab_title": "Retro Meisterteams",
+			"title": "Liste der Meisterteams in der Formel 1",
+			"number_of_titles": "Anzahl der Titel"
 		}
+	},
+	"live": {
+		"tab_title": "Live",
+		"live_title": "Live",
+		"link_standings": "Wertungen",
+		"link_race_control": "Rennkontrolle",
+		"link_radio": "Radio"
 	},
 	"account": {
 		"profile": {
-			"tab_title": "account.profile.tab_title",
-			"profile_title": "account.profile.profile_title",
-			"email": "account.profile.email",
-			"name": "account.profile.name",
-			"surname": "account.profile.surname",
-			"birthdate": "account.profile.birthdate",
-			"username": "account.profile.username",
-			"lang": "account.profile.lang",
-			"theme": "account.profile.theme",
-			"theme_dark": "account.profile.theme_dark",
-			"btn_modify": "account.profile.btn_modify",
-			"btn_log_out": "account.profile.btn_log_out",
-			"theme_light": "account.profile.theme_light"
+			"tab_title": "Konto",
+			"profile_title": "Ihr Konto",
+			"email": "E-Mail",
+			"name": "Name",
+			"surname": "Nachname",
+			"birthdate": "Geburtsdatum",
+			"username": "Benutzername",
+			"lang": "Sprache",
+			"btn_modify": "Ändern",
+			"btn_log_out": "Abmelden",
+			"btn_admin": "Verwaltung",
+			"theme": "Thema",
+			"theme_light": "Hell",
+			"theme_dark": "Dunkel"
 		},
 		"profile_edit": {
-			"tab_title": "account.profile_edit.tab_title",
-			"edit_title": "account.profile_edit.edit_title",
-			"email": "account.profile_edit.email",
-			"name": "account.profile_edit.name",
-			"surname": "account.profile_edit.surname",
-			"username": "account.profile_edit.username",
-			"birthdate": "account.profile_edit.birthdate",
-			"lang": "account.profile_edit.lang",
+			"tab_title": "Konto bearbeiten",
+			"edit_title": "Ihr Konto bearbeiten",
+			"email": "E-Mail",
+			"name": "Name",
+			"surname": "Nachname",
+			"birthdate": "Geburtsdatum",
+			"username": "Benutzername",
+			"lang": "Sprache",
+			"btn_save": "Speichern",
 			"languages": {
-				"en": "account.profile_edit.languages.en",
-				"fr": "account.profile_edit.languages.fr",
-				"es": "account.profile_edit.languages.es",
-				"de": "account.profile_edit.languages.de",
-				"it": "account.profile_edit.languages.it"
+				"fr": "Französisch",
+				"en": "Englisch",
+				"es": "Spanisch",
+				"de": "Deutsch",
+				"it": "Italienisch"
 			},
 			"theme": {
-				"theme_light": "account.profile_edit.theme.theme_light",
-				"theme_dark": "account.profile_edit.theme.theme_dark"
-			},
-			"btn_save": "account.profile_edit.btn_save"
+				"theme_light": "Hell",
+				"theme_dark": "Dunkel"
+			}
+		}
+	},
+	"about": {
+		"tab_title": "Über",
+		"devteam": "Entwicklungsteam",
+		"disclaimer": "Dieses Projekt/diese Website ist nicht offiziell und steht in keiner Verbindung mit den Formel-1-Unternehmen. F1, FORMULA ONE, FORMULE 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX und verwandte Marken sind Marken von Formula One Licensing B.V.",
+		"dataorigin_title": "Datenherkunft",
+		"dataorigin_beginning": "Die Daten, die auf dieser Website verarbeitet werden, stammen aus zwei ",
+		"dataorigin_link1": "API (Application Programming Interface)",
+		"dataorigin_explanation_link_1": "kostenlosen und Open-Source-",
+		"dataorigin_explanation_link_2": " für Daten (unter anderem) zu aktuellen Wertungen und historischen Daten.",
+		"dataorigin_explanation_link_3": "für Echtzeitdaten (Live-Bereich).",
+		"dataorigin_cookie_policy_title": "Cookie-Richtlinie ",
+		"dataorigin_cookie_policy_introduction_title": "Einführung",
+		"dataorigin_cookie_policy_introduction": "Unsere Website verwendet Cookies, um Ihr Nutzererlebnis zu verbessern, den Website-Verkehr zu analysieren und Inhalte zu personalisieren. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies gemäß dieser Cookie-Richtlinie zu.",
+		"dataorigin_cookie_policy_explanantion1_title": "Was ist ein Cookie?",
+		"dataorigin_cookie_policy_explanantion1": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät (Computer, Tablet, Smartphone) gespeichert wird, wenn Sie eine Website besuchen. Cookies werden häufig verwendet, um die Funktionalität von Websites zu ermöglichen und das Nutzererlebnis zu verbessern sowie Informationen an die Website-Eigentümer zu liefern.",
+		"dataorigin_cookie_policy_explanantion2_title": "Cookie-Verwaltung",
+		"dataorigin_cookie_policy_explanantion2": "Sie haben die Möglichkeit, Cookies zu akzeptieren oder abzulehnen, indem Sie die Einstellungen Ihres Browsers ändern. Wenn Sie Cookies jedoch deaktivieren, funktionieren möglicherweise einige Teile unserer Website nicht ordnungsgemäß.",
+		"dataorigin_cookie_policy_explanantion3_title": "Änderungen an dieser Cookie-Richtlinie",
+		"dataorigin_cookie_policy_explanantion3": "Wir können diese Cookie-Richtlinie von Zeit zu Zeit aktualisieren, um beispielsweise Änderungen an unseren Cookies oder aus anderen betrieblichen, rechtlichen oder regulatorischen Gründen widerzuspiegeln. Überprüfen Sie sie daher regelmäßig, um über unsere Verwendung von Cookies und verwandten Technologien auf dem Laufenden zu bleiben."
+	},
+	"track": {
+		"total_race_held": "Gesamtzahl der abgehaltenen GPs"
+	},
+	"security": {
+		"notHappened": {
+			"tab_title": "GP nicht gefunden",
+			"not_happened": "Dieser GP hat noch nicht stattgefunden",
+			"calendar": "Zum Kalender zurückkehren"
+		},
+		"notFound": {
+			"tab_title": "Seite nicht verfügbar",
+			"not_found": "Diese Seite ist nicht verfügbar",
+			"home": "Zurück zum Anfang"
 		}
 	}
 }

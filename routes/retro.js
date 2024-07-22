@@ -60,7 +60,7 @@ router.get("/retrocalendar/:season_id", cors(), async (req, res) => {
 router.get("/retrogpdetails/:season_id/:gp_id", cors(), async (req, res) => {
     try {
         var GP_detail = await getGPDetail(req.params.gp_id);
-        if (GP_detail.length === 0) {
+        if (Object.keys(GP_detail.gpInfo).length === 0 && GP_detail.raceData.length === 0) {
             res.render('security/gpNotHappenedYet');
         } else {
             res.render('retro/retroGpDetails', { gpDetails: GP_detail, selectedYear: req.params.season_id });
