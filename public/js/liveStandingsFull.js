@@ -78,26 +78,26 @@ function injectCSS() {
 injectCSS();
 
 const driverMapping = {
-    1: "Verstappen",
-    20: "Magnussen",
-    2: "Sargeant",
-    3: "Ricciardo",
-    10: "Gasly",
-    44: "Hamilton",
-    55: "Sainz",
-    16: "Leclerc",
-    77: "Bottas",
-    63: "Russell",
-    11: "Perez",
-    4: "Norris",
-    18: "Stroll",
-    14: "Alonso",
-    31: "Ocon",
-    23: "Albon",
-    22: "Tsunoda",
-    81: "Piastri",
-    24: "Zhou",
-    27: "Hulkenberg"
+    1: "VER",
+    20: "MAG",
+    2: "SAR",
+    3: "RIC",
+    10: "GAS",
+    44: "HAM",
+    55: "SAI",
+    16: "LEC",
+    77: "BOT",
+    63: "RUS",
+    11: "PER",
+    4: "NOR",
+    18: "STR",
+    14: "ALO",
+    31: "OCO",
+    23: "ALB",
+    22: "TSU",
+    81: "PIA",
+    24: "ZHO",
+    27: "HUL"
 };
 
 var session_type;
