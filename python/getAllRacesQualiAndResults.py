@@ -7,14 +7,20 @@ def getRaceInfo(race_id, all_gps, all_races):
         if race['id'] == race_id:
             circuitId = race['circuitId']
             for gp in all_gps:
+                countryId = ""
                 if gp['id'] == race['grandPrixId']:
+                    if gp['id'] == "europe":
+                        countryId = "europe"
+                    else:
+                        countryId = gp['countryId']
+
                     raceInfoObject = {
                         'raceId': race_id,
                         'gpId': gp['id'],
                         'gpOfficialName': race['officialName'],
                         'gpShortName': gp['shortName'],
                         'gpFullName': gp['fullName'],
-                        'countryId': gp['countryId'],
+                        'countryId': countryId,
                         'circuitId': circuitId,
                         'date': race['date']
                     }

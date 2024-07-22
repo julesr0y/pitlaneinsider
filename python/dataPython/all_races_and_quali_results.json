@@ -131256,7 +131256,7 @@
                 "gpOfficialName": "1983 John Player Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "brands-hatch",
                 "date": "1983-09-25"
             }
@@ -137180,7 +137180,7 @@
                 "gpOfficialName": "Grosser Preis von Europa 1984",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "1984-10-07"
             }
@@ -142490,7 +142490,7 @@
                 "gpOfficialName": "1985 Shell Oils Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "brands-hatch",
                 "date": "1985-10-06"
             }
@@ -191682,7 +191682,7 @@
                 "gpOfficialName": "1993 SEGA European Grand Prix",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "donington",
                 "date": "1993-04-11"
             }
@@ -201474,7 +201474,7 @@
                 "gpOfficialName": "1994 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "jerez",
                 "date": "1994-10-16"
             }
@@ -207008,7 +207008,7 @@
                 "gpOfficialName": "1995 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "1995-10-01"
             }
@@ -209226,7 +209226,7 @@
                 "gpOfficialName": "1996 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "1996-04-28"
             }
@@ -217854,7 +217854,7 @@
                 "gpOfficialName": "1997 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "jerez",
                 "date": "1997-10-26"
             }
@@ -226914,7 +226914,7 @@
                 "gpOfficialName": "1999 Warsteiner Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "1999-09-26"
             }
@@ -229330,7 +229330,7 @@
                 "gpOfficialName": "2000 Warsteiner Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2000-05-21"
             }
@@ -235370,7 +235370,7 @@
                 "gpOfficialName": "2001 Warsteiner Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2001-06-24"
             }
@@ -240504,7 +240504,7 @@
                 "gpOfficialName": "2002 Allianz Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2002-06-23"
             }
@@ -245300,7 +245300,7 @@
                 "gpOfficialName": "2003 Allianz Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2003-06-29"
             }
@@ -249164,7 +249164,7 @@
                 "gpOfficialName": "2004 Formula 1 Allianz Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2004-05-30"
             }
@@ -254080,7 +254080,7 @@
                 "gpOfficialName": "2005 Formula 1 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2005-05-29"
             }
@@ -258876,7 +258876,7 @@
                 "gpOfficialName": "2006 Formula 1 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2006-05-07"
             }
@@ -265822,7 +265822,7 @@
                 "gpOfficialName": "2007 Formula 1 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "nurburgring",
                 "date": "2007-07-22"
             }
@@ -271378,7 +271378,7 @@
                 "gpOfficialName": "2008 Formula 1 Telefónica Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "valencia",
                 "date": "2008-08-24"
             }
@@ -276070,7 +276070,7 @@
                 "gpOfficialName": "2009 Formula 1 Telefónica Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "valencia",
                 "date": "2009-08-23"
             }
@@ -280626,7 +280626,7 @@
                 "gpOfficialName": "2010 Formula 1 Telefónica Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "valencia",
                 "date": "2010-06-27"
             }
@@ -286504,7 +286504,7 @@
                 "gpOfficialName": "2011 Formula 1 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "valencia",
                 "date": "2011-06-26"
             }
@@ -292736,7 +292736,7 @@
                 "gpOfficialName": "2012 Formula 1 Grand Prix of Europe",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "valencia",
                 "date": "2012-06-24"
             }
@@ -315691,7 +315691,7 @@
                 "gpOfficialName": "Formula 1 Rolex Grand Prix of Europe 2016",
                 "gpShortName": "European GP",
                 "gpFullName": "European Grand Prix",
-                "countryId": null,
+                "countryId": "europe",
                 "circuitId": "baku",
                 "date": "2016-06-19"
             }
