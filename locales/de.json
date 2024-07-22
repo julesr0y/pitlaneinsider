@@ -257,5 +257,44 @@
 				}
 			}
 		}
+	},
+	"account": {
+		"profile": {
+			"tab_title": "account.profile.tab_title",
+			"profile_title": "account.profile.profile_title",
+			"email": "account.profile.email",
+			"name": "account.profile.name",
+			"surname": "account.profile.surname",
+			"birthdate": "account.profile.birthdate",
+			"username": "account.profile.username",
+			"lang": "account.profile.lang",
+			"theme": "account.profile.theme",
+			"theme_dark": "account.profile.theme_dark",
+			"btn_modify": "account.profile.btn_modify",
+			"btn_log_out": "account.profile.btn_log_out",
+			"theme_light": "account.profile.theme_light"
+		},
+		"profile_edit": {
+			"tab_title": "account.profile_edit.tab_title",
+			"edit_title": "account.profile_edit.edit_title",
+			"email": "account.profile_edit.email",
+			"name": "account.profile_edit.name",
+			"surname": "account.profile_edit.surname",
+			"username": "account.profile_edit.username",
+			"birthdate": "account.profile_edit.birthdate",
+			"lang": "account.profile_edit.lang",
+			"languages": {
+				"en": "account.profile_edit.languages.en",
+				"fr": "account.profile_edit.languages.fr",
+				"es": "account.profile_edit.languages.es",
+				"de": "account.profile_edit.languages.de",
+				"it": "account.profile_edit.languages.it"
+			},
+			"theme": {
+				"theme_light": "account.profile_edit.theme.theme_light",
+				"theme_dark": "account.profile_edit.theme.theme_dark"
+			},
+			"btn_save": "account.profile_edit.btn_save"
+		}
 	}
 }
