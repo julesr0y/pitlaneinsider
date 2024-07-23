@@ -35,7 +35,7 @@ function renderRankings(rankings) {
         }
 
         const rankSpan = document.createElement('span');
-        rankSpan.className = 'rank font-F1Bold';
+        rankSpan.className = 'rank font-F1Bold px-4';
         rankSpan.textContent = `${(index + 1).toString().padStart(2, '0')}`;
 
         const numberSpan = document.createElement('span');
@@ -56,24 +56,21 @@ function updateRankings(newRankings) {
     driverDivs.forEach(div => {
         const numberSpan = div.querySelector('.pilot-number');
         numberSpan.innerHTML = div.dataset.driverCode;
-        numberSpan.classList.remove('arrow-up', 'arrow-down');
+        numberSpan.classList.remove('arrow-up', 'arrow-down', 'fade-in', 'fade-out');
     });
 
     newRankings.forEach((driver, newIndex) => {
         const driverDiv = Array.from(driverDivs).find(div => div.dataset.driverCode == driver.driver_code);
         const oldIndex = Array.from(driverDivs).indexOf(driverDiv);
         if (oldIndex !== newIndex) {
-
             const movingUp = newIndex < oldIndex;
             const numberSpan = driverDiv.querySelector('.rank');
-            numberSpan.innerHTML = movingUp ? '<img src="img/live/arrow-up.png">' : '<img src="img/live/arrow-down.png">';
+            numberSpan.innerHTML = movingUp ? '<img src="img/live/arrow-up.png" class="fade-in">' : '<img src="img/live/arrow-down.png" class="fade-in">';
             numberSpan.classList.add(movingUp ? 'arrow-up' : 'arrow-down');
 
             driverDiv.style.transform = `translateY(${(newIndex - oldIndex) * 100}%)`;
             setTimeout(() => {
-                driverDiv.style.transform = 'translateY(0)';
-                classementDiv.insertBefore(driverDiv, classementDiv.children[newIndex + 1] || null);
-            }, 2000);
+            }, 1000);
         }
     });
 }

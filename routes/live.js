@@ -150,4 +150,71 @@ router.get("/live/getstandings", cors(), async (req, res) => {
     }
 });
 
+router.get("/live/getstints", cors(), async (req, res) => {
+    const driverMapping = {
+        1: "VER",
+        20: "MAG",
+        2: "SAR",
+        3: "RIC",
+        10: "GAS",
+        44: "HAM",
+        55: "SAI",
+        16: "LEC",
+        77: "BOT",
+        63: "RUS",
+        11: "PER",
+        4: "NOR",
+        18: "STR",
+        14: "ALO",
+        31: "OCO",
+        23: "ALB",
+        22: "TSU",
+        81: "PIA",
+        24: "ZHO",
+        27: "HUL"
+    };
+
+    async function fetchStintData() {
+        try {
+            const response = await fetch('https://api.openf1.org/v1/stints?session_key=latest');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+
+            const lastCompounds = {};
+
+            // Iterate over the stint data to get the last compound for each driver
+            data.forEach(stint => {
+                if (!lastCompounds[stint.driver_number] || lastCompounds[stint.driver_number].lap_end < stint.lap_end) {
+                    lastCompounds[stint.driver_number] = stint.compound;
+                }
+            });
+
+            // Convertir lastCompounds en tableau et mapper selon driverMapping
+            var toReturn = Object.keys(lastCompounds).map(driver_number => ({
+                driver_code: driverMapping[driver_number],
+                compound: lastCompounds[driver_number]
+            }));
+
+            return toReturn;
+        } catch (error) {
+            console.error("Erreur lors de la récupération des stints :", error);
+            throw error;
+        }
+    }
+
+    if (verifySession(req)) {
+        try {
+            const stints = await fetchStintData();
+            res.json(stints);
+        } catch (error) {
+            console.error('Error updating stints:', error);
+            res.status(500).send('Error fetching stints');
+        }
+    } else {
+        res.render("account/needAccount");
+    }
+});
+
 module.exports = router;

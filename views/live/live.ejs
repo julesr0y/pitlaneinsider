@@ -19,6 +19,34 @@
         height: auto;
     }
 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .fade-out {
+        animation: fadeOut 0.5s ease-in-out forwards;
+    }
+
     @keyframes highlightFirstPlace {
         0% {
             background-color: transparent;
@@ -26,7 +54,7 @@
 
         25%,
         75% {
-            background-color: violet;
+            background-color: #731c87;
         }
 
         100% {
@@ -35,7 +63,7 @@
     }
 
     .first-place {
-        animation: highlightFirstPlace 2.5s ease-in-out forwards;
+        animation: highlightFirstPlace 1s ease-in-out forwards;
     }
 </style>
 
@@ -69,8 +97,8 @@
     </div>
 
     <div class="flex mt-4">
-        <div id="Classement" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-5/12">
-            <div class="grid grid-cols-2 justify-center items-center pb-4 font-F1Bold text-base">
+        <div id="Classement" class="bg-s-<%= theme %> py-4 shadow-md rounded-2xl mx-4 w-5/12">
+            <div class="grid grid-cols-2 justify-center items-center px-4 pb-4 font-F1Bold text-base">
                 <span>Pos</span>
                 <span>Drivers</span>
             </div>
