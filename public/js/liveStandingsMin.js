@@ -14,6 +14,8 @@ async function fetchDataRankings() {
     }
 }
 
+let currentFirstPlaceDriverId = null;
+
 function renderRankings(rankings) {
     const classementDiv = document.getElementById('Classement');
 
@@ -24,6 +26,13 @@ function renderRankings(rankings) {
         const driverDiv = document.createElement('div');
         driverDiv.className = 'grid grid-cols-2 justify-center items-center driver move';
         driverDiv.dataset.driverCode = driver.driver_code;
+
+        if (index === 0) {
+            if (currentFirstPlaceDriverId !== driver.driver_code) {
+                driverDiv.classList.add('first-place');
+                currentFirstPlaceDriverId = driver.driver_code;
+            }
+        }
 
         const rankSpan = document.createElement('span');
         rankSpan.className = 'rank font-F1Bold';
@@ -44,15 +53,27 @@ function updateRankings(newRankings) {
     const classementDiv = document.getElementById('Classement');
     const driverDivs = classementDiv.querySelectorAll('.driver');
 
+    driverDivs.forEach(div => {
+        const numberSpan = div.querySelector('.pilot-number');
+        numberSpan.innerHTML = div.dataset.driverCode;
+        numberSpan.classList.remove('arrow-up', 'arrow-down');
+    });
+
     newRankings.forEach((driver, newIndex) => {
         const driverDiv = Array.from(driverDivs).find(div => div.dataset.driverCode == driver.driver_code);
         const oldIndex = Array.from(driverDivs).indexOf(driverDiv);
         if (oldIndex !== newIndex) {
+
+            const movingUp = newIndex < oldIndex;
+            const numberSpan = driverDiv.querySelector('.rank');
+            numberSpan.innerHTML = movingUp ? '<img src="img/live/arrow-up.png">' : '<img src="img/live/arrow-down.png">';
+            numberSpan.classList.add(movingUp ? 'arrow-up' : 'arrow-down');
+
             driverDiv.style.transform = `translateY(${(newIndex - oldIndex) * 100}%)`;
             setTimeout(() => {
                 driverDiv.style.transform = 'translateY(0)';
                 classementDiv.insertBefore(driverDiv, classementDiv.children[newIndex + 1] || null);
-            }, 1000);
+            }, 2000);
         }
     });
 }
@@ -72,5 +93,5 @@ setInterval(async () => {
     currentRankings = await fetchDataRankings();
     updateRankings(currentRankings);
     console.log("updated");
-    setTimeout(() => renderRankings(currentRankings), 1000);
-}, 4000);
+    setTimeout(() => renderRankings(currentRankings), 2000);
+}, 10000);

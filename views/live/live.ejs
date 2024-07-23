@@ -10,8 +10,32 @@
 
 <style>
     .move {
-        transition: transform 1s ease-in-out;
-        /* Rendre la transition plus lente et fluide */
+        transition: transform 2s ease-in-out;
+    }
+
+    .arrow-up img,
+    .arrow-down img {
+        width: 20px;
+        height: auto;
+    }
+
+    @keyframes highlightFirstPlace {
+        0% {
+            background-color: transparent;
+        }
+
+        25%,
+        75% {
+            background-color: violet;
+        }
+
+        100% {
+            background-color: transparent;
+        }
+    }
+
+    .first-place {
+        animation: highlightFirstPlace 2.5s ease-in-out forwards;
     }
 </style>
 
