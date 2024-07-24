@@ -358,7 +358,10 @@ function renderRankings(rankings) {
 
         const tyreSpan = document.createElement('span');
         tyreSpan.className = 'pilot-compound';
-        tyreSpan.textContent = driver.compound;
+        const tyreIco = document.createElement('img');
+        tyreIco.src = `/img/tires/${driver.compound.toLowerCase()}.svg`;
+        tyreIco.className = 'h-5 w-auto';
+        tyreSpan.appendChild(tyreIco);
 
         driverDiv.appendChild(rankSpan);
         driverDiv.appendChild(numberSpan);

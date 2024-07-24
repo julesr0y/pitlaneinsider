@@ -1,6 +1,12 @@
 [
   {
+    "driver_number": 55
+  },
+  {
     "driver_number": 81
+  },
+  {
+    "driver_number": 14
   },
   {
     "driver_number": 4
@@ -10,9 +16,6 @@
   },
   {
     "driver_number": 63
-  },
-  {
-    "driver_number": 55
   },
   {
     "driver_number": 16
@@ -28,9 +31,6 @@
   },
   {
     "driver_number": 18
-  },
-  {
-    "driver_number": 14
   },
   {
     "driver_number": 3
