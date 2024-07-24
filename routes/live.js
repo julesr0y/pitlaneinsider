@@ -217,4 +217,76 @@ router.get("/live/getstints", cors(), async (req, res) => {
     }
 });
 
+router.get("/live/getintervals", cors(), async (req, res) => {
+    const driverMapping = {
+        1: "VER",
+        20: "MAG",
+        2: "SAR",
+        3: "RIC",
+        10: "GAS",
+        44: "HAM",
+        55: "SAI",
+        16: "LEC",
+        77: "BOT",
+        63: "RUS",
+        11: "PER",
+        4: "NOR",
+        18: "STR",
+        14: "ALO",
+        31: "OCO",
+        23: "ALB",
+        22: "TSU",
+        81: "PIA",
+        24: "ZHO",
+        27: "HUL"
+    };
+
+    const driverIntervals = {};
+
+    async function updateIntervals() {
+        try {
+            const intervalsResponse = await fetch('https://api.openf1.org/v1/intervals?session_key=latest');
+            const intervalsData = await intervalsResponse.json();
+
+            intervalsData.forEach(({ driver_number, interval, gap_to_leader }) => {
+                if (interval !== null) {
+                    driverIntervals[driver_number] = interval;
+                } else if (gap_to_leader !== null) {
+                    driverIntervals[driver_number] = gap_to_leader;
+                } else {
+                    driverIntervals[driver_number] = "No data";
+                }
+            });
+
+            var intervalsArray = Object.keys(driverIntervals).map(driver_number => ({
+                driver_number,
+                gap: driverIntervals[driver_number]
+            }));
+
+            var mappedIntervals = intervalsArray.map(({ driver_number, gap }) => ({
+                driver_code: driverMapping[driver_number],
+                gap
+            }));
+
+            var top20 = mappedIntervals.slice(0, 20);
+
+            return top20;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des intervalles:', error);
+        }
+    }
+
+    if (verifySession(req)) {
+        try {
+            const gaps = await updateIntervals();
+            res.json(gaps);
+        } catch (error) {
+            console.error('Error updating gaps:', error);
+            res.status(500).send('Error fetching gaps');
+        }
+    } else {
+        res.render("account/needAccount");
+    }
+});
+
 module.exports = router;
