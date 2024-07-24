@@ -130,3 +130,5 @@ document.head.appendChild(style);
 // Initialisation de la mise à jour des localisations
 updateDriverLocations();
 setInterval(updateDriverLocations, 10000);
+
+*/
