@@ -15,6 +15,7 @@ async function fetchDataRankings() {
 }
 
 let currentFirstPlaceDriverId = null;
+let isFirstTimeLoaded = true; // permet de désactiver l'animation de meilleur tour au chargement de la page pour la première fois
 
 function renderRankings(rankings) {
     const classementDiv = document.getElementById('Classement');
@@ -27,11 +28,14 @@ function renderRankings(rankings) {
         driverDiv.className = 'grid grid-cols-2 justify-center items-center driver move';
         driverDiv.dataset.driverCode = driver.driver_code;
 
-        if (index === 0) {
+        if (index === 0 && !isFirstTimeLoaded) {
             if (currentFirstPlaceDriverId !== driver.driver_code) {
                 driverDiv.classList.add('first-place');
                 currentFirstPlaceDriverId = driver.driver_code;
             }
+        }
+        else if (index === 0 && isFirstTimeLoaded) {
+            currentFirstPlaceDriverId = driver.driver_code;
         }
 
         const rankSpan = document.createElement('span');
@@ -47,6 +51,8 @@ function renderRankings(rankings) {
 
         classementDiv.appendChild(driverDiv);
     });
+
+    isFirstTimeLoaded = false;
 }
 
 function updateRankings(newRankings) {
