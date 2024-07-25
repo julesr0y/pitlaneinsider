@@ -9,70 +9,73 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="h-auto flex flex-col justify-center">
-        <span class="font-F1Bold text-center pt-4">
-            <%= __('account.profile.profile_title') %>
-        </span>
-        <div class="pt-4 px-4">
-            <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.email') %> :
+    <main>
+        <div class="h-auto flex flex-col justify-center">
+            <span class="font-F1Bold text-center pt-4">
+                <%= __('account.profile.profile_title') %>
+            </span>
+            <div class="pt-4 px-4">
+                <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.email') %> :
+                        </span>
+                        <%= userInfosFront.email %>
+                    </span><br>
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.name') %> :
+                        </span>
+                        <%= userInfosFront.nom %>
+                    </span><br>
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.surname') %> :
+                        </span>
+                        <%= userInfosFront.prenom %>
+                    </span><br>
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.birthdate') %> :
+                        </span>
+                        <%= userInfosFront.naissance.toLocaleDateString() %>
+                    </span><br>
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.username') %> :
+                        </span>
+                        <%= userInfosFront.username %>
+                    </span><br>
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.lang') %> :
+                        </span>
+                        <%= userInfosFront.language %>
+                    </span><br>
+                    <span>
+                        <span class="text-t-s-<%= theme %>">
+                            <%= __('account.profile.theme') %> :
+                        </span>
+                        <% if (userInfosFront.theme==0) { %>
+                            <%= __('account.profile.theme_light') %>
+                                <% } else { %>
+                                    <%= __('account.profile.theme_dark') %>
+                                        <% } %>
                     </span>
-                    <%= userInfosFront.email %>
-                </span><br>
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.name') %> :
-                    </span>
-                    <%= userInfosFront.nom %>
-                </span><br>
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.surname') %> :
-                    </span>
-                    <%= userInfosFront.prenom %>
-                </span><br>
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.birthdate') %> :
-                    </span>
-                    <%= userInfosFront.naissance.toLocaleDateString() %>
-                </span><br>
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.username') %> :
-                    </span>
-                    <%= userInfosFront.username %>
-                </span><br>
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.lang') %> :
-                    </span>
-                    <%= userInfosFront.language %>
-                </span><br>
-                <span>
-                    <span class="text-t-s-<%= theme %>">
-                        <%= __('account.profile.theme') %> :
-                    </span>
-                    <% if (userInfosFront.theme==0) { %>
-                        <%= __('account.profile.theme_light') %>
-                            <% } else { %>
-                                <%= __('account.profile.theme_dark') %>
-                                    <% } %>
-                </span>
+                </div>
+            </div>
+            <div class="inline-flex flex-col items-center mt-4">
+                <a href="/edit"
+                    class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl mr-2 text-center w-44">
+                    <%= __('account.profile.btn_modify') %>
+                </a>
+                <a href="/signout"
+                    class="px-4 py-2 bg-deconnect text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
+                    <%= __('account.profile.btn_log_out') %>
+                </a>
             </div>
         </div>
-        <div class="inline-flex flex-col items-center mt-4">
-            <a href="/edit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl mr-2 text-center w-44">
-                <%= __('account.profile.btn_modify') %>
-            </a>
-            <a href="/signout"
-                class="px-4 py-2 bg-deconnect text-white font-semibold rounded-3xl mr-2 text-center w-44 mt-4">
-                <%= __('account.profile.btn_log_out') %>
-            </a>
-        </div>
-    </div>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 

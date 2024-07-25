@@ -68,32 +68,33 @@
 </style>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
-        <span>
-            <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
-            <span class="text-red-500">
-                <%= __('live.live_title') %>
+    <main>
+        <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
+            <span>
+                <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
+                <span class="text-red-500">
+                    <%= __('live.live_title') %>
+                </span>
             </span>
-        </span>
-        <span id="frontSession"></span>
-        <span id="frontLocation"></span>
-    </div>
+            <span id="frontSession"></span>
+            <span id="frontLocation"></span>
+        </div>
 
-    <!-- <div class="text-center text-2xl font-bold my-8">
+        <!-- <div class="text-center text-2xl font-bold my-8">
         <span id="lap"></span>
     </div> -->
 
-    <div class="flex mt-4 justify-center">
-        <div id="Classement" class="bg-s-<%= theme %> py-4 shadow-md rounded-2xl mx-4">
-            <div class="grid grid-cols-4 items-center px-4 pb-4 font-F1Bold text-base gap-x-2">
-                <span>Pos</span>
-                <span>Driver</span>
-                <span>Gap</span>
-                <span>Tyre</span>
+        <div class="flex mt-4 justify-center">
+            <div id="Classement" class="bg-s-<%= theme %> py-4 shadow-md rounded-2xl mx-4">
+                <div class="grid grid-cols-4 items-center px-4 pb-4 font-F1Bold text-base gap-x-2">
+                    <span>Pos</span>
+                    <span>Driver</span>
+                    <span>Gap</span>
+                    <span>Tyre</span>
+                </div>
             </div>
         </div>
-    </div>
-
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 

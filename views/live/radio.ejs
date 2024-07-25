@@ -9,37 +9,38 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="text-center text-2xl font-bold my-8">
-        <span>
-            <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
-            <span class="text-red-500">
-                <%= __('live.live_title') %>
-            </span> -
-            <span id="frontLocation"></span>
-        </span> - <span id="frontSession"></span>
-    </div>
+    <main>
+        <div class="text-center text-2xl font-bold my-8">
+            <span>
+                <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
+                <span class="text-red-500">
+                    <%= __('live.live_title') %>
+                </span> -
+                <span id="frontLocation"></span>
+            </span> - <span id="frontSession"></span>
+        </div>
 
-    <div class="text-center text-2xl font-bold my-8">
-        <span id="lap"></span>
-    </div>
+        <div class="text-center text-2xl font-bold my-8">
+            <span id="lap"></span>
+        </div>
 
 
-    <div class="flex justify-center mb-8">
-        <a href="/live" id="btnClassement" class="mr-4">
-            <%= __('live.link_standings') %>
-        </a>
-        <a href="/live/racecontrol" id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')">
-            <%= __('live.link_race_control') %>
-        </a>
-        <a href="/live/radio" id="btnRadio" class="underline" onclick="openTab('Radio')">
-            <%= __('live.link_radio') %>
-        </a>
-    </div>
+        <div class="flex justify-center mb-8">
+            <a href="/live" id="btnClassement" class="mr-4">
+                <%= __('live.link_standings') %>
+            </a>
+            <a href="/live/racecontrol" id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')">
+                <%= __('live.link_race_control') %>
+            </a>
+            <a href="/live/radio" id="btnRadio" class="underline" onclick="openTab('Radio')">
+                <%= __('live.link_radio') %>
+            </a>
+        </div>
 
-    <div id="Radio" class="flex flex-col items-center justify-center p-4 sm:pt-8">
+        <div id="Radio" class="flex flex-col items-center justify-center p-4 sm:pt-8">
 
-    </div>
-
+        </div>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 <script src="/js/liveRadio.js"></script>

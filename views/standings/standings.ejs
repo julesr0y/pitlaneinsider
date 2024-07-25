@@ -9,107 +9,110 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="app-container">
-        <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-            <%= __('standings.season') %>
-        </div>
-        <div class="tabs flex justify-center">
-            <div class="tab">
-                <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')">
-                    <%= __('standings.drivers') %>
-                </button>
-                <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')">
-                    <%= __('standings.teams') %>
-                </button>
+    <main>
+        <div class="app-container">
+            <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+                <%= __('standings.season') %>
             </div>
-        </div>
-        <main class="flex justify-center">
-            <div id="Pilotes" class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-4 mt-8 w-9/10 md:w-2/3 text-center">
-                <div id="header-classement-pilotes" class="grid grid-cols-12">
-                    <span class="col-span-1"></span>
-                    <span class="col-span-2 font-F1Bold">
-                        <%= __('standings.position') %>
-                    </span>
-                    <span class="col-span-6 font-F1Bold">
+            <div class="tabs flex justify-center">
+                <div class="tab">
+                    <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')">
                         <%= __('standings.drivers') %>
-                    </span>
-                    <span class="col-span-3 font-F1Bold">
-                        <%= __('standings.points') %>
-                    </span>
-                </div>
-                <div class="pilot-list grid grid-cols-12 gap-y-2">
-                    <% actualDriversStanding.forEach(function(pilote) { %>
-                        <span class="flex justify-center">
-                            <span
-                                class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl col-span-1">
-                            </span>
-                        </span>
-                        <span class="font-F1Bold col-span-2">
-                            <%= String(pilote.position).padStart(2, '0' ) %>
-                        </span>
-                        <span class="col-span-6 text-left sm:ml-36 ml-10">
-                            <%= pilote.lastName %>
-                        </span>
-                        <span class="col-span-3 text-right sm:mr-20 mr-8">
-                            <%= pilote.points %>
-                        </span>
-                        <% }); %>
-                </div>
-            </div>
-            <div id="Constructeurs"
-                class="hidden bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-4 mt-8 w-9/10 md:w-2/3 text-center">
-                <div id="header-classement-pilotes" class="grid grid-cols-12">
-                    <span class="col-span-1"></span>
-                    <span class="col-span-2 font-F1Bold">
-                        <%= __('standings.position') %>
-                    </span>
-                    <span class="col-span-6 font-F1Bold sm:ml-8 mr-8">
+                    </button>
+                    <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')">
                         <%= __('standings.teams') %>
-                    </span>
-                    <span class="col-span-3 font-F1Bold">
-                        <%= __('standings.points') %>
-                    </span>
-                </div>
-                <div class="team-list grid grid-cols-12 gap-y-2">
-                    <% actualTeamsStanding.forEach(function(team) { %>
-                        <span class="flex justify-center">
-                            <span
-                                class="border border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl col-span-1">
-                            </span>
-                        </span>
-                        <span class="font-F1Bold col-span-2">
-                            <%= String(team.position).padStart(2, '0' ) %>
-                        </span>
-                        <span class="col-span-6 text-left sm:ml-40 ml-10">
-                            <%= team.name %>
-                        </span>
-                        <span class="col-span-3 text-right sm:mr-20 mr-6">
-                            <%= team.points %>
-                        </span>
-                        <% }); %>
+                    </button>
                 </div>
             </div>
-        </main>
-    </div>
-    <script>
-        function openTab(tabName) {
-            if (tabName === 'Pilotes') {
-                document.getElementById('Pilotes').classList.remove('hidden');
-                document.getElementById('Constructeurs').classList.add('hidden');
-                document.getElementById('btnPilotes').classList.add('active');
-                document.getElementById('btnPilotes').classList.add('underline');
-                document.getElementById('btnConstructeurs').classList.remove('active');
-                document.getElementById('btnConstructeurs').classList.remove('underline');
-            } else if (tabName === 'Constructeurs') {
-                document.getElementById('Constructeurs').classList.remove('hidden');
-                document.getElementById('Pilotes').classList.add('hidden');
-                document.getElementById('btnConstructeurs').classList.add('active');
-                document.getElementById('btnConstructeurs').classList.add('underline');
-                document.getElementById('btnPilotes').classList.remove('active');
-                document.getElementById('btnPilotes').classList.remove('underline');
+            <main class="flex justify-center">
+                <div id="Pilotes"
+                    class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-4 mt-8 w-9/10 md:w-2/3 text-center">
+                    <div id="header-classement-pilotes" class="grid grid-cols-12">
+                        <span class="col-span-1"></span>
+                        <span class="col-span-2 font-F1Bold">
+                            <%= __('standings.position') %>
+                        </span>
+                        <span class="col-span-6 font-F1Bold">
+                            <%= __('standings.drivers') %>
+                        </span>
+                        <span class="col-span-3 font-F1Bold">
+                            <%= __('standings.points') %>
+                        </span>
+                    </div>
+                    <div class="pilot-list grid grid-cols-12 gap-y-2">
+                        <% actualDriversStanding.forEach(function(pilote) { %>
+                            <span class="flex justify-center">
+                                <span
+                                    class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl col-span-1">
+                                </span>
+                            </span>
+                            <span class="font-F1Bold col-span-2">
+                                <%= String(pilote.position).padStart(2, '0' ) %>
+                            </span>
+                            <span class="col-span-6 text-left sm:ml-36 ml-10">
+                                <%= pilote.lastName %>
+                            </span>
+                            <span class="col-span-3 text-right sm:mr-20 mr-8">
+                                <%= pilote.points %>
+                            </span>
+                            <% }); %>
+                    </div>
+                </div>
+                <div id="Constructeurs"
+                    class="hidden bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-4 mt-8 w-9/10 md:w-2/3 text-center">
+                    <div id="header-classement-pilotes" class="grid grid-cols-12">
+                        <span class="col-span-1"></span>
+                        <span class="col-span-2 font-F1Bold">
+                            <%= __('standings.position') %>
+                        </span>
+                        <span class="col-span-6 font-F1Bold sm:ml-8 mr-8">
+                            <%= __('standings.teams') %>
+                        </span>
+                        <span class="col-span-3 font-F1Bold">
+                            <%= __('standings.points') %>
+                        </span>
+                    </div>
+                    <div class="team-list grid grid-cols-12 gap-y-2">
+                        <% actualTeamsStanding.forEach(function(team) { %>
+                            <span class="flex justify-center">
+                                <span
+                                    class="border border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl col-span-1">
+                                </span>
+                            </span>
+                            <span class="font-F1Bold col-span-2">
+                                <%= String(team.position).padStart(2, '0' ) %>
+                            </span>
+                            <span class="col-span-6 text-left sm:ml-40 ml-10">
+                                <%= team.name %>
+                            </span>
+                            <span class="col-span-3 text-right sm:mr-20 mr-6">
+                                <%= team.points %>
+                            </span>
+                            <% }); %>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script>
+            function openTab(tabName) {
+                if (tabName === 'Pilotes') {
+                    document.getElementById('Pilotes').classList.remove('hidden');
+                    document.getElementById('Constructeurs').classList.add('hidden');
+                    document.getElementById('btnPilotes').classList.add('active');
+                    document.getElementById('btnPilotes').classList.add('underline');
+                    document.getElementById('btnConstructeurs').classList.remove('active');
+                    document.getElementById('btnConstructeurs').classList.remove('underline');
+                } else if (tabName === 'Constructeurs') {
+                    document.getElementById('Constructeurs').classList.remove('hidden');
+                    document.getElementById('Pilotes').classList.add('hidden');
+                    document.getElementById('btnConstructeurs').classList.add('active');
+                    document.getElementById('btnConstructeurs').classList.add('underline');
+                    document.getElementById('btnPilotes').classList.remove('active');
+                    document.getElementById('btnPilotes').classList.remove('underline');
+                }
             }
-        }
-    </script>
+        </script>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 

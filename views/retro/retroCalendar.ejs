@@ -83,71 +83,73 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-        <%= __('retro_f1.all_seasons.calendar.title') %>
-    </div>
-    <div class="app-container">
-        <div class="season-title text-3xl font-bold text-center my-8">
-            <div class="mx-4">
-                <div class="custom-select-container">
-                    <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
-                        <% for (let year=2023; year>= 1950; year--) { %>
-                            <option value="<%= year %>" <% if (year==selectedYear) { %>selected<% } %>><%=
-                                        __('retro_f1.all_seasons.season') %>
-                                        <%= year %>
-                            </option>
-                            <% } %>
-                    </select>
-                </div>
-                <script>
-                    function changeSeason(select) {
-                        var selectedYear = select.value;
-                        window.location.href = '/retrocalendar/' + selectedYear;
-                    }
-                </script>
-            </div>
+    <main>
+        <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+            <%= __('retro_f1.all_seasons.calendar.title') %>
         </div>
-        <div class="tabs flex justify-center">
-            <div class="flex justify-center items-start pt-10">
-                <div class="flex mb-4">
-                    <a id="classementLink" href="/retrostandings/<%= selectedYear %>"
-                        class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}">
-                        <%= __('retro_f1.all_seasons.link_standings') %>
-                    </a>
-                    <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>"
-                        class="{{ Request::path() == 'retrotracks' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
-                        <%= __('retro_f1.all_seasons.link_calendar') %>
-                    </a>
+        <div class="app-container">
+            <div class="season-title text-3xl font-bold text-center my-8">
+                <div class="mx-4">
+                    <div class="custom-select-container">
+                        <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
+                            <% for (let year=2023; year>= 1950; year--) { %>
+                                <option value="<%= year %>" <% if (year==selectedYear) { %>selected<% } %>><%=
+                                            __('retro_f1.all_seasons.season') %>
+                                            <%= year %>
+                                </option>
+                                <% } %>
+                        </select>
+                    </div>
+                    <script>
+                        function changeSeason(select) {
+                            var selectedYear = select.value;
+                            window.location.href = '/retrocalendar/' + selectedYear;
+                        }
+                    </script>
                 </div>
             </div>
-        </div>
-
-        <!-- Affichage des courses pour la saison sélectionnée -->
-        <div class="grid md:grid-cols-2 gap-4 justify-center">
-            <% retro_calendrier.forEach(course=> { %>
-                <% if (course.year==selectedYear) { %>
-                    <div class="flex justify-center w-full">
-                        <a href="/retrogpdetails/<%= selectedYear %>/<%= String(course.raceId) %>"
-                            data-round="<%= course.round %>"
-                            class="gp-detail-link bg-s-<%= theme %> p-4 w-4/5 md:w-3/4 shadow-md rounded-2xl mt-8 focus:outline-none focus:ring-2 focus:ring-gray-500">
-                            <div class="flex flex-col items-center">
-                                <img src="/img/countryFlags/<%= course.country %>.svg" alt="<%= course.country %>"
-                                    class="h-56 w-auto my-auto rounded-xl">
-                                <ul class="text-t-s-<%= theme %>">
-                                    <li class="text-xl text-center">
-                                        <%= course.name %>
-                                    </li>
-                                    <li class="text-xl text-center">
-                                        <%= course.date %>
-                                    </li>
-                                </ul>
-                            </div>
+            <div class="tabs flex justify-center">
+                <div class="flex justify-center items-start pt-10">
+                    <div class="flex mb-4">
+                        <a id="classementLink" href="/retrostandings/<%= selectedYear %>"
+                            class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}">
+                            <%= __('retro_f1.all_seasons.link_standings') %>
+                        </a>
+                        <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>"
+                            class="{{ Request::path() == 'retrotracks' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
+                            <%= __('retro_f1.all_seasons.link_calendar') %>
                         </a>
                     </div>
-                    <% } %>
-                        <% }); %>
+                </div>
+            </div>
+
+            <!-- Affichage des courses pour la saison sélectionnée -->
+            <div class="grid md:grid-cols-2 gap-4 justify-center">
+                <% retro_calendrier.forEach(course=> { %>
+                    <% if (course.year==selectedYear) { %>
+                        <div class="flex justify-center w-full">
+                            <a href="/retrogpdetails/<%= selectedYear %>/<%= String(course.raceId) %>"
+                                data-round="<%= course.round %>"
+                                class="gp-detail-link bg-s-<%= theme %> p-4 w-4/5 md:w-3/4 shadow-md rounded-2xl mt-8 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                <div class="flex flex-col items-center">
+                                    <img src="/img/countryFlags/<%= course.country %>.svg" alt="<%= course.country %>"
+                                        class="h-56 w-auto my-auto rounded-xl">
+                                    <ul class="text-t-s-<%= theme %>">
+                                        <li class="text-xl text-center">
+                                            <%= course.name %>
+                                        </li>
+                                        <li class="text-xl text-center">
+                                            <%= course.date %>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div>
+                        <% } %>
+                            <% }); %>
+            </div>
         </div>
-    </div>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 

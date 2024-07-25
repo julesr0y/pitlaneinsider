@@ -12,322 +12,325 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <div class="pt-10 px-4 h-auto flex flex-col justify-center">
-        <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
-            <% if (dataDriver.currentSeasonDriver===true) { %>
-                <div class="grid grid-cols-2 grid-rows-2 gap-0 h-full w-full">
+    <main>
+        <div class="pt-10 px-4 h-auto flex flex-col justify-center">
+            <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+                <% if (dataDriver.currentSeasonDriver===true) { %>
+                    <div class="grid grid-cols-2 grid-rows-2 gap-0 h-full w-full">
 
-                    <div class="flex justify-center items-center h-32 w-auto">
-                        <img src="/img/drivers/<%= dataDriver.id %>.webp"
-                            alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-32 w-auto">
-                    </div>
+                        <div class="flex justify-center items-center h-32 w-auto">
+                            <img src="/img/drivers/<%= dataDriver.id %>.webp"
+                                alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-32 w-auto">
+                        </div>
 
-                    <div class="flex flex-col justify-center items-center h-32 w-auto">
-                        <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none">
-                            <%= dataDriver.firstName %>
-                                <%= dataDriver.lastName %>
-                        </h1>
-                        <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
-                            <% if (dataDriver.dateOfDeath===null) { %>
-                                <span>
-                                    <%= dataDriver.dateOfBirth %> (<%= dataDriver.age %>
-                                            <%= __('driver.age') %>)
-                                </span>
-                                <% } else { %>
+                        <div class="flex flex-col justify-center items-center h-32 w-auto">
+                            <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none">
+                                <%= dataDriver.firstName %>
+                                    <%= dataDriver.lastName %>
+                            </h1>
+                            <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
+                                <% if (dataDriver.dateOfDeath===null) { %>
                                     <span>
-                                        <%= dataDriver.dateOfBirth %>
-                                    </span>
-                                    <span>
-                                        <%= dataDriver.dateOfDeath %> (<%= dataDriver.age %>
+                                        <%= dataDriver.dateOfBirth %> (<%= dataDriver.age %>
                                                 <%= __('driver.age') %>)
                                     </span>
-                                    <% } %>
-                        </p>
-                    </div>
-
-                    <div class="flex justify-center items-center h-32 w-full">
-                        <div class="bg-<%= dataDriver.actualTeam %> text-white sm:p-4 shadow-md w-44 h-full p-2">
-                            <p class="text-base font-F1Bold mt-2 sm:mt-0">
-                                <%= __('driver.actual_season') %>
-                            </p>
-                            <p class="text-sm mt-1 leading-none">
-                                <%= __('driver.races') %>: <%= dataDriver.numberOfRacesCurrentSeason %>
-                            </p>
-                            <p class="text-sm mt-1 leading-none">
-                                <%= __('driver.points') %>: <%= dataDriver.numberOfPointsCurrentSeason %>
-                            </p>
-                            <p class="text-sm mt-1 leading-none">
-                                <%= __('driver.podiums') %>: <%= dataDriver.numberOfPodiumsCurrentSeason %>
-                            </p>
-                            <p class="text-sm mt-1 leading-none">
-                                <%= __('driver.victories') %>: <%= dataDriver.numberOfWinsCurrentSeason %>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 grid-rows-2 gap-0 h-32 w-auto items-center">
-                        <div class="flex justify-center items-center">
-                            <p class="text-<%= dataDriver.actualTeam %> text-4xl font-F1Bold m-0 leading-none">
-                                <% if (dataDriver.permanentNumber !=33) { %>
-                                    <%= dataDriver.permanentNumber %>
-                                        <% } else { %>
-                                            <%= 1 %>
-                                                <% } %>
-                            </p>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <img src="/img/teams/<%= dataDriver.actualTeam.toLowerCase() %>.webp"
-                                alt="<%= dataDriver.actualTeam %>" class="h-auto w-auto max-h-12">
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <img src="/img/countryFlags/<%= dataDriver.nationality.toLowerCase() %>.svg"
-                                alt="<%= dataDriver.nationality %>.svg" class="h-16 w-auto">
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <img src="/img/2024/logo_pilote/<%= dataDriver.id %>-logo.webp"
-                                alt="Logo of <%= dataDriver.firstName %> <%= dataDriver.lastName %>"
-                                class="h-12 w-auto">
-                        </div>
-                    </div>
-                    <% } else { %>
-                        <div class="grid grid-cols-2 grid-rows-1 gap-0 h-32 w-auto">
-                            <!-- Cellule 1 -->
-                            <div class="flex justify-center items-center h-32 w-auto">
-                                <img src="/img/drivers/<%= dataDriver.id %>.webp"
-                                    alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-32 w-auto">
-                            </div>
-
-                            <!-- Cellule 2 -->
-                            <div class="flex flex-col justify-center items-center h-32 w-auto">
-                                <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none">
-                                    <%= dataDriver.firstName %>
-                                        <%= dataDriver.lastName %>
-                                </h1>
-                                <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
-                                    <% if (dataDriver.dateOfDeath===null) { %>
+                                    <% } else { %>
                                         <span>
-                                            <%= dataDriver.dateOfBirth %> (<%= dataDriver.age %>
+                                            <%= dataDriver.dateOfBirth %>
+                                        </span>
+                                        <span>
+                                            <%= dataDriver.dateOfDeath %> (<%= dataDriver.age %>
                                                     <%= __('driver.age') %>)
                                         </span>
-                                        <% } else { %>
-                                            <span>
-                                                <%= dataDriver.dateOfBirth %> -
-                                            </span>
-                                            <span>
-                                                <%= dataDriver.dateOfDeath %> (<%= dataDriver.age %>
-                                                        <%= __('driver.age') %>)
-                                            </span>
-                                            <% } %>
+                                        <% } %>
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center items-center h-32 w-full">
+                            <div class="bg-<%= dataDriver.actualTeam %> text-white sm:p-4 shadow-md w-44 h-full p-2">
+                                <p class="text-base font-F1Bold mt-2 sm:mt-0">
+                                    <%= __('driver.actual_season') %>
+                                </p>
+                                <p class="text-sm mt-1 leading-none">
+                                    <%= __('driver.races') %>: <%= dataDriver.numberOfRacesCurrentSeason %>
+                                </p>
+                                <p class="text-sm mt-1 leading-none">
+                                    <%= __('driver.points') %>: <%= dataDriver.numberOfPointsCurrentSeason %>
+                                </p>
+                                <p class="text-sm mt-1 leading-none">
+                                    <%= __('driver.podiums') %>: <%= dataDriver.numberOfPodiumsCurrentSeason %>
+                                </p>
+                                <p class="text-sm mt-1 leading-none">
+                                    <%= __('driver.victories') %>: <%= dataDriver.numberOfWinsCurrentSeason %>
                                 </p>
                             </div>
-                            <% } %>
-                        </div>
-                        <!-- Career Info -->
-                        <div class="text-center mt-4">
-                            <h3 class="text-base sm:text-lg font-bold">
-                                <%= __('driver.carreer_title') %>:
-                            </h3>
-
-                            <% if(dataDriver.totalChampionshipWins !==0) { %>
-                                <span class="grid grid-cols-12 mt-4">
-                                    <span class="col-span-12 flex flex-col items-center">
-                                        <span class="text-gold">
-                                            <%= dataDriver.totalChampionshipWins %>
-                                        </span>
-                                        <span class="text-t-s-<%= theme %> text-xs">
-                                            <%= __('driver.totalChampionshipWins') %>
-                                        </span>
-                                    </span>
-                                </span>
-                                <% } %>
-
-                                    <span class="grid grid-cols-12 mt-4">
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.firstYear %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.first_year') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.numberOfSeasons %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.number_of_seasons') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalRaceStarts %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_races') %>
-                                            </span>
-                                        </span>
-                                    </span>
-                                    <span class="grid grid-cols-12 mt-4">
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalRaceWins %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_victories') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalPodiums %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_podiums') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalPolePositions %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_poles') %>
-                                            </span>
-                                        </span>
-                                    </span>
-                                    <span class="grid grid-cols-12 mt-4">
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.victoryRatio %>%
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.victory_ratio') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.podiumRatio %>%
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.podium_ratio') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.poleRatio %>%
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.pole_ratio') %>
-                                            </span>
-                                        </span>
-                                    </span>
-                                    <span class="grid grid-cols-12 mt-4">
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalDriverOfTheDay %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_driver_of_the_day') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalFastestLaps %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_fastest_laps') %>
-                                            </span>
-                                        </span>
-                                        <span class="col-span-4 flex flex-col">
-                                            <span>
-                                                <%= dataDriver.totalPoints %>
-                                            </span>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= __('driver.total_points') %>
-                                            </span>
-                                        </span>
-                                    </span>
                         </div>
 
-                        <div class="text-center mt-4">
-                            <h3 class="text-base sm:text-lg font-bold">
-                                <%= __('driver.teams_title') %>:
-                            </h3>
-
-                            <div class="mt-6">
-                                <span class="grid grid-cols-12">
-                                    <% dataDriver.teams.forEach(function(team) { %>
-                                        <span class="col-span-4 flex flex-col items-center mt-4">
-                                            <a href="/team/<%= team.teamId %>" class="flex flex-col items-center">
-                                                <img src="/img/teams/<%= team.teamId %>.webp" alt="<%= team.teamId %>"
-                                                    class="w-auto h-10">
-                                                <span class="text-sm">
-                                                    <p class="text-sm sm:text-base ml-2">
-                                                        <%= team.teamName %>
-                                                    </p>
-                                                </span>
-                                            </a>
-                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                <%= team.year %>
-                                            </span>
-                                        </span>
-                                        <% }); %>
-                                </span>
+                        <div class="grid grid-cols-2 grid-rows-2 gap-0 h-32 w-auto items-center">
+                            <div class="flex justify-center items-center">
+                                <p class="text-<%= dataDriver.actualTeam %> text-4xl font-F1Bold m-0 leading-none">
+                                    <% if (dataDriver.permanentNumber !=33) { %>
+                                        <%= dataDriver.permanentNumber %>
+                                            <% } else { %>
+                                                <%= 1 %>
+                                                    <% } %>
+                                </p>
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <img src="/img/teams/<%= dataDriver.actualTeam.toLowerCase() %>.webp"
+                                    alt="<%= dataDriver.actualTeam %>" class="h-auto w-auto max-h-12">
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <img src="/img/countryFlags/<%= dataDriver.nationality.toLowerCase() %>.svg"
+                                    alt="<%= dataDriver.nationality %>.svg" class="h-16 w-auto">
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <img src="/img/2024/logo_pilote/<%= dataDriver.id %>-logo.webp"
+                                    alt="Logo of <%= dataDriver.firstName %> <%= dataDriver.lastName %>"
+                                    class="h-12 w-auto">
                             </div>
                         </div>
+                        <% } else { %>
+                            <div class="grid grid-cols-2 grid-rows-1 gap-0 h-32 w-auto">
+                                <!-- Cellule 1 -->
+                                <div class="flex justify-center items-center h-32 w-auto">
+                                    <img src="/img/drivers/<%= dataDriver.id %>.webp"
+                                        alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>"
+                                        class="h-32 w-auto">
+                                </div>
 
-                        <% if(dataDriver.allVictories !==null) { %>
+                                <!-- Cellule 2 -->
+                                <div class="flex flex-col justify-center items-center h-32 w-auto">
+                                    <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none">
+                                        <%= dataDriver.firstName %>
+                                            <%= dataDriver.lastName %>
+                                    </h1>
+                                    <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
+                                        <% if (dataDriver.dateOfDeath===null) { %>
+                                            <span>
+                                                <%= dataDriver.dateOfBirth %> (<%= dataDriver.age %>
+                                                        <%= __('driver.age') %>)
+                                            </span>
+                                            <% } else { %>
+                                                <span>
+                                                    <%= dataDriver.dateOfBirth %> -
+                                                </span>
+                                                <span>
+                                                    <%= dataDriver.dateOfDeath %> (<%= dataDriver.age %>
+                                                            <%= __('driver.age') %>)
+                                                </span>
+                                                <% } %>
+                                    </p>
+                                </div>
+                                <% } %>
+                            </div>
+                            <!-- Career Info -->
+                            <div class="text-center mt-4">
+                                <h3 class="text-base sm:text-lg font-bold">
+                                    <%= __('driver.carreer_title') %>:
+                                </h3>
+
+                                <% if(dataDriver.totalChampionshipWins !==0) { %>
+                                    <span class="grid grid-cols-12 mt-4">
+                                        <span class="col-span-12 flex flex-col items-center">
+                                            <span class="text-gold">
+                                                <%= dataDriver.totalChampionshipWins %>
+                                            </span>
+                                            <span class="text-t-s-<%= theme %> text-xs">
+                                                <%= __('driver.totalChampionshipWins') %>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <% } %>
+
+                                        <span class="grid grid-cols-12 mt-4">
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.firstYear %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.first_year') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.numberOfSeasons %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.number_of_seasons') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalRaceStarts %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_races') %>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="grid grid-cols-12 mt-4">
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalRaceWins %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_victories') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalPodiums %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_podiums') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalPolePositions %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_poles') %>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="grid grid-cols-12 mt-4">
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.victoryRatio %>%
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.victory_ratio') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.podiumRatio %>%
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.podium_ratio') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.poleRatio %>%
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.pole_ratio') %>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="grid grid-cols-12 mt-4">
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalDriverOfTheDay %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_driver_of_the_day') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalFastestLaps %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_fastest_laps') %>
+                                                </span>
+                                            </span>
+                                            <span class="col-span-4 flex flex-col">
+                                                <span>
+                                                    <%= dataDriver.totalPoints %>
+                                                </span>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= __('driver.total_points') %>
+                                                </span>
+                                            </span>
+                                        </span>
+                            </div>
 
                             <div class="text-center mt-4">
                                 <h3 class="text-base sm:text-lg font-bold">
-                                    <%= __('driver.victories_title') %>:
+                                    <%= __('driver.teams_title') %>:
                                 </h3>
 
-                                <% for(const year in dataDriver.allVictories) { %>
-                                    <div class="mt-6 flex flex-col justify-start">
-                                        <p class="text-xl">
-                                            <%= year %>
-                                        </p>
-                                        <span class="grid grid-cols-12">
-                                            <% (dataDriver.allVictories[year]).forEach(function(victory) { %>
-                                                <span class="col-span-3">
-                                                    <a href="/retrogpdetails/<%= year %>/<%= victory.id %>">
-                                                        <span class="flex flex-col items-center mt-4">
-                                                            <img src="/img/countryFlags/<%= victory.country %>.svg"
-                                                                alt="<%= victory.country %>" class="w-auto h-12">
-                                                            <span class="text-t-s-<%= theme %> text-xs">
-                                                                <%= victory.shortName %>
-                                                            </span>
-                                                        </span>
-                                                    </a>
+                                <div class="mt-6">
+                                    <span class="grid grid-cols-12">
+                                        <% dataDriver.teams.forEach(function(team) { %>
+                                            <span class="col-span-4 flex flex-col items-center mt-4">
+                                                <a href="/team/<%= team.teamId %>" class="flex flex-col items-center">
+                                                    <img src="/img/teams/<%= team.teamId %>.webp"
+                                                        alt="<%= team.teamId %>" class="w-auto h-10">
+                                                    <span class="text-sm">
+                                                        <p class="text-sm sm:text-base ml-2">
+                                                            <%= team.teamName %>
+                                                        </p>
+                                                    </span>
+                                                </a>
+                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                    <%= team.year %>
                                                 </span>
-
-                                                <% }); %>
-                                        </span>
-                                    </div>
-                                    <% }; %>
-
+                                            </span>
+                                            <% }); %>
+                                    </span>
+                                </div>
                             </div>
 
-                            <% } %>
-                                <br>
-                                <div class="flex justify-center">
-                                    <div class="max-w-sm w-full rounded-lg">
-                                        <div class="flex justify-center">
-                                            <%= __('driver.points_by_season') %>
+                            <% if(dataDriver.allVictories !==null) { %>
+
+                                <div class="text-center mt-4">
+                                    <h3 class="text-base sm:text-lg font-bold">
+                                        <%= __('driver.victories_title') %>:
+                                    </h3>
+
+                                    <% for(const year in dataDriver.allVictories) { %>
+                                        <div class="mt-6 flex flex-col justify-start">
+                                            <p class="text-xl">
+                                                <%= year %>
+                                            </p>
+                                            <span class="grid grid-cols-12">
+                                                <% (dataDriver.allVictories[year]).forEach(function(victory) { %>
+                                                    <span class="col-span-3">
+                                                        <a href="/retrogpdetails/<%= year %>/<%= victory.id %>">
+                                                            <span class="flex flex-col items-center mt-4">
+                                                                <img src="/img/countryFlags/<%= victory.country %>.svg"
+                                                                    alt="<%= victory.country %>" class="w-auto h-12">
+                                                                <span class="text-t-s-<%= theme %> text-xs">
+                                                                    <%= victory.shortName %>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                    </span>
+
+                                                    <% }); %>
+                                            </span>
                                         </div>
-                                        <div id="area-chart"></div>
-                                    </div>
+                                        <% }; %>
+
                                 </div>
-                                <div class="flex justify-center">
-                                    <div class="max-w-sm w-full rounded-lg">
-                                        <div class="flex justify-center">
-                                            <%= __('driver.standing_by_season') %>
+
+                                <% } %>
+                                    <br>
+                                    <div class="flex justify-center">
+                                        <div class="max-w-sm w-full rounded-lg">
+                                            <div class="flex justify-center">
+                                                <%= __('driver.points_by_season') %>
+                                            </div>
+                                            <div id="area-chart"></div>
                                         </div>
-                                        <div id="area-chart2"></div>
                                     </div>
-                                </div>
-                </div>
-        </div>
-        <%- include("../partials/footer.ejs") %>
+                                    <div class="flex justify-center">
+                                        <div class="max-w-sm w-full rounded-lg">
+                                            <div class="flex justify-center">
+                                                <%= __('driver.standing_by_season') %>
+                                            </div>
+                                            <div id="area-chart2"></div>
+                                        </div>
+                                    </div>
+                    </div>
+            </div>
+    </main>
+    <%- include("../partials/footer.ejs") %>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

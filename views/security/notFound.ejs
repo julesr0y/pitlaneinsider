@@ -9,16 +9,18 @@
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %> m-0">
-    <div class="flex justify-center items-center pt-4">
-        <div class="text-center">
-            <p class="font-F1Bold text-2xl">
-                <%= __('security.notFound.not_found') %>
-            </p>
-            <a href="/" class="text-blue-500 hover:text-blue-800 text-lg">
-                <%= __('security.notFound.home') %>
-            </a>
+    <main>
+        <div class="flex justify-center items-center pt-4">
+            <div class="text-center">
+                <p class="font-F1Bold text-2xl">
+                    <%= __('security.notFound.not_found') %>
+                </p>
+                <a href="/" class="text-blue-500 hover:text-blue-800 text-lg">
+                    <%= __('security.notFound.home') %>
+                </a>
+            </div>
         </div>
-    </div>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 

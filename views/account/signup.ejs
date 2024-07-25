@@ -8,40 +8,43 @@
 </head>
 
 <body class="font-F1Bold text-<%= theme %> bg-b-<%= theme %>">
-    <div class="flex items-center justify-center h-full">
-        <form class="px-10 py-8 rounded-lg w-full max-w-sm" action="/signupProcess" method="post">
-            <div class="grid grid-cols-2 gap-4 mb-4">
-                <input type="text" name="nom" placeholder="Name"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" required>
-                <input type="text" name="prenom" placeholder="Surname"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" required>
-            </div>
-            <div class="grid gap-4 mb-4">
-                <input type="date" name="naissance" placeholder="Birth date"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
-                <input type="email" name="email" placeholder="Email"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
-                <input type="text" name="username" placeholder="Username"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
-                <input type="password" name="mdp" placeholder="Password"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
-                <input type="password" name="confirm_mdp" placeholder="Password confirmation"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200">
-            </div>
-            <div class="flex items-center justify-between mb-4">
-                <button type="submit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl w-full mr-2">
-                    Sign up
-                </button>
-                <a href="/signin"
-                    class="px-4 py-2 font-semibold rounded-3xl border-2 border-main-color w-full ml-2 text-main-color text-center">
-                    Sign in
-                </a>
-            </div>
-            <% if (typeof msg !=='undefined' ) { %>
-                <p class="text-red-500">Error, passwords are not matching</p>
-                <% } %>
-        </form>
-    </div>
+    <main>
+        <div class="flex items-center justify-center h-full">
+            <form class="px-10 py-8 rounded-lg w-full max-w-sm" action="/signupProcess" method="post">
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input type="text" name="nom" placeholder="Name"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" required>
+                    <input type="text" name="prenom" placeholder="Surname"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm bg-gray-200" required>
+                </div>
+                <div class="grid gap-4 mb-4">
+                    <input type="date" name="naissance" placeholder="Birth date"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
+                    <input type="email" name="email" placeholder="Email"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
+                    <input type="text" name="username" placeholder="Username"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
+                    <input type="password" name="mdp" placeholder="Password"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
+                    <input type="password" name="confirm_mdp" placeholder="Password confirmation"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200">
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <button type="submit"
+                        class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl w-full mr-2">
+                        Sign up
+                    </button>
+                    <a href="/signin"
+                        class="px-4 py-2 font-semibold rounded-3xl border-2 border-main-color w-full ml-2 text-main-color text-center">
+                        Sign in
+                    </a>
+                </div>
+                <% if (typeof msg !=='undefined' ) { %>
+                    <p class="text-red-500">Error, passwords are not matching</p>
+                    <% } %>
+            </form>
+        </div>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 

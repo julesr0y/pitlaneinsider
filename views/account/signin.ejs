@@ -8,28 +8,31 @@
 </head>
 
 <body class="font-F1Bold text-<%= theme %> bg-b-<%= theme %>">
-    <div class="flex items-center justify-center">
-        <form class="px-10 py-8 rounded-lg w-full max-w-sm" action="/signinProcess" method="post">
-            <div class="grid gap-4 mb-4">
-                <input type="email" name="email" placeholder="Email"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
-                <input type="password" name="mdp" placeholder="Password"
-                    class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
-            </div>
-            <div class="flex items-center justify-between mb-4">
-                <button type="submit" class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl w-full mr-2">
-                    Sign in
-                </button>
-                <a href="/signup"
-                    class="px-4 py-2 font-semibold rounded-3xl border-2 border-main-color w-full ml-2 text-main-color text-center">
-                    Sign up
-                </a>
-            </div>
-            <% if (typeof msg !=='undefined' ) { %>
-                <p class="text-red-500">Error, incorrect email or password</p>
-                <% } %>
-        </form>
-    </div>
+    <main>
+        <div class="flex items-center justify-center">
+            <form class="px-10 py-8 rounded-lg w-full max-w-sm" action="/signinProcess" method="post">
+                <div class="grid gap-4 mb-4">
+                    <input type="email" name="email" placeholder="Email"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
+                    <input type="password" name="mdp" placeholder="Password"
+                        class="input-bg px-4 py-2 rounded-3xl shadow-sm w-full bg-gray-200" required>
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <button type="submit"
+                        class="px-4 py-2 bg-main-color text-white font-semibold rounded-3xl w-full mr-2">
+                        Sign in
+                    </button>
+                    <a href="/signup"
+                        class="px-4 py-2 font-semibold rounded-3xl border-2 border-main-color w-full ml-2 text-main-color text-center">
+                        Sign up
+                    </a>
+                </div>
+                <% if (typeof msg !=='undefined' ) { %>
+                    <p class="text-red-500">Error, incorrect email or password</p>
+                    <% } %>
+            </form>
+        </div>
+    </main>
     <%- include('../partials/footer.ejs') %>
 </body>
 
