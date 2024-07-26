@@ -182,7 +182,7 @@ main {
     }
 
     #nav-check:checked~.nav-links {
-        height: 85.5vh;
+        height: 100vh;
         overflow-y: hidden;
     }
 
