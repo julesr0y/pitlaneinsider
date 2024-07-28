@@ -8,6 +8,7 @@ const path = require('path');
  */
 async function getActualDrivers() {
     try {
+        const teamOrder = ['red-bull', 'mclaren', 'ferrari', 'mercedes', 'aston-martin', 'rb', 'haas', 'kick-sauber', 'williams', 'alpine'];
         const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
@@ -25,6 +26,22 @@ async function getActualDrivers() {
 
                 drivers.push(driver);
             }
+        });
+
+        // sort drivers by their teams
+        drivers.sort((a, b) => {
+            if (a.constructorId < b.constructorId) {
+                return -1;
+            }
+            if (a.constructorId > b.constructorId) {
+                return 1;
+            }
+            return 0;
+        });
+
+        // sort teams
+        drivers.sort((a, b) => {
+            return teamOrder.indexOf(a.constructorId) - teamOrder.indexOf(b.constructorId);
         });
 
         return drivers;
