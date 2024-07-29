@@ -53482,7 +53482,7 @@
                     "date": "2024-07-28",
                     "raceId": 1115,
                     "circuitId": "spa-francorchamps",
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -53530,7 +53530,7 @@
                     "date": "2024-08-25",
                     "raceId": 1116,
                     "circuitId": "zandvoort",
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
