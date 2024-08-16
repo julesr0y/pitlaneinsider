@@ -196966,7 +196966,7 @@
                 "gpOfficialName": "1994 Pacific Grand Prix",
                 "gpShortName": "Pacific GP",
                 "gpFullName": "Pacific Grand Prix",
-                "countryId": null,
+                "countryId": "japan",
                 "circuitId": "aida",
                 "date": "1994-04-17"
             }
@@ -207336,7 +207336,7 @@
                 "gpOfficialName": "1995 Pacific Grand Prix",
                 "gpShortName": "Pacific GP",
                 "gpFullName": "Pacific Grand Prix",
-                "countryId": null,
+                "countryId": "japan",
                 "circuitId": "aida",
                 "date": "1995-10-22"
             }
