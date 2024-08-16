@@ -9,7 +9,7 @@ const path = require('path');
  */
 async function getRetroCalendar(season_id) {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_calendar.json');
+        const filePath = path.join(__dirname, '../../data/all_calendar.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
 

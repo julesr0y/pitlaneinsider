@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getRetroTracks() {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_tracks.json');
+        const filePath = path.join(__dirname, '../../data/all_tracks.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
 

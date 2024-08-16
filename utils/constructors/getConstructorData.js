@@ -9,7 +9,7 @@ const path = require('path');
  */
 async function getConstructorData(teamId) {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_teams_stats.json');
+        const filePath = path.join(__dirname, '../../data/all_teams_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         var data = JSON.parse(file);
         data = data.filter(item => item.constructorId === teamId);

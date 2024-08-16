@@ -9,7 +9,7 @@ const path = require('path');
  */
 async function getRetroStandings(season_id) {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_driver_standings.json');
+        const filePath = path.join(__dirname, '../../data/all_driver_standings.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
 

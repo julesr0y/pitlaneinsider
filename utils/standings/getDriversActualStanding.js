@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getDriversActualStandings() {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_driver_standings.json');
+        const filePath = path.join(__dirname, '../../data/all_driver_standings.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
         var thisYearDriversStandings = data.filter(race => race.year == 2024);

@@ -9,7 +9,7 @@ const path = require('path');
 async function getActualDrivers() {
     try {
         const teamOrder = ['red-bull', 'mclaren', 'ferrari', 'mercedes', 'aston-martin', 'rb', 'haas', 'kick-sauber', 'williams', 'alpine'];
-        const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
+        const filePath = path.join(__dirname, '../../data/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
         var drivers = [];

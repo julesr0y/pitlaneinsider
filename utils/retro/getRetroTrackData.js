@@ -9,7 +9,7 @@ const path = require('path');
  */
 async function getRetroTrackData(trackId) {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_tracks.json');
+        const filePath = path.join(__dirname, '../../data/all_tracks.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         var data = JSON.parse(file);
         data = data.filter(item => item.id === trackId);

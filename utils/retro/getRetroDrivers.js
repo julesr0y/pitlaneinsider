@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getRetroDrivers() {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
+        const filePath = path.join(__dirname, '../../data/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
         var drivers = [];

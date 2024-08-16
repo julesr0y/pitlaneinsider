@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getWinnersConstructors() {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/titled_constructors.json');
+        const filePath = path.join(__dirname, '../../data/titled_constructors.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
         let winnersTab = {};

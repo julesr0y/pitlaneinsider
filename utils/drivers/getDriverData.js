@@ -9,7 +9,7 @@ const path = require('path');
  */
 async function getDriverData(driver_id) {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_drivers_stats.json');
+        const filePath = path.join(__dirname, '../../data/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         var data = JSON.parse(file);
         data = data.filter(item => item.id === driver_id);

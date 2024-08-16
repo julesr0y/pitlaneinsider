@@ -9,7 +9,7 @@ const path = require('path');
  */
 async function getGPDetail(gp_id) {
     try {
-        const filePath = path.join(__dirname, '../../python/dataPython/all_races_and_quali_results.json');
+        const filePath = path.join(__dirname, '../../data/all_races_and_quali_results.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
 
