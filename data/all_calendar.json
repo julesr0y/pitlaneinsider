@@ -26356,7 +26356,7 @@
             "raceDetails": [
                 {
                     "id": "pacific",
-                    "country": null,
+                    "country": "pacific",
                     "name": "Pacific GP",
                     "year": 1994,
                     "date": "1994-04-17",
@@ -27748,7 +27748,7 @@
             "raceDetails": [
                 {
                     "id": "pacific",
-                    "country": null,
+                    "country": "pacific",
                     "name": "Pacific GP",
                     "year": 1995,
                     "date": "1995-10-22",
