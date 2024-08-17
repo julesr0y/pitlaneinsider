@@ -1,4 +1,3 @@
-const http = require('http');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -6,7 +5,12 @@ const i18n = require('i18n');
 const helmet = require("helmet");
 const session = require("express-session");
 const compression = require('compression');
-const credits = require("./config/credits.json");
+
+if (process.env.NODE_ENV === 'production') {
+    require('dotenv').config({ path: '.env.production' });
+} else {
+    require('dotenv').config();
+}
 
 const app = express();
 app.use(compression());
@@ -22,8 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const dbPool = require('./config/database');
 
-// On importe les fonctions crées par l'équipe
-const getHomeData = require("./utils/home/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
 const verifySession = require("./utils/security/verifySession"); // Fonction permettant de vérifier si une session est bien existante
 
 // Configuration des middlewares
@@ -31,7 +33,7 @@ app.use(helmet()); // Helmet middleware, permet de sécuriser l'application en c
 app.use(cookieParser()); // Cookie parser middleware, permet de gérer les cookies
 app.use(
     session({
-        secret: credits.session.secret,
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: { secure: true },
@@ -40,7 +42,7 @@ app.use(
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
-        connectSrc: ["'self'", "https://api.openf1.org", "https://ergast.com"],
+        connectSrc: ["'self'", "https://api.openf1.org"],
         styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
         scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com", "https://cdn.jsdelivr.net/npm/apexcharts"],
         scriptSrcAttr: ["'unsafe-inline'"],
@@ -106,6 +108,8 @@ app.use(async (req, res, next) => {
     res.locals.theme = req.session.theme;
     next();
 });
+
+const getHomeData = require("./utils/home/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
 
 app.get("/", async (req, res) => { // home page
     var homeData = await getHomeData();
