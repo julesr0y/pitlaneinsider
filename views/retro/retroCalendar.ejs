@@ -124,10 +124,11 @@
             </div>
 
             <!-- Affichage des courses pour la saison sélectionnée -->
-            <div class="grid md:grid-cols-2 gap-4 justify-center">
-                <% retro_calendrier.forEach(course=> { %>
-                    <% if (course.year==selectedYear) { %>
-                        <div class="flex justify-center w-full">
+            <!-- <div class="w-9/10 mx-auto p-4 pt-0">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+                    <% retro_calendrier.forEach(course=> { %>
+                        <% if (course.year==selectedYear) { %>
+
                             <a href="/retrogpdetails/<%= selectedYear %>/<%= String(course.raceId) %>"
                                 data-round="<%= course.round %>"
                                 class="gp-detail-link bg-s-<%= theme %> p-4 w-4/5 md:w-3/4 shadow-md rounded-2xl mt-8 focus:outline-none focus:ring-2 focus:ring-gray-500">
@@ -144,9 +145,36 @@
                                     </ul>
                                 </div>
                             </a>
-                        </div>
-                        <% } %>
+                            <% } %>
+                                <% }); %>
+                </div>
+            </div> -->
+
+            <div class="w-9/10 mx-auto p-4 pt-0">
+                <% if (retro_calendrier && retro_calendrier.length> 0) { %>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+                        <% retro_calendrier.forEach(function(race) { %>
+                            <a href="/retrogpdetails/<%= selectedYear %>/<%= String(race.raceId) %>"
+                                data-round="<%= race.round %>" class="block text-center">
+                                <div id="race-<%= race.raceId %>"
+                                    class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
+                                    <div class="flex flex-col items-center">
+                                        <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg"
+                                            alt="<%= race.country %>" class="mb-2 h-20 w-auto">
+                                        <p class="text-xl font-F1Bold mb-3">
+                                            <%= race.name %>
+                                        </p>
+                                        <p class="text-lg">
+                                            <%= race.date %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                             <% }); %>
+                    </div>
+                    <% } else { %>
+                        <div class="text-center text-red-500">Aucun circuit à afficher</div>
+                        <% } %>
             </div>
         </div>
     </main>
