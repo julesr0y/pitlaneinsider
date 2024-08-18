@@ -715,9 +715,6 @@ video {
 .h-24 {
   height: 6rem;
 }
-.h-28 {
-  height: 7rem;
-}
 .h-32 {
   height: 8rem;
 }
@@ -735,6 +732,9 @@ video {
 }
 .h-6 {
   height: 1.5rem;
+}
+.h-8 {
+  height: 2rem;
 }
 .h-auto {
   height: auto;
@@ -893,6 +893,9 @@ video {
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}
+.gap-y-1 {
+  row-gap: 0.25rem;
 }
 .gap-y-2 {
   row-gap: 0.5rem;
@@ -1213,6 +1216,9 @@ video {
 }
 .text-right {
   text-align: right;
+}
+.text-justify {
+  text-align: justify;
 }
 .font-F1Bold {
   font-family: F1Bold, sans-serif;

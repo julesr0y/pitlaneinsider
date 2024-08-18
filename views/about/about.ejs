@@ -8,14 +8,17 @@
             </title>
 </head>
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %> text-justify">
 
     <main>
         <div class="flex flex-col gap-4 items-center pt-4">
 
             <span class="font-F1Wide text-xl md:text-3xl">PitLane Insider</span>
 
-            <span class="italic">La Remontée Formula 1 Team</span>
+            <span class="flex flex-col items-center gap-y-1">
+                <span class="italic">La Remontée Formula 1 Team</span>
+                <span class="text-xs">2024</span>
+            </span>
 
             <span>
                 <span class="underline font-bold">
@@ -39,19 +42,19 @@
                 </span>
             </span>
 
-            <span class="flex flex-col items-center pt-8">
+            <span class="flex flex-col items-center pt-8 w-2/3">
                 <span class="font-F1Bold text-xl">
-                    <%= __('about.dataorigin_title') %> :
+                    <%= __('about.dataorigin_title') %>
                 </span>
-                <span class="pt-2 w-2/3">
+                <span class="pt-2">
                     <%= __('about.dataorigin_beginning') %><a
                             href="https://fr.wikipedia.org/wiki/Interface_de_programmation" target="_blank"
                             class="text-blue-400">
                             <%= __('about.dataorigin_link1') %>
                         </a>
-                        <%= __('about.dataorigin_explanation_link_1') %> :
+                        <%= __('about.dataorigin_explanation_link_1') %>
                 </span>
-                <ul class="w-2/3">
+                <ul class="w-full">
                     <li class="pt-2">- <a href="https://github.com/f1db/f1db/" target="_blank"
                             class="text-blue-400">f1db</a>
                         <%= __('about.dataorigin_explanation_link_2') %>
@@ -93,6 +96,12 @@
                 </span>
             </span>
 
+            <span class="flex flex-col items-center gap-y-2">
+                <p>Follow us:</p>
+                <a href="https://x.com/pli_app" target="_blank">
+                    <img src="img/social/x_logo_<%= theme %>.svg" alt="X" class="w-auto h-8">
+                </a>
+            </span>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>
