@@ -46,7 +46,8 @@ app.use(helmet.contentSecurityPolicy({
         styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
         scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com", "https://cdn.jsdelivr.net/npm/apexcharts"],
         scriptSrcAttr: ["'unsafe-inline'"],
-        mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"]
+        mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"],
+        imgSrc: ["'self'", "data", "https://ik.imagekit.io"]
     }
 })); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
 i18n.configure({
