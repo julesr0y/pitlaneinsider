@@ -173,7 +173,7 @@
                 "permanentNumber": "10"
             }
         ],
-        "currentCarName": "Alpine A524 Renault"
+        "currentCarName": "Alpine A524"
     },
     {
         "constructorId": "alta",
@@ -372,7 +372,7 @@
                 "permanentNumber": "18"
             }
         ],
-        "currentCarName": "Aston Martin AMR24 Mercedes"
+        "currentCarName": "Aston Martin AMR24"
     },
     {
         "constructorId": "ats-wheels",
@@ -1667,7 +1667,7 @@
                 "permanentNumber": "27"
             }
         ],
-        "currentCarName": "Haas VF-24 Ferrari"
+        "currentCarName": "Haas VF-24"
     },
     {
         "constructorId": "hall",
@@ -1981,7 +1981,7 @@
                 "permanentNumber": "77"
             }
         ],
-        "currentCarName": "Kick Sauber C44 Ferrari"
+        "currentCarName": "Kick Sauber C44"
     },
     {
         "constructorId": "klenk",
@@ -2663,7 +2663,7 @@
                 "permanentNumber": "81"
             }
         ],
-        "currentCarName": "McLaren MCL38 Mercedes"
+        "currentCarName": "McLaren MCL38"
     },
     {
         "constructorId": "mercedes",
@@ -2701,7 +2701,7 @@
                 "permanentNumber": "44"
             }
         ],
-        "currentCarName": "Mercedes F1 W15 E Performance"
+        "currentCarName": "Mercedes F1 W15"
     },
     {
         "constructorId": "merzario",
@@ -3297,7 +3297,7 @@
         "victoryRatio": 0.0,
         "podiumRatio": 0.0,
         "poleRatio": 0.0,
-        "currentCarId": "racing-bulls-vcarb01",
+        "currentCarId": "rb-vcarb-01",
         "currentDrivers": [
             {
                 "id": "daniel-ricciardo",
@@ -3314,7 +3314,7 @@
                 "permanentNumber": "22"
             }
         ],
-        "currentCarName": "Racing Bulls VCARB01"
+        "currentCarName": "RB VCARB 01"
     },
     {
         "constructorId": "rebaque",
@@ -3375,7 +3375,7 @@
                 "permanentNumber": "11"
             }
         ],
-        "currentCarName": "Red Bull RB20 RBPT"
+        "currentCarName": "Red Bull RB20"
     },
     {
         "constructorId": "renault",
@@ -4287,7 +4287,7 @@
                 "permanentNumber": "2"
             }
         ],
-        "currentCarName": "Williams FW46 Mercedes"
+        "currentCarName": "Williams FW46"
     },
     {
         "constructorId": "wolf-williams",
