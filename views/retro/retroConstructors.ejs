@@ -23,8 +23,11 @@
                         class="mr-20 {{ Request::path() == 'retroconstructors' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
                         <%= __('retro_f1.all_data.link_teams') %>
                     </a>
-                    <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}">
+                    <a href="retrotracks" class="mr-20 {{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}">
                         <%= __('retro_f1.all_data.link_tracks') %>
+                    </a>
+                    <a href="retrocars" class="{{ Request::path() == 'retrocars' ? 'font-bold' : '' }}">
+                        <%= __('retro_f1.all_data.link_cars') %>
                     </a>
                 </div>
             </div>

@@ -147,7 +147,10 @@
 			"search_team": "Search for a team",
 			"search_track": "Search for a circuit",
 			"born": "Born on",
-			"no_result": "No result"
+			"no_result": "No result",
+			"link_cars": "Single-seaters",
+			"tab_title_cars": "Retro Single-seaters",
+			"search_cars": "Search a single-seater"
 		},
 		"all_seasons": {
 			"tab_title": "Retro Seasons",
