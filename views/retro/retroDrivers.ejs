@@ -15,16 +15,15 @@
         </div>
         <div class="w-9/10 mx-auto p-4">
             <div class="flex justify-center items-start">
-                <div class="flex mb-4">
+                <div class="flex justify-evenly gap-x-4 mb-4">
                     <a href="retrodrivers"
-                        class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
+                        class="{{ Request::path() == 'retrodrivers' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
                         <%= __('retro_f1.all_data.link_drivers') %>
                     </a>
-                    <a href="retroconstructors"
-                        class="mr-20 {{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}">
+                    <a href="retroconstructors" class="{{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}">
                         <%= __('retro_f1.all_data.link_teams') %>
                     </a>
-                    <a href="retrotracks" class="mr-20 {{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}">
+                    <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}">
                         <%= __('retro_f1.all_data.link_tracks') %>
                     </a>
                     <a href="retrocars" class="{{ Request::path() == 'retrocars' ? 'font-bold' : '' }}">
