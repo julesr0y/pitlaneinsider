@@ -23,4 +23,4 @@ jobs:
           cd www/pitlaneinsider
           git reset --hard
           git pull
-          npm install --production
+          npm install --omit=dev
