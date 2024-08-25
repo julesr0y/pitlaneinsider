@@ -24,21 +24,21 @@ Pour la récupération des données, nous avons majoritairement utilisé le repo
 
 Pour lancer l'application web reposant sur Node.JS, il convient de se placer à la racine du projet, puis de suivre les étapes suivantes :
 
-- Si c'est la première fois que l'on souhaite utiliser l'application :
+1. Si c'est la première fois que l'on souhaite utiliser l'application (sinon passer directement à l'étape 2) :
+    ```bash
+    npm install
+    ```
 
-```bash
-npm install
-npm install -g postcss-cli
-npm run dev
-```
+2. Pour lancer le serveur Node.JS :
+    - Pour tester en mode développement :
+    ```bash
+    npm run dev
+    ```
 
-PostCSS-CLI est nécessaire pour la compilation de TailwindCSS
-
-- Sinon :
-
-```bash
-npm run dev
-```
+    - Pour tester en mode production :
+    ```bash
+    npm start
+    ```
 
 #### Documentation :
 
@@ -52,5 +52,5 @@ Pour accéder à la documentation de ce projet, générée avec [JSDoc](https://
   \ \  \___|\ \  \   \ \  \ \ \  \____\ \  \ \  \ \  \\ \  \ \  \_|\ \       \ \  \ \  \\ \  \|____|\  \ \  \ \  \_\\ \ \  \_|\ \ \  \\  \| 
    \ \__\    \ \__\   \ \__\ \ \_______\ \__\ \__\ \__\\ \__\ \_______\       \ \__\ \__\\ \__\____\_\  \ \__\ \_______\ \_______\ \__\\ _\ 
     \|__|     \|__|    \|__|  \|_______|\|__|\|__|\|__| \|__|\|_______|        \|__|\|__| \|__|\_________\|__|\|_______|\|_______|\|__|\|__|
-                                                                                              \|_________|                          
+                                                                                              \|_________|                        
 ```

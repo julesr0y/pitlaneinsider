@@ -1,6 +1,6 @@
 {
     "name": "pitlaneinsider",
-    "version": "0.0.0",
+    "version": "0.2.0",
     "private": true,
     "scripts": {
         "start": "node ./bin/www",
@@ -9,7 +9,6 @@
         "doc": "npx jsdoc -c Documentation.json"
     },
     "dependencies": {
-        "autoprefixer": "^10.4.19",
         "bcrypt": "^5.1.1",
         "compression": "^1.7.4",
         "cookie-parser": "~1.4.6",
@@ -22,13 +21,13 @@
         "helmet": "^7.1.0",
         "http-errors": "~2.0.0",
         "i18n": "^0.15.1",
-        "morgan": "~1.10.0",
-        "mysql2": "^3.10.2",
-        "nodemon": "^3.1.4",
-        "postcss-cli": "^11.0.0",
-        "tailwindcss": "^3.4.5"
+        "mysql2": "^3.10.2"
     },
     "devDependencies": {
-        "jsdoc": "^4.0.3"
+        "autoprefixer": "^10.4.20",
+        "jsdoc": "^4.0.3",
+        "nodemon": "^3.1.4",
+        "postcss-cli": "^11.0.0",
+        "tailwindcss": "^3.4.10"
     }
 }

@@ -128,10 +128,15 @@
                             <span class="col-span-6 font-F1Bold">
                                 <%= String(detail.position).padStart(2, '0' ) %>
                             </span>
-                            <a href="/driver/<%= detail.driverId %>" class="col-span-6">
-                                <%= detail.abbreviation %>
-                            </a>
-                            <% }); %>
+                            <% if (detail.gap=="DNF" || detail.gap=="DSQ" ) { %>
+                                <a href="/driver/<%= detail.driverId %>" class="col-span-6 opacity-30">
+                                    <% } else { %>
+                                        <a href="/driver/<%= detail.driverId %>" class="col-span-6">
+                                            <% } %>
+                                                <%= detail.abbreviation %>
+
+                                        </a>
+                                        <% }); %>
                     </div>
                 </div>
 
