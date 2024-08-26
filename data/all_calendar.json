@@ -54646,7 +54646,7 @@
                     "raceId": 1116,
                     "circuitId": "zandvoort",
                     "round": 15,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -54695,7 +54695,7 @@
                     "raceId": 1117,
                     "circuitId": "monza",
                     "round": 16,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },

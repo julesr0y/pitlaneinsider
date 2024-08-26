@@ -17749,7 +17749,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 1,
-        "points": 277,
+        "points": 295,
         "permanentNumber": "33",
         "actualTeam": "red-bull"
     },
@@ -17760,7 +17760,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 2,
-        "points": 199,
+        "points": 225,
         "permanentNumber": "4",
         "actualTeam": "mclaren"
     },
@@ -17771,7 +17771,7 @@
         "lastName": "Leclerc",
         "abbreviation": "LEC",
         "position": 3,
-        "points": 177,
+        "points": 192,
         "permanentNumber": "16",
         "actualTeam": "ferrari"
     },
@@ -17782,7 +17782,7 @@
         "lastName": "Piastri",
         "abbreviation": "PIA",
         "position": 4,
-        "points": 167,
+        "points": 179,
         "permanentNumber": "81",
         "actualTeam": "mclaren"
     },
@@ -17793,7 +17793,7 @@
         "lastName": "Sainz Jr.",
         "abbreviation": "SAI",
         "position": 5,
-        "points": 162,
+        "points": 172,
         "permanentNumber": "55",
         "actualTeam": "ferrari"
     },
@@ -17804,7 +17804,7 @@
         "lastName": "Hamilton",
         "abbreviation": "HAM",
         "position": 6,
-        "points": 150,
+        "points": 154,
         "permanentNumber": "44",
         "actualTeam": "mercedes"
     },
@@ -17815,7 +17815,7 @@
         "lastName": "Pérez",
         "abbreviation": "PER",
         "position": 7,
-        "points": 131,
+        "points": 139,
         "permanentNumber": "11",
         "actualTeam": "red-bull"
     },
@@ -17826,7 +17826,7 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 8,
-        "points": 116,
+        "points": 122,
         "permanentNumber": "63",
         "actualTeam": "mercedes"
     },
@@ -17837,7 +17837,7 @@
         "lastName": "Alonso",
         "abbreviation": "ALO",
         "position": 9,
-        "points": 49,
+        "points": 50,
         "permanentNumber": "14",
         "actualTeam": "aston-martin"
     },
@@ -17887,25 +17887,25 @@
     },
     {
         "year": 2024,
-        "driverId": "oliver-bearman",
-        "firstName": "Oliver",
-        "lastName": "Bearman",
-        "abbreviation": "BEA",
-        "position": 14,
-        "points": 6,
-        "permanentNumber": null,
-        "actualTeam": "haas"
-    },
-    {
-        "year": 2024,
         "driverId": "pierre-gasly",
         "firstName": "Pierre",
         "lastName": "Gasly",
         "abbreviation": "GAS",
-        "position": 15,
-        "points": 6,
+        "position": 14,
+        "points": 8,
         "permanentNumber": "10",
         "actualTeam": "alpine"
+    },
+    {
+        "year": 2024,
+        "driverId": "oliver-bearman",
+        "firstName": "Oliver",
+        "lastName": "Bearman",
+        "abbreviation": "BEA",
+        "position": 15,
+        "points": 6,
+        "permanentNumber": null,
+        "actualTeam": "haas"
     },
     {
         "year": 2024,
