@@ -31,6 +31,7 @@ async function getActualSeasonCalendar() {
                             race.date = detail.date;
                             race.raceId = detail.raceId;
                             race.circuitId = detail.circuitId;
+                            race.round = detail.round;
                             race.isNextGp = detail.isNextGp;
                         }
                     });
