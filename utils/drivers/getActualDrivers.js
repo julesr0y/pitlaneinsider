@@ -14,17 +14,19 @@ async function getActualDrivers() {
         const data = JSON.parse(file);
         var drivers = [];
         data.forEach(item => {
-            if (item.currentSeasonDriver === true && item.testDriver == false) {
-                const driver = {
-                    id: item.id,
-                    firstName: item.firstName,
-                    lastName: item.lastName,
-                    nationality: item.nationality,
-                    permanentNumber: item.permanentNumber,
-                    constructorId: item.actualTeam
-                };
+            if ((item.currentSeasonDriver === true && item.testDriver == false) || item.id == "franco-colapinto") {
+                if (item.id != "logan-sargeant") {
+                    const driver = {
+                        id: item.id,
+                        firstName: item.firstName,
+                        lastName: item.lastName,
+                        nationality: item.nationality,
+                        permanentNumber: item.permanentNumber,
+                        constructorId: item.actualTeam
+                    };
 
-                drivers.push(driver);
+                    drivers.push(driver);
+                }
             }
         });
 
