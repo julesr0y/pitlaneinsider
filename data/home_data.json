@@ -2,37 +2,37 @@
     {
         "nextRaceInfo": [
             {
-                "id": "azerbaijan",
-                "raceId": 1118,
-                "country": "azerbaijan",
-                "name": "Azerbaijan GP",
-                "raceDate": "2024-09-15",
-                "raceTime": "11:00"
+                "id": "singapore",
+                "raceId": 1119,
+                "country": "singapore",
+                "name": "Singapore GP",
+                "raceDate": "2024-09-22",
+                "raceTime": "12:00"
             }
         ],
         "lastPodiumLocalisation": [
             {
-                "id": "italy",
-                "raceId": 1117,
-                "country": "italy",
-                "name": "Italian GP"
+                "id": "azerbaijan",
+                "raceId": 1118,
+                "country": "azerbaijan",
+                "name": "Azerbaijan GP"
             }
         ],
         "lastPodium": [
             {
                 "position": 1,
-                "driverId": "charles-leclerc",
-                "abbreviation": "LEC"
-            },
-            {
-                "position": 2,
                 "driverId": "oscar-piastri",
                 "abbreviation": "PIA"
             },
             {
+                "position": 2,
+                "driverId": "charles-leclerc",
+                "abbreviation": "LEC"
+            },
+            {
                 "position": 3,
-                "driverId": "lando-norris",
-                "abbreviation": "NOR"
+                "driverId": "george-russell",
+                "abbreviation": "RUS"
             }
         ],
         "driverStandings": [
@@ -43,7 +43,7 @@
                 "lastName": "Verstappen",
                 "abbreviation": "VER",
                 "position": 1,
-                "points": 303,
+                "points": 313,
                 "permanentNumber": "33",
                 "actualTeam": "red-bull"
             },
@@ -54,7 +54,7 @@
                 "lastName": "Norris",
                 "abbreviation": "NOR",
                 "position": 2,
-                "points": 241,
+                "points": 254,
                 "permanentNumber": "4",
                 "actualTeam": "mclaren"
             },
@@ -65,7 +65,7 @@
                 "lastName": "Leclerc",
                 "abbreviation": "LEC",
                 "position": 3,
-                "points": 217,
+                "points": 235,
                 "permanentNumber": "16",
                 "actualTeam": "ferrari"
             },
@@ -76,7 +76,7 @@
                 "lastName": "Piastri",
                 "abbreviation": "PIA",
                 "position": 4,
-                "points": 197,
+                "points": 222,
                 "permanentNumber": "81",
                 "actualTeam": "mclaren"
             },
@@ -98,8 +98,19 @@
                 "lastName": "Hamilton",
                 "abbreviation": "HAM",
                 "position": 6,
-                "points": 164,
+                "points": 166,
                 "permanentNumber": "44",
+                "actualTeam": "mercedes"
+            },
+            {
+                "year": 2024,
+                "driverId": "george-russell",
+                "firstName": "George",
+                "lastName": "Russell",
+                "abbreviation": "RUS",
+                "position": 7,
+                "points": 143,
+                "permanentNumber": "63",
                 "actualTeam": "mercedes"
             },
             {
@@ -108,21 +119,10 @@
                 "firstName": "Sergio",
                 "lastName": "Pérez",
                 "abbreviation": "PER",
-                "position": 7,
+                "position": 8,
                 "points": 143,
                 "permanentNumber": "11",
                 "actualTeam": "red-bull"
-            },
-            {
-                "year": 2024,
-                "driverId": "george-russell",
-                "firstName": "George",
-                "lastName": "Russell",
-                "abbreviation": "RUS",
-                "position": 8,
-                "points": 128,
-                "permanentNumber": "63",
-                "actualTeam": "mercedes"
             },
             {
                 "year": 2024,
@@ -131,7 +131,7 @@
                 "lastName": "Alonso",
                 "abbreviation": "ALO",
                 "position": 9,
-                "points": 50,
+                "points": 58,
                 "permanentNumber": "14",
                 "actualTeam": "aston-martin"
             },
@@ -170,11 +170,22 @@
             },
             {
                 "year": 2024,
+                "driverId": "alexander-albon",
+                "firstName": "Alexander",
+                "lastName": "Albon",
+                "abbreviation": "ALB",
+                "position": 13,
+                "points": 12,
+                "permanentNumber": "23",
+                "actualTeam": "williams"
+            },
+            {
+                "year": 2024,
                 "driverId": "daniel-ricciardo",
                 "firstName": "Daniel",
                 "lastName": "Ricciardo",
                 "abbreviation": "RIC",
-                "position": 13,
+                "position": 14,
                 "points": 12,
                 "permanentNumber": "3",
                 "actualTeam": "rb"
@@ -185,7 +196,7 @@
                 "firstName": "Pierre",
                 "lastName": "Gasly",
                 "abbreviation": "GAS",
-                "position": 14,
+                "position": 15,
                 "points": 8,
                 "permanentNumber": "10",
                 "actualTeam": "alpine"
@@ -196,10 +207,10 @@
                 "firstName": "Oliver",
                 "lastName": "Bearman",
                 "abbreviation": "BEA",
-                "position": 15,
-                "points": 6,
+                "position": 16,
+                "points": 7,
                 "permanentNumber": null,
-                "actualTeam": "haas"
+                "actualTeam": "ferrari"
             },
             {
                 "year": 2024,
@@ -207,21 +218,10 @@
                 "firstName": "Kevin",
                 "lastName": "Magnussen",
                 "abbreviation": "MAG",
-                "position": 16,
+                "position": 17,
                 "points": 6,
                 "permanentNumber": "20",
                 "actualTeam": "haas"
-            },
-            {
-                "year": 2024,
-                "driverId": "alexander-albon",
-                "firstName": "Alexander",
-                "lastName": "Albon",
-                "abbreviation": "ALB",
-                "position": 17,
-                "points": 6,
-                "permanentNumber": "23",
-                "actualTeam": "williams"
             },
             {
                 "year": 2024,
@@ -236,11 +236,22 @@
             },
             {
                 "year": 2024,
+                "driverId": "franco-colapinto",
+                "firstName": "Franco",
+                "lastName": "Colapinto",
+                "abbreviation": "COL",
+                "position": 19,
+                "points": 4,
+                "permanentNumber": "43",
+                "actualTeam": "williams"
+            },
+            {
+                "year": 2024,
                 "driverId": "guanyu-zhou",
                 "firstName": "Guanyu",
                 "lastName": "Zhou",
                 "abbreviation": "ZHO",
-                "position": 19,
+                "position": 20,
                 "points": 0,
                 "permanentNumber": "24",
                 "actualTeam": "kick-sauber"
@@ -251,20 +262,9 @@
                 "firstName": "Logan",
                 "lastName": "Sargeant",
                 "abbreviation": "SAR",
-                "position": 20,
-                "points": 0,
-                "permanentNumber": "2",
-                "actualTeam": "williams"
-            },
-            {
-                "year": 2024,
-                "driverId": "franco-colapinto",
-                "firstName": "Franco",
-                "lastName": "Colapinto",
-                "abbreviation": "COL",
                 "position": 21,
                 "points": 0,
-                "permanentNumber": "43",
+                "permanentNumber": "2",
                 "actualTeam": "williams"
             },
             {
@@ -282,38 +282,38 @@
         "constructorStandings": [
             {
                 "year": 2024,
-                "constructorId": "red-bull",
-                "name": "Red Bull",
+                "constructorId": "mclaren",
+                "name": "McLaren",
                 "position": 1,
-                "points": 446
+                "points": 476
             },
             {
                 "year": 2024,
-                "constructorId": "mclaren",
-                "name": "McLaren",
+                "constructorId": "red-bull",
+                "name": "Red Bull",
                 "position": 2,
-                "points": 438
+                "points": 456
             },
             {
                 "year": 2024,
                 "constructorId": "ferrari",
                 "name": "Ferrari",
                 "position": 3,
-                "points": 407
+                "points": 425
             },
             {
                 "year": 2024,
                 "constructorId": "mercedes",
                 "name": "Mercedes",
                 "position": 4,
-                "points": 292
+                "points": 309
             },
             {
                 "year": 2024,
                 "constructorId": "aston-martin",
                 "name": "Aston Martin",
                 "position": 5,
-                "points": 74
+                "points": 82
             },
             {
                 "year": 2024,
@@ -327,21 +327,21 @@
                 "constructorId": "haas",
                 "name": "Haas",
                 "position": 7,
-                "points": 28
-            },
-            {
-                "year": 2024,
-                "constructorId": "alpine",
-                "name": "Alpine",
-                "position": 8,
-                "points": 13
+                "points": 29
             },
             {
                 "year": 2024,
                 "constructorId": "williams",
                 "name": "Williams",
+                "position": 8,
+                "points": 16
+            },
+            {
+                "year": 2024,
+                "constructorId": "alpine",
+                "name": "Alpine",
                 "position": 9,
-                "points": 6
+                "points": 13
             },
             {
                 "year": 2024,
@@ -358,16 +358,16 @@
             "lastName": "Verstappen",
             "abbreviation": "VER",
             "position": 1,
-            "points": 303,
+            "points": 313,
             "permanentNumber": "33",
             "actualTeam": "red-bull"
         },
         "constructorLeader": {
             "year": 2024,
-            "constructorId": "red-bull",
-            "name": "Red Bull",
+            "constructorId": "mclaren",
+            "name": "McLaren",
             "position": 1,
-            "points": 446
+            "points": 476
         }
     }
 ]
