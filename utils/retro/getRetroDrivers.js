@@ -18,7 +18,7 @@ async function getRetroDrivers() {
                 lastName: item.lastName,
                 dateOfBirth: item.dateOfBirth,
                 nationality: item.nationality,
-                driverId: item.id
+                driverId: item.driverId
             };
 
             drivers.push(driver);

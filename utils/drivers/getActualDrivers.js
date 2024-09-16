@@ -14,15 +14,15 @@ async function getActualDrivers() {
         const data = JSON.parse(file);
         var drivers = [];
         data.forEach(item => {
-            if ((item.currentSeasonDriver === true && item.testDriver == false) || item.id == "franco-colapinto") {
-                if (item.id != "logan-sargeant") {
+            if ((item.isCurrentSeasonDriver === true && item.isTestDriver == false) || item.driverId == "franco-colapinto") {
+                if (item.driverId != "logan-sargeant") {
                     const driver = {
-                        id: item.id,
+                        id: item.driverId,
                         firstName: item.firstName,
                         lastName: item.lastName,
                         nationality: item.nationality,
                         permanentNumber: item.permanentNumber,
-                        constructorId: item.actualTeam
+                        constructorId: item.currentTeamId
                     };
 
                     drivers.push(driver);
