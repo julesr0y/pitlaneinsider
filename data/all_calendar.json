@@ -28192,7 +28192,7 @@
                     "raceId": 1118,
                     "circuitId": "baku",
                     "round": 17,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28274,7 +28274,7 @@
                     "raceId": 1120,
                     "circuitId": "austin",
                     "round": 19,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
