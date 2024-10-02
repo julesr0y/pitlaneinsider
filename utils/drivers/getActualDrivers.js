@@ -4,25 +4,47 @@ const path = require('path');
 /**
  * @description Returns all drivers from the actual season
  * @async
- * @returns {Array} 
+ * @returns {Array}
  */
 async function getActualDrivers() {
     try {
-        const teamOrder = ['red-bull', 'mclaren', 'ferrari', 'mercedes', 'aston-martin', 'rb', 'haas', 'kick-sauber', 'williams', 'alpine'];
-        const filePath = path.join(__dirname, '../../data/all_drivers_stats.json');
+        const teamOrder = [
+            'red-bull',
+            'mclaren',
+            'ferrari',
+            'mercedes',
+            'aston-martin',
+            'rb',
+            'haas',
+            'kick-sauber',
+            'williams',
+            'alpine',
+        ];
+        const filePath = path.join(
+            __dirname,
+            '../../data/all_drivers_stats.json'
+        );
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
         var drivers = [];
-        data.forEach(item => {
-            if ((item.isCurrentSeasonDriver === true && item.isTestDriver == false) || item.driverId == "franco-colapinto") {
-                if (item.driverId != "logan-sargeant") {
+        data.forEach((item) => {
+            if (
+                (item.isCurrentSeasonDriver === true &&
+                    item.isTestDriver == false) ||
+                item.driverId == 'franco-colapinto' ||
+                item.driverId == 'liam-lawson'
+            ) {
+                if (
+                    item.driverId != 'logan-sargeant' ||
+                    item.driverId != 'daniel-ricciardo'
+                ) {
                     const driver = {
                         id: item.driverId,
                         firstName: item.firstName,
                         lastName: item.lastName,
                         nationality: item.nationality,
                         permanentNumber: item.permanentNumber,
-                        constructorId: item.currentTeamId
+                        constructorId: item.currentTeamId,
                     };
 
                     drivers.push(driver);
@@ -43,7 +65,10 @@ async function getActualDrivers() {
 
         // sort teams
         drivers.sort((a, b) => {
-            return teamOrder.indexOf(a.constructorId) - teamOrder.indexOf(b.constructorId);
+            return (
+                teamOrder.indexOf(a.constructorId) -
+                teamOrder.indexOf(b.constructorId)
+            );
         });
 
         return drivers;
