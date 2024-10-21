@@ -28449,20 +28449,20 @@
                     "freePractice1Time": "13:30"
                 },
                 {
-                    "sprintQualifyingDate": "2024-11-30",
+                    "sprintQualifyingDate": "2024-11-29",
                     "sprintQualifyingTime": "17:30"
                 },
                 {
-                    "qualifyingDate": "2024-11-29",
-                    "qualifyingTime": "17:00"
+                    "qualifyingDate": "2024-11-30",
+                    "qualifyingTime": "18:00"
                 },
                 {
                     "sprintRaceDate": "2024-11-30",
-                    "sprintRaceTime": "13:00"
+                    "sprintRaceTime": "14:00"
                 },
                 {
                     "raceDate": "2024-12-01",
-                    "raceTime": "17:00"
+                    "raceTime": "16:00"
                 }
             ]
         }
