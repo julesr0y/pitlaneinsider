@@ -28274,7 +28274,7 @@
                     "raceId": 1120,
                     "circuitId": "austin",
                     "round": 19,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28315,7 +28315,7 @@
                     "raceId": 1121,
                     "circuitId": "mexico-city",
                     "round": 20,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },

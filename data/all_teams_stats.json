@@ -3307,6 +3307,13 @@
                 "permanentNumber": "3"
             },
             {
+                "id": "liam-lawson",
+                "firstName": "Liam",
+                "lastName": "Lawson",
+                "nationality": "new-zealand",
+                "permanentNumber": "40"
+            },
+            {
                 "id": "yuki-tsunoda",
                 "firstName": "Yuki",
                 "lastName": "Tsunoda",

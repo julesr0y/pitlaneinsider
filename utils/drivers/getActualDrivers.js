@@ -29,26 +29,19 @@ async function getActualDrivers() {
         var drivers = [];
         data.forEach((item) => {
             if (
-                (item.isCurrentSeasonDriver === true &&
-                    item.isTestDriver == false) ||
-                item.driverId == 'franco-colapinto' ||
-                item.driverId == 'liam-lawson'
+                item.isCurrentSeasonDriver === true &&
+                item.isTestDriver == false
             ) {
-                if (
-                    item.driverId != 'logan-sargeant' ||
-                    item.driverId != 'daniel-ricciardo'
-                ) {
-                    const driver = {
-                        id: item.driverId,
-                        firstName: item.firstName,
-                        lastName: item.lastName,
-                        nationality: item.nationality,
-                        permanentNumber: item.permanentNumber,
-                        constructorId: item.currentTeamId,
-                    };
+                const driver = {
+                    id: item.driverId,
+                    firstName: item.firstName,
+                    lastName: item.lastName,
+                    nationality: item.nationality,
+                    permanentNumber: item.permanentNumber,
+                    constructorId: item.currentTeamId,
+                };
 
-                    drivers.push(driver);
-                }
+                drivers.push(driver);
             }
         });
 
