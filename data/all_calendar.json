@@ -26328,9 +26328,9 @@
         {
             "raceDetails": [
                 {
-                    "id": "brazil",
+                    "id": "sao-paulo",
                     "country": "brazil",
-                    "name": "Brazilian GP",
+                    "name": "São Paulo GP",
                     "year": 2021,
                     "date": "2021-11-14",
                     "raceId": 1054,
@@ -26928,9 +26928,9 @@
         {
             "raceDetails": [
                 {
-                    "id": "brazil",
+                    "id": "sao-paulo",
                     "country": "brazil",
-                    "name": "Brazilian GP",
+                    "name": "São Paulo GP",
                     "year": 2022,
                     "date": "2022-11-13",
                     "raceId": 1078,
@@ -27453,9 +27453,9 @@
         {
             "raceDetails": [
                 {
-                    "id": "brazil",
+                    "id": "sao-paulo",
                     "country": "brazil",
-                    "name": "Brazilian GP",
+                    "name": "São Paulo GP",
                     "year": 2023,
                     "date": "2023-11-05",
                     "raceId": 1099,
@@ -28315,7 +28315,7 @@
                     "raceId": 1121,
                     "circuitId": "mexico-city",
                     "round": 20,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28348,9 +28348,9 @@
         {
             "raceDetails": [
                 {
-                    "id": "brazil",
+                    "id": "sao-paulo",
                     "country": "brazil",
-                    "name": "Brazilian GP",
+                    "name": "São Paulo GP",
                     "year": 2024,
                     "date": "2024-11-03",
                     "raceId": 1122,
@@ -28371,8 +28371,8 @@
                     "sprintQualifyingTime": "18:30"
                 },
                 {
-                    "qualifyingDate": "2024-11-02",
-                    "qualifyingTime": "18:00"
+                    "qualifyingDate": "2024-11-03",
+                    "qualifyingTime": "10:30"
                 },
                 {
                     "sprintRaceDate": "2024-11-02",
@@ -28380,7 +28380,7 @@
                 },
                 {
                     "raceDate": "2024-11-03",
-                    "raceTime": "17:00"
+                    "raceTime": "15:30"
                 }
             ]
         }
@@ -28397,7 +28397,7 @@
                     "raceId": 1123,
                     "circuitId": "las-vegas",
                     "round": 22,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
