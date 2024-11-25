@@ -28397,7 +28397,7 @@
                     "raceId": 1123,
                     "circuitId": "las-vegas",
                     "round": 22,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28438,7 +28438,7 @@
                     "raceId": 1124,
                     "circuitId": "losail",
                     "round": 23,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },

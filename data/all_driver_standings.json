@@ -17749,7 +17749,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 1,
-        "points": 393,
+        "points": 403,
         "permanentNumber": "33",
         "actualTeam": "red-bull"
     },
@@ -17760,7 +17760,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 2,
-        "points": 331,
+        "points": 340,
         "permanentNumber": "4",
         "actualTeam": "mclaren"
     },
@@ -17771,7 +17771,7 @@
         "lastName": "Leclerc",
         "abbreviation": "LEC",
         "position": 3,
-        "points": 307,
+        "points": 319,
         "permanentNumber": "16",
         "actualTeam": "ferrari"
     },
@@ -17782,7 +17782,7 @@
         "lastName": "Piastri",
         "abbreviation": "PIA",
         "position": 4,
-        "points": 262,
+        "points": 268,
         "permanentNumber": "81",
         "actualTeam": "mclaren"
     },
@@ -17793,7 +17793,7 @@
         "lastName": "Sainz Jr.",
         "abbreviation": "SAI",
         "position": 5,
-        "points": 244,
+        "points": 259,
         "permanentNumber": "55",
         "actualTeam": "ferrari"
     },
@@ -17804,7 +17804,7 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 6,
-        "points": 192,
+        "points": 217,
         "permanentNumber": "63",
         "actualTeam": "mercedes"
     },
@@ -17815,7 +17815,7 @@
         "lastName": "Hamilton",
         "abbreviation": "HAM",
         "position": 7,
-        "points": 190,
+        "points": 208,
         "permanentNumber": "44",
         "actualTeam": "mercedes"
     },
@@ -17826,7 +17826,7 @@
         "lastName": "Pérez",
         "abbreviation": "PER",
         "position": 8,
-        "points": 151,
+        "points": 152,
         "permanentNumber": "11",
         "actualTeam": "red-bull"
     },
@@ -17848,7 +17848,7 @@
         "lastName": "Hülkenberg",
         "abbreviation": "HUL",
         "position": 10,
-        "points": 31,
+        "points": 35,
         "permanentNumber": "27",
         "actualTeam": "haas"
     },
@@ -17859,7 +17859,7 @@
         "lastName": "Tsunoda",
         "abbreviation": "TSU",
         "position": 11,
-        "points": 28,
+        "points": 30,
         "permanentNumber": "22",
         "actualTeam": "rb"
     },
