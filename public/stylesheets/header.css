@@ -5,7 +5,7 @@ header {
     margin: 0;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: #52E252;
+    background-color: #058785;
     z-index: 1000;
     position: fixed;
     height: 12vh;
@@ -106,7 +106,7 @@ main {
 
     .nav-btn label:hover,
     #nav-check:checked~.nav-btn label {
-        background-color: #52E252;
+        background-color: #058785;
         cursor: pointer;
     }
 
@@ -163,7 +163,7 @@ main {
         position: absolute;
         display: block;
         width: 100%;
-        background-color: #52E252;
+        background-color: #058785;
         height: 0px;
         transition: all 0.3s ease-in;
         overflow-y: hidden;
