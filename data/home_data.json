@@ -1,6 +1,15 @@
 [
     {
-        "nextRaceInfo": [],
+        "nextRaceInfo": [
+            {
+                "id": "australia",
+                "raceId": 1126,
+                "country": "australia",
+                "name": "Australian GP",
+                "raceDate": "2025-03-16",
+                "raceTime": "14:00"
+            }
+        ],
         "lastPodiumLocalisation": [
             {
                 "id": "abu-dhabi",

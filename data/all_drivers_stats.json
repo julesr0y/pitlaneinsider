@@ -19137,7 +19137,7 @@
     "podiumsThisSeason": 0,
     "pointsThisSeason": 5,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": true,
+    "isTestDriver": false,
     "racesThisSeason": 9,
     "teamsOfDriver": [
       {
@@ -26784,7 +26784,7 @@
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": true,
+    "isTestDriver": false,
     "racesThisSeason": 1,
     "teamsOfDriver": [
       {
@@ -49546,14 +49546,14 @@
     "poleRatio": "0.00",
     "totalFastestLaps": 0,
     "totalDriverOfTheDay": 1,
-    "currentTeamId": "ferrari",
-    "currentTeamName": "Ferrari",
+    "currentTeamId": "haas",
+    "currentTeamName": "Haas",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 7,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": true,
-    "racesThisSeason": 1,
+    "isTestDriver": false,
+    "racesThisSeason": 3,
     "teamsOfDriver": [
       {
         "teamId": "haas",
