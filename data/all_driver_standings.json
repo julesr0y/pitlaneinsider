@@ -17749,7 +17749,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 1,
-        "points": 429,
+        "points": 437,
         "permanentNumber": "33",
         "actualTeam": "red-bull"
     },
@@ -17760,7 +17760,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 2,
-        "points": 349,
+        "points": 374,
         "permanentNumber": "4",
         "actualTeam": "mclaren"
     },
@@ -17771,7 +17771,7 @@
         "lastName": "Leclerc",
         "abbreviation": "LEC",
         "position": 3,
-        "points": 341,
+        "points": 356,
         "permanentNumber": "16",
         "actualTeam": "ferrari"
     },
@@ -17782,7 +17782,7 @@
         "lastName": "Piastri",
         "abbreviation": "PIA",
         "position": 4,
-        "points": 291,
+        "points": 292,
         "permanentNumber": "81",
         "actualTeam": "mclaren"
     },
@@ -17793,7 +17793,7 @@
         "lastName": "Sainz Jr.",
         "abbreviation": "SAI",
         "position": 5,
-        "points": 272,
+        "points": 290,
         "permanentNumber": "55",
         "actualTeam": "ferrari"
     },
@@ -17804,7 +17804,7 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 6,
-        "points": 235,
+        "points": 245,
         "permanentNumber": "63",
         "actualTeam": "mercedes"
     },
@@ -17815,7 +17815,7 @@
         "lastName": "Hamilton",
         "abbreviation": "HAM",
         "position": 7,
-        "points": 211,
+        "points": 223,
         "permanentNumber": "44",
         "actualTeam": "mercedes"
     },
@@ -17837,20 +17837,9 @@
         "lastName": "Alonso",
         "abbreviation": "ALO",
         "position": 9,
-        "points": 68,
+        "points": 70,
         "permanentNumber": "14",
         "actualTeam": "aston-martin"
-    },
-    {
-        "year": 2024,
-        "driverId": "nico-hulkenberg",
-        "firstName": "Nico",
-        "lastName": "Hülkenberg",
-        "abbreviation": "HUL",
-        "position": 10,
-        "points": 37,
-        "permanentNumber": "27",
-        "actualTeam": "haas"
     },
     {
         "year": 2024,
@@ -17858,10 +17847,21 @@
         "firstName": "Pierre",
         "lastName": "Gasly",
         "abbreviation": "GAS",
-        "position": 11,
-        "points": 36,
+        "position": 10,
+        "points": 42,
         "permanentNumber": "10",
         "actualTeam": "alpine"
+    },
+    {
+        "year": 2024,
+        "driverId": "nico-hulkenberg",
+        "firstName": "Nico",
+        "lastName": "Hülkenberg",
+        "abbreviation": "HUL",
+        "position": 11,
+        "points": 41,
+        "permanentNumber": "27",
+        "actualTeam": "haas"
     },
     {
         "year": 2024,
@@ -17994,5 +17994,16 @@
         "points": 0,
         "permanentNumber": "2",
         "actualTeam": "williams"
+    },
+    {
+        "year": 2024,
+        "driverId": "jack-doohan",
+        "firstName": "Jack",
+        "lastName": "Doohan",
+        "abbreviation": "DOO",
+        "position": 24,
+        "points": 0,
+        "permanentNumber": null,
+        "actualTeam": "alpine"
     }
 ]
