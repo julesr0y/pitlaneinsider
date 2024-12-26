@@ -9,7 +9,6 @@
             "./utils/home",
             "./utils/live",
             "./utils/retro",
-            "./utils/security",
             "./utils/standings"
         ],
         "includePattern": ".js$",

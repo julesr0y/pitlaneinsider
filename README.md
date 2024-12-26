@@ -1,6 +1,6 @@
 # PitLane Insider
 
-#### *Dev Team: La Remontée Formula 1 Team*
+#### _Dev Team: La Remontée Formula 1 Team_
 
 - [ROY Jules](https://julesr0y.xyz/)
 - DUMAS Antonin
@@ -16,7 +16,7 @@
 
 #### Technologies/Frameworks utilisés :
 
-![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Nodemon](https://a11ybadges.com/badge?logo=nodemon) ![Express](https://a11ybadges.com/badge?logo=express) ![Tailwind CSS](https://a11ybadges.com/badge?logo=tailwindcss) ![MySQL](https://a11ybadges.com/badge?logo=mysql) ![Python](https://a11ybadges.com/badge?logo=python) ![JSON](https://a11ybadges.com/badge?logo=json)
+![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Nodemon](https://a11ybadges.com/badge?logo=nodemon) ![Express](https://a11ybadges.com/badge?logo=express) ![Tailwind CSS](https://a11ybadges.com/badge?logo=tailwindcss) ![MySQL](https://a11ybadges.com/badge?logo=mysql) ![JSON](https://a11ybadges.com/badge?logo=json)
 
 Pour la récupération des données, nous avons majoritairement utilisé le repo [F1DB](https://github.com/f1db/f1db) que nous avons couplé à un système de programmes en Javascript nous permettant de réduire la taille des fichiers. Nous avons aussi utilisé [OpenF1 Api](https://openf1.org/) pour les données en direct.
 
@@ -29,6 +29,7 @@ Pour lancer l'application web reposant sur Node.JS, il convient de se placer à 
    ```bash
    npm install
    ```
+
 2. Pour lancer le serveur Node.JS :
 
    - Pour tester en mode développement :
@@ -48,12 +49,12 @@ Pour lancer l'application web reposant sur Node.JS, il convient de se placer à 
 Pour accéder à la documentation de ce projet, générée avec [JSDoc](https://jsdoc.app/), il faut se rendre dans le dossier Documentation, et ouvrir le fichier index.html dans un navigateur.
 
 ```
- ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________   
-|\   __  \|\  \|\___   ___\\  \     |\   __  \|\   ___  \|\  ___ \         |\  \|\   ___  \|\   ____\|\  \|\   ___ \|\  ___ \ |\   __  \  
-\ \  \|\  \ \  \|___ \  \_\ \  \    \ \  \|\  \ \  \\ \  \ \   __/|        \ \  \ \  \\ \  \ \  \___|\ \  \ \  \_|\ \ \   __/|\ \  \|\  \   
- \ \   ____\ \  \   \ \  \ \ \  \    \ \   __  \ \  \\ \  \ \  \_|/__       \ \  \ \  \\ \  \ \_____  \ \  \ \  \ \\ \ \  \_|/_\ \   _  _\  
-  \ \  \___|\ \  \   \ \  \ \ \  \____\ \  \ \  \ \  \\ \  \ \  \_|\ \       \ \  \ \  \\ \  \|____|\  \ \  \ \  \_\\ \ \  \_|\ \ \  \\  \| 
-   \ \__\    \ \__\   \ \__\ \ \_______\ \__\ \__\ \__\\ \__\ \_______\       \ \__\ \__\\ \__\____\_\  \ \__\ \_______\ \_______\ \__\\ _\ 
+ ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________
+|\   __  \|\  \|\___   ___\\  \     |\   __  \|\   ___  \|\  ___ \         |\  \|\   ___  \|\   ____\|\  \|\   ___ \|\  ___ \ |\   __  \
+\ \  \|\  \ \  \|___ \  \_\ \  \    \ \  \|\  \ \  \\ \  \ \   __/|        \ \  \ \  \\ \  \ \  \___|\ \  \ \  \_|\ \ \   __/|\ \  \|\  \
+ \ \   ____\ \  \   \ \  \ \ \  \    \ \   __  \ \  \\ \  \ \  \_|/__       \ \  \ \  \\ \  \ \_____  \ \  \ \  \ \\ \ \  \_|/_\ \   _  _\
+  \ \  \___|\ \  \   \ \  \ \ \  \____\ \  \ \  \ \  \\ \  \ \  \_|\ \       \ \  \ \  \\ \  \|____|\  \ \  \ \  \_\\ \ \  \_|\ \ \  \\  \|
+   \ \__\    \ \__\   \ \__\ \ \_______\ \__\ \__\ \__\\ \__\ \_______\       \ \__\ \__\\ \__\____\_\  \ \__\ \_______\ \_______\ \__\\ _\
     \|__|     \|__|    \|__|  \|_______|\|__|\|__|\|__| \|__|\|_______|        \|__|\|__| \|__|\_________\|__|\|_______|\|_______|\|__|\|__|
-                                                                                              \|_________|                      
+                                                                                              \|_________|
 ```

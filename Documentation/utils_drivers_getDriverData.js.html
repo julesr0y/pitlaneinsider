@@ -40,9 +40,9 @@ async function getDriverData(driver_id) {
         const filePath = path.join(__dirname, '../../data/all_drivers_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         var data = JSON.parse(file);
-        data = data.filter(item => item.id === driver_id);
+        data = data.filter(item => item.driverId === driver_id);
         var driverData = {
-            id: data[0].id,
+            id: data[0].driverId,
             firstName: data[0].firstName,
             lastName: data[0].lastName,
             dateOfBirth: data[0].dateOfBirth,
@@ -63,19 +63,19 @@ async function getDriverData(driver_id) {
             bestRaceResult: data[0].bestRaceResult,
             bestChampionshipPosition: data[0].bestChampionshipPosition,
             totalChampionshipWins: data[0].totalChampionshipWins,
-            teams: data[0].teams,
-            currentSeasonDriver: data[0].currentSeasonDriver,
-            numberOfRacesCurrentSeason: data[0].numberOfRacesCurrentSeason,
-            numberOfWinsCurrentSeason: data[0].numberOfWinsCurrentSeason,
-            numberOfPodiumsCurrentSeason: data[0].numberOfPodiumsCurrentSeason,
-            numberOfPointsCurrentSeason: data[0].numberOfPointsCurrentSeason,
-            actualTeam: data[0].actualTeam,
-            allVictories: data[0].allVictories,
+            teams: data[0].teamsOfDriver,
+            currentSeasonDriver: data[0].isCurrentSeasonDriver,
+            numberOfRacesCurrentSeason: data[0].racesThisSeason,
+            numberOfWinsCurrentSeason: data[0].winsThisSeason,
+            numberOfPodiumsCurrentSeason: data[0].podiumsThisSeason,
+            numberOfPointsCurrentSeason: data[0].pointsThisSeason,
+            actualTeam: data[0].currentTeamId,
+            allVictories: data[0].victoriesByYear,
             victoryRatio: data[0].victoryRatio,
             podiumRatio: data[0].podiumRatio,
             poleRatio: data[0].poleRatio,
-            allPointsData: data[0].allPointsData,
-            allPositionsData: data[0].allPositionsData
+            allPointsData: data[0].pointsBySeason,
+            allPositionsData: data[0].standingPositionBySeason
         }
 
         return driverData;
@@ -95,13 +95,13 @@ module.exports = getDriverData;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroStandings">getRetroStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#getWinnersConstructors">getWinnersConstructors</a></li><li><a href="global.html#requireAdmin">requireAdmin</a></li><li><a href="global.html#requireNoSession">requireNoSession</a></li><li><a href="global.html#requireSession">requireSession</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li><li><a href="global.html#verifySession">verifySession</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroStandings">getRetroStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#getWinnersConstructors">getWinnersConstructors</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Sun Aug 25 2024 19:36:25 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Thu Dec 26 2024 15:30:18 GMT+0100 (heure normale d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
