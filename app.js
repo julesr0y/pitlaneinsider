@@ -4,12 +4,6 @@ const i18n = require('i18n');
 const helmet = require("helmet");
 const compression = require('compression');
 
-if (process.env.NODE_ENV === 'production') {
-    require('dotenv').config({ path: '.env.production' });
-} else {
-    require('dotenv').config();
-}
-
 const app = express();
 app.use(compression());
 
