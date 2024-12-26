@@ -48,6 +48,10 @@ Pour lancer l'application web reposant sur Node.JS, il convient de se placer à 
 
 Pour accéder à la documentation de ce projet, générée avec [JSDoc](https://jsdoc.app/), il faut se rendre dans le dossier Documentation, et ouvrir le fichier index.html dans un navigateur.
 
+#### Statut :
+
+Le statut de la plateforme ainsi que la liste des incidents connus sont accessibles [ici](https://pitlaneinsider.betteruptime.com/).
+
 ```
  ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________
 |\   __  \|\  \|\___   ___\\  \     |\   __  \|\   ___  \|\  ___ \         |\  \|\   ___  \|\   ____\|\  \|\   ___ \|\  ___ \ |\   __  \
