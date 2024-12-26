@@ -3,7 +3,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 const helmet = require("helmet");
-const session = require("express-session");
 const compression = require('compression');
 
 if (process.env.NODE_ENV === 'production') {
@@ -24,21 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const dbPool = require('./config/database');
-
-const verifySession = require("./utils/security/verifySession"); // Fonction permettant de vérifier si une session est bien existante
-
 // Configuration des middlewares
 app.use(helmet()); // Helmet middleware, permet de sécuriser l'application en configurant des en-têtes HTTP de manière sécurisée
-app.use(cookieParser()); // Cookie parser middleware, permet de gérer les cookies
-app.use(
-    session({
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: false,
-        cookie: { secure: true },
-    })
-); // Session middleware, permet de gérer les sessions utilisateurs
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
@@ -64,49 +50,16 @@ app.use(i18n.init);
 
 // Middleware pour gérer la langue de l'utilisateur
 app.use(async (req, res, next) => {
-    if (verifySession(req)) {
-        try {
-            const [rows] = await dbPool.query('SELECT language FROM users WHERE idUser = ?', [req.session.user.idUser]);
-            if (rows.length > 0) {
-                const userLanguage = rows[0].language;
-                req.setLocale(userLanguage); // Définir la langue de l'utilisateur
-            } else {
-                req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n
-            }
-        } catch (err) {
-            console.error('Erreur lors de la récupération de la langue utilisateur:', err);
-            req.setLocale(i18n.getLocale()); // En cas d'erreur, utiliser la langue par défaut de i18n
-        }
-    } else {
-        req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n pour les utilisateurs non authentifiés
-    }
 
-    // Affecter i18n à res.locals pour le rendre disponible dans les templates EJS
-    res.locals.i18n = i18n;
+    req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n pour les utilisateurs non authentifiés
+    res.locals.i18n = i18n; // Affecter i18n à res.locals pour le rendre disponible dans les templates EJS
 
     next();
 });
 
 // Middleware pour gérer le thème de l'utilisateur
 app.use(async (req, res, next) => {
-    if (verifySession(req)) {
-        try {
-            const [rows] = await dbPool.query('SELECT theme FROM users WHERE idUser = ?', [req.session.user.idUser]);
-            if (rows.length > 0) {
-                let userTheme = rows[0].theme;
-                userTheme = userTheme === 0 ? "light" : "dark";
-                req.session.theme = userTheme;
-            } else {
-                req.session.theme = "light";
-            }
-        } catch (err) {
-            console.error('Erreur lors de la récupération du thème utilisateur:', err);
-            req.session.theme = "light";
-        }
-    } else {
-        req.session.theme = "dark"; // theme if user not connected to an account
-    }
-    res.locals.theme = req.session.theme;
+    res.locals.theme = "dark";
     next();
 });
 
@@ -138,26 +91,8 @@ app.use('/', retroRoutes);
 const liveRoutes = require('./routes/live'); // Importation des routes concernant le live
 app.use('/', liveRoutes);
 
-const profilRoutes = require('./routes/account/profile'); // Importation des routes de profil
-app.use('/', profilRoutes);
-
 const aboutRoutes = require('./routes/about'); // Importation des routes de la partie  a propos
 app.use('/', aboutRoutes);
-
-const authRoutes = require('./routes/account/auth'); // Importation des routes d'authentification
-app.use('/', authRoutes);
-
-// app.get("/circuit/:circuit_id", async (req, res) => {
-//     try {
-//         var track = await getTrack(req.params.circuit_id);
-//         const [rows] = await dbPool.query('SELECT * FROM circuits WHERE id_circuit = ?', [req.params.circuit_id]);
-//         const dataCircuit = rows[0];
-//         res.render("circuit", { trackFront: track, dataCircuit: dataCircuit });
-//     } catch (err) {
-//         console.error('Erreur lors de la récupération des informations du circuit:', err);
-//         res.status(500).send('Erreur interne du serveur');
-//     }
-// });
 
 // Middleware pour gérer les routes inexistantes
 app.use((req, res, next) => {
