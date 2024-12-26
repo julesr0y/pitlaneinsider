@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 const helmet = require("helmet");
 const compression = require('compression');
@@ -20,7 +19,6 @@ app.set('view engine', 'ejs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Configuration des middlewares
