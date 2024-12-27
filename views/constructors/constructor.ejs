@@ -19,8 +19,8 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <img src="/img/teams/<%= teamFront.constructorId %>.webp" alt="<%= teamFront.constructorId %>"
-                        class="h-20 w-auto">
+                    <img src="/img/constructors/<%= teamFront.constructorId %>.webp"
+                        alt="<%= teamFront.constructorId %>" class="h-20 w-auto">
                 </div>
 
                 <div class="text-center">
@@ -31,7 +31,7 @@
                                     <%= teamFront.totalChampionshipWins %>
                                 </span>
                                 <span class="text-t-s-<%= theme %> text-xs">
-                                    <%= __('team.totalChampionshipWins') %>
+                                    <%= __('constructor.totalChampionshipWins') %>
                                 </span>
                             </span>
                         </span>
@@ -43,7 +43,7 @@
                                         <%= teamFront.firstYear %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.team_start') %>
+                                        <%= __('constructor.constructor_start') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -51,7 +51,7 @@
                                         <%= teamFront.numberOfSeasons %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.number_of_seasons') %>
+                                        <%= __('constructor.number_of_seasons') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -59,7 +59,7 @@
                                         <%= teamFront.totalRaceStarts %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.total_races') %>
+                                        <%= __('constructor.total_races') %>
                                     </span>
                                 </span>
                             </span>
@@ -70,7 +70,7 @@
                                         <%= teamFront.totalRaceWins %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.total_wins') %>
+                                        <%= __('constructor.total_wins') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -78,7 +78,7 @@
                                         <%= teamFront.totalPodiumRaces %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.total_podiums') %>
+                                        <%= __('constructor.total_podiums') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -86,7 +86,7 @@
                                         <%= teamFront.totalPolePositions %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.total_poles') %>
+                                        <%= __('constructor.total_poles') %>
                                     </span>
                                 </span>
                             </span>
@@ -97,7 +97,7 @@
                                         <%= teamFront.totalChampionshipPoints %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.total_points') %>
+                                        <%= __('constructor.total_points') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -105,7 +105,7 @@
                                         <%= teamFront.totalFastestLaps %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.total_fastest_laps') %>
+                                        <%= __('constructor.total_fastest_laps') %>
                                     </span>
                                 </span>
                             </span>
@@ -116,7 +116,7 @@
                                         <%= teamFront.victoryRatio %>%
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.victory_ratio') %>
+                                        <%= __('constructor.victory_ratio') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -124,7 +124,7 @@
                                         <%= teamFront.podiumRatio %>%
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.podium_ratio') %>
+                                        <%= __('constructor.podium_ratio') %>
                                     </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
@@ -132,7 +132,7 @@
                                         <%= teamFront.poleRatio %>%
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('team.pole_ratio') %>
+                                        <%= __('constructor.pole_ratio') %>
                                     </span>
                                 </span>
                             </span>
@@ -140,7 +140,7 @@
                             <% if (teamFront.currentSeasonTeam !==false) { %>
                                 <div class="my-4">
                                     <h3 class="font-bold">
-                                        <%= __('team.drivers') %> :
+                                        <%= __('constructor.drivers') %> :
                                     </h3>
                                     <% teamFront.currentDrivers.forEach(function(driver){ %>
                                         <div class="flex items-center justify-center">
@@ -162,7 +162,7 @@
                                 </div>
                                 <div class="text-center mt-4">
                                     <h3 class="text-base sm:text-lg font-bold">
-                                        <%= __('team.single_seater') %>:
+                                        <%= __('constructor.single_seater') %>:
                                     </h3>
                                     <p class="text-t-s-<%= theme %> mt-2">
                                         <%= teamFront.currentCarName %>

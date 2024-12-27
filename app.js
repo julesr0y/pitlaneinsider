@@ -29,7 +29,7 @@ app.use(helmet.contentSecurityPolicy({
     }
 })); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
 i18n.configure({
-    locales: ['en', 'fr', 'de', 'es', 'it'], // Langues supportées
+    locales: ['en'], // Langues supportées
     directory: path.join(__dirname, 'locales'), // Répertoire des fichiers de langue
     defaultLocale: 'en', // Langue par défaut
     queryParameter: 'lang', // Paramètre de requête pour définir la langue (optionnel)

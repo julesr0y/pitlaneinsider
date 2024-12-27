@@ -3,7 +3,7 @@
 		"lang": "en"
 	},
 	"header": {
-		"teams": "TEAMS",
+		"constructors": "CONSTRUCTORS",
 		"drivers": "DRIVERS",
 		"calendar": "CALENDAR",
 		"standings": "STANDINGS",
@@ -20,16 +20,16 @@
 		"minutes": "MIN",
 		"seconds": "S",
 		"drivers_championship": "Drivers championship",
-		"teams_championship": "Teams championship",
+		"constructors_championship": "Constructors championship",
 		"last_podium": "Last podium",
 		"drivers_standings": "Drivers standings"
 	},
-	"teams": {
-		"tab_title": "Teams",
-		"season": "2024 Season - Teams"
+	"constructors": {
+		"tab_title": "Constructors",
+		"season": "2024 Season - Constructors"
 	},
-	"team": {
-		"team_start": "F1 arrival",
+	"constructor": {
+		"constructor_start": "F1 arrival",
 		"drivers": "Drivers",
 		"single_seater": "Single-seater",
 		"total_races": "Races",
@@ -71,7 +71,7 @@
 		"first_year": "First appearance",
 		"total_driver_of_the_day": "DOTD",
 		"total_fastest_laps": "Fastest laps",
-		"teams_title": "Teams",
+		"constructors_title": "Constructors",
 		"totalChampionshipWins": "Championship wins",
 		"points_by_season": "Points by season",
 		"standing_by_season": "Standing by season"
@@ -92,7 +92,7 @@
 		"tab_title": "Standings",
 		"season": "2024 Season - Standings",
 		"drivers": "Drivers",
-		"teams": "Teams",
+		"constructors": "Constructors",
 		"position": "Position",
 		"points": "Points"
 	},
@@ -124,7 +124,7 @@
 			"title": "Retro - Home",
 			"winners_title": "List of champion drivers",
 			"driver_titles": "titles",
-			"all_data": "List of Drivers | Teams | Circuits",
+			"all_data": "List of Drivers | Constructors | Circuits",
 			"all_seasons": "List of seasons",
 			"winners_constructors_title": "List of champion constructors"
 		},
@@ -135,16 +135,16 @@
 		},
 		"all_data": {
 			"tab_title_drivers": "Retro Drivers",
-			"tab_title_teams": "Retro Teams",
+			"tab_title_constructors": "Retro Constructors",
 			"tab_title_tracks": "Retro Circuits",
 			"title_drivers": "Retro - Drivers",
-			"title_teams": "Retro - Teams",
+			"title_constructors": "Retro - Constructors",
 			"title_tracks": "Retro - Circuits",
 			"link_drivers": "Drivers",
-			"link_teams": "Teams",
+			"link_constructors": "Constructors",
 			"link_tracks": "Circuits",
 			"search_driver": "Search for a driver",
-			"search_team": "Search for a team",
+			"search_constructor": "Search for a constructor",
 			"search_track": "Search for a circuit",
 			"born": "Born on",
 			"no_result": "No result",

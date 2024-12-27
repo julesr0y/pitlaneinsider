@@ -18,7 +18,7 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <% for (let index in constructorWinners) { %>
-                    <a href="/team/<%= constructorWinners[index].constructorId %>">
+                    <a href="/constructor/<%= constructorWinners[index].constructorId %>">
                         <div
                             class="bg-s-<%= theme %> flex flex-col items-center justify-center p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
                             <div class="w-full border-l-4 border-<%= constructorWinners[index].constructorId %> pl-4">

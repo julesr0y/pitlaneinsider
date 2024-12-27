@@ -74,7 +74,7 @@
                             </div>
                             <div class="flex justify-center items-center">
                                 <a href="/team/<%= dataDriver.actualTeam %>">
-                                    <img src="/img/teams/<%= dataDriver.actualTeam %>.webp"
+                                    <img src="/img/constructors/<%= dataDriver.actualTeam %>.webp"
                                         alt="<%= dataDriver.actualTeam %>" class="h-auto w-auto max-h-12">
                                 </a>
                             </div>
@@ -249,7 +249,7 @@
 
                             <div class="text-center mt-4">
                                 <h3 class="text-base sm:text-lg font-bold">
-                                    <%= __('driver.teams_title') %>:
+                                    <%= __('driver.constructors_title') %>:
                                 </h3>
 
                                 <div class="mt-6">
@@ -257,9 +257,9 @@
                                         <% dataDriver.teams.forEach(function(team) { %>
                                             <span
                                                 class="col-span-12 md:col-span-4 flex flex-col items-center mt-4 justify-end">
-                                                <a href="/team/<%= team.teamId %>"
+                                                <a href="/constructor/<%= team.teamId %>"
                                                     class="flex flex-col items-center gap-y-2">
-                                                    <img src="/img/teams/<%= team.teamId %>.webp"
+                                                    <img src="/img/constructors/<%= team.teamId %>.webp"
                                                         alt="<%= team.teamId %>" class="w-auto h-10">
                                                     <span class="text-sm">
                                                         <p class="text-sm sm:text-base">
