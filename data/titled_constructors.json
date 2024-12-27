@@ -328,5 +328,10 @@
         "year": 2023,
         "constructorId": "red-bull",
         "name": "Red Bull"
+    },
+    {
+        "year": 2024,
+        "constructorId": "mclaren",
+        "name": "McLaren"
     }
 ]

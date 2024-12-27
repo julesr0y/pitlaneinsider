@@ -516,5 +516,12 @@
         "firstName": "Max",
         "lastName": "Verstappen",
         "abbreviation": "VER"
+    },
+    {
+        "year": 2024,
+        "driverId": "max-verstappen",
+        "firstName": "Max",
+        "lastName": "Verstappen",
+        "abbreviation": "VER"
     }
 ]
