@@ -2,6 +2,9 @@
 	"lang": {
 		"lang": "en"
 	},
+	"global": {
+		"current_year": "2024"
+	},
 	"header": {
 		"constructors": "CONSTRUCTORS",
 		"drivers": "DRIVERS",
@@ -26,7 +29,7 @@
 	},
 	"constructors": {
 		"tab_title": "Constructors",
-		"season": "2024 Season - Constructors"
+		"season": "Season - Constructors"
 	},
 	"constructor": {
 		"constructor_start": "F1 arrival",
@@ -46,7 +49,7 @@
 	},
 	"drivers": {
 		"tab_title": "Drivers",
-		"season": "2024 Season - Drivers"
+		"season": "Season - Drivers"
 	},
 	"driver": {
 		"actual_season": "Season",
@@ -78,7 +81,7 @@
 	},
 	"calendar": {
 		"tab_title": "Calendar",
-		"season": "2024 Season - Calendar",
+		"season": "Season - Calendar",
 		"next_race": "Next race"
 	},
 	"calendar_element": {
@@ -90,7 +93,7 @@
 	},
 	"standings": {
 		"tab_title": "Standings",
-		"season": "2024 Season - Standings",
+		"season": "Season - Standings",
 		"drivers": "Drivers",
 		"constructors": "Constructors",
 		"position": "Position",
