@@ -4,17 +4,17 @@ const path = require('path');
 /**
  * @description Returns data of a specific constructor
  * @async
- * @param {String} teamId 
+ * @param {String} constructorId_param
  * @returns {Array}
  */
-async function getConstructorData(teamId) {
+async function getConstructorData(constructorId_param) {
     try {
         const filePath = path.join(__dirname, '../../data/all_teams_stats.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         var data = JSON.parse(file);
-        data = data.filter(item => item.constructorId === teamId);
+        data = data.filter(item => item.constructorId === constructorId_param);
         data = data[0]
-        var teamData = {
+        const constructorData = {
             constructorId: data['constructorId'],
             fullName: data['fullName'],
             name: data['name'],
@@ -38,7 +38,7 @@ async function getConstructorData(teamId) {
             currentCarName: data['currentCarName']
         }
 
-        return teamData;
+        return constructorData;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
         throw error;

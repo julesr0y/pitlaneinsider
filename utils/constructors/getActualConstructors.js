@@ -12,18 +12,18 @@ async function getActualConstructors() {
         const file = fs.readFileSync(filePath, 'utf-8');
         const constructors = JSON.parse(file);
 
-        var actualTeams = []
+        var actualConstructors = []
         var actualSeasonConstructors = constructors.filter(item => item.currentSeasonTeam == true);
         actualSeasonConstructors.forEach(function (team) {
-            const teamData = {
+            const constructorData = {
                 constructorId: team.constructorId,
                 name: team.name,
                 fullName: team.fullName
             }
-            actualTeams.push(teamData);
+            actualConstructors.push(constructorData);
         })
 
-        return actualTeams;
+        return actualConstructors;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
         throw error;

@@ -12,17 +12,17 @@ async function getRetroConstructors() {
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
 
-        var allTeams = []
-        data.forEach(function (team) {
-            const teamData = {
-                constructorId: team.constructorId,
-                name: team.name,
-                fullName: team.fullName
+        var allConstructors = []
+        data.forEach(function (constructor) {
+            const constructorData = {
+                constructorId: constructor.constructorId,
+                name: constructor.name,
+                fullName: constructor.fullName
             }
-            allTeams.push(teamData);
+            allConstructors.push(constructorData);
         })
 
-        return allTeams;
+        return allConstructors;
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
         throw error;
