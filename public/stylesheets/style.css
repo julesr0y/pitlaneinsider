@@ -949,6 +949,10 @@ video {
 .border-l-4 {
   border-left-width: 4px;
 }
+.border-adams {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-afm {
   --tw-border-opacity: 1;
   border-color: rgb(165 181 221 / var(--tw-border-opacity, 1));
@@ -960,6 +964,10 @@ video {
 .border-alfa-romeo {
   --tw-border-opacity: 1;
   border-color: rgb(170 18 26 / var(--tw-border-opacity, 1));
+}
+.border-alfa-special {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-alphatauri {
   --tw-border-opacity: 1;
@@ -977,6 +985,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(64 63 255 / var(--tw-border-opacity, 1));
 }
+.border-andrea-moda {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 255 / var(--tw-border-opacity, 1));
+}
 .border-apollon {
   --tw-border-opacity: 1;
   border-color: rgb(208 151 25 / var(--tw-border-opacity, 1));
@@ -988,6 +1000,10 @@ video {
 .border-arzani-volpini {
   --tw-border-opacity: 1;
   border-color: rgb(153 68 15 / var(--tw-border-opacity, 1));
+}
+.border-aston-butterworth {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 .border-aston-martin {
   --tw-border-opacity: 1;
@@ -1001,9 +1017,21 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(18 109 249 / var(--tw-border-opacity, 1));
 }
+.border-ats-wheels {
+  --tw-border-opacity: 1;
+  border-color: rgb(249 180 24 / var(--tw-border-opacity, 1));
+}
+.border-balsa {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-bar {
   --tw-border-opacity: 1;
-  border-color: rgb(37 78 105 / var(--tw-border-opacity, 1));
+  border-color: rgb(148 165 130 / var(--tw-border-opacity, 1));
+}
+.border-behra-porsche {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-bellasi {
   --tw-border-opacity: 1;
@@ -1057,6 +1085,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(2 67 45 / var(--tw-border-opacity, 1));
 }
+.border-christensen {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-cisitalia {
   --tw-border-opacity: 1;
   border-color: rgb(6 0 113 / var(--tw-border-opacity, 1));
@@ -1085,9 +1117,37 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
+.border-de-tomaso {
+  --tw-border-opacity: 1;
+  border-color: rgb(113 206 236 / var(--tw-border-opacity, 1));
+}
+.border-deidt {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-del-roy {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-derrington-francis {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-dunn {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-eagle {
   --tw-border-opacity: 1;
   border-color: rgb(71 70 75 / var(--tw-border-opacity, 1));
+}
+.border-eifelland {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 128 / var(--tw-border-opacity, 1));
+}
+.border-elder {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-emeryson {
   --tw-border-opacity: 1;
@@ -1105,6 +1165,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(58 106 49 / var(--tw-border-opacity, 1));
 }
+.border-epperly {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-era {
   --tw-border-opacity: 1;
   border-color: rgb(163 200 227 / var(--tw-border-opacity, 1));
@@ -1112,6 +1176,10 @@ video {
 .border-eurobrun {
   --tw-border-opacity: 1;
   border-color: rgb(253 125 43 / var(--tw-border-opacity, 1));
+}
+.border-ewing {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-ferguson {
   --tw-border-opacity: 1;
@@ -1121,9 +1189,17 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(232 0 32 / var(--tw-border-opacity, 1));
 }
+.border-first {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-fittipaldi {
   --tw-border-opacity: 1;
   border-color: rgb(242 105 38 / var(--tw-border-opacity, 1));
+}
+.border-fondmetal {
+  --tw-border-opacity: 1;
+  border-color: rgb(240 167 1 / var(--tw-border-opacity, 1));
 }
 .border-footwork {
   --tw-border-opacity: 1;
@@ -1137,6 +1213,18 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(55 57 113 / var(--tw-border-opacity, 1));
 }
+.border-frank-williams-racing-cars {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+.border-frazer-nash {
+  --tw-border-opacity: 1;
+  border-color: rgb(218 36 24 / var(--tw-border-opacity, 1));
+}
+.border-fry {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-gilby {
   --tw-border-opacity: 1;
   border-color: rgb(108 131 106 / var(--tw-border-opacity, 1));
@@ -1149,13 +1237,29 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity, 1));
 }
+.border-greifzu {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-haas {
   --tw-border-opacity: 1;
   border-color: rgb(182 186 189 / var(--tw-border-opacity, 1));
 }
+.border-hall {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-heck {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-hesketh {
   --tw-border-opacity: 1;
   border-color: rgb(249 251 105 / var(--tw-border-opacity, 1));
+}
+.border-hill {
+  --tw-border-opacity: 1;
+  border-color: rgb(214 26 26 / var(--tw-border-opacity, 1));
 }
 .border-honda {
   --tw-border-opacity: 1;
@@ -1169,6 +1273,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(63 71 203 / var(--tw-border-opacity, 1));
 }
+.border-iso-marlboro {
+  --tw-border-opacity: 1;
+  border-color: rgb(199 175 13 / var(--tw-border-opacity, 1));
+}
 .border-jaguar {
   --tw-border-opacity: 1;
   border-color: rgb(255 18 5 / var(--tw-border-opacity, 1));
@@ -1180,6 +1288,10 @@ video {
 .border-jordan {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 1 / var(--tw-border-opacity, 1));
+}
+.border-kauhsen {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 34 / var(--tw-border-opacity, 1));
 }
 .border-kick-sauber {
   --tw-border-opacity: 1;
@@ -1193,9 +1305,25 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 255 / var(--tw-border-opacity, 1));
 }
+.border-krakau {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-kurtis-kraft {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 254 231 / var(--tw-border-opacity, 1));
+}
+.border-kuzma {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-lancia {
   --tw-border-opacity: 1;
   border-color: rgb(32 63 95 / var(--tw-border-opacity, 1));
+}
+.border-langley {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-larrousse {
   --tw-border-opacity: 1;
@@ -1208,6 +1336,14 @@ video {
 .border-lec {
   --tw-border-opacity: 1;
   border-color: rgb(166 52 52 / var(--tw-border-opacity, 1));
+}
+.border-lesovsky {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-leyton-house {
+  --tw-border-opacity: 1;
+  border-color: rgb(18 199 190 / var(--tw-border-opacity, 1));
 }
 .border-life {
   --tw-border-opacity: 1;
@@ -1253,6 +1389,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(247 240 231 / var(--tw-border-opacity, 1));
 }
+.border-marchese {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-martini {
   --tw-border-opacity: 1;
   border-color: rgb(55 132 247 / var(--tw-border-opacity, 1));
@@ -1269,6 +1409,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(0 29 208 / var(--tw-border-opacity, 1));
 }
+.border-mcguire {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-mclaren {
   --tw-border-opacity: 1;
   border-color: rgb(255 128 0 / var(--tw-border-opacity, 1));
@@ -1281,6 +1425,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(190 66 60 / var(--tw-border-opacity, 1));
 }
+.border-meskowski {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-midland {
   --tw-border-opacity: 1;
   border-color: rgb(255 0 0 / var(--tw-border-opacity, 1));
@@ -1289,9 +1437,25 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(14 35 58 / var(--tw-border-opacity, 1));
 }
+.border-modena {
+  --tw-border-opacity: 1;
+  border-color: rgb(18 10 47 / var(--tw-border-opacity, 1));
+}
+.border-moore {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-nacke {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-nichels {
   --tw-border-opacity: 1;
   border-color: rgb(114 114 114 / var(--tw-border-opacity, 1));
+}
+.border-olson {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-onyx {
   --tw-border-opacity: 1;
@@ -1309,13 +1473,25 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(14 144 201 / var(--tw-border-opacity, 1));
 }
+.border-pankratz {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-parnelli {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
+.border-pawl {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-penske {
   --tw-border-opacity: 1;
   border-color: rgb(211 26 27 / var(--tw-border-opacity, 1));
+}
+.border-phillips {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-politoys {
   --tw-border-opacity: 1;
@@ -1329,9 +1505,17 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(38 70 139 / var(--tw-border-opacity, 1));
 }
+.border-protos {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 22 42 / var(--tw-border-opacity, 1));
+}
 .border-racing-point {
   --tw-border-opacity: 1;
   border-color: rgb(243 104 186 / var(--tw-border-opacity, 1));
+}
+.border-rae {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-ram {
   --tw-border-opacity: 1;
@@ -1353,6 +1537,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(54 113 198 / var(--tw-border-opacity, 1));
 }
+.border-reif {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-renault {
   --tw-border-opacity: 1;
   border-color: rgb(252 212 36 / var(--tw-border-opacity, 1));
@@ -1369,6 +1557,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(205 198 206 / var(--tw-border-opacity, 1));
 }
+.border-schroeder {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-scirocco {
   --tw-border-opacity: 1;
   border-color: rgb(42 57 90 / var(--tw-border-opacity, 1));
@@ -1381,6 +1573,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(40 48 52 / var(--tw-border-opacity, 1));
 }
+.border-sherman {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-simca-gordini {
   --tw-border-opacity: 1;
   border-color: rgb(1 119 200 / var(--tw-border-opacity, 1));
@@ -1389,13 +1585,25 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(68 94 185 / var(--tw-border-opacity, 1));
 }
+.border-snowberger {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-spirit {
   --tw-border-opacity: 1;
   border-color: rgb(45 78 179 / var(--tw-border-opacity, 1));
 }
+.border-spyker {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
 .border-stebro {
   --tw-border-opacity: 1;
   border-color: rgb(254 255 0 / var(--tw-border-opacity, 1));
+}
+.border-stevens {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-stewardsTxt {
   --tw-border-opacity: 1;
@@ -1412,6 +1620,14 @@ video {
 .border-surtees {
   --tw-border-opacity: 1;
   border-color: rgb(252 249 252 / var(--tw-border-opacity, 1));
+}
+.border-sutton {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-talbot-lago {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 71 193 / var(--tw-border-opacity, 1));
 }
 .border-tec-mec {
   --tw-border-opacity: 1;
@@ -1441,6 +1657,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(214 64 76 / var(--tw-border-opacity, 1));
 }
+.border-trevis {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
 .border-trojan {
   --tw-border-opacity: 1;
   border-color: rgb(238 100 99 / var(--tw-border-opacity, 1));
@@ -1457,6 +1677,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(116 132 90 / var(--tw-border-opacity, 1));
 }
+.border-venturi {
+  --tw-border-opacity: 1;
+  border-color: rgb(188 19 19 / var(--tw-border-opacity, 1));
+}
 .border-veritas {
   --tw-border-opacity: 1;
   border-color: rgb(123 173 249 / var(--tw-border-opacity, 1));
@@ -1464,6 +1688,14 @@ video {
 .border-virgin {
   --tw-border-opacity: 1;
   border-color: rgb(227 30 35 / var(--tw-border-opacity, 1));
+}
+.border-watson {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-wetteroth {
+  --tw-border-opacity: 1;
+  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
 }
 .border-williams {
   --tw-border-opacity: 1;
@@ -1481,6 +1713,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(199 23 1 / var(--tw-border-opacity, 1));
 }
+.bg-adams {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-afm {
   --tw-bg-opacity: 1;
   background-color: rgb(165 181 221 / var(--tw-bg-opacity, 1));
@@ -1492,6 +1728,10 @@ video {
 .bg-alfa-romeo {
   --tw-bg-opacity: 1;
   background-color: rgb(170 18 26 / var(--tw-bg-opacity, 1));
+}
+.bg-alfa-special {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-alphatauri {
   --tw-bg-opacity: 1;
@@ -1509,6 +1749,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(64 63 255 / var(--tw-bg-opacity, 1));
 }
+.bg-andrea-moda {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 255 / var(--tw-bg-opacity, 1));
+}
 .bg-apollon {
   --tw-bg-opacity: 1;
   background-color: rgb(208 151 25 / var(--tw-bg-opacity, 1));
@@ -1520,6 +1764,10 @@ video {
 .bg-arzani-volpini {
   --tw-bg-opacity: 1;
   background-color: rgb(153 68 15 / var(--tw-bg-opacity, 1));
+}
+.bg-aston-butterworth {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 .bg-aston-martin {
   --tw-bg-opacity: 1;
@@ -1533,6 +1781,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(18 109 249 / var(--tw-bg-opacity, 1));
 }
+.bg-ats-wheels {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 180 24 / var(--tw-bg-opacity, 1));
+}
 .bg-b-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(25 25 25 / var(--tw-bg-opacity, 1));
@@ -1541,9 +1793,17 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
+.bg-balsa {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-bar {
   --tw-bg-opacity: 1;
-  background-color: rgb(37 78 105 / var(--tw-bg-opacity, 1));
+  background-color: rgb(148 165 130 / var(--tw-bg-opacity, 1));
+}
+.bg-behra-porsche {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-bellasi {
   --tw-bg-opacity: 1;
@@ -1601,6 +1861,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(2 67 45 / var(--tw-bg-opacity, 1));
 }
+.bg-christensen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-cisitalia {
   --tw-bg-opacity: 1;
   background-color: rgb(6 0 113 / var(--tw-bg-opacity, 1));
@@ -1629,9 +1893,37 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
+.bg-de-tomaso {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 206 236 / var(--tw-bg-opacity, 1));
+}
+.bg-deidt {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-del-roy {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-derrington-francis {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-dunn {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-eagle {
   --tw-bg-opacity: 1;
   background-color: rgb(71 70 75 / var(--tw-bg-opacity, 1));
+}
+.bg-eifelland {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 128 / var(--tw-bg-opacity, 1));
+}
+.bg-elder {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-emeryson {
   --tw-bg-opacity: 1;
@@ -1649,6 +1941,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(58 106 49 / var(--tw-bg-opacity, 1));
 }
+.bg-epperly {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-era {
   --tw-bg-opacity: 1;
   background-color: rgb(163 200 227 / var(--tw-bg-opacity, 1));
@@ -1656,6 +1952,10 @@ video {
 .bg-eurobrun {
   --tw-bg-opacity: 1;
   background-color: rgb(253 125 43 / var(--tw-bg-opacity, 1));
+}
+.bg-ewing {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-ferguson {
   --tw-bg-opacity: 1;
@@ -1665,9 +1965,17 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(232 0 32 / var(--tw-bg-opacity, 1));
 }
+.bg-first {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-fittipaldi {
   --tw-bg-opacity: 1;
   background-color: rgb(242 105 38 / var(--tw-bg-opacity, 1));
+}
+.bg-fondmetal {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 167 1 / var(--tw-bg-opacity, 1));
 }
 .bg-footwork {
   --tw-bg-opacity: 1;
@@ -1680,6 +1988,18 @@ video {
 .bg-forti {
   --tw-bg-opacity: 1;
   background-color: rgb(55 57 113 / var(--tw-bg-opacity, 1));
+}
+.bg-frank-williams-racing-cars {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-frazer-nash {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 36 24 / var(--tw-bg-opacity, 1));
+}
+.bg-fry {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-gilby {
   --tw-bg-opacity: 1;
@@ -1697,13 +2017,29 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
+.bg-greifzu {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-haas {
   --tw-bg-opacity: 1;
   background-color: rgb(182 186 189 / var(--tw-bg-opacity, 1));
 }
+.bg-hall {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-heck {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-hesketh {
   --tw-bg-opacity: 1;
   background-color: rgb(249 251 105 / var(--tw-bg-opacity, 1));
+}
+.bg-hill {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 26 26 / var(--tw-bg-opacity, 1));
 }
 .bg-honda {
   --tw-bg-opacity: 1;
@@ -1717,6 +2053,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(63 71 203 / var(--tw-bg-opacity, 1));
 }
+.bg-iso-marlboro {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 175 13 / var(--tw-bg-opacity, 1));
+}
 .bg-jaguar {
   --tw-bg-opacity: 1;
   background-color: rgb(255 18 5 / var(--tw-bg-opacity, 1));
@@ -1728,6 +2068,10 @@ video {
 .bg-jordan {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 1 / var(--tw-bg-opacity, 1));
+}
+.bg-kauhsen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 34 / var(--tw-bg-opacity, 1));
 }
 .bg-kick-sauber {
   --tw-bg-opacity: 1;
@@ -1741,9 +2085,25 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 255 / var(--tw-bg-opacity, 1));
 }
+.bg-krakau {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-kurtis-kraft {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 254 231 / var(--tw-bg-opacity, 1));
+}
+.bg-kuzma {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-lancia {
   --tw-bg-opacity: 1;
   background-color: rgb(32 63 95 / var(--tw-bg-opacity, 1));
+}
+.bg-langley {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-larrousse {
   --tw-bg-opacity: 1;
@@ -1756,6 +2116,14 @@ video {
 .bg-lec {
   --tw-bg-opacity: 1;
   background-color: rgb(166 52 52 / var(--tw-bg-opacity, 1));
+}
+.bg-lesovsky {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-leyton-house {
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 199 190 / var(--tw-bg-opacity, 1));
 }
 .bg-life {
   --tw-bg-opacity: 1;
@@ -1801,6 +2169,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(247 240 231 / var(--tw-bg-opacity, 1));
 }
+.bg-marchese {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-martini {
   --tw-bg-opacity: 1;
   background-color: rgb(55 132 247 / var(--tw-bg-opacity, 1));
@@ -1817,6 +2189,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 29 208 / var(--tw-bg-opacity, 1));
 }
+.bg-mcguire {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-mclaren {
   --tw-bg-opacity: 1;
   background-color: rgb(255 128 0 / var(--tw-bg-opacity, 1));
@@ -1829,6 +2205,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(190 66 60 / var(--tw-bg-opacity, 1));
 }
+.bg-meskowski {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-midland {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
@@ -1837,9 +2217,25 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(14 35 58 / var(--tw-bg-opacity, 1));
 }
+.bg-modena {
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 10 47 / var(--tw-bg-opacity, 1));
+}
+.bg-moore {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-nacke {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-nichels {
   --tw-bg-opacity: 1;
   background-color: rgb(114 114 114 / var(--tw-bg-opacity, 1));
+}
+.bg-olson {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-onyx {
   --tw-bg-opacity: 1;
@@ -1857,13 +2253,25 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(14 144 201 / var(--tw-bg-opacity, 1));
 }
+.bg-pankratz {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-parnelli {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
+.bg-pawl {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-penske {
   --tw-bg-opacity: 1;
   background-color: rgb(211 26 27 / var(--tw-bg-opacity, 1));
+}
+.bg-phillips {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-politoys {
   --tw-bg-opacity: 1;
@@ -1877,9 +2285,17 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(38 70 139 / var(--tw-bg-opacity, 1));
 }
+.bg-protos {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 22 42 / var(--tw-bg-opacity, 1));
+}
 .bg-racing-point {
   --tw-bg-opacity: 1;
   background-color: rgb(243 104 186 / var(--tw-bg-opacity, 1));
+}
+.bg-rae {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-ram {
   --tw-bg-opacity: 1;
@@ -1905,6 +2321,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(54 113 198 / var(--tw-bg-opacity, 1));
 }
+.bg-reif {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-renault {
   --tw-bg-opacity: 1;
   background-color: rgb(252 212 36 / var(--tw-bg-opacity, 1));
@@ -1929,6 +2349,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(205 198 206 / var(--tw-bg-opacity, 1));
 }
+.bg-schroeder {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-scirocco {
   --tw-bg-opacity: 1;
   background-color: rgb(42 57 90 / var(--tw-bg-opacity, 1));
@@ -1941,6 +2365,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(40 48 52 / var(--tw-bg-opacity, 1));
 }
+.bg-sherman {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-simca-gordini {
   --tw-bg-opacity: 1;
   background-color: rgb(1 119 200 / var(--tw-bg-opacity, 1));
@@ -1949,13 +2377,25 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(68 94 185 / var(--tw-bg-opacity, 1));
 }
+.bg-snowberger {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-spirit {
   --tw-bg-opacity: 1;
   background-color: rgb(45 78 179 / var(--tw-bg-opacity, 1));
 }
+.bg-spyker {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
 .bg-stebro {
   --tw-bg-opacity: 1;
   background-color: rgb(254 255 0 / var(--tw-bg-opacity, 1));
+}
+.bg-stevens {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-stewardsBg {
   --tw-bg-opacity: 1;
@@ -1972,6 +2412,14 @@ video {
 .bg-surtees {
   --tw-bg-opacity: 1;
   background-color: rgb(252 249 252 / var(--tw-bg-opacity, 1));
+}
+.bg-sutton {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-talbot-lago {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 71 193 / var(--tw-bg-opacity, 1));
 }
 .bg-tec-mec {
   --tw-bg-opacity: 1;
@@ -2001,6 +2449,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(214 64 76 / var(--tw-bg-opacity, 1));
 }
+.bg-trevis {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
 .bg-trojan {
   --tw-bg-opacity: 1;
   background-color: rgb(238 100 99 / var(--tw-bg-opacity, 1));
@@ -2017,6 +2469,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(116 132 90 / var(--tw-bg-opacity, 1));
 }
+.bg-venturi {
+  --tw-bg-opacity: 1;
+  background-color: rgb(188 19 19 / var(--tw-bg-opacity, 1));
+}
 .bg-veritas {
   --tw-bg-opacity: 1;
   background-color: rgb(123 173 249 / var(--tw-bg-opacity, 1));
@@ -2024,6 +2480,14 @@ video {
 .bg-virgin {
   --tw-bg-opacity: 1;
   background-color: rgb(227 30 35 / var(--tw-bg-opacity, 1));
+}
+.bg-watson {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-wetteroth {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -2174,6 +2638,10 @@ video {
 .leading-none {
   line-height: 1;
 }
+.text-adams {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-afm {
   --tw-text-opacity: 1;
   color: rgb(165 181 221 / var(--tw-text-opacity, 1));
@@ -2185,6 +2653,10 @@ video {
 .text-alfa-romeo {
   --tw-text-opacity: 1;
   color: rgb(170 18 26 / var(--tw-text-opacity, 1));
+}
+.text-alfa-special {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-alphatauri {
   --tw-text-opacity: 1;
@@ -2202,6 +2674,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(64 63 255 / var(--tw-text-opacity, 1));
 }
+.text-andrea-moda {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 255 / var(--tw-text-opacity, 1));
+}
 .text-apollon {
   --tw-text-opacity: 1;
   color: rgb(208 151 25 / var(--tw-text-opacity, 1));
@@ -2213,6 +2689,10 @@ video {
 .text-arzani-volpini {
   --tw-text-opacity: 1;
   color: rgb(153 68 15 / var(--tw-text-opacity, 1));
+}
+.text-aston-butterworth {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 .text-aston-martin {
   --tw-text-opacity: 1;
@@ -2226,9 +2706,21 @@ video {
   --tw-text-opacity: 1;
   color: rgb(18 109 249 / var(--tw-text-opacity, 1));
 }
+.text-ats-wheels {
+  --tw-text-opacity: 1;
+  color: rgb(249 180 24 / var(--tw-text-opacity, 1));
+}
+.text-balsa {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-bar {
   --tw-text-opacity: 1;
-  color: rgb(37 78 105 / var(--tw-text-opacity, 1));
+  color: rgb(148 165 130 / var(--tw-text-opacity, 1));
+}
+.text-behra-porsche {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-bellasi {
   --tw-text-opacity: 1;
@@ -2290,6 +2782,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(2 67 45 / var(--tw-text-opacity, 1));
 }
+.text-christensen {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-cisitalia {
   --tw-text-opacity: 1;
   color: rgb(6 0 113 / var(--tw-text-opacity, 1));
@@ -2318,13 +2814,41 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
+.text-de-tomaso {
+  --tw-text-opacity: 1;
+  color: rgb(113 206 236 / var(--tw-text-opacity, 1));
+}
 .text-deconnect {
   --tw-text-opacity: 1;
   color: rgb(246 166 11 / var(--tw-text-opacity, 1));
 }
+.text-deidt {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-del-roy {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-derrington-francis {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-dunn {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-eagle {
   --tw-text-opacity: 1;
   color: rgb(71 70 75 / var(--tw-text-opacity, 1));
+}
+.text-eifelland {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 128 / var(--tw-text-opacity, 1));
+}
+.text-elder {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-emeryson {
   --tw-text-opacity: 1;
@@ -2342,6 +2866,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(58 106 49 / var(--tw-text-opacity, 1));
 }
+.text-epperly {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-era {
   --tw-text-opacity: 1;
   color: rgb(163 200 227 / var(--tw-text-opacity, 1));
@@ -2349,6 +2877,10 @@ video {
 .text-eurobrun {
   --tw-text-opacity: 1;
   color: rgb(253 125 43 / var(--tw-text-opacity, 1));
+}
+.text-ewing {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-ferguson {
   --tw-text-opacity: 1;
@@ -2358,9 +2890,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(232 0 32 / var(--tw-text-opacity, 1));
 }
+.text-first {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-fittipaldi {
   --tw-text-opacity: 1;
   color: rgb(242 105 38 / var(--tw-text-opacity, 1));
+}
+.text-fondmetal {
+  --tw-text-opacity: 1;
+  color: rgb(240 167 1 / var(--tw-text-opacity, 1));
 }
 .text-footwork {
   --tw-text-opacity: 1;
@@ -2373,6 +2913,18 @@ video {
 .text-forti {
   --tw-text-opacity: 1;
   color: rgb(55 57 113 / var(--tw-text-opacity, 1));
+}
+.text-frank-williams-racing-cars {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-frazer-nash {
+  --tw-text-opacity: 1;
+  color: rgb(218 36 24 / var(--tw-text-opacity, 1));
+}
+.text-fry {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-fuchsia-700 {
   --tw-text-opacity: 1;
@@ -2402,13 +2954,29 @@ video {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity, 1));
 }
+.text-greifzu {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-haas {
   --tw-text-opacity: 1;
   color: rgb(182 186 189 / var(--tw-text-opacity, 1));
 }
+.text-hall {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-heck {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-hesketh {
   --tw-text-opacity: 1;
   color: rgb(249 251 105 / var(--tw-text-opacity, 1));
+}
+.text-hill {
+  --tw-text-opacity: 1;
+  color: rgb(214 26 26 / var(--tw-text-opacity, 1));
 }
 .text-honda {
   --tw-text-opacity: 1;
@@ -2422,6 +2990,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(63 71 203 / var(--tw-text-opacity, 1));
 }
+.text-iso-marlboro {
+  --tw-text-opacity: 1;
+  color: rgb(199 175 13 / var(--tw-text-opacity, 1));
+}
 .text-jaguar {
   --tw-text-opacity: 1;
   color: rgb(255 18 5 / var(--tw-text-opacity, 1));
@@ -2433,6 +3005,10 @@ video {
 .text-jordan {
   --tw-text-opacity: 1;
   color: rgb(255 255 1 / var(--tw-text-opacity, 1));
+}
+.text-kauhsen {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 34 / var(--tw-text-opacity, 1));
 }
 .text-kick-sauber {
   --tw-text-opacity: 1;
@@ -2446,9 +3022,25 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 255 / var(--tw-text-opacity, 1));
 }
+.text-krakau {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-kurtis-kraft {
+  --tw-text-opacity: 1;
+  color: rgb(248 254 231 / var(--tw-text-opacity, 1));
+}
+.text-kuzma {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-lancia {
   --tw-text-opacity: 1;
   color: rgb(32 63 95 / var(--tw-text-opacity, 1));
+}
+.text-langley {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-larrousse {
   --tw-text-opacity: 1;
@@ -2461,6 +3053,14 @@ video {
 .text-lec {
   --tw-text-opacity: 1;
   color: rgb(166 52 52 / var(--tw-text-opacity, 1));
+}
+.text-lesovsky {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-leyton-house {
+  --tw-text-opacity: 1;
+  color: rgb(18 199 190 / var(--tw-text-opacity, 1));
 }
 .text-life {
   --tw-text-opacity: 1;
@@ -2506,6 +3106,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(247 240 231 / var(--tw-text-opacity, 1));
 }
+.text-marchese {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-martini {
   --tw-text-opacity: 1;
   color: rgb(55 132 247 / var(--tw-text-opacity, 1));
@@ -2522,6 +3126,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 29 208 / var(--tw-text-opacity, 1));
 }
+.text-mcguire {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-mclaren {
   --tw-text-opacity: 1;
   color: rgb(255 128 0 / var(--tw-text-opacity, 1));
@@ -2534,6 +3142,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(190 66 60 / var(--tw-text-opacity, 1));
 }
+.text-meskowski {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-midland {
   --tw-text-opacity: 1;
   color: rgb(255 0 0 / var(--tw-text-opacity, 1));
@@ -2542,9 +3154,25 @@ video {
   --tw-text-opacity: 1;
   color: rgb(14 35 58 / var(--tw-text-opacity, 1));
 }
+.text-modena {
+  --tw-text-opacity: 1;
+  color: rgb(18 10 47 / var(--tw-text-opacity, 1));
+}
+.text-moore {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-nacke {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-nichels {
   --tw-text-opacity: 1;
   color: rgb(114 114 114 / var(--tw-text-opacity, 1));
+}
+.text-olson {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-onyx {
   --tw-text-opacity: 1;
@@ -2562,13 +3190,25 @@ video {
   --tw-text-opacity: 1;
   color: rgb(14 144 201 / var(--tw-text-opacity, 1));
 }
+.text-pankratz {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-parnelli {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
+.text-pawl {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-penske {
   --tw-text-opacity: 1;
   color: rgb(211 26 27 / var(--tw-text-opacity, 1));
+}
+.text-phillips {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-politoys {
   --tw-text-opacity: 1;
@@ -2582,9 +3222,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(38 70 139 / var(--tw-text-opacity, 1));
 }
+.text-protos {
+  --tw-text-opacity: 1;
+  color: rgb(255 22 42 / var(--tw-text-opacity, 1));
+}
 .text-racing-point {
   --tw-text-opacity: 1;
   color: rgb(243 104 186 / var(--tw-text-opacity, 1));
+}
+.text-rae {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-ram {
   --tw-text-opacity: 1;
@@ -2610,6 +3258,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(54 113 198 / var(--tw-text-opacity, 1));
 }
+.text-reif {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-renault {
   --tw-text-opacity: 1;
   color: rgb(252 212 36 / var(--tw-text-opacity, 1));
@@ -2626,6 +3278,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(205 198 206 / var(--tw-text-opacity, 1));
 }
+.text-schroeder {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-scirocco {
   --tw-text-opacity: 1;
   color: rgb(42 57 90 / var(--tw-text-opacity, 1));
@@ -2638,6 +3294,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(40 48 52 / var(--tw-text-opacity, 1));
 }
+.text-sherman {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-simca-gordini {
   --tw-text-opacity: 1;
   color: rgb(1 119 200 / var(--tw-text-opacity, 1));
@@ -2646,13 +3306,25 @@ video {
   --tw-text-opacity: 1;
   color: rgb(68 94 185 / var(--tw-text-opacity, 1));
 }
+.text-snowberger {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-spirit {
   --tw-text-opacity: 1;
   color: rgb(45 78 179 / var(--tw-text-opacity, 1));
 }
+.text-spyker {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
 .text-stebro {
   --tw-text-opacity: 1;
   color: rgb(254 255 0 / var(--tw-text-opacity, 1));
+}
+.text-stevens {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-stewardsTxt {
   --tw-text-opacity: 1;
@@ -2670,6 +3342,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(252 249 252 / var(--tw-text-opacity, 1));
 }
+.text-sutton {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-t-s-dark {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity, 1));
@@ -2677,6 +3353,10 @@ video {
 .text-t-s-light {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+.text-talbot-lago {
+  --tw-text-opacity: 1;
+  color: rgb(0 71 193 / var(--tw-text-opacity, 1));
 }
 .text-tec-mec {
   --tw-text-opacity: 1;
@@ -2706,6 +3386,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(214 64 76 / var(--tw-text-opacity, 1));
 }
+.text-trevis {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
 .text-trojan {
   --tw-text-opacity: 1;
   color: rgb(238 100 99 / var(--tw-text-opacity, 1));
@@ -2722,6 +3406,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(116 132 90 / var(--tw-text-opacity, 1));
 }
+.text-venturi {
+  --tw-text-opacity: 1;
+  color: rgb(188 19 19 / var(--tw-text-opacity, 1));
+}
 .text-veritas {
   --tw-text-opacity: 1;
   color: rgb(123 173 249 / var(--tw-text-opacity, 1));
@@ -2729,6 +3417,14 @@ video {
 .text-virgin {
   --tw-text-opacity: 1;
   color: rgb(227 30 35 / var(--tw-text-opacity, 1));
+}
+.text-watson {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
+}
+.text-wetteroth {
+  --tw-text-opacity: 1;
+  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
 .text-white {
   --tw-text-opacity: 1;
