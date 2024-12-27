@@ -21,20 +21,22 @@
                     <a href="/team/<%= constructorWinners[index].constructorId %>">
                         <div
                             class="bg-s-<%= theme %> flex flex-col items-center justify-center p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
-                            <div class="w-full border-l-4 border-green-500 pl-4">
+                            <div class="w-full border-l-4 border-<%= constructorWinners[index].constructorId %> pl-4">
                                 <div class="flex items-center justify-between w-full">
                                     <div>
                                         <span class="text-2xl font-bold">
                                             <%= constructorWinners[index].name %>
                                         </span>
-                                        <div class="bg-green-500 h-1 w-12 mt-2"></div>
+                                        <div class="bg-<%= constructorWinners[index].constructorId %> h-1 w-12 mt-2">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-4 text-t-s-<%= theme %>">
                                     <span class="text-lg">
                                         <%= __('retro_f1.constructorwinners.number_of_titles') %> :
                                     </span>
-                                    <span class="text-4xl font-semibold text-green-600 ml-2">
+                                    <span
+                                        class="text-4xl font-semibold text-<%= constructorWinners[index].constructorId %> ml-2">
                                         <%= constructorWinners[index].titles %>
                                     </span>
                                 </div>
