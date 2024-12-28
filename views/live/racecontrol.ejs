@@ -10,14 +10,15 @@
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
     <main>
-        <div class="text-center text-2xl font-bold my-8">
+        <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
             <span>
                 <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
                 <span class="text-red-500">
                     <%= __('live.live_title') %>
-                </span> -
-                <span id="frontLocation"></span>
-            </span> - <span id="frontSession"></span>
+                </span>
+            </span>
+            <span id="frontSession"></span>
+            <span id="frontLocation"></span>
         </div>
 
         <!-- <div class="text-center text-2xl font-bold my-8">
@@ -42,6 +43,8 @@
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
+
+<script src="/js/liveTitle.js"></script>
 <script src="/js/liveUpdates.js"></script>
 
 </html>
