@@ -3,7 +3,7 @@ module.exports = {
   content: ['./views/**/*.ejs', './public/**/*.js'],
   safelist: [
     // text part
-    'text-red-bull', 'text-williams', 'text-rb', 'text-mclaren', 'text-alpine', 'text-ferrari', 'text-mercedes', 'text-aston-martin', 'text-haas', 'text-kick-sauber', 'text-red_bull', 'text-aston_martin', 'text-sauber', 'stewardsTxt', 'stewardsBg', 'bg-red-bull', 'bg-williams', 'bg-rb', 'bg-mclaren', 'bg-alpine', 'bg-ferrari', 'bg-mercedes', 'bg-aston-martin', 'bg-haas', 'bg-kick-sauber', 'bg-red_bull', 'bg-aston_martin', 'bg-sauber', 'border-red-bull', 'border-williams', 'border-rb', 'border-mclaren', 'border-alpine', 'border-ferrari', 'border-mercedes', 'border-aston-martin', 'border-haas', 'border-kick-sauber', 'border-red_bull', 'border-aston_martin', 'border-sauber', 'text-deconnect', 'text-gold', 'text-adams', 'text-afm', 'text-ags', 'text-alfa-romeo', 'text-alfa-special', 'text-alphatauri', 'text-alta', 'text-amon', 'text-andrea-moda', 'text-apollon', 'text-arrows', 'text-arzani-volpini', 'text-aston-butterworth', 'text-ats-wheels', 'text-ats', 'text-balsa', 'text-bar', 'text-behra-porsche', 'text-bellasi', 'text-benetton', 'text-bmw-sauber', 'text-bmw', 'text-boro', 'text-brabham', 'text-brawn', 'text-brm', 'text-bromme', 'text-brp', 'text-bugatti', 'text-caterham', 'text-christensen', 'text-cisitalia', 'text-coloni', 'text-connaught', 'text-connew', 'text-cooper', 'text-dallara', 'text-de-tomaso', 'text-deidt', 'text-del-roy', 'text-derrington-francis', 'text-dunn', 'text-eagle', 'text-eifelland', 'text-elder', 'text-emeryson', 'text-emw', 'text-enb', 'text-ensign', 'text-epperly', 'text-era', 'text-eurobrun', 'text-ewing', 'text-ferguson', 'text-first', 'text-fittipaldi', 'text-fondmetal', 'text-footwork', 'text-force-india', 'text-forti', 'text-frank-williams-racing-cars', 'text-frazer-nash', 'text-fry', 'text-gilby', 'text-gordini', 'text-greifzu', 'text-hall', 'text-heck', 'text-hesketh', 'text-hill', 'text-honda', 'text-hrt', 'text-hwm', 'text-iso-marlboro', 'text-jaguar', 'text-jbw', 'text-jordan', 'text-kauhsen', 'text-klenk', 'text-kojima', 'text-krakau', 'text-kurtis-kraft', 'text-kuzma', 'text-lancia', 'text-langley', 'text-larrousse', 'text-lds', 'text-lec', 'text-lesovsky', 'text-leyton-house', 'text-life', 'text-ligier', 'text-lola', 'text-lotus-f1', 'text-lotus-racing', 'text-lotus', 'text-lyncar', 'text-maki', 'text-manor', 'text-march', 'text-marchese', 'text-martini', 'text-marussia', 'text-maserati', 'text-matra', 'text-mcguire',
+    'text-red-bull', 'text-williams', 'text-rb', 'text-mclaren', 'text-alpine', 'text-ferrari', 'text-mercedes', 'text-aston-martin', 'text-haas', 'text-kick-sauber', 'text-sauber', 'stewardsTxt', 'stewardsBg', 'bg-red-bull', 'bg-williams', 'bg-rb', 'bg-mclaren', 'bg-alpine', 'bg-ferrari', 'bg-mercedes', 'bg-aston-martin', 'bg-haas', 'bg-kick-sauber', 'bg-sauber', 'border-red-bull', 'border-williams', 'border-rb', 'border-mclaren', 'border-alpine', 'border-ferrari', 'border-mercedes', 'border-aston-martin', 'border-haas', 'border-kick-sauber', 'border-sauber', 'text-deconnect', 'text-gold', 'text-adams', 'text-afm', 'text-ags', 'text-alfa-romeo', 'text-alfa-special', 'text-alphatauri', 'text-alta', 'text-amon', 'text-andrea-moda', 'text-apollon', 'text-arrows', 'text-arzani-volpini', 'text-aston-butterworth', 'text-ats-wheels', 'text-ats', 'text-balsa', 'text-bar', 'text-behra-porsche', 'text-bellasi', 'text-benetton', 'text-bmw-sauber', 'text-bmw', 'text-boro', 'text-brabham', 'text-brawn', 'text-brm', 'text-bromme', 'text-brp', 'text-bugatti', 'text-caterham', 'text-christensen', 'text-cisitalia', 'text-coloni', 'text-connaught', 'text-connew', 'text-cooper', 'text-dallara', 'text-de-tomaso', 'text-deidt', 'text-del-roy', 'text-derrington-francis', 'text-dunn', 'text-eagle', 'text-eifelland', 'text-elder', 'text-emeryson', 'text-emw', 'text-enb', 'text-ensign', 'text-epperly', 'text-era', 'text-eurobrun', 'text-ewing', 'text-ferguson', 'text-first', 'text-fittipaldi', 'text-fondmetal', 'text-footwork', 'text-force-india', 'text-forti', 'text-frank-williams-racing-cars', 'text-frazer-nash', 'text-fry', 'text-gilby', 'text-gordini', 'text-greifzu', 'text-hall', 'text-heck', 'text-hesketh', 'text-hill', 'text-honda', 'text-hrt', 'text-hwm', 'text-iso-marlboro', 'text-jaguar', 'text-jbw', 'text-jordan', 'text-kauhsen', 'text-klenk', 'text-kojima', 'text-krakau', 'text-kurtis-kraft', 'text-kuzma', 'text-lancia', 'text-langley', 'text-larrousse', 'text-lds', 'text-lec', 'text-lesovsky', 'text-leyton-house', 'text-life', 'text-ligier', 'text-lola', 'text-lotus-f1', 'text-lotus-racing', 'text-lotus', 'text-lyncar', 'text-maki', 'text-manor', 'text-march', 'text-marchese', 'text-martini', 'text-marussia', 'text-maserati', 'text-matra', 'text-mcguire',
     'text-merzario', 'text-meskowski', 'text-midland', 'text-minardi', 'text-modena', 'text-moore', 'text-nacke', 'text-nichels', 'text-olson', 'text-onyx', 'text-osca', 'text-osella', 'text-pacific', 'text-pankratz', 'text-parnelli', 'text-pawl', 'text-penske', 'text-phillips', 'text-politoys', 'text-porsche', 'text-prost', 'text-protos', 'text-racing-point', 'text-rae', 'text-ram', 'text-rebaque', 'text-reif', 'text-renault', 'text-rial', 'text-scarab', 'text-schroeder', 'text-scirocco', 'text-shadow', 'text-shannon', 'text-sherman', 'text-simca-gordini', 'text-simtek', 'text-snowberger', 'text-spirit', 'text-spyker', 'text-stebro', 'text-stevens', 'text-stewart', 'text-super-aguri', 'text-surtees', 'text-sutton', 'text-talbot-lago', 'text-tec-mec', 'text-tecno', 'text-theodore', 'text-token', 'text-toleman', 'text-toro-rosso', 'text-toyota', 'text-trevis', 'text-trojan', 'text-turner', 'text-tyrrell', 'text-vanwall', 'text-venturi', 'text-veritas', 'text-virgin', 'text-watson', 'text-wetteroth', 'text-wolf-williams', 'text-wolf', 'text-zakspeed',
 
     // background part
@@ -43,7 +43,6 @@ module.exports = {
 
         // actual constructors
         'red-bull': '#3671C6',
-        'red_bull': '#3671C6', // id for api OpenF1 (live)
         'williams': '#64C4FF',
         'rb': '#6692FF',
         'mclaren': '#FF8000',
@@ -51,10 +50,8 @@ module.exports = {
         'ferrari': '#E80020',
         'mercedes': '#27F4D2',
         'aston-martin': '#229971',
-        'aston_martin': '#229971', // id for api OpenF1 (live)
         'haas': '#B6BABD',
         'kick-sauber': '#52E252',
-        'sauber': '#52E252', // id for api OpenF1 (live)
 
         // retro constructors - base color of the site for constructors without logo
         'adams': '#058785',
@@ -192,6 +189,7 @@ module.exports = {
         'reif': '#058785',
         'renault': '#fcd424',
         'rial': '#075cb0',
+        'sauber': '#d6201c',
         'scarab': '#cdc6ce',
         'schroeder': '#058785',
         'scirocco': '#2a395a',
