@@ -1,9 +1,36 @@
 const express = require('express');
 const router = express.Router();
 const cors = require("cors");
-const fs = require("fs").promises;
-const path = require("path");
 
+// driver number to driver code mapping
+const driverMapping = {
+    1: "VER",
+    20: "MAG",
+    2: "SAR",
+    3: "RIC",
+    10: "GAS",
+    30: "LAW",
+    43: "COL",
+    61: "DOO",
+    44: "HAM",
+    55: "SAI",
+    16: "LEC",
+    77: "BOT",
+    63: "RUS",
+    11: "PER",
+    4: "NOR",
+    18: "STR",
+    14: "ALO",
+    31: "OCO",
+    23: "ALB",
+    22: "TSU",
+    81: "PIA",
+    24: "ZHO",
+    27: "HUL"
+};
+
+
+// routes
 router.get("/live", cors(), async (req, res) => {
     res.render("live/live");
 });
@@ -22,32 +49,6 @@ router.get("/live/detailedstandings", cors(), async (req, res) => {
 
 
 router.get("/live/getstandings", cors(), async (req, res) => {
-    // const filePath = path.join(__dirname, 'liveData/standings.json');
-    // const dataF = await fs.readFile(filePath, 'utf8');
-
-    const driverMapping = {
-        1: "VER",
-        20: "MAG",
-        2: "SAR",
-        3: "RIC",
-        10: "GAS",
-        44: "HAM",
-        55: "SAI",
-        16: "LEC",
-        77: "BOT",
-        63: "RUS",
-        11: "PER",
-        4: "NOR",
-        18: "STR",
-        14: "ALO",
-        31: "OCO",
-        23: "ALB",
-        22: "TSU",
-        81: "PIA",
-        24: "ZHO",
-        27: "HUL"
-    };
-
     async function updatePositionData() {
         try {
             var classement = {};
@@ -79,29 +80,6 @@ router.get("/live/getstandings", cors(), async (req, res) => {
 });
 
 router.get("/live/getstints", cors(), async (req, res) => {
-    const driverMapping = {
-        1: "VER",
-        20: "MAG",
-        2: "SAR",
-        3: "RIC",
-        10: "GAS",
-        44: "HAM",
-        55: "SAI",
-        16: "LEC",
-        77: "BOT",
-        63: "RUS",
-        11: "PER",
-        4: "NOR",
-        18: "STR",
-        14: "ALO",
-        31: "OCO",
-        23: "ALB",
-        22: "TSU",
-        81: "PIA",
-        24: "ZHO",
-        27: "HUL"
-    };
-
     async function fetchStintData() {
         try {
             const response = await fetch('https://api.openf1.org/v1/stints?session_key=latest');
@@ -137,29 +115,6 @@ router.get("/live/getstints", cors(), async (req, res) => {
 });
 
 router.get("/live/getintervals", cors(), async (req, res) => {
-    const driverMapping = {
-        1: "VER",
-        20: "MAG",
-        2: "SAR",
-        3: "RIC",
-        10: "GAS",
-        44: "HAM",
-        55: "SAI",
-        16: "LEC",
-        77: "BOT",
-        63: "RUS",
-        11: "PER",
-        4: "NOR",
-        18: "STR",
-        14: "ALO",
-        31: "OCO",
-        23: "ALB",
-        22: "TSU",
-        81: "PIA",
-        24: "ZHO",
-        27: "HUL"
-    };
-
     const driverIntervals = {};
 
     async function updateIntervals() {
