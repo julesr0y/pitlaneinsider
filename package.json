@@ -1,6 +1,6 @@
 {
     "name": "pitlaneinsider",
-    "version": "1.0.0",
+    "version": "2024.1.0",
     "private": true,
     "scripts": {
         "start": "node ./bin/www",

@@ -740,6 +740,9 @@ video {
 .max-h-12 {
   max-height: 3rem;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
 .w-1 {
   width: 0.25rem;
 }
