@@ -334,7 +334,10 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+        var chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+        if (chartColor === '') {
+            chartColor = '#058785';
+        }
 
         const tableYears = [];
         const allYears = [];
@@ -437,7 +440,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+        var chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+        if (chartColor === '') {
+            chartColor = '#058785';
+        }
 
         const tableYears = [];
         const allYears = [];

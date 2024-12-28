@@ -231,8 +231,8 @@
                 "abbreviation": "BEA",
                 "position": 18,
                 "points": 7,
-                "permanentNumber": null,
-                "actualTeam": "ferrari"
+                "permanentNumber": "50",
+                "actualTeam": "haas"
             },
             {
                 "year": 2024,
@@ -264,7 +264,7 @@
                 "abbreviation": "LAW",
                 "position": 21,
                 "points": 4,
-                "permanentNumber": "40",
+                "permanentNumber": "30",
                 "actualTeam": "rb"
             },
             {
@@ -297,7 +297,7 @@
                 "abbreviation": "DOO",
                 "position": 24,
                 "points": 0,
-                "permanentNumber": null,
+                "permanentNumber": "61",
                 "actualTeam": "alpine"
             }
         ],
