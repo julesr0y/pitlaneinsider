@@ -166,6 +166,13 @@
                 "permanentNumber": "31"
             },
             {
+                "id": "jack-doohan",
+                "firstName": "Jack",
+                "lastName": "Doohan",
+                "nationality": "australia",
+                "permanentNumber": "61"
+            },
+            {
                 "id": "pierre-gasly",
                 "firstName": "Pierre",
                 "lastName": "Gasly",
@@ -357,6 +364,13 @@
         "poleRatio": 0,
         "currentCarId": "aston-martin-amr24",
         "currentDrivers": [
+            {
+                "id": "felipe-drugovich",
+                "firstName": "Felipe",
+                "lastName": "Drugovich",
+                "nationality": "brazil",
+                "permanentNumber": "34"
+            },
             {
                 "id": "fernando-alonso",
                 "firstName": "Fernando",
@@ -1339,6 +1353,13 @@
         "currentCarId": "ferrari-sf-24",
         "currentDrivers": [
             {
+                "id": "arthur-leclerc",
+                "firstName": "Arthur",
+                "lastName": "Leclerc",
+                "nationality": "monaco",
+                "permanentNumber": "39"
+            },
+            {
                 "id": "carlos-sainz-jr",
                 "firstName": "Carlos",
                 "lastName": "Sainz Jr.",
@@ -1351,6 +1372,13 @@
                 "lastName": "Leclerc",
                 "nationality": "monaco",
                 "permanentNumber": "16"
+            },
+            {
+                "id": "oliver-bearman",
+                "firstName": "Oliver",
+                "lastName": "Bearman",
+                "nationality": "united-kingdom",
+                "permanentNumber": "38"
             }
         ],
         "currentCarName": "Ferrari SF-24"
@@ -1972,6 +2000,13 @@
                 "lastName": "Zhou",
                 "nationality": "china",
                 "permanentNumber": "24"
+            },
+            {
+                "id": "robert-shwartzman",
+                "firstName": "Robert",
+                "lastName": "Shwartzman",
+                "nationality": "israel",
+                "permanentNumber": "97"
             },
             {
                 "id": "valtteri-bottas",
@@ -2661,6 +2696,20 @@
                 "lastName": "Piastri",
                 "nationality": "australia",
                 "permanentNumber": "81"
+            },
+            {
+                "id": "patricio-oward",
+                "firstName": "Patricio",
+                "lastName": "O'Ward",
+                "nationality": "mexico",
+                "permanentNumber": "29"
+            },
+            {
+                "id": "ryo-hirakawa",
+                "firstName": "Ryō",
+                "lastName": "Hirakawa",
+                "nationality": "japan",
+                "permanentNumber": "28"
             }
         ],
         "currentCarName": "McLaren MCL38"
@@ -2686,6 +2735,13 @@
         "poleRatio": 44.48,
         "currentCarId": "mercedes-f1-w15",
         "currentDrivers": [
+            {
+                "id": "andrea-kimi-antonelli",
+                "firstName": "Andrea",
+                "lastName": "Antonelli",
+                "nationality": "italy",
+                "permanentNumber": "12"
+            },
             {
                 "id": "george-russell",
                 "firstName": "George",
@@ -3300,6 +3356,13 @@
         "currentCarId": "rb-vcarb-01",
         "currentDrivers": [
             {
+                "id": "ayumu-iwasa",
+                "firstName": "Ayumu",
+                "lastName": "Iwasa",
+                "nationality": "japan",
+                "permanentNumber": "40"
+            },
+            {
                 "id": "daniel-ricciardo",
                 "firstName": "Daniel",
                 "lastName": "Ricciardo",
@@ -3367,6 +3430,13 @@
         "poleRatio": 26.21,
         "currentCarId": "red-bull-rb20",
         "currentDrivers": [
+            {
+                "id": "isack-hadjar",
+                "firstName": "Isack",
+                "lastName": "Hadjar",
+                "nationality": "france",
+                "permanentNumber": "37"
+            },
             {
                 "id": "max-verstappen",
                 "firstName": "Max",
@@ -4310,11 +4380,25 @@
                 "permanentNumber": "23"
             },
             {
+                "id": "franco-colapinto",
+                "firstName": "Franco",
+                "lastName": "Colapinto",
+                "nationality": "argentina",
+                "permanentNumber": "43"
+            },
+            {
                 "id": "logan-sargeant",
                 "firstName": "Logan",
                 "lastName": "Sargeant",
                 "nationality": "united-states-of-america",
                 "permanentNumber": "2"
+            },
+            {
+                "id": "luke-browning",
+                "firstName": "Luke",
+                "lastName": "Browning",
+                "nationality": "united-kingdom",
+                "permanentNumber": "46"
             }
         ],
         "currentCarName": "Williams FW46"
