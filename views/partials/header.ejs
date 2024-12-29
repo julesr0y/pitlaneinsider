@@ -7,13 +7,11 @@
                 <p class="font-F1Wide text-2xl text-white" id="pc"><a href="/">PitLane Insider</a></p>
             </div>
         </div>
-        <div class="nav-btn">
-            <label for="nav-check">
-                <span class="span1"></span>
-                <span class="span2"></span>
-                <span class="span3"></span>
-            </label>
-        </div>
+        <label class="hamburger-menu" for="nav-check">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </label>
         <div class="nav-links">
             <a href="/constructors" id="ecuries">
                 <%= __('header.constructors') %>
@@ -42,11 +40,3 @@
         </div>
     </div>
 </header>
-
-<script>
-    document.getElementById('nav-check').addEventListener('change', function () {
-        document.body.classList.toggle('no-scroll', this.checked);
-        document.querySelector('.nav-btn').classList.toggle('cross', this.checked);
-        document.querySelector('.nav-links').classList.toggle('show', this.checked);
-    });
-</script>
