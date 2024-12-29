@@ -73,11 +73,22 @@ main {
 }
 
 .bar {
-  width: 100%;
   height: 5px;
   background-color: white;
   border-radius: 5px;
   transition: all 0.3s ease;
+}
+
+#bar1 {
+  width: 100%;
+}
+
+#bar2 {
+  width: 80%;
+}
+
+#bar3 {
+  width: 60%;
 }
 
 /* Quand le menu hamburger est activé (checkbox coché) */
@@ -87,17 +98,21 @@ main {
 }
 
 #nav-check:checked ~ .hamburger-menu .bar:nth-child(1) {
+  /* correspond to #bar1 */
   transform: rotate(45deg);
   transform-origin: top left;
 }
 
 #nav-check:checked ~ .hamburger-menu .bar:nth-child(2) {
+  /* correspond to #bar2 */
   opacity: 0;
 }
 
 #nav-check:checked ~ .hamburger-menu .bar:nth-child(3) {
+  /* correspond to #bar3 */
   transform: rotate(-45deg);
   transform-origin: bottom left;
+  width: 100%;
 }
 
 #mobile {
