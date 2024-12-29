@@ -10,8 +10,11 @@ const path = require('path');
 async function getGPDetail(gp_id) {
     try {
         const filePath = path.join(__dirname, '../../data/all_races_and_quali_results.json');
+        const weatherFilePath = path.join(__dirname, '../../data/all_races_weather.json');
         const file = fs.readFileSync(filePath, 'utf-8');
+        const weatherFile = fs.readFileSync(weatherFilePath, 'utf-8');
         const data = JSON.parse(file);
+        const weatherData = JSON.parse(weatherFile);
 
         let raceData = [];
         let gpInfo = {};
@@ -45,6 +48,15 @@ async function getGPDetail(gp_id) {
                 });
             }
         });
+
+        weatherData.forEach(weather => {
+            if (weather.raceId == gp_id) {
+                gpInfo.weather = {
+                    weather: weather.weather
+                };
+            }
+        });
+
 
         return { gpInfo, raceData };
     } catch (error) {
