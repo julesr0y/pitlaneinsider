@@ -20,12 +20,12 @@ app.use(helmet()); // Helmet middleware, permet de sécuriser l'application en c
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
-        connectSrc: ["'self'", "https://api.openf1.org"],
+        connectSrc: ["'self'", "https://api.openf1.org", "https://www.motorsport.com/rss/f1/news/"],
         styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com", "https://cdn.jsdelivr.net/npm/apexcharts"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com", "https://cdn.jsdelivr.net/npm/apexcharts", "https://www.motorsport.com/rss/f1/news/"],
         scriptSrcAttr: ["'unsafe-inline'"],
         mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"],
-        imgSrc: ["'self'", "data", "https://ik.imagekit.io"]
+        imgSrc: ["'self'", "data", "https://ik.imagekit.io", "https://cdn-1.motorsport.com/", "https://cdn-2.motorsport.com/", "https://cdn-3.motorsport.com/", "https://cdn-4.motorsport.com/", "https://cdn-5.motorsport.com/", "https://cdn-6.motorsport.com/", "https://cdn-7.motorsport.com/", , "https://cdn-8.motorsport.com/", "https://cdn-9.motorsport.com/"]
     }
 })); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
 i18n.configure({
@@ -82,6 +82,9 @@ app.use('/', retroRoutes);
 
 const liveRoutes = require('./routes/live'); // Importation des routes concernant le live
 app.use('/', liveRoutes);
+
+const newsRoutes = require('./routes/news'); // Importation des routes concernant les news
+app.use('/', newsRoutes);
 
 const aboutRoutes = require('./routes/about'); // Importation des routes de la partie  a propos
 app.use('/', aboutRoutes);

@@ -13,7 +13,8 @@
 		"reglementation": "RULES",
 		"retro_f1": "RETRO F1",
 		"live": "LIVE",
-		"account": "ACCOUNT"
+		"account": "ACCOUNT",
+		"news": "NEWS"
 	},
 	"home": {
 		"next_race": "Next race",
@@ -200,6 +201,10 @@
 		"link_standings": "Standings",
 		"link_race_control": "Race control",
 		"link_radio": "Radio"
+	},
+	"news": {
+		"tab_title": "News",
+		"news_title": "News"
 	},
 	"account": {
 		"profile": {
