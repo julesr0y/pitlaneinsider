@@ -34,6 +34,7 @@ async function getGPDetail(gp_id) {
 
                 race.results.forEach(driver => {
                     const driverInfo = {
+                        constructorId: driver.constructorId,
                         driverId: driver.driverId,
                         firstName: driver.firstName,
                         lastName: driver.lastName,

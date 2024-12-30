@@ -177,8 +177,9 @@
 			"gp_details": {
 				"tab_title": "Retro GP Details",
 				"title": "Retro - Race",
-				"position": "Pos",
+				"position": "P",
 				"drivers": "Drivers",
+				"gap": "Gap",
 				"starting_grid": "Starting grid",
 				"time": "Time",
 				"officialName": "Official name",
