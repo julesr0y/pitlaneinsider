@@ -627,7 +627,7 @@
                 "abbreviation": "WHI",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -641,7 +641,7 @@
                 "abbreviation": "PIA",
                 "grid": 18,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -1951,7 +1951,7 @@
                 "abbreviation": "CHA",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -2373,7 +2373,7 @@
                 "abbreviation": "BON",
                 "grid": 23,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -4387,7 +4387,7 @@
                 "abbreviation": "MUR",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -4711,7 +4711,7 @@
                 "abbreviation": "PAR",
                 "grid": 8,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -4725,7 +4725,7 @@
                 "abbreviation": "RIC",
                 "grid": 10,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -4739,7 +4739,7 @@
                 "abbreviation": "FIS",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -4753,7 +4753,7 @@
                 "abbreviation": "STU",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -5049,7 +5049,7 @@
                 "abbreviation": "JOV",
                 "grid": 18,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -5387,7 +5387,7 @@
                 "abbreviation": "TRI",
                 "grid": 22,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -6527,7 +6527,7 @@
                 "abbreviation": "FIS",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -6991,7 +6991,7 @@
                 "abbreviation": "AST",
                 "grid": null,
                 "position": 32,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -7441,7 +7441,7 @@
                 "abbreviation": "KRA",
                 "grid": null,
                 "position": 31,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -7455,7 +7455,7 @@
                 "abbreviation": "FIS",
                 "grid": null,
                 "position": 32,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -7469,7 +7469,7 @@
                 "abbreviation": "MER",
                 "grid": null,
                 "position": 33,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -7483,7 +7483,7 @@
                 "abbreviation": "COL",
                 "grid": null,
                 "position": 34,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -9509,7 +9509,7 @@
                 "abbreviation": "WAC",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -9833,7 +9833,7 @@
                 "abbreviation": "SWA",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -9847,7 +9847,7 @@
                 "abbreviation": "DET",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -10635,7 +10635,7 @@
                 "abbreviation": "CHI",
                 "grid": null,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -11169,7 +11169,7 @@
                 "abbreviation": "GLO",
                 "grid": null,
                 "position": 37,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -11507,7 +11507,7 @@
                 "abbreviation": "CHI",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -11521,7 +11521,7 @@
                 "abbreviation": "BAY",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -11535,7 +11535,7 @@
                 "abbreviation": "WAC",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -12239,7 +12239,7 @@
                 "abbreviation": "MUS",
                 "grid": 7,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -12253,7 +12253,7 @@
                 "abbreviation": "MEN",
                 "grid": 9,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -13589,7 +13589,7 @@
                 "abbreviation": "MAN",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -14067,7 +14067,7 @@
                 "abbreviation": "BRO",
                 "grid": 26,
                 "position": 33,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -14081,7 +14081,7 @@
                 "abbreviation": "NUC",
                 "grid": 29,
                 "position": 34,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -14405,7 +14405,7 @@
                 "abbreviation": "MAR",
                 "grid": 8,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -14419,7 +14419,7 @@
                 "abbreviation": "VIL",
                 "grid": 10,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -14433,7 +14433,7 @@
                 "abbreviation": "WHA",
                 "grid": 22,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -14687,7 +14687,7 @@
                 "abbreviation": "MAN",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -15349,7 +15349,7 @@
                 "abbreviation": "COL",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -16967,7 +16967,7 @@
                 "abbreviation": "CLA",
                 "grid": null,
                 "position": 15,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -16981,7 +16981,7 @@
                 "abbreviation": "TAR",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -16995,7 +16995,7 @@
                 "abbreviation": "SCH",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -17643,7 +17643,7 @@
                 "abbreviation": "FAI",
                 "grid": 21,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -17953,7 +17953,7 @@
                 "abbreviation": "FAR",
                 "grid": 5,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -17967,7 +17967,7 @@
                 "abbreviation": "VIL",
                 "grid": 8,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -17981,7 +17981,7 @@
                 "abbreviation": "PIO",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -18489,7 +18489,7 @@
                 "abbreviation": "HAW",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -18503,7 +18503,7 @@
                 "abbreviation": "BRO",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -18517,7 +18517,7 @@
                 "abbreviation": "CHI",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -19277,7 +19277,7 @@
                 "abbreviation": "HAW",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -19601,7 +19601,7 @@
                 "abbreviation": "CHA",
                 "grid": 5,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -20361,7 +20361,7 @@
                 "abbreviation": "PER",
                 "grid": 6,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -20375,7 +20375,7 @@
                 "abbreviation": "PIL",
                 "grid": 18,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -20389,7 +20389,7 @@
                 "abbreviation": "PIO",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -20811,7 +20811,7 @@
                 "abbreviation": "VON",
                 "grid": null,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -22445,7 +22445,7 @@
                 "abbreviation": "GOU",
                 "grid": 14,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -24193,7 +24193,7 @@
                 "abbreviation": "GOU",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -24967,7 +24967,7 @@
                 "abbreviation": "KAV",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -25967,7 +25967,7 @@
                 "abbreviation": "RUT",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -28263,7 +28263,7 @@
                 "abbreviation": "FON",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -28939,7 +28939,7 @@
                 "abbreviation": "BEH",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -28953,7 +28953,7 @@
                 "abbreviation": "VON",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -29785,7 +29785,7 @@
                 "abbreviation": "CAD",
                 "grid": 18,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -31235,7 +31235,7 @@
                 "abbreviation": "SAL",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -31249,7 +31249,7 @@
                 "abbreviation": "GRE",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -31263,7 +31263,7 @@
                 "abbreviation": "REV",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -31277,7 +31277,7 @@
                 "abbreviation": "DAI",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -31545,7 +31545,7 @@
                 "abbreviation": "MOS",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -31559,7 +31559,7 @@
                 "abbreviation": "TAY",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -31869,7 +31869,7 @@
                 "abbreviation": "GIN",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -31883,7 +31883,7 @@
                 "abbreviation": "PIP",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -31897,7 +31897,7 @@
                 "abbreviation": "DAI",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -32263,7 +32263,7 @@
                 "abbreviation": "REV",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -32503,7 +32503,7 @@
                 "abbreviation": "TAY",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -32757,7 +32757,7 @@
                 "abbreviation": "GOU",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -33349,7 +33349,7 @@
                 "abbreviation": "IRE",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -33645,7 +33645,7 @@
                 "abbreviation": "GRE",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -33659,7 +33659,7 @@
                 "abbreviation": "BUR",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -33983,7 +33983,7 @@
                 "abbreviation": "MAR",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -33997,7 +33997,7 @@
                 "abbreviation": "SEI",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -34011,7 +34011,7 @@
                 "abbreviation": "BUR",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -34025,7 +34025,7 @@
                 "abbreviation": "ALL",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -34039,7 +34039,7 @@
                 "abbreviation": "TAY",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -34433,7 +34433,7 @@
                 "abbreviation": "SEI",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -34447,7 +34447,7 @@
                 "abbreviation": "BOR",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -35291,7 +35291,7 @@
                 "abbreviation": "MAY",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -35769,7 +35769,7 @@
                 "abbreviation": "NAT",
                 "grid": null,
                 "position": 33,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -36699,7 +36699,7 @@
                 "abbreviation": "ROD",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -36995,7 +36995,7 @@
                 "abbreviation": "GUR",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -38713,7 +38713,7 @@
                 "abbreviation": "SAL",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -38727,7 +38727,7 @@
                 "abbreviation": "HIL",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -38741,7 +38741,7 @@
                 "abbreviation": "HAL",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -39235,7 +39235,7 @@
                 "abbreviation": "AMO",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -40123,7 +40123,7 @@
                 "abbreviation": "SCA",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -40137,7 +40137,7 @@
                 "abbreviation": "ARU",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -41165,7 +41165,7 @@
                 "abbreviation": "AMO",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -42207,7 +42207,7 @@
                 "abbreviation": "DRI",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -42503,7 +42503,7 @@
                 "abbreviation": "IRE",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -42771,7 +42771,7 @@
                 "abbreviation": "MAG",
                 "grid": 15,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -43053,7 +43053,7 @@
                 "abbreviation": "MAG",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -43067,7 +43067,7 @@
                 "abbreviation": "AND",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -43335,7 +43335,7 @@
                 "abbreviation": "REV",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -43687,7 +43687,7 @@
                 "abbreviation": "ATT",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -44039,7 +44039,7 @@
                 "abbreviation": "DEB",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -44659,7 +44659,7 @@
                 "abbreviation": "RUD",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -46265,7 +46265,7 @@
                 "abbreviation": "AND",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -46279,7 +46279,7 @@
                 "abbreviation": "MAI",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -46843,7 +46843,7 @@
                 "abbreviation": "BRA",
                 "grid": 8,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -46857,7 +46857,7 @@
                 "abbreviation": "AMO",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -46871,7 +46871,7 @@
                 "abbreviation": "ROL",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -47435,7 +47435,7 @@
                 "abbreviation": "AND",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -48337,7 +48337,7 @@
                 "abbreviation": "IRE",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -48351,7 +48351,7 @@
                 "abbreviation": "SCA",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -48605,7 +48605,7 @@
                 "abbreviation": "HIL",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -48845,7 +48845,7 @@
                 "abbreviation": "HIL",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -48859,7 +48859,7 @@
                 "abbreviation": "MCL",
                 "grid": null,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -48873,7 +48873,7 @@
                 "abbreviation": "ARU",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -48887,7 +48887,7 @@
                 "abbreviation": "WIL",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -49155,7 +49155,7 @@
                 "abbreviation": "CLA",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -49719,7 +49719,7 @@
                 "abbreviation": "MCL",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -50127,7 +50127,7 @@
                 "abbreviation": "LIG",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -50141,7 +50141,7 @@
                 "abbreviation": "MOS",
                 "grid": null,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -50155,7 +50155,7 @@
                 "abbreviation": "MIT",
                 "grid": null,
                 "position": 30,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -51043,7 +51043,7 @@
                 "abbreviation": "SPE",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -52651,7 +52651,7 @@
                 "abbreviation": "COU",
                 "grid": 16,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -53031,7 +53031,7 @@
                 "abbreviation": "RED",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -53299,7 +53299,7 @@
                 "abbreviation": "SIF",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -54681,7 +54681,7 @@
                 "abbreviation": "BRA",
                 "grid": null,
                 "position": 14,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -55767,7 +55767,7 @@
                 "abbreviation": "OLI",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -56373,7 +56373,7 @@
                 "abbreviation": "MOS",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -56683,7 +56683,7 @@
                 "abbreviation": "AND",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -56697,7 +56697,7 @@
                 "abbreviation": "UNS",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -57035,7 +57035,7 @@
                 "abbreviation": "ICK",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -57049,7 +57049,7 @@
                 "abbreviation": "PEA",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -57345,7 +57345,7 @@
                 "abbreviation": "OLI",
                 "grid": 16,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -57359,7 +57359,7 @@
                 "abbreviation": "PES",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -59391,7 +59391,7 @@
                 "abbreviation": "SUR",
                 "grid": 11,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -59405,7 +59405,7 @@
                 "abbreviation": "MIT",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -59419,7 +59419,7 @@
                 "abbreviation": "HAH",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -59433,7 +59433,7 @@
                 "abbreviation": "QUE",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -59447,7 +59447,7 @@
                 "abbreviation": "HER",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -59687,7 +59687,7 @@
                 "abbreviation": "BRA",
                 "grid": null,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -60251,7 +60251,7 @@
                 "abbreviation": "MCL",
                 "grid": 6,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -60505,7 +60505,7 @@
                 "abbreviation": "MCL",
                 "grid": 7,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -61097,7 +61097,7 @@
                 "abbreviation": "COU",
                 "grid": 13,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -62773,7 +62773,7 @@
                 "abbreviation": "DEA",
                 "grid": 18,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -62787,7 +62787,7 @@
                 "abbreviation": "STO",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -62801,7 +62801,7 @@
                 "abbreviation": "RED",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -63829,7 +63829,7 @@
                 "abbreviation": "HIL",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -63843,7 +63843,7 @@
                 "abbreviation": "MIL",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -63857,7 +63857,7 @@
                 "abbreviation": "RIN",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -63885,7 +63885,7 @@
                 "abbreviation": "FIT",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -66265,7 +66265,7 @@
                 "abbreviation": "CHA",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -66617,7 +66617,7 @@
                 "abbreviation": "GAL",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -67645,7 +67645,7 @@
                 "abbreviation": "BON",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -67997,7 +67997,7 @@
                 "abbreviation": "STO",
                 "grid": 23,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -68363,7 +68363,7 @@
                 "abbreviation": "GAN",
                 "grid": 9,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -68377,7 +68377,7 @@
                 "abbreviation": "PES",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -68391,7 +68391,7 @@
                 "abbreviation": "CRA",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -68827,7 +68827,7 @@
                 "abbreviation": "AND",
                 "grid": null,
                 "position": 30,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -68841,7 +68841,7 @@
                 "abbreviation": "VAN",
                 "grid": null,
                 "position": 31,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -68855,7 +68855,7 @@
                 "abbreviation": "DON",
                 "grid": null,
                 "position": 32,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -69179,7 +69179,7 @@
                 "abbreviation": "AMO",
                 "grid": 12,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -69573,7 +69573,7 @@
                 "abbreviation": "FER",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -70699,7 +70699,7 @@
                 "abbreviation": "SCH",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -71065,7 +71065,7 @@
                 "abbreviation": "PES",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -71079,7 +71079,7 @@
                 "abbreviation": "BEL",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -71093,7 +71093,7 @@
                 "abbreviation": "GET",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -71107,7 +71107,7 @@
                 "abbreviation": "GAN",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -71515,7 +71515,7 @@
                 "abbreviation": "MIG",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -72289,7 +72289,7 @@
                 "abbreviation": "PES",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -73049,7 +73049,7 @@
                 "abbreviation": "BEL",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -73513,7 +73513,7 @@
                 "abbreviation": "SUR",
                 "grid": null,
                 "position": 32,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -75499,7 +75499,7 @@
                 "abbreviation": "FOL",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -75809,7 +75809,7 @@
                 "abbreviation": "WIS",
                 "grid": 14,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -75823,7 +75823,7 @@
                 "abbreviation": "BEL",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -76611,7 +76611,7 @@
                 "abbreviation": "PUR",
                 "grid": 16,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -76963,7 +76963,7 @@
                 "abbreviation": "VON",
                 "grid": 14,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -77301,7 +77301,7 @@
                 "abbreviation": "GAN",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -77653,7 +77653,7 @@
                 "abbreviation": "AMO",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -77667,7 +77667,7 @@
                 "abbreviation": "LAU",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -78033,7 +78033,7 @@
                 "abbreviation": "HUN",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -78793,7 +78793,7 @@
                 "abbreviation": "STE",
                 "grid": 5,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -78807,7 +78807,7 @@
                 "abbreviation": "AMO",
                 "grid": 12,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -78821,7 +78821,7 @@
                 "abbreviation": "CEV",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -79201,7 +79201,7 @@
                 "abbreviation": "VON",
                 "grid": 26,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -80341,7 +80341,7 @@
                 "abbreviation": "BRA",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -81213,7 +81213,7 @@
                 "abbreviation": "MAS",
                 "grid": 17,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -81227,7 +81227,7 @@
                 "abbreviation": "AMO",
                 "grid": 20,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -81635,7 +81635,7 @@
                 "abbreviation": "ROB",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -81649,7 +81649,7 @@
                 "abbreviation": "MER",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -85559,7 +85559,7 @@
                 "abbreviation": "JAR",
                 "grid": 1,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -86685,7 +86685,7 @@
                 "abbreviation": "FIT",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -88163,7 +88163,7 @@
                 "abbreviation": "FUS",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -88543,7 +88543,7 @@
                 "abbreviation": "MIG",
                 "grid": 24,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -89317,7 +89317,7 @@
                 "abbreviation": "ASH",
                 "grid": 20,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -89725,7 +89725,7 @@
                 "abbreviation": "FIT",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -89739,7 +89739,7 @@
                 "abbreviation": "DON",
                 "grid": 20,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -89753,7 +89753,7 @@
                 "abbreviation": "HEN",
                 "grid": 22,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -90513,7 +90513,7 @@
                 "abbreviation": "LAF",
                 "grid": 21,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -90527,7 +90527,7 @@
                 "abbreviation": "LOM",
                 "grid": 24,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -94495,7 +94495,7 @@
                 "abbreviation": "STO",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -95677,7 +95677,7 @@
                 "abbreviation": "EDW",
                 "grid": 23,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -95691,7 +95691,7 @@
                 "abbreviation": "MER",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -95705,7 +95705,7 @@
                 "abbreviation": "STU",
                 "grid": null,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -96071,7 +96071,7 @@
                 "abbreviation": "ERT",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -96085,7 +96085,7 @@
                 "abbreviation": "AMO",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -96873,7 +96873,7 @@
                 "abbreviation": "KUW",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -97197,7 +97197,7 @@
                 "abbreviation": "NIL",
                 "grid": 10,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -98549,7 +98549,7 @@
                 "abbreviation": "LAU",
                 "grid": 3,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -99407,7 +99407,7 @@
                 "abbreviation": "LUN",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -103513,7 +103513,7 @@
                 "abbreviation": "ASH",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -104597,7 +104597,7 @@
                 "abbreviation": "LEO",
                 "grid": 17,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -104611,7 +104611,7 @@
                 "abbreviation": "JAR",
                 "grid": 16,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -105441,7 +105441,7 @@
                 "abbreviation": "KEE",
                 "grid": null,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -105455,7 +105455,7 @@
                 "abbreviation": "STU",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -109393,7 +109393,7 @@
                 "abbreviation": "KEE",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -111109,7 +111109,7 @@
                 "abbreviation": "PAT",
                 "grid": 13,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -111123,7 +111123,7 @@
                 "abbreviation": "STU",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -112249,7 +112249,7 @@
                 "abbreviation": "JAB",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -112263,7 +112263,7 @@
                 "abbreviation": "ARN",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -113797,7 +113797,7 @@
                 "abbreviation": "STU",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -117793,7 +117793,7 @@
                 "abbreviation": "PRO",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -117807,7 +117807,7 @@
                 "abbreviation": "SUR",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -120987,7 +120987,7 @@
                 "abbreviation": "MAS",
                 "grid": null,
                 "position": 29,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -122169,7 +122169,7 @@
                 "abbreviation": "PRO",
                 "grid": 13,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -123055,7 +123055,7 @@
                 "abbreviation": "JAB",
                 "grid": null,
                 "position": 30,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -125615,7 +125615,7 @@
                 "abbreviation": "SER",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -127331,7 +127331,7 @@
                 "abbreviation": "DEC",
                 "grid": 13,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -130651,7 +130651,7 @@
                 "abbreviation": "PIR",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -130665,7 +130665,7 @@
                 "abbreviation": "VIL",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -131551,7 +131551,7 @@
                 "abbreviation": "PAL",
                 "grid": 23,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -133717,7 +133717,7 @@
                 "abbreviation": "PIR",
                 "grid": 1,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -133731,7 +133731,7 @@
                 "abbreviation": "LAU",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -134575,7 +134575,7 @@
                 "abbreviation": "TAM",
                 "grid": 10,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -135419,7 +135419,7 @@
                 "abbreviation": "TAM",
                 "grid": 8,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -135433,7 +135433,7 @@
                 "abbreviation": "GUE",
                 "grid": 15,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -135447,7 +135447,7 @@
                 "abbreviation": "JAR",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -142425,7 +142425,7 @@
                 "abbreviation": "GHI",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -143621,7 +143621,7 @@
                 "abbreviation": "HES",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -144409,7 +144409,7 @@
                 "abbreviation": "TAM",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -145197,7 +145197,7 @@
                 "abbreviation": "ALL",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -145633,7 +145633,7 @@
                 "abbreviation": "CEC",
                 "grid": null,
                 "position": 28,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -146407,7 +146407,7 @@
                 "abbreviation": "WIN",
                 "grid": 14,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -147209,7 +147209,7 @@
                 "abbreviation": "WIN",
                 "grid": 21,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -149123,7 +149123,7 @@
                 "abbreviation": "PAL",
                 "grid": 17,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -149869,7 +149869,7 @@
                 "abbreviation": "PIQ",
                 "grid": 9,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -150235,7 +150235,7 @@
                 "abbreviation": "GHI",
                 "grid": 22,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -150615,7 +150615,7 @@
                 "abbreviation": "MAN",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -150995,7 +150995,7 @@
                 "abbreviation": "GHI",
                 "grid": 25,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -151389,7 +151389,7 @@
                 "abbreviation": "DEC",
                 "grid": 14,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -151769,7 +151769,7 @@
                 "abbreviation": "GHI",
                 "grid": 19,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -152543,7 +152543,7 @@
                 "abbreviation": "MAR",
                 "grid": 23,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -152557,7 +152557,7 @@
                 "abbreviation": "GHI",
                 "grid": 21,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -152923,7 +152923,7 @@
                 "abbreviation": "LAU",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -153627,7 +153627,7 @@
                 "abbreviation": "JON",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -155105,7 +155105,7 @@
                 "abbreviation": "NAN",
                 "grid": 17,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -156217,7 +156217,7 @@
                 "abbreviation": "TAM",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -156597,7 +156597,7 @@
                 "abbreviation": "ROT",
                 "grid": 26,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -158497,7 +158497,7 @@
                 "abbreviation": "WAR",
                 "grid": 10,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -159651,7 +159651,7 @@
                 "abbreviation": "TAM",
                 "grid": 8,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -159665,7 +159665,7 @@
                 "abbreviation": "ROT",
                 "grid": 23,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -160383,7 +160383,7 @@
                 "abbreviation": "CAP",
                 "grid": 23,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -160763,7 +160763,7 @@
                 "abbreviation": "ARN",
                 "grid": 13,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -160777,7 +160777,7 @@
                 "abbreviation": "PIQ",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -161523,7 +161523,7 @@
                 "abbreviation": "CAM",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -165815,7 +165815,7 @@
                 "abbreviation": "MAN",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -168853,7 +168853,7 @@
                 "abbreviation": "CAP",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -183765,7 +183765,7 @@
                 "abbreviation": "MAR",
                 "grid": null,
                 "position": 27,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -186281,7 +186281,7 @@
                 "abbreviation": "GUG",
                 "grid": 15,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -188755,7 +188755,7 @@
                 "abbreviation": "NAK",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -189233,7 +189233,7 @@
                 "abbreviation": "DON",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -189711,7 +189711,7 @@
                 "abbreviation": "ALE",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -191567,7 +191567,7 @@
                 "abbreviation": "PRO",
                 "grid": 3,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -209555,7 +209555,7 @@
                 "abbreviation": "ZAN",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -212215,7 +212215,7 @@
                 "abbreviation": "RAT",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -212609,7 +212609,7 @@
                 "abbreviation": "FRE",
                 "grid": null,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -212623,7 +212623,7 @@
                 "abbreviation": "WEN",
                 "grid": null,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -217871,7 +217871,7 @@
                 "abbreviation": "MAR",
                 "grid": 17,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -218251,7 +218251,7 @@
                 "abbreviation": "BAD",
                 "grid": 13,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -219011,7 +219011,7 @@
                 "abbreviation": "MON",
                 "grid": 23,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -219377,7 +219377,7 @@
                 "abbreviation": "SCH",
                 "grid": 20,
                 "position": 25,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -219391,7 +219391,7 @@
                 "abbreviation": "VER",
                 "grid": 23,
                 "position": 26,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -221841,7 +221841,7 @@
                 "abbreviation": "MON",
                 "grid": 21,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -221855,7 +221855,7 @@
                 "abbreviation": "MOR",
                 "grid": 22,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -223263,7 +223263,7 @@
                 "abbreviation": "SUZ",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -223601,7 +223601,7 @@
                 "abbreviation": "BAD",
                 "grid": 15,
                 "position": 23,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -223615,7 +223615,7 @@
                 "abbreviation": "HAK",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -223911,7 +223911,7 @@
                 "abbreviation": "HER",
                 "grid": 14,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -225559,7 +225559,7 @@
                 "abbreviation": "MON",
                 "grid": 22,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -226531,7 +226531,7 @@
                 "abbreviation": "MSC",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -228955,7 +228955,7 @@
                 "abbreviation": "HIL",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -229307,7 +229307,7 @@
                 "abbreviation": "MAG",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -229955,7 +229955,7 @@
                 "abbreviation": "TRU",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -233843,7 +233843,7 @@
                 "abbreviation": "MOR",
                 "grid": 18,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -238337,7 +238337,7 @@
                 "abbreviation": "BAR",
                 "grid": 14,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -238351,7 +238351,7 @@
                 "abbreviation": "PAN",
                 "grid": 15,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -238365,7 +238365,7 @@
                 "abbreviation": "SAL",
                 "grid": 18,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -238379,7 +238379,7 @@
                 "abbreviation": "ROS",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -239675,7 +239675,7 @@
                 "abbreviation": "HER",
                 "grid": 13,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -241943,7 +241943,7 @@
                 "abbreviation": "MSC",
                 "grid": 2,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -244211,7 +244211,7 @@
                 "abbreviation": "TRU",
                 "grid": 18,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -245169,7 +245169,7 @@
                 "abbreviation": "DIN",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -245183,7 +245183,7 @@
                 "abbreviation": "SAL",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -246803,7 +246803,7 @@
                 "abbreviation": "DLR",
                 "grid": 16,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -253283,7 +253283,7 @@
                 "abbreviation": "HAK",
                 "grid": 4,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -257143,7 +257143,7 @@
                 "abbreviation": "BAR",
                 "grid": 2,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -257157,7 +257157,7 @@
                 "abbreviation": "WEB",
                 "grid": null,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -257171,7 +257171,7 @@
                 "abbreviation": "YOO",
                 "grid": null,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -259073,7 +259073,7 @@
                 "abbreviation": "BAR",
                 "grid": 3,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -260919,7 +260919,7 @@
                 "abbreviation": "MCN",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -261511,7 +261511,7 @@
                 "abbreviation": "VIL",
                 "grid": 12,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -262695,7 +262695,7 @@
                 "abbreviation": "FRE",
                 "grid": 15,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -262991,7 +262991,7 @@
                 "abbreviation": "BUT",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -271871,7 +271871,7 @@
                 "abbreviation": "KLI",
                 "grid": 7,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -273409,7 +273409,7 @@
                 "abbreviation": "TRU",
                 "grid": 1,
                 "position": 7,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273423,7 +273423,7 @@
                 "abbreviation": "RAI",
                 "grid": 2,
                 "position": 8,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273437,7 +273437,7 @@
                 "abbreviation": "BUT",
                 "grid": 3,
                 "position": 9,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273451,7 +273451,7 @@
                 "abbreviation": "FIS",
                 "grid": 4,
                 "position": 10,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273465,7 +273465,7 @@
                 "abbreviation": "ALO",
                 "grid": 6,
                 "position": 11,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273479,7 +273479,7 @@
                 "abbreviation": "SAT",
                 "grid": 8,
                 "position": 12,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273493,7 +273493,7 @@
                 "abbreviation": "WEB",
                 "grid": 9,
                 "position": 13,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273507,7 +273507,7 @@
                 "abbreviation": "MAS",
                 "grid": 10,
                 "position": 14,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273521,7 +273521,7 @@
                 "abbreviation": "MOY",
                 "grid": 11,
                 "position": 15,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273535,7 +273535,7 @@
                 "abbreviation": "VIL",
                 "grid": 12,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273549,7 +273549,7 @@
                 "abbreviation": "ZON",
                 "grid": 13,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273563,7 +273563,7 @@
                 "abbreviation": "KLI",
                 "grid": 14,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273577,7 +273577,7 @@
                 "abbreviation": "HEI",
                 "grid": 15,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -273591,7 +273591,7 @@
                 "abbreviation": "COU",
                 "grid": 16,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -296291,7 +296291,7 @@
                 "abbreviation": "MAS",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -297771,7 +297771,7 @@
                 "abbreviation": "GLO",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -299067,7 +299067,7 @@
                 "abbreviation": "TRU",
                 "grid": 20,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -299419,7 +299419,7 @@
                 "abbreviation": "DLR",
                 "grid": 12,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -299771,7 +299771,7 @@
                 "abbreviation": "GLO",
                 "grid": 19,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -300123,7 +300123,7 @@
                 "abbreviation": "KOV",
                 "grid": 20,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -303995,7 +303995,7 @@
                 "abbreviation": "DIG",
                 "grid": 21,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -306431,7 +306431,7 @@
                 "abbreviation": "GLO",
                 "grid": 21,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -307135,7 +307135,7 @@
                 "abbreviation": "PER",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -314527,7 +314527,7 @@
                 "abbreviation": "GLO",
                 "grid": null,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -314879,7 +314879,7 @@
                 "abbreviation": "PET",
                 "grid": 18,
                 "position": 24,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -319075,7 +319075,7 @@
                 "abbreviation": "HUL",
                 "grid": 11,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -325555,7 +325555,7 @@
                 "abbreviation": "PER",
                 "grid": 14,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -326851,7 +326851,7 @@
                 "abbreviation": "MAL",
                 "grid": 15,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -329443,7 +329443,7 @@
                 "abbreviation": "KOB",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -331149,7 +331149,7 @@
                 "abbreviation": "KVY",
                 "grid": 12,
                 "position": 16,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -331163,7 +331163,7 @@
                 "abbreviation": "MAG",
                 "grid": 17,
                 "position": 17,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -331177,7 +331177,7 @@
                 "abbreviation": "BOT",
                 "grid": null,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -331501,7 +331501,7 @@
                 "abbreviation": "STE",
                 "grid": 20,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -332093,7 +332093,7 @@
                 "abbreviation": "BUT",
                 "grid": 20,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -333573,7 +333573,7 @@
                 "abbreviation": "NAS",
                 "grid": 16,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -334165,7 +334165,7 @@
                 "abbreviation": "HUL",
                 "grid": 11,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -336857,7 +336857,7 @@
                 "abbreviation": "KVY",
                 "grid": 18,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -337167,7 +337167,7 @@
                 "abbreviation": "VET",
                 "grid": 3,
                 "position": 21,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -337181,7 +337181,7 @@
                 "abbreviation": "PAL",
                 "grid": 19,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -341393,7 +341393,7 @@
                 "abbreviation": "GRO",
                 "grid": 20,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -343013,7 +343013,7 @@
                 "abbreviation": "GRO",
                 "grid": 7,
                 "position": 22,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -344225,7 +344225,7 @@
                 "abbreviation": "VAN",
                 "grid": 17,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -344521,7 +344521,7 @@
                 "abbreviation": "ALO",
                 "grid": 15,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -346297,7 +346297,7 @@
                 "abbreviation": "PAL",
                 "grid": 11,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -347777,7 +347777,7 @@
                 "abbreviation": "RAI",
                 "grid": 2,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -362873,7 +362873,7 @@
                 "abbreviation": "HUL",
                 "grid": 13,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -363761,7 +363761,7 @@
                 "abbreviation": "SAI",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -368201,7 +368201,7 @@
                 "abbreviation": "LEC",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -370865,7 +370865,7 @@
                 "abbreviation": "TSU",
                 "grid": 15,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -373233,7 +373233,7 @@
                 "abbreviation": "MAZ",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -373811,7 +373811,7 @@
                 "abbreviation": "TSU",
                 "grid": null,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -373825,7 +373825,7 @@
                 "abbreviation": "MSC",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -383889,7 +383889,7 @@
                 "abbreviation": "TSU",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -384185,7 +384185,7 @@
                 "abbreviation": "STR",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -384777,7 +384777,7 @@
                 "abbreviation": "SAI",
                 "grid": null,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -385665,7 +385665,7 @@
                 "abbreviation": "LEC",
                 "grid": 2,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -389795,7 +389795,7 @@
                 "abbreviation": "GAS",
                 "grid": 19,
                 "position": 20,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             }
@@ -392431,7 +392431,7 @@
                 "abbreviation": "ALB",
                 "grid": 7,
                 "position": 18,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },
@@ -392445,7 +392445,7 @@
                 "abbreviation": "STR",
                 "grid": 10,
                 "position": 19,
-                "gap": null,
+                "gap": "DNS",
                 "fastestLapTime": null,
                 "fastestPitTime": null
             },

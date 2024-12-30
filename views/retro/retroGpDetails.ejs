@@ -9,117 +9,52 @@
                     <%= gpDetails.gpInfo.raceId %>
             </title>
             <link href="" rel="stylesheet">
-
-            <style>
-                :root {
-                    --primary-color: #3498db;
-                    /* Bleu */
-                    --primary-color-rgb: 52, 152, 219;
-                    --second-color: #058785;
-                    /* Vert pour le fond du sélecteur et du tableau */
-                    --second-color-dark: #024644;
-                    /* Vert foncé pour le survol */
-                    --gray-400: #ccc;
-                    --gray-500: #b3b3b3;
-                    --text-color: #333;
-                    /* Gris foncé pour le texte */
-                    --white-color: #fff;
-                    /* Blanc pour le texte sur les fonds colorés */
-                }
-
-                .custom-select {
-                    background-color: var(--second-color);
-                    border: 2px solid var(--gray-400);
-                    border-radius: 9999px;
-                    /* rounded-full */
-                    padding: 0.5rem 1rem;
-                    /* p-2 */
-                    font-size: 1.25rem;
-                    /* text-xl */
-                    width: 100%;
-                    /* w-full */
-                    appearance: none;
-                    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-                    color: var(--white-color);
-                    /* Texte blanc */
-                }
-
-                .custom-select:hover {
-                    background-color: var(--second-color-dark);
-                    border-color: var(--gray-500);
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
-
-                .custom-select:focus {
-                    outline: none;
-                    border-color: var(--primary-color);
-                    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3);
-                }
-
-                .custom-select option {
-                    background-color: var(--white-color);
-                    /* Fond blanc pour les options */
-                    color: var(--text-color);
-                    /* Texte gris foncé */
-                }
-
-                /* Add a custom arrow */
-                .custom-select-container {
-                    position: relative;
-                    display: inline-block;
-                    width: 100%;
-                }
-
-                .custom-select-container::after {
-                    content: '▼';
-                    position: absolute;
-                    top: 50%;
-                    right: 1rem;
-                    transform: translateY(-50%);
-                    pointer-events: none;
-                    font-size: 1rem;
-                    color: var(--white-color);
-                    /* Couleur blanche pour la flèche */
-                }
-            </style>
 </head>
 
 <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
     <main>
         <div class="app-container">
-            <div class="flex flex-col items-center text-center my-4 w-full font-F1Regular">
-                <span class="text-xl font-F1Bold">
-                    <%= __('retro_f1.all_seasons.gp_details.title') %>
-                        <%= gpDetails.gpInfo.raceId %>
-                </span>
-                <span>
-                    <%= gpDetails.gpInfo.date %>
-                </span>
-                <span class="flex gap-2">
-                    <span>
-                        <%= gpDetails.gpInfo.gpFullName %>
+            <div
+                class="text-center my-4 font-F1Regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:hidden">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-xl font-F1Bold">
+                        <%= __('retro_f1.all_seasons.gp_details.title') %>
+                            <%= gpDetails.gpInfo.raceId %>
                     </span>
-                    <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
-                        alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
-
-                </span>
-                <span>
-                    <%= __('retro_f1.all_seasons.gp_details.officialName') %> : <%= gpDetails.gpInfo.gpOfficialName %>
-                </span>
-                <span>
-                    <video autoplay loop muted width="50">
-                        <source src="/animations/<%= gpDetails.gpInfo.weather.weather %>.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                </span>
-                <span>
-                    <a href="/track/<%= gpDetails.gpInfo.circuitId %>" class="text-blue-500 hover:text-blue-800">
-                        <%= __('retro_f1.all_seasons.gp_details.circuitDetails') %>
-                    </a>
-                </span>
+                    <span>
+                        <%= gpDetails.gpInfo.gpOfficialName %>
+                    </span>
+                </div>
+                <div class="flex items-center mt-2">
+                    <div class="w-6/12">
+                        <span>
+                            <a href="/track/<%= gpDetails.gpInfo.circuitId %>">
+                                <img src="/img/circuits/<%= gpDetails.gpInfo.circuitId %>.svg"
+                                    alt="<%= gpDetails.gpInfo.circuitId %>">
+                            </a>
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-center w-6/12 text-sm">
+                        <span>
+                            <%= gpDetails.gpInfo.date %>
+                        </span>
+                        <span>
+                            <%= gpDetails.gpInfo.gpFullName %>
+                        </span>
+                        <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
+                            alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+                        <span title="<%= gpDetails.gpInfo.weather.weather %>">
+                            <video autoplay loop muted class="h-20 w-auto">
+                                <source src="/animations/<%= gpDetails.gpInfo.weather.weather %>.webm"
+                                    type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="flex mt-4">
-                <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-5/12">
+            <div class="flex flex-col md:flex-row gap-y-4 md:gap-y-0 mt-4">
+                <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-5/12">
                     <table>
                         <tr>
                             <td></td>
@@ -148,14 +83,19 @@
                                 </td>
                                 <td class="pl-3 border-l-2"></td>
                                 <td class="pr-3">
-                                    <% if (detail.gap=="DNF" || detail.gap=="DSQ" ) { %>
+                                    <% if (detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ) { %>
                                         <a href="/driver/<%= detail.driverId %>" class="opacity-30">
                                             <% } else { %>
                                                 <a href="/driver/<%= detail.driverId %>">
                                                     <% } %>
-                                                        <%= detail.firstName %>
-                                                            <%= detail.lastName %>
-
+                                                        <span class="flex gap-x-1">
+                                                            <span class="hidden md:block">
+                                                                <%= detail.firstName %>
+                                                            </span>
+                                                            <span>
+                                                                <%= detail.lastName %>
+                                                            </span>
+                                                        </span>
                                                 </a>
                                 </td>
                                 <td class="pl-3 border-l-2"></td>
@@ -167,70 +107,101 @@
                     </table>
                 </div>
 
-                <div class="w-7/12 grid grid-rows-12 gap-4">
-                    <% gpDetails.raceData.forEach(function(grid){ if (grid.grid==1) { %>
-                        <a href="/driver/<%= grid.driverId %>"
-                            class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
-                            <span>
-                                <%= __('retro_f1.all_seasons.gp_details.poleposition') %>
+                <div class="w-full gap-4">
+                    <div
+                        class="text-center mb-8 font-F1Regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 hidden md:block">
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="text-xl font-F1Bold">
+                                <%= __('retro_f1.all_seasons.gp_details.title') %>
+                                    <%= gpDetails.gpInfo.raceId %>
                             </span>
-                            <img src="https://ik.imagekit.io/pitlaneinsider/drivers/<%= grid.driverId %>.webp"
-                                alt="<%= grid.lastName %>" class="h-24 w-auto">
-                        </a>
-                        <% }}) %>
-                            <% gpDetails.raceData.forEach(function(grid){ if (grid.position==1) { %>
-                                <a href="/driver/<%= grid.driverId %>"
-                                    class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-end gap-2 items-center px-2">
-                                    <span>
-                                        <%= __('retro_f1.all_seasons.gp_details.winner') %>
-                                    </span>
-                                    <img src="https://ik.imagekit.io/pitlaneinsider/drivers/<%= grid.driverId %>.webp"
-                                        alt="<%= grid.lastName %>" class="h-24 w-auto">
-                                </a>
+                            <span>
+                                <%= gpDetails.gpInfo.gpOfficialName %>
+                            </span>
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <div class="w-6/12">
+                                <span class="flex justify-center">
+                                    <a href="/track/<%= gpDetails.gpInfo.circuitId %>">
+                                        <img src="/img/circuits/<%= gpDetails.gpInfo.circuitId %>.svg"
+                                            alt="<%= gpDetails.gpInfo.circuitId %>" class="h-44 w-auto">
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="flex flex-col items-center w-6/12 text-sm">
+                                <span>
+                                    <%= gpDetails.gpInfo.date %>
+                                </span>
+                                <span>
+                                    <%= gpDetails.gpInfo.gpFullName %>
+                                </span>
+                                <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
+                                    alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+                                <span title="<%= gpDetails.gpInfo.weather.weather %>">
+                                    <video autoplay loop muted class="h-20 w-auto">
+                                        <source src="/animations/<%= gpDetails.gpInfo.weather.weather %>.webm"
+                                            type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="grid grid-cols-12 md:flex-col items-center gap-1">
+                        <% gpDetails.raceData.forEach(function(grid){ if (grid.grid==1) { %>
+                            <a href="/driver/<%= grid.driverId %>"
+                                class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
+                                <span>
+                                    <%= __('retro_f1.all_seasons.gp_details.poleposition') %>
+                                </span>
+                                <img src="https://ik.imagekit.io/pitlaneinsider/drivers/<%= grid.driverId %>.webp"
+                                    alt="<%= grid.lastName %>" class="h-24 w-auto">
+                            </a>
+                            <% }}) %>
+                                <% gpDetails.raceData.forEach(function(grid){ if (grid.position==1) { %>
+                                    <a href="/driver/<%= grid.driverId %>"
+                                        class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
+                                        <span>
+                                            <%= __('retro_f1.all_seasons.gp_details.winner') %>
+                                        </span>
+                                        <img src="https://ik.imagekit.io/pitlaneinsider/drivers/<%= grid.driverId %>.webp"
+                                            alt="<%= grid.lastName %>" class="h-24 w-auto">
+                                    </a>
+                                    <% }}) %>
+                    </span>
+                    <br>
+                    <span class="grid grid-cols-12 md:flex-col items-center gap-1">
+                        <div
+                            class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
+                            <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
+                                <span class="text-center">
+                                    <%= __('retro_f1.all_seasons.gp_details.fastestLap') %>
+                                </span>
+                                <div class="flex flex-col items-center flex-grow justify-center w-full">
+                                    <div>
+                                        <%= lap.abbreviation %> - <span class="text-fuchsia-700">
+                                                <%= lap.fastestLapTime %>
+                                            </span>
+                                    </div>
+                                </div>
                                 <% }}) %>
-                                    <div
-                                        class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
-                                        <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
-                                            <span class="text-center">
-                                                <%= __('retro_f1.all_seasons.gp_details.fastestLap') %>
-                                            </span>
-                                            <div class="flex flex-col items-center flex-grow justify-center w-full">
-                                                <div>
-                                                    <%= lap.abbreviation %> - <span class="text-fuchsia-700">
-                                                            <%= lap.fastestLapTime %>
-                                                        </span>
-                                                </div>
-                                            </div>
-                                            <% }}) %>
-                                    </div>
-                                    <div
-                                        class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-2 items-center px-2">
-                                        <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
-                                            <span class="text-center">
-                                                <%= __('retro_f1.all_seasons.gp_details.fastestPit') %>
-                                            </span>
-                                            <div class="flex flex-col items-center flex-grow justify-center w-full">
-                                                <%= pit.abbreviation %> - <%= pit.fastestPitTime %>
-                                            </div>
-                                            <% }}) %>
-                                    </div>
+                        </div>
+                        <div
+                            class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
+                            <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
+                                <span class="text-center">
+                                    <%= __('retro_f1.all_seasons.gp_details.fastestPit') %>
+                                </span>
+                                <div class="flex flex-col items-center flex-grow justify-center w-full">
+                                    <%= pit.abbreviation %> - <%= pit.fastestPitTime %>
+                                </div>
+                                <% }}) %>
+                        </div>
+                    </span>
                 </div>
             </div>
-            <script>
-                function changeSeason(select) {
-                    var selectedYear = select.value;
-                    window.location.href = '/retrocalendar/' + selectedYear;
-                }
-                function updateLinks() {
-                    var selectedYear = document.getElementById('seasonSelect').value;
-                    document.getElementById('classementLink').href = '/retrostandings/' + selectedYear;
-                    document.getElementById('calendrierLink').href = '/retrocalendar/' + selectedYear;
-                }
-                document.addEventListener('DOMContentLoaded', function () {
-                    updateLinks();
-                    document.getElementById('seasonSelect').addEventListener('change', updateLinks);
-                });
-            </script>
+
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
