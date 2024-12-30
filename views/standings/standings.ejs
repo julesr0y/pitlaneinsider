@@ -24,70 +24,76 @@
                 </button>
             </div>
         </div>
-        <div id="Pilotes" class="bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3 text-center">
-            <div id="header-classement-pilotes" class="grid grid-cols-12">
-                <span class="col-span-1"></span>
-                <span class="col-span-2 font-F1Bold">
-                    <%= __('standings.position') %>
-                </span>
-                <span class="col-span-6 font-F1Bold">
-                    <%= __('standings.drivers') %>
-                </span>
-                <span class="col-span-3 font-F1Bold">
-                    <%= __('standings.points') %>
-                </span>
-            </div>
-            <div class="pilot-list grid grid-cols-12 gap-y-2">
+        <div id="Pilotes" class="bg-s-<%=theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+            <table>
+                <tr id="header-classement-pilotes">
+                    <td></td>
+                    <td class="font-F1Bold">
+                        <%= __('standings.position') %>
+                    </td>
+                    <td class="font-F1Bold pl-3">
+                        <%= __('standings.drivers') %>
+                    </td>
+                    <td class="font-F1Bold pl-3">
+                        <%= __('standings.points') %>
+                    </td>
+                </tr>
                 <% actualDriversStanding.forEach(function(pilote) { %>
-                    <span class="flex justify-center">
-                        <span
-                            class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl col-span-1">
-                        </span>
-                    </span>
-                    <span class="font-F1Bold col-span-2">
-                        <%= String(pilote.position).padStart(2, '0' ) %>
-                    </span>
-                    <span class="col-span-6 text-left sm:ml-36 ml-10">
-                        <%= pilote.lastName %>
-                    </span>
-                    <span class="col-span-3 text-right sm:mr-20 mr-8">
-                        <%= pilote.points %>
-                    </span>
+                    <tr>
+                        <td class="pr-2">
+                            <span
+                                class="border-2 border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl">
+                            </span>
+                        </td>
+                        <td class="font-F1Bold pr-3">
+                            <%= String(pilote.position).padStart(2, '0' ) %>
+                        </td>
+                        <td class="border-l-2 pl-3 pr-3">
+                            <%= pilote.firstName %>
+                                <%= pilote.lastName %>
+                        </td>
+                        <td class="border-l-2 pl-3">
+                            <%= pilote.points %>
+                        </td>
+                    </tr>
                     <% }); %>
-            </div>
+            </table>
         </div>
-        <div id="Constructeurs"
-            class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3 text-center">
-            <div id="header-classement-pilotes" class="grid grid-cols-12">
-                <span class="col-span-1"></span>
-                <span class="col-span-2 font-F1Bold">
-                    <%= __('standings.position') %>
-                </span>
-                <span class="col-span-6 font-F1Bold sm:ml-8 mr-8">
-                    <%= __('standings.constructors') %>
-                </span>
-                <span class="col-span-3 font-F1Bold">
-                    <%= __('standings.points') %>
-                </span>
-            </div>
-            <div class="team-list grid grid-cols-12 gap-y-2">
+
+        <div id="Constructeurs" class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+            <table>
+                <tr>
+                    <td></td>
+                    <td class="font-F1Bold">
+                        <%= __('standings.position') %>
+                    </td>
+                    <td class="pl-3 font-F1Bold">
+                        <%= __('standings.constructors') %>
+                    </td>
+                    <td class="pl-3 font-F1Bold">
+                        <%= __('standings.points') %>
+                    </td>
+                </tr>
                 <% actualTeamsStanding.forEach(function(team) { %>
-                    <span class="flex justify-center">
-                        <span
-                            class="border border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl col-span-1">
-                        </span>
-                    </span>
-                    <span class="font-F1Bold col-span-2">
-                        <%= String(team.position).padStart(2, '0' ) %>
-                    </span>
-                    <span class="col-span-6 text-left sm:ml-40 ml-10">
-                        <%= team.name %>
-                    </span>
-                    <span class="col-span-3 text-right sm:mr-20 mr-6">
-                        <%= team.points %>
-                    </span>
+                    <tr>
+                        <td class="pr-2">
+                            <span
+                                class="border-2 border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl">
+                            </span>
+                        </td>
+                        <td class="pr-3 font-F1Bold">
+                            <%= String(team.position).padStart(2, '0' ) %>
+                        </td>
+                        <td class="border-l-2 pl-3 pr-3">
+                            <%= team.name %>
+                        </td>
+                        <td class="border-l-2 pl-3">
+                            <%= team.points %>
+                        </td>
+                    </tr>
                     <% }); %>
-            </div>
+        </div>
+        </table>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>
