@@ -31,7 +31,7 @@ router.get("/retroconstructorwinners", cors(), async (req, res) => {
 });
 
 router.get("/retrostandings", cors(), (req, res) => {
-    res.redirect("retrostandings/2023");
+    res.redirect("retrostandings/2024");
 });
 
 router.get("/retrostandings/:season_id", cors(), async (req, res) => {
@@ -45,7 +45,7 @@ router.get("/retrostandings/:season_id", cors(), async (req, res) => {
 });
 
 router.get("/retrocalendar", cors(), (req, res) => {
-    res.redirect("/retroCalendar/2023");
+    res.redirect("/retroCalendar/2024");
 });
 
 router.get("/retrocalendar/:season_id", cors(), async (req, res) => {
