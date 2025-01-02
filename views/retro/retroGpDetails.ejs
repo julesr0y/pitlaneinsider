@@ -21,8 +21,10 @@
                         <%= __('retro_f1.all_seasons.gp_details.title') %>
                             <%= gpDetails.gpInfo.raceId %>
                     </span>
-                    <span>
+                    <span class="flex flex-col">
                         <%= gpDetails.gpInfo.gpOfficialName %>
+                            <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
+                                alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
                     </span>
                 </div>
                 <div class="flex items-center mt-2">
@@ -34,15 +36,16 @@
                             </a>
                         </span>
                     </div>
-                    <div class="flex flex-col items-center w-6/12 text-sm">
+                    <div class="flex flex-col items-center w-6/12 text-sm gap-y-2">
                         <span>
                             <%= gpDetails.gpInfo.date %>
                         </span>
                         <span>
                             <%= gpDetails.gpInfo.gpFullName %>
                         </span>
-                        <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
-                            alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+                        <span>
+                            <%= gpDetails.gpInfo.circuitName %>
+                        </span>
                         <span title="<%= gpDetails.gpInfo.weather.weather %>">
                             <img src="/animations/<%= gpDetails.gpInfo.weather.weather %>.gif" class="h-20 w-auto">
                         </span>
@@ -111,8 +114,10 @@
                                 <%= __('retro_f1.all_seasons.gp_details.title') %>
                                     <%= gpDetails.gpInfo.raceId %>
                             </span>
-                            <span>
+                            <span class="flex gap-2">
                                 <%= gpDetails.gpInfo.gpOfficialName %>
+                                    <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
+                                        alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
                             </span>
                         </div>
                         <div class="flex items-center mt-2">
@@ -124,15 +129,16 @@
                                     </a>
                                 </span>
                             </div>
-                            <div class="flex flex-col items-center w-6/12 text-sm">
+                            <div class="flex flex-col items-center w-6/12 text-sm gap-y-2">
                                 <span>
                                     <%= gpDetails.gpInfo.date %>
                                 </span>
                                 <span>
                                     <%= gpDetails.gpInfo.gpFullName %>
                                 </span>
-                                <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
-                                    alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+                                <span>
+                                    <%= gpDetails.gpInfo.circuitName %>
+                                </span>
                                 <span title="<%= gpDetails.gpInfo.weather.weather %>">
                                     <img src="/animations/<%= gpDetails.gpInfo.weather.weather %>.gif"
                                         class="h-20 w-auto">

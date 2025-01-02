@@ -29,6 +29,7 @@ async function getGPDetail(gp_id) {
                     gpFullName: race.raceInfo[0].gpFullName,
                     countryId: race.raceInfo[0].countryId,
                     circuitId: race.raceInfo[0].circuitId,
+                    circuitName: race.raceInfo[0].circuitName,
                     date: race.raceInfo[0].date
                 };
 
