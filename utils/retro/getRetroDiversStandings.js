@@ -18,6 +18,8 @@ async function getRetroStandings(season_id) {
         let ranking = [];
         sortedData.forEach(function (element) {
             const driverInfo = {
+                driverId: element.driverId,
+                actualConstructor: element.actualTeam,
                 position: element.position,
                 firstName: element.firstName,
                 lastName: element.lastName,

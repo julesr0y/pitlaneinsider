@@ -164,8 +164,9 @@
 			"standings": {
 				"tab_title": "Retro Standings",
 				"title": "Retro - Standings",
-				"position": "Pos",
+				"position": "P",
 				"drivers": "Drivers",
+				"constructors": "Constructors",
 				"victories": "Victories",
 				"points": "Points"
 			},
