@@ -72,38 +72,38 @@
                         </tr>
 
                         <% gpDetails.raceData.forEach(detail=> { %>
-                            <tr>
-                                <td class="pr-2">
-                                    <span
-                                        class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl">
-                                    </span>
-                                </td>
-                                <td class="font-F1Bold pr-3">
-                                    <%= String(detail.position).padStart(2, '0' ) %>
-                                </td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td class="pr-3">
-                                    <% if (detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ) { %>
-                                        <a href="/driver/<%= detail.driverId %>" class="opacity-30">
-                                            <% } else { %>
-                                                <a href="/driver/<%= detail.driverId %>">
-                                                    <% } %>
-                                                        <span class="flex gap-x-1">
-                                                            <span class="hidden md:block">
-                                                                <%= detail.firstName %>
-                                                            </span>
-                                                            <span>
-                                                                <%= detail.lastName %>
-                                                            </span>
-                                                        </span>
-                                                </a>
-                                </td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td>
-                                    <%= detail.gap %>
-                                </td>
-                            </tr>
-                            <% }); %>
+                            <% if (detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ) { %>
+                                <tr class="text-hasnt-finished-race">
+                                    <% } else { %>
+                                <tr>
+                                    <% } %>
+                                        <td class="pr-2">
+                                            <span
+                                                class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl">
+                                            </span>
+                                        </td>
+                                        <td class="font-F1Bold pr-3">
+                                            <%= String(detail.position).padStart(2, '0' ) %>
+                                        </td>
+                                        <td class="pl-3 border-l-2"></td>
+                                        <td class="pr-3">
+                                            <a href="/driver/<%= detail.driverId %>">
+                                                <span class="flex gap-x-1">
+                                                    <span class="hidden md:block">
+                                                        <%= detail.firstName %>
+                                                    </span>
+                                                    <span>
+                                                        <%= detail.lastName %>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </td>
+                                        <td class="pl-3 border-l-2"></td>
+                                        <td>
+                                            <%= detail.gap %>
+                                        </td>
+                                </tr>
+                                <% }); %>
                     </table>
                 </div>
 

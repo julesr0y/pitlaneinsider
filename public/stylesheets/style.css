@@ -2963,6 +2963,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(5 135 133 / var(--tw-text-opacity, 1));
 }
+.text-hasnt-finished-race {
+  --tw-text-opacity: 1;
+  color: rgb(113 113 113 / var(--tw-text-opacity, 1));
+}
 .text-heck {
   --tw-text-opacity: 1;
   color: rgb(5 135 133 / var(--tw-text-opacity, 1));
@@ -3441,9 +3445,6 @@ video {
 }
 .underline {
   text-decoration-line: underline;
-}
-.opacity-30 {
-  opacity: 0.3;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
