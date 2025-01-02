@@ -49,8 +49,10 @@
                             <%= String(pilote.position).padStart(2, '0' ) %>
                         </td>
                         <td class="border-l-2 pl-3 pr-3">
-                            <%= pilote.firstName %>
-                                <%= pilote.lastName %>
+                            <a href="/driver/<%= pilote.driverId %>">
+                                <%= pilote.firstName %>
+                                    <%= pilote.lastName %>
+                            </a>
                         </td>
                         <td class="border-l-2 pl-3">
                             <%= pilote.points %>
@@ -85,7 +87,9 @@
                             <%= String(team.position).padStart(2, '0' ) %>
                         </td>
                         <td class="border-l-2 pl-3 pr-3">
-                            <%= team.name %>
+                            <a href="/constructor/<%= team.constructorId %>">
+                                <%= team.name %>
+                            </a>
                         </td>
                         <td class="border-l-2 pl-3">
                             <%= team.points %>
