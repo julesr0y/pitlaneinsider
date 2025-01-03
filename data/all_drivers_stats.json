@@ -681,7 +681,7 @@
         },
         {
           "id": 403,
-          "country": "",
+          "country": "europe",
           "officialName": "Grosser Preis von Europa 1984",
           "shortName": "European GP"
         },
@@ -2944,7 +2944,7 @@
     "lastName": "McNish",
     "fullName": "Allan McNish",
     "abbreviation": "MCN",
-    "age": 54,
+    "age": 55,
     "dateOfBirth": "1969-12-29",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
@@ -4949,7 +4949,7 @@
         },
         {
           "id": 535,
-          "country": "",
+          "country": "europe",
           "officialName": "1993 SEGA European Grand Prix",
           "shortName": "European GP"
         },
@@ -5319,7 +5319,7 @@
     "lastName": "Gabbiani",
     "fullName": "Giuseppe Gabbiani",
     "abbreviation": "GAB",
-    "age": 67,
+    "age": 68,
     "dateOfBirth": "1957-01-02",
     "dateOfDeath": null,
     "nationality": "italy",
@@ -8643,7 +8643,7 @@
     "lastName": "Franchi",
     "fullName": "Carlo Franchi",
     "abbreviation": "FRA",
-    "age": 86,
+    "age": 87,
     "dateOfBirth": "1938-01-01",
     "dateOfDeath": null,
     "nationality": "italy",
@@ -18584,7 +18584,7 @@
         },
         {
           "id": 797,
-          "country": "",
+          "country": "europe",
           "officialName": "2008 Formula 1 Telefónica Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -18872,7 +18872,7 @@
         },
         {
           "id": 738,
-          "country": "",
+          "country": "europe",
           "officialName": "2005 Formula 1 Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -18954,7 +18954,7 @@
         },
         {
           "id": 778,
-          "country": "",
+          "country": "europe",
           "officialName": "2007 Formula 1 Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -19028,7 +19028,7 @@
         },
         {
           "id": 866,
-          "country": "",
+          "country": "europe",
           "officialName": "2012 Formula 1 Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -19419,7 +19419,7 @@
     "podiumsThisSeason": 0,
     "pointsThisSeason": 5,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": false,
+    "isTestDriver": true,
     "racesThisSeason": 9,
     "teamsOfDriver": [
       {
@@ -19687,7 +19687,7 @@
     "lastName": "Hesnault",
     "fullName": "François Hesnault",
     "abbreviation": "HES",
-    "age": 67,
+    "age": 68,
     "dateOfBirth": "1956-12-30",
     "dateOfDeath": null,
     "nationality": "france",
@@ -23794,7 +23794,7 @@
     "lastName": "Edwards",
     "fullName": "Guy Richard Goronwy Edwards",
     "abbreviation": "EDW",
-    "age": 81,
+    "age": 82,
     "dateOfBirth": "1942-12-30",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
@@ -24201,7 +24201,7 @@
     "lastName": "Stuck",
     "fullName": "Hans-Joachim Stuck",
     "abbreviation": "STU",
-    "age": 73,
+    "age": 74,
     "dateOfBirth": "1951-01-01",
     "dateOfDeath": null,
     "nationality": "germany",
@@ -27165,7 +27165,7 @@
     "dateOfBirth": "2003-01-20",
     "dateOfDeath": null,
     "nationality": "australia",
-    "permanentNumber": "61",
+    "permanentNumber": "7",
     "firstYear": 2022,
     "numberOfSeasons": 1,
     "totalRaceStarts": 1,
@@ -27186,7 +27186,7 @@
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": false,
+    "isTestDriver": true,
     "racesThisSeason": 1,
     "teamsOfDriver": [
       {
@@ -27986,7 +27986,7 @@
     "lastName": "Ickx",
     "fullName": "Jacques Bernard Ickx",
     "abbreviation": "ICK",
-    "age": 79,
+    "age": 80,
     "dateOfBirth": "1945-01-01",
     "dateOfDeath": null,
     "nationality": "belgium",
@@ -28582,7 +28582,7 @@
       "1996": [
         {
           "id": 585,
-          "country": "",
+          "country": "europe",
           "officialName": "1996 Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -30211,7 +30211,7 @@
     "lastName": "Gounon",
     "fullName": "Jean-Marc Gounon",
     "abbreviation": "GOU",
-    "age": 61,
+    "age": 62,
     "dateOfBirth": "1963-01-01",
     "dateOfDeath": null,
     "nationality": "france",
@@ -34703,7 +34703,7 @@
       "1999": [
         {
           "id": 644,
-          "country": "",
+          "country": "europe",
           "officialName": "1999 Warsteiner Grand Prix of Europe",
           "shortName": "European GP"
         }
@@ -40117,7 +40117,7 @@
     "dateOfBirth": "2002-02-11",
     "dateOfDeath": null,
     "nationality": "new-zealand",
-    "permanentNumber": "30",
+    "permanentNumber": "40",
     "firstYear": 2022,
     "numberOfSeasons": 2,
     "totalRaceStarts": 11,
@@ -40232,7 +40232,7 @@
     "lastName": "Sargeant",
     "fullName": "Logan Hunter Sargeant",
     "abbreviation": "SAR",
-    "age": 23,
+    "age": 24,
     "dateOfBirth": "2000-12-31",
     "dateOfDeath": null,
     "nationality": "united-states-of-america",
@@ -44852,7 +44852,7 @@
     "lastName": "Schumacher",
     "fullName": "Michael Schumacher",
     "abbreviation": "MSC",
-    "age": 55,
+    "age": 56,
     "dateOfBirth": "1969-01-03",
     "dateOfDeath": null,
     "nationality": "germany",
@@ -44891,7 +44891,7 @@
         },
         {
           "id": 550,
-          "country": "",
+          "country": "japan",
           "officialName": "1994 Pacific Grand Prix",
           "shortName": "Pacific GP"
         },
@@ -44927,7 +44927,7 @@
         },
         {
           "id": 562,
-          "country": "",
+          "country": "europe",
           "officialName": "1994 Grand Prix of Europe",
           "shortName": "European GP"
         }
@@ -44971,13 +44971,13 @@
         },
         {
           "id": 578,
-          "country": "",
+          "country": "europe",
           "officialName": "1995 Grand Prix of Europe",
           "shortName": "European GP"
         },
         {
           "id": 579,
-          "country": "",
+          "country": "japan",
           "officialName": "1995 Pacific Grand Prix",
           "shortName": "Pacific GP"
         },
@@ -45113,7 +45113,7 @@
         },
         {
           "id": 652,
-          "country": "",
+          "country": "europe",
           "officialName": "2000 Warsteiner Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -45175,7 +45175,7 @@
         },
         {
           "id": 672,
-          "country": "",
+          "country": "europe",
           "officialName": "2001 Warsteiner Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -45343,7 +45343,7 @@
         },
         {
           "id": 720,
-          "country": "",
+          "country": "europe",
           "officialName": "2004 Formula 1 Allianz Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -45407,7 +45407,7 @@
         },
         {
           "id": 755,
-          "country": "",
+          "country": "europe",
           "officialName": "2006 Formula 1 Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -46009,7 +46009,7 @@
       "1997": [
         {
           "id": 614,
-          "country": "",
+          "country": "europe",
           "officialName": "1997 Grand Prix of Europe",
           "shortName": "European GP"
         }
@@ -47912,7 +47912,7 @@
         },
         {
           "id": 387,
-          "country": "",
+          "country": "europe",
           "officialName": "1983 John Player Grand Prix of Europe",
           "shortName": "European GP"
         }
@@ -48783,7 +48783,7 @@
         },
         {
           "id": 943,
-          "country": "",
+          "country": "europe",
           "officialName": "Formula 1 Rolex Grand Prix of Europe 2016",
           "shortName": "European GP"
         },
@@ -49098,7 +49098,7 @@
       "1985": [
         {
           "id": 418,
-          "country": "",
+          "country": "europe",
           "officialName": "1985 Shell Oils Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -50195,7 +50195,7 @@
     "dateOfBirth": "2005-05-08",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
-    "permanentNumber": "50",
+    "permanentNumber": null,
     "firstYear": 2023,
     "numberOfSeasons": 1,
     "totalRaceStarts": 3,
@@ -50210,13 +50210,13 @@
     "poleRatio": "0.00",
     "totalFastestLaps": 0,
     "totalDriverOfTheDay": 1,
-    "currentTeamId": "haas",
-    "currentTeamName": "Haas",
+    "currentTeamId": "ferrari",
+    "currentTeamName": "Ferrari",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 7,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": false,
+    "isTestDriver": true,
     "racesThisSeason": 1,
     "teamsOfDriver": [
       {
@@ -55278,7 +55278,7 @@
       "2003": [
         {
           "id": 706,
-          "country": "",
+          "country": "europe",
           "officialName": "2003 Allianz Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -57490,7 +57490,7 @@
     "age": 25,
     "dateOfBirth": "1999-09-16",
     "dateOfDeath": null,
-    "nationality": "israel",
+    "nationality": "russia",
     "permanentNumber": null,
     "firstYear": 2022,
     "numberOfSeasons": 0,
@@ -59349,7 +59349,7 @@
       "2002": [
         {
           "id": 689,
-          "country": "",
+          "country": "europe",
           "officialName": "2002 Allianz Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -59403,7 +59403,7 @@
       "2009": [
         {
           "id": 814,
-          "country": "",
+          "country": "europe",
           "officialName": "2009 Formula 1 Telefónica Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -60476,7 +60476,7 @@
         },
         {
           "id": 829,
-          "country": "",
+          "country": "europe",
           "officialName": "2010 Formula 1 Telefónica Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -60532,7 +60532,7 @@
         },
         {
           "id": 847,
-          "country": "",
+          "country": "europe",
           "officialName": "2011 Formula 1 Grand Prix of Europe",
           "shortName": "European GP"
         },
@@ -67200,7 +67200,7 @@
     "lastName": "Baumgartner",
     "fullName": "Zsolt Baumgartner",
     "abbreviation": "BAU",
-    "age": 43,
+    "age": 44,
     "dateOfBirth": "1981-01-01",
     "dateOfDeath": null,
     "nationality": "hungary",
