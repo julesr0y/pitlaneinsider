@@ -71,7 +71,8 @@
                         </tr>
 
                         <% gpDetails.raceData.forEach(detail=> { %>
-                            <% if (detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ) { %>
+                            <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ||
+                                detail.gap=="NC" ) { %>
                                 <tr class="text-hasnt-finished-race">
                                     <% } else { %>
                                 <tr>
