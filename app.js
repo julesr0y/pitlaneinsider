@@ -17,17 +17,55 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configuration des middlewares
 app.use(helmet()); // Helmet middleware, permet de sécuriser l'application en configurant des en-têtes HTTP de manière sécurisée
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        connectSrc: ["'self'", "https://api.openf1.org", "https://www.motorsport.com/rss/f1/news/"],
-        styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "https://ajax.googleapis.com", "https://cdn.jsdelivr.net/npm/apexcharts", "https://www.motorsport.com/rss/f1/news/"],
-        scriptSrcAttr: ["'unsafe-inline'"],
-        mediaSrc: ["'self'", "https://api.openf1.org", "https://livetiming.formula1.com"],
-        imgSrc: ["'self'", "data", "https://ik.imagekit.io", "https://cdn-1.motorsport.com/", "https://cdn-2.motorsport.com/", "https://cdn-3.motorsport.com/", "https://cdn-4.motorsport.com/", "https://cdn-5.motorsport.com/", "https://cdn-6.motorsport.com/", "https://cdn-7.motorsport.com/", , "https://cdn-8.motorsport.com/", "https://cdn-9.motorsport.com/"]
-    }
-})); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: ["'self'"],
+            connectSrc: [
+                "'self'",
+                "https://api.openf1.org",
+                "https://www.motorsport.com/rss/f1/news/",
+            ],
+            styleSrc: [
+                "'self'",
+                "'unsafe-inline'",
+                "https://cdn.jsdelivr.net",
+            ],
+            scriptSrc: [
+                "'self'",
+                "'unsafe-inline'",
+                "https://ajax.googleapis.com",
+                "https://cdn.jsdelivr.net/npm/apexcharts",
+                "https://cdn.jsdelivr.net/npm/luxon/build/global",
+            ],
+            scriptSrcElem: [
+                "'self'",
+                "'unsafe-inline'",
+                "https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js",
+            ],
+            scriptSrcAttr: ["'unsafe-inline'"],
+            mediaSrc: [
+                "'self'",
+                "https://api.openf1.org",
+                "https://livetiming.formula1.com",
+            ],
+            imgSrc: [
+                "'self'",
+                "data:",
+                "https://ik.imagekit.io",
+                "https://cdn-1.motorsport.com/",
+                "https://cdn-2.motorsport.com/",
+                "https://cdn-3.motorsport.com/",
+                "https://cdn-4.motorsport.com/",
+                "https://cdn-5.motorsport.com/",
+                "https://cdn-6.motorsport.com/",
+                "https://cdn-7.motorsport.com/",
+                "https://cdn-8.motorsport.com/",
+                "https://cdn-9.motorsport.com/",
+            ],
+        },
+    })
+); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
 i18n.configure({
     locales: ['en'], // Langues supportées
     directory: path.join(__dirname, 'locales'), // Répertoire des fichiers de langue

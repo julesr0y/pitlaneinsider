@@ -2,6 +2,7 @@
 <html lang="<%= __('lang.lang') %>">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
     <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
             <title>PLI - <%= __('calendar.tab_title') %>
@@ -162,33 +163,28 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const eventTimes = document.querySelectorAll('.event-time');
+
                 eventTimes.forEach(eventTime => {
                     const date = eventTime.getAttribute('data-date');
                     const time = eventTime.getAttribute('data-time');
 
-                    // Assuming the date is in DD/MM format and time is in HHhMM format
+                    // On suppose que la date est au format DD/MM et l'heure au format HHhMM
                     const [day, month] = date.split('/');
                     const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
                     const year = new Date().getFullYear();
 
-                    // Create a date string in ISO format
-                    const isoDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
+                    // Construire la chaîne en format ISO UTC-0
+                    const utcDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
 
-                    // Convert to local time
-                    const eventDate = new Date(isoDateString);
+                    // Utiliser Luxon pour convertir l'heure UTC au fuseau local
+                    const utcDateTime = luxon.DateTime.fromISO(utcDateString, { zone: 'utc' });
+                    const localDateTime = utcDateTime.setZone(luxon.DateTime.local().zoneName);
 
-                    // Format the date to the local timezone in the desired format
-                    const formattedDate = eventDate.toLocaleDateString('fr-FR', {
-                        day: '2-digit',
-                        month: '2-digit',
-                    });
+                    // Formater la date et l'heure dans le fuseau local
+                    const formattedDate = localDateTime.toFormat('dd/MM');
+                    const formattedTime = localDateTime.toFormat("HH'h'mm");
 
-                    const formattedTime = eventDate.toLocaleTimeString('fr-FR', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                    }).replace(':', 'h');
-
-                    // Display the formatted date and time
+                    // Afficher la date et l'heure formatées
                     eventTime.textContent = `${formattedDate} - ${formattedTime}`;
                 });
 
