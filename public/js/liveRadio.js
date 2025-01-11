@@ -53,6 +53,7 @@ const teamRadioMapping = {
 };
 
 let addedRecordings = new Set();
+let firstLoad = true;
 
 /**
  * @function updateRadio
@@ -87,8 +88,13 @@ function updateRadio() {
                     addedRecordings.add(radio.recording_url);
                 }
             });
-            document.getElementById('Radio').innerHTML += radioHTML;
-            attachEventListeners(); // Attachez les écouteurs d'événements après avoir ajouté les nouveaux éléments
+            if (firstLoad) {
+                document.getElementById('Radio').innerHTML += radioHTML;
+                firstLoad = false;
+            } else {
+                document.getElementById('NewRadio').innerHTML += radioHTML;
+            }
+            attachEventListeners();
         })
 }
 
