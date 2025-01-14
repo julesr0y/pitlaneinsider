@@ -6,9 +6,13 @@ const getDriversActualStandings = require("../utils/standings/getDriversActualSt
 const getTeamsActualStandings = require("../utils/standings/getConstructorsActualStandings"); // Fonction permettant de récupérer le classement actuel des écuries
 
 router.get("/standings", async (req, res) => {
-    var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
-    var actualTeamsStanding = await getTeamsActualStandings(); // Récupération du classement actuel des écuries
-    res.render("standings/standings", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
+    try {
+        var actualDriversStanding = await getDriversActualStandings(); // Récupération du classement actuel des pilotes
+        var actualTeamsStanding = await getTeamsActualStandings(); // Récupération du classement actuel des écuries
+        res.render("standings/standings", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
+    } catch (error) {
+        res.render('security/error', { textError: '/standings route, error during processing', error: error });
+    }
 });
 
 module.exports = router;

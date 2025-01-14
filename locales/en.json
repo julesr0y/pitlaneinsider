@@ -280,6 +280,10 @@
 			"tab_title": "Page not available",
 			"not_found": "This page is not available",
 			"home": "Back to home"
+		},
+		"error": {
+			"tab_title": "Error",
+			"error": "Error"
 		}
 	}
 }

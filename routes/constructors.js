@@ -1,22 +1,25 @@
 const express = require('express');
 const router = express.Router();
 
-// fonctions
-const getActualConstructors = require("../utils/constructors/getActualConstructors"); // Fonction permettant de récupérer les équipes de la saison actuelle
-const getConstructor = require("../utils/constructors/getConstructorData"); // Fonction permettant de récupérer une équipe
+// functions
+const getActualConstructors = require("../utils/constructors/getActualConstructors");
+const getConstructor = require("../utils/constructors/getConstructorData");
 
 router.get("/constructors", async (req, res) => {
-    var constructors = await getActualConstructors(false);
-    res.render("constructors/constructors", { teamsFront: constructors });
+    try {
+        var constructors = await getActualConstructors(false);
+        res.render("constructors/constructors", { teamsFront: constructors });
+    } catch (error) {
+        res.render('security/error', { textError: '/constructors route, error during processing', error: error });
+    }
 });
 
-router.get("/constructor/:ecurie_id", async (req, res) => {
+router.get("/constructor/:constructorId", async (req, res) => {
     try {
-        var constructor = await getConstructor(req.params.ecurie_id);
+        var constructor = await getConstructor(req.params.constructorId);
         res.render("constructors/constructor", { teamFront: constructor });
-    } catch (err) {
-        console.error('Erreur lors de la récupération des informations de l\'écurie:', err);
-        res.status(500).send('Erreur interne du serveur');
+    } catch (error) {
+        res.render('security/error', { textError: '/constructor route, error during processing', error: error });
     }
 });
 

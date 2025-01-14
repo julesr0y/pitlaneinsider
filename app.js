@@ -96,8 +96,12 @@ app.use(async (req, res, next) => {
 const getHomeData = require("./utils/home/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
 
 app.get("/", async (req, res) => { // home page
-    var homeData = await getHomeData();
-    res.render("home/home", { homeData: homeData });
+    try {
+        var homeData = await getHomeData();
+        res.render("home/home", { homeData: homeData });
+    } catch (error) {
+        res.render('security/error', { textError: 'base route, error during processing', error: error });
+    }
 });
 
 const constructorsRoutes = require('./routes/constructors'); // Importation des routes concernant les écuries

@@ -2,18 +2,25 @@ const express = require('express');
 const router = express.Router();
 
 // functions
-const getActualPilotes = require("../utils/drivers/getActualDrivers"); // Fonction permettant de récupérer les pilotes actuels
-const getDriverData = require("../utils/drivers/getDriverData"); // Fonction permettant de récupérer les données d'un pilote
+const getActualPilotes = require("../utils/drivers/getActualDrivers");
+const getDriverData = require("../utils/drivers/getDriverData");
 
 router.get("/drivers", async (req, res) => {
-    var pilotes = await getActualPilotes(); // Récupération des pilotes actuels
-    res.render("drivers/drivers", { pilotesFront: pilotes });
+    try {
+        var pilotes = await getActualPilotes();
+        res.render("drivers/drivers", { pilotesFront: pilotes });
+    } catch (error) {
+        res.render('security/error', { textError: '/drivers route, error during processing', error: error });
+    }
 });
 
 router.get("/driver/:driver_id", async (req, res) => {
-    var driverData = await getDriverData(req.params.driver_id);
-
-    res.render("drivers/driver", { dataDriver: driverData });
+    try {
+        var driverData = await getDriverData(req.params.driver_id);
+        res.render("drivers/driver", { dataDriver: driverData });
+    } catch (error) {
+        res.render('security/error', { textError: '/driver route, error during processing', error: error });
+    }
 });
 
 module.exports = router;

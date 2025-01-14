@@ -5,8 +5,12 @@ const router = express.Router();
 const getNews = require('../utils/news/news');
 
 router.get('/news', async (req, res) => {
-    var news = await getNews();
-    res.render('news/news', { newsFront: news });
+    try {
+        var news = await getNews();
+        res.render('news/news', { newsFront: news });
+    } catch (error) {
+        res.render('security/error', { textError: '/news route, error during processing', error: error });
+    }
 });
 
 module.exports = router;
