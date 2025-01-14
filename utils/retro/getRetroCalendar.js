@@ -31,7 +31,7 @@ async function getRetroCalendar(season_id) {
 
         return calendar;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getRetroCalendar, error during execution :', error);
         throw error;
     }
 }

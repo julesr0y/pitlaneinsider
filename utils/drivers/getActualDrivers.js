@@ -66,7 +66,7 @@ async function getActualDrivers() {
 
         return drivers;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getActualDrivers, error during execution :', error);
         throw error;
     }
 }

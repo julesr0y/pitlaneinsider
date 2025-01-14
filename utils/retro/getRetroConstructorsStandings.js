@@ -29,7 +29,7 @@ async function getRetroConstructorsStandings(season_id) {
 
         return ranking;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getRetroConstructorsStandings, error during execution :', error);
         throw error;
     }
 }

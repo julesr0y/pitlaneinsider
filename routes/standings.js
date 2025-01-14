@@ -11,7 +11,7 @@ router.get("/standings", async (req, res) => {
         var actualTeamsStanding = await getTeamsActualStandings(); // Récupération du classement actuel des écuries
         res.render("standings/standings", { actualDriversStanding: actualDriversStanding, actualTeamsStanding: actualTeamsStanding });
     } catch (error) {
-        res.render('security/error', { textError: '/standings route, error during processing', error: error });
+        res.render('security/error', { textError: '/standings route, error during execution', error: error });
     }
 });
 

@@ -19,7 +19,7 @@ async function getFromOpenF1(endpoint) {
         })
         .catch((error) => {
             console.log(
-                "Il y a eu un problème avec l'opération fetch: " + error.message
+                "Problem with fetch operation : " + error.message
             );
         });
 }

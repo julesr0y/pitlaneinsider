@@ -14,7 +14,7 @@ async function getDriversActualStandings() {
         var thisYearDriversStandings = data.filter(race => race.year == 2024);
         return thisYearDriversStandings;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getDriversActualStandings, error during execution :', error);
         throw error;
     }
 }

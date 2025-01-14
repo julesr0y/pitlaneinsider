@@ -37,8 +37,8 @@ async function getNews() {
 
         return articles;
     } catch (error) {
-        console.error('Erreur lors de la récupération du flux RSS :', error);
-        return [];
+        console.error('getNews, error during execution :', error);
+        throw error;
     }
 }
 
@@ -48,19 +48,24 @@ async function getNews() {
  * @returns {string} La date au format YYYY/MM/DD HH:mm
  */
 function convertRFC2822ToCustom(rfcDate) {
-    const date = new Date(rfcDate);
+    try {
+        const date = new Date(rfcDate);
 
-    if (isNaN(date.getTime())) {
-        throw new Error("Date invalide !");
+        if (isNaN(date.getTime())) {
+            throw new Error("Date invalide !");
+        }
+
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Les mois vont de 0 à 11
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+
+        return `${year}/${month}/${day} ${hours}:${minutes}`;
+    } catch (error) {
+        console.error('convertRFC2822ToCustom, error during execution :', error);
+        throw error;
     }
-
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Les mois vont de 0 à 11
-    const day = String(date.getDate()).padStart(2, '0');
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-
-    return `${year}/${month}/${day} ${hours}:${minutes}`;
 }
 
 module.exports = getNews;

@@ -28,7 +28,7 @@ async function getRetroTrackData(trackId) {
         return trackData;
     }
     catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getRetroTrackData, error during execution :', error);
         throw error;
     }
 }

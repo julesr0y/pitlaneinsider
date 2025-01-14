@@ -14,7 +14,7 @@ async function getConstructorsActualStandings() {
         var thisYearConstructorsStandings = data.filter(race => race.year == 2024);
         return thisYearConstructorsStandings;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getConstructorsActualStandings, error during execution :', error);
         throw error;
     }
 }

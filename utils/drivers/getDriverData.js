@@ -52,7 +52,7 @@ async function getDriverData(driver_id) {
 
         return driverData;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getDriverData, error during execution :', error);
         throw error;
     }
 }

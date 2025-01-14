@@ -23,7 +23,7 @@ async function getRetroCars() {
 
         return cars;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getRetroCars, error during execution :', error);
         throw error;
     }
 }

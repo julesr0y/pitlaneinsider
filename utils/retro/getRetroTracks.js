@@ -28,7 +28,7 @@ async function getRetroTracks() {
 
         return allTracks;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getRetroTracks, error during execution :', error);
         throw error;
     }
 }

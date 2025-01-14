@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 // functions
-const getCalendrier = require("../utils/calendar/getCalendar");
+const getActualSeasonCalendar = require("../utils/calendar/getActualSeasonCalendar");
 
 router.get("/calendar", async (req, res) => {
     try {
-        const calendrier = await getCalendrier();
+        const calendrier = await getActualSeasonCalendar();
         res.render("calendar/calendar", { tracksFront: calendrier });
     } catch (error) {
-        res.render('security/error', { textError: '/calendar route, error during processing', error: error });
+        res.render('security/error', { textError: '/calendar route, error during execution', error: error });
     }
 });
 

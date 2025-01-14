@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * @description Returns the actual season calendar from all time races
+ * @description Returns the actual season calendar from all time races data file
  * @async
  * @returns {Array}
  */
@@ -38,7 +38,6 @@ async function getActualSeasonCalendar() {
                 }
                 if (element.dateDetails) {
                     element.dateDetails.forEach(dateDetail => {
-                        // Appliquer une fonction à l'heure si elle n'est pas nulle
                         for (let key in dateDetail) {
                             if (dateDetail[key] !== null && key.endsWith('Time')) {
                                 dateDetail[key] = convertTime(dateDetail[key]);
@@ -62,7 +61,7 @@ async function getActualSeasonCalendar() {
         return simplifiedData;
 
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getActualSeasonCalendar, error during execution :', error);
         throw error;
     }
 }
@@ -75,10 +74,15 @@ module.exports = getActualSeasonCalendar;
  * @returns {String}
  */
 function convertDate(dateString) {
-    var date = new Date(dateString);
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
+    try {
+        var date = new Date(dateString);
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
+    } catch (error) {
+        console.error('convertDate, error during execution :', error);
+        throw error;
+    }
 }
 
 /**
@@ -87,8 +91,13 @@ function convertDate(dateString) {
  * @returns {String}
  */
 function convertTime(timeString) {
-    var timeParts = timeString.split(':');
-    var hour = timeParts[0];
-    var minute = timeParts[1];
-    return minute === '00' ? hour + 'h' : hour + 'h' + minute;
+    try {
+        var timeParts = timeString.split(':');
+        var hour = timeParts[0];
+        var minute = timeParts[1];
+        return minute === '00' ? hour + 'h' : hour + 'h' + minute;
+    } catch (error) {
+        console.error('convertTime, error during execution :', error);
+        throw error;
+    }
 }

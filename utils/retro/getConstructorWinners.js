@@ -6,7 +6,7 @@ const path = require('path');
  * @async
  * @returns {Array}
  */
-async function getWinnersConstructors() {
+async function getConstructorWinners() {
     try {
         const filePath = path.join(__dirname, '../../data/titled_constructors.json');
         const file = fs.readFileSync(filePath, 'utf-8');
@@ -35,9 +35,9 @@ async function getWinnersConstructors() {
 
         return sortedConstructors;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getConstructorWinners, error during execution :', error);
         throw error;
     }
 }
 
-module.exports = getWinnersConstructors;
+module.exports = getConstructorWinners;

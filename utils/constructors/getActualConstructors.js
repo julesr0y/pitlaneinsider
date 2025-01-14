@@ -25,7 +25,7 @@ async function getActualConstructors() {
 
         return actualConstructors;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getActualConstructors, error during execution :', error);
         throw error;
     }
 }

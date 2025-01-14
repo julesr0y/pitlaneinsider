@@ -7,7 +7,7 @@ const path = require('path');
  * @param {String} season_id 
  * @returns {Array}
  */
-async function getRetroStandings(season_id) {
+async function getRetroDriversStandings(season_id) {
     try {
         const filePath = path.join(__dirname, '../../data/all_driver_standings.json');
         const file = fs.readFileSync(filePath, 'utf-8');
@@ -31,9 +31,9 @@ async function getRetroStandings(season_id) {
 
         return ranking;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getRetroDriversStandings, error during execution :', error);
         throw error;
     }
 }
 
-module.exports = getRetroStandings;
+module.exports = getRetroDriversStandings;

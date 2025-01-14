@@ -40,7 +40,7 @@ async function getConstructorData(constructorId_param) {
 
         return constructorData;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getConstructorData, error during execution :', error);
         throw error;
     }
 }

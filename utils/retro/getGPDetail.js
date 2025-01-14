@@ -63,7 +63,7 @@ async function getGPDetail(year, gp_id) {
 
         return { gpInfos, raceData };
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getGPDetail, error during execution :', error);
         throw error;
     }
 }

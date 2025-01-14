@@ -13,7 +13,7 @@ async function getHomeData() {
         const data = JSON.parse(file);
         return data;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getHomeData, error during execution :', error);
         throw error;
     }
 }

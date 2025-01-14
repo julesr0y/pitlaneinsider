@@ -37,7 +37,7 @@ async function getDriverWinners() {
 
         return sortedDrivers;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getDriverWinners, error during execution :', error);
         throw error;
     }
 }
