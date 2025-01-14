@@ -6,7 +6,7 @@
         <%- include('../partials/header.ejs') %>
             <meta charset="UTF-8">
             <title>PLI - <%= __('retro_f1.all_seasons.gp_details.tab_title') %>
-                    <%= gpDetails.gpInfo.raceId %>
+                    <%= gpDetails.gpInfos[0].raceId %>
             </title>
             <link href="" rel="stylesheet">
 </head>
@@ -19,35 +19,35 @@
                 <div class="flex flex-col items-center gap-2">
                     <span class="text-xl font-F1Bold">
                         <%= __('retro_f1.all_seasons.gp_details.title') %>
-                            <%= gpDetails.gpInfo.raceId %>
+                            <%= gpDetails.gpInfos[0].raceId %>
                     </span>
                     <span class="flex flex-col">
-                        <%= gpDetails.gpInfo.gpOfficialName %>
-                            <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
-                                alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+                        <%= gpDetails.gpInfos[0].gpOfficialName %>
+                            <img src="/img/countryFlags/<%= gpDetails.gpInfos[0].countryId %>.svg"
+                                alt="<%= gpDetails.gpInfos[0].countryId %>" class="h-6 w-auto">
                     </span>
                 </div>
                 <div class="flex items-center mt-2">
                     <div class="w-6/12">
                         <span>
-                            <a href="/track/<%= gpDetails.gpInfo.circuitId %>">
-                                <img src="/img/circuits/<%= gpDetails.gpInfo.circuitId %>.svg"
-                                    alt="<%= gpDetails.gpInfo.circuitId %>">
+                            <a href="/track/<%= gpDetails.gpInfos[0].circuitId %>">
+                                <img src="/img/circuits/<%= gpDetails.gpInfos[0].circuitId %>.svg"
+                                    alt="<%= gpDetails.gpInfos[0].circuitId %>">
                             </a>
                         </span>
                     </div>
                     <div class="flex flex-col items-center w-6/12 text-sm gap-y-2">
                         <span>
-                            <%= gpDetails.gpInfo.date %>
+                            <%= gpDetails.gpInfos[0].date %>
                         </span>
                         <span>
-                            <%= gpDetails.gpInfo.gpFullName %>
+                            <%= gpDetails.gpInfos[0].gpFullName %>
                         </span>
                         <span>
-                            <%= gpDetails.gpInfo.circuitName %>
+                            <%= gpDetails.gpInfos[0].circuitName %>
                         </span>
-                        <span title="<%= gpDetails.gpInfo.weather.weather %>">
-                            <img src="/animations/<%= gpDetails.gpInfo.weather.weather %>.gif" class="h-20 w-auto">
+                        <span title="<%= gpDetails.gpInfos[0].weather %>">
+                            <img src="/animations/<%= gpDetails.gpInfos[0].weather %>.gif" class="h-20 w-auto">
                         </span>
                     </div>
                 </div>
@@ -113,36 +113,35 @@
                         <div class="flex flex-col items-center gap-2">
                             <span class="text-xl font-F1Bold">
                                 <%= __('retro_f1.all_seasons.gp_details.title') %>
-                                    <%= gpDetails.gpInfo.raceId %>
+                                    <%= gpDetails.gpInfos[0].raceId %>
                             </span>
                             <span class="flex gap-2">
-                                <%= gpDetails.gpInfo.gpOfficialName %>
-                                    <img src="/img/countryFlags/<%= gpDetails.gpInfo.countryId %>.svg"
-                                        alt="<%= gpDetails.gpInfo.countryId %>" class="h-6 w-auto">
+                                <%= gpDetails.gpInfos[0].gpOfficialName %>
+                                    <img src="/img/countryFlags/<%= gpDetails.gpInfos[0].countryId %>.svg"
+                                        alt="<%= gpDetails.gpInfos[0].countryId %>" class="h-6 w-auto">
                             </span>
                         </div>
                         <div class="flex items-center mt-2">
                             <div class="w-6/12">
                                 <span class="flex justify-center">
-                                    <a href="/track/<%= gpDetails.gpInfo.circuitId %>">
-                                        <img src="/img/circuits/<%= gpDetails.gpInfo.circuitId %>.svg"
-                                            alt="<%= gpDetails.gpInfo.circuitId %>" class="h-44 w-auto">
+                                    <a href="/track/<%= gpDetails.gpInfos[0].circuitId %>">
+                                        <img src="/img/circuits/<%= gpDetails.gpInfos[0].circuitId %>.svg"
+                                            alt="<%= gpDetails.gpInfos[0].circuitId %>" class="h-44 w-auto">
                                     </a>
                                 </span>
                             </div>
                             <div class="flex flex-col items-center w-6/12 text-sm gap-y-2">
                                 <span>
-                                    <%= gpDetails.gpInfo.date %>
+                                    <%= gpDetails.gpInfos[0].date %>
                                 </span>
                                 <span>
-                                    <%= gpDetails.gpInfo.gpFullName %>
+                                    <%= gpDetails.gpInfos[0].gpFullName %>
                                 </span>
                                 <span>
-                                    <%= gpDetails.gpInfo.circuitName %>
+                                    <%= gpDetails.gpInfos[0].circuitName %>
                                 </span>
-                                <span title="<%= gpDetails.gpInfo.weather.weather %>">
-                                    <img src="/animations/<%= gpDetails.gpInfo.weather.weather %>.gif"
-                                        class="h-20 w-auto">
+                                <span title="<%= gpDetails.gpInfos[0].weather %>">
+                                    <img src="/animations/<%= gpDetails.gpInfos[0].weather %>.gif" class="h-20 w-auto">
                                 </span>
                             </div>
                         </div>

@@ -4,63 +4,64 @@ const path = require('path');
 /**
  * @description Returns data of a specific GP
  * @async
+ * @param {Int} year
  * @param {Int} gp_id
  * @returns {Object}
  */
-async function getGPDetail(gp_id) {
+async function getGPDetail(year, gp_id) {
     try {
-        const filePath = path.join(__dirname, '../../data/all_races_and_quali_results.json');
+        const racesInfoFilePath = path.join(__dirname, `../../data/races-info.json`);
+        const racesResultsFilePath = path.join(__dirname, `../../data/seasons/${year}/race-results.json`);
         const weatherFilePath = path.join(__dirname, '../../data/all_races_weather.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const weatherFile = fs.readFileSync(weatherFilePath, 'utf-8');
-        const data = JSON.parse(file);
-        const weatherData = JSON.parse(weatherFile);
+        const racesInfoData = JSON.parse(fs.readFileSync(racesInfoFilePath, 'utf-8'));
+        const racesResultsData = JSON.parse(fs.readFileSync(racesResultsFilePath, 'utf-8'));
+        const weatherData = JSON.parse(fs.readFileSync(weatherFilePath, 'utf-8'));
 
         let raceData = [];
-        let gpInfo = {};
+        let gpInfos = [];
 
-        data.forEach(race => {
-            if (race.raceInfo[0].raceId == gp_id) {
-                gpInfo = {
-                    raceId: race.raceInfo[0].raceId,
-                    gpId: race.raceInfo[0].gpId,
-                    gpOfficialName: race.raceInfo[0].gpOfficialName,
-                    gpShortName: race.raceInfo[0].gpShortName,
-                    gpFullName: race.raceInfo[0].gpFullName,
-                    countryId: race.raceInfo[0].countryId,
-                    circuitId: race.raceInfo[0].circuitId,
-                    circuitName: race.raceInfo[0].circuitName,
-                    date: race.raceInfo[0].date
+        racesInfoData.forEach(race => {
+            if (race.raceId == gp_id) {
+                const gpInfo = {
+                    raceId: race.raceId,
+                    gpId: race.gpId,
+                    gpOfficialName: race.gpOfficialName,
+                    gpShortName: race.gpShortName,
+                    gpFullName: race.gpFullName,
+                    countryId: race.countryId,
+                    circuitId: race.circuitId,
+                    circuitName: race.circuitName,
+                    date: race.date
                 };
+                gpInfos.push(gpInfo);
+            }
+        });
 
-                race.results.forEach(driver => {
-                    const driverInfo = {
-                        constructorId: driver.constructorId,
-                        driverId: driver.driverId,
-                        firstName: driver.firstName,
-                        lastName: driver.lastName,
-                        abbreviation: driver.abbreviation,
-                        position: driver.position,
-                        grid: driver.grid,
-                        gap: driver.gap,
-                        fastestLapTime: driver.fastestLapTime,
-                        fastestPitTime: driver.fastestPitTime
-                    };
-                    raceData.push(driverInfo);
-                });
+        racesResultsData.forEach(race => {
+            if (race.raceId == gp_id) {
+                const driverInfo = {
+                    constructorId: race.constructorId,
+                    driverId: race.driverId,
+                    firstName: race.firstName,
+                    lastName: race.lastName,
+                    abbreviation: race.abbreviation,
+                    position: race.position,
+                    grid: race.grid,
+                    gap: race.gap,
+                    fastestLapTime: race.fastestLapTime,
+                    fastestPitTime: race.fastestPitTime
+                };
+                raceData.push(driverInfo);
             }
         });
 
         weatherData.forEach(weather => {
             if (weather.raceId == gp_id) {
-                gpInfo.weather = {
-                    weather: weather.weather
-                };
+                gpInfos[0].weather = weather.weather;
             }
         });
 
-
-        return { gpInfo, raceData };
+        return { gpInfos, raceData };
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
         throw error;
