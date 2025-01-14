@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getRetroCars() {
     try {
-        const filePath = path.join(__dirname, '../../data/new_cars.json');
+        const filePath = path.join(__dirname, '../../data/chassis.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
         var cars = [];
