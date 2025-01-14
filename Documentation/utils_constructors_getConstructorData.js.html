@@ -37,38 +37,36 @@ const path = require('path');
  */
 async function getConstructorData(constructorId_param) {
     try {
-        const filePath = path.join(__dirname, '../../data/all_teams_stats.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        var data = JSON.parse(file);
-        data = data.filter(item => item.constructorId === constructorId_param);
-        data = data[0]
-        const constructorData = {
-            constructorId: data['constructorId'],
-            fullName: data['fullName'],
-            name: data['name'],
-            country: data['countryId'],
-            currentSeasonTeam: data['currentSeasonTeam'],
-            totalRaceStarts: data['totalRaceStarts'],
-            totalRaceWins: data['totalRaceWins'],
-            totalPodiumRaces: data['totalPodiumRaces'],
-            totalChampionshipPoints: data['totalChampionshipPoints'],
-            totalPolePositions: data['totalPolePositions'],
-            totalFastestLaps: data['totalFastestLaps'],
-            totalChampionshipWins: data['totalChampionshipWins'],
-            totalRaceLaps: data['totalRaceLaps'],
-            firstYear: data['firstYear'],
-            numberOfSeasons: data['numberOfSeasons'],
-            victoryRatio: data['victoryRatio'],
-            podiumRatio: data['podiumRatio'],
-            poleRatio: data['poleRatio'],
-            currentCarId: data['currentCarId'],
-            currentDrivers: data['currentDrivers'],
-            currentCarName: data['currentCarName']
+        const constructorDataFilePath = path.join(__dirname, '../../data/all_teams_stats.json');
+        const constructorData = JSON.parse(fs.readFileSync(constructorDataFilePath, 'utf-8'));
+        const targetedConstructorInformation = constructorData.filter(item => item.constructorId === constructorId_param)[0];
+        const constructorFrontData = {
+            constructorId: targetedConstructorInformation['constructorId'],
+            fullName: targetedConstructorInformation['fullName'],
+            name: targetedConstructorInformation['name'],
+            country: targetedConstructorInformation['countryId'],
+            currentSeasonTeam: targetedConstructorInformation['currentSeasonTeam'],
+            totalRaceStarts: targetedConstructorInformation['totalRaceStarts'],
+            totalRaceWins: targetedConstructorInformation['totalRaceWins'],
+            totalPodiumRaces: targetedConstructorInformation['totalPodiumRaces'],
+            totalChampionshipPoints: targetedConstructorInformation['totalChampionshipPoints'],
+            totalPolePositions: targetedConstructorInformation['totalPolePositions'],
+            totalFastestLaps: targetedConstructorInformation['totalFastestLaps'],
+            totalChampionshipWins: targetedConstructorInformation['totalChampionshipWins'],
+            totalRaceLaps: targetedConstructorInformation['totalRaceLaps'],
+            firstYear: targetedConstructorInformation['firstYear'],
+            numberOfSeasons: targetedConstructorInformation['numberOfSeasons'],
+            victoryRatio: targetedConstructorInformation['victoryRatio'],
+            podiumRatio: targetedConstructorInformation['podiumRatio'],
+            poleRatio: targetedConstructorInformation['poleRatio'],
+            currentCarId: targetedConstructorInformation['currentCarId'],
+            currentDrivers: targetedConstructorInformation['currentDrivers'],
+            currentCarName: targetedConstructorInformation['currentCarName']
         }
 
-        return constructorData;
+        return constructorFrontData;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getConstructorData, error during execution :', error);
         throw error;
     }
 }
@@ -83,13 +81,13 @@ module.exports = getConstructorData;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroStandings">getRetroStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#getWinnersConstructors">getWinnersConstructors</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Jan 02 2025 18:59:04 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 15 2025 00:09:01 GMT+0100 (heure normale d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

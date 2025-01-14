@@ -8,22 +8,21 @@ const path = require('path');
  */
 async function getActualConstructors() {
     try {
-        const filePath = path.join(__dirname, '../../data/all_teams_stats.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const constructors = JSON.parse(file);
+        const constructorDataFilePath = path.join(__dirname, '../../data/all_teams_stats.json');
+        const constructorData = JSON.parse(fs.readFileSync(constructorDataFilePath, 'utf-8'));
 
-        var actualConstructors = []
-        var actualSeasonConstructors = constructors.filter(item => item.currentSeasonTeam == true);
-        actualSeasonConstructors.forEach(function (team) {
-            const constructorData = {
-                constructorId: team.constructorId,
-                name: team.name,
-                fullName: team.fullName
-            }
-            actualConstructors.push(constructorData);
+        var constructorsFrontData = [];
+        var actualSeasonConstructors = constructorData.filter(item => item.currentSeasonTeam == true);
+        actualSeasonConstructors.forEach(function (constructor) {
+            const constructorInfomation = {
+                constructorId: constructor.constructorId,
+                name: constructor.name,
+                fullName: constructor.fullName
+            };
+            constructorsFrontData.push(constructorInfomation);
         })
 
-        return actualConstructors;
+        return constructorsFrontData;
     } catch (error) {
         console.error('getActualConstructors, error during execution :', error);
         throw error;

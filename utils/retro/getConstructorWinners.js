@@ -8,24 +8,23 @@ const path = require('path');
  */
 async function getConstructorWinners() {
     try {
-        const filePath = path.join(__dirname, '../../data/titled_constructors.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
-        let winnersTab = {};
+        const titledConstructorsFilePath = path.join(__dirname, '../../data/titled_constructors.json');
+        const titledConstructorsData = JSON.parse(fs.readFileSync(titledConstructorsFilePath, 'utf-8'));
+        var titledConstructorsFrontData = {};
 
-        data.forEach(function (winner) {
-            if (winnersTab[winner["constructorId"]]) {
-                winnersTab[winner["constructorId"]].titles++;
+        titledConstructorsData.forEach(function (constructor) {
+            if (titledConstructorsFrontData[constructor["constructorId"]]) {
+                titledConstructorsFrontData[constructor["constructorId"]].titles++;
             } else {
-                winnersTab[winner["constructorId"]] = {
-                    "constructorId": winner["constructorId"],
-                    "name": winner["name"],
+                titledConstructorsFrontData[constructor["constructorId"]] = {
+                    "constructorId": constructor["constructorId"],
+                    "name": constructor["name"],
                     "titles": 1
                 };
             }
         });
 
-        let sortedEntries = Object.entries(winnersTab)
+        let sortedEntries = Object.entries(titledConstructorsFrontData)
             .sort((a, b) => b[1].titles - a[1].titles);
 
         let sortedConstructors = sortedEntries.reduce((obj, [key, value], index) => {

@@ -19419,7 +19419,7 @@
     "podiumsThisSeason": 0,
     "pointsThisSeason": 5,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": true,
+    "isTestDriver": false,
     "racesThisSeason": 9,
     "teamsOfDriver": [
       {
@@ -27165,7 +27165,7 @@
     "dateOfBirth": "2003-01-20",
     "dateOfDeath": null,
     "nationality": "australia",
-    "permanentNumber": "7",
+    "permanentNumber": "61",
     "firstYear": 2022,
     "numberOfSeasons": 1,
     "totalRaceStarts": 1,
@@ -27186,7 +27186,7 @@
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": true,
+    "isTestDriver": false,
     "racesThisSeason": 1,
     "teamsOfDriver": [
       {
@@ -40117,7 +40117,7 @@
     "dateOfBirth": "2002-02-11",
     "dateOfDeath": null,
     "nationality": "new-zealand",
-    "permanentNumber": "40",
+    "permanentNumber": "30",
     "firstYear": 2022,
     "numberOfSeasons": 2,
     "totalRaceStarts": 11,
@@ -50195,7 +50195,7 @@
     "dateOfBirth": "2005-05-08",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
-    "permanentNumber": null,
+    "permanentNumber": "50",
     "firstYear": 2023,
     "numberOfSeasons": 1,
     "totalRaceStarts": 3,
@@ -50210,14 +50210,14 @@
     "poleRatio": "0.00",
     "totalFastestLaps": 0,
     "totalDriverOfTheDay": 1,
-    "currentTeamId": "ferrari",
-    "currentTeamName": "Ferrari",
+    "currentTeamId": "haas",
+    "currentTeamName": "Haas",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 7,
     "isCurrentSeasonDriver": true,
-    "isTestDriver": true,
-    "racesThisSeason": 1,
+    "isTestDriver": false,
+    "racesThisSeason": 3,
     "teamsOfDriver": [
       {
         "teamId": "haas",

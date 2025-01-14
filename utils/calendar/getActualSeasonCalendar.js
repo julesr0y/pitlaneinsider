@@ -8,31 +8,31 @@ const path = require('path');
  */
 async function getActualSeasonCalendar() {
     try {
-        const filePath = path.join(__dirname, '../../data/all_calendar.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        var data = JSON.parse(file);
-        data = data.filter(raceArray => {
+        const calendarDataFilePath = path.join(__dirname, '../../data/all_calendar.json');
+        const calendarData = JSON.parse(fs.readFileSync(calendarDataFilePath, 'utf-8'));
+
+        var actualSeasonData = calendarData.filter(raceArray => {
             return raceArray.some(element => {
                 return element.raceDetails && element.raceDetails.some(detail => detail.year === 2024);
             });
         });
 
-        const simplifiedData = data.map(raceArray => {
-            const race = {};
+        const calendarFrontData = actualSeasonData.map(raceArray => {
+            const raceInformation = {};
 
             raceArray.forEach(element => {
                 if (element.raceDetails) {
                     element.raceDetails.forEach(detail => {
                         if (detail.year === 2024) {
-                            race.id = detail.id;
-                            race.country = detail.country;
-                            race.name = detail.name;
-                            race.year = detail.year;
-                            race.date = detail.date;
-                            race.raceId = detail.raceId;
-                            race.circuitId = detail.circuitId;
-                            race.round = detail.round;
-                            race.isNextGp = detail.isNextGp;
+                            raceInformation.id = detail.id;
+                            raceInformation.country = detail.country;
+                            raceInformation.name = detail.name;
+                            raceInformation.year = detail.year;
+                            raceInformation.date = detail.date;
+                            raceInformation.raceId = detail.raceId;
+                            raceInformation.circuitId = detail.circuitId;
+                            raceInformation.round = detail.round;
+                            raceInformation.isNextGp = detail.isNextGp;
                         }
                     });
                 }
@@ -50,16 +50,15 @@ async function getActualSeasonCalendar() {
                             }
                         }
 
-                        Object.assign(race, dateDetail);
+                        Object.assign(raceInformation, dateDetail);
                     });
                 }
             });
 
-            return race;
+            return raceInformation;
         });
 
-        return simplifiedData;
-
+        return calendarFrontData;
     } catch (error) {
         console.error('getActualSeasonCalendar, error during execution :', error);
         throw error;
@@ -78,6 +77,7 @@ function convertDate(dateString) {
         var date = new Date(dateString);
         var day = date.getDate();
         var month = date.getMonth() + 1;
+
         return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
     } catch (error) {
         console.error('convertDate, error during execution :', error);
@@ -95,6 +95,7 @@ function convertTime(timeString) {
         var timeParts = timeString.split(':');
         var hour = timeParts[0];
         var minute = timeParts[1];
+
         return minute === '00' ? hour + 'h' : hour + 'h' + minute;
     } catch (error) {
         console.error('convertTime, error during execution :', error);

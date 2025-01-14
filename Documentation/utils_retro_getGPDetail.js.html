@@ -32,65 +32,66 @@ const path = require('path');
 /**
  * @description Returns data of a specific GP
  * @async
+ * @param {Int} year
  * @param {Int} gp_id
  * @returns {Object}
  */
-async function getGPDetail(gp_id) {
+async function getGPDetail(year, gp_id) {
     try {
-        const filePath = path.join(__dirname, '../../data/all_races_and_quali_results.json');
+        const racesInfoFilePath = path.join(__dirname, `../../data/races-info.json`);
+        const racesResultsFilePath = path.join(__dirname, `../../data/seasons/${year}/race-results.json`);
         const weatherFilePath = path.join(__dirname, '../../data/all_races_weather.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const weatherFile = fs.readFileSync(weatherFilePath, 'utf-8');
-        const data = JSON.parse(file);
-        const weatherData = JSON.parse(weatherFile);
+        const racesInfoData = JSON.parse(fs.readFileSync(racesInfoFilePath, 'utf-8'));
+        const racesResultsData = JSON.parse(fs.readFileSync(racesResultsFilePath, 'utf-8'));
+        const weatherData = JSON.parse(fs.readFileSync(weatherFilePath, 'utf-8'));
 
         let raceData = [];
-        let gpInfo = {};
+        let gpInfos = [];
 
-        data.forEach(race => {
-            if (race.raceInfo[0].raceId == gp_id) {
-                gpInfo = {
-                    raceId: race.raceInfo[0].raceId,
-                    gpId: race.raceInfo[0].gpId,
-                    gpOfficialName: race.raceInfo[0].gpOfficialName,
-                    gpShortName: race.raceInfo[0].gpShortName,
-                    gpFullName: race.raceInfo[0].gpFullName,
-                    countryId: race.raceInfo[0].countryId,
-                    circuitId: race.raceInfo[0].circuitId,
-                    circuitName: race.raceInfo[0].circuitName,
-                    date: race.raceInfo[0].date
+        racesInfoData.forEach(race => {
+            if (race.raceId == gp_id) {
+                const gpInfo = {
+                    raceId: race.raceId,
+                    gpId: race.gpId,
+                    gpOfficialName: race.gpOfficialName,
+                    gpShortName: race.gpShortName,
+                    gpFullName: race.gpFullName,
+                    countryId: race.countryId,
+                    circuitId: race.circuitId,
+                    circuitName: race.circuitName,
+                    date: race.date
                 };
+                gpInfos.push(gpInfo);
+            }
+        });
 
-                race.results.forEach(driver => {
-                    const driverInfo = {
-                        constructorId: driver.constructorId,
-                        driverId: driver.driverId,
-                        firstName: driver.firstName,
-                        lastName: driver.lastName,
-                        abbreviation: driver.abbreviation,
-                        position: driver.position,
-                        grid: driver.grid,
-                        gap: driver.gap,
-                        fastestLapTime: driver.fastestLapTime,
-                        fastestPitTime: driver.fastestPitTime
-                    };
-                    raceData.push(driverInfo);
-                });
+        racesResultsData.forEach(race => {
+            if (race.raceId == gp_id) {
+                const driverInfo = {
+                    constructorId: race.constructorId,
+                    driverId: race.driverId,
+                    firstName: race.firstName,
+                    lastName: race.lastName,
+                    abbreviation: race.abbreviation,
+                    position: race.position,
+                    grid: race.grid,
+                    gap: race.gap,
+                    fastestLapTime: race.fastestLapTime,
+                    fastestPitTime: race.fastestPitTime
+                };
+                raceData.push(driverInfo);
             }
         });
 
         weatherData.forEach(weather => {
             if (weather.raceId == gp_id) {
-                gpInfo.weather = {
-                    weather: weather.weather
-                };
+                gpInfos[0].weather = weather.weather;
             }
         });
 
-
-        return { gpInfo, raceData };
+        return { gpInfos, raceData };
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getGPDetail, error during execution :', error);
         throw error;
     }
 }
@@ -105,13 +106,13 @@ module.exports = getGPDetail;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroStandings">getRetroStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#getWinnersConstructors">getWinnersConstructors</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Jan 02 2025 18:59:05 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 15 2025 00:09:01 GMT+0100 (heure normale d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

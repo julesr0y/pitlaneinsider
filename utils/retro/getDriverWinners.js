@@ -8,26 +8,25 @@ const path = require('path');
  */
 async function getDriverWinners() {
     try {
-        const filePath = path.join(__dirname, '../../data/titled_drivers.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
-        let winnersTab = {};
+        const titledDriversFilePath = path.join(__dirname, '../../data/titled_drivers.json');
+        const titledDriversData = JSON.parse(fs.readFileSync(titledDriversFilePath, 'utf-8'));
+        var titledDriversFrontData = {};
 
-        data.forEach(function (winner) {
-            if (winnersTab[winner["driverId"]]) {
-                winnersTab[winner["driverId"]].titles++;
+        titledDriversData.forEach(function (driver) {
+            if (titledDriversFrontData[driver["driverId"]]) {
+                titledDriversFrontData[driver["driverId"]].titles++;
             } else {
-                winnersTab[winner["driverId"]] = {
-                    "driverId": winner["driverId"],
-                    "firstName": winner["firstName"],
-                    "lastName": winner["lastName"],
-                    "abbreviation": winner["abbreviation"],
+                titledDriversFrontData[driver["driverId"]] = {
+                    "driverId": driver["driverId"],
+                    "firstName": driver["firstName"],
+                    "lastName": driver["lastName"],
+                    "abbreviation": driver["abbreviation"],
                     "titles": 1
                 };
             }
         });
 
-        let sortedEntries = Object.entries(winnersTab)
+        let sortedEntries = Object.entries(titledDriversFrontData)
             .sort((a, b) => b[1].titles - a[1].titles);
 
         let sortedDrivers = sortedEntries.reduce((obj, [key, value], index) => {

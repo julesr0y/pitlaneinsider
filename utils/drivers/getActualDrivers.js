@@ -9,30 +9,26 @@ const path = require('path');
 async function getActualDrivers() {
     try {
         const teamOrder = [
-            'red-bull',
             'mclaren',
             'ferrari',
+            'red-bull',
             'mercedes',
             'aston-martin',
+            'alpine',
             'rb',
             'haas',
-            'kick-sauber',
             'williams',
-            'alpine',
+            'kick-sauber'
         ];
-        const filePath = path.join(
-            __dirname,
-            '../../data/all_drivers_stats.json'
-        );
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
-        var drivers = [];
-        data.forEach((item) => {
+        const driversDataFilePath = path.join(__dirname, '../../data/all_drivers_stats.json');
+        const driversData = JSON.parse(fs.readFileSync(driversDataFilePath, 'utf-8'));
+        var driversDataFront = [];
+        driversData.forEach((item) => {
             if (
                 item.isCurrentSeasonDriver === true &&
                 item.isTestDriver == false
             ) {
-                const driver = {
+                const driverInformation = {
                     id: item.driverId,
                     firstName: item.firstName,
                     lastName: item.lastName,
@@ -41,12 +37,12 @@ async function getActualDrivers() {
                     constructorId: item.currentTeamId,
                 };
 
-                drivers.push(driver);
+                driversDataFront.push(driverInformation);
             }
         });
 
         // sort drivers by their teams
-        drivers.sort((a, b) => {
+        driversDataFront.sort((a, b) => {
             if (a.constructorId < b.constructorId) {
                 return -1;
             }
@@ -57,14 +53,14 @@ async function getActualDrivers() {
         });
 
         // sort teams
-        drivers.sort((a, b) => {
+        driversDataFront.sort((a, b) => {
             return (
                 teamOrder.indexOf(a.constructorId) -
                 teamOrder.indexOf(b.constructorId)
             );
         });
 
-        return drivers;
+        return driversDataFront;
     } catch (error) {
         console.error('getActualDrivers, error during execution :', error);
         throw error;

@@ -36,26 +36,25 @@ const path = require('path');
  */
 async function getDriverWinners() {
     try {
-        const filePath = path.join(__dirname, '../../data/titled_drivers.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
-        let winnersTab = {};
+        const titledDriversFilePath = path.join(__dirname, '../../data/titled_drivers.json');
+        const titledDriversData = JSON.parse(fs.readFileSync(titledDriversFilePath, 'utf-8'));
+        var titledDriversFrontData = {};
 
-        data.forEach(function (winner) {
-            if (winnersTab[winner["driverId"]]) {
-                winnersTab[winner["driverId"]].titles++;
+        titledDriversData.forEach(function (driver) {
+            if (titledDriversFrontData[driver["driverId"]]) {
+                titledDriversFrontData[driver["driverId"]].titles++;
             } else {
-                winnersTab[winner["driverId"]] = {
-                    "driverId": winner["driverId"],
-                    "firstName": winner["firstName"],
-                    "lastName": winner["lastName"],
-                    "abbreviation": winner["abbreviation"],
+                titledDriversFrontData[driver["driverId"]] = {
+                    "driverId": driver["driverId"],
+                    "firstName": driver["firstName"],
+                    "lastName": driver["lastName"],
+                    "abbreviation": driver["abbreviation"],
                     "titles": 1
                 };
             }
         });
 
-        let sortedEntries = Object.entries(winnersTab)
+        let sortedEntries = Object.entries(titledDriversFrontData)
             .sort((a, b) => b[1].titles - a[1].titles);
 
         let sortedDrivers = sortedEntries.reduce((obj, [key, value], index) => {
@@ -65,7 +64,7 @@ async function getDriverWinners() {
 
         return sortedDrivers;
     } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
+        console.error('getDriverWinners, error during execution :', error);
         throw error;
     }
 }
@@ -81,13 +80,13 @@ module.exports = getDriverWinners;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroStandings">getRetroStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#getWinnersConstructors">getWinnersConstructors</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroCars">getRetroCars</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getRetroTrackData">getRetroTrackData</a></li><li><a href="global.html#getRetroTracks">getRetroTracks</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Jan 02 2025 18:59:04 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 15 2025 00:09:01 GMT+0100 (heure normale d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

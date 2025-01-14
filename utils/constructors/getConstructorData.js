@@ -9,36 +9,34 @@ const path = require('path');
  */
 async function getConstructorData(constructorId_param) {
     try {
-        const filePath = path.join(__dirname, '../../data/all_teams_stats.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        var data = JSON.parse(file);
-        data = data.filter(item => item.constructorId === constructorId_param);
-        data = data[0]
-        const constructorData = {
-            constructorId: data['constructorId'],
-            fullName: data['fullName'],
-            name: data['name'],
-            country: data['countryId'],
-            currentSeasonTeam: data['currentSeasonTeam'],
-            totalRaceStarts: data['totalRaceStarts'],
-            totalRaceWins: data['totalRaceWins'],
-            totalPodiumRaces: data['totalPodiumRaces'],
-            totalChampionshipPoints: data['totalChampionshipPoints'],
-            totalPolePositions: data['totalPolePositions'],
-            totalFastestLaps: data['totalFastestLaps'],
-            totalChampionshipWins: data['totalChampionshipWins'],
-            totalRaceLaps: data['totalRaceLaps'],
-            firstYear: data['firstYear'],
-            numberOfSeasons: data['numberOfSeasons'],
-            victoryRatio: data['victoryRatio'],
-            podiumRatio: data['podiumRatio'],
-            poleRatio: data['poleRatio'],
-            currentCarId: data['currentCarId'],
-            currentDrivers: data['currentDrivers'],
-            currentCarName: data['currentCarName']
+        const constructorDataFilePath = path.join(__dirname, '../../data/all_teams_stats.json');
+        const constructorData = JSON.parse(fs.readFileSync(constructorDataFilePath, 'utf-8'));
+        const targetedConstructorInformation = constructorData.filter(item => item.constructorId === constructorId_param)[0];
+        const constructorFrontData = {
+            constructorId: targetedConstructorInformation['constructorId'],
+            fullName: targetedConstructorInformation['fullName'],
+            name: targetedConstructorInformation['name'],
+            country: targetedConstructorInformation['countryId'],
+            currentSeasonTeam: targetedConstructorInformation['currentSeasonTeam'],
+            totalRaceStarts: targetedConstructorInformation['totalRaceStarts'],
+            totalRaceWins: targetedConstructorInformation['totalRaceWins'],
+            totalPodiumRaces: targetedConstructorInformation['totalPodiumRaces'],
+            totalChampionshipPoints: targetedConstructorInformation['totalChampionshipPoints'],
+            totalPolePositions: targetedConstructorInformation['totalPolePositions'],
+            totalFastestLaps: targetedConstructorInformation['totalFastestLaps'],
+            totalChampionshipWins: targetedConstructorInformation['totalChampionshipWins'],
+            totalRaceLaps: targetedConstructorInformation['totalRaceLaps'],
+            firstYear: targetedConstructorInformation['firstYear'],
+            numberOfSeasons: targetedConstructorInformation['numberOfSeasons'],
+            victoryRatio: targetedConstructorInformation['victoryRatio'],
+            podiumRatio: targetedConstructorInformation['podiumRatio'],
+            poleRatio: targetedConstructorInformation['poleRatio'],
+            currentCarId: targetedConstructorInformation['currentCarId'],
+            currentDrivers: targetedConstructorInformation['currentDrivers'],
+            currentCarName: targetedConstructorInformation['currentCarName']
         }
 
-        return constructorData;
+        return constructorFrontData;
     } catch (error) {
         console.error('getConstructorData, error during execution :', error);
         throw error;
