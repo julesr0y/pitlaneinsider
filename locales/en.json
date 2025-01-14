@@ -98,7 +98,8 @@
 		"drivers": "Drivers",
 		"constructors": "Constructors",
 		"position": "P",
-		"points": "Points"
+		"points": "Points",
+		"chassis": "Chassis"
 	},
 	"reglementation": {
 		"tab_title": "Regulations",

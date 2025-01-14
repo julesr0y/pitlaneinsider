@@ -72,6 +72,9 @@
                     <td class="pl-3 font-F1Bold">
                         <%= __('standings.constructors') %>
                     </td>
+                    <td class="font-F1Bold pl-3">
+                        <%= __('standings.chassis') %>
+                    </td>
                     <td class="pl-3 font-F1Bold">
                         <%= __('standings.points') %>
                     </td>
@@ -89,6 +92,11 @@
                         <td class="border-l-2 pl-3 pr-3">
                             <a href="/constructor/<%= team.constructorId %>">
                                 <%= team.name %>
+                            </a>
+                        </td>
+                        <td class="border-l-2 pl-3 pr-3">
+                            <a href="#">
+                                <%= team.chassisName %>
                             </a>
                         </td>
                         <td class="border-l-2 pl-3">

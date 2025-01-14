@@ -4834,69 +4834,89 @@
         "constructorId": "mclaren",
         "name": "McLaren",
         "position": 1,
-        "points": 666
+        "points": 666,
+        "chassisId": "mclaren-mcl38",
+        "chassisName": "MCL38"
     },
     {
         "year": 2024,
         "constructorId": "ferrari",
         "name": "Ferrari",
         "position": 2,
-        "points": 652
+        "points": 652,
+        "chassisId": "ferrari-sf-24",
+        "chassisName": "SF-24"
     },
     {
         "year": 2024,
         "constructorId": "red-bull",
         "name": "Red Bull",
         "position": 3,
-        "points": 589
+        "points": 589,
+        "chassisId": "red-bull-rb20",
+        "chassisName": "RB20"
     },
     {
         "year": 2024,
         "constructorId": "mercedes",
         "name": "Mercedes",
         "position": 4,
-        "points": 468
+        "points": 468,
+        "chassisId": "mercedes-f1-w15",
+        "chassisName": "F1 W15"
     },
     {
         "year": 2024,
         "constructorId": "aston-martin",
         "name": "Aston Martin",
         "position": 5,
-        "points": 94
+        "points": 94,
+        "chassisId": "aston-martin-amr24",
+        "chassisName": "AMR24"
     },
     {
         "year": 2024,
         "constructorId": "alpine",
         "name": "Alpine",
         "position": 6,
-        "points": 65
+        "points": 65,
+        "chassisId": "alpine-a524",
+        "chassisName": "A524"
     },
     {
         "year": 2024,
         "constructorId": "haas",
         "name": "Haas",
         "position": 7,
-        "points": 58
+        "points": 58,
+        "chassisId": "haas-vf-24",
+        "chassisName": "VF-24"
     },
     {
         "year": 2024,
         "constructorId": "rb",
         "name": "RB",
         "position": 8,
-        "points": 46
+        "points": 46,
+        "chassisId": "rb-vcarb-01",
+        "chassisName": "VCARB 01"
     },
     {
         "year": 2024,
         "constructorId": "williams",
         "name": "Williams",
         "position": 9,
-        "points": 17
+        "points": 17,
+        "chassisId": "williams-fw46",
+        "chassisName": "FW46"
     },
     {
         "year": 2024,
         "constructorId": "kick-sauber",
         "name": "Kick Sauber",
         "position": 10,
-        "points": 4
+        "points": 4,
+        "chassisId": "kick-sauber-c44",
+        "chassisName": "C44"
     }
 ]
