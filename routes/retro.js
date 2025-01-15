@@ -93,10 +93,33 @@ router.get("/retrogpdetails/:season_id/:gp_id", cors(), async (req, res) => {
 
 router.get("/retrodrivers", cors(), async (req, res) => {
     try {
-        var retro_pilotes = await getRetroDrivers();
-        res.render("retro/retroDrivers", { retro_pilotes: retro_pilotes });
+        res.render("retro/retroDrivers");
     } catch (error) {
         res.render('security/error', { textError: '/retrodrivers route, error during execution', error: error });
+    }
+});
+
+router.get("/api/retrodrivers", cors(), async (req, res) => {
+    try {
+        const offset = parseInt(req.query.offset) || 0;
+        const limit = parseInt(req.query.limit) || 20;
+        const search = req.query.search || "";
+
+        let retro_drivers = await getRetroDrivers();
+
+        if (search) {
+            retro_drivers = retro_drivers.filter(driver =>
+                driver.firstName.toLowerCase().includes(search.toLowerCase()) ||
+                driver.lastName.toLowerCase().includes(search.toLowerCase())
+            );
+        }
+
+        const paginatedDrivers = retro_drivers.slice(offset, offset + limit);
+
+        res.json(paginatedDrivers);
+    } catch (error) {
+        console.error("Error fetching retro cars:", error);
+        res.status(500).json({ error: "Error fetching retro cars" });
     }
 });
 
@@ -132,17 +155,14 @@ router.get("/api/retrocars", cors(), async (req, res) => {
         const limit = parseInt(req.query.limit) || 20;
         const search = req.query.search || "";
 
-        // Simuler une recherche avec pagination (à adapter selon votre logique)
-        let retro_cars = await getRetroCars(); // Récupère toutes les voitures
+        let retro_cars = await getRetroCars();
 
-        // Filtrer les voitures si une recherche est effectuée
         if (search) {
             retro_cars = retro_cars.filter(car =>
                 car.chassisFullName.toLowerCase().includes(search.toLowerCase())
             );
         }
 
-        // Appliquer la pagination
         const paginatedCars = retro_cars.slice(offset, offset + limit);
 
         res.json(paginatedCars);
