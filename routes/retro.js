@@ -120,10 +120,35 @@ router.get("/retrotracks", cors(), async (req, res) => {
 
 router.get("/retrocars", cors(), async (req, res) => {
     try {
-        var retro_cars = await getRetroCars();
-        res.render("retro/retroCars", { retro_cars: retro_cars });
+        res.render("retro/retroCars");
     } catch (error) {
         res.render('security/error', { textError: '/retrocars route, error during execution', error: error });
+    }
+});
+
+router.get("/api/retrocars", cors(), async (req, res) => {
+    try {
+        const offset = parseInt(req.query.offset) || 0;
+        const limit = parseInt(req.query.limit) || 20;
+        const search = req.query.search || "";
+
+        // Simuler une recherche avec pagination (à adapter selon votre logique)
+        let retro_cars = await getRetroCars(); // Récupère toutes les voitures
+
+        // Filtrer les voitures si une recherche est effectuée
+        if (search) {
+            retro_cars = retro_cars.filter(car =>
+                car.chassisFullName.toLowerCase().includes(search.toLowerCase())
+            );
+        }
+
+        // Appliquer la pagination
+        const paginatedCars = retro_cars.slice(offset, offset + limit);
+
+        res.json(paginatedCars);
+    } catch (error) {
+        console.error("Error fetching retro cars:", error);
+        res.status(500).json({ error: "Error fetching retro cars" });
     }
 });
 

@@ -1,54 +1,136 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-    <head>
-        <%- include('../partials/head.ejs') %>
+
+<head>
+    <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-        <title>PLI - <%= __('retro_f1.all_data.tab_title_cars') %></title>
-    </head>
+            <title>PLI - <%= __('retro_f1.all_data.tab_title_cars') %>
+            </title>
+</head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-        <main>
-            <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('retro_f1.all_data.title_drivers') %></div>
-            <div class="w-9/10 mx-auto p-4">
-                <div class="flex justify-center items-start">
-                    <div class="flex justify-evenly gap-x-4 mb-4">
-                        <a href="retrodrivers" class="{{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_drivers') %> </a>
-                        <a href="retroconstructors" class="{{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_constructors') %> </a>
-                        <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_tracks') %> </a>
-                        <a href="retrocars" class="{{ Request::path() == 'retrocars' ? 'font-bold border-b-2 border-<%= theme %>' : ''' }}"> <%= __('retro_f1.all_data.link_cars') %> </a>
-                    </div>
+<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <main>
+        <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
+            <%= __('retro_f1.all_data.title_drivers') %>
+        </div>
+        <div class="w-9/10 mx-auto p-4">
+            <div class="flex justify-center items-start">
+                <div class="flex justify-evenly gap-x-4 mb-4">
+                    <a href="retrodrivers" class="{{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}">
+                        <%= __('retro_f1.all_data.link_drivers') %>
+                    </a>
+                    <a href="retroconstructors" class="{{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}">
+                        <%= __('retro_f1.all_data.link_constructors') %>
+                    </a>
+                    <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}">
+                        <%= __('retro_f1.all_data.link_tracks') %>
+                    </a>
+                    <a href="retrocars"
+                        class="{{ Request::path() == 'retrocars' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
+                        <%= __('retro_f1.all_data.link_cars') %>
+                    </a>
                 </div>
-                <div class="max-w-md mx-auto">
-                    <div class="bg-s-<%= theme %> relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg overflow-hidden my-4">
-                        <div class="grid place-items-center h-full w-12 text-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </div>
+            </div>
+            <div class="max-w-md mx-auto">
+                <div
+                    class="bg-s-<%= theme %> relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg overflow-hidden my-4">
+                    <div class="grid place-items-center h-full w-12 text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
 
-                        <input class="bg-s-<%= theme %> peer h-full w-full outline-none text-sm text-gray-300 pr-2" type="text" id="search" placeholder="<%= __('retro_f1.all_data.search_cars') %>" />
-                    </div>
+                    <input class="bg-s-<%= theme %> peer h-full w-full outline-none text-sm text-gray-300 pr-2"
+                        type="text" id="search" placeholder="<%= __('retro_f1.all_data.search_cars') %>" />
                 </div>
-                <div class="w-9/10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="elems">
-                    <% retro_cars.forEach(function(car) { %>
-                    <a href="/chassis/<%= car.chassisId %>" class="block">
-                        <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
-                            <div class="text-center relative">
-                                <div class="relative mb-4" id="<%= car.chassisFullName %>">
-                                    <img src="https://ik.imagekit.io/pitlaneinsider/cars/<%= car.chassisId %>.webp" alt="<%= car.chassisFullName %>" class="w-full h-40 object-contain" />
-                                </div>
-                                <div>
-                                    <div class="text-xl font-semibold"><%= car.chassisFullName %></div>
-                                </div>
+            </div>
+            <div class="w-9/10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="elems">
+
+            </div>
+            <div id="noResults" class="text-center text-xl text-gray-500 mt-4" style="display: none">
+                <%= __('retro_f1.all_data.no_result') %>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+
+        <script>
+            let theme = '<%= theme %>';
+            let offset = 0;
+            const limit = 20;
+            let isLoading = false;
+            let currentSearch = "";
+            const elemsContainer = document.getElementById("elems");
+            const noResultsDiv = document.getElementById("noResults");
+            const searchInput = document.getElementById("search");
+
+            async function loadCars(searchQuery = '', reset = false) {
+                if (isLoading) return;
+                try {
+                    isLoading = true;
+
+                    const response = await fetch(`/api/retrocars?offset=${reset ? 0 : offset}&limit=${limit}&search=${encodeURIComponent(searchQuery)}`);
+                    const cars = await response.json();
+
+                    if (reset) {
+                        elemsContainer.innerHTML = '';
+                        offset = 0;
+                        noResultsDiv.style.display = 'none';
+                    }
+
+                    if (cars.length === 0) {
+                        if (offset === 0) {
+                            noResultsDiv.style.display = 'block';
+                        }
+                        return;
+                    }
+
+                    cars.forEach(car => {
+                        const carHTML = `
+                <a href="/chassis/${car.chassisId}" class="block">
+                    <div class="bg-s-${theme} rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
+                        <div class="text-center relative">
+                            <div class="relative mb-4" id="${car.chassisFullName}">
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/cars_img/${car.chassisId}.webp" alt="${car.chassisFullName}" class="w-full h-40 object-contain" />
+                            </div>
+                            <div>
+                                <div class="text-xl font-semibold">${car.chassisFullName}</div>
                             </div>
                         </div>
-                    </a>
-                    <% }); %>
-                </div>
-                <div id="noResults" class="text-center text-xl text-gray-500 mt-4" style="display: none"><%= __('retro_f1.all_data.no_result') %></div>
-            </div>
-        </main>
-        <%- include('../partials/footer.ejs') %>
-        <script src="/js/recherche_retro.js"></script>
-    </body>
+                    </div>
+                </a>`;
+                        elemsContainer.innerHTML += carHTML;
+                    });
+
+                    offset += limit;
+
+                } catch (error) {
+                    console.error('Erreur lors du chargement des voitures:', error);
+                } finally {
+                    isLoading = false;
+                }
+            }
+
+            function handleSearch(event) {
+                const searchQuery = event.target.value.trim();
+                if (searchQuery !== currentSearch) {
+                    currentSearch = searchQuery;
+                    loadCars(currentSearch, true);
+                }
+            }
+
+            searchInput.addEventListener("input", handleSearch);
+
+            window.addEventListener("scroll", () => {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                    loadCars(currentSearch);
+                }
+            });
+
+            loadCars();
+        </script>
+</body>
+
 </html>
