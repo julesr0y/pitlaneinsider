@@ -776,6 +776,9 @@ video {
 .w-7\/12 {
   width: 58.333333%;
 }
+.w-80 {
+  width: 20rem;
+}
 .w-auto {
   width: auto;
 }

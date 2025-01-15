@@ -53,6 +53,7 @@ app.use(
                 "'self'",
                 "data:",
                 "https://ik.imagekit.io",
+                "https://pitlaneinsider-data.alwaysdata.net",
                 "https://cdn-1.motorsport.com/",
                 "https://cdn-2.motorsport.com/",
                 "https://cdn-3.motorsport.com/",

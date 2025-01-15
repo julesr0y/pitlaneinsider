@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="<%= __('lang.lang') %>">
+    <head>
+        <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+        <title>PLI - <%= chassisData.chassisName %></title>
+    </head>
+
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main>
+            <div class="pt-10 px-4 sm:px-8 h-auto flex flex-col justify-center">
+                <div class="bg-s-<%= theme %> p-4 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+                    <div class="text-center">
+                        <h1 class="text-lg font-F1Bold mb-2"><%= chassisData.chassisFullName %></h1>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <img src="https://pitlaneinsider-data.alwaysdata.net/cars_img/<%= chassisData.chassisId %>.webp" alt="<%= chassisData.chassisId %>" class="h-auto w-80" />
+                    </div>
+
+                    <div class="text-center">
+                        <span class="col-span-12 md:col-span-4 flex flex-col items-center mt-4 justify-end">
+                            <a href="/constructor/<%= chassisData.constructorId %>" class="flex flex-col items-center gap-y-2">
+                                <img src="/img/constructors/<%= chassisData.constructorId %>.webp" alt="<%= chassisData.constructorId %>" class="w-auto h-8" />
+                            </a>
+                        </span>
+
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <% chassisData.years.forEach(year=> { %>
+                                    <%= year %>
+                                    <br />
+                                    <% }); %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('chassis.chassis_years') %> </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= chassisData.wins %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('chassis.number_of_wins') %> </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= chassisData.podiums %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('chassis.number_of_podiums') %> </span>
+                            </span>
+                        </span>
+
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= chassisData.poles %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('chassis.chassis_poles') %> </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>
