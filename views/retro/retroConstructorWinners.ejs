@@ -1,53 +1,39 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <%- include('../partials/head.ejs') %>
+    <head>
+        <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>PLI - <%= __('retro_f1.constructorwinners.tab_title') %>
-            </title>
-</head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PLI - <!= __('retro_f1.constructorwinners.tab_title') !></title>
+    </head>
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <main>
-        <div class="container mx-auto px-4">
-            <div class="text-4xl font-bold text-center my-8">
-                <%= __('retro_f1.constructorwinners.title') %>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <% for (let index in constructorWinners) { %>
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main>
+            <div class="container mx-auto px-4">
+                <div class="text-4xl font-bold text-center my-8"><%= __('retro_f1.constructorwinners.title') %></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <% for (let index in constructorWinners) { %>
                     <a href="/constructor/<%= constructorWinners[index].constructorId %>">
-                        <div
-                            class="bg-s-<%= theme %> flex flex-col items-center justify-center p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+                        <div class="bg-s-<%= theme %> flex flex-col items-center justify-center p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
                             <div class="w-full border-l-4 border-<%= constructorWinners[index].constructorId %> pl-4">
                                 <div class="flex items-center justify-between w-full">
                                     <div>
-                                        <span class="text-2xl font-bold">
-                                            <%= constructorWinners[index].name %>
-                                        </span>
-                                        <div class="bg-<%= constructorWinners[index].constructorId %> h-1 w-12 mt-2">
-                                        </div>
+                                        <span class="text-2xl font-bold"> <%= constructorWinners[index].name %> </span>
+                                        <div class="bg-<%= constructorWinners[index].constructorId %> h-1 w-12 mt-2"></div>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-4 text-t-s-<%= theme %>">
-                                    <span class="text-lg">
-                                        <%= __('retro_f1.constructorwinners.number_of_titles') %> :
-                                    </span>
-                                    <span
-                                        class="text-4xl font-semibold text-<%= constructorWinners[index].constructorId %> ml-2">
-                                        <%= constructorWinners[index].titles %>
-                                    </span>
+                                    <span class="text-lg"> <%= __('retro_f1.constructorwinners.number_of_titles') %> : </span>
+                                    <span class="text-4xl font-semibold text-<%= constructorWinners[index].constructorId %> ml-2"> <%= constructorWinners[index].titles %> </span>
                                 </div>
                             </div>
                         </div>
                     </a>
                     <% } %>
+                </div>
             </div>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
-
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 </html>

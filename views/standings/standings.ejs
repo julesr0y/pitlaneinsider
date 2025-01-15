@@ -1,133 +1,90 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <%- include('../partials/head.ejs') %>
+    <head>
+        <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-            <title>PLI - <%= __('standings.tab_title') %>
-            </title>
-</head>
+        <title>PLI - <%= __('standings.tab_title') %></title>
+    </head>
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <main class="flex flex-col justify-center items-center">
-        <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-            <%= __('global.current_year') %>
-                <%= __('standings.season') %>
-        </div>
-        <div class="tabs flex justify-center">
-            <div class="tab">
-                <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')">
-                    <%= __('standings.drivers') %>
-                </button>
-                <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')">
-                    <%= __('standings.constructors') %>
-                </button>
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main class="flex flex-col justify-center items-center">
+            <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('global.current_year') %> <%= __('standings.season') %></div>
+            <div class="tabs flex justify-center">
+                <div class="tab">
+                    <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')"><%= __('standings.drivers') %></button>
+                    <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')"><%= __('standings.constructors') %></button>
+                </div>
             </div>
-        </div>
-        <div id="Pilotes" class="bg-s-<%=theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
-            <table>
-                <tr id="header-classement-pilotes">
-                    <td></td>
-                    <td class="font-F1Bold">
-                        <%= __('standings.position') %>
-                    </td>
-                    <td class="font-F1Bold pl-3">
-                        <%= __('standings.drivers') %>
-                    </td>
-                    <td class="font-F1Bold pl-3">
-                        <%= __('standings.points') %>
-                    </td>
-                </tr>
-                <% actualDriversStanding.forEach(function(pilote) { %>
+            <div id="Pilotes" class="bg-s-<%=theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+                <table>
+                    <tr id="header-classement-pilotes">
+                        <td></td>
+                        <td class="font-F1Bold"><%= __('standings.position') %></td>
+                        <td class="font-F1Bold pl-3"><%= __('standings.drivers') %></td>
+                        <td class="font-F1Bold pl-3"><%= __('standings.points') %></td>
+                    </tr>
+                    <% actualDriversStanding.forEach(function(pilote) { %>
                     <tr>
                         <td class="pr-2">
-                            <span
-                                class="border-2 border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl">
-                            </span>
+                            <span class="border-2 border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"> </span>
                         </td>
-                        <td class="font-F1Bold pr-3">
-                            <%= String(pilote.position).padStart(2, '0' ) %>
-                        </td>
+                        <td class="font-F1Bold pr-3"><%= String(pilote.position).padStart(2, '0' ) %></td>
                         <td class="border-l-2 pl-3 pr-3">
-                            <a href="/driver/<%= pilote.driverId %>">
-                                <%= pilote.firstName %>
-                                    <%= pilote.lastName %>
-                            </a>
+                            <a href="/driver/<%= pilote.driverId %>"> <%= pilote.firstName %> <%= pilote.lastName %> </a>
                         </td>
-                        <td class="border-l-2 pl-3">
-                            <%= pilote.points %>
-                        </td>
+                        <td class="border-l-2 pl-3"><%= pilote.points %></td>
                     </tr>
                     <% }); %>
-            </table>
-        </div>
+                </table>
+            </div>
 
-        <div id="Constructeurs" class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
-            <table>
-                <tr>
-                    <td></td>
-                    <td class="font-F1Bold">
-                        <%= __('standings.position') %>
-                    </td>
-                    <td class="pl-3 font-F1Bold">
-                        <%= __('standings.constructors') %>
-                    </td>
-                    <td class="font-F1Bold pl-3">
-                        <%= __('standings.chassis') %>
-                    </td>
-                    <td class="pl-3 font-F1Bold">
-                        <%= __('standings.points') %>
-                    </td>
-                </tr>
-                <% actualTeamsStanding.forEach(function(team) { %>
+            <div id="Constructeurs" class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td class="font-F1Bold"><%= __('standings.position') %></td>
+                        <td class="pl-3 font-F1Bold"><%= __('standings.constructors') %></td>
+                        <td class="font-F1Bold pl-3"><%= __('standings.chassis') %></td>
+                        <td class="pl-3 font-F1Bold"><%= __('standings.points') %></td>
+                    </tr>
+                    <% actualTeamsStanding.forEach(function(team) { %>
                     <tr>
                         <td class="pr-2">
-                            <span
-                                class="border-2 border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl">
-                            </span>
+                            <span class="border-2 border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl"> </span>
                         </td>
-                        <td class="pr-3 font-F1Bold">
-                            <%= String(team.position).padStart(2, '0' ) %>
+                        <td class="pr-3 font-F1Bold"><%= String(team.position).padStart(2, '0' ) %></td>
+                        <td class="border-l-2 pl-3 pr-3">
+                            <a href="/constructor/<%= team.constructorId %>"> <%= team.name %> </a>
                         </td>
                         <td class="border-l-2 pl-3 pr-3">
-                            <a href="/constructor/<%= team.constructorId %>">
-                                <%= team.name %>
-                            </a>
+                            <a href="#"> <%= team.chassisName %> </a>
                         </td>
-                        <td class="border-l-2 pl-3 pr-3">
-                            <a href="#">
-                                <%= team.chassisName %>
-                            </a>
-                        </td>
-                        <td class="border-l-2 pl-3">
-                            <%= team.points %>
-                        </td>
+                        <td class="border-l-2 pl-3"><%= team.points %></td>
                     </tr>
                     <% }); %>
-            </table>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
+                </table>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 
-<script>
-    function openTab(tabName) {
-        if (tabName === 'Pilotes') {
-            document.getElementById('Pilotes').classList.remove('hidden');
-            document.getElementById('Constructeurs').classList.add('hidden');
-            document.getElementById('btnPilotes').classList.add('active');
-            document.getElementById('btnPilotes').classList.add('underline');
-            document.getElementById('btnConstructeurs').classList.remove('active');
-            document.getElementById('btnConstructeurs').classList.remove('underline');
-        } else if (tabName === 'Constructeurs') {
-            document.getElementById('Constructeurs').classList.remove('hidden');
-            document.getElementById('Pilotes').classList.add('hidden');
-            document.getElementById('btnConstructeurs').classList.add('active');
-            document.getElementById('btnConstructeurs').classList.add('underline');
-            document.getElementById('btnPilotes').classList.remove('active');
-            document.getElementById('btnPilotes').classList.remove('underline');
+    <script>
+        function openTab(tabName) {
+            if (tabName === 'Pilotes') {
+                document.getElementById('Pilotes').classList.remove('hidden');
+                document.getElementById('Constructeurs').classList.add('hidden');
+                document.getElementById('btnPilotes').classList.add('active');
+                document.getElementById('btnPilotes').classList.add('underline');
+                document.getElementById('btnConstructeurs').classList.remove('active');
+                document.getElementById('btnConstructeurs').classList.remove('underline');
+            } else if (tabName === 'Constructeurs') {
+                document.getElementById('Constructeurs').classList.remove('hidden');
+                document.getElementById('Pilotes').classList.add('hidden');
+                document.getElementById('btnConstructeurs').classList.add('active');
+                document.getElementById('btnConstructeurs').classList.add('underline');
+                document.getElementById('btnPilotes').classList.remove('active');
+                document.getElementById('btnPilotes').classList.remove('underline');
+            }
         }
-    }
-</script>
-
+    </script>
 </html>

@@ -1,104 +1,95 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <%- include('../partials/head.ejs') %>
+    <head>
+        <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-            <title>PLI - <%= __('live.tab_title') %>
-            </title>
-</head>
+        <title>PLI - <%= __('live.tab_title') %></title>
+    </head>
 
-<style>
-    .move {
-        transition: transform 2s ease-in-out;
-    }
-
-    .arrow-up img,
-    .arrow-down img {
-        width: 20px;
-        height: auto;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
+    <style>
+        .move {
+            transition: transform 2s ease-in-out;
         }
 
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
+        .arrow-up img,
+        .arrow-down img {
+            width: 20px;
+            height: auto;
         }
 
-        to {
-            opacity: 0;
-        }
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-    .fade-in {
-        animation: fadeIn 0.5s ease-in-out forwards;
-    }
-
-    .fade-out {
-        animation: fadeOut 0.5s ease-in-out forwards;
-    }
-
-    @keyframes highlightFirstPlace {
-        0% {
-            background-color: transparent;
+            to {
+                opacity: 1;
+            }
         }
 
-        25%,
-        75% {
-            background-color: #731c87;
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
         }
 
-        100% {
-            background-color: transparent;
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
         }
-    }
 
-    .first-place {
-        animation: highlightFirstPlace 1s ease-in-out forwards;
-    }
-</style>
+        .fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <main>
-        <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
-            <span>
-                <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
-                <span class="text-red-500">
-                    <%= __('live.live_title') %>
+        @keyframes highlightFirstPlace {
+            0% {
+                background-color: transparent;
+            }
+
+            25%,
+            75% {
+                background-color: #731c87;
+            }
+
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        .first-place {
+            animation: highlightFirstPlace 1s ease-in-out forwards;
+        }
+    </style>
+
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main>
+            <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
+                <span>
+                    <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
+                    <span class="text-red-500"> <%= __('live.live_title') %> </span>
                 </span>
-            </span>
-            <span id="frontSession"></span>
-            <span id="frontLocation"></span>
-        </div>
+                <span id="frontSession"></span>
+                <span id="frontLocation"></span>
+            </div>
 
-        <!-- <div class="text-center text-2xl font-bold my-8">
-        <span id="lap"></span>
-    </div> -->
-
-        <div class="flex mt-4 justify-center">
-            <div id="Classement" class="bg-s-<%= theme %> py-4 shadow-md rounded-2xl mx-4">
-                <div class="grid grid-cols-4 items-center px-4 pb-4 font-F1Bold text-base gap-x-2">
-                    <span>Pos</span>
-                    <span>Driver</span>
-                    <span>Gap</span>
-                    <span>Tyre</span>
+            <div class="flex mt-4 justify-center">
+                <div id="Classement" class="bg-s-<%= theme %> py-4 shadow-md rounded-2xl mx-4">
+                    <div class="grid grid-cols-4 items-center px-4 pb-4 font-F1Bold text-base gap-x-2">
+                        <span>Pos</span>
+                        <span>Driver</span>
+                        <span>Gap</span>
+                        <span>Tyre</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 
-<script src="/js/liveTitle.js"></script>
-<script src="/js/liveStandingsFull.js"></script>
-
+    <script src="/js/liveTitle.js"></script>
+    <script src="/js/liveStandingsFull.js"></script>
 </html>

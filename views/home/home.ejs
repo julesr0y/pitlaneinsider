@@ -1,295 +1,253 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <%- include('../partials/head.ejs') %>
-        <link rel="canonical" href="https://pitlaneinsider.fr/">
-        <meta name="description" content="Toute la Formule 1, par La Remontée Formula 1 Team">
+    <head>
+        <%- include('../partials/head.ejs') %>
+        <link rel="canonical" href="https://pitlaneinsider.fr/" />
+        <meta name="description" content="Toute la Formule 1, par La Remontée Formula 1 Team" />
         <%- include('../partials/header.ejs') %>
-            <title>PitLane Insider</title>
-            <style>
-                @keyframes slideUpDown {
-                    0% {
-                        transform: translateY(100%);
-                        opacity: 0;
-                    }
-
-                    50% {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
+        <title>PitLane Insider</title>
+        <style>
+            @keyframes slideUpDown {
+                0% {
+                    transform: translateY(100%);
+                    opacity: 0;
                 }
 
-                .animation-slide {
-                    animation: slideUpDown 0.5s ease-in-out;
+                50% {
+                    transform: translateY(0);
+                    opacity: 1;
                 }
+            }
 
-                .gold {
-                    background-color: gold;
-                }
+            .animation-slide {
+                animation: slideUpDown 0.5s ease-in-out;
+            }
 
-                .silver {
-                    background-color: silver;
-                }
+            .gold {
+                background-color: gold;
+            }
 
-                .bronze {
-                    background-color: #cd7f32;
-                }
-            </style>
-</head>
+            .silver {
+                background-color: silver;
+            }
 
-<body class="font-F1Regular text-<%= theme %> flex flex-col min-h-screen">
+            .bronze {
+                background-color: #cd7f32;
+            }
+        </style>
+    </head>
 
-    <main class="bg-b-<%= theme %> flex-grow">
-        <div class="next text-center text-white bg-black py-2">
-            <h1>
-                <div class="flex items-center justify-center gap-1">
-                    <span>
-                        <%= __('home.next_race') %>
-                    </span>
-                    <span>-</span>
-                    <span id="race-location">
-                        <%= __('home.loading') %>
-                    </span>
-                    <span></span>
-                    <span id="flag"></span>
-                </div>
-                <div id="countdown" class="flex justify-center mt-4">
-                    <div class="flex flex-col items-center mx-2">
-                        <span class="text-sm text-center mb-1">
-                            <%= __('home.days') %>
+    <body class="font-F1Regular text-<%= theme %> flex flex-col min-h-screen">
+        <main class="bg-b-<%= theme %> flex-grow">
+            <div class="next text-center text-white bg-black py-2">
+                <h1>
+                    <div class="flex items-center justify-center gap-1">
+                        <span>
+                            <%= __('home.next_race') %>
                         </span>
-                        <span id="days" class="inline-block w-12 text-center text-2xl">00</span>
+                        <span>-</span>
+                        <span id="race-location"> <%= __('home.loading') %> </span>
+                        <span></span>
+                        <span id="flag"></span>
                     </div>
-                    <div class="flex flex-col items-center mx-2">
-                        <span class="text-sm text-center mb-1">
-                            <%= __('home.hours') %>
-                        </span>
-                        <span id="hours" class="inline-block w-12 text-center text-2xl">00</span>
+                    <div id="countdown" class="flex justify-center mt-4">
+                        <div class="flex flex-col items-center mx-2">
+                            <span class="text-sm text-center mb-1"> <%= __('home.days') %> </span>
+                            <span id="days" class="inline-block w-12 text-center text-2xl">00</span>
+                        </div>
+                        <div class="flex flex-col items-center mx-2">
+                            <span class="text-sm text-center mb-1"> <%= __('home.hours') %> </span>
+                            <span id="hours" class="inline-block w-12 text-center text-2xl">00</span>
+                        </div>
+                        <div class="flex flex-col items-center mx-2">
+                            <span class="text-sm text-center mb-1"> <%= __('home.minutes') %> </span>
+                            <span id="minutes" class="inline-block w-12 text-center text-2xl">00</span>
+                        </div>
+                        <div class="flex flex-col items-center mx-2">
+                            <span class="text-sm text-center mb-1"> <%= __('home.seconds') %> </span>
+                            <span id="seconds" class="inline-block w-12 text-center text-2xl">00</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-center mx-2">
-                        <span class="text-sm text-center mb-1">
-                            <%= __('home.minutes') %>
-                        </span>
-                        <span id="minutes" class="inline-block w-12 text-center text-2xl">00</span>
-                    </div>
-                    <div class="flex flex-col items-center mx-2">
-                        <span class="text-sm text-center mb-1">
-                            <%= __('home.seconds') %>
-                        </span>
-                        <span id="seconds" class="inline-block w-12 text-center text-2xl">00</span>
-                    </div>
-                </div>
-            </h1>
-        </div>
+                </h1>
+            </div>
 
-        <div class="px-4">
-            <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
-                <a href="/driver/<%= homeData[0].driverLeader.driverId %>">
-                    <div id="chPilotes"
-                        class="h-32 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
-                        <span class="text-center">
-                            <%= __('home.drivers_championship') %>
-                        </span>
-                        <span class="flex justify-evenly items-center mt-auto gap-2">
-                            <span class="flex flex-col items-center text-xl">
-                                <span>
-                                    <%= homeData[0].driverLeader.abbreviation %>
+            <div class="px-4">
+                <div id="championnats" class="grid grid-cols-2 gap-4 pt-4">
+                    <a href="/driver/<%= homeData[0].driverLeader.driverId %>">
+                        <div id="chPilotes" class="h-32 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
+                            <span class="text-center"> <%= __('home.drivers_championship') %> </span>
+                            <span class="flex justify-evenly items-center mt-auto gap-2">
+                                <span class="flex flex-col items-center text-xl">
+                                    <span>
+                                        <%= homeData[0].driverLeader.abbreviation %>
+                                    </span>
+                                    <span class="text-<%= homeData[0].driverLeader.actualTeam %>"> <% if(homeData[0].driverLeader.permanentNumber==33) { %> <%= 1 %> <% } else { %> <%= homeData[0].driverLeader.permanentNumber %> <% } %> </span>
                                 </span>
-                                <span class="text-<%= homeData[0].driverLeader.actualTeam %>">
-                                    <% if(homeData[0].driverLeader.permanentNumber==33) { %>
-                                        <%= 1 %>
-                                            <% } else { %>
-                                                <%= homeData[0].driverLeader.permanentNumber %>
-                                                    <% } %>
-                                </span>
+                                <img src="/img/drivers/<%= homeData[0].driverLeader.driverId %>.webp" class="h-20 w-auto" />
                             </span>
-                            <img src="/img/drivers/<%= homeData[0].driverLeader.driverId %>.webp" class="h-20 w-auto">
+                        </div>
+                    </a>
+
+                    <a href="/constructor/<%= homeData[0].constructorLeader.constructorId %>">
+                        <div id="chContructeurs" class="h-32 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
+                            <span class="text-center font-F1Bold"> <%= __('home.constructors_championship') %> </span>
+                            <span>
+                                <img src="/img/constructors/<%= homeData[0].constructorLeader.constructorId %>.webp" class="h-12 md:h-20 w-auto mt-3" />
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="/retrogpdetails/2024/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
+                    <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
+                        <span class="flex justify-center text-center mb-4 font-F1Bold gap-2">
+                            <%= __('home.last_podium') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
+                            <img src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg" alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto" />
                         </span>
+                        <div class="flex justify-evenly items-end h-full">
+                            <div class="flex flex-col items-center">
+                                <img src="/img/drivers/<%= homeData[0].lastPodium[1].driverId %>.webp" class="h-20 w-auto" />
+                                <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">2</span>
+                                    <span class="text-sm font-bold mt-2"> <%= homeData[0].lastPodium[1].abbreviation %> </span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="/img/drivers/<%= homeData[0].lastPodium[0].driverId %>.webp" class="h-20 w-auto" />
+                                <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">1</span>
+                                    <span class="text-sm font-bold mt-2"> <%= homeData[0].lastPodium[0].abbreviation %> </span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="/img/drivers/<%= homeData[0].lastPodium[2].driverId %>.webp" class="h-20 w-auto" />
+                                <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">3</span>
+                                    <span class="text-sm font-bold mt-2"> <%= homeData[0].lastPodium[2].abbreviation %> </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </a>
 
-                <a href="/constructor/<%= homeData[0].constructorLeader.constructorId %>">
-                    <div id="chContructeurs" class="h-32 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
-                        <span class="text-center font-F1Bold">
-                            <%= __('home.constructors_championship') %>
-                        </span>
-                        <span>
-                            <img src="/img/constructors/<%= homeData[0].constructorLeader.constructorId %>.webp"
-                                class="h-12 md:h-20 w-auto mt-3">
+                <a href="/standings">
+                    <div id="class" class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
+                        <span class="flex justify-center text-center font-F1Bold"> <%= __('home.drivers_standings') %> </span>
+                        <span class="flex justify-evenly">
+                            <span>
+                                <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
+                                <span class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
+                                &nbsp;
+                                <span class="font-F1Bold"> <%= String(pilote.position).padStart(2, '0' ) %> - </span>
+                                <%= pilote.lastName %>
+                                <br />
+                                <% }); %>
+                            </span>
+                            <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
+                            <span>
+                                <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
+                                <span class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
+                                &nbsp;
+                                <span class="font-F1Bold"> <%= String(pilote.position).padStart(2, '0' ) %> - </span>
+                                <%= pilote.lastName %>
+                                <br />
+                                <% }); %>
+                            </span>
                         </span>
                     </div>
                 </a>
             </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 
-            <a href="/retrogpdetails/2024/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
-                <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
-                    <span class="flex justify-center text-center mb-4 font-F1Bold gap-2">
-                        <%= __('home.last_podium') %> - <%= homeData[0].lastPodiumLocalisation[0].name %> <img
-                                    src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg"
-                                    alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto">
-                    </span>
-                    <div class="flex justify-evenly items-end h-full">
-                        <div class="flex flex-col items-center">
-                            <img src="/img/drivers/<%= homeData[0].lastPodium[1].driverId %>.webp" class="h-20 w-auto">
-                            <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
-                                <span class="text-lg font-bold">2</span>
-                                <span class="text-sm font-bold mt-2">
-                                    <%= homeData[0].lastPodium[1].abbreviation %>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <img src="/img/drivers/<%= homeData[0].lastPodium[0].driverId %>.webp" class="h-20 w-auto">
-                            <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
-                                <span class="text-lg font-bold">1</span>
-                                <span class="text-sm font-bold mt-2">
-                                    <%= homeData[0].lastPodium[0].abbreviation %>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <img src="/img/drivers/<%= homeData[0].lastPodium[2].driverId %>.webp" class="h-20 w-auto">
-                            <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
-                                <span class="text-lg font-bold">3</span>
-                                <span class="text-sm font-bold mt-2">
-                                    <%= homeData[0].lastPodium[2].abbreviation %>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+    <script>
+        function updateNextRaceInfo() {
+            document.getElementById('race-location').textContent = '<%= homeData[0].nextRaceInfo[0].name %>';
+            const flagElement = document.getElementById('flag');
+            flagElement.innerHTML = ''; // Clear any existing flag
+            const img = document.createElement('img');
+            img.setAttribute('class', 'h-6 w-auto');
+            img.setAttribute('src', `/img/countryFlags/${'<%= homeData[0].nextRaceInfo[0].country %>'}.svg`);
+            flagElement.appendChild(img);
 
-            <a href="/standings">
-                <div id="class" class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                    <span class="flex justify-center text-center font-F1Bold">
-                        <%= __('home.drivers_standings') %>
-                    </span>
-                    <span class="flex justify-evenly">
-                        <span>
-                            <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
-                                <span
-                                    class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
-                                &nbsp;
-                                <span class="font-F1Bold">
-                                    <%= String(pilote.position).padStart(2, '0' ) %> -
-                                </span>
-                                <%= pilote.lastName %>
-                                    <br>
-                                    <% }); %>
-                        </span>
-                        <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
-                        <span>
-                            <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
-                                <span
-                                    class="border border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"></span>
-                                &nbsp;
-                                <span class="font-F1Bold">
-                                    <%= String(pilote.position).padStart(2, '0' ) %> -
-                                </span>
-                                <%= pilote.lastName %>
-                                    <br>
-                                    <% }); %>
-                        </span>
-                    </span>
-                </div>
-            </a>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
-
-<script>
-
-    function updateNextRaceInfo() {
-        document.getElementById('race-location').textContent = "<%= homeData[0].nextRaceInfo[0].name %>";
-        const flagElement = document.getElementById('flag');
-        flagElement.innerHTML = ''; // Clear any existing flag
-        const img = document.createElement('img');
-        img.setAttribute('class', 'h-6 w-auto');
-        img.setAttribute('src', `/img/countryFlags/${"<%= homeData[0].nextRaceInfo[0].country %>"}.svg`);
-        flagElement.appendChild(img);
-
-        // Inclure l'heure de la course dans le démarrage du compte à rebours
-        startCountdown("<%= homeData[0].nextRaceInfo[0].raceDate %>", "<%= homeData[0].nextRaceInfo[0].raceTime %>");
-    }
-
-    /**
-     * @description Démarre le compte à rebours pour la prochaine course
-     * @param {string} raceDate
-     * @param {string} raceTime
-     * @returns {void}
-     */
-    function startCountdown(raceDate, raceTime) {
-        // Convertit la date et l'heure de la course en UTC+2 (heure d'été française)
-        const offset = 2; // UTC+2 pour l'heure d'été française
-        const raceDateTime = new Date(`${raceDate}T${raceTime}`).getTime();
-        const adjustedRaceDateTime = raceDateTime + (offset * 60 * 60 * 1000); // Ajuste pour le fuseau horaire français
-
-        let previousDays, previousHours, previousMinutes, previousSeconds;
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = adjustedRaceDateTime - now;
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById('countdown').innerHTML = `<div class="col-span-12">La course a commencée</div>`;
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            if (days !== previousDays) {
-                updateTimeElement('days', days);
-                previousDays = days;
-            }
-            if (hours !== previousHours) {
-                updateTimeElement('hours', hours);
-                previousHours = hours;
-            }
-            if (minutes !== previousMinutes) {
-                updateTimeElement('minutes', minutes);
-                previousMinutes = minutes;
-            }
-            if (seconds !== previousSeconds) {
-                updateTimeElement('seconds', seconds);
-                previousSeconds = seconds;
-            }
+            // Inclure l'heure de la course dans le démarrage du compte à rebours
+            startCountdown('<%= homeData[0].nextRaceInfo[0].raceDate %>', '<%= homeData[0].nextRaceInfo[0].raceTime %>');
         }
 
-        function updateTimeElement(id, value) {
-            const element = document.getElementById(id);
-            element.classList.remove('animation-slide');
-            void element.offsetWidth; // Trigger reflow to restart the animation
-            element.classList.add('animation-slide');
-            element.textContent = String(value).padStart(2, '0');
+        /**
+         * @description Démarre le compte à rebours pour la prochaine course
+         * @param {string} raceDate
+         * @param {string} raceTime
+         * @returns {void}
+         */
+        function startCountdown(raceDate, raceTime) {
+            // Convertit la date et l'heure de la course en UTC+2 (heure d'été française)
+            const offset = 2; // UTC+2 pour l'heure d'été française
+            const raceDateTime = new Date(`${raceDate}T${raceTime}`).getTime();
+            const adjustedRaceDateTime = raceDateTime + offset * 60 * 60 * 1000; // Ajuste pour le fuseau horaire français
+
+            let previousDays, previousHours, previousMinutes, previousSeconds;
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = adjustedRaceDateTime - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown').innerHTML = `<div class="col-span-12">La course a commencée</div>`;
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (days !== previousDays) {
+                    updateTimeElement('days', days);
+                    previousDays = days;
+                }
+                if (hours !== previousHours) {
+                    updateTimeElement('hours', hours);
+                    previousHours = hours;
+                }
+                if (minutes !== previousMinutes) {
+                    updateTimeElement('minutes', minutes);
+                    previousMinutes = minutes;
+                }
+                if (seconds !== previousSeconds) {
+                    updateTimeElement('seconds', seconds);
+                    previousSeconds = seconds;
+                }
+            }
+
+            function updateTimeElement(id, value) {
+                const element = document.getElementById(id);
+                element.classList.remove('animation-slide');
+                void element.offsetWidth; // Trigger reflow to restart the animation
+                element.classList.add('animation-slide');
+                element.textContent = String(value).padStart(2, '0');
+            }
+
+            const countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown();
         }
 
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    }
+        function convertDate(dateString) {
+            var date = new Date(dateString);
+            var day = date.getDate();
+            var month = date.getMonth() + 1; // Les mois sont indexés à partir de 0 en JavaScript
+            return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
+        }
 
+        function convertTime(timeString) {
+            var timeParts = timeString.split(':'); // Les heures sont le premier élément, les minutes sont le deuxième
+            var hour = timeParts[0];
+            var minute = timeParts[1];
+            return minute === '00' ? hour + 'h' : hour + 'h' + minute;
+        }
 
-    function convertDate(dateString) {
-        var date = new Date(dateString);
-        var day = date.getDate();
-        var month = date.getMonth() + 1; // Les mois sont indexés à partir de 0 en JavaScript
-        return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
-    }
-
-    function convertTime(timeString) {
-        var timeParts = timeString.split(':'); // Les heures sont le premier élément, les minutes sont le deuxième
-        var hour = timeParts[0];
-        var minute = timeParts[1];
-        return minute === '00' ? hour + 'h' : hour + 'h' + minute;
-    }
-
-    updateNextRaceInfo();
-</script>
-
+        updateNextRaceInfo();
+    </script>
 </html>

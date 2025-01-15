@@ -1,183 +1,138 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <%- include('../partials/head.ejs') %>
+    <head>
+        <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-            <title>PLI - <%= teamFront.name %>
-            </title>
-</head>
+        <title>PLI - <%= teamFront.name %></title>
+    </head>
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <main>
-        <div class="pt-10 px-4 sm:px-8 h-auto flex flex-col justify-center">
-            <div class="bg-s-<%= theme %> p-4 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
-                <div class="text-center">
-                    <h1 class="text-lg font-F1Bold mb-2">
-                        <%= teamFront.fullName %>
-                    </h1>
-                </div>
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main>
+            <div class="pt-10 px-4 sm:px-8 h-auto flex flex-col justify-center">
+                <div class="bg-s-<%= theme %> p-4 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+                    <div class="text-center">
+                        <h1 class="text-lg font-F1Bold mb-2"><%= teamFront.fullName %></h1>
+                    </div>
 
-                <div class="flex justify-center">
-                    <img src="/img/constructors/<%= teamFront.constructorId %>.webp"
-                        alt="<%= teamFront.constructorId %>" class="h-20 w-auto">
-                </div>
+                    <div class="flex justify-center">
+                        <img src="/img/constructors/<%= teamFront.constructorId %>.webp" alt="<%= teamFront.constructorId %>" class="h-20 w-auto" />
+                    </div>
 
-                <div class="text-center">
-                    <% if(teamFront.totalChampionshipWins !==0) { %>
+                    <div class="text-center">
+                        <% if(teamFront.totalChampionshipWins !==0) { %>
                         <span class="grid grid-cols-12 mt-4">
                             <span class="col-span-12 flex flex-col items-center">
-                                <span class="text-gold">
-                                    <%= teamFront.totalChampionshipWins %>
-                                </span>
-                                <span class="text-t-s-<%= theme %> text-xs">
-                                    <%= __('constructor.totalChampionshipWins') %>
-                                </span>
+                                <span class="text-gold"> <%= teamFront.totalChampionshipWins %> </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.totalChampionshipWins') %> </span>
                             </span>
                         </span>
                         <% } %>
 
-                            <span class="grid grid-cols-12 mt-4">
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.firstYear %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.constructor_start') %>
-                                    </span>
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.firstYear %>
                                 </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.numberOfSeasons %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.number_of_seasons') %>
-                                    </span>
-                                </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.totalRaceStarts %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.total_races') %>
-                                    </span>
-                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.constructor_start') %> </span>
                             </span>
-
-                            <span class="grid grid-cols-12 mt-4">
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.totalRaceWins %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.total_wins') %>
-                                    </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.numberOfSeasons %>
                                 </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.totalPodiumRaces %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.total_podiums') %>
-                                    </span>
-                                </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.totalPolePositions %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.total_poles') %>
-                                    </span>
-                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.number_of_seasons') %> </span>
                             </span>
-
-                            <span class="grid grid-cols-12 mt-4">
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.totalChampionshipPoints %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.total_points') %>
-                                    </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalRaceStarts %>
                                 </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.totalFastestLaps %>
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.total_fastest_laps') %>
-                                    </span>
-                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.total_races') %> </span>
                             </span>
+                        </span>
 
-                            <span class="grid grid-cols-12 mt-4">
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.victoryRatio %>%
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.victory_ratio') %>
-                                    </span>
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalRaceWins %>
                                 </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.podiumRatio %>%
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.podium_ratio') %>
-                                    </span>
-                                </span>
-                                <span class="col-span-4 flex flex-col">
-                                    <span>
-                                        <%= teamFront.poleRatio %>%
-                                    </span>
-                                    <span class="text-t-s-<%= theme %> text-xs">
-                                        <%= __('constructor.pole_ratio') %>
-                                    </span>
-                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.total_wins') %> </span>
                             </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalPodiumRaces %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.total_podiums') %> </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalPolePositions %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.total_poles') %> </span>
+                            </span>
+                        </span>
 
-                            <% if (teamFront.currentSeasonTeam !==false) { %>
-                                <div class="my-4">
-                                    <h3 class="font-bold">
-                                        <%= __('constructor.drivers') %> :
-                                    </h3>
-                                    <% teamFront.currentDrivers.forEach(function(driver){ %>
-                                        <div class="flex items-center justify-center">
-                                            <img src="/img/countryFlags/<%= driver.nationality %>.svg"
-                                                alt="<%= driver.nationality %>" class="w-5 h-auto mr-2">
-                                            <a href="/driver/<%= driver.id %>">
-                                                <p>
-                                                    <%= driver.firstName %>
-                                                        <%= driver.lastName %> -
-                                                            <% if (driver.permanentNumber==33) { %>
-                                                                <%= 1 %>
-                                                                    <% } else { %>
-                                                                        <%= driver.permanentNumber %>
-                                                                            <% } %>
-                                                </p>
-                                            </a>
-                                        </div>
-                                        <% }) %>
-                                </div>
-                                <div class="text-center mt-4">
-                                    <h3 class="text-base sm:text-lg font-bold">
-                                        <%= __('constructor.single_seater') %>:
-                                    </h3>
-                                    <p class="text-t-s-<%= theme %> mt-2">
-                                        <%= teamFront.currentCarName %>
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalChampionshipPoints %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.total_points') %> </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span>
+                                    <%= teamFront.totalFastestLaps %>
+                                </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.total_fastest_laps') %> </span>
+                            </span>
+                        </span>
+
+                        <span class="grid grid-cols-12 mt-4">
+                            <span class="col-span-4 flex flex-col">
+                                <span> <%= teamFront.victoryRatio %>% </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.victory_ratio') %> </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span> <%= teamFront.podiumRatio %>% </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.podium_ratio') %> </span>
+                            </span>
+                            <span class="col-span-4 flex flex-col">
+                                <span> <%= teamFront.poleRatio %>% </span>
+                                <span class="text-t-s-<%= theme %> text-xs"> <%= __('constructor.pole_ratio') %> </span>
+                            </span>
+                        </span>
+
+                        <% if (teamFront.currentSeasonTeam !==false) { %>
+                        <div class="my-4">
+                            <h3 class="font-bold"><%= __('constructor.drivers') %> :</h3>
+                            <% teamFront.currentDrivers.forEach(function(driver){ %>
+                            <div class="flex items-center justify-center">
+                                <img src="/img/countryFlags/<%= driver.nationality %>.svg" alt="<%= driver.nationality %>" class="w-5 h-auto mr-2" />
+                                <a href="/driver/<%= driver.id %>">
+                                    <p>
+                                        <%= driver.firstName %>
+                                        <%= driver.lastName %>
+                                        -
+                                        <% if (driver.permanentNumber==33) { %>
+                                        <%= 1 %>
+                                        <% } else { %>
+                                        <%= driver.permanentNumber %>
+                                        <% } %>
                                     </p>
-                                    <span class="flex justify-center mt-2">
-                                        <img src="/img/cars/<%= teamFront.currentCarId %>.webp"
-                                            alt="<%= teamFront.currentCarName %>" class="w-2/3 h-auto">
-                                    </span>
-                                </div>
-                                <% } %>
+                                </a>
+                            </div>
+                            <% }) %>
+                        </div>
+                        <div class="text-center mt-4">
+                            <h3 class="text-base sm:text-lg font-bold"><%= __('constructor.single_seater') %>:</h3>
+                            <p class="text-t-s-<%= theme %> mt-2"><%= teamFront.currentCarName %></p>
+                            <span class="flex justify-center mt-2">
+                                <img src="/img/cars/<%= teamFront.currentCarId %>.webp" alt="<%= teamFront.currentCarName %>" class="w-2/3 h-auto" />
+                            </span>
+                        </div>
+                        <% } %>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
-
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 </html>
