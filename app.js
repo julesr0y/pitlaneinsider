@@ -110,6 +110,9 @@ app.use('/', constructorsRoutes);
 const driversRoutes = require('./routes/drivers'); // Importation des routes concernant les pilotes
 app.use('/', driversRoutes);
 
+const chassisRoutes = require('./routes/chassis'); // Importation des routes concernant les voitures
+app.use('/', chassisRoutes);
+
 const calendarRoutes = require('./routes/calendar'); // Importation des routes concernant le calendrier
 app.use('/', calendarRoutes);
 
