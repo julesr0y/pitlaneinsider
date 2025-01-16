@@ -1,202 +1,158 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
-    <%- include('../partials/head.ejs') %>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
+        <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-            <title>PLI - <%= __('calendar.tab_title') %>
-            </title>
-            <style>
-                .highlight {
-                    animation: pulse 2s infinite;
+        <title>PLI - <%= __('calendar.tab_title') %></title>
+        <style>
+            .highlight {
+                animation: pulse 2s infinite;
+            }
+
+            .color {
+                background-color: #058785;
+            }
+
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7);
                 }
 
-                .color {
-                    background-color: #058785;
+                70% {
+                    box-shadow: 0 0 0 10px rgba(255, 99, 71, 0);
                 }
 
-                @keyframes pulse {
-                    0% {
-                        box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7);
-                    }
-
-                    70% {
-                        box-shadow: 0 0 0 10px rgba(255, 99, 71, 0);
-                    }
-
-                    100% {
-                        box-shadow: 0 0 0 0 rgba(255, 99, 71, 0);
-                    }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(255, 99, 71, 0);
                 }
-            </style>
-</head>
+            }
+        </style>
+    </head>
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <main>
-        <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-            <%= __('global.current_year') %>
-                <%= __('calendar.season') %>
-        </div>
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main>
+            <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('global.current_year') %> <%= __('calendar.season') %></div>
 
-        <div class="text-center mt-8">
-            <button id="nextRaceButton" class="text-white py-2 px-4 rounded color">
-                <%= __('calendar.next_race') %>
-            </button>
-        </div>
+            <div class="text-center mt-8">
+                <button id="nextRaceButton" class="text-white py-2 px-4 rounded color"><%= __('calendar.next_race') %></button>
+            </div>
 
-        <div class="w-9/10 mx-auto p-4 pt-0">
-            <% if (tracksFront && tracksFront.length> 0) { %>
+            <div class="w-9/10 mx-auto p-4 pt-0">
+                <% if (tracksFront && tracksFront.length> 0) { %>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
                     <% tracksFront.forEach(function(race) { %>
-                        <a href="/retrogpdetails/2024/<%= race.raceId %>" class="block text-center">
-                            <div id="race-<%= race.raceId %>"
-                                class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
-                                <div class="flex flex-col items-center">
-                                    <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg"
-                                        alt="<%= race.country %>" class="mb-2 h-12 w-auto" />
-                                    <h2 class="text-lg font-F1Bold mb-3">
-                                        <%= race.name %>
-                                            <p class="text-t-s-<%= theme %> text-sm">Round <%= race.round %>
-                                            </p>
-                                    </h2>
-                                </div>
-                                <div class="rounded-2xl px-4 pb-4 text-left">
-                                    <ul class="text-t-s-<%= theme %>">
-                                        <% if(race.freePractice1Time && race.freePractice1Time !=null) { %>
-                                            <li>
-                                                <strong> FP1: </strong>
-                                                <span class="event-time" data-date="<%= race.freePractice1Date %>"
-                                                    data-time="<%= race.freePractice1Time %>">
-                                                    <%= race.freePractice1Date %> - <%= race.freePractice1Time %>
-                                                </span>
-                                            </li>
-                                            <% } %>
-                                                <% if(race.freePractice2Time && race.freePractice2Time !=null) { %>
-                                                    <li>
-                                                        <strong> FP2: </strong>
-                                                        <span class="event-time"
-                                                            data-date="<%= race.freePractice2Date %>"
-                                                            data-time="<%= race.freePractice2Time %>">
-                                                            <%= race.freePractice2Date %> - <%= race.freePractice2Time
-                                                                    %>
-                                                        </span>
-                                                    </li>
-                                                    <% } %>
-                                                        <% if(race.freePractice3Time && race.freePractice3Time !=null) {
-                                                            %>
-                                                            <li>
-                                                                <strong> FP3: </strong>
-                                                                <span class="event-time"
-                                                                    data-date="<%= race.freePractice3Date %>"
-                                                                    data-time="<%= race.freePractice3Time %>">
-                                                                    <%= race.freePractice3Date %> - <%=
-                                                                            race.freePractice3Time %>
-                                                                </span>
-                                                            </li>
-                                                            <% } %>
-                                                                <% if(race.sprintQualifyingTime &&
-                                                                    race.sprintQualifyingTime !=null) { %>
-                                                                    <li>
-                                                                        <strong> SQ: </strong>
-                                                                        <span class="event-time"
-                                                                            data-date="<%= race.sprintQualifyingDate %>"
-                                                                            data-time="<%= race.sprintQualifyingTime %>">
-                                                                            <%= race.sprintQualifyingDate %> - <%=
-                                                                                    race.sprintQualifyingTime %>
-                                                                        </span>
-                                                                    </li>
-                                                                    <% } %>
-                                                                        <% if(race.sprintRaceTime && race.sprintRaceTime
-                                                                            !=null) { %>
-                                                                            <li>
-                                                                                <strong> S: </strong>
-                                                                                <span class="event-time"
-                                                                                    data-date="<%= race.sprintRaceDate %>"
-                                                                                    data-time="<%= race.sprintRaceTime %>">
-                                                                                    <%= race.sprintRaceDate %> - <%=
-                                                                                            race.sprintRaceTime %>
-                                                                                </span>
-                                                                            </li>
-                                                                            <% } %>
-                                                                                <% if(race.qualifyingTime &&
-                                                                                    race.qualifyingTime !=null) { %>
-                                                                                    <li>
-                                                                                        <strong> Q: </strong>
-                                                                                        <span class="event-time"
-                                                                                            data-date="<%= race.qualifyingDate %>"
-                                                                                            data-time="<%= race.qualifyingTime %>">
-                                                                                            <%= race.qualifyingDate %> -
-                                                                                                <%= race.qualifyingTime
-                                                                                                    %>
-                                                                                        </span>
-                                                                                    </li>
-                                                                                    <% } %>
-                                                                                        <% if(race.raceDate &&
-                                                                                            race.raceDate !=null) { %>
-                                                                                            <li>
-                                                                                                <strong> R: </strong>
-                                                                                                <span class="event-time"
-                                                                                                    data-date="<%= race.raceDate %>"
-                                                                                                    data-time="<%= // race.raceTime %>">
-                                                                                                    <%= race.raceDate %>
-                                                                                                </span>
-                                                                                            </li>
-                                                                                            <% } %>
-                                    </ul>
-                                </div>
+                    <a href="/retrogpdetails/2024/<%= race.raceId %>" class="block text-center">
+                        <div id="race-<%= race.raceId %>" class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
+                            <div class="flex flex-col items-center">
+                                <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg" alt="<%= race.country %>" class="mb-2 h-12 w-auto" />
+                                <h2 class="text-lg font-F1Bold mb-3">
+                                    <%= race.name %>
+                                    <p class="text-t-s-<%= theme %> text-sm">Round <%= race.round %></p>
+                                </h2>
                             </div>
-                        </a>
-                        <% }); %>
+                            <div class="rounded-2xl px-4 pb-4 text-left">
+                                <ul class="text-t-s-<%= theme %>">
+                                    <% if(race.freePractice1Time && race.freePractice1Time !=null) { %>
+                                    <li>
+                                        <strong> FP1: </strong>
+                                        <span class="event-time" data-date="<%= race.freePractice1Date %>" data-time="<%= race.freePractice1Time %>"> <%= race.freePractice1Date %> - <%= race.freePractice1Time %> </span>
+                                    </li>
+                                    <% } %>
+                                    <% if(race.freePractice2Time && race.freePractice2Time !=null) { %>
+                                    <li>
+                                        <strong> FP2: </strong>
+                                        <span class="event-time" data-date="<%= race.freePractice2Date %>" data-time="<%= race.freePractice2Time %>"> <%= race.freePractice2Date %> - <%= race.freePractice2Time %> </span>
+                                    </li>
+                                    <% } %>
+                                    <% if(race.freePractice3Time && race.freePractice3Time !=null) {
+                                                            %>
+                                    <li>
+                                        <strong> FP3: </strong>
+                                        <span class="event-time" data-date="<%= race.freePractice3Date %>" data-time="<%= race.freePractice3Time %>"> <%= race.freePractice3Date %> - <%= race.freePractice3Time %> </span>
+                                    </li>
+                                    <% } %>
+                                    <% if(race.sprintQualifyingTime &&
+                                                                    race.sprintQualifyingTime !=null) { %>
+                                    <li>
+                                        <strong> SQ: </strong>
+                                        <span class="event-time" data-date="<%= race.sprintQualifyingDate %>" data-time="<%= race.sprintQualifyingTime %>"> <%= race.sprintQualifyingDate %> - <%= race.sprintQualifyingTime %> </span>
+                                    </li>
+                                    <% } %>
+                                    <% if(race.sprintRaceTime && race.sprintRaceTime
+                                                                            !=null) { %>
+                                    <li>
+                                        <strong> S: </strong>
+                                        <span class="event-time" data-date="<%= race.sprintRaceDate %>" data-time="<%= race.sprintRaceTime %>"> <%= race.sprintRaceDate %> - <%= race.sprintRaceTime %> </span>
+                                    </li>
+                                    <% } %>
+                                    <% if(race.qualifyingTime &&
+                                                                                    race.qualifyingTime !=null) { %>
+                                    <li>
+                                        <strong> Q: </strong>
+                                        <span class="event-time" data-date="<%= race.qualifyingDate %>" data-time="<%= race.qualifyingTime %>"> <%= race.qualifyingDate %> - <%= race.qualifyingTime %> </span>
+                                    </li>
+                                    <% } %>
+                                    <% if(race.raceDate &&
+                                                                                            race.raceDate !=null) { %>
+                                    <li>
+                                        <strong> R: </strong>
+                                        <span class="event-time" data-date="<%= race.raceDate %>" data-time="<%= // race.raceTime %>"> <%= race.raceDate %> </span>
+                                    </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                    <% }); %>
                 </div>
                 <% } else { %>
-                    <div class="text-center text-red-500">Aucun circuit à afficher</div>
-                    <% } %>
-        </div>
+                <div class="text-center text-red-500">Aucun circuit à afficher</div>
+                <% } %>
+            </div>
 
-        <script>
-            // document.addEventListener('DOMContentLoaded', () => {
-            //     const eventTimes = document.querySelectorAll('.event-time');
+            <script>
+                // document.addEventListener('DOMContentLoaded', () => {
+                //     const eventTimes = document.querySelectorAll('.event-time');
 
-            //     eventTimes.forEach((eventTime) => {
-            //         const date = eventTime.getAttribute('data-date');
-            //         const time = eventTime.getAttribute('data-time');
+                //     eventTimes.forEach((eventTime) => {
+                //         const date = eventTime.getAttribute('data-date');
+                //         const time = eventTime.getAttribute('data-time');
 
-            //         // On suppose que la date est au format DD/MM et l'heure au format HHhMM
-            //         const [day, month] = date.split('/');
-            //         const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
-            //         const year = new Date().getFullYear();
+                //         // On suppose que la date est au format DD/MM et l'heure au format HHhMM
+                //         const [day, month] = date.split('/');
+                //         const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
+                //         const year = new Date().getFullYear();
 
-            //         // Construire la chaîne en format ISO UTC-0
-            //         const utcDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
+                //         // Construire la chaîne en format ISO UTC-0
+                //         const utcDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
 
-            //         // Utiliser Luxon pour convertir l'heure UTC au fuseau local
-            //         const utcDateTime = luxon.DateTime.fromISO(utcDateString, { zone: 'utc' });
-            //         const localDateTime = utcDateTime.setZone(luxon.DateTime.local().zoneName);
+                //         // Utiliser Luxon pour convertir l'heure UTC au fuseau local
+                //         const utcDateTime = luxon.DateTime.fromISO(utcDateString, { zone: 'utc' });
+                //         const localDateTime = utcDateTime.setZone(luxon.DateTime.local().zoneName);
 
-            //         // Formater la date et l'heure dans le fuseau local
-            //         const formattedDate = localDateTime.toFormat('dd/MM');
-            //         const formattedTime = localDateTime.toFormat("HH'h'mm");
+                //         // Formater la date et l'heure dans le fuseau local
+                //         const formattedDate = localDateTime.toFormat('dd/MM');
+                //         const formattedTime = localDateTime.toFormat("HH'h'mm");
 
-            //         // Afficher la date et l'heure formatées
-            //         eventTime.textContent = `${formattedDate} - ${formattedTime}`;
-            //     });
+                //         // Afficher la date et l'heure formatées
+                //         eventTime.textContent = `${formattedDate} - ${formattedTime}`;
+                //     });
 
-            //     const nextRaceButton = document.getElementById('nextRaceButton');
-            //     const highlightElement = document.querySelector('.highlight');
-            //     if (nextRaceButton && highlightElement) {
-            //         nextRaceButton.addEventListener('click', () => {
-            //             const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 175;
-            //             window.scrollTo({
-            //                 top: topOffset,
-            //                 behavior: 'smooth',
-            //             });
-            //         });
-            //     }
-            // });
-        </script>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
-
+                //     const nextRaceButton = document.getElementById('nextRaceButton');
+                //     const highlightElement = document.querySelector('.highlight');
+                //     if (nextRaceButton && highlightElement) {
+                //         nextRaceButton.addEventListener('click', () => {
+                //             const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 175;
+                //             window.scrollTo({
+                //                 top: topOffset,
+                //                 behavior: 'smooth',
+                //             });
+                //         });
+                //     }
+                // });
+            </script>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
 </html>
