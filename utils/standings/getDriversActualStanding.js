@@ -11,7 +11,7 @@ async function getDriversActualStandings() {
         const filePath = path.join(__dirname, '../../data/all_driver_standings.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
-        var thisYearDriversStandings = data.filter(race => race.year == 2024);
+        var thisYearDriversStandings = data.filter(race => race.year == 2025);
         return thisYearDriversStandings;
     } catch (error) {
         console.error('getDriversActualStandings, error during execution :', error);

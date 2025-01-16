@@ -1512,6 +1512,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 22 42 / var(--tw-border-opacity, 1));
 }
+.border-racing-bulls {
+  --tw-border-opacity: 1;
+  border-color: rgb(102 146 255 / var(--tw-border-opacity, 1));
+}
 .border-racing-point {
   --tw-border-opacity: 1;
   border-color: rgb(243 104 186 / var(--tw-border-opacity, 1));
@@ -2283,6 +2287,10 @@ video {
 .bg-protos {
   --tw-bg-opacity: 1;
   background-color: rgb(255 22 42 / var(--tw-bg-opacity, 1));
+}
+.bg-racing-bulls {
+  --tw-bg-opacity: 1;
+  background-color: rgb(102 146 255 / var(--tw-bg-opacity, 1));
 }
 .bg-racing-point {
   --tw-bg-opacity: 1;
@@ -3223,6 +3231,10 @@ video {
 .text-protos {
   --tw-text-opacity: 1;
   color: rgb(255 22 42 / var(--tw-text-opacity, 1));
+}
+.text-racing-bulls {
+  --tw-text-opacity: 1;
+  color: rgb(102 146 255 / var(--tw-text-opacity, 1));
 }
 .text-racing-point {
   --tw-text-opacity: 1;

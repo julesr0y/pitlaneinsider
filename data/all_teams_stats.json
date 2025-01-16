@@ -152,25 +152,18 @@
         "totalChampionshipWins": 0,
         "totalRaceLaps": 9685,
         "firstYear": 2021,
-        "numberOfSeasons": 4,
+        "numberOfSeasons": 5,
         "victoryRatio": 1.11,
         "podiumRatio": 5.56,
         "poleRatio": 0,
         "currentCarId": "alpine-a524",
         "currentDrivers": [
             {
-                "id": "esteban-ocon",
-                "firstName": "Esteban",
-                "lastName": "Ocon",
-                "nationality": "france",
-                "permanentNumber": "31"
-            },
-            {
                 "id": "jack-doohan",
                 "firstName": "Jack",
                 "lastName": "Doohan",
                 "nationality": "australia",
-                "permanentNumber": "61"
+                "permanentNumber": "7"
             },
             {
                 "id": "pierre-gasly",
@@ -358,19 +351,12 @@
         "totalChampionshipWins": 0,
         "totalRaceLaps": 10496,
         "firstYear": 1959,
-        "numberOfSeasons": 6,
+        "numberOfSeasons": 7,
         "victoryRatio": 0,
         "podiumRatio": 9.47,
         "poleRatio": 0,
         "currentCarId": "aston-martin-amr24",
         "currentDrivers": [
-            {
-                "id": "felipe-drugovich",
-                "firstName": "Felipe",
-                "lastName": "Drugovich",
-                "nationality": "brazil",
-                "permanentNumber": "34"
-            },
             {
                 "id": "fernando-alonso",
                 "firstName": "Fernando",
@@ -1346,25 +1332,18 @@
         "totalChampionshipWins": 16,
         "totalRaceLaps": 123986,
         "firstYear": 1950,
-        "numberOfSeasons": 75,
+        "numberOfSeasons": 76,
         "victoryRatio": 22.59,
         "podiumRatio": 57.56,
         "poleRatio": 23.04,
         "currentCarId": "ferrari-sf-24",
         "currentDrivers": [
             {
-                "id": "arthur-leclerc",
-                "firstName": "Arthur",
-                "lastName": "Leclerc",
-                "nationality": "monaco",
-                "permanentNumber": "39"
-            },
-            {
-                "id": "carlos-sainz-jr",
-                "firstName": "Carlos",
-                "lastName": "Sainz Jr.",
-                "nationality": "spain",
-                "permanentNumber": "55"
+                "id": "lewis-hamilton",
+                "firstName": "Lewis",
+                "lastName": "Hamilton",
+                "nationality": "united-kingdom",
+                "permanentNumber": "44"
             },
             {
                 "id": "charles-leclerc",
@@ -1372,13 +1351,6 @@
                 "lastName": "Leclerc",
                 "nationality": "monaco",
                 "permanentNumber": "16"
-            },
-            {
-                "id": "oliver-bearman",
-                "firstName": "Oliver",
-                "lastName": "Bearman",
-                "nationality": "united-kingdom",
-                "permanentNumber": "38"
             }
         ],
         "currentCarName": "Ferrari SF-24"
@@ -1674,25 +1646,25 @@
         "totalChampionshipWins": 0,
         "totalRaceLaps": 19856,
         "firstYear": 2016,
-        "numberOfSeasons": 9,
+        "numberOfSeasons": 10,
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0.53,
         "currentCarId": "haas-vf-24",
         "currentDrivers": [
             {
-                "id": "kevin-magnussen",
-                "firstName": "Kevin",
-                "lastName": "Magnussen",
-                "nationality": "denmark",
-                "permanentNumber": "20"
+                "id": "esteban-ocon",
+                "firstName": "Esteban",
+                "lastName": "Ocon",
+                "nationality": "france",
+                "permanentNumber": "31"
             },
             {
-                "id": "nico-hulkenberg",
-                "firstName": "Nico",
-                "lastName": "Hülkenberg",
-                "nationality": "germany",
-                "permanentNumber": "27"
+                "id": "oliver-bearman",
+                "firstName": "Oliver",
+                "lastName": "Bearman",
+                "nationality": "united-kingdom",
+                "permanentNumber": "87"
             }
         ],
         "currentCarName": "Haas VF-24"
@@ -1988,32 +1960,25 @@
         "totalChampionshipWins": 0,
         "totalRaceLaps": 2705,
         "firstYear": 2024,
-        "numberOfSeasons": 1,
+        "numberOfSeasons": 2,
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0,
         "currentCarId": "kick-sauber-c44",
         "currentDrivers": [
             {
-                "id": "guanyu-zhou",
-                "firstName": "Guanyu",
-                "lastName": "Zhou",
-                "nationality": "china",
-                "permanentNumber": "24"
+                "id": "nico-hulkenberg",
+                "firstName": "Nico",
+                "lastName": "Hülkenberg",
+                "nationality": "germany",
+                "permanentNumber": "27"
             },
             {
-                "id": "robert-shwartzman",
-                "firstName": "Robert",
-                "lastName": "Shwartzman",
-                "nationality": "israel",
-                "permanentNumber": "97"
-            },
-            {
-                "id": "valtteri-bottas",
-                "firstName": "Valtteri",
-                "lastName": "Bottas",
-                "nationality": "finland",
-                "permanentNumber": "77"
+                "id": "gabriel-bortoleto",
+                "firstName": "Gabriel",
+                "lastName": "Bortoleto",
+                "nationality": "brazil",
+                "permanentNumber": "5"
             }
         ],
         "currentCarName": "Kick Sauber C44"
@@ -2677,7 +2642,7 @@
         "totalChampionshipWins": 9,
         "totalRaceLaps": 103021,
         "firstYear": 1966,
-        "numberOfSeasons": 59,
+        "numberOfSeasons": 60,
         "victoryRatio": 19.48,
         "podiumRatio": 43.71,
         "poleRatio": 16.91,
@@ -2696,20 +2661,6 @@
                 "lastName": "Piastri",
                 "nationality": "australia",
                 "permanentNumber": "81"
-            },
-            {
-                "id": "patricio-oward",
-                "firstName": "Patricio",
-                "lastName": "O'Ward",
-                "nationality": "mexico",
-                "permanentNumber": "29"
-            },
-            {
-                "id": "ryo-hirakawa",
-                "firstName": "Ryō",
-                "lastName": "Hirakawa",
-                "nationality": "japan",
-                "permanentNumber": "28"
             }
         ],
         "currentCarName": "McLaren MCL38"
@@ -2729,7 +2680,7 @@
         "totalChampionshipWins": 8,
         "totalRaceLaps": 36554,
         "firstYear": 1954,
-        "numberOfSeasons": 17,
+        "numberOfSeasons": 18,
         "victoryRatio": 40.69,
         "podiumRatio": 63.41,
         "poleRatio": 44.48,
@@ -2748,13 +2699,6 @@
                 "lastName": "Russell",
                 "nationality": "united-kingdom",
                 "permanentNumber": "63"
-            },
-            {
-                "id": "lewis-hamilton",
-                "firstName": "Lewis",
-                "lastName": "Hamilton",
-                "nationality": "united-kingdom",
-                "permanentNumber": "44"
             }
         ],
         "currentCarName": "Mercedes F1 W15"
@@ -3266,6 +3210,44 @@
         "currentCarName": null
     },
     {
+        "constructorId": "racing-bulls",
+        "fullName": "Racing Bulls",
+        "name": "Racing Bulls",
+        "country": "italy",
+        "currentSeasonTeam": true,
+        "totalRaceStarts": 0,
+        "totalRaceWins": 0,
+        "totalPodiumRaces": 0,
+        "totalChampionshipPoints": 0,
+        "totalPolePositions": 0,
+        "totalFastestLaps": 0,
+        "totalChampionshipWins": 0,
+        "totalRaceLaps": 0,
+        "firstYear": 2025,
+        "numberOfSeasons": 1,
+        "victoryRatio": 0,
+        "podiumRatio": 0,
+        "poleRatio": 0,
+        "currentCarId": "rb-vcarb-01",
+        "currentDrivers": [
+            {
+                "id": "yuki-tsunoda",
+                "firstName": "Yuki",
+                "lastName": "Tsunoda",
+                "nationality": "japan",
+                "permanentNumber": "22"
+            },
+            {
+                "id": "isack-hadjar",
+                "firstName": "Isack",
+                "lastName": "Hadjar",
+                "nationality": "france",
+                "permanentNumber": "6"
+            }
+        ],
+        "currentCarName": "RB VCARB 01"
+    },
+    {
         "constructorId": "racing-point",
         "fullName": "Racing Point F1 Team",
         "name": "Racing Point",
@@ -3339,7 +3321,7 @@
         "fullName": "Racing Bulls",
         "name": "RB",
         "country": "italy",
-        "currentSeasonTeam": true,
+        "currentSeasonTeam": false,
         "totalRaceStarts": 24,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
@@ -3353,38 +3335,9 @@
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0,
-        "currentCarId": "rb-vcarb-01",
-        "currentDrivers": [
-            {
-                "id": "ayumu-iwasa",
-                "firstName": "Ayumu",
-                "lastName": "Iwasa",
-                "nationality": "japan",
-                "permanentNumber": "40"
-            },
-            {
-                "id": "daniel-ricciardo",
-                "firstName": "Daniel",
-                "lastName": "Ricciardo",
-                "nationality": "australia",
-                "permanentNumber": "3"
-            },
-            {
-                "id": "liam-lawson",
-                "firstName": "Liam",
-                "lastName": "Lawson",
-                "nationality": "new-zealand",
-                "permanentNumber": "30"
-            },
-            {
-                "id": "yuki-tsunoda",
-                "firstName": "Yuki",
-                "lastName": "Tsunoda",
-                "nationality": "japan",
-                "permanentNumber": "22"
-            }
-        ],
-        "currentCarName": "RB VCARB 01"
+        "currentCarId": null,
+        "currentDrivers": null,
+        "currentCarName": null
     },
     {
         "constructorId": "rebaque",
@@ -3424,19 +3377,12 @@
         "totalChampionshipWins": 6,
         "totalRaceLaps": 42076,
         "firstYear": 2005,
-        "numberOfSeasons": 20,
+        "numberOfSeasons": 21,
         "victoryRatio": 31.04,
         "podiumRatio": 55.47,
         "poleRatio": 26.21,
         "currentCarId": "red-bull-rb20",
         "currentDrivers": [
-            {
-                "id": "isack-hadjar",
-                "firstName": "Isack",
-                "lastName": "Hadjar",
-                "nationality": "france",
-                "permanentNumber": "37"
-            },
             {
                 "id": "max-verstappen",
                 "firstName": "Max",
@@ -3445,11 +3391,11 @@
                 "permanentNumber": "33"
             },
             {
-                "id": "sergio-perez",
-                "firstName": "Sergio",
-                "lastName": "Pérez",
-                "nationality": "mexico",
-                "permanentNumber": "11"
+                "id": "liam-lawson",
+                "firstName": "Liam",
+                "lastName": "Lawson",
+                "nationality": "new-zealand",
+                "permanentNumber": "30"
             }
         ],
         "currentCarName": "Red Bull RB20"
@@ -4366,7 +4312,7 @@
         "totalChampionshipWins": 9,
         "totalRaceLaps": 85163,
         "firstYear": 1978,
-        "numberOfSeasons": 47,
+        "numberOfSeasons": 48,
         "victoryRatio": 13.8,
         "podiumRatio": 29.42,
         "poleRatio": 15.5,
@@ -4380,25 +4326,11 @@
                 "permanentNumber": "23"
             },
             {
-                "id": "franco-colapinto",
-                "firstName": "Franco",
-                "lastName": "Colapinto",
-                "nationality": "argentina",
-                "permanentNumber": "43"
-            },
-            {
-                "id": "logan-sargeant",
-                "firstName": "Logan",
-                "lastName": "Sargeant",
-                "nationality": "united-states-of-america",
-                "permanentNumber": "2"
-            },
-            {
-                "id": "luke-browning",
-                "firstName": "Luke",
-                "lastName": "Browning",
-                "nationality": "united-kingdom",
-                "permanentNumber": "46"
+                "id": "carlos-sainz-jr",
+                "firstName": "Carlos",
+                "lastName": "Sainz Jr.",
+                "nationality": "spain",
+                "permanentNumber": "55"
             }
         ],
         "currentCarName": "Williams FW46"

@@ -11,7 +11,7 @@ async function getConstructorsActualStandings() {
         const filePath = path.join(__dirname, '../../data/all_constructor_standings.json');
         const file = fs.readFileSync(filePath, 'utf-8');
         const data = JSON.parse(file);
-        var thisYearConstructorsStandings = data.filter(race => race.year == 2024);
+        var thisYearConstructorsStandings = data.filter(race => race.year == 2025);
         return thisYearConstructorsStandings;
     } catch (error) {
         console.error('getConstructorsActualStandings, error during execution :', error);

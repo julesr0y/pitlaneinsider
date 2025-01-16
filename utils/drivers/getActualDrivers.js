@@ -15,7 +15,7 @@ async function getActualDrivers() {
             'mercedes',
             'aston-martin',
             'alpine',
-            'rb',
+            'racing-bulls',
             'haas',
             'williams',
             'kick-sauber'

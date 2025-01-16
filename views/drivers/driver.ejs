@@ -49,7 +49,8 @@
                         <div class="flex justify-center items-center h-32 w-full">
                             <div class="bg-<%= dataDriver.actualTeam %> text-white sm:p-4 shadow-md w-44 h-full p-2">
                                 <p class="text-base font-F1Bold mt-2 sm:mt-0">
-                                    <%= __('driver.actual_season') %> 2024
+                                    <%= __('driver.actual_season') %>
+                                        <%= __('global.current_year') %>
                                 </p>
                                 <p class="text-sm mt-1 leading-none">
                                     <%= __('driver.races') %>: <%= dataDriver.numberOfRacesCurrentSeason %>
