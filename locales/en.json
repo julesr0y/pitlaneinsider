@@ -109,19 +109,21 @@
 		"red_flag_title": "Red flag",
 		"red_flag_description": "Indicates the stop of the race, drivers must return to the pits.",
 		"blue_flag_title": "Blue flag",
-		"blue_flag_description": "Indicates that a driver is about to be overtaken by a driver in the lead of the race.",
+		"blue_flag_description": "Shown to a driver who is about to be 'lapped' (having been caught by faster cars ahead of them and so falling a full lap behind).",
 		"black_flag_title": "Black flag",
 		"black_flag_description": "Indicates that a driver is disqualified from the race, they must return to the pits.",
 		"green_flag_title": "Green flag",
 		"green_flag_description": "Indicates that the track is clear and that the race can start/continue.",
 		"white_flag_title": "White flag",
-		"white_flag_description": "Indicates that the driver is on their last lap.",
+		"white_flag_description": "Presence on the track of a slow moving vehicle or an intervention vehicle. Overtaking remains authorized.",
 		"chequered_flag_title": "Chequered flag",
 		"chequered_flag_description": "Indicates the end of the race.",
 		"black_and_white_flag_title": "Black and white flag",
 		"black_and_white_flag_description": "Indicates a warning for unsporting behavior.",
 		"yellow_and_red_flag_title": "Yellow and red flag",
-		"yellow_and_red_flag_description": "Indicates a decrease in grip on the track."
+		"yellow_and_red_flag_description": "Indicates a decrease in grip on the track.",
+		"orange_circle_flag_title": "Orange circle flag",
+		"orange_circle_flag_description": "Warning of dangerous mechanical problem on the vehicle of the driver concerned, he must return to his pit."
 	},
 	"retro_f1": {
 		"home": {
