@@ -108,7 +108,7 @@
                     <div class="flex justify-center items-start pt-10">
                         <div class="flex mb-4">
                             <a id="classementLink" href="/retrostandings/<%= selectedYear %>" class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_seasons.link_standings') %> </a>
-                            <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>" class="{{ Request::path() == 'retrotracks' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_seasons.link_calendar') %> </a>
+                            <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>" class="{{ Request::path() == 'retrocircuits' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_seasons.link_calendar') %> </a>
                         </div>
                     </div>
                 </div>

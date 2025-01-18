@@ -14,8 +14,8 @@
                     <div class="flex justify-evenly gap-x-4 mb-4">
                         <a href="retrodrivers" class="{{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_drivers') %> </a>
                         <a href="retroconstructors" class="{{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_constructors') %> </a>
-                        <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_data.link_tracks') %> </a>
-                        <a href="retrocars" class="{{ Request::path() == 'retrocars' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_cars') %> </a>
+                        <a href="retrocircuits" class="{{ Request::path() == 'retrocircuits' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_data.link_tracks') %> </a>
+                        <a href="retrochassis" class="{{ Request::path() == 'retrochassis' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_cars') %> </a>
                     </div>
                 </div>
                 <div class="max-w-md mx-auto">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="elems">
                     <% retro_circuits.forEach(function(circuit) { %>
-                    <a href="/track/<%= circuit.id %>" class="block">
+                    <a href="/circuit/<%= circuit.id %>" class="block">
                         <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4" id="<%= circuit.name %>">
                             <div class="block text-center">
                                 <div class="relative mb-4">

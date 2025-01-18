@@ -8,12 +8,12 @@ const path = require('path');
  */
 async function getRetroDrivers() {
     try {
-        const filePath = path.join(__dirname, '../../data/all_drivers_stats.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
-        var drivers = [];
-        data.forEach(item => {
-            const driver = {
+        const driversDataFilePath = path.join(__dirname, '../../data/all_drivers_stats.json');
+        const driversData = JSON.parse(fs.readFileSync(driversDataFilePath, 'utf-8'));
+
+        var driversFrontData = [];
+        driversData.forEach(item => {
+            const driverInfo = {
                 firstName: item.firstName,
                 lastName: item.lastName,
                 dateOfBirth: item.dateOfBirth,
@@ -21,10 +21,17 @@ async function getRetroDrivers() {
                 driverId: item.driverId
             };
 
-            drivers.push(driver);
+            driversFrontData.sort((a, b) => {
+                const dateA = new Date(a.dateOfBirth);
+                const dateB = new Date(b.dateOfBirth);
+        
+                return dateB - dateA;
+            });
+
+            driversFrontData.push(driverInfo);
         });
 
-        return drivers;
+        return driversFrontData;
     } catch (error) {
         console.error('getRetroDrivers, error during execution :', error);
         throw error;

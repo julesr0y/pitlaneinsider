@@ -8,21 +8,20 @@ const path = require('path');
  */
 async function getRetroConstructors() {
     try {
-        const filePath = path.join(__dirname, '../../data/all_teams_stats.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
+        const constructorsDataFilePathfilePath = path.join(__dirname, '../../data/all_teams_stats.json');
+        const constructorsData = JSON.parse(fs.readFileSync(constructorsDataFilePathfilePath, 'utf-8'));
 
-        var allConstructors = []
-        data.forEach(function (constructor) {
-            const constructorData = {
+        var constructorsFrontData = []
+        constructorsData.forEach(function (constructor) {
+            const constructorInfo = {
                 constructorId: constructor.constructorId,
                 name: constructor.name,
                 fullName: constructor.fullName
             }
-            allConstructors.push(constructorData);
+            constructorsFrontData.push(constructorInfo);
         })
 
-        return allConstructors;
+        return constructorsFrontData;
     } catch (error) {
         console.error('getRetroConstructors, error during execution :', error);
         throw error;

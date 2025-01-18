@@ -11,9 +11,9 @@ const getRetroCalendar = require('../utils/retro/getRetroCalendar');
 const getGPDetail = require('../utils/retro/getGPDetail');
 const getRetroDrivers = require('../utils/retro/getRetroDrivers');
 const getRetroConstructors = require('../utils/retro/getRetroConstructors');
-const getRetroTracks = require('../utils/retro/getRetroTracks');
-const getRetroCars = require('../utils/retro/getRetroCars');
-const getRetroTrackData = require('../utils/retro/getRetroTrackData');
+const getRetroTracks = require('../utils/retro/getRetroCircuits');
+const getRetroChassis = require('../utils/retro/getRetroChassis');
+const getRetroCircuitData = require('../utils/retro/getRetroCircuitData');
 
 router.get("/retrohome", cors(), async (req, res) => {
     try {
@@ -118,8 +118,8 @@ router.get("/api/retrodrivers", cors(), async (req, res) => {
 
         res.json(paginatedDrivers);
     } catch (error) {
-        console.error("Error fetching retro cars:", error);
-        res.status(500).json({ error: "Error fetching retro cars" });
+        console.error("Error fetching retro drivers:", error);
+        res.status(500).json({ error: "Error fetching retro drivers" });
     }
 });
 
@@ -132,30 +132,30 @@ router.get("/retroconstructors", cors(), async (req, res) => {
     }
 });
 
-router.get("/retrotracks", cors(), async (req, res) => {
+router.get("/retrocircuits", cors(), async (req, res) => {
     try {
         var retro_circuits = await getRetroTracks();
-        res.render("retro/retroTracks", { retro_circuits: retro_circuits });
+        res.render("retro/retroCircuits", { retro_circuits: retro_circuits });
     } catch (error) {
-        res.render('security/error', { textError: '/retrotracks route, error during execution', error: error });
+        res.render('security/error', { textError: '/retrocircuits route, error during execution', error: error });
     }
 });
 
-router.get("/retrocars", cors(), async (req, res) => {
+router.get("/retrochassis", cors(), async (req, res) => {
     try {
-        res.render("retro/retroCars");
+        res.render("retro/retroChassis");
     } catch (error) {
-        res.render('security/error', { textError: '/retrocars route, error during execution', error: error });
+        res.render('security/error', { textError: '/retrochassis route, error during execution', error: error });
     }
 });
 
-router.get("/api/retrocars", cors(), async (req, res) => {
+router.get("/api/retrochassis", cors(), async (req, res) => {
     try {
         const offset = parseInt(req.query.offset) || 0;
         const limit = parseInt(req.query.limit) || 20;
         const search = req.query.search || "";
 
-        let retro_cars = await getRetroCars();
+        let retro_cars = await getRetroChassis();
 
         if (search) {
             retro_cars = retro_cars.filter(car =>
@@ -167,17 +167,17 @@ router.get("/api/retrocars", cors(), async (req, res) => {
 
         res.json(paginatedCars);
     } catch (error) {
-        console.error("Error fetching retro cars:", error);
-        res.status(500).json({ error: "Error fetching retro cars" });
+        console.error("Error fetching retro chassis:", error);
+        res.status(500).json({ error: "Error fetching retro chassis" });
     }
 });
 
-router.get("/track/:track_id", cors(), async (req, res) => {
+router.get("/circuit/:circuitId", cors(), async (req, res) => {
     try {
-        var trackData = await getRetroTrackData(req.params.track_id);
-        res.render("tracks/track", { trackData: trackData });
+        var circuitData = await getRetroCircuitData(req.params.circuitId);
+        res.render("circuits/circuit", { trackData: circuitData });
     } catch (error) {
-        res.render('security/error', { textError: '/track route, error during execution', error: error });
+        res.render('security/error', { textError: '/circuits route, error during execution', error: error });
     }
 });
 

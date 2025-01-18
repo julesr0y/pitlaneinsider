@@ -9,16 +9,14 @@ const path = require('path');
  */
 async function getRetroCalendar(season_id) {
     try {
-        const filePath = path.join(__dirname, '../../data/all_calendar.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
+        const calendarDataFilePath = path.join(__dirname, '../../data/all_calendar.json');
+        const calendarData = JSON.parse(fs.readFileSync(calendarDataFilePath, 'utf-8'));
+        const targetedSeasonData = calendarData.filter(race => race[0].raceDetails.some(detail => detail.year == season_id));
 
-        var sortedData = data.filter(race => race[0].raceDetails.some(detail => detail.year == season_id));
-
-        let calendar = [];
-        sortedData.forEach(function (calendarElement) {
+        let calendarFrontData = [];
+        targetedSeasonData.forEach(function (calendarElement) {
             const raceDetail = calendarElement[0].raceDetails.find(detail => detail.year == season_id);
-            const seasonInfo = {
+            const raceInfo = {
                 year: raceDetail.year,
                 name: raceDetail.name,
                 country: raceDetail.country,
@@ -26,10 +24,10 @@ async function getRetroCalendar(season_id) {
                 raceId: raceDetail.raceId,
                 id: raceDetail.id
             };
-            calendar.push(seasonInfo);
+            calendarFrontData.push(raceInfo);
         });
 
-        return calendar;
+        return calendarFrontData;
     } catch (error) {
         console.error('getRetroCalendar, error during execution :', error);
         throw error;

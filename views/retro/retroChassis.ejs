@@ -14,8 +14,8 @@
                     <div class="flex justify-evenly gap-x-4 mb-4">
                         <a href="retrodrivers" class="{{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_drivers') %> </a>
                         <a href="retroconstructors" class="{{ Request::path() == 'retroconstructors' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_constructors') %> </a>
-                        <a href="retrotracks" class="{{ Request::path() == 'retrotracks' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_tracks') %> </a>
-                        <a href="retrocars" class="{{ Request::path() == 'retrocars' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_data.link_cars') %> </a>
+                        <a href="retrocircuits" class="{{ Request::path() == 'retrocircuits' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_data.link_tracks') %> </a>
+                        <a href="retrochassis" class="{{ Request::path() == 'retrochassis' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_data.link_cars') %> </a>
                     </div>
                 </div>
                 <div class="max-w-md mx-auto">
@@ -50,7 +50,7 @@
                 try {
                     isLoading = true;
 
-                    const response = await fetch(`/api/retrocars?offset=${reset ? 0 : offset}&limit=${limit}&search=${encodeURIComponent(searchQuery)}`);
+                    const response = await fetch(`/api/retrochassis?offset=${reset ? 0 : offset}&limit=${limit}&search=${encodeURIComponent(searchQuery)}`);
                     const cars = await response.json();
 
                     if (reset) {

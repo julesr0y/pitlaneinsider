@@ -2,21 +2,19 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * @description Returns standings of a specific season
+ * @description Returns constructors standings of a specific season
  * @async
  * @param {String} season_id 
  * @returns {Array}
  */
 async function getRetroConstructorsStandings(season_id) {
     try {
-        const filePath = path.join(__dirname, '../../data/all_constructor_standings.json');
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(file);
+        const constructorsStandingsDataFilePath = path.join(__dirname, '../../data/all_constructor_standings.json');
+        const constructorsStandingsData = JSON.parse(fs.readFileSync(constructorsStandingsDataFilePath, 'utf-8'));
+        const targetedSeasonData = constructorsStandingsData.filter(item => item.year == season_id);
 
-        var sortedData = data.filter(item => item.year == season_id);
-
-        let ranking = [];
-        sortedData.forEach(function (element) {
+        var constructorsStandingsFrontData = [];
+        targetedSeasonData.forEach(function (element) {
             const constructorInfo = {
                 constructorId: element.constructorId,
                 constructorName: element.name,
@@ -24,10 +22,10 @@ async function getRetroConstructorsStandings(season_id) {
                 points: element.points
             };
 
-            ranking.push(constructorInfo);
-        })
+            constructorsStandingsFrontData.push(constructorInfo);
+        });
 
-        return ranking;
+        return constructorsStandingsFrontData;
     } catch (error) {
         console.error('getRetroConstructorsStandings, error during execution :', error);
         throw error;
