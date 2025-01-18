@@ -1,248 +1,216 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>">
-
-<head>
-    <%- include('../partials/head.ejs') %>
+    <head>
+        <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-            <meta charset="UTF-8">
-            <title>PLI - <%= __('retro_f1.all_seasons.standings.tab_title') %>
-            </title>
-            <link href="" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <title>PLI - <%= __('retro_f1.all_seasons.standings.tab_title') %></title>
+        <link href="" rel="stylesheet" />
 
-            <style>
-                :root {
-                    --primary-color: #3498db;
-                    /* Bleu */
-                    --primary-color-rgb: 52, 152, 219;
-                    --second-color: #058785;
-                    /* Vert pour le fond du sélecteur et du tableau */
-                    --second-color-dark: #024644;
-                    /* Vert foncé pour le survol */
-                    --gray-400: #ccc;
-                    --gray-500: #b3b3b3;
-                    --text-color: #333;
-                    /* Gris foncé pour le texte */
-                    --white-color: #fff;
-                    /* Blanc pour le texte sur les fonds colorés */
-                }
+        <style>
+            :root {
+                --primary-color: #3498db;
+                /* Bleu */
+                --primary-color-rgb: 52, 152, 219;
+                --second-color: #058785;
+                /* Vert pour le fond du sélecteur et du tableau */
+                --second-color-dark: #024644;
+                /* Vert foncé pour le survol */
+                --gray-400: #ccc;
+                --gray-500: #b3b3b3;
+                --text-color: #333;
+                /* Gris foncé pour le texte */
+                --white-color: #fff;
+                /* Blanc pour le texte sur les fonds colorés */
+            }
 
-                .custom-select {
-                    background-color: var(--second-color);
-                    border: 2px solid var(--gray-400);
-                    border-radius: 9999px;
-                    /* rounded-full */
-                    padding: 0.5rem 1rem;
-                    /* p-2 */
-                    font-size: 1.25rem;
-                    /* text-xl */
-                    width: 100%;
-                    /* w-full */
-                    appearance: none;
-                    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-                    color: var(--white-color);
-                    /* Texte blanc */
-                }
+            .custom-select {
+                background-color: var(--second-color);
+                border: 2px solid var(--gray-400);
+                border-radius: 9999px;
+                /* rounded-full */
+                padding: 0.5rem 1rem;
+                /* p-2 */
+                font-size: 1.25rem;
+                /* text-xl */
+                width: 100%;
+                /* w-full */
+                appearance: none;
+                transition:
+                    background-color 0.3s ease,
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+                color: var(--white-color);
+                /* Texte blanc */
+            }
 
-                .custom-select:hover {
-                    background-color: var(--second-color-dark);
-                    border-color: var(--gray-500);
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
+            .custom-select:hover {
+                background-color: var(--second-color-dark);
+                border-color: var(--gray-500);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-                .custom-select:focus {
-                    outline: none;
-                    border-color: var(--primary-color);
-                    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3);
-                }
+            .custom-select:focus {
+                outline: none;
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3);
+            }
 
-                .custom-select option {
-                    background-color: var(--white-color);
-                    /* Fond blanc pour les options */
-                    color: var(--text-color);
-                    /* Texte gris foncé */
-                }
+            .custom-select option {
+                background-color: var(--white-color);
+                /* Fond blanc pour les options */
+                color: var(--text-color);
+                /* Texte gris foncé */
+            }
 
-                /* Add a custom arrow */
-                .custom-select-container {
-                    position: relative;
-                    display: inline-block;
-                    width: 100%;
-                }
+            /* Add a custom arrow */
+            .custom-select-container {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
 
-                .custom-select-container::after {
-                    content: '▼';
-                    position: absolute;
-                    top: 50%;
-                    right: 1rem;
-                    transform: translateY(-50%);
-                    pointer-events: none;
-                    font-size: 1rem;
-                    color: var(--white-color);
-                }
-            </style>
-</head>
+            .custom-select-container::after {
+                content: '▼';
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+                pointer-events: none;
+                font-size: 1rem;
+                color: var(--white-color);
+            }
+        </style>
+    </head>
 
-<body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
-    <main>
-        <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8">
-            <%= __('retro_f1.all_seasons.standings.title') %>
-        </div>
-        <div class="app-container">
-            <div class="season-title text-3xl font-bold text-center my-8">
-                <div class="mx-4">
-                    <div class="custom-select-container">
-                        <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
-                            <% for (let year=2024; year>= 1950; year--) { %>
-                                <option value="<%= year %>" <% if (year==selectedYear) { %>selected<% } %>><%=
-                                            __('retro_f1.all_seasons.season') %>
-                                            <%= year %>
-                                </option>
+    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+        <main>
+            <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('retro_f1.all_seasons.standings.title') %></div>
+            <div class="app-container">
+                <div class="season-title text-3xl font-bold text-center my-8">
+                    <div class="mx-4">
+                        <div class="custom-select-container">
+                            <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
+                                <% for (let year=2024; year>= 1950; year--) { %>
+                                <option value="<%= year %>"><%= __('retro_f1.all_seasons.season') %> <%= year %></option>
                                 <% } %>
-                        </select>
-                    </div>
-                    <script>
-                        function changeSeason(select) {
-                            var selectedYear = select.value;
-                            window.location.href = '/retrostandings/' + selectedYear;
-                        }
+                            </select>
+                        </div>
+                        <script>
+                            function changeSeason(select) {
+                                var selectedYear = select.value;
+                                window.location.href = '/retrostandings/' + selectedYear;
+                            }
 
-                        function updateLinks() {
-                            var selectedYear = document.getElementById('seasonSelect').value;
-                            document.getElementById('classementLink').href = '/retrostandings/' + selectedYear;
-                            document.getElementById('calendrierLink').href = '/retrocalendar/' + selectedYear;
-                        }
+                            function updateLinks() {
+                                var selectedYear = document.getElementById('seasonSelect').value;
+                                document.getElementById('classementLink').href = '/retrostandings/' + selectedYear;
+                                document.getElementById('calendrierLink').href = '/retrocalendar/' + selectedYear;
+                            }
 
-                        document.addEventListener('DOMContentLoaded', function () {
-                            updateLinks();
-                            document.getElementById('seasonSelect').addEventListener('change', updateLinks);
-                        });
-                    </script>
-                </div>
-            </div>
-
-            <div class="tabs flex justify-center">
-                <div class="flex justify-center items-start pt-10">
-                    <div class="flex mb-4">
-                        <a id="classementLink" href="/retrostandings/<%= selectedYear %>"
-                            class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}">
-                            <%= __('retro_f1.all_seasons.link_standings') %>
-                        </a>
-                        <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>"
-                            class="{{ Request::path() == 'retrocalendar' ? 'font-bold' : '' }}">
-                            <%= __('retro_f1.all_seasons.link_calendar') %>
-                        </a>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                updateLinks();
+                                document.getElementById('seasonSelect').addEventListener('change', updateLinks);
+                            });
+                        </script>
                     </div>
                 </div>
-            </div>
 
-            <div class="tabs flex justify-center">
-                <div class="tab">
-                    <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')">
-                        <%= __('retro_f1.all_seasons.standings.drivers') %>
-                    </button>
-                    <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')">
-                        <%= __('retro_f1.all_seasons.standings.constructors') %>
-                    </button>
+                <div class="tabs flex justify-center">
+                    <div class="flex justify-center items-start pt-10">
+                        <div class="flex mb-4">
+                            <a id="classementLink" href="/retrostandings/<%= selectedYear %>" class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_seasons.link_standings') %> </a>
+                            <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>" class="{{ Request::path() == 'retrocalendar' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_seasons.link_calendar') %> </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs flex justify-center">
+                    <div class="tab">
+                        <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')"><%= __('retro_f1.all_seasons.standings.drivers') %></button>
+                        <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')"><%= __('retro_f1.all_seasons.standings.constructors') %></button>
+                    </div>
+                </div>
+
+                <div id="Pilotes" class="bg-s-<%=theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+                    <table>
+                        <tr id="header-classement-pilotes">
+                            <td></td>
+                            <td class="font-F1Bold"><%= __('retro_f1.all_seasons.standings.position') %></td>
+                            <td class="font-F1Bold pl-3"><%= __('retro_f1.all_seasons.standings.drivers') %></td>
+                            <td class="font-F1Bold pl-3"><%= __('retro_f1.all_seasons.standings.points') %></td>
+                        </tr>
+                        <% retroDriversStandings.forEach(function(pilot) { %>
+                        <tr>
+                            <td class="pr-2">
+                                <span class="border-2 border-<%= pilot.actualConstructor %> h-auto w-1 box-border bg-<%= pilot.actualConstructor %> rounded-3xl"> </span>
+                            </td>
+                            <td class="font-F1Bold pr-3"><%= String(pilot.position).padStart(2, '0' ) %></td>
+                            <td class="border-l-2 pl-3 pr-3">
+                                <a href="/driver/<%= pilot.driverId %>"> <%= pilot.firstName %> <%= pilot.lastName %> </a>
+                            </td>
+                            <td class="border-l-2 pl-3"><%= pilot.points %></td>
+                        </tr>
+                        <% }); %>
+                    </table>
+                </div>
+
+                <div id="Constructeurs" class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td class="font-F1Bold"><%= __('retro_f1.all_seasons.standings.position') %></td>
+                            <td class="pl-3 font-F1Bold"><%= __('retro_f1.all_seasons.standings.constructors') %></td>
+                            <td class="pl-3 font-F1Bold"><%= __('retro_f1.all_seasons.standings.points') %></td>
+                        </tr>
+                        <% retroConstructorsStandings.forEach(function(constructor) { %>
+                        <tr>
+                            <td class="pr-2">
+                                <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
+                            </td>
+                            <td class="pr-3 font-F1Bold"><%= String(constructor.position).padStart(2, '0' ) %></td>
+                            <td class="border-l-2 pl-3 pr-3">
+                                <a href="/constructor/<%= constructor.constructorId %>"> <%= constructor.constructorName %> </a>
+                            </td>
+                            <td class="border-l-2 pl-3"><%= constructor.points %></td>
+                        </tr>
+                        <% }); %>
+                    </table>
                 </div>
             </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+    <script>
+        const pathParts = window.location.pathname.split('/');
+        const selectedYear = pathParts[pathParts.length - 1];
 
-            <div id="Pilotes" class="bg-s-<%=theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
-                <table>
-                    <tr id="header-classement-pilotes">
-                        <td></td>
-                        <td class="font-F1Bold">
-                            <%= __('retro_f1.all_seasons.standings.position') %>
-                        </td>
-                        <td class="font-F1Bold pl-3">
-                            <%= __('retro_f1.all_seasons.standings.drivers') %>
-                        </td>
-                        <td class="font-F1Bold pl-3">
-                            <%= __('retro_f1.all_seasons.standings.points') %>
-                        </td>
-                    </tr>
-                    <% retroDriversStandings.forEach(function(pilot) { %>
-                        <tr>
-                            <td class="pr-2">
-                                <span
-                                    class="border-2 border-<%= pilot.actualConstructor %> h-auto w-1 box-border bg-<%= pilot.actualConstructor %> rounded-3xl">
-                                </span>
-                            </td>
-                            <td class="font-F1Bold pr-3">
-                                <%= String(pilot.position).padStart(2, '0' ) %>
-                            </td>
-                            <td class="border-l-2 pl-3 pr-3">
-                                <a href="/driver/<%= pilot.driverId %>">
-                                    <%= pilot.firstName %>
-                                        <%= pilot.lastName %>
-                                </a>
-                            </td>
-                            <td class="border-l-2 pl-3">
-                                <%= pilot.points %>
-                            </td>
-                        </tr>
-                        <% }); %>
-                </table>
-            </div>
-
-            <div id="Constructeurs" class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td class="font-F1Bold">
-                            <%= __('retro_f1.all_seasons.standings.position') %>
-                        </td>
-                        <td class="pl-3 font-F1Bold">
-                            <%= __('retro_f1.all_seasons.standings.constructors') %>
-                        </td>
-                        <td class="pl-3 font-F1Bold">
-                            <%= __('retro_f1.all_seasons.standings.points') %>
-                        </td>
-                    </tr>
-                    <% retroConstructorsStandings.forEach(function(constructor) { %>
-                        <tr>
-                            <td class="pr-2">
-                                <span
-                                    class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl">
-                                </span>
-                            </td>
-                            <td class="pr-3 font-F1Bold">
-                                <%= String(constructor.position).padStart(2, '0' ) %>
-                            </td>
-                            <td class="border-l-2 pl-3 pr-3">
-                                <a href="/constructor/<%= constructor.constructorId %>">
-                                    <%= constructor.constructorName %>
-                                </a>
-                            </td>
-                            <td class="border-l-2 pl-3">
-                                <%= constructor.points %>
-                            </td>
-                        </tr>
-                        <% }); %>
-                </table>
-            </div>
-
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
-
-<script>
-    function openTab(tabName) {
-        if (tabName === 'Pilotes') {
-            document.getElementById('Pilotes').classList.remove('hidden');
-            document.getElementById('Constructeurs').classList.add('hidden');
-            document.getElementById('btnPilotes').classList.add('active');
-            document.getElementById('btnPilotes').classList.add('underline');
-            document.getElementById('btnConstructeurs').classList.remove('active');
-            document.getElementById('btnConstructeurs').classList.remove('underline');
-        } else if (tabName === 'Constructeurs') {
-            document.getElementById('Constructeurs').classList.remove('hidden');
-            document.getElementById('Pilotes').classList.add('hidden');
-            document.getElementById('btnConstructeurs').classList.add('active');
-            document.getElementById('btnConstructeurs').classList.add('underline');
-            document.getElementById('btnPilotes').classList.remove('active');
-            document.getElementById('btnPilotes').classList.remove('underline');
+        if (selectedYear) {
+            const options = document.querySelectorAll('#seasonSelect option');
+            options.forEach((option) => {
+                if (option.value === selectedYear) {
+                    option.selected = true;
+                }
+            });
         }
-    }
-</script>
-
+    </script>
+    <script>
+        function openTab(tabName) {
+            if (tabName === 'Pilotes') {
+                document.getElementById('Pilotes').classList.remove('hidden');
+                document.getElementById('Constructeurs').classList.add('hidden');
+                document.getElementById('btnPilotes').classList.add('active');
+                document.getElementById('btnPilotes').classList.add('underline');
+                document.getElementById('btnConstructeurs').classList.remove('active');
+                document.getElementById('btnConstructeurs').classList.remove('underline');
+            } else if (tabName === 'Constructeurs') {
+                document.getElementById('Constructeurs').classList.remove('hidden');
+                document.getElementById('Pilotes').classList.add('hidden');
+                document.getElementById('btnConstructeurs').classList.add('active');
+                document.getElementById('btnConstructeurs').classList.add('underline');
+                document.getElementById('btnPilotes').classList.remove('active');
+                document.getElementById('btnPilotes').classList.remove('underline');
+            }
+        }
+    </script>
 </html>
