@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/drivers/getDriverData.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/drivers/getDriverData.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const fs = require('fs');
+const path = require('path');
+
+/**
+ * @description Returns data of a specific driver
+ * @async
+ * @param {String} driver_id 
+ * @returns {Array}
+ */
+async function getDriverData(driver_id) {
+    try {
+        const driverDataFilePath = path.join(__dirname, '../../data/all_drivers_stats.json');
+        const driverData = JSON.parse(fs.readFileSync(driverDataFilePath, 'utf-8'));
+        const targetedDriverInformation = driverData.filter(item => item.driverId === driver_id)[0];
+        const driverInformation = {
+            id: targetedDriverInformation.driverId,
+            firstName: targetedDriverInformation.firstName,
+            lastName: targetedDriverInformation.lastName,
+            dateOfBirth: targetedDriverInformation.dateOfBirth,
+            dateOfDeath: targetedDriverInformation.dateOfDeath,
+            age: targetedDriverInformation.age,
+            nationality: targetedDriverInformation.nationality,
+            permanentNumber: targetedDriverInformation.permanentNumber,
+            firstYear: targetedDriverInformation.firstYear,
+            numberOfSeasons: targetedDriverInformation.numberOfSeasons,
+            totalRaceStarts: targetedDriverInformation.totalRaceStarts,
+            totalRaceWins: targetedDriverInformation.totalRaceWins,
+            totalPodiums: targetedDriverInformation.totalPodiums,
+            totalPoints: targetedDriverInformation.totalPoints,
+            totalPolePositions: targetedDriverInformation.totalPolePositions,
+            totalFastestLaps: targetedDriverInformation.totalFastestLaps,
+            totalDriverOfTheDay: targetedDriverInformation.totalDriverOfTheDay,
+            bestStartingGridPosition: targetedDriverInformation.bestStartingGridPosition,
+            bestRaceResult: targetedDriverInformation.bestRaceResult,
+            bestChampionshipPosition: targetedDriverInformation.bestChampionshipPosition,
+            totalChampionshipWins: targetedDriverInformation.totalChampionshipWins,
+            teams: targetedDriverInformation.teamsOfDriver,
+            currentSeasonDriver: targetedDriverInformation.isCurrentSeasonDriver,
+            numberOfRacesCurrentSeason: targetedDriverInformation.racesThisSeason,
+            numberOfWinsCurrentSeason: targetedDriverInformation.winsThisSeason,
+            numberOfPodiumsCurrentSeason: targetedDriverInformation.podiumsThisSeason,
+            numberOfPointsCurrentSeason: targetedDriverInformation.pointsThisSeason,
+            actualTeam: targetedDriverInformation.currentTeamId,
+            allVictories: targetedDriverInformation.victoriesByYear,
+            victoryRatio: targetedDriverInformation.victoryRatio,
+            podiumRatio: targetedDriverInformation.podiumRatio,
+            poleRatio: targetedDriverInformation.poleRatio,
+            allPointsData: targetedDriverInformation.pointsBySeason,
+            allPositionsData: targetedDriverInformation.standingPositionBySeason
+        }
+
+        return driverInformation;
+    } catch (error) {
+        console.error('getDriverData, error during execution :', error);
+        throw error;
+    }
+}
+
+module.exports = getDriverData;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Jan 18 2025 16:00:10 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
