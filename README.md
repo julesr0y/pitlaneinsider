@@ -10,47 +10,61 @@
 - BASSET Maxime
 - BERGHE Nathan
 
-#### Présentation :
+#### Presentation:
 
-**PitLane Insider** est une application web non officielle permettant d'accéder à une grande variété de données concernant le championnat du monde de Formule 1.
+**PitLane Insider** is an unofficial web application that provides access to a wide variety of data concerning the Formula 1 World Championship.
 
-#### Technologies/Frameworks utilisés :
+#### Technologies/Frameworks used:
 
-![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Nodemon](https://a11ybadges.com/badge?logo=nodemon) ![Express](https://a11ybadges.com/badge?logo=express) ![Tailwind CSS](https://a11ybadges.com/badge?logo=tailwindcss) ![MySQL](https://a11ybadges.com/badge?logo=mysql) ![JSON](https://a11ybadges.com/badge?logo=json)
+![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Express](https://a11ybadges.com/badge?logo=express) ![Tailwind CSS](https://a11ybadges.com/badge?logo=tailwindcss) ![JSON](https://a11ybadges.com/badge?logo=json)
 
-Pour la récupération des données, nous avons majoritairement utilisé le repo [F1DB](https://github.com/f1db/f1db) que nous avons couplé à un système de programmes en Javascript nous permettant de réduire la taille des fichiers. Nous avons aussi utilisé [OpenF1 Api](https://openf1.org/) pour les données en direct.
+For data retrieval, we mainly used the [F1DB](https://github.com/f1db/f1db) repo that we coupled with a Javascript program system allowing us to reduce the size of the files. We also used [OpenF1 Api](https://openf1.org/) for live data.
 
-#### Lancement de l'application web :
+#### Launching the web application:
 
-Pour lancer l'application web reposant sur Node.JS, il convient de se placer à la racine du projet, puis de suivre les étapes suivantes :
+To launch the web application based on Node.JS (v21 min required), you need to go to the root of the project, then follow these steps:
 
-1. Si c'est la première fois que l'on souhaite utiliser l'application (sinon passer directement à l'étape 2) :
+1. If this is the first time you want to use the application (otherwise go directly to step 2):
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-2. Pour lancer le serveur Node.JS :
+2. To launch the Node.JS server :
 
-   - Pour tester en mode développement :
+- To test in development mode :
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-   - Pour tester en mode production :
+- To test in production mode :
 
-   ```bash
-   npm start
-   ```
+```bash
+npm start
+```
 
 #### Documentation :
 
-Pour accéder à la documentation de ce projet, générée avec [JSDoc](https://jsdoc.app/), il faut se rendre dans le dossier Documentation, et ouvrir le fichier index.html dans un navigateur.
+To access the documentation for this project, generated with [JSDoc](https://jsdoc.app/), go to the Documentation folder, and open the index.html file in a browser.
 
-#### Statut :
+To generate documentation use : 
 
-Le statut de la plateforme ainsi que la liste des incidents connus sont accessibles [ici](https://pitlaneinsider.betteruptime.com/).
+```bash 
+npm run doc
+```
+
+#### Code format :
+
+To format code before committing, please use :
+
+```bash 
+npm run format:views
+```
+
+#### Status :
+
+The status of the platform as well as the list of known incidents can be accessed [here](https://pitlaneinsider.betteruptime.com/).
 
 ```
  ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________
