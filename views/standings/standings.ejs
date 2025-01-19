@@ -26,7 +26,7 @@
                     <% actualDriversStanding.forEach(function(pilote) { %>
                     <tr>
                         <td class="pr-2">
-                            <span class="border-2 border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"> </span>
+                            <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
                         </td>
                         <td class="font-F1Bold pr-3"><%= String(pilote.position).padStart(2, '0' ) %></td>
                         <td class="border-l-2 pl-3 pr-3">

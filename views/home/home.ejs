@@ -101,7 +101,7 @@
                 <a href="/retrogpdetails/2024/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
                     <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
                         <span class="flex justify-center text-center mb-4 font-F1Bold gap-2">
-                            <%= __('home.last_podium') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
+                            <%= __('home.last_race') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
                             <img src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg" alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto" />
                         </span>
                         <div class="flex justify-evenly items-end h-full">
@@ -130,7 +130,8 @@
                     </div>
                 </a>
 
-                <a href="/standings">
+                <a href="/standings" class="flex flex-col md:flex-row gap-y-2 gap-x-4">
+
                     <div id="class" class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
                         <span class="flex justify-center text-center font-F1Bold"> <%= __('home.drivers_standings') %> </span>
                         <span class="flex justify-evenly">
@@ -155,6 +156,22 @@
                             </span>
                         </span>
                     </div>
+
+                    <div id="class" class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
+                        <span class="flex justify-center text-center font-F1Bold"> <%= __('home.constructors_standings') %> </span>
+                        <span class="flex justify-evenly">
+                            <span>
+                                <% homeData[0].constructorStandings.slice(0, 10).forEach(function(constructor) { %>
+                                <span class="border border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"></span>
+                                &nbsp;
+                                <span class="font-F1Bold"> <%= String(constructor.position).padStart(2, '0' ) %> - </span>
+                                <%= constructor.name %>
+                                <br />
+                                <% }); %>
+                            </span>
+                        </span>
+                    </div>
+
                 </a>
             </div>
         </main>

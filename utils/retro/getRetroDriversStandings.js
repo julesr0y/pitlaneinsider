@@ -21,7 +21,8 @@ async function getRetroDriversStandings(season_id) {
                 position: element.position,
                 firstName: element.firstName,
                 lastName: element.lastName,
-                points: element.points
+                points: element.points,
+                constructorId: element.constructorId
             };
 
             driversStandingsFrontData.push(driverInfo);

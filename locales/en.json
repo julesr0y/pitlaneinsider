@@ -25,8 +25,9 @@
 		"seconds": "S",
 		"drivers_championship": "Drivers championship",
 		"constructors_championship": "Constructors championship",
-		"last_podium": "Last podium",
-		"drivers_standings": "Drivers standings"
+		"last_race": "Last race",
+		"drivers_standings": "Drivers standings",
+		"constructors_standings": "Constructors standings"
 	},
 	"constructors": {
 		"tab_title": "Constructors",

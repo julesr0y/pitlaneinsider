@@ -143,7 +143,7 @@
                         <% retroDriversStandings.forEach(function(pilot) { %>
                         <tr>
                             <td class="pr-2">
-                                <span class="border-2 border-<%= pilot.actualConstructor %> h-auto w-1 box-border bg-<%= pilot.actualConstructor %> rounded-3xl"> </span>
+                                <span class="border-2 border-<%= pilot.constructorId %> h-auto w-1 box-border bg-<%= pilot.constructorId %> rounded-3xl"> </span>
                             </td>
                             <td class="font-F1Bold pr-3"><%= String(pilot.position).padStart(2, '0' ) %></td>
                             <td class="border-l-2 pl-3 pr-3">
