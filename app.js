@@ -95,11 +95,13 @@ app.use(async (req, res, next) => {
 });
 
 const getHomeData = require("./utils/home/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
+const getNewsHomePage = require("./utils/news/getNewsHomePage");
 
 app.get("/", async (req, res) => { // home page
     try {
         var homeData = await getHomeData();
-        res.render("home/home", { homeData: homeData });
+        var newsHomePage = await getNewsHomePage();
+        res.render("home/home", { homeData: homeData, newsFront: newsHomePage });
     } catch (error) {
         res.render('security/error', { textError: 'base route, error during processing', error: error });
     }
