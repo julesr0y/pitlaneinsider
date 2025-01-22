@@ -123,7 +123,7 @@ main {
   display: block;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1000px) {
   header {
     height: 8vh;
   }
