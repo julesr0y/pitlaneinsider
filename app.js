@@ -101,7 +101,7 @@ app.get("/", async (req, res) => { // home page
     try {
         var homeData = await getHomeData();
         var newsHomePage = await getNewsHomePage();
-        res.render("home/home", { homeData: homeData, newsFront: newsHomePage });
+        res.render("home/home", { homeData: homeData.homeData, homeOTDData: homeData.homeOTDData, newsFront: newsHomePage });
     } catch (error) {
         res.render('security/error', { textError: 'base route, error during processing', error: error });
     }

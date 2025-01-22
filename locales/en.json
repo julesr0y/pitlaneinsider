@@ -27,7 +27,10 @@
 		"constructors_championship": "Constructors championship",
 		"last_race": "Last race",
 		"drivers_standings": "Drivers standings",
-		"constructors_standings": "Constructors standings"
+		"constructors_standings": "Constructors standings",
+		"constructor_otd": "Constructor of the day",
+		"driver_otd": "Driver of the day",
+		"chassis_otd": "Car of the day"
 	},
 	"constructors": {
 		"tab_title": "Constructors",

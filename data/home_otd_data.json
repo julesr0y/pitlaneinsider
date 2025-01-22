@@ -1,0 +1,23 @@
+[
+    {
+        "chassisOTD": [
+            {
+                "chassisId": "ferrari-f2004",
+                "chassisName": "F2004",
+                "constructorFullName": "Ferrari"
+            }
+        ],
+        "driverOTD": [
+            {
+                "driverId": "michael-schumacher",
+                "driverFullName": "Michael Schumacher"
+            }
+        ],
+        "constructorOTD": [
+            {
+                "constructorId": "ferrari",
+                "constructorFullName": "Ferrari"
+            }
+        ]
+    }
+]
