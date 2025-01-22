@@ -127,7 +127,11 @@
 		"yellow_and_red_flag_title": "Yellow and red flag",
 		"yellow_and_red_flag_description": "Indicates a decrease in grip on the track.",
 		"orange_circle_flag_title": "Orange circle flag",
-		"orange_circle_flag_description": "Warning of dangerous mechanical problem on the vehicle of the driver concerned, he must return to his pit."
+		"orange_circle_flag_description": "Warning of dangerous mechanical problem on the vehicle of the driver concerned, he must return to his pit.",
+		"reglementation_digiflags": "On track digiflags",
+		"dyellow_flag_title": "Double yellow flag",
+		"vsc_title": "Virtual Safety Car",
+		"sc_title": "Safety Car"
 	},
 	"retro_f1": {
 		"home": {
