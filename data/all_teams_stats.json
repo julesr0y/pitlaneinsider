@@ -156,7 +156,7 @@
         "victoryRatio": 1.11,
         "podiumRatio": 5.56,
         "poleRatio": 0,
-        "currentCarId": "alpine-a524",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "jack-doohan",
@@ -173,7 +173,7 @@
                 "permanentNumber": "10"
             }
         ],
-        "currentCarName": "Alpine A524"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "alta",
@@ -355,7 +355,7 @@
         "victoryRatio": 0,
         "podiumRatio": 9.47,
         "poleRatio": 0,
-        "currentCarId": "aston-martin-amr24",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "fernando-alonso",
@@ -372,7 +372,7 @@
                 "permanentNumber": "18"
             }
         ],
-        "currentCarName": "Aston Martin AMR24"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "ats-wheels",
@@ -1336,7 +1336,7 @@
         "victoryRatio": 22.59,
         "podiumRatio": 57.56,
         "poleRatio": 23.04,
-        "currentCarId": "ferrari-sf-24",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "lewis-hamilton",
@@ -1353,7 +1353,7 @@
                 "permanentNumber": "16"
             }
         ],
-        "currentCarName": "Ferrari SF-24"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "first",
@@ -1650,7 +1650,7 @@
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0.53,
-        "currentCarId": "haas-vf-24",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "esteban-ocon",
@@ -1667,7 +1667,7 @@
                 "permanentNumber": "87"
             }
         ],
-        "currentCarName": "Haas VF-24"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "hall",
@@ -1964,7 +1964,7 @@
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0,
-        "currentCarId": "kick-sauber-c44",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "nico-hulkenberg",
@@ -1981,7 +1981,7 @@
                 "permanentNumber": "5"
             }
         ],
-        "currentCarName": "Kick Sauber C44"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "klenk",
@@ -2646,7 +2646,7 @@
         "victoryRatio": 19.48,
         "podiumRatio": 43.71,
         "poleRatio": 16.91,
-        "currentCarId": "mclaren-mcl38",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "lando-norris",
@@ -2663,7 +2663,7 @@
                 "permanentNumber": "81"
             }
         ],
-        "currentCarName": "McLaren MCL38"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "mercedes",
@@ -2684,7 +2684,7 @@
         "victoryRatio": 40.69,
         "podiumRatio": 63.41,
         "poleRatio": 44.48,
-        "currentCarId": "mercedes-f1-w15",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "andrea-kimi-antonelli",
@@ -2701,7 +2701,7 @@
                 "permanentNumber": "63"
             }
         ],
-        "currentCarName": "Mercedes F1 W15"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "merzario",
@@ -3228,7 +3228,7 @@
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0,
-        "currentCarId": "rb-vcarb-01",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "yuki-tsunoda",
@@ -3245,7 +3245,7 @@
                 "permanentNumber": "6"
             }
         ],
-        "currentCarName": "RB VCARB 01"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "racing-point",
@@ -3381,7 +3381,7 @@
         "victoryRatio": 31.04,
         "podiumRatio": 55.47,
         "poleRatio": 26.21,
-        "currentCarId": "red-bull-rb20",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "max-verstappen",
@@ -3398,7 +3398,7 @@
                 "permanentNumber": "30"
             }
         ],
-        "currentCarName": "Red Bull RB20"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "reif",
@@ -4316,7 +4316,7 @@
         "victoryRatio": 13.8,
         "podiumRatio": 29.42,
         "poleRatio": 15.5,
-        "currentCarId": "williams-fw46",
+        "currentCarId": "",
         "currentDrivers": [
             {
                 "id": "alexander-albon",
@@ -4333,7 +4333,7 @@
                 "permanentNumber": "55"
             }
         ],
-        "currentCarName": "Williams FW46"
+        "currentCarName": "TBC"
     },
     {
         "constructorId": "wolf-williams",

@@ -177,7 +177,7 @@
 
                 <div class="flex flex-col md:flex-row gap-y-1 gap-x-4">
                     <div class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                        <a href="/standings" class="flex justify-center text-center font-F1Bold"> <%= __('home.drivers_standings') %> </a>
+                        <a href="/driverstandings" class="flex justify-center text-center font-F1Bold"> <%= __('home.drivers_standings') %> </a>
                         <span class="flex justify-evenly">
                             <table>
                                 <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
@@ -212,7 +212,7 @@
                     </div>
 
                     <div class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                        <a href="/standings" class="flex justify-center text-center font-F1Bold"> <%= __('home.constructors_standings') %> </a>
+                        <a href="/constructorstandings" class="flex justify-center text-center font-F1Bold"> <%= __('home.constructors_standings') %> </a>
                         <span class="flex justify-evenly">
                             <table>
                                 <% homeData[0].constructorStandings.slice(0, 10).forEach(function(constructor) { %>
