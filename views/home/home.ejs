@@ -76,7 +76,7 @@
                     <div class="w-full h-full">
                         <div id="championnats" class="flex gap-4 w-full">
                             <a href="/driver/<%= homeData[0].driverLeader.driverId %>" class="w-full">
-                                <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
+                                <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl overflow-hidden">
                                     <span class="text-center pt-2"> <%= __('home.drivers_championship') %> </span>
                                     <span class="flex justify-evenly items-center mt-auto gap-2">
                                         <span class="flex flex-col items-center text-xl">
@@ -101,7 +101,7 @@
                         </div>
 
                         <a href="/retrogpdetails/2024/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
-                            <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl">
+                            <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
                                 <span class="flex justify-center text-center mb-4 font-F1Bold gap-2 pt-2">
                                     <%= __('home.last_race') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
                                     <img src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg" alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto" />
