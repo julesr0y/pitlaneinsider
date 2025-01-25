@@ -11,7 +11,7 @@ const path = require('path');
 async function getGPDetail(year, gp_id) {
     try {
         const racesInfoFilePath = path.join(__dirname, `../../data/races-info.json`);
-        const racesResultsFilePath = path.join(__dirname, `../../data/seasons/${year}/race-results.json`);
+        const racesResultsFilePath = path.join(__dirname, `../../data/all_races_and_quali_results.json`);
         const weatherFilePath = path.join(__dirname, '../../data/all_races_weather.json');
         const racesInfoData = JSON.parse(fs.readFileSync(racesInfoFilePath, 'utf-8'));
         const racesResultsData = JSON.parse(fs.readFileSync(racesResultsFilePath, 'utf-8'));
@@ -38,20 +38,26 @@ async function getGPDetail(year, gp_id) {
         });
 
         racesResultsData.forEach(race => {
-            if (race.raceId == gp_id) {
-                const driverInfo = {
-                    constructorId: race.constructorId,
-                    driverId: race.driverId,
-                    firstName: race.firstName,
-                    lastName: race.lastName,
-                    abbreviation: race.abbreviation,
-                    position: race.position,
-                    grid: race.grid,
-                    gap: race.gap,
-                    fastestLapTime: race.fastestLapTime,
-                    fastestPitTime: race.fastestPitTime
-                };
-                raceData.push(driverInfo);
+            if (race.raceInfo[0].raceId == gp_id) {
+                race.results.forEach(driver => {
+                    const driverInfo = {
+                        constructorId: driver.constructorId,
+                        driverId: driver.driverId,
+                        firstName: driver.firstName,
+                        lastName: driver.lastName,
+                        abbreviation: driver.abbreviation,
+                        position: driver.position,
+                        qualiPosition: driver.qualiPosition,
+                        qualiTime: driver.qualiTime,
+                        q1time: driver.q1time,
+                        q2time: driver.q2time,
+                        q3time: driver.q3time,
+                        gap: driver.gap,
+                        fastestLapTime: driver.fastestLapTime,
+                        fastestPitTime: driver.fastestPitTime
+                    };
+                    raceData.push(driverInfo);
+                });
             }
         });
 
