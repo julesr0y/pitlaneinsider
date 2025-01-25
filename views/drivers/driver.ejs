@@ -76,7 +76,7 @@
                                 <div class="flex flex-col justify-center items-center h-32 w-auto">
                                     <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none"><%= dataDriver.firstName %> <%= dataDriver.lastName %></h1>
                                     <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
-                                        <% if (dataDriver.dateOfDeath === null) { %>
+                                        <% const birth = new Date(dataDriver.dateOfBirth); const now = new Date(); let age = 0; if (dataDriver.dateOfDeath == null) { age = now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death = new Date(dataDriver.dateOfDeath); age = death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %> <% if (dataDriver.dateOfDeath === null) { %>
                                         <span>
                                             <%= dataDriver.dateOfBirth %>
                                             (<%= age %>
