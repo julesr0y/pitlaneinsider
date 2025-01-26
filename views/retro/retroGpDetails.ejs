@@ -43,8 +43,20 @@
                         </div>
                     </div>
                 </div>
+                <style>
+                    /* Hide scrollbar for Chrome, Safari and Opera */
+                    .no-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    /* Hide scrollbar for IE, Edge and Firefox */
+                    .no-scrollbar {
+                        -ms-overflow-style: none; /* IE and Edge */
+                        scrollbar-width: none; /* Firefox */
+                    }
+                </style>
                 <div class="flex flex-col md:flex-row gap-y-4 md:gap-y-0 mt-4">
-                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-7/12 overflow-x-scroll whitespace-nowrap">
+                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-7/12 overflow-x-scroll whitespace-nowrap no-scrollbar">
                         <div id="toggleTable" class="text-center">Race</div>
                         <table id="tableRace">
                             <tr>
