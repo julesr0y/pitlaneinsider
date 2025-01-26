@@ -12,16 +12,13 @@ const msgpack = require('msgpack-lite');
 async function getGPDetail(year, gp_id) {
     try {
         const racesInfoFilePath = path.join(__dirname, `../../data/races-info.json`);
-        const racesResultsFilePath = path.join(__dirname, `../../data/pli-data-sessions-results.msgpack`);
-        const weatherFilePath = path.join(__dirname, '../../data/all_races_weather.json');
-        const racesInfoData = JSON.parse(fs.readFileSync(racesInfoFilePath, 'utf-8'));
+        const racesResultsFilePath = path.join(__dirname, `../../data/seasons/${year}/pli-data-sessions-results.msgpack`);
         const racesResultsData = msgpack.decode(fs.readFileSync(racesResultsFilePath));
-        const weatherData = JSON.parse(fs.readFileSync(weatherFilePath, 'utf-8'));
 
         let raceData = [];
         let gpInfos = [];
 
-        racesInfoData.forEach(race => {
+        racesResultsData[0].raceInfo.forEach(race => {
             if (race.raceId == gp_id) {
                 const gpInfo = {
                     raceId: race.raceId,
@@ -32,51 +29,44 @@ async function getGPDetail(year, gp_id) {
                     countryId: race.countryId,
                     circuitId: race.circuitId,
                     circuitName: race.circuitName,
-                    date: race.date
+                    date: race.date,
+                    weather: race.weather
                 };
                 gpInfos.push(gpInfo);
             }
         });
 
-        racesResultsData.forEach(race => {
-            if (race.raceInfo[0].raceId == gp_id) {
-                race.results.forEach(driver => {
-                    const driverInfo = {
-                        constructorId: driver.constructorId,
-                        driverId: driver.driverId,
-                        firstName: driver.firstName,
-                        lastName: driver.lastName,
-                        abbreviation: driver.abbreviation,
-                        fp1Position: driver.fp1Position,
-                        fp1Time: driver.fp1Time,
-                        fp2Position: driver.fp2Position,
-                        fp2Time: driver.fp2Time,
-                        fp3Position: driver.fp3Position,
-                        fp3Time: driver.fp3Time,
-                        qualiPosition: driver.qualiPosition,
-                        qualiTime: driver.qualiTime,
-                        q1time: driver.q1time,
-                        q2time: driver.q2time,
-                        q3time: driver.q3time,
-                        sprintQualiPosition: driver.sprintQualiPosition,
-                        sprintQualiTime: driver.sprintQualiTime,
-                        sprintRacePosition: driver.sprintRacePosition,
-                        sprintRaceGap: driver.sprintRaceGap,
-                        sprintRacePoints: driver.sprintRacePoints,
-                        position: driver.position,
-                        gap: driver.gap,
-                        racePoints: driver.racePoints,
-                        fastestLapTime: driver.fastestLapTime,
-                        fastestPitTime: driver.fastestPitTime
-                    };
-                    raceData.push(driverInfo);
-                });
-            }
-        });
-
-        weatherData.forEach(weather => {
-            if (weather.raceId == gp_id) {
-                gpInfos[0].weather = weather.weather;
+        racesResultsData[0].results.forEach(driver => {
+            if (driver.raceId == gp_id) {
+                const driverInfo = {
+                    constructorId: driver.constructorId,
+                    driverId: driver.driverId,
+                    firstName: driver.firstName,
+                    lastName: driver.lastName,
+                    abbreviation: driver.abbreviation,
+                    fp1Position: driver.fp1Position,
+                    fp1Time: driver.fp1Time,
+                    fp2Position: driver.fp2Position,
+                    fp2Time: driver.fp2Time,
+                    fp3Position: driver.fp3Position,
+                    fp3Time: driver.fp3Time,
+                    qualiPosition: driver.qualiPosition,
+                    qualiTime: driver.qualiTime,
+                    q1time: driver.q1time,
+                    q2time: driver.q2time,
+                    q3time: driver.q3time,
+                    sprintQualiPosition: driver.sprintQualiPosition,
+                    sprintQualiTime: driver.sprintQualiTime,
+                    sprintRacePosition: driver.sprintRacePosition,
+                    sprintRaceGap: driver.sprintRaceGap,
+                    sprintRacePoints: driver.sprintRacePoints,
+                    position: driver.position,
+                    gap: driver.gap,
+                    racePoints: driver.racePoints,
+                    fastestLapTime: driver.fastestLapTime,
+                    fastestPitTime: driver.fastestPitTime
+                };
+                raceData.push(driverInfo);
             }
         });
 
