@@ -51,95 +51,104 @@
 
                     /* Hide scrollbar for IE, Edge and Firefox */
                     .no-scrollbar {
-                        -ms-overflow-style: none; /* IE and Edge */
-                        scrollbar-width: none; /* Firefox */
+                        -ms-overflow-style: none;
+                        /* IE and Edge */
+                        scrollbar-width: none;
+                        /* Firefox */
                     }
                 </style>
                 <div class="flex flex-col md:flex-row gap-y-4 md:gap-y-0 mt-4">
-                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-7/12 overflow-x-scroll whitespace-nowrap no-scrollbar">
-                        <div id="toggleTable" class="text-center">Race</div>
-                        <table id="tableRace">
-                            <tr>
-                                <td></td>
-                                <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                <td></td>
-                                <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                <td></td>
-                                <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.gap') %></td>
-                            </tr>
+                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-7/12">
+                        <div id="toggleTable" class="flex justify-center items-center gap-4">
+                            <span id="prevButton"><img src="/img/assets/arrow-left.png" alt="left-arrow" class="h-4 w-auto" /></span>
+                            <span id="tableTitle">Race</span>
+                            <span id="nextButton"><img src="/img/assets/arrow-right.png" alt="right-arrow" class="h-4 w-auto" /></span>
+                        </div>
+                        <div id="tables" class="overflow-x-scroll whitespace-nowrap no-scrollbar pt-2">
+                            <table id="tableRace">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.gap') %></td>
+                                </tr>
 
-                            <% gpDetails.raceData.forEach(detail=> { %>
-                            <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" || detail.gap=="NC" ) { %>
-                            <tr class="text-hasnt-finished-race">
-                                <% } else { %>
-                            </tr>
+                                <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ||
+                                detail.gap=="NC" ) { %>
+                                <tr class="text-hasnt-finished-race">
+                                    <% } else { %>
+                                </tr>
 
-                            <tr>
-                                <% } %>
-                                <td class="pr-2">
-                                    <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
-                                </td>
-                                <td class="font-F1Bold pr-3"><%= String(detail.position).padStart(2, '0' ) %></td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td class="pr-3">
-                                    <a href="/driver/<%= detail.driverId %>">
-                                        <span class="flex gap-x-1">
-                                            <span class="hidden md:block"> <%= detail.firstName %> </span>
-                                            <span>
-                                                <%= detail.lastName %>
+                                <tr>
+                                    <% } %>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.position).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span class="hidden md:block"> <%= detail.firstName %> </span>
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
-                                </td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td>
-                                    <%= detail.gap %>
-                                </td>
-                            </tr>
-                            <% }); %>
-                        </table>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td>
+                                        <%= detail.gap %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                            </table>
 
-                        <table id="tableQualification" class="hidden">
-                            <tr>
-                                <td></td>
-                                <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                <td></td>
-                                <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                <td></td>
-                                <td class="font-F1Bold">Q1</td>
-                                <td></td>
-                                <td class="font-F1Bold">Q2</td>
-                                <td></td>
-                                <td class="font-F1Bold">Q3</td>
-                            </tr>
+                            <table id="tableQualification" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Q1</td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Q2</td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Q3</td>
+                                </tr>
 
-                            <% gpDetails.raceData.sort((a, b) => a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
-                            <tr>
-                                <td class="pr-2">
-                                    <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
-                                </td>
-                                <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td class="pr-3">
-                                    <a href="/driver/<%= detail.driverId %>">
-                                        <span class="flex gap-x-1">
-                                            <span>
-                                                <%= detail.lastName %>
+                                <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
-                                </td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td class="pr-3"><%= detail.q1time %></td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td class="pr-3"><%= detail.q2time %></td>
-                                <td class="pl-3 border-l-2"></td>
-                                <td>
-                                    <%= detail.q3time %>
-                                </td>
-                            </tr>
-                            <% }); %>
-                        </table>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.q1time %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.q2time %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td>
+                                        <%= detail.q3time %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="w-full gap-4">
@@ -222,17 +231,45 @@
     </body>
 
     <script>
-        document.getElementById('toggleTable').addEventListener('click', function () {
-            const tableRace = document.getElementById('tableRace');
-            const tableQualification = document.getElementById('tableQualification');
+        let currentIndex = 0;
+        const tables = document.querySelectorAll('#tables table');
+        const tableTitle = document.querySelector('#tableTitle'); // Utilisez querySelector pour un seul élément
 
-            if (tableRace.classList.contains('hidden')) {
-                tableRace.classList.remove('hidden');
-                tableQualification.classList.add('hidden');
-            } else if (tableQualification.classList.contains('hidden')) {
-                tableQualification.classList.remove('hidden');
-                tableRace.classList.add('hidden');
+        function showTable(index) {
+            tables.forEach((table, i) => {
+                if (i === index) {
+                    table.classList.remove('hidden');
+                } else {
+                    table.classList.add('hidden');
+                }
+            });
+        }
+
+        document.getElementById('prevButton').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showTable(currentIndex);
+                updateTitle();
             }
         });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            if (currentIndex < tables.length - 1) {
+                currentIndex++;
+                showTable(currentIndex);
+                updateTitle();
+            }
+        });
+
+        function updateTitle() {
+            if (currentIndex === 0) {
+                tableTitle.textContent = 'Race';
+            } else if (currentIndex === 1) {
+                tableTitle.textContent = 'Qualifications';
+            }
+        }
+
+        showTable(currentIndex);
+        updateTitle();
     </script>
 </html>
