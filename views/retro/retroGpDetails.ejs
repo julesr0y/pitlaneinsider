@@ -148,6 +148,102 @@
                                 </tr>
                                 <% }); %>
                             </table>
+
+                            <table id="tableFP1" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.fp1Time %></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+
+                            <table id="tableFP2" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.fp2Position - b.fp2Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.fp2Position).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.fp2Time %></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+
+                            <table id="tableFP3" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.fp3Position - b.fp3Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.fp3Position).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.fp3Time %></td>
+                                </tr>
+                                <% }); %>
+                            </table>
                         </div>
                     </div>
 
@@ -266,6 +362,12 @@
                 tableTitle.textContent = 'Race';
             } else if (currentIndex === 1) {
                 tableTitle.textContent = 'Qualifications';
+            } else if (currentIndex === 2) {
+                tableTitle.textContent = 'FP1';
+            } else if (currentIndex === 3) {
+                tableTitle.textContent = 'FP2';
+            } else if (currentIndex === 4) {
+                tableTitle.textContent = 'FP3';
             }
         }
 

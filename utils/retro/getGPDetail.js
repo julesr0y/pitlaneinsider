@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const msgpack = require('msgpack-lite');
 
 /**
  * @description Returns data of a specific GP
@@ -11,10 +12,10 @@ const path = require('path');
 async function getGPDetail(year, gp_id) {
     try {
         const racesInfoFilePath = path.join(__dirname, `../../data/races-info.json`);
-        const racesResultsFilePath = path.join(__dirname, `../../data/all_races_and_quali_results.json`);
+        const racesResultsFilePath = path.join(__dirname, `../../data/pli-data-sessions-results.msgpack`);
         const weatherFilePath = path.join(__dirname, '../../data/all_races_weather.json');
         const racesInfoData = JSON.parse(fs.readFileSync(racesInfoFilePath, 'utf-8'));
-        const racesResultsData = JSON.parse(fs.readFileSync(racesResultsFilePath, 'utf-8'));
+        const racesResultsData = msgpack.decode(fs.readFileSync(racesResultsFilePath));
         const weatherData = JSON.parse(fs.readFileSync(weatherFilePath, 'utf-8'));
 
         let raceData = [];
@@ -46,13 +47,25 @@ async function getGPDetail(year, gp_id) {
                         firstName: driver.firstName,
                         lastName: driver.lastName,
                         abbreviation: driver.abbreviation,
-                        position: driver.position,
+                        fp1Position: driver.fp1Position,
+                        fp1Time: driver.fp1Time,
+                        fp2Position: driver.fp2Position,
+                        fp2Time: driver.fp2Time,
+                        fp3Position: driver.fp3Position,
+                        fp3Time: driver.fp3Time,
                         qualiPosition: driver.qualiPosition,
                         qualiTime: driver.qualiTime,
                         q1time: driver.q1time,
                         q2time: driver.q2time,
                         q3time: driver.q3time,
+                        sprintQualiPosition: driver.sprintQualiPosition,
+                        sprintQualiTime: driver.sprintQualiTime,
+                        sprintRacePosition: driver.sprintRacePosition,
+                        sprintRaceGap: driver.sprintRaceGap,
+                        sprintRacePoints: driver.sprintRacePoints,
+                        position: driver.position,
                         gap: driver.gap,
+                        racePoints: driver.racePoints,
                         fastestLapTime: driver.fastestLapTime,
                         fastestPitTime: driver.fastestPitTime
                     };
