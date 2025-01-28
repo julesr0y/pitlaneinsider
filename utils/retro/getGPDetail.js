@@ -11,7 +11,6 @@ const msgpack = require('msgpack-lite');
  */
 async function getGPDetail(year, gp_id) {
     try {
-        const racesInfoFilePath = path.join(__dirname, `../../data/races-info.json`);
         const racesResultsFilePath = path.join(__dirname, `../../data/seasons/${year}/pli-data-sessions-results.msgpack`);
         const racesResultsData = msgpack.decode(fs.readFileSync(racesResultsFilePath));
 
@@ -30,7 +29,9 @@ async function getGPDetail(year, gp_id) {
                     circuitId: race.circuitId,
                     circuitName: race.circuitName,
                     date: race.date,
-                    weather: race.weather
+                    weather: race.weather,
+                    sprintQualifyingFormat: race.sprintQualifyingFormat,
+                    qualifyingFormat: race.qualifyingFormat
                 };
                 gpInfos.push(gpInfo);
             }
@@ -64,7 +65,9 @@ async function getGPDetail(year, gp_id) {
                     gap: driver.gap,
                     racePoints: driver.racePoints,
                     fastestLapTime: driver.fastestLapTime,
-                    fastestPitTime: driver.fastestPitTime
+                    fastestPitTime: driver.fastestPitTime,
+                    sprintQualifyingFormat: driver.sprintQualifyingFormat,
+                    qualifyingFormat: driver.qualifyingFormat
                 };
                 raceData.push(driverInfo);
             }

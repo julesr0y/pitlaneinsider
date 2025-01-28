@@ -76,8 +76,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" ||
-                                detail.gap=="NC" ) { %>
+                                <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" || detail.gap=="NC" ) { %>
                                 <tr class="text-hasnt-finished-race">
                                     <% } else { %>
                                 </tr>
@@ -103,6 +102,104 @@
                                     <td>
                                         <%= detail.gap %>
                                     </td>
+                                </tr>
+                                <% }); %>
+                            </table>
+
+                            <% if(gpDetails.gpInfos[0].sprintQualifyingFormat == "SPRINT_SHOOTOUT") { %>
+
+                            <table id="tableFP1" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.fp1Time %></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+
+                            <table id="tableSQ" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.sprintQualiPosition - b.sprintQualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.sprintQualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.sprintQualiTime %></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+
+                            <table id="tableSR" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.sprintRacePosition - b.sprintRacePosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.sprintRacePosition).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.sprintRaceGap %></td>
                                 </tr>
                                 <% }); %>
                             </table>
@@ -149,6 +246,9 @@
                                 <% }); %>
                             </table>
 
+                            <% } else { %>
+
+                            <% if(gpDetails.gpInfos[0].date.split("-")[0] >= 1988) { %>
                             <table id="tableFP1" class="hidden">
                                 <tr>
                                     <td></td>
@@ -212,7 +312,9 @@
                                 </tr>
                                 <% }); %>
                             </table>
+                            <% } %>
 
+                            <% if(gpDetails.gpInfos[0].date.split("-")[0] >= 2004) { %>
                             <table id="tableFP3" class="hidden">
                                 <tr>
                                     <td></td>
@@ -244,6 +346,84 @@
                                 </tr>
                                 <% }); %>
                             </table>
+                            <% } %>
+
+                            <% if(gpDetails.gpInfos[0].qualifyingFormat == "KNOCKOUT") { %>
+                            <table id="tableQualification" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Q1</td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Q2</td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Q3</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.q1time %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.q2time %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td>
+                                        <%= detail.q3time %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                            </table>
+                            <% } else { %>
+                            <table id="tableQualification" class="hidden">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-F1Bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driverId %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.qualiTime %></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+                            <% } %>
+                            <% } %>
                         </div>
                     </div>
 
@@ -316,7 +496,7 @@
                                 <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
                                 <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestPit') %> </span>
                                 <div class="flex flex-col items-center flex-grow justify-center w-full"><%= pit.abbreviation %> - <%= pit.fastestPitTime %></div>
-                                <% }}) %>
+                                <% }}); %>
                             </div>
                         </span>
                     </div>
@@ -329,7 +509,12 @@
     <script>
         let currentIndex = 0;
         const tables = document.querySelectorAll('#tables table');
-        const tableTitle = document.querySelector('#tableTitle'); // Utilisez querySelector pour un seul élément
+        const tableTitle = document.querySelector('#tableTitle');
+
+        const sprintQualifyingFormat = '<%= gpDetails.gpInfos[0].sprintQualifyingFormat %>';
+        const qualifyingFormat = '<%= gpDetails.gpInfos[0].qualifyingFormat %>';
+
+        const date = parseInt('<%= gpDetails.gpInfos[0].date.split("-")[0] %>');
 
         function showTable(index) {
             tables.forEach((table, i) => {
@@ -342,32 +527,60 @@
         }
 
         document.getElementById('prevButton').addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                showTable(currentIndex);
-                updateTitle();
-            }
+            currentIndex = (currentIndex - 1 + tables.length) % tables.length;
+            showTable(currentIndex);
+            updateTitle();
         });
 
         document.getElementById('nextButton').addEventListener('click', () => {
-            if (currentIndex < tables.length - 1) {
-                currentIndex++;
-                showTable(currentIndex);
-                updateTitle();
-            }
+            currentIndex = (currentIndex + 1) % tables.length;
+            showTable(currentIndex);
+            updateTitle();
         });
 
         function updateTitle() {
-            if (currentIndex === 0) {
-                tableTitle.textContent = 'Race';
-            } else if (currentIndex === 1) {
-                tableTitle.textContent = 'Qualifications';
-            } else if (currentIndex === 2) {
-                tableTitle.textContent = 'FP1';
-            } else if (currentIndex === 3) {
-                tableTitle.textContent = 'FP2';
-            } else if (currentIndex === 4) {
-                tableTitle.textContent = 'FP3';
+            if (sprintQualifyingFormat === 'SPRINT_SHOOTOUT') {
+                if (currentIndex === 0) {
+                    tableTitle.textContent = 'Race';
+                } else if (currentIndex === 1) {
+                    tableTitle.textContent = 'FP1';
+                } else if (currentIndex === 2) {
+                    tableTitle.textContent = 'SQ';
+                } else if (currentIndex === 3) {
+                    tableTitle.textContent = 'Sprint Race';
+                } else if (currentIndex === 4) {
+                    tableTitle.textContent = 'Qualifications';
+                }
+            }
+
+            if (date < 1988) {
+                if (currentIndex === 0) {
+                    tableTitle.textContent = 'Race';
+                } else if (currentIndex === 1) {
+                    tableTitle.textContent = 'Qualifications';
+                }
+            } else if (date > 2003) {
+                if (currentIndex === 0) {
+                    tableTitle.textContent = 'Race';
+                } else if (currentIndex === 1) {
+                    tableTitle.textContent = 'FP1';
+                } else if (currentIndex === 2) {
+                    tableTitle.textContent = 'FP2';
+                } else if (currentIndex === 3) {
+                    tableTitle.textContent = 'FP3';
+                } else if (currentIndex === 4) {
+                    tableTitle.textContent = 'Qualifications';
+                }
+            } else {
+                if (currentIndex === 0) {
+                    tableTitle.textContent = 'Race';
+                } else if (currentIndex === 1) {
+                    tableTitle.textContent = 'FP1';
+                } else if (currentIndex === 2) {
+                    tableTitle.textContent = 'FP2';
+                } else if (currentIndex === 3) {
+                    tableTitle.textContent = 'Qualifications';
+                }
             }
         }
 
