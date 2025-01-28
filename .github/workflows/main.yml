@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
           cd www/pitlaneinsider
-          git fetch --all --depth=1
+          git fetch --all
           git reset --hard origin/production
-          git pull --depth=1
+          git pull
           npm install --omit=dev
