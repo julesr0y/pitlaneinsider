@@ -1,18 +1,22 @@
 # PitLane Insider
 
-#### _Dev Team: La Remontée Formula 1 Team_
+### _La Remontée Formula 1 Team_
 
+#### Presentation:
+
+**PitLane Insider** is an unofficial web application that provides access to a wide variety of data concerning the Formula 1 World Championship.
+
+#### Lead developer:
 - [ROY Jules](https://julesr0y.xyz/)
+
+#### Development team:
+
 - DUMAS Antonin
 - HU Lucas
 - HUBERT Matthieu
 - DELRUE Cyprien
 - BASSET Maxime
 - BERGHE Nathan
-
-#### Presentation:
-
-**PitLane Insider** is an unofficial web application that provides access to a wide variety of data concerning the Formula 1 World Championship.
 
 #### Technologies/Frameworks used:
 
