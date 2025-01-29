@@ -4442,7 +4442,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [
@@ -5123,7 +5123,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [
@@ -18506,7 +18506,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [
@@ -19428,7 +19428,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 5,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 9,
     "teamsOfDriver": [
@@ -41623,7 +41623,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [
@@ -51610,7 +51610,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [
@@ -57584,7 +57584,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [
@@ -59965,7 +59965,7 @@
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 0,
-    "isCurrentSeasonDriver": true,
+    "isCurrentSeasonDriver": false,
     "isTestDriver": true,
     "racesThisSeason": 0,
     "teamsOfDriver": [

@@ -76,6 +76,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.position != null){ %>
                                 <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" || detail.gap=="NC" ) { %>
                                 <tr class="text-hasnt-finished-race">
                                     <% } else { %>
@@ -103,6 +104,7 @@
                                         <%= detail.gap %>
                                     </td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
 
@@ -118,7 +120,8 @@
                                     <td class="font-F1Bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position) %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.fp1Position != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -137,6 +140,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.fp1Time %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
 
@@ -151,6 +155,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.sprintQualiPosition - b.sprintQualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.sprintQualiPosition != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -169,6 +174,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.sprintQualiTime %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
 
@@ -183,6 +189,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.sprintRacePosition - b.sprintRacePosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.sprintRacePosition != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -201,6 +208,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.sprintRaceGap %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
 
@@ -219,6 +227,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.qualiPosition != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -243,6 +252,7 @@
                                         <%= detail.q3time %>
                                     </td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
 
@@ -260,6 +270,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.fp1Position != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -278,6 +289,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.fp1Time %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
 
@@ -292,6 +304,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp2Position - b.fp2Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.fp2Position != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -310,6 +323,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.fp2Time %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
                             <% } %>
@@ -326,6 +340,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp3Position - b.fp3Position); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.fp3Position != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -344,6 +359,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.fp3Time %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
                             <% } %>
@@ -364,6 +380,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.qualiPosition != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -388,6 +405,7 @@
                                         <%= detail.q3time %>
                                     </td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
                             <% } else { %>
@@ -402,6 +420,7 @@
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
+                                <% if(detail.qualiPosition != null){ %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
@@ -420,6 +439,7 @@
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3"><%= detail.qualiTime %></td>
                                 </tr>
+                                <% } %>
                                 <% }); %>
                             </table>
                             <% } %>
