@@ -127,12 +127,12 @@
 
                 <div class="tabs flex justify-center">
                     <div class="tab">
-                        <button id="btnPilotes" class="tablink active mr-4 underline" onclick="openTab('Pilotes')"><%= __('retro_f1.all_seasons.standings.drivers') %></button>
-                        <button id="btnConstructeurs" class="tablink" onclick="openTab('Constructeurs')"><%= __('retro_f1.all_seasons.standings.constructors') %></button>
+                        <button id="btnDrivers" class="tablink active mr-4 underline" onclick="openTab('drivers')"><%= __('retro_f1.all_seasons.standings.drivers') %></button>
+                        <button id="btnConstructors" class="tablink" onclick="openTab('constructors')"><%= __('retro_f1.all_seasons.standings.constructors') %></button>
                     </div>
                 </div>
 
-                <div id="Pilotes" class="bg-s-<%=theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+                <div id="drivers" class="bg-s-<%= theme %> p-4 mt-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
                     <table>
                         <tr id="header-classement-pilotes">
                             <td></td>
@@ -155,7 +155,7 @@
                     </table>
                 </div>
 
-                <div id="Constructeurs" class="hidden bg-s-<%= theme %> mt-8 p-4 sm:p-8 rounded-3xl mx-4 w-9/10 md:w-2/3">
+                <div id="constructors" class="bg-s-<%= theme %> p-4 mt-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
                     <table>
                         <tr>
                             <td></td>
@@ -196,20 +196,20 @@
     </script>
     <script>
         function openTab(tabName) {
-            if (tabName === 'Pilotes') {
-                document.getElementById('Pilotes').classList.remove('hidden');
-                document.getElementById('Constructeurs').classList.add('hidden');
-                document.getElementById('btnPilotes').classList.add('active');
-                document.getElementById('btnPilotes').classList.add('underline');
-                document.getElementById('btnConstructeurs').classList.remove('active');
-                document.getElementById('btnConstructeurs').classList.remove('underline');
-            } else if (tabName === 'Constructeurs') {
-                document.getElementById('Constructeurs').classList.remove('hidden');
-                document.getElementById('Pilotes').classList.add('hidden');
-                document.getElementById('btnConstructeurs').classList.add('active');
-                document.getElementById('btnConstructeurs').classList.add('underline');
-                document.getElementById('btnPilotes').classList.remove('active');
-                document.getElementById('btnPilotes').classList.remove('underline');
+            if (tabName === 'drivers') {
+                document.getElementById('drivers').classList.remove('hidden');
+                document.getElementById('constructors').classList.add('hidden');
+                document.getElementById('btnDrivers').classList.add('active');
+                document.getElementById('btnDrivers').classList.add('underline');
+                document.getElementById('btnConstructors').classList.remove('active');
+                document.getElementById('btnConstructors').classList.remove('underline');
+            } else if (tabName === 'constructors') {
+                document.getElementById('constructors').classList.remove('hidden');
+                document.getElementById('drivers').classList.add('hidden');
+                document.getElementById('btnConstructors').classList.add('active');
+                document.getElementById('btnConstructors').classList.add('underline');
+                document.getElementById('btnDrivers').classList.remove('active');
+                document.getElementById('btnDrivers').classList.remove('underline');
             }
         }
     </script>

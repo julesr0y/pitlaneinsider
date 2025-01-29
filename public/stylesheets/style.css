@@ -918,6 +918,9 @@ video {
 .gap-y-4 {
   row-gap: 1rem;
 }
+.gap-y-6 {
+  row-gap: 1.5rem;
+}
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -3671,6 +3674,10 @@ video {
     height: 7rem;
   }
 
+  .md\:h-32 {
+    height: 8rem;
+  }
+
   .md\:h-36 {
     height: 9rem;
   }
@@ -3683,10 +3690,6 @@ video {
     width: 50%;
   }
 
-  .md\:w-2\/3 {
-    width: 66.666667%;
-  }
-
   .md\:w-3\/4 {
     width: 75%;
   }
@@ -3695,8 +3698,12 @@ video {
     width: 60%;
   }
 
-  .md\:w-7\/12 {
-    width: 58.333333%;
+  .md\:w-9\/12 {
+    width: 75%;
+  }
+
+  .md\:w-auto {
+    width: auto;
   }
 
   .md\:flex-row {

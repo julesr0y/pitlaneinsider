@@ -139,7 +139,7 @@
 			"title": "Retro - Home",
 			"winners_title": "List of champion drivers",
 			"driver_titles": "titles",
-			"all_data": "List of Drivers | Constructors | Circuits",
+			"all_data": "Drivers | Constructors | Circuits | Chassis",
 			"all_seasons": "List of seasons",
 			"winners_constructors_title": "List of champion constructors"
 		},
@@ -276,7 +276,8 @@
 		"dataorigin_cookie_policy_explanantion2_title": "Cookie management",
 		"dataorigin_cookie_policy_explanantion2": "You have the option to accept or refuse cookies by changing the settings of your browser. However, if you disable cookies, some parts of our site may not function properly.",
 		"dataorigin_cookie_policy_explanantion3_title": "Changes to this cookie policy",
-		"dataorigin_cookie_policy_explanantion3": "We may update this cookie policy from time to time to reflect, for example, changes to our cookies or for other operational, legal or regulatory reasons. Therefore, please review it regularly to stay informed about our use of cookies and related technologies."
+		"dataorigin_cookie_policy_explanantion3": "We may update this cookie policy from time to time to reflect, for example, changes to our cookies or for other operational, legal or regulatory reasons. Therefore, please review it regularly to stay informed about our use of cookies and related technologies.",
+		"leaddev": "Lead developer"
 	},
 	"track": {
 		"total_race_held": "Total GP hosted"
