@@ -58,13 +58,13 @@
                     }
                 </style>
                 <div class="flex flex-col md:flex-row gap-y-4 md:gap-y-0 mt-4">
-                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-7/12">
+                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-9/12">
                         <div id="toggleTable" class="flex justify-center items-center gap-4">
                             <span id="prevButton"><img src="/img/assets/arrow-left.png" alt="left-arrow" class="h-4 w-auto" /></span>
                             <span id="tableTitle">Race</span>
                             <span id="nextButton"><img src="/img/assets/arrow-right.png" alt="right-arrow" class="h-4 w-auto" /></span>
                         </div>
-                        <div id="tables" class="overflow-x-scroll whitespace-nowrap no-scrollbar pt-2">
+                        <div id="tables" class="overflow-x-scroll whitespace-nowrap no-scrollbar pt-2 w-full">
                             <table id="tableRace">
                                 <tr>
                                     <td></td>
@@ -92,10 +92,7 @@
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
                                             <span class="flex gap-x-1">
-                                                <span class="hidden md:block"> <%= detail.firstName %> </span>
-                                                <span>
-                                                    <%= detail.lastName %>
-                                                </span>
+                                                <span><%= detail.lastName %></span>
                                             </span>
                                         </a>
                                     </td>
