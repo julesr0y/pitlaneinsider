@@ -333,9 +333,9 @@
         "totalRacesHeld": 8
     },
     {
-        "id": "losail",
-        "name": "Losail",
-        "fullName": "Losail International Circuit",
+        "id": "lusail",
+        "name": "Lusail",
+        "fullName": "Lusail International Circuit",
         "type": "RACE",
         "placeName": "Lusail",
         "countryId": "qatar",
