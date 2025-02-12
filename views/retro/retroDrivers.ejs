@@ -69,22 +69,20 @@
                     drivers.forEach((driver) => {
                         const driverHTML = `
                         <a href="/driver/${driver.driverId}" class="block">
-                            <div class="bg-s-${theme} rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
-                                <div class="text-center relative">
-                                    <div class="relative mb-4" id="${driver.firstName} ${driver.lastName}">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/${driver.driverId}.webp"
-                                            alt="${driver.firstName} ${driver.lastName}"
-                                            class="w-full h-40 object-contain" />
-                                    </div>
-                                    <div>
-                                        <div class="text-xl font-semibold">
-                                            ${driver.firstName} <br />
-                                                <span class="font-F1Bold text-2xl">
-                                                    ${driver.lastName}
-                                                </span>
-                                        </div>
+                            <div class="bg-s-${theme} rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col justify-end gap-2 items-center">
+                                <div class="pt-2">
+                                    <div class="text-xl text-center font-semibold">
+                                        ${driver.firstName} <br />
+                                            <span class="font-F1Bold text-2xl">
+                                                ${driver.lastName}
+                                            </span>
                                     </div>
                                 </div>
+
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/${driver.driverId}.webp"
+                                    alt="${driver.firstName} ${driver.lastName}"
+                                    class="w-full h-36 object-contain"
+                                />
                             </div>
                         </a>`;
                         elemsContainer.innerHTML += driverHTML;
