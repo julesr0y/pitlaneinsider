@@ -794,6 +794,9 @@ video {
 .w-full {
   width: 100%;
 }
+.max-w-28 {
+  max-width: 7rem;
+}
 .max-w-md {
   max-width: 28rem;
 }
@@ -2437,6 +2440,10 @@ video {
   background-color: rgb(252 249 252 / var(--tw-bg-opacity, 1));
 }
 .bg-sutton {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
+}
+.bg-t-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
 }

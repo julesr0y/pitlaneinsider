@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="flex justify-center items-center h-32 w-full">
-                                <div class="bg-<%= dataDriver.actualTeam %> text-white sm:p-4 shadow-md w-44 h-full p-2">
+                                <div class="bg-<%= dataDriver.actualTeam %> text-white sm:p-4 shadow-md w-44 h-full p-2 rounded-lg">
                                     <p class="text-base font-F1Bold mt-2 sm:mt-0"><%= __('driver.actual_season') %> <%= __('global.current_year') %></p>
                                     <p class="text-sm mt-1 leading-none"><%= __('driver.races') %>: <%= dataDriver.numberOfRacesCurrentSeason %></p>
                                     <p class="text-sm mt-1 leading-none"><%= __('driver.points') %>: <%= dataDriver.numberOfPointsCurrentSeason %></p>
@@ -68,19 +68,25 @@
                                 </div>
                             </div>
                             <% } else { %>
-                            <div class="grid grid-cols-2 grid-rows-1 gap-0 h-32 w-auto">
-                                <div class="flex justify-center items-center">
-                                    <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= dataDriver.id %>.webp" alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-auto w-3/4 md:h-32 md:w-auto" />
+                            <% const birth = new Date(dataDriver.dateOfBirth); const now = new Date(); let age = 0; if (dataDriver.dateOfDeath == null) { age = now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death = new Date(dataDriver.dateOfDeath); age = death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %>
+                            <% if (dataDriver.dateOfDeath === null) { %>
+                            <div class="grid grid-cols-2 grid-rows-1 gap-0 h-48 w-auto">
+                                <div class="flex flex-col justify-center items-center">
+                                    <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= dataDriver.id %>.webp" alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-auto w-auto max-w-28" />
+                                    <div class="bg-t-<%= theme %> h-16 w-4/5 flex justify-evenly items-center rounded-lg">
+                                        <img src="/img/countryFlags/<%= dataDriver.nationality.toLowerCase() %>.svg" alt="<%= dataDriver.nationality %>.svg" class="h-12 w-auto" />
+                                        <span>
+                                            <%= age %>
+                                            <%= __('driver.age') %>
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <div class="flex flex-col justify-center items-center h-32 w-auto">
                                     <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none"><%= dataDriver.firstName %> <%= dataDriver.lastName %></h1>
                                     <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
-                                        <% const birth = new Date(dataDriver.dateOfBirth); const now = new Date(); let age = 0; if (dataDriver.dateOfDeath == null) { age = now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death = new Date(dataDriver.dateOfDeath); age = death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %> <% if (dataDriver.dateOfDeath === null) { %>
                                         <span>
                                             <%= dataDriver.dateOfBirth %>
-                                            (<%= age %>
-                                            <%= __('driver.age') %>)
                                         </span>
                                         <% } else { %>
                                         <span>
@@ -89,10 +95,9 @@
                                         </span>
                                         <span>
                                             <%= dataDriver.dateOfDeath %>
-                                            (<%= age %>
-                                            <%= __('driver.age') %>)
                                         </span>
                                         <% } %>
+                                        <br />
                                     </p>
                                 </div>
                             </div>
