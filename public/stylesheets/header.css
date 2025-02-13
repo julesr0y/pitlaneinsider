@@ -93,7 +93,7 @@ main {
 
 /* Quand le menu hamburger est activé (checkbox coché) */
 #nav-check:checked ~ .nav-links {
-  height: 100vh;
+  height: 150vh;
   overflow-y: auto;
 }
 
@@ -121,6 +121,19 @@ main {
 
 #pc {
   display: block;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 @media (max-width: 1000px) {
