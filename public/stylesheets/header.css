@@ -136,14 +136,6 @@ main {
   /* Firefox */
 }
 
-body.no-scroll {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  touch-action: none;
-}
-
 @media (max-width: 1000px) {
   header {
     height: 8vh;
@@ -171,5 +163,13 @@ body.no-scroll {
 
   #pc {
     display: none;
+  }
+
+  body.no-scroll {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    touch-action: none;
   }
 }
