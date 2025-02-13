@@ -137,7 +137,11 @@ main {
 }
 
 body.no-scroll {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  touch-action: none;
 }
 
 @media (max-width: 1000px) {
