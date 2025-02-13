@@ -13,12 +13,12 @@
             <div class="pt-10 px-4 h-auto flex flex-col justify-center">
                 <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3 flex flex-col justify-center">
                     <div class="flex flex-col justify-center items-center gap-0">
-                        <% const birth = new Date(dataDriver.dateOfBirth); const now = new Date(); let age = 0; if (dataDriver.dateOfDeath == null) { age = now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death = new Date(dataDriver.dateOfDeath); age = death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %>
+                        <% const birth=new Date(dataDriver.dateOfBirth); const now=new Date(); let age=0; if (dataDriver.dateOfDeath==null) { age=now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death=new Date(dataDriver.dateOfDeath); age=death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %>
 
                         <div class="flex flex-col justify-center items-center">
                             <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none"><%= dataDriver.firstName %> <%= dataDriver.lastName %></h1>
                             <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
-                                <% if (dataDriver.dateOfDeath === null) { %>
+                                <% if (dataDriver.dateOfDeath===null) { %>
                                 <span>
                                     <%= dataDriver.dateOfBirth %>
                                 </span>
@@ -38,8 +38,15 @@
 
                         <div class="flex flex-col justify-center items-center pt-2">
                             <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= dataDriver.id %>.webp" alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-auto w-auto max-w-36" />
-                            <div class="bg-t-<%= theme %> h-16 w-48 flex justify-evenly items-center rounded-lg">
+                            <% let bgClass=dataDriver.currentSeasonDriver ? `bg-${dataDriver.actualTeam}` :
+                                `bg-t-${theme}`; %>
+                            <div class="<%= bgClass %> h-16 min-w-48 flex justify-evenly items-center gap-2 rounded-lg px-4">
                                 <img src="/img/countryFlags/<%= dataDriver.nationality.toLowerCase() %>.svg" alt="<%= dataDriver.nationality %>.svg" class="h-12 w-auto" />
+                                <% if (dataDriver.currentSeasonDriver===true) { %>
+                                <img src="/img/constructors-driverPage/<%= dataDriver.actualTeam %>.webp" alt="<%= dataDriver.actualTeam %>" class="h-auto w-auto max-h-12 max-w-20" />
+                                <img src="/img/helmets/helmet-<%= dataDriver.id %>.avif" alt="Helmet of <%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="max-h-12 w-auto" />
+                                <img src="/img/numbers-driverPage/number-<%= dataDriver.id %>.avif" alt="<%= dataDriver.permanentNumber %>" class="h-auto w-auto max-h-12" />
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -154,7 +161,7 @@
                             </div>
                         </div>
 
-                        <% if(dataDriver.allVictories !== null) { %>
+                        <% if(dataDriver.allVictories !==null) { %>
 
                         <div class="text-center mt-4">
                             <h3 class="text-base sm:text-lg font-bold"><%= __('driver.victories_title') %>:</h3>

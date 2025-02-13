@@ -11,21 +11,19 @@
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('global.current_year') %> <%= __('drivers.season') %></div>
             <div class="w-9/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10 mx-2">
                 <% pilotesFront.forEach(function(pilote) { %>
-                <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 m-2">
+                <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 pt-4 m-2">
                     <a href="/driver/<%= pilote.id %>" class="block text-center relative">
-                        <div class="relative mb-4">
-                            <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= pilote.id %>.webp" alt="<%= pilote.id %>" class="w-full h-40 object-contain" />
-                            <div class="absolute top-2 right-2 w-16 h-16">
-                                <img src="/img/countryFlags/<%= pilote.nationality %>.svg" alt="<%= pilote.nationality %>" class="w-12 h-auto" />
-                            </div>
-                        </div>
-                        <div>
-                            <img src="/img/constructors/<%= pilote.constructorId %>.webp" alt="<%= pilote.constructorId %>" class="h-10 w-auto mx-auto mb-2" />
-                            <div class="font-F1Bold text-2xl text-<%= pilote.constructorId %> mb-1"><% if (pilote.permanentNumber !=33) { %> <%= pilote.permanentNumber %> <% } else { %> <%= 1 %> <% } %></div>
+                        <div class="flex flex-col items-center justify-end h-full">
                             <div class="text-xl font-semibold">
-                                <%= pilote.firstName %> <br />
+                                <%= pilote.firstName %>
                                 <span class="font-F1Bold text-2xl"> <%= pilote.lastName %> </span>
                             </div>
+                            <div class="flex justify-center gap-6 items-center w-full pt-2">
+                                <img src="/img/countryFlags/<%= pilote.nationality %>.svg" alt="<%= pilote.nationality %>" class="max-h-12 w-auto" />
+                                <img src="/img/constructors/<%= pilote.constructorId %>.webp" alt="<%= pilote.constructorId %>" class="max-h-8 max-w-16 w-auto" />
+                                <div class="font-F1Bold text-3xl text-<%= pilote.constructorId %>"><% if (pilote.permanentNumber !=33) { %> <%= pilote.permanentNumber %> <% } else { %> <%= 1 %> <% } %></div>
+                            </div>
+                            <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= pilote.id %>.webp" alt="<%= pilote.id %>" class="max-h-40 w-auto" />
                         </div>
                     </a>
                 </div>
