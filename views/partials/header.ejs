@@ -12,15 +12,36 @@
             <div class="bar" id="bar2"></div>
             <div class="bar" id="bar3"></div>
         </label>
-        <div class="nav-links">
-            <a href="/constructors" id="ecuries"> <%= __('header.constructors') %> </a>
-            <a href="/drivers" id="pilotes"> <%= __('header.drivers') %> </a>
-            <a href="/calendar" id="calendrier"> <%= __('header.calendar') %> </a>
-            <a href="/driverstandings" id="classement"> <%= __('header.standings') %> </a>
-            <a href="/reglementations" id="reglement"> <%= __('header.reglementation') %> </a>
-            <a href="/retrohome" id="retro"> <%= __('header.retro_f1') %> </a>
-            <a href="/live" id="live"> <%= __('header.live') %> </a>
-            <a href="/news" id="news"> <%= __('header.news') %> </a>
+
+        <div class="nav-links flex justify-center items-center w-full">
+            <table class="mx-auto text-center w-full">
+                <tr class="border-t-2 border-b-2 border-white">
+                    <td>
+                        <a href="/constructors" id="ecuries"> <%= __('header.constructors') %> </a>
+                    </td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/drivers" id="pilotes"> <%= __('header.drivers') %> </a></td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/calendar" id="calendrier"> <%= __('header.calendar') %> </a></td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/driverstandings" id="classement"> <%= __('header.standings') %> </a></td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/reglementations" id="reglement"> <%= __('header.reglementation') %> </a></td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/retrohome" id="retro"> <%= __('header.retro_f1') %> </a></td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/live" id="live"> <%= __('header.live') %> </a></td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                    <td><a href="/news" id="news"> <%= __('header.news') %> </a></td>
+                </tr>
+            </table>
         </div>
     </div>
 </header>

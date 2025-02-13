@@ -977,6 +977,9 @@ video {
 .border-l-4 {
   border-left-width: 4px;
 }
+.border-t-2 {
+  border-top-width: 2px;
+}
 .border-adams {
   --tw-border-opacity: 1;
   border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
@@ -1720,6 +1723,10 @@ video {
 .border-wetteroth {
   --tw-border-opacity: 1;
   border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 .border-williams {
   --tw-border-opacity: 1;
