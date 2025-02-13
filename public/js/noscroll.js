@@ -1,5 +1,3 @@
-let navCheck2 = document.getElementById('nav-check');
-
 document.addEventListener('DOMContentLoaded', function () {
     const navCheck = document.getElementById('nav-check');
 
