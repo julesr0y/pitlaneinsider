@@ -93,7 +93,7 @@ main {
 
 /* Quand le menu hamburger est activé (checkbox coché) */
 #nav-check:checked ~ .nav-links {
-  height: 150vh;
+  height: 100vh;
   overflow-y: auto;
 }
 
@@ -134,6 +134,10 @@ main {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 @media (max-width: 1000px) {

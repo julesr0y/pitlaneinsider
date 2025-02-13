@@ -45,3 +45,17 @@
         </div>
     </div>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navCheck = document.getElementById('nav-check');
+
+        navCheck.addEventListener('change', function () {
+            if (navCheck.checked) {
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    });
+</script>
