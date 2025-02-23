@@ -5,19 +5,13 @@ const cors = require("cors");
 // driver number to driver code mapping
 const driverMapping = {
     1: "VER",
-    20: "MAG",
-    2: "SAR",
-    3: "RIC",
     10: "GAS",
     30: "LAW",
-    43: "COL",
-    61: "DOO",
+    7: "DOO",
     44: "HAM",
     55: "SAI",
     16: "LEC",
-    77: "BOT",
     63: "RUS",
-    11: "PER",
     4: "NOR",
     18: "STR",
     14: "ALO",
@@ -25,8 +19,11 @@ const driverMapping = {
     23: "ALB",
     22: "TSU",
     81: "PIA",
-    24: "ZHO",
-    27: "HUL"
+    27: "HUL",
+    5: "BOR",
+    6: "HAD",
+    12: "ANT",
+    87: "BEA"
 };
 
 
