@@ -309,7 +309,7 @@
 
                 if (distance < 0) {
                     clearInterval(countdownInterval);
-                    document.getElementById('countdown').innerHTML = `<div class="col-span-12">La course a commencée</div>`;
+                    document.getElementById('countdown').innerHTML = `<div class="col-span-12 flex justify-evenly items-center gap-2">Session started - <span class="flex gap-1 items-center"><span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span><a href="/live" class="text-red-500">Live</a></span></div>`;
                     return;
                 }
 
