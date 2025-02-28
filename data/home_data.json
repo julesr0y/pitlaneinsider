@@ -2,12 +2,12 @@
     {
         "nextRaceInfo": [
             {
-                "id": "bahrain",
-                "raceId": null,
-                "country": "bahrain",
-                "name": "Pre-season Testing Day 2",
-                "raceDate": "2025-02-27",
-                "raceTime": "08:00"
+                "id": "australia",
+                "raceId": 1126,
+                "country": "australia",
+                "name": "Australian GP",
+                "raceDate": "2025-03-16",
+                "raceTime": "04:00"
             }
         ],
         "lastPodiumLocalisation": [
