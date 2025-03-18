@@ -6,5 +6,5 @@
         "./utils/**/*.js"
     ],
     "ext": "ejs js",
-    "exec": "npm run build:css && npm run format:views && node ./bin/www"
+    "exec": "npm run build:css && node ./bin/www"
 }
