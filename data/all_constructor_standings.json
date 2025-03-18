@@ -4904,68 +4904,68 @@
         "constructorId": "mclaren",
         "name": "McLaren",
         "position": 1,
-        "points": 0
+        "points": 27
     },
     {
         "year": 2025,
-        "constructorId": "ferrari",
-        "name": "Ferrari",
+        "constructorId": "mercedes",
+        "name": "Mercedes",
         "position": 2,
-        "points": 0
+        "points": 27
     },
     {
         "year": 2025,
         "constructorId": "red-bull",
         "name": "Red Bull",
         "position": 3,
-        "points": 0
+        "points": 18
     },
     {
         "year": 2025,
-        "constructorId": "mercedes",
-        "name": "Mercedes",
+        "constructorId": "williams",
+        "name": "Williams",
         "position": 4,
-        "points": 0
+        "points": 10
     },
     {
         "year": 2025,
         "constructorId": "aston-martin",
         "name": "Aston Martin",
         "position": 5,
-        "points": 0
+        "points": 8
+    },
+    {
+        "year": 2025,
+        "constructorId": "kick-sauber",
+        "name": "Kick Sauber",
+        "position": 6,
+        "points": 6
+    },
+    {
+        "year": 2025,
+        "constructorId": "ferrari",
+        "name": "Ferrari",
+        "position": 7,
+        "points": 5
     },
     {
         "year": 2025,
         "constructorId": "alpine",
         "name": "Alpine",
-        "position": 6,
-        "points": 0
-    },
-    {
-        "year": 2025,
-        "constructorId": "haas",
-        "name": "Haas",
-        "position": 7,
+        "position": 8,
         "points": 0
     },
     {
         "year": 2025,
         "constructorId": "racing-bulls",
         "name": "Racing Bulls",
-        "position": 8,
-        "points": 0
-    },
-    {
-        "year": 2025,
-        "constructorId": "williams",
-        "name": "Williams",
         "position": 9,
         "points": 0
     },
     {
         "year": 2025,
-        "constructorId": "kick-sauber",
-        "name": "Kick Sauber",
+        "constructorId": "haas",
+        "name": "Haas",
         "position": 10,
         "points": 0
     }
