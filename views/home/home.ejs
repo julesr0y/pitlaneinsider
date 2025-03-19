@@ -83,7 +83,7 @@
                                             <span>
                                                 <%= homeData[0].driverLeader.abbreviation %>
                                             </span>
-                                            <span class="text-<%= homeData[0].driverLeader.actualTeam %>"> <% if(homeData[0].driverLeader.permanentNumber==33) { %> <%= 1 %> <% } else { %> <%= homeData[0].driverLeader.permanentNumber %> <% } %> </span>
+                                            <span class="text-<%= homeData[0].driverLeader.constructorId %>"> <% if(homeData[0].driverLeader.permanentNumber==33) { %> <%= 1 %> <% } else { %> <%= homeData[0].driverLeader.permanentNumber %> <% } %> </span>
                                         </span>
                                         <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData[0].driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                     </span>
@@ -100,7 +100,7 @@
                             </a>
                         </div>
 
-                        <a href="/retrogpdetails/2024/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
+                        <a href="/retrogpdetails/2025/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
                             <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
                                 <span class="flex justify-center text-center mb-4 font-F1Bold gap-2 pt-2">
                                     <%= __('home.last_race') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
@@ -183,7 +183,7 @@
                                 <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
                                 <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
                                     </td>
                                     <td class="font-F1Bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
                                     <td class="px-1">-</td>
@@ -198,7 +198,7 @@
                                 <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
                                 <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= pilote.actualTeam %> h-auto w-1 box-border bg-<%= pilote.actualTeam %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
                                     </td>
                                     <td class="font-F1Bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
                                     <td class="px-1">-</td>

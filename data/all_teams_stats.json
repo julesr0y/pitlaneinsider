@@ -143,20 +143,20 @@
         "name": "Alpine",
         "country": "france",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 90,
+        "totalRaceStarts": 91,
         "totalRaceWins": 1,
         "totalPodiumRaces": 5,
         "totalChampionshipPoints": 513,
         "totalPolePositions": 0,
         "totalFastestLaps": 1,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 9685,
+        "totalRaceLaps": 9742,
         "firstYear": 2021,
         "numberOfSeasons": 5,
-        "victoryRatio": 1.11,
-        "podiumRatio": 5.56,
+        "victoryRatio": 1.1,
+        "podiumRatio": 5.49,
         "poleRatio": 0,
-        "currentCarId": "",
+        "currentCarId": null,
         "currentDrivers": [
             {
                 "id": "jack-doohan",
@@ -173,7 +173,7 @@
                 "permanentNumber": "10"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "alta",
@@ -342,20 +342,20 @@
         "name": "Aston Martin",
         "country": "united-kingdom",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 95,
+        "totalRaceStarts": 96,
         "totalRaceWins": 0,
         "totalPodiumRaces": 9,
-        "totalChampionshipPoints": 506,
+        "totalChampionshipPoints": 514,
         "totalPolePositions": 0,
         "totalFastestLaps": 3,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 10496,
+        "totalRaceLaps": 10585,
         "firstYear": 1959,
         "numberOfSeasons": 7,
         "victoryRatio": 0,
-        "podiumRatio": 9.47,
+        "podiumRatio": 9.38,
         "poleRatio": 0,
-        "currentCarId": "",
+        "currentCarId": null,
         "currentDrivers": [
             {
                 "id": "fernando-alonso",
@@ -372,7 +372,7 @@
                 "permanentNumber": "18"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "ats-wheels",
@@ -1323,37 +1323,37 @@
         "name": "Ferrari",
         "country": "italy",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 1098,
+        "totalRaceStarts": 1099,
         "totalRaceWins": 248,
         "totalPodiumRaces": 632,
-        "totalChampionshipPoints": 10277,
+        "totalChampionshipPoints": 10282,
         "totalPolePositions": 253,
         "totalFastestLaps": 265,
         "totalChampionshipWins": 16,
-        "totalRaceLaps": 123986,
+        "totalRaceLaps": 124100,
         "firstYear": 1950,
         "numberOfSeasons": 76,
-        "victoryRatio": 22.59,
-        "podiumRatio": 57.56,
-        "poleRatio": 23.04,
-        "currentCarId": "",
+        "victoryRatio": 22.57,
+        "podiumRatio": 57.51,
+        "poleRatio": 23.02,
+        "currentCarId": null,
         "currentDrivers": [
-            {
-                "id": "lewis-hamilton",
-                "firstName": "Lewis",
-                "lastName": "Hamilton",
-                "nationality": "united-kingdom",
-                "permanentNumber": "44"
-            },
             {
                 "id": "charles-leclerc",
                 "firstName": "Charles",
                 "lastName": "Leclerc",
                 "nationality": "monaco",
                 "permanentNumber": "16"
+            },
+            {
+                "id": "lewis-hamilton",
+                "firstName": "Lewis",
+                "lastName": "Hamilton",
+                "nationality": "united-kingdom",
+                "permanentNumber": "44"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "first",
@@ -1637,20 +1637,20 @@
         "name": "Haas",
         "country": "united-states-of-america",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 190,
+        "totalRaceStarts": 191,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
         "totalChampionshipPoints": 307,
         "totalPolePositions": 1,
         "totalFastestLaps": 3,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 19856,
+        "totalRaceLaps": 19970,
         "firstYear": 2016,
         "numberOfSeasons": 10,
         "victoryRatio": 0,
         "podiumRatio": 0,
-        "poleRatio": 0.53,
-        "currentCarId": "",
+        "poleRatio": 0.52,
+        "currentCarId": null,
         "currentDrivers": [
             {
                 "id": "esteban-ocon",
@@ -1667,7 +1667,7 @@
                 "permanentNumber": "87"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "hall",
@@ -1951,37 +1951,37 @@
         "name": "Kick Sauber",
         "country": "germany",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 24,
+        "totalRaceStarts": 25,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
-        "totalChampionshipPoints": 4,
+        "totalChampionshipPoints": 10,
         "totalPolePositions": 0,
         "totalFastestLaps": 0,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 2705,
+        "totalRaceLaps": 2807,
         "firstYear": 2024,
         "numberOfSeasons": 2,
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0,
-        "currentCarId": "",
+        "currentCarId": null,
         "currentDrivers": [
-            {
-                "id": "nico-hulkenberg",
-                "firstName": "Nico",
-                "lastName": "Hülkenberg",
-                "nationality": "germany",
-                "permanentNumber": "27"
-            },
             {
                 "id": "gabriel-bortoleto",
                 "firstName": "Gabriel",
                 "lastName": "Bortoleto",
                 "nationality": "brazil",
                 "permanentNumber": "5"
+            },
+            {
+                "id": "nico-hulkenberg",
+                "firstName": "Nico",
+                "lastName": "Hülkenberg",
+                "nationality": "germany",
+                "permanentNumber": "27"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "klenk",
@@ -2477,7 +2477,7 @@
         "totalPodiumRaces": 20,
         "totalChampionshipPoints": 172.5,
         "totalPolePositions": 5,
-        "totalFastestLaps": 6,
+        "totalFastestLaps": 7,
         "totalChampionshipWins": 0,
         "totalRaceLaps": 21036,
         "firstYear": 1970,
@@ -2633,20 +2633,20 @@
         "name": "McLaren",
         "country": "united-kingdom",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 970,
-        "totalRaceWins": 189,
-        "totalPodiumRaces": 424,
-        "totalChampionshipPoints": 6950.5,
-        "totalPolePositions": 164,
-        "totalFastestLaps": 172,
+        "totalRaceStarts": 971,
+        "totalRaceWins": 190,
+        "totalPodiumRaces": 425,
+        "totalChampionshipPoints": 6977.5,
+        "totalPolePositions": 165,
+        "totalFastestLaps": 173,
         "totalChampionshipWins": 9,
-        "totalRaceLaps": 103021,
+        "totalRaceLaps": 103135,
         "firstYear": 1966,
         "numberOfSeasons": 60,
-        "victoryRatio": 19.48,
-        "podiumRatio": 43.71,
-        "poleRatio": 16.91,
-        "currentCarId": "",
+        "victoryRatio": 19.57,
+        "podiumRatio": 43.77,
+        "poleRatio": 16.99,
+        "currentCarId": null,
         "currentDrivers": [
             {
                 "id": "lando-norris",
@@ -2663,7 +2663,7 @@
                 "permanentNumber": "81"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "mercedes",
@@ -2671,20 +2671,20 @@
         "name": "Mercedes",
         "country": "germany",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 317,
+        "totalRaceStarts": 318,
         "totalRaceWins": 129,
-        "totalPodiumRaces": 201,
-        "totalChampionshipPoints": 7690.5,
+        "totalPodiumRaces": 202,
+        "totalChampionshipPoints": 7717.5,
         "totalPolePositions": 141,
         "totalFastestLaps": 109,
         "totalChampionshipWins": 8,
-        "totalRaceLaps": 36554,
+        "totalRaceLaps": 36668,
         "firstYear": 1954,
         "numberOfSeasons": 18,
-        "victoryRatio": 40.69,
-        "podiumRatio": 63.41,
-        "poleRatio": 44.48,
-        "currentCarId": "",
+        "victoryRatio": 40.57,
+        "podiumRatio": 63.52,
+        "poleRatio": 44.34,
+        "currentCarId": null,
         "currentDrivers": [
             {
                 "id": "andrea-kimi-antonelli",
@@ -2701,7 +2701,7 @@
                 "permanentNumber": "63"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "merzario",
@@ -3215,37 +3215,37 @@
         "name": "Racing Bulls",
         "country": "italy",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 0,
+        "totalRaceStarts": 1,
         "totalRaceWins": 0,
         "totalPodiumRaces": 0,
         "totalChampionshipPoints": 0,
         "totalPolePositions": 0,
         "totalFastestLaps": 0,
         "totalChampionshipWins": 0,
-        "totalRaceLaps": 0,
+        "totalRaceLaps": 57,
         "firstYear": 2025,
         "numberOfSeasons": 1,
         "victoryRatio": 0,
         "podiumRatio": 0,
         "poleRatio": 0,
-        "currentCarId": "",
+        "currentCarId": null,
         "currentDrivers": [
-            {
-                "id": "yuki-tsunoda",
-                "firstName": "Yuki",
-                "lastName": "Tsunoda",
-                "nationality": "japan",
-                "permanentNumber": "22"
-            },
             {
                 "id": "isack-hadjar",
                 "firstName": "Isack",
                 "lastName": "Hadjar",
                 "nationality": "france",
                 "permanentNumber": "6"
+            },
+            {
+                "id": "yuki-tsunoda",
+                "firstName": "Yuki",
+                "lastName": "Tsunoda",
+                "nationality": "japan",
+                "permanentNumber": "22"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "racing-point",
@@ -3368,37 +3368,37 @@
         "name": "Red Bull",
         "country": "austria",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 393,
+        "totalRaceStarts": 394,
         "totalRaceWins": 122,
-        "totalPodiumRaces": 218,
-        "totalChampionshipPoints": 7837,
+        "totalPodiumRaces": 219,
+        "totalChampionshipPoints": 7855,
         "totalPolePositions": 103,
         "totalFastestLaps": 99,
         "totalChampionshipWins": 6,
-        "totalRaceLaps": 42076,
+        "totalRaceLaps": 42179,
         "firstYear": 2005,
         "numberOfSeasons": 21,
-        "victoryRatio": 31.04,
-        "podiumRatio": 55.47,
-        "poleRatio": 26.21,
-        "currentCarId": "",
+        "victoryRatio": 30.96,
+        "podiumRatio": 55.58,
+        "poleRatio": 26.14,
+        "currentCarId": null,
         "currentDrivers": [
-            {
-                "id": "max-verstappen",
-                "firstName": "Max",
-                "lastName": "Verstappen",
-                "nationality": "netherlands",
-                "permanentNumber": "33"
-            },
             {
                 "id": "liam-lawson",
                 "firstName": "Liam",
                 "lastName": "Lawson",
                 "nationality": "new-zealand",
                 "permanentNumber": "30"
+            },
+            {
+                "id": "max-verstappen",
+                "firstName": "Max",
+                "lastName": "Verstappen",
+                "nationality": "netherlands",
+                "permanentNumber": "33"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "reif",
@@ -4303,20 +4303,20 @@
         "name": "Williams",
         "country": "united-kingdom",
         "currentSeasonTeam": true,
-        "totalRaceStarts": 826,
+        "totalRaceStarts": 827,
         "totalRaceWins": 114,
         "totalPodiumRaces": 243,
-        "totalChampionshipPoints": 3631,
+        "totalChampionshipPoints": 3641,
         "totalPolePositions": 128,
         "totalFastestLaps": 133,
         "totalChampionshipWins": 9,
-        "totalRaceLaps": 85163,
+        "totalRaceLaps": 85220,
         "firstYear": 1978,
         "numberOfSeasons": 48,
-        "victoryRatio": 13.8,
-        "podiumRatio": 29.42,
-        "poleRatio": 15.5,
-        "currentCarId": "",
+        "victoryRatio": 13.78,
+        "podiumRatio": 29.38,
+        "poleRatio": 15.48,
+        "currentCarId": null,
         "currentDrivers": [
             {
                 "id": "alexander-albon",
@@ -4333,7 +4333,7 @@
                 "permanentNumber": "55"
             }
         ],
-        "currentCarName": "TBC"
+        "currentCarName": null
     },
     {
         "constructorId": "wolf-williams",
