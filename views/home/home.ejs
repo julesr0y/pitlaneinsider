@@ -37,8 +37,8 @@
         </style>
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> flex flex-col min-h-screen">
-        <main class="bg-b-<%= theme %> flex-grow">
+    <body class="font-regular text-<%= theme %> flex flex-col min-h-screen">
+        <main class="bg-b-<%= theme %> grow">
             <div class="next text-center text-white bg-black py-2">
                 <h1>
                     <div class="flex items-center justify-center gap-1">
@@ -76,7 +76,7 @@
                     <div class="w-full h-full">
                         <div id="championnats" class="flex gap-4 w-full">
                             <a href="/driver/<%= homeData[0].driverLeader.driverId %>" class="w-full">
-                                <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl overflow-hidden">
+                                <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl overflow-hidden">
                                     <span class="text-center pt-2"> <%= __('home.drivers_championship') %> </span>
                                     <span class="flex justify-evenly items-center mt-auto gap-2">
                                         <span class="flex flex-col items-center text-xl">
@@ -92,7 +92,7 @@
 
                             <a href="/constructor/<%= homeData[0].constructorLeader.constructorId %>" class="w-full">
                                 <div id="chContructeurs" class="h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
-                                    <span class="text-center font-F1Bold pt-2"> <%= __('home.constructors_championship') %> </span>
+                                    <span class="text-center font-bold pt-2"> <%= __('home.constructors_championship') %> </span>
                                     <span>
                                         <img src="/img/constructors/<%= homeData[0].constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
                                     </span>
@@ -102,7 +102,7 @@
 
                         <a href="/retrogpdetails/2025/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
                             <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
-                                <span class="flex justify-center text-center mb-4 font-F1Bold gap-2 pt-2">
+                                <span class="flex justify-center text-center mb-4 font-bold gap-2 pt-2">
                                     <%= __('home.last_race') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
                                     <img src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg" alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto" />
                                 </span>
@@ -133,7 +133,7 @@
                         </a>
                     </div>
 
-                    <div class="bg-s-<%= theme %> hidden md:flex flex-col justify-between items-center font-F1Bold rounded-3xl w-full h-full py-2">
+                    <div class="bg-s-<%= theme %> hidden md:flex flex-col justify-between items-center font-bold rounded-3xl w-full h-full py-2">
                         <a href="">News</a>
                         <table>
                             <% newsFront.forEach(function(article) { %>
@@ -149,7 +149,7 @@
                             </tr>
                             <% }); %>
                         </table>
-                        <div class="flex-grow flex items-center justify-center w-full">
+                        <div class="grow flex items-center justify-center w-full">
                             <a href="https://motorsport.com/" target="_blank">
                                 <img src="/img/assets/motorsport.png" alt="motorsport.com" class="h-12 w-auto" />
                             </a>
@@ -157,7 +157,7 @@
                     </div>
                 </div>
 
-                <div class="bg-s-<%= theme %> md:hidden flex flex-col justify-center items-center font-F1Bold rounded-3xl w-full h-full mt-4 px-2 pt-2 pb-6">
+                <div class="bg-s-<%= theme %> md:hidden flex flex-col justify-center items-center font-bold rounded-3xl w-full h-full mt-4 px-2 pt-2 pb-6">
                     <a href="">News</a>
                     <table>
                         <% newsFront.forEach(function(article) { %>
@@ -177,7 +177,7 @@
 
                 <div class="flex flex-col md:flex-row gap-y-1 gap-x-4">
                     <div class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                        <a href="/driverstandings" class="flex justify-center text-center font-F1Bold"> <%= __('home.drivers_standings') %> </a>
+                        <a href="/driverstandings" class="flex justify-center text-center font-bold"> <%= __('home.drivers_standings') %> </a>
                         <span class="flex justify-evenly">
                             <table>
                                 <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
@@ -185,7 +185,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
                                     <td class="px-1">-</td>
                                     <td>
                                         <a href="/driver/<%= pilote.driverId %>"> <%= pilote.lastName %> </a>
@@ -200,7 +200,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
                                     <td class="px-1">-</td>
                                     <td>
                                         <a href="/driver/<%= pilote.driverId %>"> <%= pilote.lastName %> </a>
@@ -212,7 +212,7 @@
                     </div>
 
                     <div class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                        <a href="/constructorstandings" class="flex justify-center text-center font-F1Bold"> <%= __('home.constructors_standings') %> </a>
+                        <a href="/constructorstandings" class="flex justify-center text-center font-bold"> <%= __('home.constructors_standings') %> </a>
                         <span class="flex justify-evenly">
                             <table>
                                 <% homeData[0].constructorStandings.slice(0, 10).forEach(function(constructor) { %>
@@ -220,7 +220,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold"><%= String(constructor.position).padStart(2, '0') %></td>
+                                    <td class="font-bold"><%= String(constructor.position).padStart(2, '0') %></td>
                                     <td class="px-1">-</td>
                                     <td>
                                         <a href="/constructor/<%= constructor.constructorId %>"> <%= constructor.name %> </a>
@@ -233,9 +233,9 @@
                 </div>
 
                 <div class="block md:grid grid-cols-2 gap-x-4 items-stretch pt-4">
-                    <div class="bg-s-<%= theme %> flex md:flex-col items-center font-F1Bold rounded-3xl w-full h-full">
+                    <div class="bg-s-<%= theme %> flex md:flex-col items-center font-bold rounded-3xl w-full h-full">
                         <a href="/chassis/<%= homeOTDData[0].chassisOTD[0].chassisId %>" class="w-full">
-                            <div id="chPilotes" class="h-48 bg-s-<%= theme %> font-F1Bold rounded-3xl flex flex-col">
+                            <div id="chPilotes" class="h-48 bg-s-<%= theme %> font-bold rounded-3xl flex flex-col">
                                 <span class="text-center pt-2 px-2"> <%= __('home.chassis_otd') %> </span>
                                 <span class="flex flex-col md:flex-row justify-evenly items-center mt-auto gap-2 pt-2">
                                     <span class="flex gap-x-2 md:flex-col items-center text-md md:text-xl">
@@ -251,7 +251,7 @@
                     <div class="w-full h-full mt-4 md:mt-0">
                         <div id="championnats" class="flex gap-4 w-full">
                             <a href="/driver/<%= homeOTDData[0].driverOTD[0].driverId %>" class="w-full">
-                                <div id="chPilotes" class="h-36 md:h-48 bg-s-<%= theme %> flex flex-col justify-center items-center font-F1Bold rounded-3xl">
+                                <div id="chPilotes" class="h-36 md:h-48 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl">
                                     <span class="text-center pt-2 px-2"> <%= __('home.driver_otd') %> </span>
                                     <span class="flex justify-evenly items-center mt-auto gap-2">
                                         <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeOTDData[0].driverOTD[0].driverId %>.webp" class="h-24 md:h-36 w-auto" />
@@ -261,7 +261,7 @@
 
                             <a href="/constructor/<%= homeOTDData[0].constructorOTD[0].constructorId %>" class="w-full">
                                 <div id="chContructeurs" class="h-36 md:h-48 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
-                                    <span class="text-center font-F1Bold pt-2 px-2"> <%= __('home.constructor_otd') %> </span>
+                                    <span class="text-center font-bold pt-2 px-2"> <%= __('home.constructor_otd') %> </span>
                                     <span>
                                         <img src="/img/constructors/<%= homeOTDData[0].constructorOTD[0].constructorId %>.webp" class="h-16 md:h-28 w-auto mt-3 md:mt-6" />
                                     </span>

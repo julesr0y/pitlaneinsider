@@ -30,12 +30,12 @@
         </style>
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('global.current_year') %> <%= __('calendar.season') %></div>
 
             <div class="text-center mt-8">
-                <button id="nextRaceButton" class="text-white py-2 px-4 rounded color"><%= __('calendar.next_race') %></button>
+                <button id="nextRaceButton" class="text-white py-2 px-4 rounded-sm color"><%= __('calendar.next_race') %></button>
             </div>
 
             <div class="w-9/10 mx-auto p-4 pt-0">
@@ -46,7 +46,7 @@
                         <div id="race-<%= race.raceId %>" class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
                             <div class="flex flex-col items-center">
                                 <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg" alt="<%= race.country %>" class="mb-2 h-12 w-auto" />
-                                <h2 class="text-lg font-F1Bold mb-3">
+                                <h2 class="text-lg font-bold mb-3">
                                     <%= race.name %>
                                     <p class="text-t-s-<%= theme %> text-sm">Round <%= race.round %></p>
                                 </h2>

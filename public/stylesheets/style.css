@@ -1,3782 +1,3090 @@
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}/*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
-*//*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
-
-*,
-::before,
-::after {
-  box-sizing: border-box; /* 1 */
-  border-width: 0; /* 2 */
-  border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
-6. Use the user's configured `sans` font-variation-settings by default.
-7. Disable tap highlights on iOS
-*/
-
-html,
-:host {
-  line-height: 1.5; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -moz-tab-size: 4; /* 3 */
-  -o-tab-size: 4;
-     tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
-  font-feature-settings: normal; /* 5 */
-  font-variation-settings: normal; /* 6 */
-  -webkit-tap-highlight-color: transparent; /* 7 */
-}
-
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
-
-body {
-  margin: 0; /* 1 */
-  line-height: inherit; /* 2 */
-}
-
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
-
-hr {
-  height: 0; /* 1 */
-  color: inherit; /* 2 */
-  border-top-width: 1px; /* 3 */
-}
-
-/*
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-/*
-Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-1. Use the user's configured `mono` font-family by default.
-2. Use the user's configured `mono` font-feature-settings by default.
-3. Use the user's configured `mono` font-variation-settings by default.
-4. Correct the odd `em` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
-  font-feature-settings: normal; /* 2 */
-  font-variation-settings: normal; /* 3 */
-  font-size: 1em; /* 4 */
-}
-
-/*
-Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
-  border-collapse: collapse; /* 3 */
-}
-
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-feature-settings: inherit; /* 1 */
-  font-variation-settings: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  font-weight: inherit; /* 1 */
-  line-height: inherit; /* 1 */
-  letter-spacing: inherit; /* 1 */
-  color: inherit; /* 1 */
-  margin: 0; /* 2 */
-  padding: 0; /* 3 */
-}
-
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
-
-button,
-select {
-  text-transform: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
-  -webkit-appearance: button; /* 1 */
-  background-color: transparent; /* 2 */
-  background-image: none; /* 2 */
-}
-
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
-[type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to `inherit` in Safari.
-*/
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-Removes the default spacing and border for appropriate elements.
-*/
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-Reset default styling for dialogs.
-*/
-dialog {
-  padding: 0;
-}
-
-/*
-Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
-}
-
-/*
-Set the default cursor for buttons.
-*/
-
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-:disabled {
-  cursor: default;
-}
-
-/*
-1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block; /* 1 */
-  vertical-align: middle; /* 2 */
-}
-
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make elements with the HTML hidden attribute stay hidden by default */
-[hidden]:where(:not([hidden="until-found"])) {
-  display: none;
-}
-.container {
-  width: 100%;
-}
-@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
+/*! tailwindcss v4.0.15 | MIT License | https://tailwindcss.com */
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --color-red-500: oklch(0.637 0.237 25.331);
+    --color-yellow-300: oklch(0.905 0.182 98.111);
+    --color-green-400: oklch(0.792 0.209 151.711);
+    --color-green-500: oklch(0.723 0.219 149.579);
+    --color-green-600: oklch(0.627 0.194 149.214);
+    --color-blue-400: oklch(0.707 0.165 254.624);
+    --color-blue-500: oklch(0.623 0.214 259.815);
+    --color-blue-800: oklch(0.424 0.199 265.638);
+    --color-fuchsia-700: oklch(0.518 0.253 323.949);
+    --color-gray-300: oklch(0.872 0.01 258.338);
+    --color-gray-500: oklch(0.551 0.027 264.364);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-sm: 24rem;
+    --container-md: 28rem;
+    --container-xl: 36rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --font-weight-semibold: 600;
+    --radius-sm: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --font-bold: "F1Bold", sans-serif;
+    --font-regular: "F1Regular", sans-serif;
+    --font-wide: "F1Wide", sans-serif;
   }
 }
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: initial;
+    font-variation-settings: initial;
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    font-feature-settings: initial;
+    font-variation-settings: initial;
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: color-mix(in oklab, currentColor 50%, transparent);
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
   }
 }
-@media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
+@layer utilities {
+  .visible {
+    visibility: visible;
   }
-}
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
+  .absolute {
+    position: absolute;
   }
-}
-@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
+  .relative {
+    position: relative;
   }
-}
-.visible {
-  visibility: visible;
-}
-.fixed {
-  position: fixed;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.col-span-12 {
-  grid-column: span 12 / span 12;
-}
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-.col-span-4 {
-  grid-column: span 4 / span 4;
-}
-.col-span-6 {
-  grid-column: span 6 / span 6;
-}
-.row-span-3 {
-  grid-row: span 3 / span 3;
-}
-.m-0 {
-  margin: 0px;
-}
-.m-2 {
-  margin: 0.5rem;
-}
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
-}
-.mr-2 {
-  margin-right: 0.5rem;
-}
-.mr-20 {
-  margin-right: 5rem;
-}
-.mr-4 {
-  margin-right: 1rem;
-}
-.mt-2 {
-  margin-top: 0.5rem;
-}
-.mt-3 {
-  margin-top: 0.75rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.mt-5 {
-  margin-top: 1.25rem;
-}
-.mt-6 {
-  margin-top: 1.5rem;
-}
-.mt-8 {
-  margin-top: 2rem;
-}
-.mt-auto {
-  margin-top: auto;
-}
-.box-border {
-  box-sizing: border-box;
-}
-.block {
-  display: block;
-}
-.inline-block {
-  display: inline-block;
-}
-.flex {
-  display: flex;
-}
-.table {
-  display: table;
-}
-.grid {
-  display: grid;
-}
-.hidden {
-  display: none;
-}
-.h-1 {
-  height: 0.25rem;
-}
-.h-10 {
-  height: 2.5rem;
-}
-.h-12 {
-  height: 3rem;
-}
-.h-16 {
-  height: 4rem;
-}
-.h-2\/3 {
-  height: 66.666667%;
-}
-.h-20 {
-  height: 5rem;
-}
-.h-24 {
-  height: 6rem;
-}
-.h-28 {
-  height: 7rem;
-}
-.h-32 {
-  height: 8rem;
-}
-.h-36 {
-  height: 9rem;
-}
-.h-4 {
-  height: 1rem;
-}
-.h-40 {
-  height: 10rem;
-}
-.h-44 {
-  height: 11rem;
-}
-.h-48 {
-  height: 12rem;
-}
-.h-5 {
-  height: 1.25rem;
-}
-.h-56 {
-  height: 14rem;
-}
-.h-6 {
-  height: 1.5rem;
-}
-.h-8 {
-  height: 2rem;
-}
-.h-auto {
-  height: auto;
-}
-.h-full {
-  height: 100%;
-}
-.max-h-12 {
-  max-height: 3rem;
-}
-.max-h-40 {
-  max-height: 10rem;
-}
-.max-h-8 {
-  max-height: 2rem;
-}
-.min-h-screen {
-  min-height: 100vh;
-}
-.w-1 {
-  width: 0.25rem;
-}
-.w-11\/12 {
-  width: 91.666667%;
-}
-.w-12 {
-  width: 3rem;
-}
-.w-2\/3 {
-  width: 66.666667%;
-}
-.w-24 {
-  width: 6rem;
-}
-.w-3\/4 {
-  width: 75%;
-}
-.w-4 {
-  width: 1rem;
-}
-.w-4\/5 {
-  width: 80%;
-}
-.w-5 {
-  width: 1.25rem;
-}
-.w-5\/12 {
-  width: 41.666667%;
-}
-.w-6 {
-  width: 1.5rem;
-}
-.w-6\/12 {
-  width: 50%;
-}
-.w-7\/12 {
-  width: 58.333333%;
-}
-.w-80 {
-  width: 20rem;
-}
-.w-auto {
-  width: auto;
-}
-.w-full {
-  width: 100%;
-}
-.min-w-48 {
-  min-width: 12rem;
-}
-.max-w-16 {
-  max-width: 4rem;
-}
-.max-w-20 {
-  max-width: 5rem;
-}
-.max-w-36 {
-  max-width: 9rem;
-}
-.max-w-md {
-  max-width: 28rem;
-}
-.max-w-sm {
-  max-width: 24rem;
-}
-.flex-1 {
-  flex: 1 1 0%;
-}
-.flex-grow {
-  flex-grow: 1;
-}
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-@keyframes pulse {
-
-  50% {
-    opacity: .5;
+  .col-span-3 {
+    grid-column: span 3 / span 3;
   }
-}
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-.resize {
-  resize: both;
-}
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.grid-cols-12 {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.grid-rows-12 {
-  grid-template-rows: repeat(12, minmax(0, 1fr));
-}
-.flex-col {
-  flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.place-items-center {
-  place-items: center;
-}
-.items-start {
-  align-items: flex-start;
-}
-.items-end {
-  align-items: flex-end;
-}
-.items-center {
-  align-items: center;
-}
-.items-stretch {
-  align-items: stretch;
-}
-.justify-start {
-  justify-content: flex-start;
-}
-.justify-end {
-  justify-content: flex-end;
-}
-.justify-center {
-  justify-content: center;
-}
-.justify-between {
-  justify-content: space-between;
-}
-.justify-evenly {
-  justify-content: space-evenly;
-}
-.gap-0 {
-  gap: 0px;
-}
-.gap-1 {
-  gap: 0.25rem;
-}
-.gap-2 {
-  gap: 0.5rem;
-}
-.gap-3 {
-  gap: 0.75rem;
-}
-.gap-4 {
-  gap: 1rem;
-}
-.gap-6 {
-  gap: 1.5rem;
-}
-.gap-8 {
-  gap: 2rem;
-}
-.gap-x-1 {
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
-}
-.gap-x-2 {
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-}
-.gap-x-3 {
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
-}
-.gap-x-4 {
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-}
-.gap-y-1 {
-  row-gap: 0.25rem;
-}
-.gap-y-2 {
-  row-gap: 0.5rem;
-}
-.gap-y-4 {
-  row-gap: 1rem;
-}
-.gap-y-6 {
-  row-gap: 1.5rem;
-}
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.overflow-x-scroll {
-  overflow-x: scroll;
-}
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-.rounded {
-  border-radius: 0.25rem;
-}
-.rounded-2xl {
-  border-radius: 1rem;
-}
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-.rounded-full {
-  border-radius: 9999px;
-}
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-.rounded-t-lg {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-.border {
-  border-width: 1px;
-}
-.border-2 {
-  border-width: 2px;
-}
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-.border-l-2 {
-  border-left-width: 2px;
-}
-.border-l-4 {
-  border-left-width: 4px;
-}
-.border-t-2 {
-  border-top-width: 2px;
-}
-.border-adams {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-afm {
-  --tw-border-opacity: 1;
-  border-color: rgb(165 181 221 / var(--tw-border-opacity, 1));
-}
-.border-ags {
-  --tw-border-opacity: 1;
-  border-color: rgb(85 109 168 / var(--tw-border-opacity, 1));
-}
-.border-alfa-romeo {
-  --tw-border-opacity: 1;
-  border-color: rgb(170 18 26 / var(--tw-border-opacity, 1));
-}
-.border-alfa-special {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-alphatauri {
-  --tw-border-opacity: 1;
-  border-color: rgb(1 19 33 / var(--tw-border-opacity, 1));
-}
-.border-alpine {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 147 204 / var(--tw-border-opacity, 1));
-}
-.border-alta {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 5 5 / var(--tw-border-opacity, 1));
-}
-.border-amon {
-  --tw-border-opacity: 1;
-  border-color: rgb(64 63 255 / var(--tw-border-opacity, 1));
-}
-.border-andrea-moda {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 255 / var(--tw-border-opacity, 1));
-}
-.border-apollon {
-  --tw-border-opacity: 1;
-  border-color: rgb(208 151 25 / var(--tw-border-opacity, 1));
-}
-.border-arrows {
-  --tw-border-opacity: 1;
-  border-color: rgb(39 156 180 / var(--tw-border-opacity, 1));
-}
-.border-arzani-volpini {
-  --tw-border-opacity: 1;
-  border-color: rgb(153 68 15 / var(--tw-border-opacity, 1));
-}
-.border-aston-butterworth {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-aston-martin {
-  --tw-border-opacity: 1;
-  border-color: rgb(34 153 113 / var(--tw-border-opacity, 1));
-}
-.border-ats {
-  --tw-border-opacity: 1;
-  border-color: rgb(18 109 249 / var(--tw-border-opacity, 1));
-}
-.border-ats-wheels {
-  --tw-border-opacity: 1;
-  border-color: rgb(249 180 24 / var(--tw-border-opacity, 1));
-}
-.border-balsa {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-bar {
-  --tw-border-opacity: 1;
-  border-color: rgb(148 165 130 / var(--tw-border-opacity, 1));
-}
-.border-behra-porsche {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-bellasi {
-  --tw-border-opacity: 1;
-  border-color: rgb(60 109 88 / var(--tw-border-opacity, 1));
-}
-.border-benetton {
-  --tw-border-opacity: 1;
-  border-color: rgb(1 141 48 / var(--tw-border-opacity, 1));
-}
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-}
-.border-bmw {
-  --tw-border-opacity: 1;
-  border-color: rgb(81 166 208 / var(--tw-border-opacity, 1));
-}
-.border-bmw-sauber {
-  --tw-border-opacity: 1;
-  border-color: rgb(81 166 208 / var(--tw-border-opacity, 1));
-}
-.border-boro {
-  --tw-border-opacity: 1;
-  border-color: rgb(231 34 16 / var(--tw-border-opacity, 1));
-}
-.border-brabham {
-  --tw-border-opacity: 1;
-  border-color: rgb(22 111 24 / var(--tw-border-opacity, 1));
-}
-.border-brawn {
-  --tw-border-opacity: 1;
-  border-color: rgb(230 255 1 / var(--tw-border-opacity, 1));
-}
-.border-brm {
-  --tw-border-opacity: 1;
-  border-color: rgb(87 84 156 / var(--tw-border-opacity, 1));
-}
-.border-bromme {
-  --tw-border-opacity: 1;
-  border-color: rgb(175 20 11 / var(--tw-border-opacity, 1));
-}
-.border-brp {
-  --tw-border-opacity: 1;
-  border-color: rgb(137 181 135 / var(--tw-border-opacity, 1));
-}
-.border-bugatti {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 0 50 / var(--tw-border-opacity, 1));
-}
-.border-caterham {
-  --tw-border-opacity: 1;
-  border-color: rgb(2 67 45 / var(--tw-border-opacity, 1));
-}
-.border-christensen {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-cisitalia {
-  --tw-border-opacity: 1;
-  border-color: rgb(6 0 113 / var(--tw-border-opacity, 1));
-}
-.border-coloni {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 238 0 / var(--tw-border-opacity, 1));
-}
-.border-connaught {
-  --tw-border-opacity: 1;
-  border-color: rgb(120 1 55 / var(--tw-border-opacity, 1));
-}
-.border-connew {
-  --tw-border-opacity: 1;
-  border-color: rgb(149 28 18 / var(--tw-border-opacity, 1));
-}
-.border-cooper {
-  --tw-border-opacity: 1;
-  border-color: rgb(189 191 179 / var(--tw-border-opacity, 1));
-}
-.border-dallara {
-  --tw-border-opacity: 1;
-  border-color: rgb(247 221 0 / var(--tw-border-opacity, 1));
-}
-.border-dark {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-de-tomaso {
-  --tw-border-opacity: 1;
-  border-color: rgb(113 206 236 / var(--tw-border-opacity, 1));
-}
-.border-deidt {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-del-roy {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-derrington-francis {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-dunn {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-eagle {
-  --tw-border-opacity: 1;
-  border-color: rgb(71 70 75 / var(--tw-border-opacity, 1));
-}
-.border-eifelland {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 128 / var(--tw-border-opacity, 1));
-}
-.border-elder {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-emeryson {
-  --tw-border-opacity: 1;
-  border-color: rgb(40 40 40 / var(--tw-border-opacity, 1));
-}
-.border-emw {
-  --tw-border-opacity: 1;
-  border-color: rgb(206 188 153 / var(--tw-border-opacity, 1));
-}
-.border-enb {
-  --tw-border-opacity: 1;
-  border-color: rgb(223 193 57 / var(--tw-border-opacity, 1));
-}
-.border-ensign {
-  --tw-border-opacity: 1;
-  border-color: rgb(58 106 49 / var(--tw-border-opacity, 1));
-}
-.border-epperly {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-era {
-  --tw-border-opacity: 1;
-  border-color: rgb(163 200 227 / var(--tw-border-opacity, 1));
-}
-.border-eurobrun {
-  --tw-border-opacity: 1;
-  border-color: rgb(253 125 43 / var(--tw-border-opacity, 1));
-}
-.border-ewing {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-ferguson {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-ferrari {
-  --tw-border-opacity: 1;
-  border-color: rgb(232 0 32 / var(--tw-border-opacity, 1));
-}
-.border-first {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-fittipaldi {
-  --tw-border-opacity: 1;
-  border-color: rgb(242 105 38 / var(--tw-border-opacity, 1));
-}
-.border-fondmetal {
-  --tw-border-opacity: 1;
-  border-color: rgb(240 167 1 / var(--tw-border-opacity, 1));
-}
-.border-footwork {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 0 51 / var(--tw-border-opacity, 1));
-}
-.border-force-india {
-  --tw-border-opacity: 1;
-  border-color: rgb(230 110 5 / var(--tw-border-opacity, 1));
-}
-.border-forti {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 57 113 / var(--tw-border-opacity, 1));
-}
-.border-frank-williams-racing-cars {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-frazer-nash {
-  --tw-border-opacity: 1;
-  border-color: rgb(218 36 24 / var(--tw-border-opacity, 1));
-}
-.border-fry {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-gilby {
-  --tw-border-opacity: 1;
-  border-color: rgb(108 131 106 / var(--tw-border-opacity, 1));
-}
-.border-gordini {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 140 196 / var(--tw-border-opacity, 1));
-}
-.border-green-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(34 197 94 / var(--tw-border-opacity, 1));
-}
-.border-greifzu {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-haas {
-  --tw-border-opacity: 1;
-  border-color: rgb(182 186 189 / var(--tw-border-opacity, 1));
-}
-.border-hall {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-heck {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-hesketh {
-  --tw-border-opacity: 1;
-  border-color: rgb(249 251 105 / var(--tw-border-opacity, 1));
-}
-.border-hill {
-  --tw-border-opacity: 1;
-  border-color: rgb(214 26 26 / var(--tw-border-opacity, 1));
-}
-.border-honda {
-  --tw-border-opacity: 1;
-  border-color: rgb(237 24 49 / var(--tw-border-opacity, 1));
-}
-.border-hrt {
-  --tw-border-opacity: 1;
-  border-color: rgb(173 153 80 / var(--tw-border-opacity, 1));
-}
-.border-hwm {
-  --tw-border-opacity: 1;
-  border-color: rgb(63 71 203 / var(--tw-border-opacity, 1));
-}
-.border-iso-marlboro {
-  --tw-border-opacity: 1;
-  border-color: rgb(199 175 13 / var(--tw-border-opacity, 1));
-}
-.border-jaguar {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 18 5 / var(--tw-border-opacity, 1));
-}
-.border-jbw {
-  --tw-border-opacity: 1;
-  border-color: rgb(61 36 47 / var(--tw-border-opacity, 1));
-}
-.border-jordan {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 1 / var(--tw-border-opacity, 1));
-}
-.border-kauhsen {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 34 / var(--tw-border-opacity, 1));
-}
-.border-kick-sauber {
-  --tw-border-opacity: 1;
-  border-color: rgb(82 226 82 / var(--tw-border-opacity, 1));
-}
-.border-klenk {
-  --tw-border-opacity: 1;
-  border-color: rgb(157 5 59 / var(--tw-border-opacity, 1));
-}
-.border-kojima {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 255 / var(--tw-border-opacity, 1));
-}
-.border-krakau {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-kurtis-kraft {
-  --tw-border-opacity: 1;
-  border-color: rgb(248 254 231 / var(--tw-border-opacity, 1));
-}
-.border-kuzma {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-lancia {
-  --tw-border-opacity: 1;
-  border-color: rgb(32 63 95 / var(--tw-border-opacity, 1));
-}
-.border-langley {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-larrousse {
-  --tw-border-opacity: 1;
-  border-color: rgb(246 26 35 / var(--tw-border-opacity, 1));
-}
-.border-lds {
-  --tw-border-opacity: 1;
-  border-color: rgb(101 183 224 / var(--tw-border-opacity, 1));
-}
-.border-lec {
-  --tw-border-opacity: 1;
-  border-color: rgb(166 52 52 / var(--tw-border-opacity, 1));
-}
-.border-lesovsky {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-leyton-house {
-  --tw-border-opacity: 1;
-  border-color: rgb(18 199 190 / var(--tw-border-opacity, 1));
-}
-.border-life {
-  --tw-border-opacity: 1;
-  border-color: rgb(198 48 48 / var(--tw-border-opacity, 1));
-}
-.border-light {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-}
-.border-ligier {
-  --tw-border-opacity: 1;
-  border-color: rgb(19 37 78 / var(--tw-border-opacity, 1));
-}
-.border-lola {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 217 4 / var(--tw-border-opacity, 1));
-}
-.border-lotus {
-  --tw-border-opacity: 1;
-  border-color: rgb(16 55 40 / var(--tw-border-opacity, 1));
-}
-.border-lotus-f1 {
-  --tw-border-opacity: 1;
-  border-color: rgb(176 146 71 / var(--tw-border-opacity, 1));
-}
-.border-lotus-racing {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 63 34 / var(--tw-border-opacity, 1));
-}
-.border-lyncar {
-  --tw-border-opacity: 1;
-  border-color: rgb(46 64 135 / var(--tw-border-opacity, 1));
-}
-.border-maki {
-  --tw-border-opacity: 1;
-  border-color: rgb(172 31 31 / var(--tw-border-opacity, 1));
-}
-.border-manor {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 106 53 / var(--tw-border-opacity, 1));
-}
-.border-march {
-  --tw-border-opacity: 1;
-  border-color: rgb(247 240 231 / var(--tw-border-opacity, 1));
-}
-.border-marchese {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-martini {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 132 247 / var(--tw-border-opacity, 1));
-}
-.border-marussia {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 53 34 / var(--tw-border-opacity, 1));
-}
-.border-maserati {
-  --tw-border-opacity: 1;
-  border-color: rgb(12 46 89 / var(--tw-border-opacity, 1));
-}
-.border-matra {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 29 208 / var(--tw-border-opacity, 1));
-}
-.border-mcguire {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-mclaren {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 128 0 / var(--tw-border-opacity, 1));
-}
-.border-mercedes {
-  --tw-border-opacity: 1;
-  border-color: rgb(39 244 210 / var(--tw-border-opacity, 1));
-}
-.border-merzario {
-  --tw-border-opacity: 1;
-  border-color: rgb(190 66 60 / var(--tw-border-opacity, 1));
-}
-.border-meskowski {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-midland {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 0 0 / var(--tw-border-opacity, 1));
-}
-.border-minardi {
-  --tw-border-opacity: 1;
-  border-color: rgb(14 35 58 / var(--tw-border-opacity, 1));
-}
-.border-modena {
-  --tw-border-opacity: 1;
-  border-color: rgb(18 10 47 / var(--tw-border-opacity, 1));
-}
-.border-moore {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-nacke {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-nichels {
-  --tw-border-opacity: 1;
-  border-color: rgb(114 114 114 / var(--tw-border-opacity, 1));
-}
-.border-olson {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-onyx {
-  --tw-border-opacity: 1;
-  border-color: rgb(210 214 143 / var(--tw-border-opacity, 1));
-}
-.border-osca {
-  --tw-border-opacity: 1;
-  border-color: rgb(26 3 130 / var(--tw-border-opacity, 1));
-}
-.border-osella {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 254 36 / var(--tw-border-opacity, 1));
-}
-.border-pacific {
-  --tw-border-opacity: 1;
-  border-color: rgb(14 144 201 / var(--tw-border-opacity, 1));
-}
-.border-pankratz {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-parnelli {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-pawl {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-penske {
-  --tw-border-opacity: 1;
-  border-color: rgb(211 26 27 / var(--tw-border-opacity, 1));
-}
-.border-phillips {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-politoys {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 122 / var(--tw-border-opacity, 1));
-}
-.border-porsche {
-  --tw-border-opacity: 1;
-  border-color: rgb(173 143 60 / var(--tw-border-opacity, 1));
-}
-.border-prost {
-  --tw-border-opacity: 1;
-  border-color: rgb(38 70 139 / var(--tw-border-opacity, 1));
-}
-.border-protos {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 22 42 / var(--tw-border-opacity, 1));
-}
-.border-racing-bulls {
-  --tw-border-opacity: 1;
-  border-color: rgb(102 146 255 / var(--tw-border-opacity, 1));
-}
-.border-racing-point {
-  --tw-border-opacity: 1;
-  border-color: rgb(243 104 186 / var(--tw-border-opacity, 1));
-}
-.border-rae {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-ram {
-  --tw-border-opacity: 1;
-  border-color: rgb(10 98 73 / var(--tw-border-opacity, 1));
-}
-.border-rb {
-  --tw-border-opacity: 1;
-  border-color: rgb(102 146 255 / var(--tw-border-opacity, 1));
-}
-.border-rebaque {
-  --tw-border-opacity: 1;
-  border-color: rgb(4 129 71 / var(--tw-border-opacity, 1));
-}
-.border-red-bull {
-  --tw-border-opacity: 1;
-  border-color: rgb(54 113 198 / var(--tw-border-opacity, 1));
-}
-.border-reif {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-renault {
-  --tw-border-opacity: 1;
-  border-color: rgb(252 212 36 / var(--tw-border-opacity, 1));
-}
-.border-rial {
-  --tw-border-opacity: 1;
-  border-color: rgb(7 92 176 / var(--tw-border-opacity, 1));
-}
-.border-sauber {
-  --tw-border-opacity: 1;
-  border-color: rgb(214 32 28 / var(--tw-border-opacity, 1));
-}
-.border-scarab {
-  --tw-border-opacity: 1;
-  border-color: rgb(205 198 206 / var(--tw-border-opacity, 1));
-}
-.border-schroeder {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-scirocco {
-  --tw-border-opacity: 1;
-  border-color: rgb(42 57 90 / var(--tw-border-opacity, 1));
-}
-.border-shadow {
-  --tw-border-opacity: 1;
-  border-color: rgb(41 36 13 / var(--tw-border-opacity, 1));
-}
-.border-shannon {
-  --tw-border-opacity: 1;
-  border-color: rgb(40 48 52 / var(--tw-border-opacity, 1));
-}
-.border-sherman {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-simca-gordini {
-  --tw-border-opacity: 1;
-  border-color: rgb(1 119 200 / var(--tw-border-opacity, 1));
-}
-.border-simtek {
-  --tw-border-opacity: 1;
-  border-color: rgb(68 94 185 / var(--tw-border-opacity, 1));
-}
-.border-snowberger {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-spirit {
-  --tw-border-opacity: 1;
-  border-color: rgb(45 78 179 / var(--tw-border-opacity, 1));
-}
-.border-spyker {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-stebro {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 255 0 / var(--tw-border-opacity, 1));
-}
-.border-stevens {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-stewardsTxt {
-  --tw-border-opacity: 1;
-  border-color: rgb(1 17 50 / var(--tw-border-opacity, 1));
-}
-.border-stewart {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 47 / var(--tw-border-opacity, 1));
-}
-.border-super-aguri {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 1 0 / var(--tw-border-opacity, 1));
-}
-.border-surtees {
-  --tw-border-opacity: 1;
-  border-color: rgb(252 249 252 / var(--tw-border-opacity, 1));
-}
-.border-sutton {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-talbot-lago {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 71 193 / var(--tw-border-opacity, 1));
-}
-.border-tec-mec {
-  --tw-border-opacity: 1;
-  border-color: rgb(132 132 116 / var(--tw-border-opacity, 1));
-}
-.border-tecno {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 230 0 / var(--tw-border-opacity, 1));
-}
-.border-theodore {
-  --tw-border-opacity: 1;
-  border-color: rgb(75 255 254 / var(--tw-border-opacity, 1));
-}
-.border-token {
-  --tw-border-opacity: 1;
-  border-color: rgb(37 110 10 / var(--tw-border-opacity, 1));
-}
-.border-toleman {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 35 107 / var(--tw-border-opacity, 1));
-}
-.border-toro-rosso {
-  --tw-border-opacity: 1;
-  border-color: rgb(1 32 185 / var(--tw-border-opacity, 1));
-}
-.border-toyota {
-  --tw-border-opacity: 1;
-  border-color: rgb(214 64 76 / var(--tw-border-opacity, 1));
-}
-.border-trevis {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-trojan {
-  --tw-border-opacity: 1;
-  border-color: rgb(238 100 99 / var(--tw-border-opacity, 1));
-}
-.border-turner {
-  --tw-border-opacity: 1;
-  border-color: rgb(228 206 34 / var(--tw-border-opacity, 1));
-}
-.border-tyrrell {
-  --tw-border-opacity: 1;
-  border-color: rgb(70 101 161 / var(--tw-border-opacity, 1));
-}
-.border-vanwall {
-  --tw-border-opacity: 1;
-  border-color: rgb(116 132 90 / var(--tw-border-opacity, 1));
-}
-.border-venturi {
-  --tw-border-opacity: 1;
-  border-color: rgb(188 19 19 / var(--tw-border-opacity, 1));
-}
-.border-veritas {
-  --tw-border-opacity: 1;
-  border-color: rgb(123 173 249 / var(--tw-border-opacity, 1));
-}
-.border-virgin {
-  --tw-border-opacity: 1;
-  border-color: rgb(227 30 35 / var(--tw-border-opacity, 1));
-}
-.border-watson {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-wetteroth {
-  --tw-border-opacity: 1;
-  border-color: rgb(5 135 133 / var(--tw-border-opacity, 1));
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-williams {
-  --tw-border-opacity: 1;
-  border-color: rgb(100 196 255 / var(--tw-border-opacity, 1));
-}
-.border-wolf {
-  --tw-border-opacity: 1;
-  border-color: rgb(171 36 11 / var(--tw-border-opacity, 1));
-}
-.border-wolf-williams {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 39 156 / var(--tw-border-opacity, 1));
-}
-.border-zakspeed {
-  --tw-border-opacity: 1;
-  border-color: rgb(199 23 1 / var(--tw-border-opacity, 1));
-}
-.bg-adams {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-afm {
-  --tw-bg-opacity: 1;
-  background-color: rgb(165 181 221 / var(--tw-bg-opacity, 1));
-}
-.bg-ags {
-  --tw-bg-opacity: 1;
-  background-color: rgb(85 109 168 / var(--tw-bg-opacity, 1));
-}
-.bg-alfa-romeo {
-  --tw-bg-opacity: 1;
-  background-color: rgb(170 18 26 / var(--tw-bg-opacity, 1));
-}
-.bg-alfa-special {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-alphatauri {
-  --tw-bg-opacity: 1;
-  background-color: rgb(1 19 33 / var(--tw-bg-opacity, 1));
-}
-.bg-alpine {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 147 204 / var(--tw-bg-opacity, 1));
-}
-.bg-alta {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 5 5 / var(--tw-bg-opacity, 1));
-}
-.bg-amon {
-  --tw-bg-opacity: 1;
-  background-color: rgb(64 63 255 / var(--tw-bg-opacity, 1));
-}
-.bg-andrea-moda {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 255 / var(--tw-bg-opacity, 1));
-}
-.bg-apollon {
-  --tw-bg-opacity: 1;
-  background-color: rgb(208 151 25 / var(--tw-bg-opacity, 1));
-}
-.bg-arrows {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 156 180 / var(--tw-bg-opacity, 1));
-}
-.bg-arzani-volpini {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 68 15 / var(--tw-bg-opacity, 1));
-}
-.bg-aston-butterworth {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-aston-martin {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 153 113 / var(--tw-bg-opacity, 1));
-}
-.bg-ats {
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 109 249 / var(--tw-bg-opacity, 1));
-}
-.bg-ats-wheels {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 180 24 / var(--tw-bg-opacity, 1));
-}
-.bg-b-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(25 25 25 / var(--tw-bg-opacity, 1));
-}
-.bg-b-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-balsa {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-bar {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 165 130 / var(--tw-bg-opacity, 1));
-}
-.bg-behra-porsche {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-bellasi {
-  --tw-bg-opacity: 1;
-  background-color: rgb(60 109 88 / var(--tw-bg-opacity, 1));
-}
-.bg-benetton {
-  --tw-bg-opacity: 1;
-  background-color: rgb(1 141 48 / var(--tw-bg-opacity, 1));
-}
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
-}
-.bg-bmw {
-  --tw-bg-opacity: 1;
-  background-color: rgb(81 166 208 / var(--tw-bg-opacity, 1));
-}
-.bg-bmw-sauber {
-  --tw-bg-opacity: 1;
-  background-color: rgb(81 166 208 / var(--tw-bg-opacity, 1));
-}
-.bg-boro {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 34 16 / var(--tw-bg-opacity, 1));
-}
-.bg-brabham {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 111 24 / var(--tw-bg-opacity, 1));
-}
-.bg-brawn {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 255 1 / var(--tw-bg-opacity, 1));
-}
-.bg-brm {
-  --tw-bg-opacity: 1;
-  background-color: rgb(87 84 156 / var(--tw-bg-opacity, 1));
-}
-.bg-bromme {
-  --tw-bg-opacity: 1;
-  background-color: rgb(175 20 11 / var(--tw-bg-opacity, 1));
-}
-.bg-brp {
-  --tw-bg-opacity: 1;
-  background-color: rgb(137 181 135 / var(--tw-bg-opacity, 1));
-}
-.bg-bugatti {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 0 50 / var(--tw-bg-opacity, 1));
-}
-.bg-caterham {
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 67 45 / var(--tw-bg-opacity, 1));
-}
-.bg-christensen {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-cisitalia {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 0 113 / var(--tw-bg-opacity, 1));
-}
-.bg-coloni {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 238 0 / var(--tw-bg-opacity, 1));
-}
-.bg-connaught {
-  --tw-bg-opacity: 1;
-  background-color: rgb(120 1 55 / var(--tw-bg-opacity, 1));
-}
-.bg-connew {
-  --tw-bg-opacity: 1;
-  background-color: rgb(149 28 18 / var(--tw-bg-opacity, 1));
-}
-.bg-cooper {
-  --tw-bg-opacity: 1;
-  background-color: rgb(189 191 179 / var(--tw-bg-opacity, 1));
-}
-.bg-dallara {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 221 0 / var(--tw-bg-opacity, 1));
-}
-.bg-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-de-tomaso {
-  --tw-bg-opacity: 1;
-  background-color: rgb(113 206 236 / var(--tw-bg-opacity, 1));
-}
-.bg-deidt {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-del-roy {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-derrington-francis {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-dunn {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-eagle {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 70 75 / var(--tw-bg-opacity, 1));
-}
-.bg-eifelland {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 128 / var(--tw-bg-opacity, 1));
-}
-.bg-elder {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-emeryson {
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 40 40 / var(--tw-bg-opacity, 1));
-}
-.bg-emw {
-  --tw-bg-opacity: 1;
-  background-color: rgb(206 188 153 / var(--tw-bg-opacity, 1));
-}
-.bg-enb {
-  --tw-bg-opacity: 1;
-  background-color: rgb(223 193 57 / var(--tw-bg-opacity, 1));
-}
-.bg-ensign {
-  --tw-bg-opacity: 1;
-  background-color: rgb(58 106 49 / var(--tw-bg-opacity, 1));
-}
-.bg-epperly {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-era {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 200 227 / var(--tw-bg-opacity, 1));
-}
-.bg-eurobrun {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 125 43 / var(--tw-bg-opacity, 1));
-}
-.bg-ewing {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-ferguson {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-ferrari {
-  --tw-bg-opacity: 1;
-  background-color: rgb(232 0 32 / var(--tw-bg-opacity, 1));
-}
-.bg-first {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-fittipaldi {
-  --tw-bg-opacity: 1;
-  background-color: rgb(242 105 38 / var(--tw-bg-opacity, 1));
-}
-.bg-fondmetal {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 167 1 / var(--tw-bg-opacity, 1));
-}
-.bg-footwork {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 0 51 / var(--tw-bg-opacity, 1));
-}
-.bg-force-india {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 110 5 / var(--tw-bg-opacity, 1));
-}
-.bg-forti {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 57 113 / var(--tw-bg-opacity, 1));
-}
-.bg-frank-williams-racing-cars {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-frazer-nash {
-  --tw-bg-opacity: 1;
-  background-color: rgb(218 36 24 / var(--tw-bg-opacity, 1));
-}
-.bg-fry {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-gilby {
-  --tw-bg-opacity: 1;
-  background-color: rgb(108 131 106 / var(--tw-bg-opacity, 1));
-}
-.bg-gordini {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 140 196 / var(--tw-bg-opacity, 1));
-}
-.bg-green-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1));
-}
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
-}
-.bg-greifzu {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-haas {
-  --tw-bg-opacity: 1;
-  background-color: rgb(182 186 189 / var(--tw-bg-opacity, 1));
-}
-.bg-hall {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-heck {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-hesketh {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 251 105 / var(--tw-bg-opacity, 1));
-}
-.bg-hill {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 26 26 / var(--tw-bg-opacity, 1));
-}
-.bg-honda {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 24 49 / var(--tw-bg-opacity, 1));
-}
-.bg-hrt {
-  --tw-bg-opacity: 1;
-  background-color: rgb(173 153 80 / var(--tw-bg-opacity, 1));
-}
-.bg-hwm {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 71 203 / var(--tw-bg-opacity, 1));
-}
-.bg-iso-marlboro {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 175 13 / var(--tw-bg-opacity, 1));
-}
-.bg-jaguar {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 18 5 / var(--tw-bg-opacity, 1));
-}
-.bg-jbw {
-  --tw-bg-opacity: 1;
-  background-color: rgb(61 36 47 / var(--tw-bg-opacity, 1));
-}
-.bg-jordan {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 1 / var(--tw-bg-opacity, 1));
-}
-.bg-kauhsen {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 34 / var(--tw-bg-opacity, 1));
-}
-.bg-kick-sauber {
-  --tw-bg-opacity: 1;
-  background-color: rgb(82 226 82 / var(--tw-bg-opacity, 1));
-}
-.bg-klenk {
-  --tw-bg-opacity: 1;
-  background-color: rgb(157 5 59 / var(--tw-bg-opacity, 1));
-}
-.bg-kojima {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 255 / var(--tw-bg-opacity, 1));
-}
-.bg-krakau {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-kurtis-kraft {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 254 231 / var(--tw-bg-opacity, 1));
-}
-.bg-kuzma {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-lancia {
-  --tw-bg-opacity: 1;
-  background-color: rgb(32 63 95 / var(--tw-bg-opacity, 1));
-}
-.bg-langley {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-larrousse {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 26 35 / var(--tw-bg-opacity, 1));
-}
-.bg-lds {
-  --tw-bg-opacity: 1;
-  background-color: rgb(101 183 224 / var(--tw-bg-opacity, 1));
-}
-.bg-lec {
-  --tw-bg-opacity: 1;
-  background-color: rgb(166 52 52 / var(--tw-bg-opacity, 1));
-}
-.bg-lesovsky {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-leyton-house {
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 199 190 / var(--tw-bg-opacity, 1));
-}
-.bg-life {
-  --tw-bg-opacity: 1;
-  background-color: rgb(198 48 48 / var(--tw-bg-opacity, 1));
-}
-.bg-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-.bg-ligier {
-  --tw-bg-opacity: 1;
-  background-color: rgb(19 37 78 / var(--tw-bg-opacity, 1));
-}
-.bg-lola {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 217 4 / var(--tw-bg-opacity, 1));
-}
-.bg-lotus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(16 55 40 / var(--tw-bg-opacity, 1));
-}
-.bg-lotus-f1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(176 146 71 / var(--tw-bg-opacity, 1));
-}
-.bg-lotus-racing {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 63 34 / var(--tw-bg-opacity, 1));
-}
-.bg-lyncar {
-  --tw-bg-opacity: 1;
-  background-color: rgb(46 64 135 / var(--tw-bg-opacity, 1));
-}
-.bg-maki {
-  --tw-bg-opacity: 1;
-  background-color: rgb(172 31 31 / var(--tw-bg-opacity, 1));
-}
-.bg-manor {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 106 53 / var(--tw-bg-opacity, 1));
-}
-.bg-march {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 240 231 / var(--tw-bg-opacity, 1));
-}
-.bg-marchese {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-martini {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 132 247 / var(--tw-bg-opacity, 1));
-}
-.bg-marussia {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 53 34 / var(--tw-bg-opacity, 1));
-}
-.bg-maserati {
-  --tw-bg-opacity: 1;
-  background-color: rgb(12 46 89 / var(--tw-bg-opacity, 1));
-}
-.bg-matra {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 29 208 / var(--tw-bg-opacity, 1));
-}
-.bg-mcguire {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-mclaren {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 128 0 / var(--tw-bg-opacity, 1));
-}
-.bg-mercedes {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 244 210 / var(--tw-bg-opacity, 1));
-}
-.bg-merzario {
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 66 60 / var(--tw-bg-opacity, 1));
-}
-.bg-meskowski {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-midland {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
-}
-.bg-minardi {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 35 58 / var(--tw-bg-opacity, 1));
-}
-.bg-modena {
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 10 47 / var(--tw-bg-opacity, 1));
-}
-.bg-moore {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-nacke {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-nichels {
-  --tw-bg-opacity: 1;
-  background-color: rgb(114 114 114 / var(--tw-bg-opacity, 1));
-}
-.bg-olson {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-onyx {
-  --tw-bg-opacity: 1;
-  background-color: rgb(210 214 143 / var(--tw-bg-opacity, 1));
-}
-.bg-osca {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 3 130 / var(--tw-bg-opacity, 1));
-}
-.bg-osella {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 254 36 / var(--tw-bg-opacity, 1));
-}
-.bg-pacific {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 144 201 / var(--tw-bg-opacity, 1));
-}
-.bg-pankratz {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-parnelli {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-pawl {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-penske {
-  --tw-bg-opacity: 1;
-  background-color: rgb(211 26 27 / var(--tw-bg-opacity, 1));
-}
-.bg-phillips {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-politoys {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 122 / var(--tw-bg-opacity, 1));
-}
-.bg-porsche {
-  --tw-bg-opacity: 1;
-  background-color: rgb(173 143 60 / var(--tw-bg-opacity, 1));
-}
-.bg-prost {
-  --tw-bg-opacity: 1;
-  background-color: rgb(38 70 139 / var(--tw-bg-opacity, 1));
-}
-.bg-protos {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 22 42 / var(--tw-bg-opacity, 1));
-}
-.bg-racing-bulls {
-  --tw-bg-opacity: 1;
-  background-color: rgb(102 146 255 / var(--tw-bg-opacity, 1));
-}
-.bg-racing-point {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 104 186 / var(--tw-bg-opacity, 1));
-}
-.bg-rae {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-ram {
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 98 73 / var(--tw-bg-opacity, 1));
-}
-.bg-rb {
-  --tw-bg-opacity: 1;
-  background-color: rgb(102 146 255 / var(--tw-bg-opacity, 1));
-}
-.bg-rebaque {
-  --tw-bg-opacity: 1;
-  background-color: rgb(4 129 71 / var(--tw-bg-opacity, 1));
-}
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
-}
-.bg-red-bull {
-  --tw-bg-opacity: 1;
-  background-color: rgb(54 113 198 / var(--tw-bg-opacity, 1));
-}
-.bg-reif {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-renault {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 212 36 / var(--tw-bg-opacity, 1));
-}
-.bg-rial {
-  --tw-bg-opacity: 1;
-  background-color: rgb(7 92 176 / var(--tw-bg-opacity, 1));
-}
-.bg-s-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 51 51 / var(--tw-bg-opacity, 1));
-}
-.bg-s-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(233 233 231 / var(--tw-bg-opacity, 1));
-}
-.bg-sauber {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 32 28 / var(--tw-bg-opacity, 1));
-}
-.bg-scarab {
-  --tw-bg-opacity: 1;
-  background-color: rgb(205 198 206 / var(--tw-bg-opacity, 1));
-}
-.bg-schroeder {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-scirocco {
-  --tw-bg-opacity: 1;
-  background-color: rgb(42 57 90 / var(--tw-bg-opacity, 1));
-}
-.bg-shadow {
-  --tw-bg-opacity: 1;
-  background-color: rgb(41 36 13 / var(--tw-bg-opacity, 1));
-}
-.bg-shannon {
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 48 52 / var(--tw-bg-opacity, 1));
-}
-.bg-sherman {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-simca-gordini {
-  --tw-bg-opacity: 1;
-  background-color: rgb(1 119 200 / var(--tw-bg-opacity, 1));
-}
-.bg-simtek {
-  --tw-bg-opacity: 1;
-  background-color: rgb(68 94 185 / var(--tw-bg-opacity, 1));
-}
-.bg-snowberger {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-spirit {
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 78 179 / var(--tw-bg-opacity, 1));
-}
-.bg-spyker {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-stebro {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 255 0 / var(--tw-bg-opacity, 1));
-}
-.bg-stevens {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-stewardsBg {
-  --tw-bg-opacity: 1;
-  background-color: rgb(225 232 242 / var(--tw-bg-opacity, 1));
-}
-.bg-stewart {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 47 / var(--tw-bg-opacity, 1));
-}
-.bg-super-aguri {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 1 0 / var(--tw-bg-opacity, 1));
-}
-.bg-surtees {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 249 252 / var(--tw-bg-opacity, 1));
-}
-.bg-sutton {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-t-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-talbot-lago {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 71 193 / var(--tw-bg-opacity, 1));
-}
-.bg-tec-mec {
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 132 116 / var(--tw-bg-opacity, 1));
-}
-.bg-tecno {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 230 0 / var(--tw-bg-opacity, 1));
-}
-.bg-theodore {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 255 254 / var(--tw-bg-opacity, 1));
-}
-.bg-token {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 110 10 / var(--tw-bg-opacity, 1));
-}
-.bg-toleman {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 35 107 / var(--tw-bg-opacity, 1));
-}
-.bg-toro-rosso {
-  --tw-bg-opacity: 1;
-  background-color: rgb(1 32 185 / var(--tw-bg-opacity, 1));
-}
-.bg-toyota {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 64 76 / var(--tw-bg-opacity, 1));
-}
-.bg-trevis {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-trojan {
-  --tw-bg-opacity: 1;
-  background-color: rgb(238 100 99 / var(--tw-bg-opacity, 1));
-}
-.bg-turner {
-  --tw-bg-opacity: 1;
-  background-color: rgb(228 206 34 / var(--tw-bg-opacity, 1));
-}
-.bg-tyrrell {
-  --tw-bg-opacity: 1;
-  background-color: rgb(70 101 161 / var(--tw-bg-opacity, 1));
-}
-.bg-vanwall {
-  --tw-bg-opacity: 1;
-  background-color: rgb(116 132 90 / var(--tw-bg-opacity, 1));
-}
-.bg-venturi {
-  --tw-bg-opacity: 1;
-  background-color: rgb(188 19 19 / var(--tw-bg-opacity, 1));
-}
-.bg-veritas {
-  --tw-bg-opacity: 1;
-  background-color: rgb(123 173 249 / var(--tw-bg-opacity, 1));
-}
-.bg-virgin {
-  --tw-bg-opacity: 1;
-  background-color: rgb(227 30 35 / var(--tw-bg-opacity, 1));
-}
-.bg-watson {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-wetteroth {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 135 133 / var(--tw-bg-opacity, 1));
-}
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-williams {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 196 255 / var(--tw-bg-opacity, 1));
-}
-.bg-wolf {
-  --tw-bg-opacity: 1;
-  background-color: rgb(171 36 11 / var(--tw-bg-opacity, 1));
-}
-.bg-wolf-williams {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 39 156 / var(--tw-bg-opacity, 1));
-}
-.bg-yellow-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1));
-}
-.bg-zakspeed {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 23 1 / var(--tw-bg-opacity, 1));
-}
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.p-1 {
-  padding: 0.25rem;
-}
-.p-2 {
-  padding: 0.5rem;
-}
-.p-4 {
-  padding: 1rem;
-}
-.p-6 {
-  padding: 1.5rem;
-}
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
-}
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-.pl-3 {
-  padding-left: 0.75rem;
-}
-.pl-4 {
-  padding-left: 1rem;
-}
-.pr-2 {
-  padding-right: 0.5rem;
-}
-.pr-3 {
-  padding-right: 0.75rem;
-}
-.pt-0 {
-  padding-top: 0px;
-}
-.pt-10 {
-  padding-top: 2.5rem;
-}
-.pt-2 {
-  padding-top: 0.5rem;
-}
-.pt-4 {
-  padding-top: 1rem;
-}
-.pt-8 {
-  padding-top: 2rem;
-}
-.text-left {
-  text-align: left;
-}
-.text-center {
-  text-align: center;
-}
-.text-justify {
-  text-align: justify;
-}
-.font-F1Bold {
-  font-family: F1Bold, sans-serif;
-}
-.font-F1Regular {
-  font-family: F1Regular, sans-serif;
-}
-.font-F1Wide {
-  font-family: F1Wide, sans-serif;
-}
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-.font-bold {
-  font-weight: 700;
-}
-.font-semibold {
-  font-weight: 600;
-}
-.italic {
-  font-style: italic;
-}
-.leading-none {
-  line-height: 1;
-}
-.text-adams {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-afm {
-  --tw-text-opacity: 1;
-  color: rgb(165 181 221 / var(--tw-text-opacity, 1));
-}
-.text-ags {
-  --tw-text-opacity: 1;
-  color: rgb(85 109 168 / var(--tw-text-opacity, 1));
-}
-.text-alfa-romeo {
-  --tw-text-opacity: 1;
-  color: rgb(170 18 26 / var(--tw-text-opacity, 1));
-}
-.text-alfa-special {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-alphatauri {
-  --tw-text-opacity: 1;
-  color: rgb(1 19 33 / var(--tw-text-opacity, 1));
-}
-.text-alpine {
-  --tw-text-opacity: 1;
-  color: rgb(0 147 204 / var(--tw-text-opacity, 1));
-}
-.text-alta {
-  --tw-text-opacity: 1;
-  color: rgb(239 5 5 / var(--tw-text-opacity, 1));
-}
-.text-amon {
-  --tw-text-opacity: 1;
-  color: rgb(64 63 255 / var(--tw-text-opacity, 1));
-}
-.text-andrea-moda {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 255 / var(--tw-text-opacity, 1));
-}
-.text-apollon {
-  --tw-text-opacity: 1;
-  color: rgb(208 151 25 / var(--tw-text-opacity, 1));
-}
-.text-arrows {
-  --tw-text-opacity: 1;
-  color: rgb(39 156 180 / var(--tw-text-opacity, 1));
-}
-.text-arzani-volpini {
-  --tw-text-opacity: 1;
-  color: rgb(153 68 15 / var(--tw-text-opacity, 1));
-}
-.text-aston-butterworth {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-aston-martin {
-  --tw-text-opacity: 1;
-  color: rgb(34 153 113 / var(--tw-text-opacity, 1));
-}
-.text-ats {
-  --tw-text-opacity: 1;
-  color: rgb(18 109 249 / var(--tw-text-opacity, 1));
-}
-.text-ats-wheels {
-  --tw-text-opacity: 1;
-  color: rgb(249 180 24 / var(--tw-text-opacity, 1));
-}
-.text-balsa {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-bar {
-  --tw-text-opacity: 1;
-  color: rgb(148 165 130 / var(--tw-text-opacity, 1));
-}
-.text-behra-porsche {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-bellasi {
-  --tw-text-opacity: 1;
-  color: rgb(60 109 88 / var(--tw-text-opacity, 1));
-}
-.text-benetton {
-  --tw-text-opacity: 1;
-  color: rgb(1 141 48 / var(--tw-text-opacity, 1));
-}
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-.text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity, 1));
-}
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-}
-.text-bmw {
-  --tw-text-opacity: 1;
-  color: rgb(81 166 208 / var(--tw-text-opacity, 1));
-}
-.text-bmw-sauber {
-  --tw-text-opacity: 1;
-  color: rgb(81 166 208 / var(--tw-text-opacity, 1));
-}
-.text-boro {
-  --tw-text-opacity: 1;
-  color: rgb(231 34 16 / var(--tw-text-opacity, 1));
-}
-.text-brabham {
-  --tw-text-opacity: 1;
-  color: rgb(22 111 24 / var(--tw-text-opacity, 1));
-}
-.text-brawn {
-  --tw-text-opacity: 1;
-  color: rgb(230 255 1 / var(--tw-text-opacity, 1));
-}
-.text-brm {
-  --tw-text-opacity: 1;
-  color: rgb(87 84 156 / var(--tw-text-opacity, 1));
-}
-.text-bromme {
-  --tw-text-opacity: 1;
-  color: rgb(175 20 11 / var(--tw-text-opacity, 1));
-}
-.text-brp {
-  --tw-text-opacity: 1;
-  color: rgb(137 181 135 / var(--tw-text-opacity, 1));
-}
-.text-bugatti {
-  --tw-text-opacity: 1;
-  color: rgb(191 0 50 / var(--tw-text-opacity, 1));
-}
-.text-caterham {
-  --tw-text-opacity: 1;
-  color: rgb(2 67 45 / var(--tw-text-opacity, 1));
-}
-.text-christensen {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-cisitalia {
-  --tw-text-opacity: 1;
-  color: rgb(6 0 113 / var(--tw-text-opacity, 1));
-}
-.text-coloni {
-  --tw-text-opacity: 1;
-  color: rgb(254 238 0 / var(--tw-text-opacity, 1));
-}
-.text-connaught {
-  --tw-text-opacity: 1;
-  color: rgb(120 1 55 / var(--tw-text-opacity, 1));
-}
-.text-connew {
-  --tw-text-opacity: 1;
-  color: rgb(149 28 18 / var(--tw-text-opacity, 1));
-}
-.text-cooper {
-  --tw-text-opacity: 1;
-  color: rgb(189 191 179 / var(--tw-text-opacity, 1));
-}
-.text-dallara {
-  --tw-text-opacity: 1;
-  color: rgb(247 221 0 / var(--tw-text-opacity, 1));
-}
-.text-dark {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-de-tomaso {
-  --tw-text-opacity: 1;
-  color: rgb(113 206 236 / var(--tw-text-opacity, 1));
-}
-.text-deconnect {
-  --tw-text-opacity: 1;
-  color: rgb(246 166 11 / var(--tw-text-opacity, 1));
-}
-.text-deidt {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-del-roy {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-derrington-francis {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-dunn {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-eagle {
-  --tw-text-opacity: 1;
-  color: rgb(71 70 75 / var(--tw-text-opacity, 1));
-}
-.text-eifelland {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 128 / var(--tw-text-opacity, 1));
-}
-.text-elder {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-emeryson {
-  --tw-text-opacity: 1;
-  color: rgb(40 40 40 / var(--tw-text-opacity, 1));
-}
-.text-emw {
-  --tw-text-opacity: 1;
-  color: rgb(206 188 153 / var(--tw-text-opacity, 1));
-}
-.text-enb {
-  --tw-text-opacity: 1;
-  color: rgb(223 193 57 / var(--tw-text-opacity, 1));
-}
-.text-ensign {
-  --tw-text-opacity: 1;
-  color: rgb(58 106 49 / var(--tw-text-opacity, 1));
-}
-.text-epperly {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-era {
-  --tw-text-opacity: 1;
-  color: rgb(163 200 227 / var(--tw-text-opacity, 1));
-}
-.text-eurobrun {
-  --tw-text-opacity: 1;
-  color: rgb(253 125 43 / var(--tw-text-opacity, 1));
-}
-.text-ewing {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-ferguson {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-ferrari {
-  --tw-text-opacity: 1;
-  color: rgb(232 0 32 / var(--tw-text-opacity, 1));
-}
-.text-first {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-fittipaldi {
-  --tw-text-opacity: 1;
-  color: rgb(242 105 38 / var(--tw-text-opacity, 1));
-}
-.text-fondmetal {
-  --tw-text-opacity: 1;
-  color: rgb(240 167 1 / var(--tw-text-opacity, 1));
-}
-.text-footwork {
-  --tw-text-opacity: 1;
-  color: rgb(255 0 51 / var(--tw-text-opacity, 1));
-}
-.text-force-india {
-  --tw-text-opacity: 1;
-  color: rgb(230 110 5 / var(--tw-text-opacity, 1));
-}
-.text-forti {
-  --tw-text-opacity: 1;
-  color: rgb(55 57 113 / var(--tw-text-opacity, 1));
-}
-.text-frank-williams-racing-cars {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-frazer-nash {
-  --tw-text-opacity: 1;
-  color: rgb(218 36 24 / var(--tw-text-opacity, 1));
-}
-.text-fry {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-fuchsia-700 {
-  --tw-text-opacity: 1;
-  color: rgb(162 28 175 / var(--tw-text-opacity, 1));
-}
-.text-gilby {
-  --tw-text-opacity: 1;
-  color: rgb(108 131 106 / var(--tw-text-opacity, 1));
-}
-.text-gold {
-  --tw-text-opacity: 1;
-  color: rgb(255 215 0 / var(--tw-text-opacity, 1));
-}
-.text-gordini {
-  --tw-text-opacity: 1;
-  color: rgb(55 140 196 / var(--tw-text-opacity, 1));
-}
-.text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
-}
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-}
-.text-green-600 {
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity, 1));
-}
-.text-greifzu {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-haas {
-  --tw-text-opacity: 1;
-  color: rgb(182 186 189 / var(--tw-text-opacity, 1));
-}
-.text-hall {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-hasnt-finished-race {
-  --tw-text-opacity: 1;
-  color: rgb(113 113 113 / var(--tw-text-opacity, 1));
-}
-.text-heck {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-hesketh {
-  --tw-text-opacity: 1;
-  color: rgb(249 251 105 / var(--tw-text-opacity, 1));
-}
-.text-hill {
-  --tw-text-opacity: 1;
-  color: rgb(214 26 26 / var(--tw-text-opacity, 1));
-}
-.text-honda {
-  --tw-text-opacity: 1;
-  color: rgb(237 24 49 / var(--tw-text-opacity, 1));
-}
-.text-hrt {
-  --tw-text-opacity: 1;
-  color: rgb(173 153 80 / var(--tw-text-opacity, 1));
-}
-.text-hwm {
-  --tw-text-opacity: 1;
-  color: rgb(63 71 203 / var(--tw-text-opacity, 1));
-}
-.text-iso-marlboro {
-  --tw-text-opacity: 1;
-  color: rgb(199 175 13 / var(--tw-text-opacity, 1));
-}
-.text-jaguar {
-  --tw-text-opacity: 1;
-  color: rgb(255 18 5 / var(--tw-text-opacity, 1));
-}
-.text-jbw {
-  --tw-text-opacity: 1;
-  color: rgb(61 36 47 / var(--tw-text-opacity, 1));
-}
-.text-jordan {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 1 / var(--tw-text-opacity, 1));
-}
-.text-kauhsen {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 34 / var(--tw-text-opacity, 1));
-}
-.text-kick-sauber {
-  --tw-text-opacity: 1;
-  color: rgb(82 226 82 / var(--tw-text-opacity, 1));
-}
-.text-klenk {
-  --tw-text-opacity: 1;
-  color: rgb(157 5 59 / var(--tw-text-opacity, 1));
-}
-.text-kojima {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 255 / var(--tw-text-opacity, 1));
-}
-.text-krakau {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-kurtis-kraft {
-  --tw-text-opacity: 1;
-  color: rgb(248 254 231 / var(--tw-text-opacity, 1));
-}
-.text-kuzma {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-lancia {
-  --tw-text-opacity: 1;
-  color: rgb(32 63 95 / var(--tw-text-opacity, 1));
-}
-.text-langley {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-larrousse {
-  --tw-text-opacity: 1;
-  color: rgb(246 26 35 / var(--tw-text-opacity, 1));
-}
-.text-lds {
-  --tw-text-opacity: 1;
-  color: rgb(101 183 224 / var(--tw-text-opacity, 1));
-}
-.text-lec {
-  --tw-text-opacity: 1;
-  color: rgb(166 52 52 / var(--tw-text-opacity, 1));
-}
-.text-lesovsky {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-leyton-house {
-  --tw-text-opacity: 1;
-  color: rgb(18 199 190 / var(--tw-text-opacity, 1));
-}
-.text-life {
-  --tw-text-opacity: 1;
-  color: rgb(198 48 48 / var(--tw-text-opacity, 1));
-}
-.text-light {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-.text-ligier {
-  --tw-text-opacity: 1;
-  color: rgb(19 37 78 / var(--tw-text-opacity, 1));
-}
-.text-lola {
-  --tw-text-opacity: 1;
-  color: rgb(254 217 4 / var(--tw-text-opacity, 1));
-}
-.text-lotus {
-  --tw-text-opacity: 1;
-  color: rgb(16 55 40 / var(--tw-text-opacity, 1));
-}
-.text-lotus-f1 {
-  --tw-text-opacity: 1;
-  color: rgb(176 146 71 / var(--tw-text-opacity, 1));
-}
-.text-lotus-racing {
-  --tw-text-opacity: 1;
-  color: rgb(0 63 34 / var(--tw-text-opacity, 1));
-}
-.text-lyncar {
-  --tw-text-opacity: 1;
-  color: rgb(46 64 135 / var(--tw-text-opacity, 1));
-}
-.text-maki {
-  --tw-text-opacity: 1;
-  color: rgb(172 31 31 / var(--tw-text-opacity, 1));
-}
-.text-manor {
-  --tw-text-opacity: 1;
-  color: rgb(254 106 53 / var(--tw-text-opacity, 1));
-}
-.text-march {
-  --tw-text-opacity: 1;
-  color: rgb(247 240 231 / var(--tw-text-opacity, 1));
-}
-.text-marchese {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-martini {
-  --tw-text-opacity: 1;
-  color: rgb(55 132 247 / var(--tw-text-opacity, 1));
-}
-.text-marussia {
-  --tw-text-opacity: 1;
-  color: rgb(251 53 34 / var(--tw-text-opacity, 1));
-}
-.text-maserati {
-  --tw-text-opacity: 1;
-  color: rgb(12 46 89 / var(--tw-text-opacity, 1));
-}
-.text-matra {
-  --tw-text-opacity: 1;
-  color: rgb(0 29 208 / var(--tw-text-opacity, 1));
-}
-.text-mcguire {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-mclaren {
-  --tw-text-opacity: 1;
-  color: rgb(255 128 0 / var(--tw-text-opacity, 1));
-}
-.text-mercedes {
-  --tw-text-opacity: 1;
-  color: rgb(39 244 210 / var(--tw-text-opacity, 1));
-}
-.text-merzario {
-  --tw-text-opacity: 1;
-  color: rgb(190 66 60 / var(--tw-text-opacity, 1));
-}
-.text-meskowski {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-midland {
-  --tw-text-opacity: 1;
-  color: rgb(255 0 0 / var(--tw-text-opacity, 1));
-}
-.text-minardi {
-  --tw-text-opacity: 1;
-  color: rgb(14 35 58 / var(--tw-text-opacity, 1));
-}
-.text-modena {
-  --tw-text-opacity: 1;
-  color: rgb(18 10 47 / var(--tw-text-opacity, 1));
-}
-.text-moore {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-nacke {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-nichels {
-  --tw-text-opacity: 1;
-  color: rgb(114 114 114 / var(--tw-text-opacity, 1));
-}
-.text-olson {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-onyx {
-  --tw-text-opacity: 1;
-  color: rgb(210 214 143 / var(--tw-text-opacity, 1));
-}
-.text-osca {
-  --tw-text-opacity: 1;
-  color: rgb(26 3 130 / var(--tw-text-opacity, 1));
-}
-.text-osella {
-  --tw-text-opacity: 1;
-  color: rgb(255 254 36 / var(--tw-text-opacity, 1));
-}
-.text-pacific {
-  --tw-text-opacity: 1;
-  color: rgb(14 144 201 / var(--tw-text-opacity, 1));
-}
-.text-pankratz {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-parnelli {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-pawl {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-penske {
-  --tw-text-opacity: 1;
-  color: rgb(211 26 27 / var(--tw-text-opacity, 1));
-}
-.text-phillips {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-politoys {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 122 / var(--tw-text-opacity, 1));
-}
-.text-porsche {
-  --tw-text-opacity: 1;
-  color: rgb(173 143 60 / var(--tw-text-opacity, 1));
-}
-.text-prost {
-  --tw-text-opacity: 1;
-  color: rgb(38 70 139 / var(--tw-text-opacity, 1));
-}
-.text-protos {
-  --tw-text-opacity: 1;
-  color: rgb(255 22 42 / var(--tw-text-opacity, 1));
-}
-.text-racing-bulls {
-  --tw-text-opacity: 1;
-  color: rgb(102 146 255 / var(--tw-text-opacity, 1));
-}
-.text-racing-point {
-  --tw-text-opacity: 1;
-  color: rgb(243 104 186 / var(--tw-text-opacity, 1));
-}
-.text-rae {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-ram {
-  --tw-text-opacity: 1;
-  color: rgb(10 98 73 / var(--tw-text-opacity, 1));
-}
-.text-rb {
-  --tw-text-opacity: 1;
-  color: rgb(102 146 255 / var(--tw-text-opacity, 1));
-}
-.text-rebaque {
-  --tw-text-opacity: 1;
-  color: rgb(4 129 71 / var(--tw-text-opacity, 1));
-}
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
-.text-red-bull {
-  --tw-text-opacity: 1;
-  color: rgb(54 113 198 / var(--tw-text-opacity, 1));
-}
-.text-reif {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-renault {
-  --tw-text-opacity: 1;
-  color: rgb(252 212 36 / var(--tw-text-opacity, 1));
-}
-.text-rial {
-  --tw-text-opacity: 1;
-  color: rgb(7 92 176 / var(--tw-text-opacity, 1));
-}
-.text-sauber {
-  --tw-text-opacity: 1;
-  color: rgb(214 32 28 / var(--tw-text-opacity, 1));
-}
-.text-scarab {
-  --tw-text-opacity: 1;
-  color: rgb(205 198 206 / var(--tw-text-opacity, 1));
-}
-.text-schroeder {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-scirocco {
-  --tw-text-opacity: 1;
-  color: rgb(42 57 90 / var(--tw-text-opacity, 1));
-}
-.text-shadow {
-  --tw-text-opacity: 1;
-  color: rgb(41 36 13 / var(--tw-text-opacity, 1));
-}
-.text-shannon {
-  --tw-text-opacity: 1;
-  color: rgb(40 48 52 / var(--tw-text-opacity, 1));
-}
-.text-sherman {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-simca-gordini {
-  --tw-text-opacity: 1;
-  color: rgb(1 119 200 / var(--tw-text-opacity, 1));
-}
-.text-simtek {
-  --tw-text-opacity: 1;
-  color: rgb(68 94 185 / var(--tw-text-opacity, 1));
-}
-.text-snowberger {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-spirit {
-  --tw-text-opacity: 1;
-  color: rgb(45 78 179 / var(--tw-text-opacity, 1));
-}
-.text-spyker {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-stebro {
-  --tw-text-opacity: 1;
-  color: rgb(254 255 0 / var(--tw-text-opacity, 1));
-}
-.text-stevens {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-stewardsTxt {
-  --tw-text-opacity: 1;
-  color: rgb(1 17 50 / var(--tw-text-opacity, 1));
-}
-.text-stewart {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 47 / var(--tw-text-opacity, 1));
-}
-.text-super-aguri {
-  --tw-text-opacity: 1;
-  color: rgb(255 1 0 / var(--tw-text-opacity, 1));
-}
-.text-surtees {
-  --tw-text-opacity: 1;
-  color: rgb(252 249 252 / var(--tw-text-opacity, 1));
-}
-.text-sutton {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-t-s-dark {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
-}
-.text-t-s-light {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
-}
-.text-talbot-lago {
-  --tw-text-opacity: 1;
-  color: rgb(0 71 193 / var(--tw-text-opacity, 1));
-}
-.text-tec-mec {
-  --tw-text-opacity: 1;
-  color: rgb(132 132 116 / var(--tw-text-opacity, 1));
-}
-.text-tecno {
-  --tw-text-opacity: 1;
-  color: rgb(254 230 0 / var(--tw-text-opacity, 1));
-}
-.text-theodore {
-  --tw-text-opacity: 1;
-  color: rgb(75 255 254 / var(--tw-text-opacity, 1));
-}
-.text-token {
-  --tw-text-opacity: 1;
-  color: rgb(37 110 10 / var(--tw-text-opacity, 1));
-}
-.text-toleman {
-  --tw-text-opacity: 1;
-  color: rgb(0 35 107 / var(--tw-text-opacity, 1));
-}
-.text-toro-rosso {
-  --tw-text-opacity: 1;
-  color: rgb(1 32 185 / var(--tw-text-opacity, 1));
-}
-.text-toyota {
-  --tw-text-opacity: 1;
-  color: rgb(214 64 76 / var(--tw-text-opacity, 1));
-}
-.text-trevis {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-trojan {
-  --tw-text-opacity: 1;
-  color: rgb(238 100 99 / var(--tw-text-opacity, 1));
-}
-.text-turner {
-  --tw-text-opacity: 1;
-  color: rgb(228 206 34 / var(--tw-text-opacity, 1));
-}
-.text-tyrrell {
-  --tw-text-opacity: 1;
-  color: rgb(70 101 161 / var(--tw-text-opacity, 1));
-}
-.text-vanwall {
-  --tw-text-opacity: 1;
-  color: rgb(116 132 90 / var(--tw-text-opacity, 1));
-}
-.text-venturi {
-  --tw-text-opacity: 1;
-  color: rgb(188 19 19 / var(--tw-text-opacity, 1));
-}
-.text-veritas {
-  --tw-text-opacity: 1;
-  color: rgb(123 173 249 / var(--tw-text-opacity, 1));
-}
-.text-virgin {
-  --tw-text-opacity: 1;
-  color: rgb(227 30 35 / var(--tw-text-opacity, 1));
-}
-.text-watson {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-wetteroth {
-  --tw-text-opacity: 1;
-  color: rgb(5 135 133 / var(--tw-text-opacity, 1));
-}
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-williams {
-  --tw-text-opacity: 1;
-  color: rgb(100 196 255 / var(--tw-text-opacity, 1));
-}
-.text-wolf {
-  --tw-text-opacity: 1;
-  color: rgb(171 36 11 / var(--tw-text-opacity, 1));
-}
-.text-wolf-williams {
-  --tw-text-opacity: 1;
-  color: rgb(0 39 156 / var(--tw-text-opacity, 1));
-}
-.text-zakspeed {
-  --tw-text-opacity: 1;
-  color: rgb(199 23 1 / var(--tw-text-opacity, 1));
-}
-.underline {
-  text-decoration-line: underline;
-}
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.outline-none {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-.outline {
-  outline-style: solid;
-}
-.blur {
-  --tw-blur: blur(8px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition-transform {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.duration-300 {
-  transition-duration: 300ms;
-}
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@font-face {
-    font-family: 'F1Bold';
-    src: url('../fonts/Formula1-Bold.otf');
-}
-
-@font-face {
-    font-family: 'F1Regular';
-    src: url('../fonts/Formula1-Regular.otf');
-}
-
-@font-face {
-    font-family: 'F1Wide';
-    src: url('../fonts/Formula1-Wide.otf');
-}
-
-.focus-within\:shadow-lg:focus-within {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:-translate-y-1:hover {
-  --tw-translate-y: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:scale-105:hover {
-  --tw-scale-x: 1.05;
-  --tw-scale-y: 1.05;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
-}
-
-.hover\:text-blue-800:hover {
-  --tw-text-opacity: 1;
-  color: rgb(30 64 175 / var(--tw-text-opacity, 1));
-}
-
-.hover\:shadow-xl:hover {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.focus\:outline-none:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus\:ring-2:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-gray-500:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity, 1));
-}
-
-@media (min-width: 640px) {
-
-  .sm\:max-w-xl {
-    max-width: 36rem;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:p-8 {
-    padding: 2rem;
-  }
-
-  .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .sm\:pt-8 {
-    padding-top: 2rem;
-  }
-
-  .sm\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-}
-
-@media (min-width: 768px) {
-
-  .md\:col-span-4 {
+  .col-span-4 {
     grid-column: span 4 / span 4;
   }
-
-  .md\:mt-0 {
-    margin-top: 0px;
+  .col-span-6 {
+    grid-column: span 6 / span 6;
   }
-
-  .md\:mt-6 {
-    margin-top: 1.5rem;
+  .col-span-12 {
+    grid-column: span 12 / span 12;
   }
-
-  .md\:block {
+  .row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
+  .m-0 {
+    margin: calc(var(--spacing) * 0);
+  }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .mx-2 {
+    margin-inline: calc(var(--spacing) * 2);
+  }
+  .mx-4 {
+    margin-inline: calc(var(--spacing) * 4);
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
+  .my-8 {
+    margin-block: calc(var(--spacing) * 8);
+  }
+  .my-auto {
+    margin-block: auto;
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-4 {
+    margin-right: calc(var(--spacing) * 4);
+  }
+  .mr-20 {
+    margin-right: calc(var(--spacing) * 20);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
+  .box-border {
+    box-sizing: border-box;
+  }
+  .block {
     display: block;
   }
-
-  .md\:flex {
+  .contents {
+    display: contents;
+  }
+  .flex {
     display: flex;
   }
-
-  .md\:grid {
+  .grid {
     display: grid;
   }
-
-  .md\:hidden {
+  .hidden {
     display: none;
   }
-
-  .md\:h-16 {
-    height: 4rem;
+  .inline-block {
+    display: inline-block;
   }
-
-  .md\:h-24 {
-    height: 6rem;
+  .table {
+    display: table;
   }
-
-  .md\:h-28 {
-    height: 7rem;
+  .h-1 {
+    height: calc(var(--spacing) * 1);
   }
-
-  .md\:h-36 {
-    height: 9rem;
+  .h-2\/3 {
+    height: calc(2/3 * 100%);
   }
-
-  .md\:h-48 {
-    height: 12rem;
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
-
-  .md\:w-1\/2 {
-    width: 50%;
+  .h-5 {
+    height: calc(var(--spacing) * 5);
   }
-
-  .md\:w-3\/4 {
-    width: 75%;
+  .h-6 {
+    height: calc(var(--spacing) * 6);
   }
-
-  .md\:w-3\/5 {
-    width: 60%;
+  .h-8 {
+    height: calc(var(--spacing) * 8);
   }
-
-  .md\:w-9\/12 {
-    width: 75%;
+  .h-10 {
+    height: calc(var(--spacing) * 10);
   }
-
-  .md\:flex-row {
-    flex-direction: row;
+  .h-12 {
+    height: calc(var(--spacing) * 12);
   }
-
-  .md\:flex-col {
-    flex-direction: column;
+  .h-16 {
+    height: calc(var(--spacing) * 16);
   }
-
-  .md\:gap-y-0 {
-    row-gap: 0px;
+  .h-20 {
+    height: calc(var(--spacing) * 20);
   }
-
-  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  .h-24 {
+    height: calc(var(--spacing) * 24);
   }
-
-  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  .h-28 {
+    height: calc(var(--spacing) * 28);
   }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  .h-32 {
+    height: calc(var(--spacing) * 32);
   }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+  .h-36 {
+    height: calc(var(--spacing) * 36);
   }
-}
-
-@media (min-width: 1024px) {
-
-  .lg\:my-8 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .h-40 {
+    height: calc(var(--spacing) * 40);
   }
-
-  .lg\:w-1\/3 {
-    width: 33.333333%;
+  .h-44 {
+    height: calc(var(--spacing) * 44);
   }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .h-48 {
+    height: calc(var(--spacing) * 48);
   }
-
-  .lg\:grid-cols-4 {
+  .h-56 {
+    height: calc(var(--spacing) * 56);
+  }
+  .h-auto {
+    height: auto;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .max-h-8 {
+    max-height: calc(var(--spacing) * 8);
+  }
+  .max-h-12 {
+    max-height: calc(var(--spacing) * 12);
+  }
+  .max-h-40 {
+    max-height: calc(var(--spacing) * 40);
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-2\/3 {
+    width: calc(2/3 * 100%);
+  }
+  .w-3\/4 {
+    width: calc(3/4 * 100%);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-4\/5 {
+    width: calc(4/5 * 100%);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-5\/12 {
+    width: calc(5/12 * 100%);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-6\/12 {
+    width: calc(6/12 * 100%);
+  }
+  .w-7\/12 {
+    width: calc(7/12 * 100%);
+  }
+  .w-9\/10 {
+    width: calc(9/10 * 100%);
+  }
+  .w-11\/12 {
+    width: calc(11/12 * 100%);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-80 {
+    width: calc(var(--spacing) * 80);
+  }
+  .w-auto {
+    width: auto;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-16 {
+    max-width: calc(var(--spacing) * 16);
+  }
+  .max-w-20 {
+    max-width: calc(var(--spacing) * 20);
+  }
+  .max-w-36 {
+    max-width: calc(var(--spacing) * 36);
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .max-w-sm {
+    max-width: var(--container-sm);
+  }
+  .min-w-48 {
+    min-width: calc(var(--spacing) * 48);
+  }
+  .flex-0 {
+    flex: 0;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .transform {
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  }
+  .animate-pulse {
+    animation: var(--animate-pulse);
+  }
+  .resize {
+    resize: both;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-
+  .grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .grid-rows-12 {
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .place-items-center {
+    place-items: center;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .items-stretch {
+    align-items: stretch;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-evenly {
+    justify-content: space-evenly;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .gap-x-1 {
+    column-gap: calc(var(--spacing) * 1);
+  }
+  .gap-x-2 {
+    column-gap: calc(var(--spacing) * 2);
+  }
+  .gap-x-3 {
+    column-gap: calc(var(--spacing) * 3);
+  }
+  .gap-x-4 {
+    column-gap: calc(var(--spacing) * 4);
+  }
+  .gap-y-1 {
+    row-gap: calc(var(--spacing) * 1);
+  }
+  .gap-y-2 {
+    row-gap: calc(var(--spacing) * 2);
+  }
+  .gap-y-4 {
+    row-gap: calc(var(--spacing) * 4);
+  }
+  .gap-y-6 {
+    row-gap: calc(var(--spacing) * 6);
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-x-scroll {
+    overflow-x: scroll;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .rounded-t-lg {
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-t-2 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 2px;
+  }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+  .border-l-2 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 2px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-adams {
+    border-color: #058785;
+  }
+  .border-afm {
+    border-color: #a5b5dd;
+  }
+  .border-ags {
+    border-color: #556da8;
+  }
+  .border-alfa-romeo {
+    border-color: #aa121a;
+  }
+  .border-alfa-special {
+    border-color: #058785;
+  }
+  .border-alphatauri {
+    border-color: #011321;
+  }
+  .border-alpine {
+    border-color: #0093CC;
+  }
+  .border-alta {
+    border-color: #ef0505;
+  }
+  .border-amon {
+    border-color: #403fff;
+  }
+  .border-andrea-moda {
+    border-color: #0000ff;
+  }
+  .border-apollon {
+    border-color: #d09719;
+  }
+  .border-arrows {
+    border-color: #279cb4;
+  }
+  .border-arzani-volpini {
+    border-color: #99440f;
+  }
+  .border-aston-butterworth {
+    border-color: #ffffff;
+  }
+  .border-aston-martin {
+    border-color: #229971;
+  }
+  .border-ats {
+    border-color: #126df9;
+  }
+  .border-ats-wheels {
+    border-color: #f9b418;
+  }
+  .border-balsa {
+    border-color: #058785;
+  }
+  .border-bar {
+    border-color: #94a582;
+  }
+  .border-behra-porsche {
+    border-color: #058785;
+  }
+  .border-bellasi {
+    border-color: #3c6d58;
+  }
+  .border-benetton {
+    border-color: #018d30;
+  }
+  .border-black {
+    border-color: var(--color-black);
+  }
+  .border-bmw {
+    border-color: #51a6d0;
+  }
+  .border-bmw-sauber {
+    border-color: #51a6d0;
+  }
+  .border-boro {
+    border-color: #e72210;
+  }
+  .border-brabham {
+    border-color: #166f18;
+  }
+  .border-brawn {
+    border-color: #e6ff01;
+  }
+  .border-brm {
+    border-color: #57549c;
+  }
+  .border-bromme {
+    border-color: #af140b;
+  }
+  .border-brp {
+    border-color: #89b587;
+  }
+  .border-bugatti {
+    border-color: #bf0032;
+  }
+  .border-caterham {
+    border-color: #02432d;
+  }
+  .border-christensen {
+    border-color: #058785;
+  }
+  .border-cisitalia {
+    border-color: #060071;
+  }
+  .border-coloni {
+    border-color: #feee00;
+  }
+  .border-connaught {
+    border-color: #780137;
+  }
+  .border-connew {
+    border-color: #951c12;
+  }
+  .border-cooper {
+    border-color: #bdbfb3;
+  }
+  .border-dallara {
+    border-color: #f7dd00;
+  }
+  .border-dark {
+    border-color: white;
+  }
+  .border-de-tomaso {
+    border-color: #71ceec;
+  }
+  .border-deidt {
+    border-color: #058785;
+  }
+  .border-del-roy {
+    border-color: #058785;
+  }
+  .border-derrington-francis {
+    border-color: #058785;
+  }
+  .border-dunn {
+    border-color: #058785;
+  }
+  .border-eagle {
+    border-color: #47464b;
+  }
+  .border-eifelland {
+    border-color: #000080;
+  }
+  .border-elder {
+    border-color: #058785;
+  }
+  .border-emeryson {
+    border-color: #282828;
+  }
+  .border-emw {
+    border-color: #cebc99;
+  }
+  .border-enb {
+    border-color: #dfc139;
+  }
+  .border-ensign {
+    border-color: #3a6a31;
+  }
+  .border-epperly {
+    border-color: #058785;
+  }
+  .border-era {
+    border-color: #a3c8e3;
+  }
+  .border-eurobrun {
+    border-color: #fd7d2b;
+  }
+  .border-ewing {
+    border-color: #058785;
+  }
+  .border-ferguson {
+    border-color: #ffffff;
+  }
+  .border-ferrari {
+    border-color: #E80020;
+  }
+  .border-first {
+    border-color: #058785;
+  }
+  .border-fittipaldi {
+    border-color: #f26926;
+  }
+  .border-fondmetal {
+    border-color: #f0a701;
+  }
+  .border-footwork {
+    border-color: #ff0033;
+  }
+  .border-force-india {
+    border-color: #e66e05;
+  }
+  .border-forti {
+    border-color: #373971;
+  }
+  .border-frank-williams-racing-cars {
+    border-color: #ffffff;
+  }
+  .border-frazer-nash {
+    border-color: #da2418;
+  }
+  .border-fry {
+    border-color: #058785;
+  }
+  .border-gilby {
+    border-color: #6c836a;
+  }
+  .border-gordini {
+    border-color: #378cc4;
+  }
+  .border-green-500 {
+    border-color: var(--color-green-500);
+  }
+  .border-greifzu {
+    border-color: #058785;
+  }
+  .border-haas {
+    border-color: #B6BABD;
+  }
+  .border-hall {
+    border-color: #058785;
+  }
+  .border-heck {
+    border-color: #058785;
+  }
+  .border-hesketh {
+    border-color: #f9fb69;
+  }
+  .border-hill {
+    border-color: #d61a1a;
+  }
+  .border-honda {
+    border-color: #ed1831;
+  }
+  .border-hrt {
+    border-color: #ad9950;
+  }
+  .border-hwm {
+    border-color: #3f47cb;
+  }
+  .border-iso-marlboro {
+    border-color: #c7af0d;
+  }
+  .border-jaguar {
+    border-color: #ff1205;
+  }
+  .border-jbw {
+    border-color: #3d242f;
+  }
+  .border-jordan {
+    border-color: #ffff01;
+  }
+  .border-kauhsen {
+    border-color: #ffff22;
+  }
+  .border-kick-sauber {
+    border-color: #52E252;
+  }
+  .border-klenk {
+    border-color: #9d053b;
+  }
+  .border-kojima {
+    border-color: #0000ff;
+  }
+  .border-krakau {
+    border-color: #058785;
+  }
+  .border-kurtis-kraft {
+    border-color: #f8fee7;
+  }
+  .border-kuzma {
+    border-color: #058785;
+  }
+  .border-lancia {
+    border-color: #203f5f;
+  }
+  .border-langley {
+    border-color: #058785;
+  }
+  .border-larrousse {
+    border-color: #f61a23;
+  }
+  .border-lds {
+    border-color: #65b7e0;
+  }
+  .border-lec {
+    border-color: #a63434;
+  }
+  .border-lesovsky {
+    border-color: #058785;
+  }
+  .border-leyton-house {
+    border-color: #12c7be;
+  }
+  .border-life {
+    border-color: #c63030;
+  }
+  .border-light {
+    border-color: black;
+  }
+  .border-ligier {
+    border-color: #13254e;
+  }
+  .border-lola {
+    border-color: #fed904;
+  }
+  .border-lotus {
+    border-color: #103728;
+  }
+  .border-lotus-f1 {
+    border-color: #b09247;
+  }
+  .border-lotus-racing {
+    border-color: #003f22;
+  }
+  .border-lyncar {
+    border-color: #2e4087;
+  }
+  .border-maki {
+    border-color: #ac1f1f;
+  }
+  .border-manor {
+    border-color: #fe6a35;
+  }
+  .border-march {
+    border-color: #f7f0e7;
+  }
+  .border-marchese {
+    border-color: #058785;
+  }
+  .border-martini {
+    border-color: #3784f7;
+  }
+  .border-marussia {
+    border-color: #fb3522;
+  }
+  .border-maserati {
+    border-color: #0c2e59;
+  }
+  .border-matra {
+    border-color: #001dd0;
+  }
+  .border-mcguire {
+    border-color: #058785;
+  }
+  .border-mclaren {
+    border-color: #FF8000;
+  }
+  .border-mercedes {
+    border-color: #27F4D2;
+  }
+  .border-merzario {
+    border-color: #be423c;
+  }
+  .border-meskowski {
+    border-color: #058785;
+  }
+  .border-midland {
+    border-color: #ff0000;
+  }
+  .border-minardi {
+    border-color: #0e233a;
+  }
+  .border-modena {
+    border-color: #120a2f;
+  }
+  .border-moore {
+    border-color: #058785;
+  }
+  .border-nacke {
+    border-color: #058785;
+  }
+  .border-nichels {
+    border-color: #727272;
+  }
+  .border-olson {
+    border-color: #058785;
+  }
+  .border-onyx {
+    border-color: #d2d68f;
+  }
+  .border-osca {
+    border-color: #1a0382;
+  }
+  .border-osella {
+    border-color: #fffe24;
+  }
+  .border-pacific {
+    border-color: #0e90c9;
+  }
+  .border-pankratz {
+    border-color: #058785;
+  }
+  .border-parnelli {
+    border-color: #ffffff;
+  }
+  .border-pawl {
+    border-color: #058785;
+  }
+  .border-penske {
+    border-color: #d31a1b;
+  }
+  .border-phillips {
+    border-color: #058785;
+  }
+  .border-politoys {
+    border-color: #00007a;
+  }
+  .border-porsche {
+    border-color: #ad8f3c;
+  }
+  .border-prost {
+    border-color: #26468b;
+  }
+  .border-protos {
+    border-color: #ff162a;
+  }
+  .border-racing-bulls {
+    border-color: #6692FF;
+  }
+  .border-racing-point {
+    border-color: #f368ba;
+  }
+  .border-rae {
+    border-color: #058785;
+  }
+  .border-ram {
+    border-color: #0a6249;
+  }
+  .border-rb {
+    border-color: #6692FF;
+  }
+  .border-rebaque {
+    border-color: #048147;
+  }
+  .border-red-bull {
+    border-color: #3671C6;
+  }
+  .border-reif {
+    border-color: #058785;
+  }
+  .border-renault {
+    border-color: #fcd424;
+  }
+  .border-rial {
+    border-color: #075cb0;
+  }
+  .border-sauber {
+    border-color: #d6201c;
+  }
+  .border-scarab {
+    border-color: #cdc6ce;
+  }
+  .border-schroeder {
+    border-color: #058785;
+  }
+  .border-scirocco {
+    border-color: #2a395a;
+  }
+  .border-shadow {
+    border-color: #29240d;
+  }
+  .border-shannon {
+    border-color: #283034;
+  }
+  .border-sherman {
+    border-color: #058785;
+  }
+  .border-simca-gordini {
+    border-color: #0177c8;
+  }
+  .border-simtek {
+    border-color: #445eb9;
+  }
+  .border-snowberger {
+    border-color: #058785;
+  }
+  .border-spirit {
+    border-color: #2d4eb3;
+  }
+  .border-spyker {
+    border-color: #ffffff;
+  }
+  .border-stebro {
+    border-color: #feff00;
+  }
+  .border-stevens {
+    border-color: #058785;
+  }
+  .border-stewart {
+    border-color: #00002f;
+  }
+  .border-super-aguri {
+    border-color: #ff0100;
+  }
+  .border-surtees {
+    border-color: #fcf9fc;
+  }
+  .border-sutton {
+    border-color: #058785;
+  }
+  .border-talbot-lago {
+    border-color: #0047c1;
+  }
+  .border-tec-mec {
+    border-color: #848474;
+  }
+  .border-tecno {
+    border-color: #fee600;
+  }
+  .border-theodore {
+    border-color: #4bfffe;
+  }
+  .border-token {
+    border-color: #256e0a;
+  }
+  .border-toleman {
+    border-color: #00236b;
+  }
+  .border-toro-rosso {
+    border-color: #0120b9;
+  }
+  .border-toyota {
+    border-color: #d6404c;
+  }
+  .border-trevis {
+    border-color: #058785;
+  }
+  .border-trojan {
+    border-color: #ee6463;
+  }
+  .border-turner {
+    border-color: #e4ce22;
+  }
+  .border-tyrrell {
+    border-color: #4665a1;
+  }
+  .border-vanwall {
+    border-color: #74845a;
+  }
+  .border-venturi {
+    border-color: #bc1313;
+  }
+  .border-veritas {
+    border-color: #7badf9;
+  }
+  .border-virgin {
+    border-color: #e31e23;
+  }
+  .border-watson {
+    border-color: #058785;
+  }
+  .border-wetteroth {
+    border-color: #058785;
+  }
+  .border-white {
+    border-color: var(--color-white);
+  }
+  .border-williams {
+    border-color: #64C4FF;
+  }
+  .border-wolf {
+    border-color: #ab240b;
+  }
+  .border-wolf-williams {
+    border-color: #00279c;
+  }
+  .border-zakspeed {
+    border-color: #c71701;
+  }
+  .bg-adams {
+    background-color: #058785;
+  }
+  .bg-afm {
+    background-color: #a5b5dd;
+  }
+  .bg-ags {
+    background-color: #556da8;
+  }
+  .bg-alfa-romeo {
+    background-color: #aa121a;
+  }
+  .bg-alfa-special {
+    background-color: #058785;
+  }
+  .bg-alphatauri {
+    background-color: #011321;
+  }
+  .bg-alpine {
+    background-color: #0093CC;
+  }
+  .bg-alta {
+    background-color: #ef0505;
+  }
+  .bg-amon {
+    background-color: #403fff;
+  }
+  .bg-andrea-moda {
+    background-color: #0000ff;
+  }
+  .bg-apollon {
+    background-color: #d09719;
+  }
+  .bg-arrows {
+    background-color: #279cb4;
+  }
+  .bg-arzani-volpini {
+    background-color: #99440f;
+  }
+  .bg-aston-butterworth {
+    background-color: #ffffff;
+  }
+  .bg-aston-martin {
+    background-color: #229971;
+  }
+  .bg-ats {
+    background-color: #126df9;
+  }
+  .bg-ats-wheels {
+    background-color: #f9b418;
+  }
+  .bg-b-dark {
+    background-color: #191919;
+  }
+  .bg-b-light {
+    background-color: white;
+  }
+  .bg-balsa {
+    background-color: #058785;
+  }
+  .bg-bar {
+    background-color: #94a582;
+  }
+  .bg-behra-porsche {
+    background-color: #058785;
+  }
+  .bg-bellasi {
+    background-color: #3c6d58;
+  }
+  .bg-benetton {
+    background-color: #018d30;
+  }
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+  .bg-bmw {
+    background-color: #51a6d0;
+  }
+  .bg-bmw-sauber {
+    background-color: #51a6d0;
+  }
+  .bg-boro {
+    background-color: #e72210;
+  }
+  .bg-brabham {
+    background-color: #166f18;
+  }
+  .bg-brawn {
+    background-color: #e6ff01;
+  }
+  .bg-brm {
+    background-color: #57549c;
+  }
+  .bg-bromme {
+    background-color: #af140b;
+  }
+  .bg-brp {
+    background-color: #89b587;
+  }
+  .bg-bugatti {
+    background-color: #bf0032;
+  }
+  .bg-caterham {
+    background-color: #02432d;
+  }
+  .bg-christensen {
+    background-color: #058785;
+  }
+  .bg-cisitalia {
+    background-color: #060071;
+  }
+  .bg-coloni {
+    background-color: #feee00;
+  }
+  .bg-connaught {
+    background-color: #780137;
+  }
+  .bg-connew {
+    background-color: #951c12;
+  }
+  .bg-cooper {
+    background-color: #bdbfb3;
+  }
+  .bg-dallara {
+    background-color: #f7dd00;
+  }
+  .bg-dark {
+    background-color: white;
+  }
+  .bg-de-tomaso {
+    background-color: #71ceec;
+  }
+  .bg-deidt {
+    background-color: #058785;
+  }
+  .bg-del-roy {
+    background-color: #058785;
+  }
+  .bg-derrington-francis {
+    background-color: #058785;
+  }
+  .bg-dunn {
+    background-color: #058785;
+  }
+  .bg-eagle {
+    background-color: #47464b;
+  }
+  .bg-eifelland {
+    background-color: #000080;
+  }
+  .bg-elder {
+    background-color: #058785;
+  }
+  .bg-emeryson {
+    background-color: #282828;
+  }
+  .bg-emw {
+    background-color: #cebc99;
+  }
+  .bg-enb {
+    background-color: #dfc139;
+  }
+  .bg-ensign {
+    background-color: #3a6a31;
+  }
+  .bg-epperly {
+    background-color: #058785;
+  }
+  .bg-era {
+    background-color: #a3c8e3;
+  }
+  .bg-eurobrun {
+    background-color: #fd7d2b;
+  }
+  .bg-ewing {
+    background-color: #058785;
+  }
+  .bg-ferguson {
+    background-color: #ffffff;
+  }
+  .bg-ferrari {
+    background-color: #E80020;
+  }
+  .bg-first {
+    background-color: #058785;
+  }
+  .bg-fittipaldi {
+    background-color: #f26926;
+  }
+  .bg-fondmetal {
+    background-color: #f0a701;
+  }
+  .bg-footwork {
+    background-color: #ff0033;
+  }
+  .bg-force-india {
+    background-color: #e66e05;
+  }
+  .bg-forti {
+    background-color: #373971;
+  }
+  .bg-frank-williams-racing-cars {
+    background-color: #ffffff;
+  }
+  .bg-frazer-nash {
+    background-color: #da2418;
+  }
+  .bg-fry {
+    background-color: #058785;
+  }
+  .bg-gilby {
+    background-color: #6c836a;
+  }
+  .bg-gordini {
+    background-color: #378cc4;
+  }
+  .bg-green-400 {
+    background-color: var(--color-green-400);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
+  .bg-greifzu {
+    background-color: #058785;
+  }
+  .bg-haas {
+    background-color: #B6BABD;
+  }
+  .bg-hall {
+    background-color: #058785;
+  }
+  .bg-heck {
+    background-color: #058785;
+  }
+  .bg-hesketh {
+    background-color: #f9fb69;
+  }
+  .bg-hill {
+    background-color: #d61a1a;
+  }
+  .bg-honda {
+    background-color: #ed1831;
+  }
+  .bg-hrt {
+    background-color: #ad9950;
+  }
+  .bg-hwm {
+    background-color: #3f47cb;
+  }
+  .bg-iso-marlboro {
+    background-color: #c7af0d;
+  }
+  .bg-jaguar {
+    background-color: #ff1205;
+  }
+  .bg-jbw {
+    background-color: #3d242f;
+  }
+  .bg-jordan {
+    background-color: #ffff01;
+  }
+  .bg-kauhsen {
+    background-color: #ffff22;
+  }
+  .bg-kick-sauber {
+    background-color: #52E252;
+  }
+  .bg-klenk {
+    background-color: #9d053b;
+  }
+  .bg-kojima {
+    background-color: #0000ff;
+  }
+  .bg-krakau {
+    background-color: #058785;
+  }
+  .bg-kurtis-kraft {
+    background-color: #f8fee7;
+  }
+  .bg-kuzma {
+    background-color: #058785;
+  }
+  .bg-lancia {
+    background-color: #203f5f;
+  }
+  .bg-langley {
+    background-color: #058785;
+  }
+  .bg-larrousse {
+    background-color: #f61a23;
+  }
+  .bg-lds {
+    background-color: #65b7e0;
+  }
+  .bg-lec {
+    background-color: #a63434;
+  }
+  .bg-lesovsky {
+    background-color: #058785;
+  }
+  .bg-leyton-house {
+    background-color: #12c7be;
+  }
+  .bg-life {
+    background-color: #c63030;
+  }
+  .bg-light {
+    background-color: black;
+  }
+  .bg-ligier {
+    background-color: #13254e;
+  }
+  .bg-lola {
+    background-color: #fed904;
+  }
+  .bg-lotus {
+    background-color: #103728;
+  }
+  .bg-lotus-f1 {
+    background-color: #b09247;
+  }
+  .bg-lotus-racing {
+    background-color: #003f22;
+  }
+  .bg-lyncar {
+    background-color: #2e4087;
+  }
+  .bg-maki {
+    background-color: #ac1f1f;
+  }
+  .bg-manor {
+    background-color: #fe6a35;
+  }
+  .bg-march {
+    background-color: #f7f0e7;
+  }
+  .bg-marchese {
+    background-color: #058785;
+  }
+  .bg-martini {
+    background-color: #3784f7;
+  }
+  .bg-marussia {
+    background-color: #fb3522;
+  }
+  .bg-maserati {
+    background-color: #0c2e59;
+  }
+  .bg-matra {
+    background-color: #001dd0;
+  }
+  .bg-mcguire {
+    background-color: #058785;
+  }
+  .bg-mclaren {
+    background-color: #FF8000;
+  }
+  .bg-mercedes {
+    background-color: #27F4D2;
+  }
+  .bg-merzario {
+    background-color: #be423c;
+  }
+  .bg-meskowski {
+    background-color: #058785;
+  }
+  .bg-midland {
+    background-color: #ff0000;
+  }
+  .bg-minardi {
+    background-color: #0e233a;
+  }
+  .bg-modena {
+    background-color: #120a2f;
+  }
+  .bg-moore {
+    background-color: #058785;
+  }
+  .bg-nacke {
+    background-color: #058785;
+  }
+  .bg-nichels {
+    background-color: #727272;
+  }
+  .bg-olson {
+    background-color: #058785;
+  }
+  .bg-onyx {
+    background-color: #d2d68f;
+  }
+  .bg-osca {
+    background-color: #1a0382;
+  }
+  .bg-osella {
+    background-color: #fffe24;
+  }
+  .bg-pacific {
+    background-color: #0e90c9;
+  }
+  .bg-pankratz {
+    background-color: #058785;
+  }
+  .bg-parnelli {
+    background-color: #ffffff;
+  }
+  .bg-pawl {
+    background-color: #058785;
+  }
+  .bg-penske {
+    background-color: #d31a1b;
+  }
+  .bg-phillips {
+    background-color: #058785;
+  }
+  .bg-politoys {
+    background-color: #00007a;
+  }
+  .bg-porsche {
+    background-color: #ad8f3c;
+  }
+  .bg-prost {
+    background-color: #26468b;
+  }
+  .bg-protos {
+    background-color: #ff162a;
+  }
+  .bg-racing-bulls {
+    background-color: #6692FF;
+  }
+  .bg-racing-point {
+    background-color: #f368ba;
+  }
+  .bg-rae {
+    background-color: #058785;
+  }
+  .bg-ram {
+    background-color: #0a6249;
+  }
+  .bg-rb {
+    background-color: #6692FF;
+  }
+  .bg-rebaque {
+    background-color: #048147;
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-red-bull {
+    background-color: #3671C6;
+  }
+  .bg-reif {
+    background-color: #058785;
+  }
+  .bg-renault {
+    background-color: #fcd424;
+  }
+  .bg-rial {
+    background-color: #075cb0;
+  }
+  .bg-s-dark {
+    background-color: #333333;
+  }
+  .bg-s-light {
+    background-color: #E9E9E7;
+  }
+  .bg-sauber {
+    background-color: #d6201c;
+  }
+  .bg-scarab {
+    background-color: #cdc6ce;
+  }
+  .bg-schroeder {
+    background-color: #058785;
+  }
+  .bg-scirocco {
+    background-color: #2a395a;
+  }
+  .bg-shadow {
+    background-color: #29240d;
+  }
+  .bg-shannon {
+    background-color: #283034;
+  }
+  .bg-sherman {
+    background-color: #058785;
+  }
+  .bg-simca-gordini {
+    background-color: #0177c8;
+  }
+  .bg-simtek {
+    background-color: #445eb9;
+  }
+  .bg-snowberger {
+    background-color: #058785;
+  }
+  .bg-spirit {
+    background-color: #2d4eb3;
+  }
+  .bg-spyker {
+    background-color: #ffffff;
+  }
+  .bg-stebro {
+    background-color: #feff00;
+  }
+  .bg-stevens {
+    background-color: #058785;
+  }
+  .bg-stewart {
+    background-color: #00002f;
+  }
+  .bg-super-aguri {
+    background-color: #ff0100;
+  }
+  .bg-surtees {
+    background-color: #fcf9fc;
+  }
+  .bg-sutton {
+    background-color: #058785;
+  }
+  .bg-t-dark {
+    background-color: #058785;
+  }
+  .bg-talbot-lago {
+    background-color: #0047c1;
+  }
+  .bg-tec-mec {
+    background-color: #848474;
+  }
+  .bg-tecno {
+    background-color: #fee600;
+  }
+  .bg-theodore {
+    background-color: #4bfffe;
+  }
+  .bg-token {
+    background-color: #256e0a;
+  }
+  .bg-toleman {
+    background-color: #00236b;
+  }
+  .bg-toro-rosso {
+    background-color: #0120b9;
+  }
+  .bg-toyota {
+    background-color: #d6404c;
+  }
+  .bg-trevis {
+    background-color: #058785;
+  }
+  .bg-trojan {
+    background-color: #ee6463;
+  }
+  .bg-turner {
+    background-color: #e4ce22;
+  }
+  .bg-tyrrell {
+    background-color: #4665a1;
+  }
+  .bg-vanwall {
+    background-color: #74845a;
+  }
+  .bg-venturi {
+    background-color: #bc1313;
+  }
+  .bg-veritas {
+    background-color: #7badf9;
+  }
+  .bg-virgin {
+    background-color: #e31e23;
+  }
+  .bg-watson {
+    background-color: #058785;
+  }
+  .bg-wetteroth {
+    background-color: #058785;
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-williams {
+    background-color: #64C4FF;
+  }
+  .bg-wolf {
+    background-color: #ab240b;
+  }
+  .bg-wolf-williams {
+    background-color: #00279c;
+  }
+  .bg-yellow-300 {
+    background-color: var(--color-yellow-300);
+  }
+  .bg-zakspeed {
+    background-color: #c71701;
+  }
+  .object-contain {
+    object-fit: contain;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .pt-0 {
+    padding-top: calc(var(--spacing) * 0);
+  }
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
+  }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
+  }
+  .pr-3 {
+    padding-right: calc(var(--spacing) * 3);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pl-3 {
+    padding-left: calc(var(--spacing) * 3);
+  }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-justify {
+    text-align: justify;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .font-bold {
+    font-family: var(--font-bold);
+  }
+  .font-regular {
+    font-family: var(--font-regular);
+  }
+  .font-wide {
+    font-family: var(--font-wide);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-adams {
+    color: #058785;
+  }
+  .text-afm {
+    color: #a5b5dd;
+  }
+  .text-ags {
+    color: #556da8;
+  }
+  .text-alfa-romeo {
+    color: #aa121a;
+  }
+  .text-alfa-special {
+    color: #058785;
+  }
+  .text-alphatauri {
+    color: #011321;
+  }
+  .text-alpine {
+    color: #0093CC;
+  }
+  .text-alta {
+    color: #ef0505;
+  }
+  .text-amon {
+    color: #403fff;
+  }
+  .text-andrea-moda {
+    color: #0000ff;
+  }
+  .text-apollon {
+    color: #d09719;
+  }
+  .text-arrows {
+    color: #279cb4;
+  }
+  .text-arzani-volpini {
+    color: #99440f;
+  }
+  .text-aston-butterworth {
+    color: #ffffff;
+  }
+  .text-aston-martin {
+    color: #229971;
+  }
+  .text-ats {
+    color: #126df9;
+  }
+  .text-ats-wheels {
+    color: #f9b418;
+  }
+  .text-balsa {
+    color: #058785;
+  }
+  .text-bar {
+    color: #94a582;
+  }
+  .text-behra-porsche {
+    color: #058785;
+  }
+  .text-bellasi {
+    color: #3c6d58;
+  }
+  .text-benetton {
+    color: #018d30;
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .text-blue-400 {
+    color: var(--color-blue-400);
+  }
+  .text-blue-500 {
+    color: var(--color-blue-500);
+  }
+  .text-bmw {
+    color: #51a6d0;
+  }
+  .text-bmw-sauber {
+    color: #51a6d0;
+  }
+  .text-boro {
+    color: #e72210;
+  }
+  .text-brabham {
+    color: #166f18;
+  }
+  .text-brawn {
+    color: #e6ff01;
+  }
+  .text-brm {
+    color: #57549c;
+  }
+  .text-bromme {
+    color: #af140b;
+  }
+  .text-brp {
+    color: #89b587;
+  }
+  .text-bugatti {
+    color: #bf0032;
+  }
+  .text-caterham {
+    color: #02432d;
+  }
+  .text-christensen {
+    color: #058785;
+  }
+  .text-cisitalia {
+    color: #060071;
+  }
+  .text-coloni {
+    color: #feee00;
+  }
+  .text-connaught {
+    color: #780137;
+  }
+  .text-connew {
+    color: #951c12;
+  }
+  .text-cooper {
+    color: #bdbfb3;
+  }
+  .text-dallara {
+    color: #f7dd00;
+  }
+  .text-dark {
+    color: white;
+  }
+  .text-de-tomaso {
+    color: #71ceec;
+  }
+  .text-deconnect {
+    color: #F6A60B;
+  }
+  .text-deidt {
+    color: #058785;
+  }
+  .text-del-roy {
+    color: #058785;
+  }
+  .text-derrington-francis {
+    color: #058785;
+  }
+  .text-dunn {
+    color: #058785;
+  }
+  .text-eagle {
+    color: #47464b;
+  }
+  .text-eifelland {
+    color: #000080;
+  }
+  .text-elder {
+    color: #058785;
+  }
+  .text-emeryson {
+    color: #282828;
+  }
+  .text-emw {
+    color: #cebc99;
+  }
+  .text-enb {
+    color: #dfc139;
+  }
+  .text-ensign {
+    color: #3a6a31;
+  }
+  .text-epperly {
+    color: #058785;
+  }
+  .text-era {
+    color: #a3c8e3;
+  }
+  .text-eurobrun {
+    color: #fd7d2b;
+  }
+  .text-ewing {
+    color: #058785;
+  }
+  .text-ferguson {
+    color: #ffffff;
+  }
+  .text-ferrari {
+    color: #E80020;
+  }
+  .text-first {
+    color: #058785;
+  }
+  .text-fittipaldi {
+    color: #f26926;
+  }
+  .text-fondmetal {
+    color: #f0a701;
+  }
+  .text-footwork {
+    color: #ff0033;
+  }
+  .text-force-india {
+    color: #e66e05;
+  }
+  .text-forti {
+    color: #373971;
+  }
+  .text-frank-williams-racing-cars {
+    color: #ffffff;
+  }
+  .text-frazer-nash {
+    color: #da2418;
+  }
+  .text-fry {
+    color: #058785;
+  }
+  .text-fuchsia-700 {
+    color: var(--color-fuchsia-700);
+  }
+  .text-gilby {
+    color: #6c836a;
+  }
+  .text-gold {
+    color: gold;
+  }
+  .text-gordini {
+    color: #378cc4;
+  }
+  .text-gray-300 {
+    color: var(--color-gray-300);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+  .text-greifzu {
+    color: #058785;
+  }
+  .text-haas {
+    color: #B6BABD;
+  }
+  .text-hall {
+    color: #058785;
+  }
+  .text-hasnt-finished-race {
+    color: #717171;
+  }
+  .text-heck {
+    color: #058785;
+  }
+  .text-hesketh {
+    color: #f9fb69;
+  }
+  .text-hill {
+    color: #d61a1a;
+  }
+  .text-honda {
+    color: #ed1831;
+  }
+  .text-hrt {
+    color: #ad9950;
+  }
+  .text-hwm {
+    color: #3f47cb;
+  }
+  .text-iso-marlboro {
+    color: #c7af0d;
+  }
+  .text-jaguar {
+    color: #ff1205;
+  }
+  .text-jbw {
+    color: #3d242f;
+  }
+  .text-jordan {
+    color: #ffff01;
+  }
+  .text-kauhsen {
+    color: #ffff22;
+  }
+  .text-kick-sauber {
+    color: #52E252;
+  }
+  .text-klenk {
+    color: #9d053b;
+  }
+  .text-kojima {
+    color: #0000ff;
+  }
+  .text-krakau {
+    color: #058785;
+  }
+  .text-kurtis-kraft {
+    color: #f8fee7;
+  }
+  .text-kuzma {
+    color: #058785;
+  }
+  .text-lancia {
+    color: #203f5f;
+  }
+  .text-langley {
+    color: #058785;
+  }
+  .text-larrousse {
+    color: #f61a23;
+  }
+  .text-lds {
+    color: #65b7e0;
+  }
+  .text-lec {
+    color: #a63434;
+  }
+  .text-lesovsky {
+    color: #058785;
+  }
+  .text-leyton-house {
+    color: #12c7be;
+  }
+  .text-life {
+    color: #c63030;
+  }
+  .text-light {
+    color: black;
+  }
+  .text-ligier {
+    color: #13254e;
+  }
+  .text-lola {
+    color: #fed904;
+  }
+  .text-lotus {
+    color: #103728;
+  }
+  .text-lotus-f1 {
+    color: #b09247;
+  }
+  .text-lotus-racing {
+    color: #003f22;
+  }
+  .text-lyncar {
+    color: #2e4087;
+  }
+  .text-maki {
+    color: #ac1f1f;
+  }
+  .text-manor {
+    color: #fe6a35;
+  }
+  .text-march {
+    color: #f7f0e7;
+  }
+  .text-marchese {
+    color: #058785;
+  }
+  .text-martini {
+    color: #3784f7;
+  }
+  .text-marussia {
+    color: #fb3522;
+  }
+  .text-maserati {
+    color: #0c2e59;
+  }
+  .text-matra {
+    color: #001dd0;
+  }
+  .text-mcguire {
+    color: #058785;
+  }
+  .text-mclaren {
+    color: #FF8000;
+  }
+  .text-mercedes {
+    color: #27F4D2;
+  }
+  .text-merzario {
+    color: #be423c;
+  }
+  .text-meskowski {
+    color: #058785;
+  }
+  .text-midland {
+    color: #ff0000;
+  }
+  .text-minardi {
+    color: #0e233a;
+  }
+  .text-modena {
+    color: #120a2f;
+  }
+  .text-moore {
+    color: #058785;
+  }
+  .text-nacke {
+    color: #058785;
+  }
+  .text-nichels {
+    color: #727272;
+  }
+  .text-olson {
+    color: #058785;
+  }
+  .text-onyx {
+    color: #d2d68f;
+  }
+  .text-osca {
+    color: #1a0382;
+  }
+  .text-osella {
+    color: #fffe24;
+  }
+  .text-pacific {
+    color: #0e90c9;
+  }
+  .text-pankratz {
+    color: #058785;
+  }
+  .text-parnelli {
+    color: #ffffff;
+  }
+  .text-pawl {
+    color: #058785;
+  }
+  .text-penske {
+    color: #d31a1b;
+  }
+  .text-phillips {
+    color: #058785;
+  }
+  .text-politoys {
+    color: #00007a;
+  }
+  .text-porsche {
+    color: #ad8f3c;
+  }
+  .text-prost {
+    color: #26468b;
+  }
+  .text-protos {
+    color: #ff162a;
+  }
+  .text-racing-bulls {
+    color: #6692FF;
+  }
+  .text-racing-point {
+    color: #f368ba;
+  }
+  .text-rae {
+    color: #058785;
+  }
+  .text-ram {
+    color: #0a6249;
+  }
+  .text-rb {
+    color: #6692FF;
+  }
+  .text-rebaque {
+    color: #048147;
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-red-bull {
+    color: #3671C6;
+  }
+  .text-reif {
+    color: #058785;
+  }
+  .text-renault {
+    color: #fcd424;
+  }
+  .text-rial {
+    color: #075cb0;
+  }
+  .text-sauber {
+    color: #d6201c;
+  }
+  .text-scarab {
+    color: #cdc6ce;
+  }
+  .text-schroeder {
+    color: #058785;
+  }
+  .text-scirocco {
+    color: #2a395a;
+  }
+  .text-shadow {
+    color: #29240d;
+  }
+  .text-shannon {
+    color: #283034;
+  }
+  .text-sherman {
+    color: #058785;
+  }
+  .text-simca-gordini {
+    color: #0177c8;
+  }
+  .text-simtek {
+    color: #445eb9;
+  }
+  .text-snowberger {
+    color: #058785;
+  }
+  .text-spirit {
+    color: #2d4eb3;
+  }
+  .text-spyker {
+    color: #ffffff;
+  }
+  .text-stebro {
+    color: #feff00;
+  }
+  .text-stevens {
+    color: #058785;
+  }
+  .text-stewart {
+    color: #00002f;
+  }
+  .text-super-aguri {
+    color: #ff0100;
+  }
+  .text-surtees {
+    color: #fcf9fc;
+  }
+  .text-sutton {
+    color: #058785;
+  }
+  .text-t-s-dark {
+    color: #d1d5db;
+  }
+  .text-t-s-light {
+    color: #4b5563;
+  }
+  .text-talbot-lago {
+    color: #0047c1;
+  }
+  .text-tec-mec {
+    color: #848474;
+  }
+  .text-tecno {
+    color: #fee600;
+  }
+  .text-theodore {
+    color: #4bfffe;
+  }
+  .text-token {
+    color: #256e0a;
+  }
+  .text-toleman {
+    color: #00236b;
+  }
+  .text-toro-rosso {
+    color: #0120b9;
+  }
+  .text-toyota {
+    color: #d6404c;
+  }
+  .text-trevis {
+    color: #058785;
+  }
+  .text-trojan {
+    color: #ee6463;
+  }
+  .text-turner {
+    color: #e4ce22;
+  }
+  .text-tyrrell {
+    color: #4665a1;
+  }
+  .text-vanwall {
+    color: #74845a;
+  }
+  .text-venturi {
+    color: #bc1313;
+  }
+  .text-veritas {
+    color: #7badf9;
+  }
+  .text-virgin {
+    color: #e31e23;
+  }
+  .text-watson {
+    color: #058785;
+  }
+  .text-wetteroth {
+    color: #058785;
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .text-williams {
+    color: #64C4FF;
+  }
+  .text-wolf {
+    color: #ab240b;
+  }
+  .text-wolf-williams {
+    color: #00279c;
+  }
+  .text-zakspeed {
+    color: #c71701;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline-hidden {
+    --tw-outline-style: none;
+    outline-style: none;
+    @media (forced-colors: active) {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
+  .focus-within\:shadow-lg {
+    &:focus-within {
+      --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .hover\:-translate-y-1 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-translate-y: calc(var(--spacing) * -1);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .hover\:scale-105 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:cursor-pointer {
+    &:hover {
+      @media (hover: hover) {
+        cursor: pointer;
+      }
+    }
+  }
+  .hover\:text-blue-800 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blue-800);
+      }
+    }
+  }
+  .hover\:shadow-xl {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+  }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentColor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-gray-500 {
+    &:focus {
+      --tw-ring-color: var(--color-gray-500);
+    }
+  }
+  .focus\:outline-hidden {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+      @media (forced-colors: active) {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+    }
+  }
+  .sm\:max-w-xl {
+    @media (width >= 40rem) {
+      max-width: var(--container-xl);
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .sm\:p-8 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 8);
+    }
+  }
+  .sm\:px-8 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .sm\:pt-8 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 8);
+    }
+  }
+  .sm\:text-base {
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .sm\:text-xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .md\:col-span-4 {
+    @media (width >= 48rem) {
+      grid-column: span 4 / span 4;
+    }
+  }
+  .md\:mt-0 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:mt-6 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
+    }
+  }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
+  .md\:grid {
+    @media (width >= 48rem) {
+      display: grid;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
+  .md\:h-16 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 16);
+    }
+  }
+  .md\:h-24 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 24);
+    }
+  }
+  .md\:h-28 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 28);
+    }
+  }
+  .md\:h-36 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 36);
+    }
+  }
+  .md\:h-48 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 48);
+    }
+  }
+  .md\:w-1\/2 {
+    @media (width >= 48rem) {
+      width: calc(1/2 * 100%);
+    }
+  }
+  .md\:w-3\/4 {
+    @media (width >= 48rem) {
+      width: calc(3/4 * 100%);
+    }
+  }
+  .md\:w-3\/5 {
+    @media (width >= 48rem) {
+      width: calc(3/5 * 100%);
+    }
+  }
+  .md\:w-9\/12 {
+    @media (width >= 48rem) {
+      width: calc(9/12 * 100%);
+    }
+  }
+  .md\:flex-col {
+    @media (width >= 48rem) {
+      flex-direction: column;
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .md\:space-y-0 {
+    @media (width >= 48rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
+  .md\:space-x-4 {
+    @media (width >= 48rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+        margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+      }
+    }
+  }
+  .md\:gap-y-0 {
+    @media (width >= 48rem) {
+      row-gap: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .lg\:my-8 {
+    @media (width >= 64rem) {
+      margin-block: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:w-1\/3 {
+    @media (width >= 64rem) {
+      width: calc(1/3 * 100%);
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-4 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
   .lg\:grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
   }
-
   .lg\:grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
   }
-
   .lg\:pt-8 {
-    padding-top: 2rem;
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 8);
+    }
   }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .lg\:font-bold {
-    font-weight: 700;
+    @media (width >= 64rem) {
+      font-family: var(--font-bold);
+    }
+  }
+  .lg\:text-3xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+}
+@font-face {
+  font-family: 'F1Bold';
+  src: url('../fonts/Formula1-Bold.otf');
+}
+@font-face {
+  font-family: 'F1Regular';
+  src: url('../fonts/Formula1-Regular.otf');
+}
+@font-face {
+  font-family: 'F1Wide';
+  src: url('../fonts/Formula1-Wide.otf');
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateX(0);
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateY(0);
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateZ(0);
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewX(0);
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewY(0);
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
   }
 }

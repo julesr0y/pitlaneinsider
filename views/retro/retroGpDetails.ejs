@@ -8,12 +8,12 @@
         <link href="" rel="stylesheet" />
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="app-container">
-                <div class="text-center my-4 font-F1Regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:hidden">
+                <div class="text-center my-4 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:hidden">
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-xl font-F1Bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos[0].raceId %> </span>
+                        <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos[0].raceId %> </span>
                         <span class="flex flex-col">
                             <%= gpDetails.gpInfos[0].gpOfficialName %>
                             <img src="/img/countryFlags/<%= gpDetails.gpInfos[0].countryId %>.svg" alt="<%= gpDetails.gpInfos[0].countryId %>" class="h-6 w-auto" />
@@ -72,11 +72,11 @@
                             <table id="tableRace">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.gap') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gap') %></td>
                                 </tr>
 
                                 <% gpDetails.raceData.forEach(detail=> { %>
@@ -91,7 +91,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.position).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -114,11 +114,11 @@
                             <table id="tableFP1" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position) %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -127,7 +127,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -148,11 +148,11 @@
                             <table id="tableSQ" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.sprintQualiPosition - b.sprintQualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -161,7 +161,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.sprintQualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.sprintQualiPosition).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -182,11 +182,11 @@
                             <table id="tableSR" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.sprintRacePosition - b.sprintRacePosition); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -195,7 +195,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.sprintRacePosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.sprintRacePosition).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -216,15 +216,15 @@
                             <table id="tableQualification" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Q1</td>
+                                    <td class="font-bold">Q1</td>
                                     <td></td>
-                                    <td class="font-F1Bold">Q2</td>
+                                    <td class="font-bold">Q2</td>
                                     <td></td>
-                                    <td class="font-F1Bold">Q3</td>
+                                    <td class="font-bold">Q3</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -233,7 +233,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -263,11 +263,11 @@
                             <table id="tableFP1" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -276,7 +276,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -297,11 +297,11 @@
                             <table id="tableFP2" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp2Position - b.fp2Position); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -310,7 +310,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.fp2Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.fp2Position).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -333,11 +333,11 @@
                             <table id="tableFP3" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.fp3Position - b.fp3Position); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -346,7 +346,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.fp3Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.fp3Position).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -369,15 +369,15 @@
                             <table id="tableQualification" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Q1</td>
+                                    <td class="font-bold">Q1</td>
                                     <td></td>
-                                    <td class="font-F1Bold">Q2</td>
+                                    <td class="font-bold">Q2</td>
                                     <td></td>
-                                    <td class="font-F1Bold">Q3</td>
+                                    <td class="font-bold">Q3</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -386,7 +386,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -413,11 +413,11 @@
                             <table id="tableQualification" class="hidden">
                                 <tr>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-F1Bold">Time</td>
+                                    <td class="font-bold">Time</td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
@@ -426,7 +426,7 @@
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-F1Bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
                                         <a href="/driver/<%= detail.driverId %>">
@@ -449,9 +449,9 @@
                     </div>
 
                     <div class="w-full gap-4">
-                        <div class="text-center mb-8 font-F1Regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 hidden md:block">
+                        <div class="text-center mb-8 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 hidden md:block">
                             <div class="flex flex-col items-center gap-2">
-                                <span class="text-xl font-F1Bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos[0].raceId %> </span>
+                                <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos[0].raceId %> </span>
                                 <span class="flex gap-2">
                                     <%= gpDetails.gpInfos[0].gpOfficialName %>
                                     <img src="/img/countryFlags/<%= gpDetails.gpInfos[0].countryId %>.svg" alt="<%= gpDetails.gpInfos[0].countryId %>" class="h-6 w-auto" />
@@ -505,7 +505,7 @@
                             <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
                                 <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
                                 <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestLap') %> </span>
-                                <div class="flex flex-col items-center flex-grow justify-center w-full">
+                                <div class="flex flex-col items-center grow justify-center w-full">
                                     <div>
                                         <%= lap.abbreviation %>
                                         - <span class="text-fuchsia-700"> <%= lap.fastestLapTime %> </span>
@@ -516,7 +516,7 @@
                             <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
                                 <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
                                 <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestPit') %> </span>
-                                <div class="flex flex-col items-center flex-grow justify-center w-full"><%= pit.abbreviation %> - <%= pit.fastestPitTime %></div>
+                                <div class="flex flex-col items-center grow justify-center w-full"><%= pit.abbreviation %> - <%= pit.fastestPitTime %></div>
                                 <% }}); %>
                             </div>
                         </span>

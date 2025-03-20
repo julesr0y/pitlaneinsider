@@ -6,7 +6,7 @@
         <title>PLI - <%= __('drivers.tab_title') %></title>
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('global.current_year') %> <%= __('drivers.season') %></div>
             <div class="w-9/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10 mx-2">
@@ -16,12 +16,12 @@
                         <div class="flex flex-col items-center justify-end h-full">
                             <div class="text-xl font-semibold">
                                 <%= pilote.firstName %>
-                                <span class="font-F1Bold text-2xl"> <%= pilote.lastName %> </span>
+                                <span class="font-bold text-2xl"> <%= pilote.lastName %> </span>
                             </div>
                             <div class="flex justify-center gap-6 items-center w-full pt-2">
                                 <img src="/img/countryFlags/<%= pilote.nationality %>.svg" alt="<%= pilote.nationality %>" class="max-h-12 w-auto" />
                                 <img src="/img/constructors/<%= pilote.constructorId %>.webp" alt="<%= pilote.constructorId %>" class="max-h-8 max-w-16 w-auto" />
-                                <div class="font-F1Bold text-3xl text-<%= pilote.constructorId %>"><% if (pilote.permanentNumber !=33) { %> <%= pilote.permanentNumber %> <% } else { %> <%= 1 %> <% } %></div>
+                                <div class="font-bold text-3xl text-<%= pilote.constructorId %>"><% if (pilote.permanentNumber !=33) { %> <%= pilote.permanentNumber %> <% } else { %> <%= 1 %> <% } %></div>
                             </div>
                             <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= pilote.id %>.webp" alt="<%= pilote.id %>" class="max-h-40 w-auto" />
                         </div>

@@ -6,7 +6,7 @@
         <title>PLI - <%= __('standings.tab_title') %></title>
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main class="flex flex-col justify-center items-center">
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('global.current_year') %> <%= __('standings.season') %></div>
             <div class="tabs flex justify-center">
@@ -20,17 +20,17 @@
                 <table>
                     <tr>
                         <td></td>
-                        <td class="font-F1Bold"><%= __('standings.position') %></td>
-                        <td class="pl-3 font-F1Bold"><%= __('standings.constructors') %></td>
-                        <td class="font-F1Bold pl-3"><%= __('standings.chassis') %></td>
-                        <td class="pl-3 font-F1Bold"><%= __('standings.points') %></td>
+                        <td class="font-bold"><%= __('standings.position') %></td>
+                        <td class="pl-3 font-bold"><%= __('standings.constructors') %></td>
+                        <td class="font-bold pl-3"><%= __('standings.chassis') %></td>
+                        <td class="pl-3 font-bold"><%= __('standings.points') %></td>
                     </tr>
                     <% actualTeamsStanding.forEach(function(team) { %>
                     <tr>
                         <td class="pr-2">
                             <span class="border-2 border-<%= team.constructorId %> h-auto w-1 box-border bg-<%= team.constructorId %> rounded-3xl"> </span>
                         </td>
-                        <td class="pr-3 font-F1Bold"><%= String(team.position).padStart(2, '0' ) %></td>
+                        <td class="pr-3 font-bold"><%= String(team.position).padStart(2, '0' ) %></td>
                         <td class="border-l-2 pl-3 pr-3">
                             <a href="/constructor/<%= team.constructorId %>"> <%= team.name %> </a>
                         </td>

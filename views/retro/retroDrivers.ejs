@@ -6,7 +6,7 @@
         <title>PLI - <%= __('retro_f1.all_data.tab_title_drivers') %></title>
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('retro_f1.all_data.title_drivers') %></div>
             <div class="w-9/10 mx-auto p-4">
@@ -26,7 +26,7 @@
                             </svg>
                         </div>
 
-                        <input class="bg-s-<%= theme %> peer h-full w-full outline-none text-sm text-gray-300 pr-2" type="text" id="search" placeholder="<%= __('retro_f1.all_data.search_driver') %>" />
+                        <input class="bg-s-<%= theme %> peer h-full w-full outline-hidden text-sm text-gray-300 pr-2" type="text" id="search" placeholder="<%= __('retro_f1.all_data.search_driver') %>" />
                     </div>
                 </div>
                 <div class="w-9/10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="elems"></div>
@@ -73,7 +73,7 @@
                                 <div class="pt-2">
                                     <div class="text-xl text-center font-semibold">
                                         ${driver.firstName} <br />
-                                            <span class="font-F1Bold text-2xl">
+                                            <span class="font-bold text-2xl">
                                                 ${driver.lastName}
                                             </span>
                                     </div>

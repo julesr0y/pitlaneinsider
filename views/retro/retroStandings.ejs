@@ -83,7 +83,7 @@
         </style>
     </head>
 
-    <body class="font-F1Regular text-<%= theme %> bg-b-<%= theme %>">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('retro_f1.all_seasons.standings.title') %></div>
             <div class="app-container">
@@ -136,16 +136,16 @@
                     <table>
                         <tr id="header-classement-pilotes">
                             <td></td>
-                            <td class="font-F1Bold"><%= __('retro_f1.all_seasons.standings.position') %></td>
-                            <td class="font-F1Bold pl-3"><%= __('retro_f1.all_seasons.standings.drivers') %></td>
-                            <td class="font-F1Bold pl-3"><%= __('retro_f1.all_seasons.standings.points') %></td>
+                            <td class="font-bold"><%= __('retro_f1.all_seasons.standings.position') %></td>
+                            <td class="font-bold pl-3"><%= __('retro_f1.all_seasons.standings.drivers') %></td>
+                            <td class="font-bold pl-3"><%= __('retro_f1.all_seasons.standings.points') %></td>
                         </tr>
                         <% retroDriversStandings.forEach(function(pilot) { %>
                         <tr>
                             <td class="pr-2">
                                 <span class="border-2 border-<%= pilot.constructorId %> h-auto w-1 box-border bg-<%= pilot.constructorId %> rounded-3xl"> </span>
                             </td>
-                            <td class="font-F1Bold pr-3"><%= String(pilot.position).padStart(2, '0' ) %></td>
+                            <td class="font-bold pr-3"><%= String(pilot.position).padStart(2, '0' ) %></td>
                             <td class="border-l-2 pl-3 pr-3">
                                 <a href="/driver/<%= pilot.driverId %>"> <%= pilot.firstName %> <%= pilot.lastName %> </a>
                             </td>
@@ -159,16 +159,16 @@
                     <table>
                         <tr>
                             <td></td>
-                            <td class="font-F1Bold"><%= __('retro_f1.all_seasons.standings.position') %></td>
-                            <td class="pl-3 font-F1Bold"><%= __('retro_f1.all_seasons.standings.constructors') %></td>
-                            <td class="pl-3 font-F1Bold"><%= __('retro_f1.all_seasons.standings.points') %></td>
+                            <td class="font-bold"><%= __('retro_f1.all_seasons.standings.position') %></td>
+                            <td class="pl-3 font-bold"><%= __('retro_f1.all_seasons.standings.constructors') %></td>
+                            <td class="pl-3 font-bold"><%= __('retro_f1.all_seasons.standings.points') %></td>
                         </tr>
                         <% retroConstructorsStandings.forEach(function(constructor) { %>
                         <tr>
                             <td class="pr-2">
                                 <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
                             </td>
-                            <td class="pr-3 font-F1Bold"><%= String(constructor.position).padStart(2, '0' ) %></td>
+                            <td class="pr-3 font-bold"><%= String(constructor.position).padStart(2, '0' ) %></td>
                             <td class="border-l-2 pl-3 pr-3">
                                 <a href="/constructor/<%= constructor.constructorId %>"> <%= constructor.constructorName %> </a>
                             </td>

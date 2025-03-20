@@ -19,9 +19,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        F1Bold: ['F1Bold', 'sans-serif'],
-        F1Regular: ['F1Regular', 'sans-serif'],
-        F1Wide: ['F1Wide', 'sans-serif']
+        bold: ['F1Bold', 'sans-serif'],
+        regular: ['F1Regular', 'sans-serif'],
+        wide: ['F1Wide', 'sans-serif']
       },
       colors: {
         // user theme

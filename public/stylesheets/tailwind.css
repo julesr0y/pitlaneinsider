@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
 
 @font-face {
     font-family: 'F1Bold';
@@ -15,4 +15,16 @@
 @font-face {
     font-family: 'F1Wide';
     src: url('../fonts/Formula1-Wide.otf');
+}
+
+@theme {
+    --font-bold: "F1Bold", sans-serif;
+}
+
+@theme {
+    --font-regular: "F1Regular", sans-serif;
+}
+
+@theme {
+    --font-wide: "F1Wide", sans-serif;
 }
