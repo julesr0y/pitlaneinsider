@@ -112,45 +112,45 @@
             </div>
 
             <script>
-                // document.addEventListener('DOMContentLoaded', () => {
-                //     const eventTimes = document.querySelectorAll('.event-time');
+                document.addEventListener('DOMContentLoaded', () => {
+                    const eventTimes = document.querySelectorAll('.event-time');
 
-                //     eventTimes.forEach((eventTime) => {
-                //         const date = eventTime.getAttribute('data-date');
-                //         const time = eventTime.getAttribute('data-time');
+                    eventTimes.forEach((eventTime) => {
+                        const date = eventTime.getAttribute('data-date');
+                        const time = eventTime.getAttribute('data-time');
 
-                //         // On suppose que la date est au format DD/MM et l'heure au format HHhMM
-                //         const [day, month] = date.split('/');
-                //         const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
-                //         const year = new Date().getFullYear();
+                        // On suppose que la date est au format DD/MM et l'heure au format HHhMM
+                        const [day, month] = date.split('/');
+                        const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
+                        const year = new Date().getFullYear();
 
-                //         // Construire la chaîne en format ISO UTC-0
-                //         const utcDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
+                        // Construire la chaîne en format ISO UTC-0
+                        const utcDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
 
-                //         // Utiliser Luxon pour convertir l'heure UTC au fuseau local
-                //         const utcDateTime = luxon.DateTime.fromISO(utcDateString, { zone: 'utc' });
-                //         const localDateTime = utcDateTime.setZone(luxon.DateTime.local().zoneName);
+                        // Utiliser Luxon pour convertir l'heure UTC au fuseau local
+                        const utcDateTime = luxon.DateTime.fromISO(utcDateString, { zone: 'utc' });
+                        const localDateTime = utcDateTime.setZone(luxon.DateTime.local().zoneName);
 
-                //         // Formater la date et l'heure dans le fuseau local
-                //         const formattedDate = localDateTime.toFormat('dd/MM');
-                //         const formattedTime = localDateTime.toFormat("HH'h'mm");
+                        // Formater la date et l'heure dans le fuseau local
+                        const formattedDate = localDateTime.toFormat('dd/MM');
+                        const formattedTime = localDateTime.toFormat("HH'h'mm");
 
-                //         // Afficher la date et l'heure formatées
-                //         eventTime.textContent = `${formattedDate} - ${formattedTime}`;
-                //     });
+                        // Afficher la date et l'heure formatées
+                        eventTime.textContent = `${formattedDate} - ${formattedTime}`;
+                    });
 
-                //     const nextRaceButton = document.getElementById('nextRaceButton');
-                //     const highlightElement = document.querySelector('.highlight');
-                //     if (nextRaceButton && highlightElement) {
-                //         nextRaceButton.addEventListener('click', () => {
-                //             const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 175;
-                //             window.scrollTo({
-                //                 top: topOffset,
-                //                 behavior: 'smooth',
-                //             });
-                //         });
-                //     }
-                // });
+                    const nextRaceButton = document.getElementById('nextRaceButton');
+                    const highlightElement = document.querySelector('.highlight');
+                    if (nextRaceButton && highlightElement) {
+                        nextRaceButton.addEventListener('click', () => {
+                            const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 175;
+                            window.scrollTo({
+                                top: topOffset,
+                                behavior: 'smooth',
+                            });
+                        });
+                    }
+                });
             </script>
         </main>
         <%- include('../partials/footer.ejs') %>

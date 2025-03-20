@@ -28520,7 +28520,7 @@
                     "raceId": 1126,
                     "circuitId": "melbourne",
                     "round": 1,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28561,7 +28561,7 @@
                     "raceId": 1127,
                     "circuitId": "shanghai",
                     "round": 2,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
