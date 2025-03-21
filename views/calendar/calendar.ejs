@@ -56,43 +56,43 @@
                                     <% if(race.freePractice1Time && race.freePractice1Time !=null) { %>
                                     <li>
                                         <strong> FP1: </strong>
-                                        <span class="event-time" data-date="<%= race.freePractice1Date %>" data-time="<%= race.freePractice1Time %>"> <%= race.freePractice1Date %>, <%= race.freePractice1Time %> </span>
+                                        <span class="event-time" data-date="<%= race.freePractice1Date %>" data-time="<%= race.freePractice1Time %>"></span>
                                     </li>
                                     <% } %>
                                     <% if(race.freePractice2Time && race.freePractice2Time !=null) { %>
                                     <li>
                                         <strong> FP2: </strong>
-                                        <span class="event-time" data-date="<%= race.freePractice2Date %>" data-time="<%= race.freePractice2Time %>"> <%= race.freePractice2Date %>, <%= race.freePractice2Time %> </span>
+                                        <span class="event-time" data-date="<%= race.freePractice2Date %>" data-time="<%= race.freePractice2Time %>"></span>
                                     </li>
                                     <% } %>
                                     <% if(race.freePractice3Time && race.freePractice3Time !=null) { %>
                                     <li>
                                         <strong> FP3: </strong>
-                                        <span class="event-time" data-date="<%= race.freePractice3Date %>" data-time="<%= race.freePractice3Time %>"> <%= race.freePractice3Date %>, <%= race.freePractice3Time %> </span>
+                                        <span class="event-time" data-date="<%= race.freePractice3Date %>" data-time="<%= race.freePractice3Time %>"></span>
                                     </li>
                                     <% } %>
                                     <% if(race.sprintQualifyingTime && race.sprintQualifyingTime !=null) { %>
                                     <li>
                                         <strong> SQ: </strong>
-                                        <span class="event-time" data-date="<%= race.sprintQualifyingDate %>" data-time="<%= race.sprintQualifyingTime %>"> <%= race.sprintQualifyingDate %>, <%= race.sprintQualifyingTime %> </span>
+                                        <span class="event-time" data-date="<%= race.sprintQualifyingDate %>" data-time="<%= race.sprintQualifyingTime %>"></span>
                                     </li>
                                     <% } %>
                                     <% if(race.sprintRaceTime && race.sprintRaceTime !=null) { %>
                                     <li>
                                         <strong> S: </strong>
-                                        <span class="event-time" data-date="<%= race.sprintRaceDate %>" data-time="<%= race.sprintRaceTime %>"> <%= race.sprintRaceDate %>, <%= race.sprintRaceTime %> </span>
+                                        <span class="event-time" data-date="<%= race.sprintRaceDate %>" data-time="<%= race.sprintRaceTime %>"></span>
                                     </li>
                                     <% } %>
                                     <% if(race.qualifyingTime && race.qualifyingTime !=null) { %>
                                     <li>
                                         <strong> Q: </strong>
-                                        <span class="event-time" data-date="<%= race.qualifyingDate %>" data-time="<%= race.qualifyingTime %>"> <%= race.qualifyingDate %>, <%= race.qualifyingTime %> </span>
+                                        <span class="event-time" data-date="<%= race.qualifyingDate %>" data-time="<%= race.qualifyingTime %>"></span>
                                     </li>
                                     <% } %>
                                     <% if(race.raceDate && race.raceDate !=null) { %>
                                     <li>
                                         <strong> R: </strong>
-                                        <span class="event-time" data-date="<%= race.raceDate %>" data-time="<%= race.raceTime %>"> <%= race.raceDate %>, <%= race.raceTime %></span>
+                                        <span class="event-time" data-date="<%= race.raceDate %>" data-time="<%= race.raceTime %>"></span>
                                     </li>
                                     <% } %>
                                 </ul>
@@ -114,38 +114,38 @@
                         const date = eventTime.getAttribute('data-date');
                         const time = eventTime.getAttribute('data-time');
 
-                        // On suppose que la date est au format DD/MM et l'heure au format HHhMM
-                        const [day, month] = date.split('/');
-                        const [hour, minute] = time.includes('h') ? time.split('h') : [time, '00'];
+                        // time is in the format HH:mm
+                        const [month, day] = date.split('-');
+                        const [hour, minute] = time.includes(':') ? time.split(':') : [time, '00'];
                         const year = new Date().getFullYear();
 
-                        // Construire la chaîne en format ISO UTC-0
+                        // build a UTC date string
                         const utcDateString = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${hour.padStart(2, '0')}:${minute.padStart(2, '0')}:00Z`;
 
-                        // Utiliser Luxon pour convertir l'heure UTC au fuseau local
+                        // use Luxon to convert the UTC date string to the local timezone
                         const utcDateTime = luxon.DateTime.fromISO(utcDateString, { zone: 'utc' });
                         const localDateTime = utcDateTime.setZone(luxon.DateTime.local().zoneName);
 
-                        // Formater la date et l'heure dans le fuseau local
-                        const formattedDate = localDateTime.toFormat('dd/MM');
-                        const formattedTime = localDateTime.toFormat("HH'h'mm");
+                        // format the date and time
+                        const formattedDate = localDateTime.toFormat('MM-dd');
+                        const formattedTime = localDateTime.toFormat("HH':'mm");
 
-                        // Afficher la date et l'heure formatées
-                        eventTime.textContent = `${formattedDate} - ${formattedTime}`;
+                        // update the text content with the formatted date and time
+                        eventTime.textContent = `${formattedDate}, ${formattedTime}`;
                     });
-
-                    const nextRaceButton = document.getElementById('nextRaceButton');
-                    const highlightElement = document.querySelector('.highlight');
-                    if (nextRaceButton && highlightElement) {
-                        nextRaceButton.addEventListener('click', () => {
-                            const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 175;
-                            window.scrollTo({
-                                top: topOffset,
-                                behavior: 'smooth',
-                            });
-                        });
-                    }
                 });
+
+                const nextRaceButton = document.getElementById('nextRaceButton');
+                const highlightElement = document.querySelector('.highlight');
+                if (nextRaceButton && highlightElement) {
+                    nextRaceButton.addEventListener('click', () => {
+                        const topOffset = highlightElement.getBoundingClientRect().top + window.scrollY - 175;
+                        window.scrollTo({
+                            top: topOffset,
+                            behavior: 'smooth',
+                        });
+                    });
+                }
             </script>
         </main>
         <%- include('../partials/footer.ejs') %>
