@@ -996,6 +996,34 @@
     "poles": 0
   },
   {
+    "constructorId": "alpine",
+    "chassisId": "alpine-a525",
+    "chassisName": "A525",
+    "chassisFullName": "Alpine A525",
+    "enginesManufacturerIds": [
+      "renault"
+    ],
+    "enginesIds": [
+      "renault-e-tech-re25-16-v6-t-h"
+    ],
+    "enginesNames": [
+      "Renault E-Tech RE25 1.6 V6 T H"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "pierre-gasly",
+      "jack-doohan"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
     "constructorId": "alta",
     "chassisId": "alta-gp",
     "chassisName": "GP",
@@ -1998,6 +2026,34 @@
     ],
     "years": [
       2024
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
+    "constructorId": "aston-martin",
+    "chassisId": "aston-martin-amr25",
+    "chassisName": "AMR24",
+    "chassisFullName": "Aston Martin AMR25",
+    "enginesManufacturerIds": [
+      "mercedes"
+    ],
+    "enginesIds": [
+      "mercedes-amg-f1-m16-16-v6-t-h"
+    ],
+    "enginesNames": [
+      "Mercedes-AMG F1 M16 1.6 V6 T H"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "fernando-alonso",
+      "lance-stroll"
+    ],
+    "years": [
+      2025
     ],
     "wins": 0,
     "podiums": 0,
@@ -11009,6 +11065,34 @@
     "poles": 4
   },
   {
+    "constructorId": "ferrari",
+    "chassisId": "ferrari-sf-25",
+    "chassisName": "SF-25",
+    "chassisFullName": "Ferrari SF-25",
+    "enginesManufacturerIds": [
+      "ferrari"
+    ],
+    "enginesIds": [
+      "ferrari-066-12-v6-t-h-1-6"
+    ],
+    "enginesNames": [
+      "066/12 V6 t h 1.6"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "charles-leclerc",
+      "lewis-hamilton"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
     "constructorId": "first",
     "chassisId": "first-l189-f1",
     "chassisName": "L189",
@@ -12777,6 +12861,34 @@
     "poles": 0
   },
   {
+    "constructorId": "haas",
+    "chassisId": "haas-vf-25",
+    "chassisName": "VF-25",
+    "chassisFullName": "Haas VF-25",
+    "enginesManufacturerIds": [
+      "ferrari"
+    ],
+    "enginesIds": [
+      "ferrari-066-12-v6-t-h-1-6"
+    ],
+    "enginesNames": [
+      "066/12 V6 t h 1.6"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "esteban-ocon",
+      "oliver-bearman"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
     "constructorId": "hall",
     "chassisId": "hall",
     "chassisName": "Hall",
@@ -14286,6 +14398,34 @@
     ],
     "years": [
       2024
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
+    "constructorId": "kick-sauber",
+    "chassisId": "kick-sauber-c45",
+    "chassisName": "C45",
+    "chassisFullName": "Kick Sauber C45",
+    "enginesManufacturerIds": [
+      "ferrari"
+    ],
+    "enginesIds": [
+      "ferrari-066-12-v6-t-h-1-6"
+    ],
+    "enginesNames": [
+      "066/12 V6 t h 1.6"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "gabriel-bortoleto",
+      "nico-hulkenberg"
+    ],
+    "years": [
+      2025
     ],
     "wins": 0,
     "podiums": 0,
@@ -22127,6 +22267,34 @@
     "poles": 8
   },
   {
+    "constructorId": "mclaren",
+    "chassisId": "mclaren-mcl39",
+    "chassisName": "MCL39",
+    "chassisFullName": "McLaren MCL39",
+    "enginesManufacturerIds": [
+      "mercedes"
+    ],
+    "enginesIds": [
+      "mercedes-amg-f1-m16-16-v6-t-h"
+    ],
+    "enginesNames": [
+      "Mercedes-AMG F1 M16 1.6 V6 T H"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "lando-norris",
+      "oscar-piastri"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 1,
+    "podiums": 1,
+    "poles": 1
+  },
+  {
     "constructorId": "mercedes",
     "chassisId": "mercedes-w196s",
     "chassisName": "W196s",
@@ -22614,6 +22782,34 @@
     "wins": 4,
     "podiums": 9,
     "poles": 4
+  },
+  {
+    "constructorId": "mercedes",
+    "chassisId": "mercedes-f1-w16",
+    "chassisName": "F1 W16",
+    "chassisFullName": "Mercedes F1 W16",
+    "enginesManufacturerIds": [
+      "mercedes"
+    ],
+    "enginesIds": [
+      "mercedes-amg-f1-m16-16-v6-t-h"
+    ],
+    "enginesNames": [
+      "Mercedes-AMG F1 M16 1.6 V6 T H"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "george-russell",
+      "andrea-kimi-antonelli"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 0,
+    "podiums": 1,
+    "poles": 0
   },
   {
     "constructorId": "merzario",
@@ -25079,6 +25275,34 @@
     "poles": 0
   },
   {
+    "constructorId": "racing-bulls",
+    "chassisId": "racing-bulls-vcarb-02",
+    "chassisName": "VCARB 02",
+    "chassisFullName": "Racing Bulls VCARB 02",
+    "enginesManufacturerIds": [
+      "honda-rbpt"
+    ],
+    "enginesIds": [
+      "honda-rbpt-rbpth002-v6-t-h-1-6"
+    ],
+    "enginesNames": [
+      "RBPTH002 V6 t h 1.6"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "isack-hadjar",
+      "yuki-tsunoda"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
     "constructorId": "rebaque",
     "chassisId": "rebaque-hr100",
     "chassisName": "HR100",
@@ -25675,6 +25899,34 @@
     "wins": 9,
     "podiums": 18,
     "poles": 8
+  },
+  {
+    "constructorId": "red-bull",
+    "chassisId": "red-bull-rb21",
+    "chassisName": "RB21",
+    "chassisFullName": "Red Bull RB21",
+    "enginesManufacturerIds": [
+      "honda-rbpt"
+    ],
+    "enginesIds": [
+      "honda-rbpt-rbpth002-v6-t-h-1-6"
+    ],
+    "enginesNames": [
+      "RBPTH002 V6 t h 1.6"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "max-verstappen",
+      "liam-lawson"
+    ],
+    "years": [
+      2025
+    ],
+    "wins": 0,
+    "podiums": 1,
+    "poles": 0
   },
   {
     "constructorId": "renault",
@@ -32666,6 +32918,34 @@
     ],
     "years": [
       2024
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "poles": 0
+  },
+  {
+    "constructorId": "williams",
+    "chassisId": "williams-fw47",
+    "chassisName": "FW47",
+    "chassisFullName": "Williams FW47",
+    "enginesManufacturerIds": [
+      "mercedes"
+    ],
+    "enginesIds": [
+      "mercedes-amg-f1-m16-16-v6-t-h"
+    ],
+    "enginesNames": [
+      "Mercedes-AMG F1 M16 1.6 V6 T H"
+    ],
+    "tyreManufacturersIds": [
+      "pirelli"
+    ],
+    "driversIds": [
+      "alexander-albon",
+      "carlos-sainz-jr"
+    ],
+    "years": [
+      2025
     ],
     "wins": 0,
     "podiums": 0,
