@@ -1735,6 +1735,9 @@
   .bg-stevens {
     background-color: #058785;
   }
+  .bg-stewardsbg {
+    background-color: #E1E8F2;
+  }
   .bg-stewart {
     background-color: #00002f;
   }
@@ -2464,6 +2467,9 @@
   }
   .text-stevens {
     color: #058785;
+  }
+  .text-stewardstxt {
+    color: #011132;
   }
   .text-stewart {
     color: #00002f;

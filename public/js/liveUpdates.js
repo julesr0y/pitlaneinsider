@@ -17,7 +17,7 @@ function updateRcAndLs() {
                 const span = document.createElement('span'); // On crée un élément span
                 span.classList.add('message'); // On ajoute la classe message à l'élément span
                 if (element.flag === null) {
-                    span.classList.add('bg-stewardsBg', 'text-stewardsTxt', 'text-center', 'font-bold', 'py-4', 'px-6', 'rounded-3xl', 'my-3', 'w-3/4', 'md:w-1/2', 'border-2', 'border-stewardsTxt'); // On ajoute des classes à l'élément span
+                    span.classList.add('bg-stewardsbg', 'text-stewardstxt', 'text-center', 'font-bold', 'py-4', 'px-6', 'rounded-3xl', 'my-3', 'w-3/4', 'md:w-1/2', 'border-2', 'border-stewardsTxt'); // On ajoute des classes à l'élément span
                 }
                 else if (element.flag === "GREEN" || element.flag === "CLEAR") {
                     span.classList.add('bg-green-400', 'text-white', 'text-center', 'font-F1Bold', 'py-4', 'px-6', 'rounded-3xl', 'my-3', 'w-3/4', 'md:w-1/2');
