@@ -477,13 +477,13 @@
   .min-w-48 {
     min-width: calc(var(--spacing) * 48);
   }
-  .flex-0 {
-    flex: 0;
-  }
-  .flex-1 {
-    flex: 1;
-  }
   .grow {
+    flex-grow: 1;
+  }
+  .grow-0 {
+    flex-grow: 0;
+  }
+  .grow-1 {
     flex-grow: 1;
   }
   .transform {
