@@ -39,12 +39,6 @@ async function getActualSeasonCalendar() {
                 if (element.dateDetails) {
                     element.dateDetails.forEach(dateDetail => {
                         for (let key in dateDetail) {
-                            if (dateDetail[key] !== null && key.endsWith('Time')) {
-                                dateDetail[key] = convertTime(dateDetail[key]);
-                            }
-                        }
-
-                        for (let key in dateDetail) {
                             if (dateDetail[key] !== null && key.endsWith('Date')) {
                                 dateDetail[key] = convertDate(dateDetail[key]);
                             }
@@ -78,27 +72,9 @@ function convertDate(dateString) {
         var day = date.getDate();
         var month = date.getMonth() + 1;
 
-        return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month;
+        return (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
     } catch (error) {
         console.error('convertDate, error during execution :', error);
-        throw error;
-    }
-}
-
-/**
- * @description Returns formatted time HH/MM like 04h30 for 4:30 am
- * @param {String} timeString 
- * @returns {String}
- */
-function convertTime(timeString) {
-    try {
-        var timeParts = timeString.split(':');
-        var hour = timeParts[0];
-        var minute = timeParts[1];
-
-        return minute === '00' ? hour + 'h' : hour + 'h' + minute;
-    } catch (error) {
-        console.error('convertTime, error during execution :', error);
         throw error;
     }
 }
