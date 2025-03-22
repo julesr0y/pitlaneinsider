@@ -52,7 +52,7 @@
 
                     <div class="flex flex-col">
                         <div class="text-center mt-4">
-                            <h3 class="text-base sm:text-lg font-bold"><%= __('driver.carreer_title') %>:</h3>
+                            <h3 class="text-base sm:text-lg font-bold"><%= __('driver.carreer_title') %></h3>
 
                             <% if(dataDriver.totalChampionshipWins !==0) { %>
                             <span class="grid grid-cols-12 mt-4">
@@ -141,7 +141,7 @@
                         </div>
 
                         <div class="text-center mt-4">
-                            <h3 class="text-base sm:text-lg font-bold"><%= __('driver.constructors_title') %>:</h3>
+                            <h3 class="text-base sm:text-lg font-bold"><%= __('driver.constructors_title') %></h3>
 
                             <div class="mt-6">
                                 <span class="grid grid-cols-12 gap-y-2">
@@ -160,10 +160,10 @@
                             </div>
                         </div>
 
-                        <% if(dataDriver.allVictories !==null) { %>
+                        <% if(dataDriver.totalRaceWins !== 0) { %>
 
                         <div class="text-center mt-4">
-                            <h3 class="text-base sm:text-lg font-bold"><%= __('driver.victories_title') %>:</h3>
+                            <h3 class="text-base sm:text-lg font-bold"><%= __('driver.victories_title') %></h3>
 
                             <% for(const year in dataDriver.allVictories) { %>
                             <div class="mt-6 flex flex-col justify-start">
