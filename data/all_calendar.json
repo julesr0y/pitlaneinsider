@@ -26359,7 +26359,7 @@
                     "year": 2021,
                     "date": "2021-11-21",
                     "raceId": 1055,
-                    "circuitId": "lusail",
+                    "circuitId": "losail",
                     "round": 20,
                     "isNextGp": false
                 }
@@ -27384,7 +27384,7 @@
                     "year": 2023,
                     "date": "2023-10-08",
                     "raceId": 1096,
-                    "circuitId": "lusail",
+                    "circuitId": "losail",
                     "round": 17,
                     "isNextGp": false
                 }
@@ -28436,7 +28436,7 @@
                     "year": 2024,
                     "date": "2024-12-01",
                     "raceId": 1124,
-                    "circuitId": "lusail",
+                    "circuitId": "losail",
                     "round": 23,
                     "isNextGp": false
                 }
@@ -28520,31 +28520,15 @@
                     "raceId": 1126,
                     "circuitId": "melbourne",
                     "round": 1,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-03-14",
-                    "freePractice1Time": "01:30"
-                },
-                {
-                    "freePractice2Date": "2025-03-14",
-                    "freePractice2Time": "05:00"
-                },
-                {
-                    "freePractice3Date": "2025-03-15",
-                    "freePractice3Time": "01:30"
-                },
-                {
-                    "qualifyingDate": "2025-03-15",
-                    "qualifyingTime": "05:00"
-                },
-                {
                     "raceDate": "2025-03-16",
-                    "raceTime": "04:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28561,31 +28545,15 @@
                     "raceId": 1127,
                     "circuitId": "shanghai",
                     "round": 2,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-03-21",
-                    "freePractice1Time": "03:30"
-                },
-                {
-                    "sprintQualifyingDate": "2025-03-21",
-                    "sprintQualifyingTime": "07:30"
-                },
-                {
-                    "qualifyingDate": "2025-03-22",
-                    "qualifyingTime": "07:00"
-                },
-                {
-                    "sprintRaceDate": "2025-03-22",
-                    "sprintRaceTime": "03:00"
-                },
-                {
                     "raceDate": "2025-03-23",
-                    "raceTime": "07:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28609,24 +28577,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-04-04",
-                    "freePractice1Time": "02:30"
-                },
-                {
-                    "freePractice2Date": "2025-04-04",
-                    "freePractice2Time": "06:00"
-                },
-                {
-                    "freePractice3Date": "2025-04-05",
-                    "freePractice3Time": "02:30"
-                },
-                {
-                    "qualifyingDate": "2025-04-05",
-                    "qualifyingTime": "06:00"
-                },
-                {
                     "raceDate": "2025-04-06",
-                    "raceTime": "05:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28650,24 +28602,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-04-11",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-04-11",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-04-12",
-                    "freePractice3Time": "12:30"
-                },
-                {
-                    "qualifyingDate": "2025-04-12",
-                    "qualifyingTime": "16:00"
-                },
-                {
                     "raceDate": "2025-04-13",
-                    "raceTime": "15:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28691,24 +28627,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-04-18",
-                    "freePractice1Time": "13:30"
-                },
-                {
-                    "freePractice2Date": "2025-04-18",
-                    "freePractice2Time": "17:00"
-                },
-                {
-                    "freePractice3Date": "2025-04-19",
-                    "freePractice3Time": "13:30"
-                },
-                {
-                    "qualifyingDate": "2025-04-19",
-                    "qualifyingTime": "17:00"
-                },
-                {
                     "raceDate": "2025-04-20",
-                    "raceTime": "17:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28732,24 +28652,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-05-02",
-                    "freePractice1Time": "16:30"
-                },
-                {
-                    "sprintQualifyingDate": "2025-05-02",
-                    "sprintQualifyingTime": "20:30"
-                },
-                {
-                    "qualifyingDate": "2025-05-03",
-                    "qualifyingTime": "20:00"
-                },
-                {
-                    "sprintRaceDate": "2025-05-03",
-                    "sprintRaceTime": "16:00"
-                },
-                {
                     "raceDate": "2025-05-04",
-                    "raceTime": "20:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28773,24 +28677,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-05-16",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-05-16",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-05-17",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-05-17",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-05-18",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28814,24 +28702,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-05-23",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-05-23",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-05-24",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-05-24",
-                    "qualifyingTime": "15:00"
-                },
-                {
                     "raceDate": "2025-05-25",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28855,24 +28727,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-05-30",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-05-30",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-05-31",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-05-31",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-06-01",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28896,24 +28752,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-06-13",
-                    "freePractice1Time": "17:30"
-                },
-                {
-                    "freePractice2Date": "2025-06-13",
-                    "freePractice2Time": "21:00"
-                },
-                {
-                    "freePractice3Date": "2025-06-14",
-                    "freePractice3Time": "16:30"
-                },
-                {
-                    "qualifyingDate": "2025-06-14",
-                    "qualifyingTime": "20:00"
-                },
-                {
                     "raceDate": "2025-06-15",
-                    "raceTime": "18:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28937,24 +28777,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-06-27",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-06-27",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-06-28",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-06-28",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-06-29",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -28978,24 +28802,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-07-04",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-07-04",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-07-05",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-07-05",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-07-06",
-                    "raceTime": "14:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29019,24 +28827,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-07-25",
-                    "freePractice1Time": "10:30"
-                },
-                {
-                    "sprintQualifyingDate": "2025-07-25",
-                    "sprintQualifyingTime": "14:30"
-                },
-                {
-                    "qualifyingDate": "2025-07-26",
-                    "qualifyingTime": "14:00"
-                },
-                {
-                    "sprintRaceDate": "2025-07-26",
-                    "sprintRaceTime": "10:00"
-                },
-                {
                     "raceDate": "2025-07-27",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29060,24 +28852,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-08-01",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-08-01",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-08-02",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-08-02",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-08-03",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29101,24 +28877,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-08-29",
-                    "freePractice1Time": "10:30"
-                },
-                {
-                    "freePractice2Date": "2025-08-29",
-                    "freePractice2Time": "14:00"
-                },
-                {
-                    "freePractice3Date": "2025-08-30",
-                    "freePractice3Time": "09:30"
-                },
-                {
-                    "qualifyingDate": "2025-08-30",
-                    "qualifyingTime": "13:00"
-                },
-                {
                     "raceDate": "2025-08-31",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29142,24 +28902,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-09-05",
-                    "freePractice1Time": "11:30"
-                },
-                {
-                    "freePractice2Date": "2025-09-05",
-                    "freePractice2Time": "15:00"
-                },
-                {
-                    "freePractice3Date": "2025-09-06",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-09-06",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-09-07",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29183,24 +28927,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-09-19",
-                    "freePractice1Time": "08:30"
-                },
-                {
-                    "freePractice2Date": "2025-09-19",
-                    "freePractice2Time": "12:00"
-                },
-                {
-                    "freePractice3Date": "2025-09-20",
-                    "freePractice3Time": "08:30"
-                },
-                {
-                    "qualifyingDate": "2025-09-20",
-                    "qualifyingTime": "12:00"
-                },
-                {
                     "raceDate": "2025-09-21",
-                    "raceTime": "11:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29224,24 +28952,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-10-03",
-                    "freePractice1Time": "09:30"
-                },
-                {
-                    "freePractice2Date": "2025-10-03",
-                    "freePractice2Time": "13:00"
-                },
-                {
-                    "freePractice3Date": "2025-10-04",
-                    "freePractice3Time": "09:30"
-                },
-                {
-                    "qualifyingDate": "2025-10-04",
-                    "qualifyingTime": "13:00"
-                },
-                {
                     "raceDate": "2025-10-05",
-                    "raceTime": "12:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29265,24 +28977,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-10-17",
-                    "freePractice1Time": "17:30"
-                },
-                {
-                    "sprintQualifyingDate": "2025-10-17",
-                    "sprintQualifyingTime": "21:30"
-                },
-                {
-                    "qualifyingDate": "2025-10-18",
-                    "qualifyingTime": "21:00"
-                },
-                {
-                    "sprintRaceDate": "2025-10-18",
-                    "sprintRaceTime": "17:00"
-                },
-                {
                     "raceDate": "2025-10-19",
-                    "raceTime": "19:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29306,24 +29002,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-10-24",
-                    "freePractice1Time": "18:30"
-                },
-                {
-                    "freePractice2Date": "2025-10-24",
-                    "freePractice2Time": "22:00"
-                },
-                {
-                    "freePractice3Date": "2025-10-25",
-                    "freePractice3Time": "17:30"
-                },
-                {
-                    "qualifyingDate": "2025-10-25",
-                    "qualifyingTime": "21:00"
-                },
-                {
                     "raceDate": "2025-10-26",
-                    "raceTime": "20:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29347,24 +29027,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-11-07",
-                    "freePractice1Time": "14:30"
-                },
-                {
-                    "sprintQualifyingDate": "2025-11-07",
-                    "sprintQualifyingTime": "18:30"
-                },
-                {
-                    "qualifyingDate": "2025-11-08",
-                    "qualifyingTime": "18:00"
-                },
-                {
-                    "sprintRaceDate": "2025-11-08",
-                    "sprintRaceTime": "14:00"
-                },
-                {
                     "raceDate": "2025-11-09",
-                    "raceTime": "17:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29388,24 +29052,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-11-20",
-                    "freePractice1Time": "00:30"
-                },
-                {
-                    "freePractice2Date": "2025-11-20",
-                    "freePractice2Time": "04:00"
-                },
-                {
-                    "freePractice3Date": "2025-11-21",
-                    "freePractice3Time": "00:30"
-                },
-                {
-                    "qualifyingDate": "2025-11-21",
-                    "qualifyingTime": "04:00"
-                },
-                {
                     "raceDate": "2025-11-22",
-                    "raceTime": "04:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29420,7 +29068,7 @@
                     "year": 2025,
                     "date": "2025-11-30",
                     "raceId": 1148,
-                    "circuitId": "lusail",
+                    "circuitId": "losail",
                     "round": 23,
                     "isNextGp": false
                 }
@@ -29429,24 +29077,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-11-28",
-                    "freePractice1Time": "13:30"
-                },
-                {
-                    "sprintQualifyingDate": "2025-11-28",
-                    "sprintQualifyingTime": "17:30"
-                },
-                {
-                    "qualifyingDate": "2025-11-29",
-                    "qualifyingTime": "18:00"
-                },
-                {
-                    "sprintRaceDate": "2025-11-29",
-                    "sprintRaceTime": "14:00"
-                },
-                {
                     "raceDate": "2025-11-30",
-                    "raceTime": "16:00"
+                    "raceTime": null
                 }
             ]
         }
@@ -29470,24 +29102,8 @@
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-12-05",
-                    "freePractice1Time": "09:30"
-                },
-                {
-                    "freePractice2Date": "2025-12-05",
-                    "freePractice2Time": "13:00"
-                },
-                {
-                    "freePractice3Date": "2025-12-06",
-                    "freePractice3Time": "10:30"
-                },
-                {
-                    "qualifyingDate": "2025-12-06",
-                    "qualifyingTime": "14:00"
-                },
-                {
                     "raceDate": "2025-12-07",
-                    "raceTime": "13:00"
+                    "raceTime": null
                 }
             ]
         }

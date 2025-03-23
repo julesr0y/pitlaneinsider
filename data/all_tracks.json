@@ -333,9 +333,9 @@
         "totalRacesHeld": 8
     },
     {
-        "id": "lusail",
-        "name": "Lusail",
-        "fullName": "Lusail International Circuit",
+        "id": "losail",
+        "name": "Losail",
+        "fullName": "Losail International Circuit",
         "type": "RACE",
         "placeName": "Lusail",
         "countryId": "qatar",
@@ -366,7 +366,7 @@
         "type": "STREET",
         "placeName": "Melbourne",
         "countryId": "australia",
-        "totalRacesHeld": 28
+        "totalRacesHeld": 27
     },
     {
         "id": "mexico-city",
@@ -582,7 +582,7 @@
         "type": "RACE",
         "placeName": "Shanghai",
         "countryId": "china",
-        "totalRacesHeld": 17
+        "totalRacesHeld": 18
     },
     {
         "id": "silverstone",

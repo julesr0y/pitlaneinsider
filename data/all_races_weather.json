@@ -4498,5 +4498,13 @@
   {
     "raceId": 1125,
     "weather": "night"
+  },
+  {
+    "raceId": 1126,
+    "weather": "variable"
+  },
+  {
+    "raceId": 1127,
+    "weather": "overcast"
   }
 ]

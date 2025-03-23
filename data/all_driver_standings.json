@@ -14671,7 +14671,7 @@
         "position": 16,
         "points": 14,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2011,
@@ -14792,7 +14792,7 @@
         "position": 27,
         "points": 0,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2011,
@@ -14913,7 +14913,7 @@
         "position": 10,
         "points": 66,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2012,
@@ -15001,7 +15001,7 @@
         "position": 18,
         "points": 10,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2012,
@@ -15199,7 +15199,7 @@
         "position": 11,
         "points": 49,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2013,
@@ -15232,7 +15232,7 @@
         "position": 14,
         "points": 20,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2013,
@@ -15265,7 +15265,7 @@
         "position": 17,
         "points": 4,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2013,
@@ -15364,7 +15364,7 @@
         "position": 3,
         "points": 238,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2014,
@@ -15375,7 +15375,7 @@
         "position": 4,
         "points": 186,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2014,
@@ -15441,7 +15441,7 @@
         "position": 10,
         "points": 59,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2014,
@@ -15452,7 +15452,7 @@
         "position": 11,
         "points": 55,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2014,
@@ -15639,7 +15639,7 @@
         "position": 5,
         "points": 136,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2015,
@@ -15672,7 +15672,7 @@
         "position": 8,
         "points": 92,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2015,
@@ -15683,7 +15683,7 @@
         "position": 9,
         "points": 78,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2015,
@@ -15848,7 +15848,7 @@
         "position": 3,
         "points": 256,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2016,
@@ -15892,7 +15892,7 @@
         "position": 7,
         "points": 101,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2016,
@@ -15903,7 +15903,7 @@
         "position": 8,
         "points": 85,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2016,
@@ -15991,7 +15991,7 @@
         "position": 16,
         "points": 7,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2016,
@@ -16112,7 +16112,7 @@
         "position": 3,
         "points": 305,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2017,
@@ -16134,7 +16134,7 @@
         "position": 5,
         "points": 200,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2017,
@@ -16156,7 +16156,7 @@
         "position": 7,
         "points": 100,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2017,
@@ -16233,7 +16233,7 @@
         "position": 14,
         "points": 19,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2017,
@@ -16387,7 +16387,7 @@
         "position": 5,
         "points": 247,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2018,
@@ -16398,7 +16398,7 @@
         "position": 6,
         "points": 170,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2018,
@@ -16420,7 +16420,7 @@
         "position": 8,
         "points": 62,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2018,
@@ -16431,7 +16431,7 @@
         "position": 9,
         "points": 56,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2018,
@@ -16574,7 +16574,7 @@
         "position": 2,
         "points": 326,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2019,
@@ -16651,7 +16651,7 @@
         "position": 9,
         "points": 54,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2019,
@@ -16662,7 +16662,7 @@
         "position": 10,
         "points": 52,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2019,
@@ -16728,7 +16728,7 @@
         "position": 16,
         "points": 20,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2019,
@@ -16794,7 +16794,7 @@
         "position": 2,
         "points": 223,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2020,
@@ -16816,7 +16816,7 @@
         "position": 4,
         "points": 125,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2020,
@@ -16827,7 +16827,7 @@
         "position": 5,
         "points": 119,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2020,
@@ -16992,7 +16992,7 @@
         "position": 20,
         "points": 1,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2020,
@@ -17058,7 +17058,7 @@
         "position": 3,
         "points": 226,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2021,
@@ -17069,7 +17069,7 @@
         "position": 4,
         "points": 190,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2021,
@@ -17113,7 +17113,7 @@
         "position": 8,
         "points": 115,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2021,
@@ -17289,7 +17289,7 @@
         "position": 3,
         "points": 305,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2022,
@@ -17366,7 +17366,7 @@
         "position": 10,
         "points": 49,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2022,
@@ -17377,7 +17377,7 @@
         "position": 11,
         "points": 37,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2022,
@@ -17399,7 +17399,7 @@
         "position": 13,
         "points": 25,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2022,
@@ -17454,7 +17454,7 @@
         "position": 18,
         "points": 6,
         "permanentNumber": "24",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2022,
@@ -17520,7 +17520,7 @@
         "position": 2,
         "points": 285,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2023,
@@ -17663,7 +17663,7 @@
         "position": 15,
         "points": 10,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2023,
@@ -17685,7 +17685,7 @@
         "position": 17,
         "points": 6,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2023,
@@ -17696,7 +17696,7 @@
         "position": 18,
         "points": 6,
         "permanentNumber": "24",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2023,
@@ -17707,7 +17707,7 @@
         "position": 19,
         "points": 3,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2023,
@@ -17729,7 +17729,7 @@
         "position": 21,
         "points": 1,
         "permanentNumber": "2",
-        "constructorId": "williams"
+        "constructorId": null
     },
     {
         "year": 2023,
@@ -17828,7 +17828,7 @@
         "position": 8,
         "points": 152,
         "permanentNumber": "11",
-        "constructorId": "red-bull"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -17905,7 +17905,7 @@
         "position": 15,
         "points": 16,
         "permanentNumber": "20",
-        "constructorId": "haas"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -17927,7 +17927,7 @@
         "position": 17,
         "points": 12,
         "permanentNumber": "3",
-        "constructorId": "rb"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -17949,7 +17949,7 @@
         "position": 19,
         "points": 5,
         "permanentNumber": "43",
-        "constructorId": "williams"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -17960,7 +17960,7 @@
         "position": 20,
         "points": 4,
         "permanentNumber": "24",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -17982,7 +17982,7 @@
         "position": 22,
         "points": 0,
         "permanentNumber": "77",
-        "constructorId": "kick-sauber"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -17993,7 +17993,7 @@
         "position": 23,
         "points": 0,
         "permanentNumber": "2",
-        "constructorId": "williams"
+        "constructorId": null
     },
     {
         "year": 2024,
@@ -18013,7 +18013,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 1,
-        "points": 25,
+        "points": 44,
         "permanentNumber": "4",
         "constructorId": "mclaren"
     },
@@ -18024,7 +18024,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 2,
-        "points": 18,
+        "points": 36,
         "permanentNumber": "33",
         "constructorId": "red-bull"
     },
@@ -18035,9 +18035,20 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 3,
-        "points": 15,
+        "points": 35,
         "permanentNumber": "63",
         "constructorId": "mercedes"
+    },
+    {
+        "year": 2025,
+        "driverId": "oscar-piastri",
+        "firstName": "Oscar",
+        "lastName": "Piastri",
+        "abbreviation": "PIA",
+        "position": 4,
+        "points": 34,
+        "permanentNumber": "81",
+        "constructorId": "mclaren"
     },
     {
         "year": 2025,
@@ -18045,8 +18056,8 @@
         "firstName": "Andrea",
         "lastName": "Antonelli",
         "abbreviation": "ANT",
-        "position": 4,
-        "points": 12,
+        "position": 5,
+        "points": 22,
         "permanentNumber": "12",
         "constructorId": "mercedes"
     },
@@ -18056,87 +18067,10 @@
         "firstName": "Alexander",
         "lastName": "Albon",
         "abbreviation": "ALB",
-        "position": 5,
-        "points": 10,
+        "position": 6,
+        "points": 16,
         "permanentNumber": "23",
         "constructorId": "williams"
-    },
-    {
-        "year": 2025,
-        "driverId": "lance-stroll",
-        "firstName": "Lance",
-        "lastName": "Stroll",
-        "abbreviation": "STR",
-        "position": 6,
-        "points": 8,
-        "permanentNumber": "18",
-        "constructorId": "aston-martin"
-    },
-    {
-        "year": 2025,
-        "driverId": "nico-hulkenberg",
-        "firstName": "Nico",
-        "lastName": "Hülkenberg",
-        "abbreviation": "HUL",
-        "position": 7,
-        "points": 6,
-        "permanentNumber": "27",
-        "constructorId": "kick-sauber"
-    },
-    {
-        "year": 2025,
-        "driverId": "charles-leclerc",
-        "firstName": "Charles",
-        "lastName": "Leclerc",
-        "abbreviation": "LEC",
-        "position": 8,
-        "points": 4,
-        "permanentNumber": "16",
-        "constructorId": "ferrari"
-    },
-    {
-        "year": 2025,
-        "driverId": "oscar-piastri",
-        "firstName": "Oscar",
-        "lastName": "Piastri",
-        "abbreviation": "PIA",
-        "position": 9,
-        "points": 2,
-        "permanentNumber": "81",
-        "constructorId": "mclaren"
-    },
-    {
-        "year": 2025,
-        "driverId": "lewis-hamilton",
-        "firstName": "Lewis",
-        "lastName": "Hamilton",
-        "abbreviation": "HAM",
-        "position": 10,
-        "points": 1,
-        "permanentNumber": "44",
-        "constructorId": "ferrari"
-    },
-    {
-        "year": 2025,
-        "driverId": "pierre-gasly",
-        "firstName": "Pierre",
-        "lastName": "Gasly",
-        "abbreviation": "GAS",
-        "position": 11,
-        "points": 0,
-        "permanentNumber": "10",
-        "constructorId": "alpine"
-    },
-    {
-        "year": 2025,
-        "driverId": "yuki-tsunoda",
-        "firstName": "Yuki",
-        "lastName": "Tsunoda",
-        "abbreviation": "TSU",
-        "position": 12,
-        "points": 0,
-        "permanentNumber": "22",
-        "constructorId": "racing-bulls"
     },
     {
         "year": 2025,
@@ -18144,10 +18078,54 @@
         "firstName": "Esteban",
         "lastName": "Ocon",
         "abbreviation": "OCO",
-        "position": 13,
-        "points": 0,
+        "position": 7,
+        "points": 10,
         "permanentNumber": "31",
         "constructorId": "haas"
+    },
+    {
+        "year": 2025,
+        "driverId": "lance-stroll",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "abbreviation": "STR",
+        "position": 8,
+        "points": 10,
+        "permanentNumber": "18",
+        "constructorId": "aston-martin"
+    },
+    {
+        "year": 2025,
+        "driverId": "lewis-hamilton",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "abbreviation": "HAM",
+        "position": 9,
+        "points": 9,
+        "permanentNumber": "44",
+        "constructorId": "ferrari"
+    },
+    {
+        "year": 2025,
+        "driverId": "charles-leclerc",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "abbreviation": "LEC",
+        "position": 10,
+        "points": 8,
+        "permanentNumber": "16",
+        "constructorId": "ferrari"
+    },
+    {
+        "year": 2025,
+        "driverId": "nico-hulkenberg",
+        "firstName": "Nico",
+        "lastName": "Hülkenberg",
+        "abbreviation": "HUL",
+        "position": 11,
+        "points": 6,
+        "permanentNumber": "27",
+        "constructorId": "kick-sauber"
     },
     {
         "year": 2025,
@@ -18155,9 +18133,86 @@
         "firstName": "Oliver",
         "lastName": "Bearman",
         "abbreviation": "BEA",
-        "position": 14,
-        "points": 0,
+        "position": 12,
+        "points": 4,
         "permanentNumber": "87",
         "constructorId": "haas"
+    },
+    {
+        "year": 2025,
+        "driverId": "yuki-tsunoda",
+        "firstName": "Yuki",
+        "lastName": "Tsunoda",
+        "abbreviation": "TSU",
+        "position": 13,
+        "points": 3,
+        "permanentNumber": "22",
+        "constructorId": "racing-bulls"
+    },
+    {
+        "year": 2025,
+        "driverId": "carlos-sainz-jr",
+        "firstName": "Carlos",
+        "lastName": "Sainz Jr.",
+        "abbreviation": "SAI",
+        "position": 14,
+        "points": 1,
+        "permanentNumber": "55",
+        "constructorId": "williams"
+    },
+    {
+        "year": 2025,
+        "driverId": "isack-hadjar",
+        "firstName": "Isack",
+        "lastName": "Hadjar",
+        "abbreviation": "HAD",
+        "position": 15,
+        "points": 0,
+        "permanentNumber": "6",
+        "constructorId": "racing-bulls"
+    },
+    {
+        "year": 2025,
+        "driverId": "pierre-gasly",
+        "firstName": "Pierre",
+        "lastName": "Gasly",
+        "abbreviation": "GAS",
+        "position": 16,
+        "points": 0,
+        "permanentNumber": "10",
+        "constructorId": "alpine"
+    },
+    {
+        "year": 2025,
+        "driverId": "liam-lawson",
+        "firstName": "Liam",
+        "lastName": "Lawson",
+        "abbreviation": "LAW",
+        "position": 17,
+        "points": 0,
+        "permanentNumber": "30",
+        "constructorId": "red-bull"
+    },
+    {
+        "year": 2025,
+        "driverId": "jack-doohan",
+        "firstName": "Jack",
+        "lastName": "Doohan",
+        "abbreviation": "DOO",
+        "position": 18,
+        "points": 0,
+        "permanentNumber": "7",
+        "constructorId": "alpine"
+    },
+    {
+        "year": 2025,
+        "driverId": "gabriel-bortoleto",
+        "firstName": "Gabriel",
+        "lastName": "Bortoleto",
+        "abbreviation": "BOR",
+        "position": 19,
+        "points": 0,
+        "permanentNumber": "5",
+        "constructorId": "kick-sauber"
     }
 ]
