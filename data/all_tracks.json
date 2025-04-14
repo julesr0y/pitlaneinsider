@@ -69,7 +69,7 @@
         "type": "RACE",
         "placeName": "Sakhir",
         "countryId": "bahrain",
-        "totalRacesHeld": 21
+        "totalRacesHeld": 22
     },
     {
         "id": "baku",
@@ -627,7 +627,7 @@
         "type": "RACE",
         "placeName": "Suzuka",
         "countryId": "japan",
-        "totalRacesHeld": 34
+        "totalRacesHeld": 35
     },
     {
         "id": "valencia",

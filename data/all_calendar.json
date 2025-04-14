@@ -28602,7 +28602,7 @@
                     "raceId": 1128,
                     "circuitId": "suzuka",
                     "round": 3,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28684,7 +28684,7 @@
                     "raceId": 1130,
                     "circuitId": "jeddah",
                     "round": 5,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },

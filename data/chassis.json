@@ -22290,9 +22290,9 @@
     "years": [
       2025
     ],
-    "wins": 2,
-    "podiums": 3,
-    "poles": 2
+    "wins": 3,
+    "podiums": 7,
+    "poles": 3
   },
   {
     "constructorId": "mercedes",
@@ -22808,7 +22808,7 @@
       2025
     ],
     "wins": 0,
-    "podiums": 2,
+    "podiums": 3,
     "poles": 0
   },
   {
@@ -25293,6 +25293,7 @@
     ],
     "driversIds": [
       "isack-hadjar",
+      "liam-lawson",
       "yuki-tsunoda"
     ],
     "years": [
@@ -25919,14 +25920,15 @@
     ],
     "driversIds": [
       "max-verstappen",
+      "yuki-tsunoda",
       "liam-lawson"
     ],
     "years": [
       2025
     ],
-    "wins": 0,
-    "podiums": 1,
-    "poles": 0
+    "wins": 1,
+    "podiums": 2,
+    "poles": 1
   },
   {
     "constructorId": "renault",
