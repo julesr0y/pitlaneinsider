@@ -66220,8 +66220,8 @@
     "poleRatio": "0.00",
     "totalFastestLaps": 1,
     "totalDriverOfTheDay": 2,
-    "currentTeamId": "racing-bulls",
-    "currentTeamName": "Racing Bulls",
+    "currentTeamId": "red-bull",
+    "currentTeamName": "Red Bull",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
     "pointsThisSeason": 5,
@@ -66240,13 +66240,13 @@
         "year": "2024"
       },
       {
-        "teamId": "red-bull",
-        "teamName": "Red Bull",
+        "teamId": "racing-bulls",
+        "teamName": "Racing Bulls",
         "year": "2025"
       },
       {
-        "teamId": "racing-bulls",
-        "teamName": "Racing Bulls",
+        "teamId": "red-bull",
+        "teamName": "Red Bull",
         "year": "2025"
       }
     ],

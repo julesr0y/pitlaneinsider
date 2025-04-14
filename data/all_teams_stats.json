@@ -3418,11 +3418,11 @@
         "poleRatio": 26.2,
         "currentDrivers": [
             {
-                "id": "ayumu-iwasa",
-                "firstName": "Ayumu",
-                "lastName": "Iwasa",
+                "id": "yuki-tsunoda",
+                "firstName": "Yuki",
+                "lastName": "Tsunoda",
                 "nationality": "japan",
-                "permanentNumber": null
+                "permanentNumber": "22"
             },
             {
                 "id": "max-verstappen",
