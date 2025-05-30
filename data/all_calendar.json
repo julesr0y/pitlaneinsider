@@ -22807,7 +22807,7 @@
                     "country": "russia",
                     "name": "Russian GP",
                     "year": 2014,
-                    "date": "2014-10-21",
+                    "date": "2014-10-12",
                     "raceId": 913,
                     "circuitId": "sochi",
                     "round": 16,
@@ -22818,7 +22818,7 @@
         {
             "dateDetails": [
                 {
-                    "raceDate": "2014-10-21",
+                    "raceDate": "2014-10-12",
                     "raceTime": null
                 }
             ]
@@ -28684,7 +28684,7 @@
                     "raceId": 1130,
                     "circuitId": "jeddah",
                     "round": 5,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28827,7 +28827,7 @@
                 },
                 {
                     "qualifyingDate": "2025-05-24",
-                    "qualifyingTime": "15:00"
+                    "qualifyingTime": "14:00"
                 },
                 {
                     "raceDate": "2025-05-25",
@@ -28848,7 +28848,7 @@
                     "raceId": 1134,
                     "circuitId": "catalunya",
                     "round": 9,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
