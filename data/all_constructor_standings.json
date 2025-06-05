@@ -4904,28 +4904,28 @@
         "constructorId": "mclaren",
         "name": "McLaren",
         "position": 1,
-        "points": 319
-    },
-    {
-        "year": 2025,
-        "constructorId": "mercedes",
-        "name": "Mercedes",
-        "position": 2,
-        "points": 147
-    },
-    {
-        "year": 2025,
-        "constructorId": "red-bull",
-        "name": "Red Bull",
-        "position": 3,
-        "points": 143
+        "points": 362
     },
     {
         "year": 2025,
         "constructorId": "ferrari",
         "name": "Ferrari",
+        "position": 2,
+        "points": 165
+    },
+    {
+        "year": 2025,
+        "constructorId": "mercedes",
+        "name": "Mercedes",
+        "position": 3,
+        "points": 159
+    },
+    {
+        "year": 2025,
+        "constructorId": "red-bull",
+        "name": "Red Bull",
         "position": 4,
-        "points": 142
+        "points": 144
     },
     {
         "year": 2025,
@@ -4936,37 +4936,37 @@
     },
     {
         "year": 2025,
-        "constructorId": "haas",
-        "name": "Haas",
-        "position": 6,
-        "points": 26
-    },
-    {
-        "year": 2025,
         "constructorId": "racing-bulls",
         "name": "Racing Bulls",
+        "position": 6,
+        "points": 28
+    },
+    {
+        "year": 2025,
+        "constructorId": "haas",
+        "name": "Haas",
         "position": 7,
-        "points": 22
-    },
-    {
-        "year": 2025,
-        "constructorId": "aston-martin",
-        "name": "Aston Martin",
-        "position": 8,
-        "points": 14
-    },
-    {
-        "year": 2025,
-        "constructorId": "alpine",
-        "name": "Alpine",
-        "position": 9,
-        "points": 7
+        "points": 26
     },
     {
         "year": 2025,
         "constructorId": "kick-sauber",
         "name": "Kick Sauber",
+        "position": 8,
+        "points": 16
+    },
+    {
+        "year": 2025,
+        "constructorId": "aston-martin",
+        "name": "Aston Martin",
+        "position": 9,
+        "points": 16
+    },
+    {
+        "year": 2025,
+        "constructorId": "alpine",
+        "name": "Alpine",
         "position": 10,
-        "points": 6
+        "points": 11
     }
 ]

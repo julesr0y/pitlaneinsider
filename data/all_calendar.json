@@ -28848,7 +28848,7 @@
                     "raceId": 1134,
                     "circuitId": "catalunya",
                     "round": 9,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28889,7 +28889,7 @@
                     "raceId": 1135,
                     "circuitId": "montreal",
                     "round": 10,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },

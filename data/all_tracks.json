@@ -240,7 +240,7 @@
         "type": "RACE",
         "placeName": "Imola",
         "countryId": "italy",
-        "totalRacesHeld": 32
+        "totalRacesHeld": 31
     },
     {
         "id": "indianapolis",
@@ -384,7 +384,7 @@
         "type": "STREET",
         "placeName": "Miami Gardens",
         "countryId": "united-states-of-america",
-        "totalRacesHeld": 4
+        "totalRacesHeld": 3
     },
     {
         "id": "monaco",
@@ -393,7 +393,7 @@
         "type": "STREET",
         "placeName": "Monte Carlo",
         "countryId": "monaco",
-        "totalRacesHeld": 71
+        "totalRacesHeld": 70
     },
     {
         "id": "monsanto",
