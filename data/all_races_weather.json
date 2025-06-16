@@ -4518,5 +4518,25 @@
   {
     "raceId": 1130,
     "weather": "night"
+  },
+    {
+    "raceId": 1131,
+    "weather": "slightly-cloudy"
+  },
+  {
+    "raceId": 1132,
+    "weather": "clear"
+  },
+  {
+    "raceId": 1133,
+    "weather": "clear"
+  },
+  {
+    "raceId": 1134,
+    "weather": "clear"
+  },
+  {
+    "raceId": 1135,
+    "weather": "clear"
   }
 ]

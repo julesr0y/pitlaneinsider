@@ -28889,7 +28889,7 @@
                     "raceId": 1135,
                     "circuitId": "montreal",
                     "round": 10,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -28930,7 +28930,7 @@
                     "raceId": 1136,
                     "circuitId": "spielberg",
                     "round": 11,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
