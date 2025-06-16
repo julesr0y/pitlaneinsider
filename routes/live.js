@@ -7,7 +7,7 @@ const driverMapping = {
     1: "VER",
     10: "GAS",
     30: "LAW",
-    7: "DOO",
+    43: "COL",
     44: "HAM",
     55: "SAI",
     16: "LEC",
