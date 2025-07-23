@@ -28930,7 +28930,7 @@
                     "raceId": 1136,
                     "circuitId": "spielberg",
                     "round": 11,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -29012,7 +29012,7 @@
                     "raceId": 1138,
                     "circuitId": "spa-francorchamps",
                     "round": 13,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
