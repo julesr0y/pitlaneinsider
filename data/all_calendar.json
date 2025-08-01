@@ -29012,7 +29012,7 @@
                     "raceId": 1138,
                     "circuitId": "spa-francorchamps",
                     "round": 13,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -29053,7 +29053,7 @@
                     "raceId": 1139,
                     "circuitId": "hungaroring",
                     "round": 14,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },

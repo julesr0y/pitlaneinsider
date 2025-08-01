@@ -18013,7 +18013,7 @@
         "lastName": "Piastri",
         "abbreviation": "PIA",
         "position": 1,
-        "points": 234,
+        "points": 266,
         "permanentNumber": "81",
         "constructorId": "mclaren"
     },
@@ -18024,7 +18024,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 2,
-        "points": 226,
+        "points": 250,
         "permanentNumber": "4",
         "constructorId": "mclaren"
     },
@@ -18035,7 +18035,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 3,
-        "points": 165,
+        "points": 185,
         "permanentNumber": "33",
         "constructorId": "red-bull"
     },
@@ -18046,7 +18046,7 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 4,
-        "points": 147,
+        "points": 157,
         "permanentNumber": "63",
         "constructorId": "mercedes"
     },
@@ -18057,7 +18057,7 @@
         "lastName": "Leclerc",
         "abbreviation": "LEC",
         "position": 5,
-        "points": 119,
+        "points": 139,
         "permanentNumber": "16",
         "constructorId": "ferrari"
     },
@@ -18068,7 +18068,7 @@
         "lastName": "Hamilton",
         "abbreviation": "HAM",
         "position": 6,
-        "points": 103,
+        "points": 109,
         "permanentNumber": "44",
         "constructorId": "ferrari"
     },
@@ -18090,7 +18090,7 @@
         "lastName": "Albon",
         "abbreviation": "ALB",
         "position": 8,
-        "points": 46,
+        "points": 54,
         "permanentNumber": "23",
         "constructorId": "williams"
     },
@@ -18112,7 +18112,7 @@
         "lastName": "Ocon",
         "abbreviation": "OCO",
         "position": 10,
-        "points": 23,
+        "points": 27,
         "permanentNumber": "31",
         "constructorId": "haas"
     },
@@ -18123,20 +18123,9 @@
         "lastName": "Hadjar",
         "abbreviation": "HAD",
         "position": 11,
-        "points": 21,
+        "points": 22,
         "permanentNumber": "6",
         "constructorId": "racing-bulls"
-    },
-    {
-        "year": 2025,
-        "driverId": "lance-stroll",
-        "firstName": "Lance",
-        "lastName": "Stroll",
-        "abbreviation": "STR",
-        "position": 12,
-        "points": 20,
-        "permanentNumber": "18",
-        "constructorId": "aston-martin"
     },
     {
         "year": 2025,
@@ -18144,10 +18133,32 @@
         "firstName": "Pierre",
         "lastName": "Gasly",
         "abbreviation": "GAS",
-        "position": 13,
-        "points": 19,
+        "position": 12,
+        "points": 20,
         "permanentNumber": "10",
         "constructorId": "alpine"
+    },
+    {
+        "year": 2025,
+        "driverId": "lance-stroll",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "abbreviation": "STR",
+        "position": 13,
+        "points": 20,
+        "permanentNumber": "18",
+        "constructorId": "aston-martin"
+    },
+    {
+        "year": 2025,
+        "driverId": "liam-lawson",
+        "firstName": "Liam",
+        "lastName": "Lawson",
+        "abbreviation": "LAW",
+        "position": 14,
+        "points": 16,
+        "permanentNumber": "30",
+        "constructorId": "racing-bulls"
     },
     {
         "year": 2025,
@@ -18155,7 +18166,7 @@
         "firstName": "Fernando",
         "lastName": "Alonso",
         "abbreviation": "ALO",
-        "position": 14,
+        "position": 15,
         "points": 16,
         "permanentNumber": "14",
         "constructorId": "aston-martin"
@@ -18166,21 +18177,10 @@
         "firstName": "Carlos",
         "lastName": "Sainz Jr.",
         "abbreviation": "SAI",
-        "position": 15,
-        "points": 13,
+        "position": 16,
+        "points": 16,
         "permanentNumber": "55",
         "constructorId": "williams"
-    },
-    {
-        "year": 2025,
-        "driverId": "liam-lawson",
-        "firstName": "Liam",
-        "lastName": "Lawson",
-        "abbreviation": "LAW",
-        "position": 16,
-        "points": 12,
-        "permanentNumber": "30",
-        "constructorId": "racing-bulls"
     },
     {
         "year": 2025,
@@ -18200,7 +18200,7 @@
         "lastName": "Bearman",
         "abbreviation": "BEA",
         "position": 18,
-        "points": 6,
+        "points": 8,
         "permanentNumber": "87",
         "constructorId": "haas"
     },
@@ -18211,7 +18211,7 @@
         "lastName": "Bortoleto",
         "abbreviation": "BOR",
         "position": 19,
-        "points": 4,
+        "points": 6,
         "permanentNumber": "5",
         "constructorId": "kick-sauber"
     },
