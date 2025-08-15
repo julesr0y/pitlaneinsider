@@ -29053,7 +29053,7 @@
                     "raceId": 1139,
                     "circuitId": "hungaroring",
                     "round": 14,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -29094,7 +29094,7 @@
                     "raceId": 1140,
                     "circuitId": "zandvoort",
                     "round": 15,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
