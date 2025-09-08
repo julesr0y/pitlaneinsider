@@ -18013,7 +18013,7 @@
         "lastName": "Piastri",
         "abbreviation": "PIA",
         "position": 1,
-        "points": 309,
+        "points": 324,
         "permanentNumber": "81",
         "constructorId": "mclaren"
     },
@@ -18024,7 +18024,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 2,
-        "points": 275,
+        "points": 293,
         "permanentNumber": "4",
         "constructorId": "mclaren"
     },
@@ -18035,7 +18035,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 3,
-        "points": 205,
+        "points": 230,
         "permanentNumber": "33",
         "constructorId": "red-bull"
     },
@@ -18046,7 +18046,7 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 4,
-        "points": 184,
+        "points": 194,
         "permanentNumber": "63",
         "constructorId": "mercedes"
     },
@@ -18057,7 +18057,7 @@
         "lastName": "Leclerc",
         "abbreviation": "LEC",
         "position": 5,
-        "points": 151,
+        "points": 163,
         "permanentNumber": "16",
         "constructorId": "ferrari"
     },
@@ -18068,20 +18068,9 @@
         "lastName": "Hamilton",
         "abbreviation": "HAM",
         "position": 6,
-        "points": 109,
+        "points": 117,
         "permanentNumber": "44",
         "constructorId": "ferrari"
-    },
-    {
-        "year": 2025,
-        "driverId": "kimi-antonelli",
-        "firstName": "Kimi",
-        "lastName": "Antonelli",
-        "abbreviation": "ANT",
-        "position": 7,
-        "points": 64,
-        "permanentNumber": "12",
-        "constructorId": "mercedes"
     },
     {
         "year": 2025,
@@ -18089,21 +18078,21 @@
         "firstName": "Alexander",
         "lastName": "Albon",
         "abbreviation": "ALB",
-        "position": 8,
-        "points": 64,
+        "position": 7,
+        "points": 70,
         "permanentNumber": "23",
         "constructorId": "williams"
     },
     {
         "year": 2025,
-        "driverId": "nico-hulkenberg",
-        "firstName": "Nico",
-        "lastName": "Hülkenberg",
-        "abbreviation": "HUL",
-        "position": 9,
-        "points": 37,
-        "permanentNumber": "27",
-        "constructorId": "kick-sauber"
+        "driverId": "kimi-antonelli",
+        "firstName": "Kimi",
+        "lastName": "Antonelli",
+        "abbreviation": "ANT",
+        "position": 8,
+        "points": 66,
+        "permanentNumber": "12",
+        "constructorId": "mercedes"
     },
     {
         "year": 2025,
@@ -18111,10 +18100,21 @@
         "firstName": "Isack",
         "lastName": "Hadjar",
         "abbreviation": "HAD",
-        "position": 10,
-        "points": 37,
+        "position": 9,
+        "points": 38,
         "permanentNumber": "6",
         "constructorId": "racing-bulls"
+    },
+    {
+        "year": 2025,
+        "driverId": "nico-hulkenberg",
+        "firstName": "Nico",
+        "lastName": "Hülkenberg",
+        "abbreviation": "HUL",
+        "position": 10,
+        "points": 37,
+        "permanentNumber": "27",
+        "constructorId": "kick-sauber"
     },
     {
         "year": 2025,
@@ -18173,11 +18173,22 @@
     },
     {
         "year": 2025,
+        "driverId": "gabriel-bortoleto",
+        "firstName": "Gabriel",
+        "lastName": "Bortoleto",
+        "abbreviation": "BOR",
+        "position": 16,
+        "points": 18,
+        "permanentNumber": "5",
+        "constructorId": "kick-sauber"
+    },
+    {
+        "year": 2025,
         "driverId": "oliver-bearman",
         "firstName": "Oliver",
         "lastName": "Bearman",
         "abbreviation": "BEA",
-        "position": 16,
+        "position": 17,
         "points": 16,
         "permanentNumber": "87",
         "constructorId": "haas"
@@ -18188,21 +18199,10 @@
         "firstName": "Carlos",
         "lastName": "Sainz Jr.",
         "abbreviation": "SAI",
-        "position": 17,
+        "position": 18,
         "points": 16,
         "permanentNumber": "55",
         "constructorId": "williams"
-    },
-    {
-        "year": 2025,
-        "driverId": "gabriel-bortoleto",
-        "firstName": "Gabriel",
-        "lastName": "Bortoleto",
-        "abbreviation": "BOR",
-        "position": 18,
-        "points": 14,
-        "permanentNumber": "5",
-        "constructorId": "kick-sauber"
     },
     {
         "year": 2025,

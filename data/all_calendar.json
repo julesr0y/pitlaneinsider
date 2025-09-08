@@ -29135,7 +29135,7 @@
                     "raceId": 1141,
                     "circuitId": "monza",
                     "round": 16,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -29176,7 +29176,7 @@
                     "raceId": 1142,
                     "circuitId": "baku",
                     "round": 17,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
