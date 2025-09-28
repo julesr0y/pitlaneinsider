@@ -2385,7 +2385,7 @@
     "permanentNumber": "23",
     "firstYear": 2019,
     "numberOfSeasons": 6,
-    "totalRaceStarts": 120,
+    "totalRaceStarts": 121,
     "totalRaceWins": 0,
     "totalPodiums": 2,
     "totalPolePositions": 0,
@@ -2393,7 +2393,7 @@
     "totalChampionshipWins": 0,
     "victoriesByYear": {},
     "victoryRatio": "0.00",
-    "podiumRatio": "1.67",
+    "podiumRatio": "1.65",
     "poleRatio": "0.00",
     "totalFastestLaps": 0,
     "totalDriverOfTheDay": 4,
@@ -2404,7 +2404,7 @@
     "pointsThisSeason": 70,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "red-bull",
@@ -2471,7 +2471,7 @@
       },
       {
         "year": 2025,
-        "position": 7
+        "position": 8
       }
     ]
   },
@@ -2524,7 +2524,7 @@
     "lastName": "Rossi",
     "fullName": "Alexander Michael Rossi",
     "abbreviation": "RSI",
-    "age": 33,
+    "age": 34,
     "dateOfBirth": "1991-09-25",
     "dateOfDeath": null,
     "nationality": "united-states-of-america",
@@ -2728,7 +2728,7 @@
     "lastName": "Celis Jr.",
     "fullName": "Alfonso Celis Enecoiz",
     "abbreviation": "CEL",
-    "age": 28,
+    "age": 29,
     "dateOfBirth": "1996-09-18",
     "dateOfDeath": null,
     "nationality": "mexico",
@@ -4085,7 +4085,7 @@
     "lastName": "Pizzonia",
     "fullName": "Antônio Reginaldo Pizzonia Júnior",
     "abbreviation": "PIZ",
-    "age": 44,
+    "age": 45,
     "dateOfBirth": "1980-09-11",
     "dateOfDeath": null,
     "nationality": "brazil",
@@ -4306,7 +4306,7 @@
     "lastName": "Markelov",
     "fullName": "Artem Valeryevich Markelov",
     "abbreviation": "MAR",
-    "age": 30,
+    "age": 31,
     "dateOfBirth": "1994-09-10",
     "dateOfDeath": null,
     "nationality": "russia",
@@ -5032,7 +5032,7 @@
     "lastName": "Iwasa",
     "fullName": "Ayumu Iwasa",
     "abbreviation": "IWA",
-    "age": 23,
+    "age": 24,
     "dateOfBirth": "2001-09-22",
     "dateOfDeath": null,
     "nationality": "japan",
@@ -5353,7 +5353,7 @@
     "lastName": "De Dryver",
     "fullName": "Bernard de Dryver",
     "abbreviation": "DED",
-    "age": 72,
+    "age": 73,
     "dateOfBirth": "1952-09-19",
     "dateOfDeath": null,
     "nationality": "belgium",
@@ -7437,7 +7437,7 @@
     "lastName": "Henton",
     "fullName": "Brian Henton",
     "abbreviation": "HEN",
-    "age": 78,
+    "age": 79,
     "dateOfBirth": "1946-09-19",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
@@ -8059,7 +8059,7 @@
     "lastName": "Giacomelli",
     "fullName": "Bruno Giacomelli",
     "abbreviation": "GIA",
-    "age": 72,
+    "age": 73,
     "dateOfBirth": "1952-09-10",
     "dateOfDeath": null,
     "nationality": "italy",
@@ -9035,11 +9035,11 @@
     "permanentNumber": "55",
     "firstYear": 2015,
     "numberOfSeasons": 11,
-    "totalRaceStarts": 221,
+    "totalRaceStarts": 222,
     "totalRaceWins": 4,
-    "totalPodiums": 27,
+    "totalPodiums": 28,
     "totalPolePositions": 6,
-    "totalPoints": 1288.5,
+    "totalPoints": 1303.5,
     "totalChampionshipWins": 0,
     "victoriesByYear": {
       "2022": [
@@ -9069,19 +9069,19 @@
         }
       ]
     },
-    "victoryRatio": "1.81",
-    "podiumRatio": "12.22",
-    "poleRatio": "2.71",
+    "victoryRatio": "1.80",
+    "podiumRatio": "12.61",
+    "poleRatio": "2.70",
     "totalFastestLaps": 4,
-    "totalDriverOfTheDay": 7,
+    "totalDriverOfTheDay": 8,
     "currentTeamId": "williams",
     "currentTeamName": "Williams",
     "winsThisSeason": 0,
-    "podiumsThisSeason": 0,
-    "pointsThisSeason": 16,
+    "podiumsThisSeason": 1,
+    "pointsThisSeason": 31,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "toro-rosso",
@@ -9152,7 +9152,7 @@
       },
       {
         "year": 2025,
-        "points": 16
+        "points": 31
       }
     ],
     "standingPositionBySeason": [
@@ -9198,7 +9198,7 @@
       },
       {
         "year": 2025,
-        "position": 18
+        "position": 12
       }
     ]
   },
@@ -9468,11 +9468,11 @@
     "permanentNumber": "16",
     "firstYear": 2016,
     "numberOfSeasons": 8,
-    "totalRaceStarts": 163,
+    "totalRaceStarts": 164,
     "totalRaceWins": 8,
     "totalPodiums": 48,
     "totalPolePositions": 27,
-    "totalPoints": 1593,
+    "totalPoints": 1595,
     "totalChampionshipWins": 0,
     "victoriesByYear": {
       "2019": [
@@ -9522,19 +9522,19 @@
         }
       ]
     },
-    "victoryRatio": "4.91",
-    "podiumRatio": "29.45",
-    "poleRatio": "16.56",
+    "victoryRatio": "4.88",
+    "podiumRatio": "29.27",
+    "poleRatio": "16.46",
     "totalFastestLaps": 10,
     "totalDriverOfTheDay": 18,
     "currentTeamId": "ferrari",
     "currentTeamName": "Ferrari",
     "winsThisSeason": 0,
     "podiumsThisSeason": 5,
-    "pointsThisSeason": 163,
+    "pointsThisSeason": 165,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "haas",
@@ -9583,7 +9583,7 @@
       },
       {
         "year": 2025,
-        "points": 163
+        "points": 165
       }
     ],
     "standingPositionBySeason": [
@@ -10638,7 +10638,7 @@
     "lastName": "Bouchut",
     "fullName": "Christophe Bouchut",
     "abbreviation": "BOU",
-    "age": 58,
+    "age": 59,
     "dateOfBirth": "1966-09-24",
     "dateOfDeath": null,
     "nationality": "france",
@@ -11623,7 +11623,7 @@
     "lastName": "Da Matta",
     "fullName": "Cristiano Monteiro da Matta",
     "abbreviation": "DAM",
-    "age": 51,
+    "age": 52,
     "dateOfBirth": "1973-09-19",
     "dateOfDeath": null,
     "nationality": "brazil",
@@ -11775,7 +11775,7 @@
     "lastName": "Hill",
     "fullName": "Damon Graham Devereux Hill",
     "abbreviation": "HIL",
-    "age": 64,
+    "age": 65,
     "dateOfBirth": "1960-09-17",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
@@ -16807,7 +16807,7 @@
     "lastName": "Bertaggia",
     "fullName": "Enrico Bertaggia",
     "abbreviation": "BER",
-    "age": 60,
+    "age": 61,
     "dateOfBirth": "1964-09-19",
     "dateOfDeath": null,
     "nationality": "italy",
@@ -17235,7 +17235,7 @@
     "lastName": "Comas",
     "fullName": "Érik Comas",
     "abbreviation": "COM",
-    "age": 61,
+    "age": 62,
     "dateOfBirth": "1963-09-28",
     "dateOfDeath": null,
     "nationality": "france",
@@ -17737,14 +17737,14 @@
     "lastName": "Ocon",
     "fullName": "Esteban Ocon",
     "abbreviation": "OCO",
-    "age": 28,
+    "age": 29,
     "dateOfBirth": "1996-09-17",
     "dateOfDeath": null,
     "nationality": "france",
     "permanentNumber": "31",
     "firstYear": 2014,
     "numberOfSeasons": 9,
-    "totalRaceStarts": 172,
+    "totalRaceStarts": 173,
     "totalRaceWins": 1,
     "totalPodiums": 4,
     "totalPolePositions": 0,
@@ -17760,7 +17760,7 @@
       ]
     },
     "victoryRatio": "0.58",
-    "podiumRatio": "2.33",
+    "podiumRatio": "2.31",
     "poleRatio": "0.00",
     "totalFastestLaps": 1,
     "totalDriverOfTheDay": 1,
@@ -17771,7 +17771,7 @@
     "pointsThisSeason": 28,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "lotus-f1",
@@ -17882,7 +17882,7 @@
       },
       {
         "year": 2025,
-        "position": 13
+        "position": 15
       }
     ]
   },
@@ -18724,7 +18724,7 @@
     "permanentNumber": "14",
     "firstYear": 2001,
     "numberOfSeasons": 22,
-    "totalRaceStarts": 418,
+    "totalRaceStarts": 419,
     "totalRaceWins": 32,
     "totalPodiums": 106,
     "totalPolePositions": 22,
@@ -18910,9 +18910,9 @@
         }
       ]
     },
-    "victoryRatio": "7.66",
-    "podiumRatio": "25.36",
-    "poleRatio": "5.26",
+    "victoryRatio": "7.64",
+    "podiumRatio": "25.30",
+    "poleRatio": "5.25",
     "totalFastestLaps": 26,
     "totalDriverOfTheDay": 6,
     "currentTeamId": "aston-martin",
@@ -18922,7 +18922,7 @@
     "pointsThisSeason": 30,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "minardi",
@@ -19142,7 +19142,7 @@
       },
       {
         "year": 2025,
-        "position": 12
+        "position": 14
       }
     ]
   },
@@ -19265,7 +19265,7 @@
     "permanentNumber": "43",
     "firstYear": 2024,
     "numberOfSeasons": 2,
-    "totalRaceStarts": 18,
+    "totalRaceStarts": 19,
     "totalRaceWins": 0,
     "totalPodiums": 0,
     "totalPolePositions": 0,
@@ -19284,7 +19284,7 @@
     "pointsThisSeason": 0,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 10,
+    "racesThisSeason": 11,
     "teamsOfDriver": [
       {
         "teamId": "williams",
@@ -19372,7 +19372,7 @@
     "lastName": "Forini",
     "fullName": "Franco Forini",
     "abbreviation": "FOR",
-    "age": 66,
+    "age": 67,
     "dateOfBirth": "1958-09-22",
     "dateOfDeath": null,
     "nationality": "switzerland",
@@ -20179,7 +20179,7 @@
     "permanentNumber": "5",
     "firstYear": 2025,
     "numberOfSeasons": 1,
-    "totalRaceStarts": 16,
+    "totalRaceStarts": 17,
     "totalRaceWins": 0,
     "totalPodiums": 0,
     "totalPolePositions": 0,
@@ -20198,7 +20198,7 @@
     "pointsThisSeason": 18,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "kick-sauber",
@@ -20215,7 +20215,7 @@
     "standingPositionBySeason": [
       {
         "year": 2025,
-        "position": 16
+        "position": 18
       }
     ]
   },
@@ -21035,11 +21035,11 @@
     "permanentNumber": "63",
     "firstYear": 2017,
     "numberOfSeasons": 7,
-    "totalRaceStarts": 144,
+    "totalRaceStarts": 145,
     "totalRaceWins": 4,
-    "totalPodiums": 21,
+    "totalPodiums": 22,
     "totalPolePositions": 6,
-    "totalPoints": 908,
+    "totalPoints": 926,
     "totalChampionshipWins": 0,
     "victoriesByYear": {
       "2022": [
@@ -21069,19 +21069,19 @@
         }
       ]
     },
-    "victoryRatio": "2.78",
-    "podiumRatio": "14.58",
-    "poleRatio": "4.17",
+    "victoryRatio": "2.76",
+    "podiumRatio": "15.17",
+    "poleRatio": "4.14",
     "totalFastestLaps": 10,
     "totalDriverOfTheDay": 1,
     "currentTeamId": "mercedes",
     "currentTeamName": "Mercedes",
     "winsThisSeason": 1,
-    "podiumsThisSeason": 6,
-    "pointsThisSeason": 194,
+    "podiumsThisSeason": 7,
+    "pointsThisSeason": 212,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "force-india",
@@ -21131,7 +21131,7 @@
       },
       {
         "year": 2025,
-        "points": 194
+        "points": 212
       }
     ],
     "standingPositionBySeason": [
@@ -25311,7 +25311,7 @@
     "lastName": "Pescarolo",
     "fullName": "Henri Jacques William Pescarolo",
     "abbreviation": "PES",
-    "age": 82,
+    "age": 83,
     "dateOfBirth": "1942-09-25",
     "dateOfDeath": null,
     "nationality": "france",
@@ -26478,22 +26478,22 @@
     "lastName": "Hadjar",
     "fullName": "Isack Alexandre Hadjar",
     "abbreviation": "HAD",
-    "age": 20,
+    "age": 21,
     "dateOfBirth": "2004-09-28",
     "dateOfDeath": null,
     "nationality": "france",
     "permanentNumber": "6",
     "firstYear": 2023,
     "numberOfSeasons": 1,
-    "totalRaceStarts": 16,
+    "totalRaceStarts": 17,
     "totalRaceWins": 0,
     "totalPodiums": 1,
     "totalPolePositions": 0,
-    "totalPoints": 38,
+    "totalPoints": 39,
     "totalChampionshipWins": 0,
     "victoriesByYear": {},
     "victoryRatio": "0.00",
-    "podiumRatio": "6.25",
+    "podiumRatio": "5.88",
     "poleRatio": "0.00",
     "totalFastestLaps": 0,
     "totalDriverOfTheDay": 1,
@@ -26501,10 +26501,10 @@
     "currentTeamName": "Racing Bulls",
     "winsThisSeason": 0,
     "podiumsThisSeason": 1,
-    "pointsThisSeason": 38,
+    "pointsThisSeason": 39,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "red-bull",
@@ -26525,7 +26525,7 @@
     "pointsBySeason": [
       {
         "year": 2025,
-        "points": 38
+        "points": 39
       }
     ],
     "standingPositionBySeason": [
@@ -26760,7 +26760,7 @@
     "lastName": "Aitken",
     "fullName": "Jack Aitken",
     "abbreviation": "AIT",
-    "age": 29,
+    "age": 30,
     "dateOfBirth": "1995-09-23",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
@@ -29923,7 +29923,7 @@
     "lastName": "Schlesser",
     "fullName": "Jean-Louis Schlesser",
     "abbreviation": "SCH",
-    "age": 76,
+    "age": 77,
     "dateOfBirth": "1948-09-12",
     "dateOfDeath": null,
     "nationality": "france",
@@ -35903,7 +35903,7 @@
     "lastName": "Montoya",
     "fullName": "Juan Pablo Montoya Roldán",
     "abbreviation": "MOY",
-    "age": 49,
+    "age": 50,
     "dateOfBirth": "1975-09-20",
     "dateOfDeath": null,
     "nationality": "colombia",
@@ -36318,7 +36318,7 @@
     "lastName": "Kobayashi",
     "fullName": "Kamui Kobayashi",
     "abbreviation": "KOB",
-    "age": 38,
+    "age": 39,
     "dateOfBirth": "1986-09-13",
     "dateOfDeath": null,
     "nationality": "japan",
@@ -37497,15 +37497,15 @@
     "permanentNumber": "12",
     "firstYear": 2024,
     "numberOfSeasons": 1,
-    "totalRaceStarts": 16,
+    "totalRaceStarts": 17,
     "totalRaceWins": 0,
     "totalPodiums": 1,
     "totalPolePositions": 0,
-    "totalPoints": 66,
+    "totalPoints": 78,
     "totalChampionshipWins": 0,
     "victoriesByYear": {},
     "victoryRatio": "0.00",
-    "podiumRatio": "6.25",
+    "podiumRatio": "5.88",
     "poleRatio": "0.00",
     "totalFastestLaps": 2,
     "totalDriverOfTheDay": 2,
@@ -37513,10 +37513,10 @@
     "currentTeamName": "Mercedes",
     "winsThisSeason": 0,
     "podiumsThisSeason": 1,
-    "pointsThisSeason": 66,
+    "pointsThisSeason": 78,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "mercedes",
@@ -37527,13 +37527,13 @@
     "pointsBySeason": [
       {
         "year": 2025,
-        "points": 66
+        "points": 78
       }
     ],
     "standingPositionBySeason": [
       {
         "year": 2025,
-        "position": 8
+        "position": 7
       }
     ]
   },
@@ -38222,7 +38222,7 @@
     "permanentNumber": "18",
     "firstYear": 2017,
     "numberOfSeasons": 9,
-    "totalRaceStarts": 181,
+    "totalRaceStarts": 182,
     "totalRaceWins": 0,
     "totalPodiums": 3,
     "totalPolePositions": 1,
@@ -38230,7 +38230,7 @@
     "totalChampionshipWins": 0,
     "victoriesByYear": {},
     "victoryRatio": "0.00",
-    "podiumRatio": "1.66",
+    "podiumRatio": "1.65",
     "poleRatio": "0.55",
     "totalFastestLaps": 0,
     "totalDriverOfTheDay": 1,
@@ -38241,7 +38241,7 @@
     "pointsThisSeason": 32,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "williams",
@@ -38349,11 +38349,11 @@
     "permanentNumber": "4",
     "firstYear": 2018,
     "numberOfSeasons": 7,
-    "totalRaceStarts": 144,
+    "totalRaceStarts": 145,
     "totalRaceWins": 9,
     "totalPodiums": 39,
     "totalPolePositions": 13,
-    "totalPoints": 1300,
+    "totalPoints": 1306,
     "totalChampionshipWins": 0,
     "victoriesByYear": {
       "2024": [
@@ -38406,19 +38406,19 @@
         }
       ]
     },
-    "victoryRatio": "6.25",
-    "podiumRatio": "27.08",
-    "poleRatio": "9.03",
+    "victoryRatio": "6.21",
+    "podiumRatio": "26.90",
+    "poleRatio": "8.97",
     "totalFastestLaps": 18,
     "totalDriverOfTheDay": 18,
     "currentTeamId": "mclaren",
     "currentTeamName": "McLaren",
     "winsThisSeason": 5,
     "podiumsThisSeason": 13,
-    "pointsThisSeason": 293,
+    "pointsThisSeason": 299,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "mclaren",
@@ -38453,7 +38453,7 @@
       },
       {
         "year": 2025,
-        "points": 293
+        "points": 299
       }
     ],
     "standingPositionBySeason": [
@@ -39061,11 +39061,11 @@
     "permanentNumber": "44",
     "firstYear": 2007,
     "numberOfSeasons": 19,
-    "totalRaceStarts": 372,
+    "totalRaceStarts": 373,
     "totalRaceWins": 105,
     "totalPodiums": 202,
     "totalPolePositions": 104,
-    "totalPoints": 4979.5,
+    "totalPoints": 4983.5,
     "totalChampionshipWins": 7,
     "victoriesByYear": {
       "2007": [
@@ -39626,19 +39626,19 @@
         }
       ]
     },
-    "victoryRatio": "28.23",
-    "podiumRatio": "54.30",
-    "poleRatio": "27.96",
+    "victoryRatio": "28.15",
+    "podiumRatio": "54.16",
+    "poleRatio": "27.88",
     "totalFastestLaps": 67,
     "totalDriverOfTheDay": 19,
     "currentTeamId": "ferrari",
     "currentTeamName": "Ferrari",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
-    "pointsThisSeason": 117,
+    "pointsThisSeason": 121,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "mclaren",
@@ -39731,7 +39731,7 @@
       },
       {
         "year": 2025,
-        "points": 117
+        "points": 121
       }
     ],
     "standingPositionBySeason": [
@@ -39826,11 +39826,11 @@
     "permanentNumber": "30",
     "firstYear": 2022,
     "numberOfSeasons": 3,
-    "totalRaceStarts": 27,
+    "totalRaceStarts": 28,
     "totalRaceWins": 0,
     "totalPodiums": 0,
     "totalPolePositions": 0,
-    "totalPoints": 26,
+    "totalPoints": 36,
     "totalChampionshipWins": 0,
     "victoriesByYear": {},
     "victoryRatio": "0.00",
@@ -39842,10 +39842,10 @@
     "currentTeamName": "Racing Bulls",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
-    "pointsThisSeason": 20,
+    "pointsThisSeason": 30,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 14,
+    "racesThisSeason": 15,
     "teamsOfDriver": [
       {
         "teamId": "red-bull",
@@ -39884,7 +39884,7 @@
       },
       {
         "year": 2025,
-        "points": 20
+        "points": 30
       }
     ],
     "standingPositionBySeason": [
@@ -39898,7 +39898,7 @@
       },
       {
         "year": 2025,
-        "position": 15
+        "position": 13
       }
     ]
   },
@@ -41646,7 +41646,7 @@
     "lastName": "Surer",
     "fullName": "Marc Surer",
     "abbreviation": "SUR",
-    "age": 73,
+    "age": 74,
     "dateOfBirth": "1951-09-18",
     "dateOfDeath": null,
     "nationality": "switzerland",
@@ -42982,7 +42982,7 @@
     "lastName": "Kuwashima",
     "fullName": "Masami Kuwashima",
     "abbreviation": "KUW",
-    "age": 74,
+    "age": 75,
     "dateOfBirth": "1950-09-14",
     "dateOfDeath": null,
     "nationality": "japan",
@@ -43799,11 +43799,11 @@
     "permanentNumber": "33",
     "firstYear": 2014,
     "numberOfSeasons": 11,
-    "totalRaceStarts": 225,
-    "totalRaceWins": 66,
-    "totalPodiums": 119,
-    "totalPolePositions": 45,
-    "totalPoints": 3253.5,
+    "totalRaceStarts": 226,
+    "totalRaceWins": 67,
+    "totalPodiums": 120,
+    "totalPolePositions": 46,
+    "totalPoints": 3278.5,
     "totalChampionshipWins": 4,
     "victoriesByYear": {
       "2016": [
@@ -44154,22 +44154,27 @@
           "id": 1141,
           "country": "italy",
           "shortName": "Italian GP"
+        },
+        {
+          "id": 1142,
+          "country": "azerbaijan",
+          "shortName": "Azerbaijan GP"
         }
       ]
     },
-    "victoryRatio": "29.33",
-    "podiumRatio": "52.89",
-    "poleRatio": "20.00",
-    "totalFastestLaps": 34,
+    "victoryRatio": "29.65",
+    "podiumRatio": "53.10",
+    "poleRatio": "20.35",
+    "totalFastestLaps": 35,
     "totalDriverOfTheDay": 44,
     "currentTeamId": "red-bull",
     "currentTeamName": "Red Bull",
-    "winsThisSeason": 3,
-    "podiumsThisSeason": 7,
-    "pointsThisSeason": 230,
+    "winsThisSeason": 4,
+    "podiumsThisSeason": 8,
+    "pointsThisSeason": 255,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "toro-rosso",
@@ -44225,7 +44230,7 @@
       },
       {
         "year": 2025,
-        "points": 230
+        "points": 255
       }
     ],
     "standingPositionBySeason": [
@@ -45555,7 +45560,7 @@
     "lastName": "Häkkinen",
     "fullName": "Mika Pauli Häkkinen",
     "abbreviation": "HAK",
-    "age": 56,
+    "age": 57,
     "dateOfBirth": "1968-09-28",
     "dateOfDeath": null,
     "nationality": "finland",
@@ -47990,7 +47995,7 @@
     "permanentNumber": "27",
     "firstYear": 2010,
     "numberOfSeasons": 14,
-    "totalRaceStarts": 242,
+    "totalRaceStarts": 243,
     "totalRaceWins": 0,
     "totalPodiums": 1,
     "totalPolePositions": 1,
@@ -48009,7 +48014,7 @@
     "pointsThisSeason": 37,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "williams",
@@ -49644,7 +49649,7 @@
     "permanentNumber": "87",
     "firstYear": 2023,
     "numberOfSeasons": 2,
-    "totalRaceStarts": 19,
+    "totalRaceStarts": 20,
     "totalRaceWins": 0,
     "totalPodiums": 0,
     "totalPolePositions": 0,
@@ -49663,7 +49668,7 @@
     "pointsThisSeason": 16,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "haas",
@@ -49693,7 +49698,7 @@
       },
       {
         "year": 2025,
-        "position": 17
+        "position": 19
       }
     ]
   },
@@ -50263,7 +50268,7 @@
     "permanentNumber": "81",
     "firstYear": 2023,
     "numberOfSeasons": 3,
-    "totalRaceStarts": 62,
+    "totalRaceStarts": 63,
     "totalRaceWins": 9,
     "totalPodiums": 24,
     "totalPolePositions": 5,
@@ -50320,9 +50325,9 @@
         }
       ]
     },
-    "victoryRatio": "14.52",
-    "podiumRatio": "38.71",
-    "poleRatio": "8.06",
+    "victoryRatio": "14.29",
+    "podiumRatio": "38.10",
+    "poleRatio": "7.94",
     "totalFastestLaps": 8,
     "totalDriverOfTheDay": 5,
     "currentTeamId": "mclaren",
@@ -50332,7 +50337,7 @@
     "pointsThisSeason": 324,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "mclaren",
@@ -51168,7 +51173,7 @@
     "lastName": "Friesacher",
     "fullName": "Patrick Friesacher",
     "abbreviation": "FRI",
-    "age": 44,
+    "age": 45,
     "dateOfBirth": "1980-09-26",
     "dateOfDeath": null,
     "nationality": "austria",
@@ -54365,7 +54370,7 @@
     "permanentNumber": "10",
     "firstYear": 2017,
     "numberOfSeasons": 9,
-    "totalRaceStarts": 169,
+    "totalRaceStarts": 170,
     "totalRaceWins": 1,
     "totalPodiums": 5,
     "totalPolePositions": 0,
@@ -54381,7 +54386,7 @@
       ]
     },
     "victoryRatio": "0.59",
-    "podiumRatio": "2.96",
+    "podiumRatio": "2.94",
     "poleRatio": "0.00",
     "totalFastestLaps": 3,
     "totalDriverOfTheDay": 3,
@@ -54392,7 +54397,7 @@
     "pointsThisSeason": 20,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
-    "racesThisSeason": 16,
+    "racesThisSeason": 17,
     "teamsOfDriver": [
       {
         "teamId": "toro-rosso",
@@ -54488,7 +54493,7 @@
       },
       {
         "year": 2025,
-        "position": 14
+        "position": 16
       }
     ]
   },
@@ -56308,7 +56313,7 @@
     "lastName": "Robarts",
     "fullName": "Richard Robarts",
     "abbreviation": "ROB",
-    "age": 80,
+    "age": 81,
     "dateOfBirth": "1944-09-22",
     "dateOfDeath": null,
     "nationality": "united-kingdom",
@@ -56634,7 +56639,7 @@
     "lastName": "Doornbos",
     "fullName": "Robert Michael Doornbos",
     "abbreviation": "DOO",
-    "age": 43,
+    "age": 44,
     "dateOfBirth": "1981-09-23",
     "dateOfDeath": null,
     "nationality": "netherlands",
@@ -56999,7 +57004,7 @@
     "lastName": "Shwartzman",
     "fullName": "Robert Mikhailovich Shwartzman",
     "abbreviation": "SHW",
-    "age": 25,
+    "age": 26,
     "dateOfBirth": "1999-09-16",
     "dateOfDeath": null,
     "nationality": "russia",
@@ -59315,7 +59320,7 @@
     "lastName": "Briscoe",
     "fullName": "Ryan Briscoe",
     "abbreviation": "BRI",
-    "age": 43,
+    "age": 44,
     "dateOfBirth": "1981-09-24",
     "dateOfDeath": null,
     "nationality": "australia",
@@ -62865,7 +62870,7 @@
     "lastName": "Schenken",
     "fullName": "Timothy Theodore Schenken",
     "abbreviation": "SCH",
-    "age": 81,
+    "age": 82,
     "dateOfBirth": "1943-09-26",
     "dateOfDeath": null,
     "nationality": "australia",
@@ -63305,7 +63310,7 @@
     "lastName": "Enge",
     "fullName": "Tomáš Enge",
     "abbreviation": "ENG",
-    "age": 48,
+    "age": 49,
     "dateOfBirth": "1976-09-11",
     "dateOfDeath": null,
     "nationality": "czechia",
@@ -66460,11 +66465,11 @@
     "permanentNumber": "22",
     "firstYear": 2021,
     "numberOfSeasons": 5,
-    "totalRaceStarts": 103,
+    "totalRaceStarts": 104,
     "totalRaceWins": 0,
     "totalPodiums": 0,
     "totalPolePositions": 0,
-    "totalPoints": 103,
+    "totalPoints": 111,
     "totalChampionshipWins": 0,
     "victoriesByYear": {},
     "victoryRatio": "0.00",
@@ -66476,7 +66481,7 @@
     "currentTeamName": "Racing Bulls",
     "winsThisSeason": 0,
     "podiumsThisSeason": 0,
-    "pointsThisSeason": 12,
+    "pointsThisSeason": 20,
     "isCurrentSeasonDriver": true,
     "isTestDriver": false,
     "racesThisSeason": 2,
@@ -66521,7 +66526,7 @@
       },
       {
         "year": 2025,
-        "points": 12
+        "points": 20
       }
     ],
     "standingPositionBySeason": [
@@ -66543,7 +66548,7 @@
       },
       {
         "year": 2025,
-        "position": 19
+        "position": 17
       }
     ]
   },
