@@ -4566,5 +4566,9 @@
   {
     "raceId": 1142,
     "weather": "overcast"
+  },
+  {
+    "raceId": 1143,
+    "weather": "night"
   }
 ]

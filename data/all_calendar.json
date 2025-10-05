@@ -29217,7 +29217,7 @@
                     "raceId": 1143,
                     "circuitId": "marina-bay",
                     "round": 18,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -29258,7 +29258,7 @@
                     "raceId": 1144,
                     "circuitId": "austin",
                     "round": 19,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
