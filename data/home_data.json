@@ -2,60 +2,60 @@
     {
         "nextRaceInfo": [
             {
-                "id": "united-states",
-                "raceId": 1144,
-                "country": "united-states-of-america",
-                "name": "United States GP",
-                "raceDate": "2025-10-19",
-                "raceTime": "19:00"
+                "id": "sao-paulo",
+                "raceId": 1146,
+                "country": "brazil",
+                "name": "São Paulo GP",
+                "raceDate": "2025-11-09",
+                "raceTime": "17:00"
             }
         ],
         "lastPodiumLocalisation": [
             {
-                "id": "singapore",
-                "raceId": 1143,
-                "country": "singapore",
-                "name": "Singapore GP"
+                "id": "mexico",
+                "raceId": 1145,
+                "country": "mexico",
+                "name": "Mexican GP"
             }
         ],
         "lastPodium": [
             {
                 "position": 1,
-                "driverId": "george-russell",
-                "abbreviation": "RUS"
+                "driverId": "lando-norris",
+                "abbreviation": "NOR"
             },
             {
                 "position": 2,
-                "driverId": "max-verstappen",
-                "abbreviation": "VER"
+                "driverId": "charles-leclerc",
+                "abbreviation": "LEC"
             },
             {
                 "position": 3,
-                "driverId": "lando-norris",
-                "abbreviation": "NOR"
+                "driverId": "max-verstappen",
+                "abbreviation": "VER"
             }
         ],
         "driverStandings": [
-            {
-                "year": 2025,
-                "driverId": "oscar-piastri",
-                "firstName": "Oscar",
-                "lastName": "Piastri",
-                "abbreviation": "PIA",
-                "position": 1,
-                "points": 336,
-                "permanentNumber": "81",
-                "constructorId": "mclaren"
-            },
             {
                 "year": 2025,
                 "driverId": "lando-norris",
                 "firstName": "Lando",
                 "lastName": "Norris",
                 "abbreviation": "NOR",
-                "position": 2,
-                "points": 314,
+                "position": 1,
+                "points": 357,
                 "permanentNumber": "4",
+                "constructorId": "mclaren"
+            },
+            {
+                "year": 2025,
+                "driverId": "oscar-piastri",
+                "firstName": "Oscar",
+                "lastName": "Piastri",
+                "abbreviation": "PIA",
+                "position": 2,
+                "points": 356,
+                "permanentNumber": "81",
                 "constructorId": "mclaren"
             },
             {
@@ -65,7 +65,7 @@
                 "lastName": "Verstappen",
                 "abbreviation": "VER",
                 "position": 3,
-                "points": 273,
+                "points": 321,
                 "permanentNumber": "33",
                 "constructorId": "red-bull"
             },
@@ -76,7 +76,7 @@
                 "lastName": "Russell",
                 "abbreviation": "RUS",
                 "position": 4,
-                "points": 237,
+                "points": 258,
                 "permanentNumber": "63",
                 "constructorId": "mercedes"
             },
@@ -87,7 +87,7 @@
                 "lastName": "Leclerc",
                 "abbreviation": "LEC",
                 "position": 5,
-                "points": 173,
+                "points": 210,
                 "permanentNumber": "16",
                 "constructorId": "ferrari"
             },
@@ -98,7 +98,7 @@
                 "lastName": "Hamilton",
                 "abbreviation": "HAM",
                 "position": 6,
-                "points": 127,
+                "points": 146,
                 "permanentNumber": "44",
                 "constructorId": "ferrari"
             },
@@ -109,7 +109,7 @@
                 "lastName": "Antonelli",
                 "abbreviation": "ANT",
                 "position": 7,
-                "points": 88,
+                "points": 97,
                 "permanentNumber": "12",
                 "constructorId": "mercedes"
             },
@@ -120,20 +120,9 @@
                 "lastName": "Albon",
                 "abbreviation": "ALB",
                 "position": 8,
-                "points": 70,
+                "points": 73,
                 "permanentNumber": "23",
                 "constructorId": "williams"
-            },
-            {
-                "year": 2025,
-                "driverId": "isack-hadjar",
-                "firstName": "Isack",
-                "lastName": "Hadjar",
-                "abbreviation": "HAD",
-                "position": 9,
-                "points": 39,
-                "permanentNumber": "6",
-                "constructorId": "racing-bulls"
             },
             {
                 "year": 2025,
@@ -141,21 +130,21 @@
                 "firstName": "Nico",
                 "lastName": "Hülkenberg",
                 "abbreviation": "HUL",
-                "position": 10,
-                "points": 37,
+                "position": 9,
+                "points": 41,
                 "permanentNumber": "27",
                 "constructorId": "kick-sauber"
             },
             {
                 "year": 2025,
-                "driverId": "fernando-alonso",
-                "firstName": "Fernando",
-                "lastName": "Alonso",
-                "abbreviation": "ALO",
-                "position": 11,
-                "points": 34,
-                "permanentNumber": "14",
-                "constructorId": "aston-martin"
+                "driverId": "isack-hadjar",
+                "firstName": "Isack",
+                "lastName": "Hadjar",
+                "abbreviation": "HAD",
+                "position": 10,
+                "points": 39,
+                "permanentNumber": "6",
+                "constructorId": "racing-bulls"
             },
             {
                 "year": 2025,
@@ -163,10 +152,32 @@
                 "firstName": "Carlos",
                 "lastName": "Sainz Jr.",
                 "abbreviation": "SAI",
-                "position": 12,
-                "points": 32,
+                "position": 11,
+                "points": 38,
                 "permanentNumber": "55",
                 "constructorId": "williams"
+            },
+            {
+                "year": 2025,
+                "driverId": "fernando-alonso",
+                "firstName": "Fernando",
+                "lastName": "Alonso",
+                "abbreviation": "ALO",
+                "position": 12,
+                "points": 37,
+                "permanentNumber": "14",
+                "constructorId": "aston-martin"
+            },
+            {
+                "year": 2025,
+                "driverId": "oliver-bearman",
+                "firstName": "Oliver",
+                "lastName": "Bearman",
+                "abbreviation": "BEA",
+                "position": 13,
+                "points": 32,
+                "permanentNumber": "87",
+                "constructorId": "haas"
             },
             {
                 "year": 2025,
@@ -174,7 +185,7 @@
                 "firstName": "Lance",
                 "lastName": "Stroll",
                 "abbreviation": "STR",
-                "position": 13,
+                "position": 14,
                 "points": 32,
                 "permanentNumber": "18",
                 "constructorId": "aston-martin"
@@ -185,7 +196,7 @@
                 "firstName": "Liam",
                 "lastName": "Lawson",
                 "abbreviation": "LAW",
-                "position": 14,
+                "position": 15,
                 "points": 30,
                 "permanentNumber": "30",
                 "constructorId": "racing-bulls"
@@ -196,21 +207,10 @@
                 "firstName": "Esteban",
                 "lastName": "Ocon",
                 "abbreviation": "OCO",
-                "position": 15,
-                "points": 28,
+                "position": 16,
+                "points": 30,
                 "permanentNumber": "31",
                 "constructorId": "haas"
-            },
-            {
-                "year": 2025,
-                "driverId": "pierre-gasly",
-                "firstName": "Pierre",
-                "lastName": "Gasly",
-                "abbreviation": "GAS",
-                "position": 16,
-                "points": 20,
-                "permanentNumber": "10",
-                "constructorId": "alpine"
             },
             {
                 "year": 2025,
@@ -219,9 +219,20 @@
                 "lastName": "Tsunoda",
                 "abbreviation": "TSU",
                 "position": 17,
-                "points": 20,
+                "points": 28,
                 "permanentNumber": "22",
                 "constructorId": "racing-bulls"
+            },
+            {
+                "year": 2025,
+                "driverId": "pierre-gasly",
+                "firstName": "Pierre",
+                "lastName": "Gasly",
+                "abbreviation": "GAS",
+                "position": 18,
+                "points": 20,
+                "permanentNumber": "10",
+                "constructorId": "alpine"
             },
             {
                 "year": 2025,
@@ -229,21 +240,10 @@
                 "firstName": "Gabriel",
                 "lastName": "Bortoleto",
                 "abbreviation": "BOR",
-                "position": 18,
-                "points": 18,
+                "position": 19,
+                "points": 19,
                 "permanentNumber": "5",
                 "constructorId": "kick-sauber"
-            },
-            {
-                "year": 2025,
-                "driverId": "oliver-bearman",
-                "firstName": "Oliver",
-                "lastName": "Bearman",
-                "abbreviation": "BEA",
-                "position": 19,
-                "points": 18,
-                "permanentNumber": "87",
-                "constructorId": "haas"
             },
             {
                 "year": 2025,
@@ -274,35 +274,35 @@
                 "constructorId": "mclaren",
                 "name": "McLaren",
                 "position": 1,
-                "points": 650
-            },
-            {
-                "year": 2025,
-                "constructorId": "mercedes",
-                "name": "Mercedes",
-                "position": 2,
-                "points": 325
+                "points": 713
             },
             {
                 "year": 2025,
                 "constructorId": "ferrari",
                 "name": "Ferrari",
+                "position": 2,
+                "points": 356
+            },
+            {
+                "year": 2025,
+                "constructorId": "mercedes",
+                "name": "Mercedes",
                 "position": 3,
-                "points": 300
+                "points": 355
             },
             {
                 "year": 2025,
                 "constructorId": "red-bull",
                 "name": "Red Bull",
                 "position": 4,
-                "points": 290
+                "points": 346
             },
             {
                 "year": 2025,
                 "constructorId": "williams",
                 "name": "Williams",
                 "position": 5,
-                "points": 102
+                "points": 111
             },
             {
                 "year": 2025,
@@ -316,21 +316,21 @@
                 "constructorId": "aston-martin",
                 "name": "Aston Martin",
                 "position": 7,
-                "points": 66
-            },
-            {
-                "year": 2025,
-                "constructorId": "kick-sauber",
-                "name": "Kick Sauber",
-                "position": 8,
-                "points": 55
+                "points": 69
             },
             {
                 "year": 2025,
                 "constructorId": "haas",
                 "name": "Haas",
+                "position": 8,
+                "points": 62
+            },
+            {
+                "year": 2025,
+                "constructorId": "kick-sauber",
+                "name": "Kick Sauber",
                 "position": 9,
-                "points": 46
+                "points": 60
             },
             {
                 "year": 2025,
@@ -342,13 +342,13 @@
         ],
         "driverLeader": {
             "year": 2025,
-            "driverId": "oscar-piastri",
-            "firstName": "Oscar",
-            "lastName": "Piastri",
-            "abbreviation": "PIA",
+            "driverId": "lando-norris",
+            "firstName": "Lando",
+            "lastName": "Norris",
+            "abbreviation": "NOR",
             "position": 1,
-            "points": 336,
-            "permanentNumber": "81",
+            "points": 357,
+            "permanentNumber": "4",
             "constructorId": "mclaren"
         },
         "constructorLeader": {
@@ -356,7 +356,7 @@
             "constructorId": "mclaren",
             "name": "McLaren",
             "position": 1,
-            "points": 650
+            "points": 713
         }
     }
 ]

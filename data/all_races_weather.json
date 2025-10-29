@@ -4570,5 +4570,13 @@
   {
     "raceId": 1143,
     "weather": "night"
+  },
+  {
+    "raceId": 1144,
+    "weather": "clear"
+  },
+  {
+    "raceId": 1145,
+    "weather": "clear"
   }
 ]
