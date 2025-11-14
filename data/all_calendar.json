@@ -29340,7 +29340,7 @@
                     "raceId": 1146,
                     "circuitId": "interlagos",
                     "round": 21,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
@@ -29381,7 +29381,7 @@
                     "raceId": 1147,
                     "circuitId": "las-vegas",
                     "round": 22,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
