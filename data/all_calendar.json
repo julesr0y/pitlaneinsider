@@ -29377,34 +29377,34 @@
                     "country": "united-states-of-america",
                     "name": "Las Vegas GP",
                     "year": 2025,
-                    "date": "2025-11-23",
+                    "date": "2025-11-22",
                     "raceId": 1147,
                     "circuitId": "las-vegas",
                     "round": 22,
-                    "isNextGp": true
+                    "isNextGp": false
                 }
             ]
         },
         {
             "dateDetails": [
                 {
-                    "freePractice1Date": "2025-11-21",
+                    "freePractice1Date": "2025-11-20",
                     "freePractice1Time": "00:30"
                 },
                 {
-                    "freePractice2Date": "2025-11-21",
+                    "freePractice2Date": "2025-11-20",
                     "freePractice2Time": "04:00"
                 },
                 {
-                    "freePractice3Date": "2025-11-22",
+                    "freePractice3Date": "2025-11-21",
                     "freePractice3Time": "00:30"
                 },
                 {
-                    "qualifyingDate": "2025-11-22",
+                    "qualifyingDate": "2025-11-21",
                     "qualifyingTime": "04:00"
                 },
                 {
-                    "raceDate": "2025-11-23",
+                    "raceDate": "2025-11-22",
                     "raceTime": "04:00"
                 }
             ]
@@ -29422,7 +29422,7 @@
                     "raceId": 1148,
                     "circuitId": "lusail",
                     "round": 23,
-                    "isNextGp": false
+                    "isNextGp": true
                 }
             ]
         },
