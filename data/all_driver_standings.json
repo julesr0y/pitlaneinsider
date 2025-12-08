@@ -18013,7 +18013,7 @@
         "lastName": "Norris",
         "abbreviation": "NOR",
         "position": 1,
-        "points": 408,
+        "points": 423,
         "permanentNumber": "4",
         "constructorId": "mclaren"
     },
@@ -18024,7 +18024,7 @@
         "lastName": "Verstappen",
         "abbreviation": "VER",
         "position": 2,
-        "points": 396,
+        "points": 421,
         "permanentNumber": "33",
         "constructorId": "red-bull"
     },
@@ -18035,7 +18035,7 @@
         "lastName": "Piastri",
         "abbreviation": "PIA",
         "position": 3,
-        "points": 392,
+        "points": 410,
         "permanentNumber": "81",
         "constructorId": "mclaren"
     },
@@ -18046,7 +18046,7 @@
         "lastName": "Russell",
         "abbreviation": "RUS",
         "position": 4,
-        "points": 309,
+        "points": 319,
         "permanentNumber": "63",
         "constructorId": "mercedes"
     },
@@ -18057,7 +18057,7 @@
         "lastName": "Leclerc",
         "abbreviation": "LEC",
         "position": 5,
-        "points": 230,
+        "points": 242,
         "permanentNumber": "16",
         "constructorId": "ferrari"
     },
@@ -18068,7 +18068,7 @@
         "lastName": "Hamilton",
         "abbreviation": "HAM",
         "position": 6,
-        "points": 152,
+        "points": 156,
         "permanentNumber": "44",
         "constructorId": "ferrari"
     },
@@ -18107,14 +18107,14 @@
     },
     {
         "year": 2025,
-        "driverId": "isack-hadjar",
-        "firstName": "Isack",
-        "lastName": "Hadjar",
-        "abbreviation": "HAD",
+        "driverId": "fernando-alonso",
+        "firstName": "Fernando",
+        "lastName": "Alonso",
+        "abbreviation": "ALO",
         "position": 10,
-        "points": 51,
-        "permanentNumber": "6",
-        "constructorId": "racing-bulls"
+        "points": 56,
+        "permanentNumber": "14",
+        "constructorId": "aston-martin"
     },
     {
         "year": 2025,
@@ -18123,20 +18123,20 @@
         "lastName": "Hülkenberg",
         "abbreviation": "HUL",
         "position": 11,
-        "points": 49,
+        "points": 51,
         "permanentNumber": "27",
         "constructorId": "kick-sauber"
     },
     {
         "year": 2025,
-        "driverId": "fernando-alonso",
-        "firstName": "Fernando",
-        "lastName": "Alonso",
-        "abbreviation": "ALO",
+        "driverId": "isack-hadjar",
+        "firstName": "Isack",
+        "lastName": "Hadjar",
+        "abbreviation": "HAD",
         "position": 12,
-        "points": 48,
-        "permanentNumber": "14",
-        "constructorId": "aston-martin"
+        "points": 51,
+        "permanentNumber": "6",
+        "constructorId": "racing-bulls"
     },
     {
         "year": 2025,
@@ -18162,23 +18162,12 @@
     },
     {
         "year": 2025,
-        "driverId": "yuki-tsunoda",
-        "firstName": "Yuki",
-        "lastName": "Tsunoda",
-        "abbreviation": "TSU",
-        "position": 15,
-        "points": 33,
-        "permanentNumber": "22",
-        "constructorId": "racing-bulls"
-    },
-    {
-        "year": 2025,
         "driverId": "esteban-ocon",
         "firstName": "Esteban",
         "lastName": "Ocon",
         "abbreviation": "OCO",
-        "position": 16,
-        "points": 32,
+        "position": 15,
+        "points": 38,
         "permanentNumber": "31",
         "constructorId": "haas"
     },
@@ -18188,10 +18177,21 @@
         "firstName": "Lance",
         "lastName": "Stroll",
         "abbreviation": "STR",
-        "position": 17,
-        "points": 32,
+        "position": 16,
+        "points": 33,
         "permanentNumber": "18",
         "constructorId": "aston-martin"
+    },
+    {
+        "year": 2025,
+        "driverId": "yuki-tsunoda",
+        "firstName": "Yuki",
+        "lastName": "Tsunoda",
+        "abbreviation": "TSU",
+        "position": 17,
+        "points": 33,
+        "permanentNumber": "22",
+        "constructorId": "racing-bulls"
     },
     {
         "year": 2025,

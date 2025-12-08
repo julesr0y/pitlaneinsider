@@ -523,5 +523,12 @@
         "firstName": "Max",
         "lastName": "Verstappen",
         "abbreviation": "VER"
+    },
+    {
+        "year": 2025,
+        "driverId": "lando-norris",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "abbreviation": "NOR"
     }
 ]
