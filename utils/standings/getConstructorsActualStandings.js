@@ -10,7 +10,7 @@ async function getConstructorsActualStandings() {
     try {
         const constructorsActualStandingsDataFilePath = path.join(__dirname, '../../data/all_constructor_standings.json');
         const constructorsActualStandingsData = JSON.parse(fs.readFileSync(constructorsActualStandingsDataFilePath, 'utf-8'));
-        const targetedSeasonData = constructorsActualStandingsData.filter(race => race.year == 2025);
+        const targetedSeasonData = constructorsActualStandingsData.filter(race => race.year == 2026);
 
         return targetedSeasonData;
     } catch (error) {

@@ -29491,5 +29491,981 @@
                 }
             ]
         }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "australia",
+                    "country": "australia",
+                    "name": "Australian GP",
+                    "year": 2026,
+                    "date": "2026-03-08",
+                    "raceId": 1150,
+                    "circuitId": "melbourne",
+                    "round": 1,
+                    "isNextGp": true
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-03-06",
+                    "freePractice1Time": "01:30"
+                },
+                {
+                    "freePractice2Date": "2026-03-06",
+                    "freePractice2Time": "05:00"
+                },
+                {
+                    "freePractice3Date": "2026-03-07",
+                    "freePractice3Time": "01:30"
+                },
+                {
+                    "qualifyingDate": "2026-03-07",
+                    "qualifyingTime": "05:00"
+                },
+                {
+                    "raceDate": "2026-03-08",
+                    "raceTime": "04:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "china",
+                    "country": "china",
+                    "name": "Chinese GP",
+                    "year": 2026,
+                    "date": "2026-03-15",
+                    "raceId": 1151,
+                    "circuitId": "shanghai",
+                    "round": 2,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-03-13",
+                    "freePractice1Time": "03:30"
+                },
+                {
+                    "sprintQualifyingDate": "2026-03-13",
+                    "sprintQualifyingTime": "07:30"
+                },
+                {
+                    "qualifyingDate": "2026-03-14",
+                    "qualifyingTime": "07:00"
+                },
+                {
+                    "sprintRaceDate": "2026-03-14",
+                    "sprintRaceTime": "03:00"
+                },
+                {
+                    "raceDate": "2026-03-15",
+                    "raceTime": "07:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "japan",
+                    "country": "japan",
+                    "name": "Japanese GP",
+                    "year": 2026,
+                    "date": "2026-03-29",
+                    "raceId": 1152,
+                    "circuitId": "suzuka",
+                    "round": 3,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-03-27",
+                    "freePractice1Time": "02:30"
+                },
+                {
+                    "freePractice2Date": "2026-03-27",
+                    "freePractice2Time": "06:00"
+                },
+                {
+                    "freePractice3Date": "2026-03-28",
+                    "freePractice3Time": "02:30"
+                },
+                {
+                    "qualifyingDate": "2026-03-28",
+                    "qualifyingTime": "06:00"
+                },
+                {
+                    "raceDate": "2026-03-29",
+                    "raceTime": "05:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "bahrain",
+                    "country": "bahrain",
+                    "name": "Bahrain GP",
+                    "year": 2026,
+                    "date": "2026-04-12",
+                    "raceId": 1153,
+                    "circuitId": "bahrain",
+                    "round": 4,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-04-10",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-04-10",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-04-11",
+                    "freePractice3Time": "12:30"
+                },
+                {
+                    "qualifyingDate": "2026-04-11",
+                    "qualifyingTime": "16:00"
+                },
+                {
+                    "raceDate": "2026-04-12",
+                    "raceTime": "15:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "saudi-arabia",
+                    "country": "saudi-arabia",
+                    "name": "Saudi Arabian GP",
+                    "year": 2026,
+                    "date": "2026-04-19",
+                    "raceId": 1154,
+                    "circuitId": "jeddah",
+                    "round": 5,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-04-17",
+                    "freePractice1Time": "13:30"
+                },
+                {
+                    "freePractice2Date": "2026-04-17",
+                    "freePractice2Time": "17:00"
+                },
+                {
+                    "freePractice3Date": "2026-04-18",
+                    "freePractice3Time": "13:30"
+                },
+                {
+                    "qualifyingDate": "2026-04-18",
+                    "qualifyingTime": "17:00"
+                },
+                {
+                    "raceDate": "2026-04-19",
+                    "raceTime": "17:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "miami",
+                    "country": "united-states-of-america",
+                    "name": "Miami GP",
+                    "year": 2026,
+                    "date": "2026-05-03",
+                    "raceId": 1155,
+                    "circuitId": "miami",
+                    "round": 6,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-05-01",
+                    "freePractice1Time": "16:30"
+                },
+                {
+                    "sprintQualifyingDate": "2026-05-01",
+                    "sprintQualifyingTime": "20:30"
+                },
+                {
+                    "qualifyingDate": "2026-05-02",
+                    "qualifyingTime": "20:00"
+                },
+                {
+                    "sprintRaceDate": "2026-05-02",
+                    "sprintRaceTime": "16:00"
+                },
+                {
+                    "raceDate": "2026-05-03",
+                    "raceTime": "20:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "canada",
+                    "country": "canada",
+                    "name": "Canadian GP",
+                    "year": 2026,
+                    "date": "2026-05-24",
+                    "raceId": 1156,
+                    "circuitId": "montreal",
+                    "round": 7,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-05-22",
+                    "freePractice1Time": "16:30"
+                },
+                {
+                    "sprintQualifyingDate": "2026-05-22",
+                    "sprintQualifyingTime": "20:30"
+                },
+                {
+                    "qualifyingDate": "2026-05-23",
+                    "qualifyingTime": "20:00"
+                },
+                {
+                    "sprintRaceDate": "2026-05-23",
+                    "sprintRaceTime": "16:00"
+                },
+                {
+                    "raceDate": "2026-05-24",
+                    "raceTime": "20:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "monaco",
+                    "country": "monaco",
+                    "name": "Monaco GP",
+                    "year": 2026,
+                    "date": "2026-06-07",
+                    "raceId": 1157,
+                    "circuitId": "monaco",
+                    "round": 8,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-06-05",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-06-05",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-06-06",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-06-06",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-06-07",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "barcelona-catalunya",
+                    "country": "spain",
+                    "name": "Barcelona-Catalunya GP",
+                    "year": 2026,
+                    "date": "2026-06-14",
+                    "raceId": 1158,
+                    "circuitId": "catalunya",
+                    "round": 9,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-06-12",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-06-12",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-06-13",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-06-13",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-06-14",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "austria",
+                    "country": "austria",
+                    "name": "Austrian GP",
+                    "year": 2026,
+                    "date": "2026-06-28",
+                    "raceId": 1159,
+                    "circuitId": "spielberg",
+                    "round": 10,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-06-26",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-06-26",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-06-27",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-06-27",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-06-28",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "great-britain",
+                    "country": "united-kingdom",
+                    "name": "British GP",
+                    "year": 2026,
+                    "date": "2026-07-05",
+                    "raceId": 1160,
+                    "circuitId": "silverstone",
+                    "round": 11,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-07-03",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "sprintQualifyingDate": "2026-07-03",
+                    "sprintQualifyingTime": "15:30"
+                },
+                {
+                    "qualifyingDate": "2026-07-04",
+                    "qualifyingTime": "15:00"
+                },
+                {
+                    "sprintRaceDate": "2026-07-04",
+                    "sprintRaceTime": "11:00"
+                },
+                {
+                    "raceDate": "2026-07-05",
+                    "raceTime": "14:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "belgium",
+                    "country": "belgium",
+                    "name": "Belgian GP",
+                    "year": 2026,
+                    "date": "2026-07-19",
+                    "raceId": 1161,
+                    "circuitId": "spa-francorchamps",
+                    "round": 12,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-07-17",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-07-17",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-07-18",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-07-18",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-07-19",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "hungary",
+                    "country": "hungary",
+                    "name": "Hungarian GP",
+                    "year": 2026,
+                    "date": "2026-07-26",
+                    "raceId": 1162,
+                    "circuitId": "hungaroring",
+                    "round": 13,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-07-24",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-07-24",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-07-25",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-07-25",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-07-26",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "netherlands",
+                    "country": "netherlands",
+                    "name": "Dutch GP",
+                    "year": 2026,
+                    "date": "2026-08-23",
+                    "raceId": 1163,
+                    "circuitId": "zandvoort",
+                    "round": 14,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-08-21",
+                    "freePractice1Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-08-22",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-08-23",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "italy",
+                    "country": "italy",
+                    "name": "Italian GP",
+                    "year": 2026,
+                    "date": "2026-09-06",
+                    "raceId": 1164,
+                    "circuitId": "monza",
+                    "round": 15,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-09-04",
+                    "freePractice1Time": "10:30"
+                },
+                {
+                    "freePractice2Date": "2026-09-04",
+                    "freePractice2Time": "14:00"
+                },
+                {
+                    "freePractice3Date": "2026-09-05",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-09-05",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-09-06",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "spain",
+                    "country": "spain",
+                    "name": "Spanish GP",
+                    "year": 2026,
+                    "date": "2026-09-13",
+                    "raceId": 1165,
+                    "circuitId": "madring",
+                    "round": 16,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-09-11",
+                    "freePractice1Time": "11:30"
+                },
+                {
+                    "freePractice2Date": "2026-09-11",
+                    "freePractice2Time": "15:00"
+                },
+                {
+                    "freePractice3Date": "2026-09-12",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-09-12",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-09-13",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "azerbaijan",
+                    "country": "azerbaijan",
+                    "name": "Azerbaijan GP",
+                    "year": 2026,
+                    "date": "2026-09-26",
+                    "raceId": 1166,
+                    "circuitId": "baku",
+                    "round": 17,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-09-24",
+                    "freePractice1Time": "08:30"
+                },
+                {
+                    "freePractice2Date": "2026-09-24",
+                    "freePractice2Time": "12:00"
+                },
+                {
+                    "freePractice3Date": "2026-09-25",
+                    "freePractice3Time": "08:30"
+                },
+                {
+                    "qualifyingDate": "2026-09-25",
+                    "qualifyingTime": "12:00"
+                },
+                {
+                    "raceDate": "2026-09-26",
+                    "raceTime": "11:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "singapore",
+                    "country": "singapore",
+                    "name": "Singapore GP",
+                    "year": 2026,
+                    "date": "2026-10-11",
+                    "raceId": 1167,
+                    "circuitId": "marina-bay",
+                    "round": 18,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-10-09",
+                    "freePractice1Time": "09:30"
+                },
+                {
+                    "sprintQualifyingDate": "2026-10-09",
+                    "sprintQualifyingTime": "12:30"
+                },
+                {
+                    "qualifyingDate": "2026-10-10",
+                    "qualifyingTime": "13:00"
+                },
+                {
+                    "sprintRaceDate": "2026-10-10",
+                    "sprintRaceTime": "09:00"
+                },
+                {
+                    "raceDate": "2026-10-11",
+                    "raceTime": "12:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "united-states",
+                    "country": "united-states-of-america",
+                    "name": "United States GP",
+                    "year": 2026,
+                    "date": "2026-10-25",
+                    "raceId": 1168,
+                    "circuitId": "austin",
+                    "round": 19,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-10-23",
+                    "freePractice1Time": "17:30"
+                },
+                {
+                    "freePractice2Date": "2026-10-23",
+                    "freePractice2Time": "21:00"
+                },
+                {
+                    "freePractice3Date": "2026-10-24",
+                    "freePractice3Time": "17:30"
+                },
+                {
+                    "qualifyingDate": "2026-10-24",
+                    "qualifyingTime": "21:00"
+                },
+                {
+                    "raceDate": "2026-10-25",
+                    "raceTime": "20:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "mexico",
+                    "country": "mexico",
+                    "name": "Mexican GP",
+                    "year": 2026,
+                    "date": "2026-11-01",
+                    "raceId": 1169,
+                    "circuitId": "mexico-city",
+                    "round": 20,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-10-30",
+                    "freePractice1Time": "18:30"
+                },
+                {
+                    "freePractice2Date": "2026-10-30",
+                    "freePractice2Time": "22:00"
+                },
+                {
+                    "freePractice3Date": "2026-10-31",
+                    "freePractice3Time": "17:30"
+                },
+                {
+                    "qualifyingDate": "2026-10-31",
+                    "qualifyingTime": "21:00"
+                },
+                {
+                    "raceDate": "2026-11-01",
+                    "raceTime": "20:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "sao-paulo",
+                    "country": "brazil",
+                    "name": "São Paulo GP",
+                    "year": 2026,
+                    "date": "2026-11-08",
+                    "raceId": 1170,
+                    "circuitId": "interlagos",
+                    "round": 21,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-11-06",
+                    "freePractice1Time": "15:30"
+                },
+                {
+                    "freePractice2Date": "2026-11-06",
+                    "freePractice2Time": "19:00"
+                },
+                {
+                    "freePractice3Date": "2026-11-07",
+                    "freePractice3Time": "14:30"
+                },
+                {
+                    "qualifyingDate": "2026-11-07",
+                    "qualifyingTime": "18:00"
+                },
+                {
+                    "raceDate": "2026-11-08",
+                    "raceTime": "17:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "las-vegas",
+                    "country": "united-states-of-america",
+                    "name": "Las Vegas GP",
+                    "year": 2026,
+                    "date": "2026-11-22",
+                    "raceId": 1171,
+                    "circuitId": "las-vegas",
+                    "round": 22,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-11-20",
+                    "freePractice1Time": "00:30"
+                },
+                {
+                    "freePractice2Date": "2026-11-20",
+                    "freePractice2Time": "04:00"
+                },
+                {
+                    "freePractice3Date": "2026-11-21",
+                    "freePractice3Time": "00:30"
+                },
+                {
+                    "qualifyingDate": "2026-11-21",
+                    "qualifyingTime": "04:00"
+                },
+                {
+                    "raceDate": "2026-11-22",
+                    "raceTime": "04:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "qatar",
+                    "country": "qatar",
+                    "name": "Qatar GP",
+                    "year": 2026,
+                    "date": "2026-11-29",
+                    "raceId": 1172,
+                    "circuitId": "lusail",
+                    "round": 23,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-11-27",
+                    "freePractice1Time": "13:30"
+                },
+                {
+                    "freePractice2Date": "2026-11-27",
+                    "freePractice2Time": "17:00"
+                },
+                {
+                    "freePractice3Date": "2026-11-28",
+                    "freePractice3Time": "14:30"
+                },
+                {
+                    "qualifyingDate": "2026-11-28",
+                    "qualifyingTime": "18:00"
+                },
+                {
+                    "raceDate": "2026-11-29",
+                    "raceTime": "16:00"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "raceDetails": [
+                {
+                    "id": "abu-dhabi",
+                    "country": "united-arab-emirates",
+                    "name": "Abu Dhabi GP",
+                    "year": 2026,
+                    "date": "2026-12-06",
+                    "raceId": 1173,
+                    "circuitId": "yas-marina",
+                    "round": 24,
+                    "isNextGp": false
+                }
+            ]
+        },
+        {
+            "dateDetails": [
+                {
+                    "freePractice1Date": "2026-12-04",
+                    "freePractice1Time": "09:30"
+                },
+                {
+                    "freePractice2Date": "2026-12-04",
+                    "freePractice2Time": "13:00"
+                },
+                {
+                    "freePractice3Date": "2026-12-05",
+                    "freePractice3Time": "10:30"
+                },
+                {
+                    "qualifyingDate": "2026-12-05",
+                    "qualifyingTime": "14:00"
+                },
+                {
+                    "raceDate": "2026-12-06",
+                    "raceTime": "13:00"
+                }
+            ]
+        }
     ]
 ]

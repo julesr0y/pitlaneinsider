@@ -13,7 +13,7 @@ async function getActualSeasonCalendar() {
 
         var actualSeasonData = calendarData.filter(raceArray => {
             return raceArray.some(element => {
-                return element.raceDetails && element.raceDetails.some(detail => detail.year === 2025);
+                return element.raceDetails && element.raceDetails.some(detail => detail.year === 2026);
             });
         });
 
@@ -23,7 +23,7 @@ async function getActualSeasonCalendar() {
             raceArray.forEach(element => {
                 if (element.raceDetails) {
                     element.raceDetails.forEach(detail => {
-                        if (detail.year === 2025) {
+                        if (detail.year === 2026) {
                             raceInformation.id = detail.id;
                             raceInformation.country = detail.country;
                             raceInformation.name = detail.name;

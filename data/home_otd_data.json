@@ -9,14 +9,14 @@
         ],
         "driverOTD": [
             {
-                "driverId": "lewis-hamilton",
-                "driverFullName": "Lewis Hamilton"
+                "driverId": "fernando-alonso",
+                "driverFullName": "Fernando Alonso"
             }
         ],
         "constructorOTD": [
             {
-                "constructorId": "ferrari",
-                "constructorFullName": "Ferrari"
+                "constructorId": "red-bull",
+                "constructorFullName": "Red Bull Racing"
             }
         ]
     }

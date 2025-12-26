@@ -4968,5 +4968,82 @@
         "name": "Alpine",
         "position": 10,
         "points": 22
+    },
+    {
+        "year": 2026,
+        "constructorId": "mclaren",
+        "name": "McLaren",
+        "position": 1,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "mercedes",
+        "name": "Mercedes",
+        "position": 2,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "red-bull",
+        "name": "Red Bull",
+        "position": 3,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "ferrari",
+        "name": "Ferrari",
+        "position": 4,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "williams",
+        "name": "Williams",
+        "position": 5,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "racing-bulls",
+        "name": "Racing Bulls",
+        "position": 6,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "aston-martin",
+        "name": "Aston Martin",
+        "position": 7,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "haas",
+        "name": "Haas",
+        "position": 8,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "alpine",
+        "name": "Alpine",
+        "position": 9,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "audi",
+        "name": "Audi",
+        "position": 10,
+        "points": 0
+    },
+    {
+        "year": 2026,
+        "constructorId": "cadillac",
+        "name": "Cadillac",
+        "position": 11,
+        "points": 0
     }
 ]

@@ -45,7 +45,7 @@ router.get("/retroconstructorwinners", cors(), async (req, res) => {
 
 router.get("/retrostandings", cors(), (req, res) => {
     try {
-        res.redirect("retrostandings/2024");
+        res.redirect("retrostandings/2025");
     } catch (error) {
         res.render('security/error', { textError: '/retrostandings route, error during execution', error: error });
     }
@@ -63,7 +63,7 @@ router.get("/retrostandings/:season_id", cors(), async (req, res) => {
 
 router.get("/retrocalendar", cors(), (req, res) => {
     try {
-        res.redirect("/retroCalendar/2024");
+        res.redirect("/retroCalendar/2025");
     } catch (error) {
         res.render('security/error', { textError: '/retrocalendar route, error during execution', error: error });
     }

@@ -83,7 +83,7 @@
                                             <span>
                                                 <%= homeData[0].driverLeader.abbreviation %>
                                             </span>
-                                            <span class="text-<%= homeData[0].driverLeader.constructorId %>"> <% if(homeData[0].driverLeader.permanentNumber==33) { %> <%= 1 %> <% } else { %> <%= homeData[0].driverLeader.permanentNumber %> <% } %> </span>
+                                            <span class="text-<%= homeData[0].driverLeader.constructorId %>"> <% if(homeData[0].driverLeader.permanentNumber==4) { %> <%= 1 %> <% } else { %> <%= homeData[0].driverLeader.permanentNumber %> <% } %> </span>
                                         </span>
                                         <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData[0].driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                     </span>
@@ -100,7 +100,7 @@
                             </a>
                         </div>
 
-                        <a href="/retrogpdetails/2025/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
+                        <a href="/retrogpdetails/2026/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
                             <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
                                 <span class="flex justify-center text-center mb-4 font-bold gap-2 pt-2">
                                     <%= __('home.last_race') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
@@ -180,7 +180,7 @@
                         <a href="/driverstandings" class="flex justify-center text-center font-bold"> <%= __('home.drivers_standings') %> </a>
                         <span class="flex justify-evenly">
                             <table>
-                                <% homeData[0].driverStandings.slice(0, 10).forEach(function(pilote) { %>
+                                <% homeData[0].driverStandings.slice(0, 11).forEach(function(pilote) { %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
@@ -195,7 +195,7 @@
                             </table>
                             <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
                             <table>
-                                <% homeData[0].driverStandings.slice(10, 20).forEach(function(pilote) { %>
+                                <% homeData[0].driverStandings.slice(11, 22).forEach(function(pilote) { %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
@@ -215,7 +215,7 @@
                         <a href="/constructorstandings" class="flex justify-center text-center font-bold"> <%= __('home.constructors_standings') %> </a>
                         <span class="flex justify-evenly">
                             <table>
-                                <% homeData[0].constructorStandings.slice(0, 10).forEach(function(constructor) { %>
+                                <% homeData[0].constructorStandings.slice(0, 11).forEach(function(constructor) { %>
                                 <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
