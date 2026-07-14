@@ -4,7 +4,7 @@
         <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
         <meta charset="UTF-8" />
-        <title>PLI - <%= __('retro_f1.all_seasons.gp_details.tab_title') %> <%= gpDetails.gpInfos[0].raceId %></title>
+        <title>PLI - <%= __('retro_f1.all_seasons.gp_details.tab_title') %> <%= gpDetails.gpInfos.id %></title>
         <link href="" rel="stylesheet" />
     </head>
 
@@ -13,33 +13,31 @@
             <div class="app-container">
                 <div class="text-center my-4 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:hidden">
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos[0].raceId %> </span>
+                        <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos.id %> </span>
                         <span class="flex flex-col">
-                            <%= gpDetails.gpInfos[0].gpOfficialName %>
-                            <img src="/img/countryFlags/<%= gpDetails.gpInfos[0].countryId %>.svg" alt="<%= gpDetails.gpInfos[0].countryId %>" class="h-6 w-auto" />
+                            <%= gpDetails.gpInfos.officialName %>
+                            <img src="/img/countryFlags/<%= gpDetails.gpInfos.circuit.countryId %>.svg" alt="<%= gpDetails.gpInfos.circuit.countryId %>" class="h-6 w-auto" />
                         </span>
                     </div>
                     <div class="flex items-center mt-2">
                         <div class="w-6/12">
                             <span>
-                                <a href="/circuit/<%= gpDetails.gpInfos[0].circuitId %>">
-                                    <img src="/img/circuits/<%= gpDetails.gpInfos[0].circuitId %>.svg" alt="<%= gpDetails.gpInfos[0].circuitId %>" />
+                                <a href="/circuit/<%= gpDetails.gpInfos.circuitId %>">
+                                    <img src="/img/circuits/<%= gpDetails.gpInfos.circuitId %>.svg" alt="<%= gpDetails.gpInfos.circuitId %>" />
                                 </a>
                             </span>
                         </div>
                         <div class="flex flex-col items-center w-6/12 text-sm gap-y-2">
                             <span>
-                                <%= gpDetails.gpInfos[0].date %>
+                                <%= gpDetails.gpInfos.date %>
                             </span>
                             <span>
-                                <%= gpDetails.gpInfos[0].gpFullName %>
+                                <%= (gpDetails.gpInfos.grandPrix.fullName || gpDetails.gpInfos.officialName) %>
                             </span>
                             <span>
-                                <%= gpDetails.gpInfos[0].circuitName %>
+                                <%= gpDetails.gpInfos.circuit.name %>
                             </span>
-                            <span title="<%= gpDetails.gpInfos[0].weather %>">
-                                <img src="/animations/<%= gpDetails.gpInfos[0].weather %>.gif" class="h-20 w-auto" />
-                            </span>
+
                         </div>
                     </div>
                 </div>
@@ -69,7 +67,7 @@
                             </span>
                         </div>
                         <div id="tables" class="overflow-x-scroll whitespace-nowrap no-scrollbar pt-2 w-full">
-                            <table id="tableRace">
+                            <table id="tableRace" data-title="Race">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -79,9 +77,9 @@
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gap') %></td>
                                 </tr>
 
-                                <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.position != null){ %>
-                                <% if (detail.gap=="DNQ" || detail.gap=="DNS" || detail.gap=="DNF" || detail.gap=="DSQ" || detail.gap=="NC" ) { %>
+                                <% gpDetails.raceData.sort((a, b) => (a.race ? a.race.positionDisplayOrder : 999) - (b.race ? b.race.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.race) { %>
+                                <% if (detail.race?.gap=="DNQ" || detail.race?.gap=="DNS" || detail.race?.gap=="DNF" || detail.race?.gap=="DSQ" || detail.race?.gap=="NC" ) { %>
                                 <tr class="text-hasnt-finished-race">
                                     <% } else { %>
                                 </tr>
@@ -89,29 +87,29 @@
                                 <tr>
                                     <% } %>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.race?.positionText ? (isNaN(detail.race?.positionText) ? detail.race?.positionText : String(detail.race?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
-                                                <span><%= detail.lastName %></span>
+                                                <span><%= detail.driver.lastName %></span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td>
-                                        <%= detail.gap %>
+                                        <%= detail.race?.gap || '+0.000' %>
                                     </td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
 
-                            <% if(gpDetails.gpInfos[0].sprintQualifyingFormat == "SPRINT_SHOOTOUT") { %>
+                            <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT" || gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
 
-                            <table id="tableFP1" class="hidden">
+                            <table id="tableFP1" class="hidden" data-title="FP1">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -121,31 +119,33 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position) %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.fp1Position != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp1) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.fp1?.positionText ? (isNaN(detail.fp1?.positionText) ? detail.fp1?.positionText : String(detail.fp1?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp1Time %></td>
+                                    <td class="pr-3"><%= detail.fp1?.time || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
 
-                            <table id="tableSQ" class="hidden">
+                            
+                            <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT") { %>
+                            <table id="tableSQ" class="hidden" data-title="SQ">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -155,31 +155,35 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.sprintQualiPosition - b.sprintQualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.sprintQualiPosition != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.sprintQuali ? a.sprintQuali.positionDisplayOrder : 999) - (b.sprintQuali ? b.sprintQuali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.sprintQuali) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.sprintQualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.sprintQuali?.positionText ? (isNaN(detail.sprintQuali?.positionText) ? detail.sprintQuali?.positionText : String(detail.sprintQuali?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.sprintQualiTime %></td>
+                                    <td class="pr-3"><%= detail.sprintQuali?.time || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
 
-                            <table id="tableSR" class="hidden">
+                            
+                            <% } %>
+
+                            <% if(gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
+                            <table id="tableFP2" class="hidden" data-title="FP2">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -189,31 +193,66 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.sprintRacePosition - b.sprintRacePosition); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.sprintRacePosition != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp2) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.sprintRacePosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.fp2?.positionText ? (isNaN(detail.fp2?.positionText) ? detail.fp2?.positionText : String(detail.fp2?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.sprintRaceGap %></td>
+                                    <td class="pr-3"><%= detail.fp2?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+                            <% } %>
+
+                            <table id="tableSR" class="hidden" data-title="Sprint Race">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Time</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.sprintRace ? a.sprintRace.positionDisplayOrder : 999) - (b.sprintRace ? b.sprintRace.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.sprintRace) { %>
+                                                                <tr>
+                                    <td class="pr-2">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3"><%= detail.sprintRace?.positionText ? (isNaN(detail.sprintRace?.positionText) ? detail.sprintRace?.positionText : String(detail.sprintRace?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1">
+                                                <span>
+                                                    <%= detail.driver.lastName %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2"></td>
+                                    <td class="pr-3"><%= detail.sprintRace?.gap || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
 
-                            <table id="tableQualification" class="hidden">
+                            <table id="tableQualification" class="hidden" data-title="Qualifications">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -227,30 +266,30 @@
                                     <td class="font-bold">Q3</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.qualiPosition != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.quali) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.q1time %></td>
+                                    <td class="pr-3"><%= detail.quali?.q1 || '-' %></td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.q2time %></td>
+                                    <td class="pr-3"><%= detail.quali?.q2 || '-' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td>
-                                        <%= detail.q3time %>
+                                        <%= detail.quali?.q3 || '-' %>
                                     </td>
                                 </tr>
                                 <% } %>
@@ -259,7 +298,7 @@
 
                             <% } else { %>
 
-                            <% if(gpDetails.gpInfos[0].date.split("-")[0] >= 1988) { %>
+                            <% if(gpDetails.gpInfos.date.split("-")[0] >= 1988) { %>
                             <table id="tableFP1" class="hidden">
                                 <tr>
                                     <td></td>
@@ -270,31 +309,31 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.fp1Position - b.fp1Position); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.fp1Position != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp1) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.fp1Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.fp1?.positionText ? (isNaN(detail.fp1?.positionText) ? detail.fp1?.positionText : String(detail.fp1?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp1Time %></td>
+                                    <td class="pr-3"><%= detail.fp1?.time || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
 
-                            <table id="tableFP2" class="hidden">
+                            <table id="tableFP2" class="hidden" data-title="FP2">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -304,33 +343,33 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.fp2Position - b.fp2Position); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.fp2Position != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp2) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.fp2Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.fp2?.positionText ? (isNaN(detail.fp2?.positionText) ? detail.fp2?.positionText : String(detail.fp2?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp2Time %></td>
+                                    <td class="pr-3"><%= detail.fp2?.time || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
                             <% } %>
 
-                            <% if(gpDetails.gpInfos[0].date.split("-")[0] >= 2004) { %>
-                            <table id="tableFP3" class="hidden">
+                            <% if(gpDetails.gpInfos.date.split("-")[0] >= 2004) { %>
+                            <table id="tableFP3" class="hidden" data-title="FP3">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -340,33 +379,33 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.fp3Position - b.fp3Position); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.fp3Position != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.fp3 ? a.fp3.positionDisplayOrder : 999) - (b.fp3 ? b.fp3.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp3) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.fp3Position).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.fp3?.positionText ? (isNaN(detail.fp3?.positionText) ? detail.fp3?.positionText : String(detail.fp3?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp3Time %></td>
+                                    <td class="pr-3"><%= detail.fp3?.time || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
                             <% } %>
 
-                            <% if(gpDetails.gpInfos[0].qualifyingFormat == "KNOCKOUT") { %>
-                            <table id="tableQualification" class="hidden">
+                            <% if(gpDetails.gpInfos.qualifyingFormat == "KNOCKOUT") { %>
+                            <table id="tableQualification" class="hidden" data-title="Qualifications">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -380,37 +419,37 @@
                                     <td class="font-bold">Q3</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.qualiPosition != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.quali) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.q1time %></td>
+                                    <td class="pr-3"><%= detail.quali?.q1 || '-' %></td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.q2time %></td>
+                                    <td class="pr-3"><%= detail.quali?.q2 || '-' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td>
-                                        <%= detail.q3time %>
+                                        <%= detail.quali?.q3 || '-' %>
                                     </td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
                             </table>
                             <% } else { %>
-                            <table id="tableQualification" class="hidden">
+                            <table id="tableQualification" class="hidden" data-title="Qualifications">
                                 <tr>
                                     <td></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
@@ -420,25 +459,25 @@
                                     <td class="font-bold">Time</td>
                                 </tr>
 
-                                <% gpDetails.raceData.sort((a, b)=> a.qualiPosition - b.qualiPosition); %> <% gpDetails.raceData.forEach(detail=> { %>
-                                <% if(detail.qualiPosition != null){ %>
-                                <tr>
+                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.quali) { %>
+                                                                <tr>
                                     <td class="pr-2">
-                                        <span class="border-2 border-<%= detail.constructorId %> h-auto w-1 box-border bg-<%= detail.constructorId %> rounded-3xl"> </span>
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
-                                    <td class="font-bold pr-3"><%= String(detail.qualiPosition).padStart(2, '0' ) %></td>
+                                    <td class="font-bold pr-3"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
                                     <td class="pl-3 border-l-2"></td>
                                     <td class="pr-3">
-                                        <a href="/driver/<%= detail.driverId %>">
+                                        <a href="/driver/<%= detail.driver.id %>">
                                             <span class="flex gap-x-1">
                                                 <span>
-                                                    <%= detail.lastName %>
+                                                    <%= detail.driver.lastName %>
                                                 </span>
                                             </span>
                                         </a>
                                     </td>
                                     <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.qualiTime %></td>
+                                    <td class="pr-3"><%= detail.quali?.time || '-' %></td>
                                 </tr>
                                 <% } %>
                                 <% }); %>
@@ -451,72 +490,70 @@
                     <div class="w-full gap-4">
                         <div class="text-center mb-8 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 hidden md:block">
                             <div class="flex flex-col items-center gap-2">
-                                <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos[0].raceId %> </span>
+                                <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos.id %> </span>
                                 <span class="flex gap-2">
-                                    <%= gpDetails.gpInfos[0].gpOfficialName %>
-                                    <img src="/img/countryFlags/<%= gpDetails.gpInfos[0].countryId %>.svg" alt="<%= gpDetails.gpInfos[0].countryId %>" class="h-6 w-auto" />
+                                    <%= gpDetails.gpInfos.officialName %>
+                                    <img src="/img/countryFlags/<%= gpDetails.gpInfos.circuit.countryId %>.svg" alt="<%= gpDetails.gpInfos.circuit.countryId %>" class="h-6 w-auto" />
                                 </span>
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="w-6/12">
                                     <span class="flex justify-center">
-                                        <a href="/circuit/<%= gpDetails.gpInfos[0].circuitId %>">
-                                            <img src="/img/circuits/<%= gpDetails.gpInfos[0].circuitId %>.svg" alt="<%= gpDetails.gpInfos[0].circuitId %>" class="h-44 w-auto" />
+                                        <a href="/circuit/<%= gpDetails.gpInfos.circuitId %>">
+                                            <img src="/img/circuits/<%= gpDetails.gpInfos.circuitId %>.svg" alt="<%= gpDetails.gpInfos.circuitId %>" class="h-44 w-auto" />
                                         </a>
                                     </span>
                                 </div>
                                 <div class="flex flex-col items-center w-6/12 text-sm gap-y-2">
                                     <span>
-                                        <%= gpDetails.gpInfos[0].date %>
+                                        <%= gpDetails.gpInfos.date %>
                                     </span>
                                     <span>
-                                        <%= gpDetails.gpInfos[0].gpFullName %>
+                                        <%= (gpDetails.gpInfos.grandPrix.fullName || gpDetails.gpInfos.officialName) %>
                                     </span>
                                     <span>
-                                        <%= gpDetails.gpInfos[0].circuitName %>
+                                        <%= gpDetails.gpInfos.circuit.name %>
                                     </span>
-                                    <span title="<%= gpDetails.gpInfos[0].weather %>">
-                                        <img src="/animations/<%= gpDetails.gpInfos[0].weather %>.gif" class="h-20 w-auto" />
-                                    </span>
+
                                 </div>
                             </div>
                         </div>
 
                         <span class="grid grid-cols-12 md:flex-col items-center gap-1">
-                            <% gpDetails.raceData.forEach(function(grid){ if (grid.qualiPosition==1) { %>
-                            <a href="/driver/<%= grid.driverId %>" class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
+                            <% gpDetails.raceData.forEach(function(grid){ if (grid.quali?.positionNumber==1) { %>
+                            <a href="/driver/<%= grid.driver.id %>" class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
                                 <span>
                                     <%= __('retro_f1.all_seasons.gp_details.poleposition') %>
                                 </span>
-                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>" class="h-24 w-auto" />
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= grid.driver.id %>.webp" alt="<%= grid.driver.lastName %>" class="h-24 w-auto" />
                             </a>
-                            <% }}) %>
-                            <% gpDetails.raceData.forEach(function(grid){ if (grid.position==1) { %>
-                            <a href="/driver/<%= grid.driverId %>" class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
+                            <% } }) %>
+                            <% gpDetails.raceData.forEach(function(grid){ if (grid.race?.positionNumber==1) { %>
+                            <a href="/driver/<%= grid.driver.id %>" class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
                                 <span>
                                     <%= __('retro_f1.all_seasons.gp_details.winner') %>
                                 </span>
-                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= grid.driverId %>.webp" alt="<%= grid.lastName %>" class="h-24 w-auto" />
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= grid.driver.id %>.webp" alt="<%= grid.driver.lastName %>" class="h-24 w-auto" />
                             </a>
-                            <% }}) %>
+                            <% } }) %>
                         </span>
                         <br />
                         <span class="grid grid-cols-12 md:flex-col items-center gap-1">
                             <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
-                                <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLapTime !=null) { %>
+                                <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLap?.time !=null) { %>
                                 <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestLap') %> </span>
                                 <div class="flex flex-col items-center grow justify-center w-full">
                                     <div>
-                                        <%= lap.abbreviation %>
-                                        - <span class="text-fuchsia-700"> <%= lap.fastestLapTime %> </span>
+                                        <%= lap.driver.abbreviation %>
+                                        - <span class="text-fuchsia-700"> <%= lap.fastestLap?.time %> </span>
                                     </div>
                                 </div>
-                                <% }}) %>
+                                <% } }) %>
                             </div>
                             <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
-                                <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPitTime !=null) { %>
+                                <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPit?.time !=null) { %>
                                 <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestPit') %> </span>
-                                <div class="flex flex-col items-center grow justify-center w-full"><%= pit.abbreviation %> - <%= pit.fastestPitTime %></div>
+                                <div class="flex flex-col items-center grow justify-center w-full"><%= pit.driver.abbreviation %> - <%= pit.fastestPit?.time %></div>
                                 <% }}); %>
                             </div>
                         </span>
@@ -532,10 +569,10 @@
         const tables = document.querySelectorAll('#tables table');
         const tableTitle = document.querySelector('#tableTitle');
 
-        const sprintQualifyingFormat = '<%= gpDetails.gpInfos[0].sprintQualifyingFormat %>';
-        const qualifyingFormat = '<%= gpDetails.gpInfos[0].qualifyingFormat %>';
+        const sprintQualifyingFormat = '<%= gpDetails.gpInfos.sprintQualifyingFormat %>';
+        const qualifyingFormat = '<%= gpDetails.gpInfos.qualifyingFormat %>';
 
-        const date = parseInt('<%= gpDetails.gpInfos[0].date.split("-")[0] %>');
+        const date = parseInt('<%= gpDetails.gpInfos.date.split("-")[0] %>');
 
         function showTable(index) {
             tables.forEach((table, i) => {

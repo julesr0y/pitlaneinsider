@@ -10,6 +10,10 @@ app.use(compression());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// app.set('view options', {
+//     compileDebug: true,
+//     debug: true // <--- Force l'affichage du code compilé dans la console
+// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
