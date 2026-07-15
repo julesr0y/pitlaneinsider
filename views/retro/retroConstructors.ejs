@@ -35,7 +35,15 @@
                         <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4" id="<%= constructor.name %>">
                             <div class="block text-center relative">
                                 <div class="relative mb-4">
-                                    <img src="/img/constructors/<%= constructor.constructorId %>.webp" onerror="this.onerror=null; this.src='/img/constructors/unknown.webp'" alt="<%= constructor.name %>" class="w-full h-40 object-contain" />
+                                    <img
+                                        src="/img/constructors/<%= constructor.constructorId %>.webp"
+                                        onerror="
+                                            this.onerror = null;
+                                            this.src = '/img/constructors/unknown.webp';
+                                        "
+                                        alt="<%= constructor.name %>"
+                                        class="w-full h-40 object-contain"
+                                    />
                                 </div>
                                 <div class="text-xl font-bold"><%= constructor.name %></div>
                             </div>

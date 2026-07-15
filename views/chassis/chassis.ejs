@@ -58,28 +58,27 @@
                             </span>
                         </span>
                     </div>
-                
-                        <span class="grid grid-cols-12 mt-4">
-                            <span class="col-span-12 flex flex-col items-center">
-                                <% if (chassisData.engines.length > 0) { %>
-                                    <div class="text-t-s-<%= theme %> text-xs mt-4 mb-2"><%= __('chassis.engines') || 'Moteurs' %></div>
-                                    <div class="flex gap-4 flex-wrap justify-center">
-                                        <% chassisData.engines.forEach(engine => { %>
-                                            <span class="text-sm"><%= engine.name %></span>
-                                        <% }); %>
-                                    </div>
-                                <% } %>
-                                <% if (chassisData.tyres.length > 0) { %>
-                                    <div class="text-t-s-<%= theme %> text-xs mt-4 mb-2"><%= __('chassis.tyres') || 'Pneus' %></div>
-                                    <div class="flex gap-4 flex-wrap justify-center">
-                                        <% chassisData.tyres.forEach(tyre => { %>
-                                            <span class="text-sm"><%= tyre.name %></span>
-                                        <% }); %>
-                                    </div>
-                                <% } %>
-                            </span>
+
+                    <span class="grid grid-cols-12 mt-4">
+                        <span class="col-span-12 flex flex-col items-center">
+                            <% if (chassisData.engines.length > 0) { %>
+                            <div class="text-t-s-<%= theme %> text-xs mt-4 mb-2"><%= __('chassis.engines') || 'Moteurs' %></div>
+                            <div class="flex gap-4 flex-wrap justify-center">
+                                <% chassisData.engines.forEach(engine => { %>
+                                <span class="text-sm"><%= engine.name %></span>
+                                <% }); %>
+                            </div>
+                            <% } %>
+                            <% if (chassisData.tyres.length > 0) { %>
+                            <div class="text-t-s-<%= theme %> text-xs mt-4 mb-2"><%= __('chassis.tyres') || 'Pneus' %></div>
+                            <div class="flex gap-4 flex-wrap justify-center">
+                                <% chassisData.tyres.forEach(tyre => { %>
+                                <span class="text-sm"><%= tyre.name %></span>
+                                <% }); %>
+                            </div>
+                            <% } %>
                         </span>
-                    </div>
+                    </span>
                 </div>
             </div>
         </main>

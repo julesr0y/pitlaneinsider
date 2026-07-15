@@ -26,12 +26,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const fs = require('fs');
-const path = require('path');
-const msgpack = require('msgpack-lite');
+            <pre class="prettyprint source linenums"><code>const path = require('path');
+
+// Load JSON data in memory once to act as cache and improve performance
+const racesData = require('../../data/f1db/f1db-races.json');
+const gpData = require('../../data/f1db/f1db-grands-prix.json');
+const circuitsData = require('../../data/f1db/f1db-circuits.json');
+const driversData = require('../../data/f1db/f1db-drivers.json');
+
+const raceResultsData = require('../../data/f1db/f1db-races-race-results.json');
+const fp1Data = require('../../data/f1db/f1db-races-free-practice-1-results.json');
+const fp2Data = require('../../data/f1db/f1db-races-free-practice-2-results.json');
+const fp3Data = require('../../data/f1db/f1db-races-free-practice-3-results.json');
+const qualiData = require('../../data/f1db/f1db-races-qualifying-results.json');
+const sprintQualiData = require('../../data/f1db/f1db-races-sprint-qualifying-results.json');
+const sprintRaceData = require('../../data/f1db/f1db-races-sprint-race-results.json');
+const fastestLapData = require('../../data/f1db/f1db-races-fastest-laps.json');
+const pitStopsData = require('../../data/f1db/f1db-races-pit-stops.json');
 
 /**
- * @description Returns data of a specific GP
+ * @description Returns data of a specific GP with native f1db structure
  * @async
  * @param {Int} year
  * @param {Int} gp_id
@@ -39,69 +53,124 @@ const msgpack = require('msgpack-lite');
  */
 async function getGPDetail(year, gp_id) {
     try {
-        const racesResultsFilePath = path.join(__dirname, `../../data/seasons/${year}/pli-data-sessions-results.msgpack`);
-        const racesResultsData = msgpack.decode(fs.readFileSync(racesResultsFilePath));
+        const raceId = parseInt(gp_id);
+        const raceYear = parseInt(year);
 
-        let raceData = [];
-        let gpInfos = [];
+        const race = racesData.find(r => r.id === raceId &amp;&amp; r.year === raceYear);
+        if (!race) {
+            return { gpInfos: {}, raceData: [] };
+        }
 
-        racesResultsData[0].raceInfo.forEach(race => {
-            if (race.raceId == gp_id) {
-                const gpInfo = {
-                    raceId: race.raceId,
-                    gpId: race.gpId,
-                    gpOfficialName: race.gpOfficialName,
-                    gpShortName: race.gpShortName,
-                    gpFullName: race.gpFullName,
-                    countryId: race.countryId,
-                    circuitId: race.circuitId,
-                    circuitName: race.circuitName,
-                    date: race.date,
-                    weather: race.weather,
-                    sprintQualifyingFormat: race.sprintQualifyingFormat,
-                    qualifyingFormat: race.qualifyingFormat
+        const grandPrix = gpData.find(g => g.id === race.grandPrixId) || {};
+        const circuit = circuitsData.find(c => c.id === race.circuitId) || {};
+
+        const gpInfos = {
+            ...race,
+            grandPrix: grandPrix,
+            circuit: circuit
+        };
+
+        const raceResults = raceResultsData.filter(r => r.raceId === raceId);
+        const fp1Results = fp1Data.filter(r => r.raceId === raceId);
+        const fp2Results = fp2Data.filter(r => r.raceId === raceId);
+        const fp3Results = fp3Data.filter(r => r.raceId === raceId);
+        const qualiResults = qualiData.filter(r => r.raceId === raceId);
+        const sqResults = sprintQualiData.filter(r => r.raceId === raceId);
+        const srResults = sprintRaceData.filter(r => r.raceId === raceId);
+        const fLapResults = fastestLapData.filter(r => r.raceId === raceId);
+        const pitResults = pitStopsData.filter(r => r.raceId === raceId);
+
+        let raceDataMap = {};
+
+        function initDriver(driverId) {
+            if (!raceDataMap[driverId]) {
+                const driver = driversData.find(d => d.id === driverId) || {};
+                raceDataMap[driverId] = {
+                    driver: driver,
+                    race: null,
+                    fp1: null,
+                    fp2: null,
+                    fp3: null,
+                    quali: null,
+                    sprintQuali: null,
+                    sprintRace: null,
+                    fastestLap: null,
+                    fastestPit: null
                 };
-                gpInfos.push(gpInfo);
             }
+            return raceDataMap[driverId];
+        }
+
+        // Race Results
+        raceResults.forEach(res => {
+            const drv = initDriver(res.driverId);
+            // In case of gap being null for DNF, we use positionText (to keep the string value like "DNF")
+            // We just override it in a new object so we don't mutate the global f1db cache
+            const raceObj = { ...res };
+            if (!raceObj.gap &amp;&amp; isNaN(parseInt(raceObj.positionText))) {
+                raceObj.gap = raceObj.positionText;
+            }
+            drv.race = raceObj;
         });
 
-        racesResultsData[0].results.forEach(driver => {
-            if (driver.raceId == gp_id) {
-                const driverInfo = {
-                    constructorId: driver.constructorId,
-                    driverId: driver.driverId,
-                    firstName: driver.firstName,
-                    lastName: driver.lastName,
-                    abbreviation: driver.abbreviation,
-                    fp1Position: driver.fp1Position,
-                    fp1Time: driver.fp1Time,
-                    fp2Position: driver.fp2Position,
-                    fp2Time: driver.fp2Time,
-                    fp3Position: driver.fp3Position,
-                    fp3Time: driver.fp3Time,
-                    qualiPosition: driver.qualiPosition,
-                    qualiTime: driver.qualiTime,
-                    q1time: driver.q1time,
-                    q2time: driver.q2time,
-                    q3time: driver.q3time,
-                    sprintQualiPosition: driver.sprintQualiPosition,
-                    sprintQualiTime: driver.sprintQualiTime,
-                    sprintRacePosition: driver.sprintRacePosition,
-                    sprintRaceGap: driver.sprintRaceGap,
-                    sprintRacePoints: driver.sprintRacePoints,
-                    position: driver.position,
-                    gap: driver.gap,
-                    racePoints: driver.racePoints,
-                    fastestLapTime: driver.fastestLapTime,
-                    fastestPitTime: driver.fastestPitTime,
-                    sprintQualifyingFormat: driver.sprintQualifyingFormat,
-                    qualifyingFormat: driver.qualifyingFormat
-                };
-                raceData.push(driverInfo);
+        // Other Sessions
+        fp1Results.forEach(res => {
+            const drv = initDriver(res.driverId);
+            drv.fp1 = res;
+        });
+
+        fp2Results.forEach(res => {
+            const drv = initDriver(res.driverId);
+            drv.fp2 = res;
+        });
+
+        fp3Results.forEach(res => {
+            const drv = initDriver(res.driverId);
+            drv.fp3 = res;
+        });
+
+        qualiResults.forEach(res => {
+            const drv = initDriver(res.driverId);
+            drv.quali = res;
+        });
+
+        sqResults.forEach(res => {
+            const drv = initDriver(res.driverId);
+            drv.sprintQuali = res;
+        });
+
+        srResults.forEach(res => {
+            const drv = initDriver(res.driverId);
+            const srObj = { ...res };
+            if (!srObj.gap &amp;&amp; isNaN(parseInt(srObj.positionText))) {
+                srObj.gap = srObj.positionText;
+            }
+            drv.sprintRace = srObj;
+        });
+
+        // Fastest lap (get the overall fastest)
+        const fLap = fLapResults.find(r => r.positionNumber === 1);
+        if (fLap) {
+            const drv = initDriver(fLap.driverId);
+            drv.fastestLap = fLap;
+        }
+
+        // Pit stops (get the minimum time overall)
+        let bestPit = null;
+        pitResults.forEach(res => {
+            if (!bestPit || res.timeMillis &lt; bestPit.timeMillis) {
+                bestPit = res;
             }
         });
+        if (bestPit) {
+            const drv = initDriver(bestPit.driverId);
+            drv.fastestPit = bestPit;
+        }
+
+        let raceData = Object.values(raceDataMap);
 
         return { gpInfos, raceData };
+
     } catch (error) {
         console.error('getGPDetail, error during execution :', error);
         throw error;
@@ -118,13 +187,13 @@ module.exports = getGPDetail;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 29 2025 20:07:33 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jul 15 2026 15:49:44 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

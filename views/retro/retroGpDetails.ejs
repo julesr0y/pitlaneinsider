@@ -37,7 +37,6 @@
                             <span>
                                 <%= gpDetails.gpInfos.circuit.name %>
                             </span>
-
                         </div>
                     </div>
                 </div>
@@ -121,7 +120,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.fp1) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -143,7 +142,6 @@
                                 <% }); %>
                             </table>
 
-                            
                             <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT") { %>
                             <table id="tableSQ" class="hidden" data-title="SQ">
                                 <tr>
@@ -157,7 +155,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.sprintQuali ? a.sprintQuali.positionDisplayOrder : 999) - (b.sprintQuali ? b.sprintQuali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.sprintQuali) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -179,7 +177,6 @@
                                 <% }); %>
                             </table>
 
-                            
                             <% } %>
 
                             <% if(gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
@@ -195,7 +192,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.fp2) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -230,7 +227,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.sprintRace ? a.sprintRace.positionDisplayOrder : 999) - (b.sprintRace ? b.sprintRace.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.sprintRace) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -268,7 +265,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.quali) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -311,7 +308,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.fp1) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -345,7 +342,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.fp2) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -381,7 +378,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.fp3 ? a.fp3.positionDisplayOrder : 999) - (b.fp3 ? b.fp3.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.fp3) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -421,7 +418,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.quali) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -461,7 +458,7 @@
 
                                 <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
                                 <% if (detail.quali) { %>
-                                                                <tr>
+                                <tr>
                                     <td class="pr-2">
                                         <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
                                     </td>
@@ -514,7 +511,6 @@
                                     <span>
                                         <%= gpDetails.gpInfos.circuit.name %>
                                     </span>
-
                                 </div>
                             </div>
                         </div>

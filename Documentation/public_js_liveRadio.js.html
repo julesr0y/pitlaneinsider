@@ -30,19 +30,13 @@
 
 const driverRadioMapping = {
     1: "VER",
-    20: "MAG",
-    2: "SAR",
-    3: "RIC",
     10: "GAS",
     30: "LAW",
-    43: "COL",
-    61: "DOO",
+    7: "DOO",
     44: "HAM",
     55: "SAI",
     16: "LEC",
-    77: "BOT",
     63: "RUS",
-    11: "PER",
     4: "NOR",
     18: "STR",
     14: "ALO",
@@ -50,34 +44,34 @@ const driverRadioMapping = {
     23: "ALB",
     22: "TSU",
     81: "PIA",
-    24: "ZHO",
-    27: "HUL"
+    27: "HUL",
+    5: "BOR",
+    6: "HAD",
+    12: "ANT",
+    87: "BEA"
 };
 
 const teamRadioMapping = {
-    44: "mercedes",
-    63: "mercedes",
     1: "red-bull",
-    11: "red-bull",
-    4: "mclaren",
-    81: "mclaren",
-    14: "aston-martin",
-    18: "aston-martin",
     10: "alpine",
-    31: "alpine",
-    61: "alpine",
+    30: "red-bull",
+    7: "alpine",
+    44: "ferrari",
+    55: "williams",
     16: "ferrari",
-    55: "ferrari",
-    3: "rb",
-    22: "rb",
-    30: "rb",
-    24: "kick-sauber",
-    77: "kick-sauber",
-    20: "haas",
-    27: "haas",
+    63: "mercedes",
+    4: "mclaren",
+    18: "aston-martin",
+    14: "aston-martin",
+    31: "haas",
     23: "williams",
-    2: "williams",
-    43: "williams",
+    22: "rb",
+    81: "mclaren",
+    27: "kick-sauber",
+    5: "kick-sauber",
+    6: "rb",
+    12: "mercedes",
+    87: "haas"
 };
 
 let addedRecordings = new Set();
@@ -187,13 +181,13 @@ setInterval(updateRadio, 60000); // Mise à jour toutes les minutes</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 29 2025 20:07:33 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jul 15 2026 15:49:44 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

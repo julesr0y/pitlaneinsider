@@ -35,7 +35,15 @@
                         <div class="bg-s-<%= theme %> rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4" id="<%= circuit.name %>">
                             <div class="block text-center">
                                 <div class="relative mb-4">
-                                    <img src="/img/circuits/<%= circuit.id %>.svg" alt="Circuit <%= circuit.name %>" onerror="this.onerror=null; this.src='/img/circuits/unknown.webp'" class="w-full h-32 object-contain mx-auto" />
+                                    <img
+                                        src="/img/circuits/<%= circuit.id %>.svg"
+                                        alt="Circuit <%= circuit.name %>"
+                                        onerror="
+                                            this.onerror = null;
+                                            this.src = '/img/circuits/unknown.webp';
+                                        "
+                                        class="w-full h-32 object-contain mx-auto"
+                                    />
                                 </div>
                                 <div class="flex flex-col items-center">
                                     <img src="/img/countryFlags/<%= circuit.countryId %>.svg" alt="<%= circuit.countryId %>" class="mb-2 h-12 w-auto" />

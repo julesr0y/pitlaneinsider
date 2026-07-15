@@ -30,24 +30,52 @@
 const path = require('path');
 
 /**
- * @description Returns constructors championship standings from actual season
+ * @description Returns teams championship standings from actual season
  * @async
  * @returns {Array}
  */
-async function getConstructorsActualStandings() {
+async function getTeamsActualStandings() {
     try {
-        const constructorsActualStandingsDataFilePath = path.join(__dirname, '../../data/all_constructor_standings.json');
-        const constructorsActualStandingsData = JSON.parse(fs.readFileSync(constructorsActualStandingsDataFilePath, 'utf-8'));
-        const targetedSeasonData = constructorsActualStandingsData.filter(race => race.year == 2025);
+        const currentYear = 2026;
+        
+        // F1DB Files
+        const constructorStandings = require('../../data/f1db/f1db-seasons-constructor-standings.json').filter(s => s.year === currentYear);
+        const constructors = require('../../data/f1db/f1db-constructors.json');
+        
+        // Entrants chassis to find which chassis the constructor is using this year
+        const entrantsChassis = require('../../data/f1db/f1db-seasons-entrants-chassis.json').filter(c => c.year === currentYear);
+        const chassisList = require('../../data/f1db/f1db-chassis.json');
 
-        return targetedSeasonData;
+        const getConstructor = (id) => constructors.find(c => c.id === id) || {};
+        
+        let formattedConstructorStandings = constructorStandings.sort((a, b) => a.positionNumber - b.positionNumber).map(s => {
+            const c = getConstructor(s.constructorId);
+            
+            // Find chassis for this constructor
+            const entrant = entrantsChassis.find(e => e.constructorId === s.constructorId);
+            let chassisName = 'TBC';
+            if (entrant) {
+                const ch = chassisList.find(x => x.id === entrant.chassisId);
+                if (ch) chassisName = ch.fullName || ch.name;
+            }
+
+            return {
+                ...s,
+                constructor: c,
+                position: s.positionNumber,
+                name: c.name,
+                chassisName: chassisName
+            };
+        });
+
+        return formattedConstructorStandings;
     } catch (error) {
-        console.error('getConstructorsActualStandings, error during execution :', error);
+        console.error('getTeamsActualStandings, error during execution :', error);
         throw error;
     }
 }
 
-module.exports = getConstructorsActualStandings;
+module.exports = getTeamsActualStandings;
 </code></pre>
         </article>
     </section>
@@ -58,13 +86,13 @@ module.exports = getConstructorsActualStandings;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 29 2025 20:07:33 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jul 15 2026 15:49:44 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

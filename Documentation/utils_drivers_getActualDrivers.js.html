@@ -29,8 +29,12 @@
             <pre class="prettyprint source linenums"><code>const fs = require('fs');
 const path = require('path');
 
+// Load f1db data in memory
+const driversData = require('../../data/f1db/f1db-drivers.json');
+const entrantsDriversData = require('../../data/f1db/f1db-seasons-entrants-drivers.json');
+
 /**
- * @description Returns all drivers from the actual season
+ * @description Returns all drivers from the actual season using native f1db fields
  * @async
  * @returns {Array}
  */
@@ -46,35 +50,40 @@ async function getActualDrivers() {
             'racing-bulls',
             'haas',
             'williams',
-            'kick-sauber'
+            'audi',
+            'cadillac'
         ];
-        const driversDataFilePath = path.join(__dirname, '../../data/all_drivers_stats.json');
-        const driversData = JSON.parse(fs.readFileSync(driversDataFilePath, 'utf-8'));
-        var driversDataFront = [];
-        driversData.forEach((item) => {
-            if (
-                item.isCurrentSeasonDriver === true &amp;&amp;
-                item.isTestDriver == false
-            ) {
-                const driverInformation = {
-                    id: item.driverId,
-                    firstName: item.firstName,
-                    lastName: item.lastName,
-                    nationality: item.nationality,
-                    permanentNumber: item.permanentNumber,
-                    constructorId: item.currentTeamId,
-                };
 
-                driversDataFront.push(driverInformation);
+        const currentYear = 2026;
+
+        // Get all entrants for drivers in 2026, excluding test drivers
+        const currentSeasonEntrants = entrantsDriversData.filter(item => item.year === currentYear &amp;&amp; item.testDriver === false);
+
+        const driversDataFront = [];
+
+        currentSeasonEntrants.forEach((entrant) => {
+            const driverObj = driversData.find(d => d.id === entrant.driverId);
+            if (driverObj) {
+                // Ensure we don't duplicate a driver if they drove for two teams in the same year.
+                // We'll take the first one or just add them. Usually in the current season they have 1 entry, or 2 if they moved.
+                // If they moved, we might want to just keep the most recent? Let's just push for now.
+                if (!driversDataFront.find(d => d.driver.id === driverObj.id)) {
+                    driversDataFront.push({
+                        driver: driverObj,
+                        currentSeason: {
+                            constructorId: entrant.constructorId
+                        }
+                    });
+                }
             }
         });
 
         // sort drivers by their teams
         driversDataFront.sort((a, b) => {
-            if (a.constructorId &lt; b.constructorId) {
+            if (a.currentSeason.constructorId &lt; b.currentSeason.constructorId) {
                 return -1;
             }
-            if (a.constructorId > b.constructorId) {
+            if (a.currentSeason.constructorId > b.currentSeason.constructorId) {
                 return 1;
             }
             return 0;
@@ -83,8 +92,8 @@ async function getActualDrivers() {
         // sort teams
         driversDataFront.sort((a, b) => {
             return (
-                teamOrder.indexOf(a.constructorId) -
-                teamOrder.indexOf(b.constructorId)
+                teamOrder.indexOf(a.currentSeason.constructorId) -
+                teamOrder.indexOf(b.currentSeason.constructorId)
             );
         });
 
@@ -106,13 +115,13 @@ module.exports = getActualDrivers;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#convertDate">convertDate</a></li><li><a href="global.html#convertTime">convertTime</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getConstructorsActualStandings">getConstructorsActualStandings</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#attachEventListeners">attachEventListeners</a></li><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getConstructorWinners">getConstructorWinners</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriverWinners">getDriverWinners</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getFromOpenF1">getFromOpenF1</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroCalendar">getRetroCalendar</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getRetroConstructors">getRetroConstructors</a></li><li><a href="global.html#getRetroConstructorsStandings">getRetroConstructorsStandings</a></li><li><a href="global.html#getRetroDrivers">getRetroDrivers</a></li><li><a href="global.html#getRetroDriversStandings">getRetroDriversStandings</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#updateLaps">updateLaps</a></li><li><a href="global.html#updateRadio">updateRadio</a></li><li><a href="global.html#updateRcAndLs">updateRcAndLs</a></li><li><a href="global.html#updateSessionInfo">updateSessionInfo</a></li><li><a href="global.html#updateWeather">updateWeather</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jan 29 2025 20:07:33 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jul 15 2026 15:49:44 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
