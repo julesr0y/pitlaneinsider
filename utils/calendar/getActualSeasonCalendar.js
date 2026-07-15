@@ -2,54 +2,77 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * @description Returns the actual season calendar from all time races data file
+ * @description Returns the actual season calendar from f1db
  * @async
  * @returns {Array}
  */
 async function getActualSeasonCalendar() {
     try {
-        const calendarDataFilePath = path.join(__dirname, '../../data/all_calendar.json');
-        const calendarData = JSON.parse(fs.readFileSync(calendarDataFilePath, 'utf-8'));
+        const currentYear = 2026;
+        const races = require('../../data/f1db/f1db-races.json').filter(r => r.year === currentYear);
+        const grandPrix = require('../../data/f1db/f1db-grands-prix.json');
+        const countries = require('../../data/f1db/f1db-countries.json');
 
-        var actualSeasonData = calendarData.filter(raceArray => {
-            return raceArray.some(element => {
-                return element.raceDetails && element.raceDetails.some(detail => detail.year === 2026);
-            });
-        });
+        const getGP = (id) => grandPrix.find(g => g.id === id) || {};
+        const getCountry = (id) => countries.find(c => c.id === id) || {};
 
-        const calendarFrontData = actualSeasonData.map(raceArray => {
-            const raceInformation = {};
+        // Find next race based on current date
+        const now = Date.now();
+        let nextRaceId = null;
 
-            raceArray.forEach(element => {
-                if (element.raceDetails) {
-                    element.raceDetails.forEach(detail => {
-                        if (detail.year === 2026) {
-                            raceInformation.id = detail.id;
-                            raceInformation.country = detail.country;
-                            raceInformation.name = detail.name;
-                            raceInformation.year = detail.year;
-                            raceInformation.date = detail.date;
-                            raceInformation.raceId = detail.raceId;
-                            raceInformation.circuitId = detail.circuitId;
-                            raceInformation.round = detail.round;
-                            raceInformation.isNextGp = detail.isNextGp;
-                        }
-                    });
+        for (let r of races) {
+            // We use race date and time to find next gp
+            const raceDateStr = r.date + (r.time ? 'T' + r.time + 'Z' : 'T00:00:00Z');
+            const raceTime = new Date(raceDateStr).getTime();
+            if (raceTime > now) {
+                nextRaceId = r.id;
+                break;
+            }
+        }
+
+        const calendarFrontData = races.map(r => {
+            const gp = getGP(r.grandPrixId);
+            const country = getCountry(gp.countryId);
+
+            const formatD = (d) => {
+                if (!d) return null;
+                const parts = d.split('-');
+                if (parts.length === 3) {
+                    return parts[1] + '-' + parts[2];
                 }
-                if (element.dateDetails) {
-                    element.dateDetails.forEach(dateDetail => {
-                        for (let key in dateDetail) {
-                            if (dateDetail[key] !== null && key.endsWith('Date')) {
-                                dateDetail[key] = convertDate(dateDetail[key]);
-                            }
-                        }
+                return d;
+            };
 
-                        Object.assign(raceInformation, dateDetail);
-                    });
-                }
-            });
+            const raceDateStr = r.date + (r.time ? 'T' + r.time + 'Z' : 'T00:00:00Z');
+            const raceTimeObj = new Date(raceDateStr).getTime();
 
-            return raceInformation;
+            return {
+                id: r.id,
+                raceId: r.id,
+                circuitId: r.circuitId,
+                round: r.round,
+                name: gp.shortName || gp.fullName,
+                country: country.id,
+                year: r.year,
+                isNextGp: r.id === nextRaceId,
+                hasOccurred: raceTimeObj <= now,
+                
+                // Formatted dates
+                freePractice1Date: formatD(r.freePractice1Date),
+                freePractice1Time: r.freePractice1Time,
+                freePractice2Date: formatD(r.freePractice2Date),
+                freePractice2Time: r.freePractice2Time,
+                freePractice3Date: formatD(r.freePractice3Date),
+                freePractice3Time: r.freePractice3Time,
+                sprintQualifyingDate: formatD(r.sprintQualifyingDate),
+                sprintQualifyingTime: r.sprintQualifyingTime,
+                sprintRaceDate: formatD(r.sprintRaceDate),
+                sprintRaceTime: r.sprintRaceTime,
+                qualifyingDate: formatD(r.qualifyingDate),
+                qualifyingTime: r.qualifyingTime,
+                raceDate: formatD(r.date),
+                raceTime: r.time
+            };
         });
 
         return calendarFrontData;
@@ -60,21 +83,3 @@ async function getActualSeasonCalendar() {
 }
 
 module.exports = getActualSeasonCalendar;
-
-/**
- * @description Returns formatted date DD/MM without year like 04/01 for 4th January
- * @param {String} dateString 
- * @returns {String}
- */
-function convertDate(dateString) {
-    try {
-        var date = new Date(dateString);
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-
-        return (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
-    } catch (error) {
-        console.error('convertDate, error during execution :', error);
-        throw error;
-    }
-}

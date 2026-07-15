@@ -1,25 +1,26 @@
 const fs = require('fs');
-const path = require('path');
 
 /**
- * @description Returns all chassis from F1 history
+ * @description Returns all chassis from F1 history using f1db
  * @async
  * @returns {Array}
  */
 async function getRetroChassis() {
     try {
-        const chassisDataFilePath = path.join(__dirname, '../../data/chassis.json');
-        const chassisData = JSON.parse(fs.readFileSync(chassisDataFilePath, 'utf-8'));
+        const chassisData = require('../../data/f1db/f1db-chassis.json');
 
         var chassisFrontData = [];
         chassisData.forEach(item => {
             const chassisInfo = {
-                chassisId: item.chassisId,
-                chassisFullName: item.chassisFullName
+                chassisId: item.id,
+                chassisFullName: item.fullName
             };
 
             chassisFrontData.push(chassisInfo);
         });
+
+        // Optionally sort alphabetically by full name
+        chassisFrontData.sort((a, b) => a.chassisFullName.localeCompare(b.chassisFullName));
 
         return chassisFrontData;
     } catch (error) {

@@ -1,26 +1,32 @@
 const fs = require('fs');
 const path = require('path');
 
+// Load f1db data in memory
+const constructorsData = require('../../data/f1db/f1db-constructors.json');
+const seasonsConstructorsData = require('../../data/f1db/f1db-seasons-constructors.json');
+
 /**
- * @description Returns all constructors from the actual season
+ * @description Returns all constructors from the actual season using native f1db fields
  * @async
  * @returns {Array}
  */
 async function getActualConstructors() {
     try {
-        const constructorDataFilePath = path.join(__dirname, '../../data/all_teams_stats.json');
-        const constructorData = JSON.parse(fs.readFileSync(constructorDataFilePath, 'utf-8'));
+        const currentYear = 2026; // As requested, we filter for 2026
+        
+        // Find which constructors are present in the 2026 season
+        const currentSeasonConstructors = seasonsConstructorsData.filter(item => item.year === currentYear);
+        
+        const constructorsFrontData = [];
+        currentSeasonConstructors.forEach(function (seasonConstructor) {
+            const constructorObj = constructorsData.find(c => c.id === seasonConstructor.constructorId);
+            if (constructorObj) {
+                constructorsFrontData.push(constructorObj);
+            }
+        });
 
-        var constructorsFrontData = [];
-        var actualSeasonConstructors = constructorData.filter(item => item.currentSeasonTeam == true);
-        actualSeasonConstructors.forEach(function (constructor) {
-            const constructorInfomation = {
-                constructorId: constructor.constructorId,
-                name: constructor.name,
-                fullName: constructor.fullName
-            };
-            constructorsFrontData.push(constructorInfomation);
-        })
+        // Sort alphabetically by name
+        constructorsFrontData.sort((a, b) => a.name.localeCompare(b.name));
 
         return constructorsFrontData;
     } catch (error) {

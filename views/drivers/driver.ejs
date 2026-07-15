@@ -3,7 +3,7 @@
     <head>
         <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
-        <title>PLI - <%= dataDriver.firstName %> <%= dataDriver.lastName %></title>
+        <title>PLI - <%= dataDriver.driver.firstName %> <%= dataDriver.driver.lastName %></title>
         <link rel="stylesheet" href="/stylesheets/constructorscolors.css" />
         <script src="/js/apexcharts.min.js"></script>
     </head>
@@ -13,20 +13,20 @@
             <div class="pt-10 px-4 h-auto flex flex-col justify-center">
                 <div class="bg-s-<%= theme %> p-4 sm:p-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3 flex flex-col justify-center">
                     <div class="flex flex-col justify-center items-center gap-0">
-                        <% const birth=new Date(dataDriver.dateOfBirth); const now=new Date(); let age=0; if (dataDriver.dateOfDeath==null) { age=now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death=new Date(dataDriver.dateOfDeath); age=death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %>
+                        <% const birth=new Date(dataDriver.driver.dateOfBirth); const now=new Date(); let age=0; if (dataDriver.driver.dateOfDeath==null) { age=now.getFullYear() - birth.getFullYear(); if (now < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } else { const death=new Date(dataDriver.driver.dateOfDeath); age=death.getFullYear() - birth.getFullYear(); if (death < new Date(birth.setFullYear(birth.getFullYear() + age))) { age--; } } %>
 
                         <div class="flex flex-col justify-center items-center">
-                            <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none"><%= dataDriver.firstName %> <%= dataDriver.lastName %></h1>
+                            <h1 class="text-lg sm:text-xl font-semibold text-center m-0 leading-none"><%= dataDriver.driver.firstName %> <%= dataDriver.driver.lastName %></h1>
                             <p class="text-sm sm:text-base text-t-s-<%= theme %> text-center m-0 leading-none">
-                                <% if (dataDriver.dateOfDeath===null) { %>
+                                <% if (dataDriver.driver.dateOfDeath===null) { %>
                                 <span>
-                                    <%= dataDriver.dateOfBirth %>
+                                    <%= dataDriver.driver.dateOfBirth %>
                                 </span>
                                 <% } else { %>
                                 <span>
-                                    <%= dataDriver.dateOfBirth %>
+                                    <%= dataDriver.driver.dateOfBirth %>
                                     -
-                                    <%= dataDriver.dateOfDeath %>
+                                    <%= dataDriver.driver.dateOfDeath %>
                                 </span>
                                 <% } %>
                                 <span>
@@ -37,14 +37,14 @@
                         </div>
 
                         <div class="flex flex-col justify-center items-center pt-2">
-                            <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= dataDriver.id %>.webp" alt="<%= dataDriver.firstName %> <%= dataDriver.lastName %>" class="h-auto w-auto max-w-36" />
-                            <% let bgClass=dataDriver.currentSeasonDriver ? `bg-${dataDriver.actualTeam}` :
+                            <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= dataDriver.driver.id %>.webp" alt="<%= dataDriver.driver.firstName %> <%= dataDriver.driver.lastName %>" class="h-auto w-auto max-w-36" />
+                            <% let bgClass=dataDriver.currentSeason ? `bg-${dataDriver.currentSeason.constructorId}` :
                                 `bg-t-${theme}`; %>
                             <div class="<%= bgClass %> h-16 min-w-48 flex justify-evenly items-center gap-2 rounded-lg px-4">
-                                <img src="/img/countryFlags/<%= dataDriver.nationality.toLowerCase() %>.svg" alt="<%= dataDriver.nationality %>.svg" class="h-12 w-auto" />
-                                <% if (dataDriver.currentSeasonDriver===true) { %>
-                                <img src="/img/constructors-driverPage/<%= dataDriver.actualTeam %>.webp" alt="<%= dataDriver.actualTeam %>" class="h-auto w-auto max-h-12 max-w-20" />
-                                <img src="/img/helmets/helmet-<%= dataDriver.id %>.webp" alt="Helmet" class="max-h-12 w-auto" />
+                                <img src="/img/countryFlags/<%= dataDriver.driver.nationalityCountryId.toLowerCase() %>.svg" alt="<%= dataDriver.driver.nationalityCountryId %>.svg" class="h-12 w-auto" />
+                                <% if (dataDriver.currentSeason===true) { %>
+                                <img src="/img/constructors-driverPage/<%= dataDriver.currentSeason.constructorId %>.webp" alt="<%= dataDriver.currentSeason.constructorId %>" class="h-auto w-auto max-h-12 max-w-20" />
+                                <img src="/img/helmets/helmet-<%= dataDriver.driver.id %>.webp" alt="Helmet" class="max-h-12 w-auto" />
                                 <% } %>
                             </div>
                         </div>
@@ -54,10 +54,10 @@
                         <div class="text-center mt-4">
                             <h3 class="text-base sm:text-lg font-bold"><%= __('driver.carreer_title') %></h3>
 
-                            <% if(dataDriver.totalChampionshipWins !==0) { %>
+                            <% if(dataDriver.driver.totalChampionshipWins !==0) { %>
                             <span class="grid grid-cols-12 mt-4">
                                 <span class="col-span-12 flex flex-col items-center">
-                                    <span class="text-gold"> <%= dataDriver.totalChampionshipWins %> </span>
+                                    <span class="text-gold"> <%= dataDriver.driver.totalChampionshipWins %> </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.totalChampionshipWins') %> </span>
                                 </span>
                             </span>
@@ -67,19 +67,19 @@
                             <span class="grid grid-cols-12 mt-4">
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.firstYear %>
+                                        <%= dataDriver.history.firstYear %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.first_year') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.numberOfSeasons %>
+                                        <%= dataDriver.history.numberOfSeasons %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.number_of_seasons') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalRaceStarts %>
+                                        <%= dataDriver.driver.totalRaceStarts %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_races') %> </span>
                                 </span>
@@ -87,53 +87,53 @@
                             <span class="grid grid-cols-12 mt-4">
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalRaceWins %>
+                                        <%= dataDriver.driver.totalRaceWins %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_victories') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalPodiums %>
+                                        <%= dataDriver.driver.totalPodiums %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_podiums') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalPolePositions %>
+                                        <%= dataDriver.driver.totalPolePositions %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_poles') %> </span>
                                 </span>
                             </span>
                             <span class="grid grid-cols-12 mt-4">
                                 <span class="col-span-4 flex flex-col">
-                                    <span> <%= dataDriver.victoryRatio %>% </span>
+                                    <span> <%= dataDriver.driver.totalRaceStarts > 0 ? (dataDriver.driver.totalRaceWins / dataDriver.driver.totalRaceStarts * 100).toFixed(1) : 0 %>% </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.victory_ratio') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
-                                    <span> <%= dataDriver.podiumRatio %>% </span>
+                                    <span> <%= dataDriver.driver.totalRaceStarts > 0 ? (dataDriver.driver.totalPodiums / dataDriver.driver.totalRaceStarts * 100).toFixed(1) : 0 %>% </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.podium_ratio') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
-                                    <span> <%= dataDriver.poleRatio %>% </span>
+                                    <span> <%= dataDriver.driver.totalRaceStarts > 0 ? (dataDriver.driver.totalPolePositions / dataDriver.driver.totalRaceStarts * 100).toFixed(1) : 0 %>% </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.pole_ratio') %> </span>
                                 </span>
                             </span>
                             <span class="grid grid-cols-12 mt-4">
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalDriverOfTheDay %>
+                                        <%= dataDriver.driver.totalDriverOfTheDay %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_driver_of_the_day') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalFastestLaps %>
+                                        <%= dataDriver.driver.totalFastestLaps %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_fastest_laps') %> </span>
                                 </span>
                                 <span class="col-span-4 flex flex-col">
                                     <span>
-                                        <%= dataDriver.totalPoints %>
+                                        <%= dataDriver.driver.totalPoints %>
                                     </span>
                                     <span class="text-t-s-<%= theme %> text-xs"> <%= __('driver.total_points') %> </span>
                                 </span>
@@ -144,23 +144,20 @@
                             <h3 class="text-base sm:text-lg font-bold"><%= __('driver.constructors_title') %></h3>
 
                             <div class="mt-6">
-                                <span class="grid grid-cols-12 gap-y-2">
-                                    <% dataDriver.teams.forEach(function(team) { %>
-                                    <span class="col-span-12 md:col-span-4 flex flex-col items-center mt-4 justify-end">
-                                        <a href="/constructor/<%= team.teamId %>" class="flex flex-col items-center gap-y-2">
-                                            <img src="/img/constructors/<%= team.teamId %>.webp" alt="<%= team.teamId %>" class="w-auto h-10" />
-                                            <span class="text-sm">
-                                                <p class="text-sm sm:text-base"><%= team.teamName %></p>
-                                            </span>
+                                <span class="grid grid-cols-12 md:grid-cols-10 gap-y-2">
+                                    <% dataDriver.teamsHistory.forEach(function(team) { %>
+                                    <span class="col-span-3 md:col-span-2 flex flex-col items-center mt-4 justify-end">
+                                        <a href="/constructor/<%= team.constructor.id %>" class="flex flex-col items-center gap-y-2" title="<%= team.constructor.name %>">
+                                            <img src="/img/constructors/<%= team.constructor.id %>.webp" alt="<%= team.constructor.id %>" class="w-auto h-8" />
                                         </a>
-                                        <span class="text-t-s-<%= theme %> text-xs text-center"> <%= team.year %> </span>
+                                        <span class="text-t-s-<%= theme %> text-xs text-center pt-1"> <%= team.year %> </span>
                                     </span>
                                     <% }); %>
                                 </span>
                             </div>
                         </div>
 
-                        <% if(dataDriver.totalRaceWins !== 0) { %>
+                        <% if(dataDriver.driver.totalRaceWins !== 0) { %>
 
                         <div class="text-center mt-4">
                             <h3 class="text-base sm:text-lg font-bold"><%= __('driver.victories_title') %></h3>
@@ -169,7 +166,7 @@
                             <div class="mt-6 flex flex-col justify-start">
                                 <p class="text-xl"><%= year %></p>
                                 <span class="grid grid-cols-12">
-                                    <% (dataDriver.allVictories[year]).forEach(function(victory) { %>
+                                    <% (dataDriver.allVictories[year] || []).forEach(function(victory) { %>
                                     <span class="col-span-3">
                                         <a href="/retrogpdetails/<%= year %>/<%= victory.id %>">
                                             <span class="flex flex-col items-center mt-4">
@@ -188,18 +185,31 @@
                         <% } %>
 
                         <br />
+                        <% if (dataDriver.driver.totalPoints > 0) { %>
                         <div class="flex justify-center">
                             <div class="max-w-sm w-full rounded-lg">
                                 <div class="flex justify-center"><%= __('driver.points_by_season') %></div>
                                 <div id="area-chart"></div>
                             </div>
                         </div>
+                        <% } else { %>
+                        <div class="flex justify-center mb-4">
+                            <p class="text-center text-t-s-<%= theme %> italic"><%= __('driver.no_points_scored') || 'Aucun point inscrit en championnat du monde.' %></p>
+                        </div>
+                        <% } %>
+                        
+                        <% if (dataDriver.charts.length > 0) { %>
                         <div class="flex justify-center">
                             <div class="max-w-sm w-full rounded-lg">
                                 <div class="flex justify-center"><%= __('driver.standing_by_season') %></div>
                                 <div id="area-chart2"></div>
                             </div>
                         </div>
+                        <% } else { %>
+                        <div class="flex justify-center mb-8">
+                            <p class="text-center text-t-s-<%= theme %> italic"><%= __('driver.no_standing') || 'Aucun classement général en championnat du monde.' %></p>
+                        </div>
+                        <% } %>
                     </div>
                 </div>
             </div>
@@ -208,7 +218,7 @@
     </body>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+            var chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.currentSeason ? dataDriver.currentSeason.constructorId : "default" %>').trim();
             if (chartColor === '') {
                 chartColor = '#058785';
             }
@@ -218,10 +228,10 @@
             const tablePoints = [];
             let i = 0;
 
-            ('<% dataDriver.allPointsData.forEach(function(season) { %>');
-            allYears.push('<%= season.year %>');
+            ('<% dataDriver.charts.forEach(function(season) { %>');
+            allYears.push('<%= season.season %>');
             if (i % 2 == 0) {
-                tableYears.push('<%= season.year %>');
+                tableYears.push('<%= season.season %>');
             } else {
                 tableYears.push('');
             }
@@ -314,7 +324,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.actualTeam %>').trim();
+            var chartColor = getComputedStyle(document.documentElement).getPropertyValue('--team-<%= dataDriver.currentSeason ? dataDriver.currentSeason.constructorId : "default" %>').trim();
             if (chartColor === '') {
                 chartColor = '#058785';
             }
@@ -324,10 +334,10 @@
             const tableStandings = [];
             let i = 0;
 
-            ('<% dataDriver.allPositionsData.forEach(function(season) { %>');
-            allYears.push('<%= season.year %>');
+            ('<% dataDriver.charts.forEach(function(season) { %>');
+            allYears.push('<%= season.season %>');
             if (i % 2 == 0) {
-                tableYears.push('<%= season.year %>');
+                tableYears.push('<%= season.season %>');
             } else {
                 tableYears.push('');
             }

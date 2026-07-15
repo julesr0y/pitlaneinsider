@@ -82,7 +82,9 @@
 		"constructors_title": "Constructors",
 		"totalChampionshipWins": "Championship wins",
 		"points_by_season": "Points by season",
-		"standing_by_season": "Standing by season"
+		"standing_by_season": "Standing by season",
+		"no_points_scored": "Never scored any points",
+		"no_standing": "Has never been ranked"
 	},
 	"calendar": {
 		"tab_title": "Calendar",
@@ -302,6 +304,8 @@
 		"chassis_years": "Seasons",
 		"number_of_wins": "Wins",
 		"number_of_podiums": "Podiums",
-		"chassis_poles": "Poles"
+		"chassis_poles": "Poles",
+		"engines": "Engines",
+		"tyres": "Tyres"
 	}
 }

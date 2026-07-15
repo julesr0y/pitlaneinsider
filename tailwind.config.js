@@ -54,9 +54,9 @@ module.exports = {
         'aston-martin': '#229971',
         'haas': '#B6BABD',
         'audi': '#E6653B',
-        'cadillac': '#EBC989',
+        'cadillac': '#FFFFFF',
 
-        // retro constructors - base color of the site for constructors without logo
+        // retro constructors (base color of the site for constructors without logo)
         'adams': '#058785',
         'afm': '#a5b5dd',
         'ags': '#556da8',

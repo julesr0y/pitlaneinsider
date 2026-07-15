@@ -39,75 +39,148 @@
 
     <body class="font-regular text-<%= theme %> flex flex-col min-h-screen">
         <main class="bg-b-<%= theme %> grow">
-            <div class="next text-center text-white bg-black py-2">
-                <h1 class="text-center text-orange-400">
-                    Due to lack of time, development of this project is currently paused for an undetermined amount of time.
-                </h1>
-            </div>
-
             <div class="px-4 pt-4">
                 <div class="block md:grid grid-cols-2 gap-4 items-stretch">
                     <div class="w-full h-full">
                         <div id="championnats" class="flex gap-4 w-full">
-                            <a href="/driver/<%= homeData[0].driverLeader.driverId %>" class="w-full">
+                            <a href="/driver/<%= homeData.driverLeader.driverId %>" class="w-full">
                                 <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl overflow-hidden">
                                     <span class="text-center pt-2"> <%= __('home.drivers_championship') %> </span>
                                     <span class="flex justify-evenly items-center mt-auto gap-2">
                                         <span class="flex flex-col items-center text-xl">
                                             <span>
-                                                <%= homeData[0].driverLeader.abbreviation %>
+                                                <%= homeData.driverLeader.abbreviation %>
                                             </span>
-                                            <span class="text-<%= homeData[0].driverLeader.constructorId %>"> <% if(homeData[0].driverLeader.permanentNumber==4) { %> <%= 1 %> <% } else { %> <%= homeData[0].driverLeader.permanentNumber %> <% } %> </span>
+                                            <span class="text-<%= homeData.driverLeader.constructorId %>"> <% if(homeData.driverLeader.permanentNumber==4) { %> <%= 1 %> <% } else { %> <%= homeData.driverLeader.permanentNumber %> <% } %> </span>
                                         </span>
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData[0].driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                     </span>
                                 </div>
                             </a>
 
-                            <a href="/constructor/<%= homeData[0].constructorLeader.constructorId %>" class="w-full">
+                            <a href="/constructor/<%= homeData.constructorLeader.constructorId %>" class="w-full">
                                 <div id="chContructeurs" class="h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
                                     <span class="text-center font-bold pt-2"> <%= __('home.constructors_championship') %> </span>
                                     <span>
-                                        <img src="/img/constructors/<%= homeData[0].constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
+                                        <img src="/img/constructors/<%= homeData.constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
                                     </span>
                                 </div>
                             </a>
                         </div>
 
-                        <a href="/retrogpdetails/2026/<%= homeData[0].lastPodiumLocalisation[0].raceId %>">
+                        <% if (homeData.lastPodiumLocalisation) { %>
+<a href="/retrogpdetails/2026/<%= homeData.lastPodiumLocalisation.id %>">
                             <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
                                 <span class="flex justify-center text-center mb-4 font-bold gap-2 pt-2">
-                                    <%= __('home.last_race') %> - <%= homeData[0].lastPodiumLocalisation[0].name %>
-                                    <img src="/img/countryFlags/<%= homeData[0].lastPodiumLocalisation[0].country %>.svg" alt="<%= homeData[0].lastPodiumLocalisation[0].country %>" class="h-6 w-auto" />
+                                    <%= __('home.last_race') %> - <%= homeData.lastPodiumLocalisation.name %>
+                                    <img src="/img/countryFlags/<%= homeData.lastPodiumLocalisation.country %>.svg" alt="<%= homeData.lastPodiumLocalisation.country %>" class="h-6 w-auto" />
                                 </span>
                                 <div class="flex justify-evenly items-end h-full">
                                     <div class="flex flex-col items-center">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData[0].lastPodium[1].driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[1].driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                         <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
                                             <span class="text-lg font-bold">2</span>
-                                            <span class="text-sm font-bold mt-2"> <%= homeData[0].lastPodium[1].abbreviation %> </span>
+                                            <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[1].abbreviation %> </span>
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData[0].lastPodium[0].driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[0].driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                         <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
                                             <span class="text-lg font-bold">1</span>
-                                            <span class="text-sm font-bold mt-2"> <%= homeData[0].lastPodium[0].abbreviation %> </span>
+                                            <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[0].abbreviation %> </span>
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData[0].lastPodium[2].driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[2].driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                         <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
                                             <span class="text-lg font-bold">3</span>
-                                            <span class="text-sm font-bold mt-2"> <%= homeData[0].lastPodium[2].abbreviation %> </span>
+                                            <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[2].abbreviation %> </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
+<% } %>
                     </div>
 
-                    <div class="bg-s-<%= theme %> hidden md:flex flex-col justify-between items-center font-bold rounded-3xl w-full h-full py-2">
+                    <div class="bg-s-<%= theme %> flex flex-col justify-between items-center font-bold rounded-3xl w-full h-full py-2 mt-4 md:mt-0 relative overflow-hidden">
+                        <% if (homeData.nextRaceInfo) { %>
+                            <!-- Circuit Background SVG -->
+                            <img src="/img/circuits/<%= homeData.nextRaceInfo.circuitId %>.svg" class="absolute inset-0 m-auto h-3/4 opacity-10 pointer-events-none" alt="" />
+                            
+                            <div class="z-10 flex flex-col items-center text-center w-full mt-4">
+                                <div class="flex items-center gap-x-3 mb-2">
+                                    <img id="flag" src="/img/countryFlags/<%= homeData.nextRaceInfo.country %>.svg" class="h-6 w-auto shadow-md rounded-sm" alt="Flag" />
+                                    <h2 class="font-wide text-2xl m-0"><%= homeData.nextRaceInfo.name %></h2>
+                                </div>
+                                <div class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-6">
+                                    <%= homeData.nextRaceInfo.nextSessionName %>
+                                </div>
+                                
+                                <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm border border-gray-700">
+                                    <div class="flex flex-col items-center"><span id="days" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
+                                    <div class="flex flex-col items-center"><span id="hours" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
+                                    <div class="flex flex-col items-center"><span id="minutes" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
+                                    <div class="flex flex-col items-center"><span id="seconds" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.seconds') %></span></div>
+                                </div>
+                            </div>
+                        <% } else { %>
+                            <div class="flex flex-col justify-center items-center h-full z-10">
+                                <h2 class="text-center text-orange-400 font-wide text-2xl m-0">
+                                    <%= __('home.season_finished') || 'Saison terminée' %>
+                                </h2>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-y-4 gap-x-4 mt-4 mb-8">
+                    <!-- Classements (Merged) -->
+                    <div class="w-full lg:w-1/2 bg-s-<%= theme %> py-2 rounded-3xl p-4">
+                        <div class="flex justify-around mb-4 border-b border-gray-600 pb-2">
+                            <a href="/driverstandings" class="text-center font-bold text-lg hover:underline"><%= __('home.drivers_standings') %></a>
+                            <a href="/constructorstandings" class="text-center font-bold text-lg hover:underline"><%= __('home.constructors_standings') %></a>
+                        </div>
+                        <div class="flex justify-evenly gap-x-2">
+                            <!-- Drivers -->
+                            <div class="w-1/2">
+                                <table class="w-full text-sm">
+                                    <% homeData.driverStandings.slice(0, 10).forEach(function(pilote) { %>
+                                    <tr>
+                                        <td class="pr-2 py-1">
+                                            <span class="inline-block border border-<%= pilote.constructorId %> h-4 w-1 bg-<%= pilote.constructorId %> rounded-xl"></span>
+                                        </td>
+                                        <td class="font-bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
+                                        <td class="px-1">-</td>
+                                        <td class="truncate max-w-[80px]">
+                                            <a href="/driver/<%= pilote.driverId %>" class="hover:underline"> <%= pilote.lastName %> </a>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                </table>
+                            </div>
+                            <span class="border border-<%= theme %> w-0.5 box-border bg-<%= theme %> mx-2"></span>
+                            <!-- Constructors -->
+                            <div class="w-1/2">
+                                <table class="w-full text-sm">
+                                    <% homeData.constructorStandings.slice(0, 10).forEach(function(constructor) { %>
+                                    <tr>
+                                        <td class="pr-2 py-1">
+                                            <span class="inline-block border border-<%= constructor.constructorId %> h-4 w-1 bg-<%= constructor.constructorId %> rounded-xl"></span>
+                                        </td>
+                                        <td class="font-bold"><%= String(constructor.position).padStart(2, '0') %></td>
+                                        <td class="px-1">-</td>
+                                        <td class="truncate max-w-[80px]">
+                                            <a href="/constructor/<%= constructor.constructorId %>" class="hover:underline"> <%= constructor.name %> </a>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 bg-s-<%= theme %> py-4 px-6 rounded-3xl flex flex-col justify-center items-center relative overflow-hidden">
                         <a href="">News</a>
                         <table>
                             <% newsFront.forEach(function(article) { %>
@@ -123,145 +196,14 @@
                             </tr>
                             <% }); %>
                         </table>
-                        <div class="grow flex items-center justify-center w-full">
-                            <a href="https://motorsport.com/" target="_blank">
-                                <img src="/img/assets/motorsport.png" alt="motorsport.com" class="h-12 w-auto" />
-                            </a>
-                        </div>
                     </div>
                 </div>
-
-                <div class="bg-s-<%= theme %> md:hidden flex flex-col justify-center items-center font-bold rounded-3xl w-full h-full mt-4 px-2 pt-2 pb-6">
-                    <a href="">News</a>
-                    <table>
-                        <% newsFront.forEach(function(article) { %>
-                        <tr class="border-b-2">
-                            <td>
-                                <a href="<%= article.link %>" target="_blank">
-                                    <div class="pt-2 px-4">
-                                        <p class="text-xs text-t-s-<%= theme %> font-bold"><%= article.pubDate %></p>
-                                        <h2 class="text-md font-bold mb-2 pt-4"><%= article.title %></h2>
-                                    </div>
-                                </a>
-                            </td>
-                        </tr>
-                        <% }); %>
-                    </table>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-y-1 gap-x-4">
-                    <div class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                        <a href="/driverstandings" class="flex justify-center text-center font-bold"> <%= __('home.drivers_standings') %> </a>
-                        <span class="flex justify-evenly">
-                            <table>
-                                <% homeData[0].driverStandings.slice(0, 11).forEach(function(pilote) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
-                                    <td class="px-1">-</td>
-                                    <td>
-                                        <a href="/driver/<%= pilote.driverId %>"> <%= pilote.lastName %> </a>
-                                    </td>
-                                </tr>
-                                <% }); %>
-                            </table>
-                            <span class="border border-<%= theme %> h-auto w-0.3 box-border bg-<%= theme %>"></span>
-                            <table>
-                                <% homeData[0].driverStandings.slice(11, 22).forEach(function(pilote) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
-                                    <td class="px-1">-</td>
-                                    <td>
-                                        <a href="/driver/<%= pilote.driverId %>"> <%= pilote.lastName %> </a>
-                                    </td>
-                                </tr>
-                                <% }); %>
-                            </table>
-                        </span>
-                    </div>
-
-                    <div class="w-full bg-s-<%= theme %> mt-4 py-2 rounded-3xl">
-                        <a href="/constructorstandings" class="flex justify-center text-center font-bold"> <%= __('home.constructors_standings') %> </a>
-                        <span class="flex justify-evenly">
-                            <table>
-                                <% homeData[0].constructorStandings.slice(0, 11).forEach(function(constructor) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold"><%= String(constructor.position).padStart(2, '0') %></td>
-                                    <td class="px-1">-</td>
-                                    <td>
-                                        <a href="/constructor/<%= constructor.constructorId %>"> <%= constructor.name %> </a>
-                                    </td>
-                                </tr>
-                                <% }); %>
-                            </table>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="block md:grid grid-cols-2 gap-x-4 items-stretch pt-4">
-                    <div class="bg-s-<%= theme %> flex md:flex-col items-center font-bold rounded-3xl w-full h-full">
-                        <a href="/chassis/<%= homeOTDData[0].chassisOTD[0].chassisId %>" class="w-full">
-                            <div id="chPilotes" class="h-48 bg-s-<%= theme %> font-bold rounded-3xl flex flex-col">
-                                <span class="text-center pt-2 px-2"> <%= __('home.chassis_otd') %> </span>
-                                <span class="flex flex-col md:flex-row justify-evenly items-center mt-auto gap-2 pt-2">
-                                    <span class="flex gap-x-2 md:flex-col items-center text-md md:text-xl">
-                                        <span><%= homeOTDData[0].chassisOTD[0].constructorFullName %></span>
-                                        <span><%= homeOTDData[0].chassisOTD[0].chassisName %></span>
-                                    </span>
-                                    <img src="https://pitlaneinsider-data.alwaysdata.net/cars_img/<%= homeOTDData[0].chassisOTD[0].chassisId %>.webp" class="h-28 md:h-36 w-auto" />
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="w-full h-full mt-4 md:mt-0">
-                        <div id="championnats" class="flex gap-4 w-full">
-                            <a href="/driver/<%= homeOTDData[0].driverOTD[0].driverId %>" class="w-full">
-                                <div id="chPilotes" class="h-36 md:h-48 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl">
-                                    <span class="text-center pt-2 px-2"> <%= __('home.driver_otd') %> </span>
-                                    <span class="flex justify-evenly items-center mt-auto gap-2">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeOTDData[0].driverOTD[0].driverId %>.webp" class="h-24 md:h-36 w-auto" />
-                                    </span>
-                                </div>
-                            </a>
-
-                            <a href="/constructor/<%= homeOTDData[0].constructorOTD[0].constructorId %>" class="w-full">
-                                <div id="chContructeurs" class="h-36 md:h-48 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
-                                    <span class="text-center font-bold pt-2 px-2"> <%= __('home.constructor_otd') %> </span>
-                                    <span>
-                                        <img src="/img/constructors/<%= homeOTDData[0].constructorOTD[0].constructorId %>.webp" class="h-16 md:h-28 w-auto mt-3 md:mt-6" />
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
         <%- include('../partials/footer.ejs') %>
     </body>
 
     <script>
-        function updateNextRaceInfo() {
-            document.getElementById('race-location').textContent = '<%= homeData[0].nextRaceInfo[0].name %>';
-            const flagElement = document.getElementById('flag');
-            flagElement.innerHTML = ''; // Clear any existing flag
-            const img = document.createElement('img');
-            img.setAttribute('class', 'h-6 w-auto');
-            img.setAttribute('src', `/img/countryFlags/${'<%= homeData[0].nextRaceInfo[0].country %>'}.svg`);
-            flagElement.appendChild(img);
-
-            // Inclure l'heure de la course dans le démarrage du compte à rebours
-            startCountdown('<%= homeData[0].nextRaceInfo[0].raceDate %>', '<%= homeData[0].nextRaceInfo[0].raceTime %>');
-        }
+        
 
         /**
          * @description Démarre le compte à rebours pour la prochaine course
@@ -336,6 +278,9 @@
             return minute === '00' ? hour + 'h' : hour + 'h' + minute;
         }
 
-        updateNextRaceInfo();
+        
+    <% if (homeData.nextRaceInfo && homeData.nextRaceInfo.nextSessionDate && homeData.nextRaceInfo.nextSessionTime) { %>
+        startCountdown('<%= homeData.nextRaceInfo.nextSessionDate %>', '<%= homeData.nextRaceInfo.nextSessionTime %>');
+    <% } %>
     </script>
 </html>
