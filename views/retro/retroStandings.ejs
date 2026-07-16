@@ -143,11 +143,16 @@
                         <% retroDriversStandings.forEach(function(pilot) { %>
                         <tr>
                             <td class="pr-2">
-                                <span class="border-2 border-<%= pilot.constructorId %> h-auto w-1 box-border bg-<%= pilot.constructorId %> rounded-3xl"> </span>
+                                <div class="h-6 w-1 rounded-3xl overflow-hidden flex flex-col box-border">
+                                    <% if (pilot.constructorIds && pilot.constructorIds.length > 0) { pilot.constructorIds.forEach(id => { %>
+                                    <div class="flex-1 bg-<%= id %> border border-<%= id %>"></div>
+                                    <% });
+                                    } %>
+                                </div>
                             </td>
-                            <td class="font-bold pr-3"><%= String(pilot.position).padStart(2, '0' ) %></td>
+                            <td class="font-bold pr-3"><%= String(pilot.positionNumber).padStart(2, '0' ) %></td>
                             <td class="border-l-2 pl-3 pr-3">
-                                <a href="/driver/<%= pilot.driverId %>"> <%= pilot.firstName %> <%= pilot.lastName %> </a>
+                                <a href="/driver/<%= pilot.driverId %>"> <%= pilot.driver.firstName %> <%= pilot.driver.lastName %> </a>
                             </td>
                             <td class="border-l-2 pl-3"><%= pilot.points %></td>
                         </tr>
@@ -155,7 +160,7 @@
                     </table>
                 </div>
 
-                <div id="constructors" class="bg-s-<%= theme %> p-4 mt-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3">
+                <div id="constructors" class="bg-s-<%= theme %> p-4 mt-8 rounded-3xl mx-auto max-w-sm sm:max-w-xl h-2/3 hidden">
                     <table>
                         <tr>
                             <td></td>
@@ -168,9 +173,9 @@
                             <td class="pr-2">
                                 <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
                             </td>
-                            <td class="pr-3 font-bold"><%= String(constructor.position).padStart(2, '0' ) %></td>
+                            <td class="pr-3 font-bold"><%= String(constructor.positionNumber).padStart(2, '0' ) %></td>
                             <td class="border-l-2 pl-3 pr-3">
-                                <a href="/constructor/<%= constructor.constructorId %>"> <%= constructor.constructorName %> </a>
+                                <a href="/constructor/<%= constructor.constructorId %>"> <%= constructor.constructor.name %> </a>
                             </td>
                             <td class="border-l-2 pl-3"><%= constructor.points %></td>
                         </tr>

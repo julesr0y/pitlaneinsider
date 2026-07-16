@@ -14,18 +14,18 @@
                 <div class="text-4xl font-bold text-center my-8"><%= __('retro_f1.constructorwinners.title') %></div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <% for (let index in constructorWinners) { %>
-                    <a href="/constructor/<%= constructorWinners[index].constructorId %>">
+                    <a href="/constructor/<%= constructorWinners[index].id %>">
                         <div class="bg-s-<%= theme %> flex flex-col items-center justify-center p-6 rounded-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl">
-                            <div class="w-full border-l-4 border-<%= constructorWinners[index].constructorId %> pl-4">
+                            <div class="w-full border-l-4 border-<%= constructorWinners[index].id %> pl-4">
                                 <div class="flex items-center justify-between w-full">
                                     <div>
                                         <span class="text-2xl font-bold"> <%= constructorWinners[index].name %> </span>
-                                        <div class="bg-<%= constructorWinners[index].constructorId %> h-1 w-12 mt-2"></div>
+                                        <div class="bg-<%= constructorWinners[index].id %> h-1 w-12 mt-2"></div>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-4 text-t-s-<%= theme %>">
                                     <span class="text-lg"> <%= __('retro_f1.constructorwinners.number_of_titles') %> : </span>
-                                    <span class="text-4xl font-semibold text-<%= constructorWinners[index].constructorId %> ml-2"> <%= constructorWinners[index].titles %> </span>
+                                    <span class="text-4xl font-semibold text-<%= constructorWinners[index].id %> ml-2"> <%= constructorWinners[index].totalChampionshipWins %> </span>
                                 </div>
                             </div>
                         </div>

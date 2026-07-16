@@ -119,11 +119,11 @@
                     <% retro_calendrier.forEach(course=> { %>
                         <% if (course.year==selectedYear) { %>
 
-                            <a href="/retrogpdetails/<%= selectedYear %>/<%= String(course.raceId) %>"
+                            <a href="/retrogpdetails/<%= selectedYear %>/<%= String(course.id) %>"
                                 data-round="<%= course.round %>"
                                 class="gp-detail-link bg-s-<%= theme %> p-4 w-4/5 md:w-3/4 shadow-md rounded-2xl mt-8 focus:outline-hidden focus:ring-2 focus:ring-gray-500">
                                 <div class="flex flex-col items-center">
-                                    <img src="/img/countryFlags/<%= course.country %>.svg" alt="<%= course.country %>"
+                                    <img src="/img/countryFlags/<%= course.country.name %>.svg" alt="<%= course.country.name %>"
                                         class="h-56 w-auto my-auto rounded-xl">
                                     <ul class="text-t-s-<%= theme %>">
                                         <li class="text-xl text-center">
@@ -144,11 +144,11 @@
                     <% if (retro_calendrier && retro_calendrier.length> 0) { %>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
                         <% retro_calendrier.forEach(function(race) { %>
-                        <a href="/retrogpdetails/<%= selectedYear %>/<%= String(race.raceId) %>" data-round="<%= race.round %>" class="block text-center">
-                            <div id="race-<%= race.raceId %>" class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
+                        <a href="/retrogpdetails/<%= selectedYear %>/<%= String(race.id) %>" data-round="<%= race.round %>" class="block text-center">
+                            <div id="race-<%= race.id %>" class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
                                 <div class="flex flex-col items-center">
-                                    <img src="/img/countryFlags/<%= race.country.toLowerCase() %>.svg" alt="<%= race.country %>" class="mb-2 h-20 w-auto" />
-                                    <p class="text-xl font-bold mb-3"><%= race.name %></p>
+                                    <img src="/img/countryFlags/<%= race.country.id %>.svg" alt="<%= race.country.name %>" class="mb-2 h-20 w-auto" />
+                                    <p class="text-xl font-bold mb-3"><%= race.grandPrix.name %></p>
                                     <p class="text-lg"><%= race.date %></p>
                                 </div>
                             </div>

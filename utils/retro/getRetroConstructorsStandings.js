@@ -1,35 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 
-/**
- * @description Returns constructors standings of a specific season
- * @async
- * @param {String} season_id 
- * @returns {Array}
- */
 async function getRetroConstructorsStandings(season_id) {
     try {
-        const constructorsStandingsDataFilePath = path.join(__dirname, '../../data/all_constructor_standings.json');
-        const constructorsStandingsData = JSON.parse(fs.readFileSync(constructorsStandingsDataFilePath, 'utf-8'));
-        const targetedSeasonData = constructorsStandingsData.filter(item => item.year == season_id);
-
-        var constructorsStandingsFrontData = [];
-        targetedSeasonData.forEach(function (element) {
-            const constructorInfo = {
-                constructorId: element.constructorId,
-                constructorName: element.name,
-                position: element.position,
-                points: element.points
+        const constructorsStandings = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/f1db/f1db-seasons-constructor-standings.json'), 'utf-8'));
+        const constructors = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/f1db/f1db-constructors.json'), 'utf-8'));
+        
+        const targetedSeasonData = constructorsStandings.filter(item => item.year == season_id);
+        let constructorsStandingsFrontData = targetedSeasonData.map(element => {
+            const constructorData = constructors.find(c => c.id === element.constructorId);
+            return {
+                ...element,
+                constructor: constructorData || {}
             };
-
-            constructorsStandingsFrontData.push(constructorInfo);
         });
 
+        constructorsStandingsFrontData.sort((a, b) => a.positionNumber - b.positionNumber);
         return constructorsStandingsFrontData;
     } catch (error) {
-        console.error('getRetroConstructorsStandings, error during execution :', error);
+        console.error('getRetroConstructorsStandings, error:', error);
         throw error;
     }
 }
-
 module.exports = getRetroConstructorsStandings;

@@ -22,7 +22,7 @@ async function getDriverData(driver_id) {
         }
 
         const driverEntrants = entrantsDriversData.filter(e => e.driverId === driver_id);
-        
+
         let firstYear = null;
         if (driverEntrants.length > 0) {
             firstYear = Math.min(...driverEntrants.map(e => e.year));
@@ -41,11 +41,11 @@ async function getDriverData(driver_id) {
                 podiums: 0,
                 points: 0
             };
-            
+
             // Get 2026 races where this driver participated
             const races2026 = racesData.filter(r => r.year === currentYear).map(r => r.id);
             const driverResults2026 = racesResultsData.filter(r => r.driverId === driver_id && races2026.includes(r.raceId));
-            
+
             currentSeason.races = driverResults2026.length;
             currentSeason.wins = driverResults2026.filter(r => r.positionNumber === 1).length;
             currentSeason.podiums = driverResults2026.filter(r => r.positionNumber >= 1 && r.positionNumber <= 3).length;
@@ -68,7 +68,7 @@ async function getDriverData(driver_id) {
         // Charts
         const standings = driverStandingsData.filter(s => s.driverId === driver_id).sort((a, b) => a.year - b.year);
         const chartData = [];
-        
+
         // Count victories per year
         const allVictories = {};
         const driverWins = racesResultsData.filter(r => r.driverId === driver_id && r.positionNumber === 1);

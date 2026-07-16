@@ -68,7 +68,7 @@
 
                     drivers.forEach((driver) => {
                         const driverHTML = `
-                        <a href="/driver/${driver.driverId}" class="block">
+                        <a href="/driver/${driver.id}" class="block">
                             <div class="bg-s-${theme} rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col justify-end gap-2 items-center">
                                 <div class="pt-2">
                                     <div class="text-xl text-center font-semibold">
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
 
-                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/${driver.driverId}.webp"
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/${driver.id}.webp"
                                     alt="${driver.firstName} ${driver.lastName}"
                                     class="w-full h-36 object-contain"
                                 />

@@ -44,95 +44,89 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center items-start mt-4 space-y-4 md:space-y-0 md:space-x-4 px-4">
-                <div class="space-y-4 md:space-y-0 md:space-x-4 px-4 grow w-full">
-                    <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
-                        <a href="retrodriverwinners">
-                            <span class="flex justify-center text-center mb-4 font-bold">
-                                <h2 class="text-center font-bold mt-4"><%= __('retro_f1.home.winners_title') %></h2>
-                            </span>
-                            <div class="flex justify-evenly items-end h-full">
-                                <div class="flex flex-col items-center">
-                                    <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= retroHome[1].key %>.webp" class="h-20 w-auto" />
-                                    <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
-                                        <span class="text-lg font-bold">1</span>
-                                        <span class="text-sm font-bold mt-2"> <%= retroHome[1].abbreviation %> </span>
-                                        <span>
-                                            <%= retroHome[1].titles %>
-                                            <%= __('retro_f1.home.driver_titles') %>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= retroHome[0].key %>.webp" class="h-20 w-auto" />
-                                    <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
-                                        <span class="text-lg font-bold">1</span>
-                                        <span class="text-sm font-bold mt-2"> <%= retroHome[0].abbreviation %> </span>
-                                        <span>
-                                            <%= retroHome[0].titles %>
-                                            <%= __('retro_f1.home.driver_titles') %>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= retroHome[2].key %>.webp" class="h-20 w-auto" />
-                                    <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
-                                        <span class="text-lg font-bold">3</span>
-                                        <span class="text-sm font-bold mt-2"> <%= retroHome[2].abbreviation %> </span>
-                                        <span>
-                                            <%= retroHome[2].titles %>
-                                            <%= __('retro_f1.home.driver_titles') %>
-                                        </span>
-                                    </div>
+            <div>
+                <div class="flex flex-col md:flex-row justify-center items-stretch mt-4 space-y-4 md:space-y-0 md:space-x-4 px-4">
+                    <a href="retrodriverwinners" class="bg-s-<%= theme %> w-full md:w-1/2 lg:w-1/3 rounded-3xl pt-4 grow flex flex-col justify-between">
+                        <span class="flex justify-center text-center mb-4 font-bold">
+                            <h2 class="text-center font-bold mt-4"><%= __('retro_f1.home.winners_title') %></h2>
+                        </span>
+                        <div class="flex justify-evenly items-end grow">
+                            <div class="flex flex-col items-center">
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= retroHome[1].id %>.webp" class="h-20 w-auto" />
+                                <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">1</span>
+                                    <span class="text-sm font-bold mt-2"> <%= retroHome[1].abbreviation %> </span>
+                                    <span>
+                                        <%= retroHome[1].titles %>
+                                        <%= __('retro_f1.home.driver_titles') %>
+                                    </span>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                </div>
+                            <div class="flex flex-col items-center">
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= retroHome[0].id %>.webp" class="h-20 w-auto" />
+                                <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">1</span>
+                                    <span class="text-sm font-bold mt-2"> <%= retroHome[0].abbreviation %> </span>
+                                    <span>
+                                        <%= retroHome[0].titles %>
+                                        <%= __('retro_f1.home.driver_titles') %>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= retroHome[2].id %>.webp" class="h-20 w-auto" />
+                                <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">3</span>
+                                    <span class="text-sm font-bold mt-2"> <%= retroHome[2].abbreviation %> </span>
+                                    <span>
+                                        <%= retroHome[2].titles %>
+                                        <%= __('retro_f1.home.driver_titles') %>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-                <div class="space-y-4 md:space-y-0 md:space-x-4 px-4 grow w-full">
-                    <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
-                        <a href="retroconstructorwinners">
-                            <span class="flex justify-center text-center mb-4 font-bold">
-                                <h2 class="text-center font-bold mt-4"><%= __('retro_f1.home.winners_constructors_title') %></h2>
-                            </span>
-                            <div class="flex justify-evenly items-end h-full">
-                                <div class="flex flex-col items-center gap-y-2">
-                                    <img src="/img/constructors/<%= constructorWinners[1].key %>.webp" class="h-12 w-auto" />
-                                    <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
-                                        <span class="text-lg font-bold">2</span>
-                                        <span class="text-sm font-bold mt-2"> <%= constructorWinners[1].name %> </span>
-                                        <span>
-                                            <%= constructorWinners[1].titles %>
-                                            <%= __('retro_f1.home.driver_titles') %>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-center gap-y-2">
-                                    <img src="/img/constructors/<%= constructorWinners[0].key %>.webp" class="h-12 w-auto" />
-                                    <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
-                                        <span class="text-lg font-bold">1</span>
-                                        <span class="text-sm font-bold mt-2"> <%= constructorWinners[0].name %> </span>
-                                        <span>
-                                            <%= constructorWinners[0].titles %>
-                                            <%= __('retro_f1.home.driver_titles') %>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-center gap-y-2">
-                                    <img src="/img/constructors/<%= constructorWinners[2].key %>.webp" class="h-12 w-auto" />
-                                    <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
-                                        <span class="text-lg font-bold">3</span>
-                                        <span class="text-sm font-bold mt-2"> <%= constructorWinners[2].name %> </span>
-                                        <span>
-                                            <%= constructorWinners[2].titles %>
-                                            <%= __('retro_f1.home.driver_titles') %>
-                                        </span>
-                                    </div>
+                    <a href="retroconstructorwinners" class="bg-s-<%= theme %> w-full md:w-1/2 lg:w-1/3 rounded-3xl pt-4 grow flex flex-col justify-between">
+                        <span class="flex justify-center text-center mb-4 font-bold">
+                            <h2 class="text-center font-bold mt-4"><%= __('retro_f1.home.winners_constructors_title') %></h2>
+                        </span>
+                        <div class="flex justify-evenly items-end grow">
+                            <div class="flex flex-col items-center gap-y-2">
+                                <img src="/img/constructors/<%= constructorWinners[1].id %>.webp" class="h-12 w-auto" />
+                                <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">2</span>
+                                    <span class="text-sm font-bold mt-2"> <%= constructorWinners[1].name %> </span>
+                                    <span>
+                                        <%= constructorWinners[1].titles %>
+                                        <%= __('retro_f1.home.driver_titles') %>
+                                    </span>
                                 </div>
                             </div>
-                        </a>
-                    </div>
+                            <div class="flex flex-col items-center gap-y-2">
+                                <img src="/img/constructors/<%= constructorWinners[0].id %>.webp" class="h-12 w-auto" />
+                                <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">1</span>
+                                    <span class="text-sm font-bold mt-2"> <%= constructorWinners[0].name %> </span>
+                                    <span>
+                                        <%= constructorWinners[0].titles %>
+                                        <%= __('retro_f1.home.driver_titles') %>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-y-2">
+                                <img src="/img/constructors/<%= constructorWinners[2].id %>.webp" class="h-12 w-auto" />
+                                <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
+                                    <span class="text-lg font-bold">3</span>
+                                    <span class="text-sm font-bold mt-2"> <%= constructorWinners[2].name %> </span>
+                                    <span>
+                                        <%= constructorWinners[2].titles %>
+                                        <%= __('retro_f1.home.driver_titles') %>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </main>

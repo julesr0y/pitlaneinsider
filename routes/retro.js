@@ -19,6 +19,9 @@ router.get("/retrohome", cors(), async (req, res) => {
     try {
         var retroHome = await getDriverWinners();
         var constructorWinners = await getConstructorWinners();
+        retroHome = Object.fromEntries(Object.entries(retroHome).slice(0, 3)); // keep only 3 first entries
+        constructorWinners = Object.fromEntries(Object.entries(constructorWinners).slice(0, 3)); // keep only 3 first entries
+
         res.render("retro/retroHome", { retroHome: retroHome, constructorWinners: constructorWinners });
     } catch (error) {
         res.render('security/error', { textError: '/retrohome route, error during execution', error: error });

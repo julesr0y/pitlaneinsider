@@ -22,12 +22,12 @@ async function getConstructorData(constructorId_param) {
         }
 
         const constructorSeasons = seasonsConstructorsData.filter(item => item.constructorId === constructorId_param);
-        
+
         let firstYear = null;
         if (constructorSeasons.length > 0) {
             firstYear = Math.min(...constructorSeasons.map(s => s.year));
         }
-        
+
         const numberOfSeasons = new Set(constructorSeasons.map(s => s.year)).size;
 
         const currentYear = 2026;
