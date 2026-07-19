@@ -115,7 +115,7 @@
                             </div>
                             <div class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-6"><%= homeData.nextRaceInfo.nextSessionName %></div>
 
-                            <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm border border-gray-700">
+                            <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm md:max-w-lg border border-gray-700">
                                 <div class="flex flex-col items-center"><span id="days" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
                                 <div class="flex flex-col items-center"><span id="hours" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
                                 <div class="flex flex-col items-center"><span id="minutes" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
@@ -220,7 +220,7 @@
 
                 if (distance < 0) {
                     clearInterval(countdownInterval);
-                    document.getElementById('countdown').innerHTML = `<div class="col-span-12 flex justify-evenly items-center gap-2">Session started - <span class="flex gap-1 items-center"><span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span><a href="/live" class="text-red-500">Live</a></span></div>`;
+                    document.getElementById('countdown').innerHTML = `<div class="col-span-12 flex justify-evenly items-center gap-2"><span class="flex gap-1 items-center"><span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span><a href="/live" class="text-red-500">Live</a></span></div>`;
                     return;
                 }
 
