@@ -22,11 +22,16 @@
 
 ![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Express](https://a11ybadges.com/badge?logo=express) ![Tailwind CSS](https://a11ybadges.com/badge?logo=tailwindcss) ![JSON](https://a11ybadges.com/badge?logo=json)
 
-For data retrieval, we mainly used the [F1DB](https://github.com/f1db/f1db) repo that we coupled with a Javascript program system allowing us to reduce the size of the files. We also used [OpenF1 Api](https://openf1.org/) for live data.
+#### Data sources:
+
+For data retrieval, we used the [F1DB](https://github.com/f1db/f1db) repo. We also used [OpenF1 Api](https://openf1.org/) for live data.  
+`data/f1db` folder contains splitted .json files from the latest version of the f1db repo.
+
+For circuits layouts, we used [F1 Circuits SVG](https://github.com/julesr0y/f1-circuits-svg).
 
 #### Launching the web application:
 
-To launch the web application based on Node.JS (v21 min required), you need to go to the root of the project, then follow these steps:
+To launch the web application based on Node.JS (v24 min required), you need to go to the root of the project, then follow these steps:
 
 1. If this is the first time you want to use the application (otherwise go directly to step 2):
 
@@ -65,10 +70,6 @@ To format code before committing, please use :
 ```bash 
 npm run format:views
 ```
-
-#### Status :
-
-The status of the platform as well as the list of known incidents can be accessed [here](https://pitlaneinsider.betteruptime.com/).
 
 ```
  ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________
