@@ -30,13 +30,24 @@ async function getHomeData() {
         // Find last race and next race
         let lastRace = null;
         let nextRaceInfo = null;
+        const now = Date.now();
 
         for (let i = 0; i < races.length; i++) {
+            // Find nextRace based on time
+            if (!nextRaceInfo) {
+                if (races[i].date && races[i].time) {
+                    const raceEndTime = new Date(`${races[i].date}T${races[i].time}Z`).getTime() + (3 * 60 * 60 * 1000);
+                    if (now <= raceEndTime) {
+                        nextRaceInfo = races[i];
+                    }
+                } else {
+                    nextRaceInfo = races[i];
+                }
+            }
+            
+            // Find lastRace based on actual results existing in DB
             if (results.some(r => r.raceId === races[i].id)) {
                 lastRace = races[i];
-            } else {
-                nextRaceInfo = races[i];
-                break;
             }
         }
 
