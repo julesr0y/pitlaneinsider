@@ -2906,6 +2906,9 @@
     .md\:h-24 {
       height: calc(var(--spacing) * 24);
     }
+    .md\:h-36 {
+      height: calc(var(--spacing) * 36);
+    }
     .md\:w-1\/2 {
       width: calc(1 / 2 * 100%);
     }
