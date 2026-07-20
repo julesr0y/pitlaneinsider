@@ -39,38 +39,38 @@
 
     <body class="font-regular text-<%= theme %> flex flex-col min-h-screen">
         <main class="bg-b-<%= theme %> grow">
-            <div class="px-4 pt-4">
+            <div class="px-4 md:pt-4">
                 <div class="block md:grid grid-cols-2 gap-4 items-stretch">
-                    <div class="w-full h-full">
-                        <div id="championnats" class="flex gap-4 w-full">
-                            <a href="/driver/<%= homeData.driverLeader.driverId %>" class="w-full">
-                                <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl overflow-hidden">
-                                    <span class="text-center pt-2"> <%= __('home.drivers_championship') %> </span>
-                                    <span class="flex justify-evenly items-center mt-auto gap-2">
-                                        <span class="flex flex-col items-center text-xl">
-                                            <span>
-                                                <%= homeData.driverLeader.abbreviation %>
-                                            </span>
-                                            <span class="text-<%= homeData.driverLeader.constructorId %>"> <% if(homeData.driverLeader.permanentNumber==4) { %> <%= 1 %> <% } else { %> <%= homeData.driverLeader.permanentNumber %> <% } %> </span>
-                                        </span>
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
-                                    </span>
-                                </div>
-                            </a>
+                    <div class="bg-s-<%= theme %> flex flex-col justify-between items-center font-bold rounded-3xl w-full h-full py-2 mt-4 md:mt-0 relative overflow-hidden">
+                        <% if (homeData.nextRaceInfo) { %>
+                        <!-- Circuit Background SVG -->
+                        <img src="/img/circuits/<%= homeData.nextRaceInfo.circuitLayoutId %>.svg" class="absolute inset-0 m-auto h-3/4 opacity-10 pointer-events-none" alt="" />
 
-                            <a href="/constructor/<%= homeData.constructorLeader.constructorId %>" class="w-full">
-                                <div id="chContructeurs" class="h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
-                                    <span class="text-center font-bold pt-2"> <%= __('home.constructors_championship') %> </span>
-                                    <span>
-                                        <img src="/img/constructors/<%= homeData.constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
-                                    </span>
-                                </div>
-                            </a>
+                        <div class="z-10 flex flex-col items-center text-center w-full mt-4">
+                            <div class="flex items-center gap-x-3 mb-2">
+                                <img id="flag" src="/img/countryFlags/<%= homeData.nextRaceInfo.country %>.svg" class="h-6 w-auto shadow-md rounded-sm" alt="Flag" />
+                                <h2 class="font-wide text-2xl m-0"><%= homeData.nextRaceInfo.name %></h2>
+                            </div>
+                            <div class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-6"><%= homeData.nextRaceInfo.nextSessionName %></div>
+
+                            <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm md:max-w-lg border border-gray-700">
+                                <div class="flex flex-col items-center"><span id="days" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
+                                <div class="flex flex-col items-center"><span id="hours" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
+                                <div class="flex flex-col items-center"><span id="minutes" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
+                                <div class="flex flex-col items-center"><span id="seconds" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.seconds') %></span></div>
+                            </div>
                         </div>
+                        <% } else { %>
+                        <div class="flex flex-col justify-center items-center h-full z-10">
+                            <h2 class="text-center text-orange-400 font-wide text-2xl m-0"><%= __('home.season_finished') || 'Saison terminée' %></h2>
+                        </div>
+                        <% } %>
+                    </div>
 
+                    <div class="w-full h-full md:mt-0 mt-4">
                         <% if (homeData.lastPodiumLocalisation) { %>
                         <a href="/retrogpdetails/2026/<%= homeData.lastPodiumLocalisation.id %>">
-                            <div class="w-full bg-s-<%= theme %> mt-4 rounded-3xl overflow-hidden">
+                            <div class="w-full bg-s-<%= theme %> rounded-3xl overflow-hidden">
                                 <span class="flex justify-center text-center mb-4 font-bold gap-2 pt-2">
                                     <%= __('home.last_race') %> - <%= homeData.lastPodiumLocalisation.name %>
                                     <img src="/img/countryFlags/<%= homeData.lastPodiumLocalisation.country %>.svg" alt="<%= homeData.lastPodiumLocalisation.country %>" class="h-6 w-auto" />
@@ -101,32 +101,32 @@
                             </div>
                         </a>
                         <% } %>
-                    </div>
 
-                    <div class="bg-s-<%= theme %> flex flex-col justify-between items-center font-bold rounded-3xl w-full h-full py-2 mt-4 md:mt-0 relative overflow-hidden">
-                        <% if (homeData.nextRaceInfo) { %>
-                        <!-- Circuit Background SVG -->
-                        <img src="/img/circuits/<%= homeData.nextRaceInfo.circuitId %>.svg" class="absolute inset-0 m-auto h-3/4 opacity-10 pointer-events-none" alt="" />
+                        <div id="championnats" class="flex gap-4 w-full mt-4">
+                            <a href="/driver/<%= homeData.driverLeader.driverId %>" class="w-full">
+                                <div id="chPilotes" class="h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl overflow-hidden">
+                                    <span class="text-center pt-2"> <%= __('home.drivers_championship') %> </span>
+                                    <span class="flex justify-evenly items-center mt-auto gap-2">
+                                        <span class="flex flex-col items-center text-xl">
+                                            <span>
+                                                <%= homeData.driverLeader.abbreviation %>
+                                            </span>
+                                            <span class="text-<%= homeData.driverLeader.constructorId %>"> <% if(homeData.driverLeader.permanentNumber==4) { %> <%= 1 %> <% } else { %> <%= homeData.driverLeader.permanentNumber %> <% } %> </span>
+                                        </span>
+                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                    </span>
+                                </div>
+                            </a>
 
-                        <div class="z-10 flex flex-col items-center text-center w-full mt-4">
-                            <div class="flex items-center gap-x-3 mb-2">
-                                <img id="flag" src="/img/countryFlags/<%= homeData.nextRaceInfo.country %>.svg" class="h-6 w-auto shadow-md rounded-sm" alt="Flag" />
-                                <h2 class="font-wide text-2xl m-0"><%= homeData.nextRaceInfo.name %></h2>
-                            </div>
-                            <div class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-6"><%= homeData.nextRaceInfo.nextSessionName %></div>
-
-                            <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm md:max-w-lg border border-gray-700">
-                                <div class="flex flex-col items-center"><span id="days" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
-                                <div class="flex flex-col items-center"><span id="hours" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
-                                <div class="flex flex-col items-center"><span id="minutes" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
-                                <div class="flex flex-col items-center"><span id="seconds" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.seconds') %></span></div>
-                            </div>
+                            <a href="/constructor/<%= homeData.constructorLeader.constructorId %>" class="w-full">
+                                <div id="chContructeurs" class="h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
+                                    <span class="text-center font-bold pt-2"> <%= __('home.constructors_championship') %> </span>
+                                    <span>
+                                        <img src="/img/constructors/<%= homeData.constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
+                                    </span>
+                                </div>
+                            </a>
                         </div>
-                        <% } else { %>
-                        <div class="flex flex-col justify-center items-center h-full z-10">
-                            <h2 class="text-center text-orange-400 font-wide text-2xl m-0"><%= __('home.season_finished') || 'Saison terminée' %></h2>
-                        </div>
-                        <% } %>
                     </div>
                 </div>
 
@@ -143,14 +143,15 @@
                                 <table class="w-full text-sm">
                                     <% homeData.driverStandings.slice(0, 10).forEach(function(pilote) { %>
                                     <tr>
-                                        <td class="pr-2 py-1">
-                                            <span class="inline-block border border-<%= pilote.constructorId %> h-4 w-1 bg-<%= pilote.constructorId %> rounded-xl"></span>
+                                        <td class="pr-1 py-1">
+                                            <span class="border-2 border-<%= pilote.constructorId %> h-auto w-1 box-border bg-<%= pilote.constructorId %> rounded-3xl"> </span>
                                         </td>
                                         <td class="font-bold"><%= String(pilote.position).padStart(2, '0' ) %></td>
-                                        <td class="px-1">-</td>
-                                        <td class="truncate max-w-[80px]">
+                                        <td class="truncate max-w-[60px]">
                                             <a href="/driver/<%= pilote.driverId %>" class="hover:underline"> <%= pilote.lastName %> </a>
                                         </td>
+                                        <td class="pl-3 border-l-2 border-gray-600 py-1"></td>
+                                        <td class="px-1"><%= pilote.points %>pts</td>
                                     </tr>
                                     <% }); %>
                                 </table>
@@ -161,14 +162,15 @@
                                 <table class="w-full text-sm">
                                     <% homeData.constructorStandings.slice(0, 10).forEach(function(constructor) { %>
                                     <tr>
-                                        <td class="pr-2 py-1">
-                                            <span class="inline-block border border-<%= constructor.constructorId %> h-4 w-1 bg-<%= constructor.constructorId %> rounded-xl"></span>
+                                        <td class="pr-1 py-1">
+                                            <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
                                         </td>
                                         <td class="font-bold"><%= String(constructor.position).padStart(2, '0') %></td>
-                                        <td class="px-1">-</td>
-                                        <td class="truncate max-w-[80px]">
+                                        <td class="truncate max-w-[60px]">
                                             <a href="/constructor/<%= constructor.constructorId %>" class="hover:underline"> <%= constructor.name %> </a>
                                         </td>
+                                        <td class="pl-3 border-l-2 border-gray-600 py-1"></td>
+                                        <td class="px-1"><%= constructor.points %>pts</td>
                                     </tr>
                                     <% }); %>
                                 </table>

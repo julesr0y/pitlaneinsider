@@ -5,6 +5,8 @@ const racesData = require('../../data/f1db/f1db-races.json');
 const gpData = require('../../data/f1db/f1db-grands-prix.json');
 const circuitsData = require('../../data/f1db/f1db-circuits.json');
 const driversData = require('../../data/f1db/f1db-drivers.json');
+const enginesData = require('../../data/f1db/f1db-engine-manufacturers.json');
+const tyresData = require('../../data/f1db/f1db-tyre-manufacturers.json');
 
 const raceResultsData = require('../../data/f1db/f1db-races-race-results.json');
 const fp1Data = require('../../data/f1db/f1db-races-free-practice-1-results.json');
@@ -73,12 +75,24 @@ async function getGPDetail(year, gp_id) {
             return raceDataMap[driverId];
         }
 
+        function populateObj(res) {
+            if (!res) return null;
+            const obj = { ...res };
+            if (obj.engineManufacturerId) {
+                obj.engineManufacturer = enginesData.find(e => e.id === obj.engineManufacturerId) || { name: obj.engineManufacturerId };
+            }
+            if (obj.tyreManufacturerId) {
+                obj.tyreManufacturer = tyresData.find(t => t.id === obj.tyreManufacturerId) || { name: obj.tyreManufacturerId };
+            }
+            return obj;
+        }
+
         // Race Results
         raceResults.forEach(res => {
             const drv = initDriver(res.driverId);
             // In case of gap being null for DNF, we use positionText (to keep the string value like "DNF")
             // We just override it in a new object so we don't mutate the global f1db cache
-            const raceObj = { ...res };
+            const raceObj = populateObj(res);
             if (!raceObj.gap && isNaN(parseInt(raceObj.positionText))) {
                 raceObj.gap = raceObj.positionText;
             }
@@ -88,32 +102,32 @@ async function getGPDetail(year, gp_id) {
         // Other Sessions
         fp1Results.forEach(res => {
             const drv = initDriver(res.driverId);
-            drv.fp1 = res;
+            drv.fp1 = populateObj(res);
         });
 
         fp2Results.forEach(res => {
             const drv = initDriver(res.driverId);
-            drv.fp2 = res;
+            drv.fp2 = populateObj(res);
         });
 
         fp3Results.forEach(res => {
             const drv = initDriver(res.driverId);
-            drv.fp3 = res;
+            drv.fp3 = populateObj(res);
         });
 
         qualiResults.forEach(res => {
             const drv = initDriver(res.driverId);
-            drv.quali = res;
+            drv.quali = populateObj(res);
         });
 
         sqResults.forEach(res => {
             const drv = initDriver(res.driverId);
-            drv.sprintQuali = res;
+            drv.sprintQuali = populateObj(res);
         });
 
         srResults.forEach(res => {
             const drv = initDriver(res.driverId);
-            const srObj = { ...res };
+            const srObj = populateObj(res);
             if (!srObj.gap && isNaN(parseInt(srObj.positionText))) {
                 srObj.gap = srObj.positionText;
             }

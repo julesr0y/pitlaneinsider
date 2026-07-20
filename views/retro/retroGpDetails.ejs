@@ -11,7 +11,8 @@
     <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="app-container">
-                <div class="text-center my-4 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:hidden">
+                <!-- GP Info Mobile -->
+                <div class="text-center my-4 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 md:hidden">
                     <div class="flex flex-col items-center gap-2">
                         <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos.id %> </span>
                         <span class="flex flex-col">
@@ -23,7 +24,7 @@
                         <div class="w-6/12">
                             <span>
                                 <a href="/circuit/<%= gpDetails.gpInfos.circuitId %>">
-                                    <img src="/img/circuits/<%= gpDetails.gpInfos.circuitId %>.svg" alt="<%= gpDetails.gpInfos.circuitId %>" />
+                                    <img src="/img/circuits/<%= gpDetails.gpInfos.circuitLayoutId %>.svg" alt="<%= gpDetails.gpInfos.circuitId %>" />
                                 </a>
                             </span>
                         </div>
@@ -40,6 +41,7 @@
                         </div>
                     </div>
                 </div>
+
                 <style>
                     /* Hide scrollbar for Chrome, Safari and Opera */
                     .no-scrollbar::-webkit-scrollbar {
@@ -54,438 +56,10 @@
                         /* Firefox */
                     }
                 </style>
-                <div class="flex flex-col md:flex-row gap-y-4 md:gap-y-0 mt-4">
-                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 w-11/12 md:w-9/12">
-                        <div id="toggleTable" class="flex items-center justify-center w-full">
-                            <span id="prevButton" class="grow-0">
-                                <img src="/img/assets/arrow-left.png" alt="left-arrow" class="h-4 w-auto hover:cursor-pointer" />
-                            </span>
-                            <span id="tableTitle" class="grow-1 text-center">Race</span>
-                            <span id="nextButton" class="grow-0-0">
-                                <img src="/img/assets/arrow-right.png" alt="right-arrow" class="h-4 w-auto hover:cursor-pointer" />
-                            </span>
-                        </div>
-                        <div id="tables" class="overflow-x-scroll whitespace-nowrap no-scrollbar pt-2 w-full">
-                            <table id="tableRace" data-title="Race">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gap') %></td>
-                                </tr>
 
-                                <% gpDetails.raceData.sort((a, b) => (a.race ? a.race.positionDisplayOrder : 999) - (b.race ? b.race.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.race) { %>
-                                <% if (detail.race?.gap=="DNQ" || detail.race?.gap=="DNS" || detail.race?.gap=="DNF" || detail.race?.gap=="DSQ" || detail.race?.gap=="NC" ) { %>
-                                <tr class="text-hasnt-finished-race">
-                                    <% } else { %>
-                                </tr>
-
-                                <tr>
-                                    <% } %>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.race?.positionText ? (isNaN(detail.race?.positionText) ? detail.race?.positionText : String(detail.race?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span><%= detail.driver.lastName %></span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td>
-                                        <%= detail.race?.gap || '+0.000' %>
-                                    </td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-
-                            <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT" || gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
-
-                            <table id="tableFP1" class="hidden" data-title="FP1">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.fp1) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.fp1?.positionText ? (isNaN(detail.fp1?.positionText) ? detail.fp1?.positionText : String(detail.fp1?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp1?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-
-                            <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT") { %>
-                            <table id="tableSQ" class="hidden" data-title="SQ">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.sprintQuali ? a.sprintQuali.positionDisplayOrder : 999) - (b.sprintQuali ? b.sprintQuali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.sprintQuali) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.sprintQuali?.positionText ? (isNaN(detail.sprintQuali?.positionText) ? detail.sprintQuali?.positionText : String(detail.sprintQuali?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.sprintQuali?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-
-                            <% } %>
-
-                            <% if(gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
-                            <table id="tableFP2" class="hidden" data-title="FP2">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.fp2) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.fp2?.positionText ? (isNaN(detail.fp2?.positionText) ? detail.fp2?.positionText : String(detail.fp2?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp2?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-                            <% } %>
-
-                            <table id="tableSR" class="hidden" data-title="Sprint Race">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.sprintRace ? a.sprintRace.positionDisplayOrder : 999) - (b.sprintRace ? b.sprintRace.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.sprintRace) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.sprintRace?.positionText ? (isNaN(detail.sprintRace?.positionText) ? detail.sprintRace?.positionText : String(detail.sprintRace?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.sprintRace?.gap || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-
-                            <table id="tableQualification" class="hidden" data-title="Qualifications">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Q1</td>
-                                    <td></td>
-                                    <td class="font-bold">Q2</td>
-                                    <td></td>
-                                    <td class="font-bold">Q3</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.quali) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.quali?.q1 || '-' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.quali?.q2 || '-' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td>
-                                        <%= detail.quali?.q3 || '-' %>
-                                    </td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-
-                            <% } else { %>
-
-                            <% if(gpDetails.gpInfos.date.split("-")[0] >= 1988) { %>
-                            <table id="tableFP1" class="hidden">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.fp1) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.fp1?.positionText ? (isNaN(detail.fp1?.positionText) ? detail.fp1?.positionText : String(detail.fp1?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp1?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-
-                            <table id="tableFP2" class="hidden" data-title="FP2">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.fp2) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.fp2?.positionText ? (isNaN(detail.fp2?.positionText) ? detail.fp2?.positionText : String(detail.fp2?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp2?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-                            <% } %>
-
-                            <% if(gpDetails.gpInfos.date.split("-")[0] >= 2004) { %>
-                            <table id="tableFP3" class="hidden" data-title="FP3">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.fp3 ? a.fp3.positionDisplayOrder : 999) - (b.fp3 ? b.fp3.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.fp3) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.fp3?.positionText ? (isNaN(detail.fp3?.positionText) ? detail.fp3?.positionText : String(detail.fp3?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.fp3?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-                            <% } %>
-
-                            <% if(gpDetails.gpInfos.qualifyingFormat == "KNOCKOUT") { %>
-                            <table id="tableQualification" class="hidden" data-title="Qualifications">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Q1</td>
-                                    <td></td>
-                                    <td class="font-bold">Q2</td>
-                                    <td></td>
-                                    <td class="font-bold">Q3</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.quali) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.quali?.q1 || '-' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.quali?.q2 || '-' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td>
-                                        <%= detail.quali?.q3 || '-' %>
-                                    </td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-                            <% } else { %>
-                            <table id="tableQualification" class="hidden" data-title="Qualifications">
-                                <tr>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
-                                    <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
-                                    <td></td>
-                                    <td class="font-bold">Time</td>
-                                </tr>
-
-                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
-                                <% if (detail.quali) { %>
-                                <tr>
-                                    <td class="pr-2">
-                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
-                                    </td>
-                                    <td class="font-bold pr-3"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3">
-                                        <a href="/driver/<%= detail.driver.id %>">
-                                            <span class="flex gap-x-1">
-                                                <span>
-                                                    <%= detail.driver.lastName %>
-                                                </span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="pl-3 border-l-2"></td>
-                                    <td class="pr-3"><%= detail.quali?.time || '-' %></td>
-                                </tr>
-                                <% } %>
-                                <% }); %>
-                            </table>
-                            <% } %>
-                            <% } %>
-                        </div>
-                    </div>
-
-                    <div class="w-full gap-4">
-                        <div class="text-center mb-8 font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 hidden md:block">
+                <div class="flex flex-col md:grid md:grid-cols-12 md:gap-4 gap-y-4 md:gap-y-0 mt-4">
+                    <div class="w-full flex flex-col gap-4 md:col-span-4">
+                        <div class="text-center font-regular bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 hidden md:block">
                             <div class="flex flex-col items-center gap-2">
                                 <span class="text-xl font-bold"> <%= __('retro_f1.all_seasons.gp_details.title') %> <%= gpDetails.gpInfos.id %> </span>
                                 <span class="flex gap-2">
@@ -497,7 +71,7 @@
                                 <div class="w-6/12">
                                     <span class="flex justify-center">
                                         <a href="/circuit/<%= gpDetails.gpInfos.circuitId %>">
-                                            <img src="/img/circuits/<%= gpDetails.gpInfos.circuitId %>.svg" alt="<%= gpDetails.gpInfos.circuitId %>" class="h-44 w-auto" />
+                                            <img src="/img/circuits/<%= gpDetails.gpInfos.circuitLayoutId %>.svg" alt="<%= gpDetails.gpInfos.circuitId %>" class="h-44 w-auto" />
                                         </a>
                                     </span>
                                 </div>
@@ -515,44 +89,644 @@
                             </div>
                         </div>
 
-                        <span class="grid grid-cols-12 md:flex-col items-center gap-1">
-                            <% gpDetails.raceData.forEach(function(grid){ if (grid.quali?.positionNumber==1) { %>
-                            <a href="/driver/<%= grid.driver.id %>" class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
-                                <span>
-                                    <%= __('retro_f1.all_seasons.gp_details.poleposition') %>
-                                </span>
-                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= grid.driver.id %>.webp" alt="<%= grid.driver.lastName %>" class="h-24 w-auto" />
+                        <% const poleDriver = gpDetails.raceData.find(grid => grid.quali?.positionNumber == 1); const winnerDriver = gpDetails.raceData.find(grid => grid.race?.positionNumber == 1); const fastestLapDriver = gpDetails.raceData.find(lap => lap.fastestLap?.time != null); const fastestPitDriver = gpDetails.raceData.find(pit => pit.fastestPit?.time != null); %>
+
+                        <% if (poleDriver || winnerDriver) { %>
+                        <div class="grid <%= (poleDriver && winnerDriver) ? 'grid-cols-2' : 'grid-cols-1' %> gap-4 mx-4">
+                            <% if (poleDriver) { %>
+                            <a href="/driver/<%= poleDriver.driver.id %>" class="bg-s-<%= theme %> shadow-md rounded-2xl flex flex-col justify-end gap-4 items-center pt-4 px-2">
+                                <span class="font-bold text-sm"> <%= __('retro_f1.all_seasons.gp_details.poleposition') %> </span>
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= poleDriver.driver.id %>.webp" alt="<%= poleDriver.driver.lastName %>" class="h-24 w-auto object-contain" />
                             </a>
-                            <% } }) %>
-                            <% gpDetails.raceData.forEach(function(grid){ if (grid.race?.positionNumber==1) { %>
-                            <a href="/driver/<%= grid.driver.id %>" class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-end gap-2 items-center px-2 col-span-6">
-                                <span>
-                                    <%= __('retro_f1.all_seasons.gp_details.winner') %>
-                                </span>
-                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= grid.driver.id %>.webp" alt="<%= grid.driver.lastName %>" class="h-24 w-auto" />
+                            <% } %>
+                            <% if (winnerDriver) { %>
+                            <a href="/driver/<%= winnerDriver.driver.id %>" class="bg-s-<%= theme %> shadow-md rounded-2xl flex flex-col justify-end gap-4 items-center pt-4 px-2">
+                                <span class="font-bold text-sm"> <%= __('retro_f1.all_seasons.gp_details.winner') %> </span>
+                                <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= winnerDriver.driver.id %>.webp" alt="<%= winnerDriver.driver.lastName %>" class="h-24 w-auto object-contain" />
                             </a>
-                            <% } }) %>
-                        </span>
-                        <br />
-                        <span class="grid grid-cols-12 md:flex-col items-center gap-1">
-                            <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
-                                <% gpDetails.raceData.forEach(function(lap){ if (lap.fastestLap?.time !=null) { %>
-                                <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestLap') %> </span>
-                                <div class="flex flex-col items-center grow justify-center w-full">
-                                    <div>
-                                        <%= lap.driver.abbreviation %>
-                                        - <span class="text-fuchsia-700"> <%= lap.fastestLap?.time %> </span>
-                                    </div>
+                            <% } %>
+                        </div>
+                        <% } %>
+
+                        <% if (fastestLapDriver || fastestPitDriver) { %>
+                        <div class="grid <%= (fastestLapDriver && fastestPitDriver) ? 'grid-cols-2' : 'grid-cols-1' %> gap-4 mx-4">
+                            <% if (fastestLapDriver) { %>
+                            <div class="bg-s-<%= theme %> shadow-md rounded-2xl flex flex-col justify-center gap-2 items-center py-4 px-2">
+                                <span class="text-center font-bold text-sm"> <%= __('retro_f1.all_seasons.gp_details.fastestLap') %> </span>
+                                <div class="flex flex-col items-center w-full">
+                                    <div class="text-base text-center"><%= fastestLapDriver.driver.abbreviation %> - <span class="text-fuchsia-700 font-semibold"> <%= fastestLapDriver.fastestLap?.time %> </span></div>
                                 </div>
-                                <% } }) %>
                             </div>
-                            <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 flex flex-col justify-center gap-2 items-center px-2 col-span-6 h-32">
-                                <% gpDetails.raceData.forEach(function(pit){ if (pit.fastestPit?.time !=null) { %>
-                                <span class="text-center"> <%= __('retro_f1.all_seasons.gp_details.fastestPit') %> </span>
-                                <div class="flex flex-col items-center grow justify-center w-full"><%= pit.driver.abbreviation %> - <%= pit.fastestPit?.time %></div>
-                                <% }}); %>
+                            <% } %>
+                            <% if (fastestPitDriver) { %>
+                            <div class="bg-s-<%= theme %> shadow-md rounded-2xl flex flex-col justify-center gap-2 items-center py-4 px-2">
+                                <span class="text-center font-bold text-sm"> <%= __('retro_f1.all_seasons.gp_details.fastestPit') %> </span>
+                                <div class="flex flex-col items-center w-full text-base text-center"><%= fastestPitDriver.driver.abbreviation %> - <%= fastestPitDriver.fastestPit?.time %></div>
                             </div>
-                        </span>
+                            <% } %>
+                        </div>
+                        <% } %>
+                    </div>
+
+                    <!-- GP Details Desktop -->
+                    <div id="GPDetails" class="bg-s-<%= theme %> p-4 shadow-md rounded-2xl mx-4 md:col-span-8">
+                        <div id="toggleTable" class="flex items-center justify-center w-full">
+                            <span id="prevButton" class="grow-0">
+                                <img src="/img/assets/arrow-left.png" alt="left-arrow" class="h-4 w-auto hover:cursor-pointer" />
+                            </span>
+                            <span id="tableTitle" class="grow-1 text-center">Race</span>
+                            <span id="nextButton" class="grow-0-0">
+                                <img src="/img/assets/arrow-right.png" alt="right-arrow" class="h-4 w-auto hover:cursor-pointer" />
+                            </span>
+                        </div>
+                        <div id="tables" class="overflow-x-scroll whitespace-nowrap no-scrollbar pt-2 w-full">
+                            <table id="tableRace" data-title="Race" class="text-sm w-full">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Pts</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Stops</td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gap') %> / Retired</td>
+                                    <td></td>
+                                    <td class="font-bold">G / L</td>
+                                    <td></td>
+                                    <td class="font-bold">Penalties</td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.race ? a.race.positionDisplayOrder : 999) - (b.race ? b.race.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.race) { %>
+                                <% if (detail.race?.gap=="DNQ" || detail.race?.gap=="DNS" || detail.race?.gap=="DNF" || detail.race?.gap=="DSQ" || detail.race?.gap=="NC" ) { %>
+                                <tr class="text-hasnt-finished-race hover:bg-s-<%= theme %> transition-colors">
+                                    <% } else { %>
+                                </tr>
+
+                                <tr class="hover:bg-main-color/40 transition-colors">
+                                    <% } %>
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.race?.positionText ? (isNaN(detail.race?.positionText) ? detail.race?.positionText : String(detail.race?.positionText).padStart(2, '0')) : 'NC' %></td>
+
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-2 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                                <span class="flex gap-x-1 text-sm">
+                                                    <% if (detail.race?.fastestLap) { %><span title="Fastest Lap">⏱️</span><% } %>
+                                                    <% if (detail.race?.grandSlam) { %><span title="Grand Slam">🏆</span><% } %>
+                                                    <% if (detail.race?.driverOfTheDay) { %><span title="Driver of the Day">👑</span><% } %>
+                                                    <% if (detail.race?.sharedCar) { %><span title="Shared Car">🔄</span><% } %>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+
+                                    <td class="pr-3 py-1"><%= detail.race?.points || '0' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+
+                                    <td class="pr-3 py-1"><%= detail.race?.laps !== null ? detail.race?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+
+                                    <td class="pr-3 py-1"><%= detail.race?.pitStops !== null ? detail.race?.pitStops : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+
+                                    <td class="pr-3 py-1 whitespace-nowrap">
+                                        <% let gapDisplay = detail.race?.positionNumber === 1 ? '+0.000' : (detail.race?.gap); if (["DNQ", "DNS", "DNF", "DSQ", "NC", "EX", "DNPQ", "W"].includes(detail.race?.gap)) gapDisplay = ''; %><%= gapDisplay %><% if(detail.race?.interval && detail.race?.interval !== detail.race?.gap) { %> <span class="text-xs text-gray-400">(<%= detail.race?.interval %>)</span><% } %><% if(detail.race?.reasonRetired) { %>
+                                        <span class="text-gray-400"><%= detail.race?.reasonRetired %></span><% } %>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+
+                                    <td class="pr-3 py-1 whitespace-nowrap text-left">
+                                        <% if(detail.race?.positionsGained > 0) { %>
+                                        <span class="text-green-500 font-bold">+<%= String(detail.race?.positionsGained).padStart(2, '0') %></span>
+                                        <% } else if(detail.race?.positionsGained < 0) { %>
+                                        <span class="text-red-500 font-bold">-<%= String(Math.abs(detail.race?.positionsGained)).padStart(2, '0') %></span>
+                                        <% } else { %>
+                                        <span class="text-gray-500 font-bold">+00</span>
+                                        <% } %>
+                                        <span class="text-xs text-gray-500 ml-1">(<%= detail.race?.gridPositionNumber || 'Pit' %>)</span>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+
+                                    <% if (detail.race.timePenalty) { %>
+                                    <td class="pr-3 text-red-500 text-xs py-1">+<%= detail.race.timePenalty %>s</td>
+                                    <% } else { %>
+                                    <td class="pr-3 text-xs py-1">No</td>
+                                    <% } %>
+
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.race?.engineManufacturer?.name || '-' %></td>
+
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.race?.tyreManufacturer?.name || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+
+                            <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT" || gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
+
+                            <table id="tableFP1" class="hidden text-sm w-full" data-title="FP1">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp1) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.fp1?.positionText ? (isNaN(detail.fp1?.positionText) ? detail.fp1?.positionText : String(detail.fp1?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp1?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp1?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.fp1?.laps !== null ? detail.fp1?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.fp1?.gap || detail.fp1?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+
+                            <% if(gpDetails.gpInfos.sprintQualifyingFormat == "SPRINT_SHOOTOUT") { %>
+                            <table id="tableSQ" class="hidden text-sm w-full" data-title="SQ">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.sprintQuali ? a.sprintQuali.positionDisplayOrder : 999) - (b.sprintQuali ? b.sprintQuali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.sprintQuali) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.sprintQuali?.positionText ? (isNaN(detail.sprintQuali?.positionText) ? detail.sprintQuali?.positionText : String(detail.sprintQuali?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.sprintQuali?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.sprintQuali?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.sprintQuali?.laps !== null ? detail.sprintQuali?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.sprintQuali?.gap || detail.sprintQuali?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+
+                            <% } %>
+
+                            <% if(gpDetails.gpInfos.qualifyingFormat == "SPRINT_RACE") { %>
+                            <table id="tableFP2" class="hidden text-sm w-full" data-title="FP2">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp2) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.fp2?.positionText ? (isNaN(detail.fp2?.positionText) ? detail.fp2?.positionText : String(detail.fp2?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp2?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp2?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.fp2?.laps !== null ? detail.fp2?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.fp2?.gap || detail.fp2?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+                            <% } %>
+
+                            <table id="tableSR" class="hidden text-sm w-full" data-title="Sprint Race">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.sprintRace ? a.sprintRace.positionDisplayOrder : 999) - (b.sprintRace ? b.sprintRace.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.sprintRace) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.sprintRace?.positionText ? (isNaN(detail.sprintRace?.positionText) ? detail.sprintRace?.positionText : String(detail.sprintRace?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.sprintRace?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.sprintRace?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.sprintRace?.laps !== null ? detail.sprintRace?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.sprintRace?.gap || detail.sprintRace?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+
+                            <table id="tableQualification" class="hidden text-sm w-full" data-title="Qualifications">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Q1</td>
+                                    <td></td>
+                                    <td class="font-bold">Q2</td>
+                                    <td></td>
+                                    <td class="font-bold">Q3</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.quali) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.quali?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.quali?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <% if(detail.quali?.q1 || detail.quali?.q2 || detail.quali?.q3) { %>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q1 || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q2 || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q3 || '-' %></td>
+                                    <% } else { %>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.time || detail.quali?.gap || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap">-</td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap">-</td>
+                                    <% } %>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+
+                            <% } else { %>
+
+                            <% if(gpDetails.gpInfos.date.split("-")[0] >= 1988) { %>
+                            <table id="tableFP1" class="hidden text-sm w-full" data-title="FP1">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.fp1 ? a.fp1.positionDisplayOrder : 999) - (b.fp1 ? b.fp1.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp1) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.fp1?.positionText ? (isNaN(detail.fp1?.positionText) ? detail.fp1?.positionText : String(detail.fp1?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp1?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp1?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.fp1?.laps !== null ? detail.fp1?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.fp1?.gap || detail.fp1?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+
+                            <table id="tableFP2" class="hidden text-sm w-full" data-title="FP2">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.fp2 ? a.fp2.positionDisplayOrder : 999) - (b.fp2 ? b.fp2.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp2) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.fp2?.positionText ? (isNaN(detail.fp2?.positionText) ? detail.fp2?.positionText : String(detail.fp2?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp2?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp2?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.fp2?.laps !== null ? detail.fp2?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.fp2?.gap || detail.fp2?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+                            <% } %>
+
+                            <% if(gpDetails.gpInfos.date.split("-")[0] >= 2004) { %>
+                            <table id="tableFP3" class="hidden text-sm w-full" data-title="FP3">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Laps</td>
+                                    <td></td>
+                                    <td class="font-bold">Gap</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.fp3 ? a.fp3.positionDisplayOrder : 999) - (b.fp3 ? b.fp3.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.fp3) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.fp3?.positionText ? (isNaN(detail.fp3?.positionText) ? detail.fp3?.positionText : String(detail.fp3?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp3?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.fp3?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1"><%= detail.fp3?.laps !== null ? detail.fp3?.laps : '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.fp3?.gap || detail.fp3?.time || '-' %></td>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+                            <% } %>
+
+                            <% if(gpDetails.gpInfos.qualifyingFormat == "KNOCKOUT") { %>
+                            <table id="tableQualification" class="hidden text-sm w-full" data-title="Qualifications">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Q1</td>
+                                    <td></td>
+                                    <td class="font-bold">Q2</td>
+                                    <td></td>
+                                    <td class="font-bold">Q3</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.quali) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.quali?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.quali?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <% if(detail.quali?.q1 || detail.quali?.q2 || detail.quali?.q3) { %>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q1 || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q2 || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q3 || '-' %></td>
+                                    <% } else { %>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.time || detail.quali?.gap || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap">-</td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap">-</td>
+                                    <% } %>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+                            <% } else { %>
+                            <table id="tableQualification" class="hidden text-sm w-full" data-title="Qualifications">
+                                <tr>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.position') %></td>
+                                    <td></td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
+                                    <td></td>
+                                    <td class="font-bold">Engine</td>
+                                    <td></td>
+                                    <td class="font-bold">Tyres</td>
+                                    <td></td>
+                                    <td class="font-bold">Q1</td>
+                                    <td></td>
+                                    <td class="font-bold">Q2</td>
+                                    <td></td>
+                                    <td class="font-bold">Q3</td>
+                                </tr>
+
+                                <% gpDetails.raceData.sort((a, b) => (a.quali ? a.quali.positionDisplayOrder : 999) - (b.quali ? b.quali.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
+                                <% if (detail.quali) { %>
+                                <tr class="hover:bg-s-<%= theme %> transition-colors">
+                                    <td class="pr-2 py-1">
+                                        <span class="border-2 border-<%= constructorId %> h-auto w-1 box-border bg-<%= constructorId %> rounded-3xl"> </span>
+                                    </td>
+                                    <td class="font-bold pr-3 py-1"><%= detail.quali?.positionText ? (isNaN(detail.quali?.positionText) ? detail.quali?.positionText : String(detail.quali?.positionText).padStart(2, '0')) : 'NC' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1">
+                                        <a href="/driver/<%= detail.driver.id %>">
+                                            <span class="flex gap-x-1 items-center">
+                                                <span><%= detail.driver.lastName %></span>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.quali?.engineManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 text-xs py-1"><%= detail.quali?.tyreManufacturer?.name || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <% if(detail.quali?.q1 || detail.quali?.q2 || detail.quali?.q3) { %>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q1 || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q2 || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.q3 || '-' %></td>
+                                    <% } else { %>
+                                    <td class="pr-3 py-1 whitespace-nowrap"><%= detail.quali?.time || detail.quali?.gap || '-' %></td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap">-</td>
+                                    <td class="pl-3 border-l-2 py-1"></td>
+                                    <td class="pr-3 py-1 whitespace-nowrap">-</td>
+                                    <% } %>
+                                </tr>
+                                <% } %>
+                                <% }); %>
+                            </table>
+                            <% } %>
+                            <% } %>
+                        </div>
                     </div>
                 </div>
             </div>

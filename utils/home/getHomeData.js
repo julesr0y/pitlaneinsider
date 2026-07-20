@@ -44,7 +44,7 @@ async function getHomeData() {
                     nextRaceInfo = races[i];
                 }
             }
-            
+
             // Find lastRace based on actual results existing in DB
             if (results.some(r => r.raceId === races[i].id)) {
                 lastRace = races[i];
@@ -88,7 +88,7 @@ async function getHomeData() {
                 id: nextRaceInfo.id,
                 name: gp.shortName || gp.fullName,
                 country: country.id,
-                circuitId: nextRaceInfo.circuitId,
+                circuitLayoutId: nextRaceInfo.circuitLayoutId,
                 nextSessionName: nextSessionName,
                 nextSessionDate: nextSessionDate,
                 nextSessionTime: nextSessionTime
@@ -128,7 +128,7 @@ async function getHomeData() {
                 driver: d,
                 position: s.positionNumber,
                 lastName: d.lastName,
-                constructorId: results.find(r => r.driverId === s.driverId && r.raceId >= races[0]?.id)?.constructorId || 'default'
+                constructorId: results.find(r => r.driverId === s.driverId && r.raceId >= races[0]?.id)?.constructorId || 'default',
             };
         });
 
