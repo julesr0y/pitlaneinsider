@@ -12,20 +12,6 @@ const entrantsDriversData = require('../../data/f1db/f1db-seasons-entrants-drive
  */
 async function getActualDrivers() {
     try {
-        const teamOrder = [
-            'mclaren',
-            'ferrari',
-            'red-bull',
-            'mercedes',
-            'aston-martin',
-            'alpine',
-            'racing-bulls',
-            'haas',
-            'williams',
-            'audi',
-            'cadillac'
-        ];
-
         const currentYear = 2026;
 
         // Get all entrants for drivers in 2026, excluding test drivers
@@ -59,14 +45,6 @@ async function getActualDrivers() {
                 return 1;
             }
             return 0;
-        });
-
-        // sort teams
-        driversDataFront.sort((a, b) => {
-            return (
-                teamOrder.indexOf(a.currentSeason.constructorId) -
-                teamOrder.indexOf(b.currentSeason.constructorId)
-            );
         });
 
         return driversDataFront;

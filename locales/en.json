@@ -23,8 +23,8 @@
 		"hours": "H",
 		"minutes": "MIN",
 		"seconds": "S",
-		"drivers_championship": "Drivers championship",
-		"constructors_championship": "Constructors championship",
+		"drivers_championship": "Drivers championship leader",
+		"constructors_championship": "Constructors championship leader",
 		"last_race": "Last race",
 		"drivers_standings": "Drivers standings",
 		"constructors_standings": "Constructors standings",
@@ -200,7 +200,15 @@
 				"poleposition": "Pole position",
 				"winner": "Winner",
 				"fastestLap": "Fastest lap",
-				"fastestPit": "Fastest pit stop (total time)"
+				"fastestPit": "Fastest pit stop (total time)",
+				"points": "Pts",
+				"laps": "Laps",
+				"pit_stops": "Stops",
+				"gap_retired": "Gap / Rtd",
+				"gained_lost_positions": "G / L",
+				"penalties": "Penalties",
+				"engine": "Engine",
+				"tyres": "Tyres"
 			}
 		},
 		"constructorwinners": {

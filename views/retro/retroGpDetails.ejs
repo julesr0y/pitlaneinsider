@@ -146,21 +146,21 @@
                                     <td class="font-bold"></td>
                                     <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.drivers') %></td>
                                     <td></td>
-                                    <td class="font-bold">Pts</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.points') %></td>
                                     <td></td>
-                                    <td class="font-bold">Laps</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.laps') %></td>
                                     <td></td>
-                                    <td class="font-bold">Stops</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.pit_stops') %></td>
                                     <td></td>
-                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gap') %> / Retired</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gap_retired') %></td>
                                     <td></td>
-                                    <td class="font-bold">G / L</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.gained_lost_positions') %></td>
                                     <td></td>
-                                    <td class="font-bold">Penalties</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.penalties') %></td>
                                     <td></td>
-                                    <td class="font-bold">Engine</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.engine') %></td>
                                     <td></td>
-                                    <td class="font-bold">Tyres</td>
+                                    <td class="font-bold"><%= __('retro_f1.all_seasons.gp_details.tyres') %></td>
                                 </tr>
 
                                 <% gpDetails.raceData.sort((a, b) => (a.race ? a.race.positionDisplayOrder : 999) - (b.race ? b.race.positionDisplayOrder : 999)); %> <% gpDetails.raceData.forEach(detail=> { const constructorId = detail.race?.constructorId || detail.fp1?.constructorId || detail.fp2?.constructorId || detail.fp3?.constructorId || detail.quali?.constructorId || detail.sprintQuali?.constructorId || detail.sprintRace?.constructorId || 'unknown'; %>
