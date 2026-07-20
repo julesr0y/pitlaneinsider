@@ -181,7 +181,9 @@
 				"drivers": "Drivers",
 				"constructors": "Constructors",
 				"victories": "Victories",
-				"points": "Points"
+				"points": "Points",
+				"change_year": "Change year",
+				"select_season": "Select a season"
 			},
 			"calendar": {
 				"tab_title": "Retro Calendar",

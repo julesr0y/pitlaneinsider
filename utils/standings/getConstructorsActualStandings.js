@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getTeamsActualStandings() {
     try {
-        const currentYear = 2026;
+        const { currentYear } = require('../../config.json');
         
         // F1DB Files
         const constructorStandings = require('../../data/f1db/f1db-seasons-constructor-standings.json').filter(s => s.year === currentYear);

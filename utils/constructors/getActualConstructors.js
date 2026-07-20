@@ -12,7 +12,7 @@ const seasonsConstructorsData = require('../../data/f1db/f1db-seasons-constructo
  */
 async function getActualConstructors() {
     try {
-        const currentYear = 2026; // As requested, we filter for 2026
+        const { currentYear } = require('../../config.json');
         
         // Find which constructors are present in the 2026 season
         const currentSeasonConstructors = seasonsConstructorsData.filter(item => item.year === currentYear);

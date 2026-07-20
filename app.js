@@ -3,6 +3,7 @@ var path = require('path');
 const i18n = require('i18n');
 const helmet = require("helmet");
 const compression = require('compression');
+const config = require('./config.json');
 
 const app = express();
 app.use(compression());
@@ -88,6 +89,7 @@ app.use(async (req, res, next) => {
 
     req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n pour les utilisateurs non authentifiés
     res.locals.i18n = i18n; // Affecter i18n à res.locals pour le rendre disponible dans les templates EJS
+    res.locals.currentYear = config.currentYear;
 
     next();
 });

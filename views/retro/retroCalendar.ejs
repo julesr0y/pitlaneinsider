@@ -80,41 +80,79 @@
                 color: var(--white-color);
                 /* Couleur blanche pour la flèche */
             }
+
+            .season-nav-btn {
+                background-color: var(--second-color);
+                color: var(--white-color);
+                transition: background-color 0.3s ease;
+            }
+            .season-nav-btn:hover {
+                background-color: var(--second-color-dark);
+            }
         </style>
     </head>
 
     <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
         <main>
             <div class="text-3xl font-bold text-center my-8 mb-4 w-full pt-4 lg:pt-8 lg:text-3xl lg:font-bold lg:my-8"><%= __('retro_f1.all_seasons.calendar.title') %></div>
-            <div class="app-container">
-                <div class="season-title text-3xl font-bold text-center my-8">
-                    <div class="mx-4">
-                        <div class="custom-select-container">
-                            <select id="seasonSelect" class="custom-select" onchange="changeSeason(this)">
-                                <% for (let year = 2025; year >= 1950; year--) { %>
-                                <option value="<%= year %>"><%= __('retro_f1.all_seasons.season') %> <%= year %></option>
-                                <% } %>
-                            </select>
-                        </div>
-                        <script>
-                            function changeSeason(select) {
-                                var selectedYear = select.value;
-                                window.location.href = '/retrocalendar/' + selectedYear;
-                            }
-                        </script>
-                    </div>
-                </div>
-                <div class="tabs flex justify-center">
-                    <div class="flex justify-center items-start pt-10">
-                        <div class="flex mb-4">
-                            <a id="classementLink" href="/retrostandings/<%= selectedYear %>" class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_seasons.link_standings') %> </a>
-                            <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>" class="{{ Request::path() == 'retrocircuits' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_seasons.link_calendar') %> </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="app-container flex flex-col items-center">
+                <div class="flex justify-center items-center space-x-6">
+                    <% const currentY = parseInt(selectedYear); const prevY = currentY > 1950 ? currentY - 1 : 1950; const nextY = currentY < currentYear-1 ? currentY + 1 : currentYear-1; %>
+                    <a href="/retrocalendar/<%= prevY %>" class="season-nav-btn rounded-full p-2 <%= currentY <= 1950 ? 'opacity-50 cursor-not-allowed pointer-events-none' : '' %>">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </a>
 
-                <!-- Affichage des courses pour la saison sélectionnée -->
-                <!-- <div class="w-9/10 mx-auto p-4 pt-0">
+                    <p class="text-xl lg:text-3xl font-bold cursor-pointer hover:text-<%= theme === 'dark' ? 'gray-300' : 'gray-600' %> transition" onclick="document.getElementById('yearModal').classList.remove('hidden')"><%= currentY %></p>
+
+                    <a href="/retrocalendar/<%= nextY %>" class="season-nav-btn rounded-full p-2 <%= currentY >= currentYear-1 ? 'opacity-50 cursor-not-allowed pointer-events-none' : '' %>">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <button onclick="document.getElementById('yearModal').classList.remove('hidden')" class="mt-3 text-center text-sm underline text-gray-500 hover:text-gray-700"><%= __('retro_f1.all_seasons.standings.change_year') %></button>
+            </div>
+
+            <!-- Modal Choix de l'année -->
+            <div id="yearModal" class="fixed inset-0 z-50 hidden flex justify-center items-center p-4">
+                <div class="bg-s-<%= theme %> rounded-3xl p-6 lg:p-8 max-w-4xl w-full max-h-[60vh] overflow-y-auto relative shadow-2xl border border-gray-200 dark:border-gray-700">
+                    <button onclick="document.getElementById('yearModal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <h2 class="text-2xl font-bold mb-6 text-center"><%= __('retro_f1.all_seasons.standings.select_season') %></h2>
+
+                    <% 
+                        const decades = [1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020];
+                    %>
+                    <div class="space-y-6">
+                        <% decades.forEach(decade => { %>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 border-b pb-1 border-gray-300 dark:border-gray-600"><%= decade %>s</h3>
+                            <div class="grid grid-cols-5 md:grid-cols-10 gap-2">
+                                <% for(let y = decade; y < decade + 10 && y <= currentYear-1; y++) { %>
+                                <a href="/retrocalendar/<%= y %>" class="py-2 text-center rounded-lg hover:text-main-color hover:bg-white transition <%= currentY === y ? 'bg-white text-main-color font-bold' : 'bg-main-color text-white' %>"> <%= y %> </a>
+                                <% } %>
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs flex justify-center">
+                <div class="flex justify-center items-start pt-10">
+                    <div class="flex mb-4">
+                        <a id="classementLink" href="/retrostandings/<%= selectedYear %>" class="mr-20 {{ Request::path() == 'retrodrivers' ? 'font-bold' : '' }}"> <%= __('retro_f1.all_seasons.link_standings') %> </a>
+                        <a id="calendrierLink" href="/retrocalendar/<%= selectedYear %>" class="{{ Request::path() == 'retrocircuits' ? 'font-bold border-b-2 border-<%= theme %>' : '' }}"> <%= __('retro_f1.all_seasons.link_calendar') %> </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Affichage des courses pour la saison sélectionnée -->
+            <!-- <div class="w-9/10 mx-auto p-4 pt-0">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
                     <% retro_calendrier.forEach(course=> { %>
                         <% if (course.year==selectedYear) { %>
@@ -140,25 +178,24 @@
                 </div>
             </div> -->
 
-                <div class="w-9/10 mx-auto p-4 pt-0">
-                    <% if (retro_calendrier && retro_calendrier.length> 0) { %>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
-                        <% retro_calendrier.forEach(function(race) { %>
-                        <a href="/retrogpdetails/<%= selectedYear %>/<%= String(race.id) %>" data-round="<%= race.round %>" class="block text-center">
-                            <div id="race-<%= race.id %>" class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
-                                <div class="flex flex-col items-center">
-                                    <img src="/img/countryFlags/<%= race.country.id %>.svg" alt="<%= race.country.name %>" class="mb-2 h-20 w-auto" />
-                                    <p class="text-xl font-bold mb-3"><%= race.grandPrix.name %></p>
-                                    <p class="text-lg"><%= race.date %></p>
-                                </div>
+            <div class="w-9/10 mx-auto p-4 pt-0">
+                <% if (retro_calendrier && retro_calendrier.length> 0) { %>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+                    <% retro_calendrier.forEach(function(race) { %>
+                    <a href="/retrogpdetails/<%= selectedYear %>/<%= String(race.id) %>" data-round="<%= race.round %>" class="block text-center">
+                        <div id="race-<%= race.id %>" class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 p-4 <%= race.isNextGp ? 'highlight' : '' %>">
+                            <div class="flex flex-col items-center">
+                                <img src="/img/countryFlags/<%= race.country.id %>.svg" alt="<%= race.country.name %>" class="mb-2 h-20 w-auto" />
+                                <p class="text-xl font-bold mb-3"><%= race.grandPrix.name %></p>
+                                <p class="text-lg"><%= race.date %></p>
                             </div>
-                        </a>
-                        <% }); %>
-                    </div>
-                    <% } else { %>
-                    <div class="text-center text-red-500">Aucun circuit à afficher</div>
-                    <% } %>
+                        </div>
+                    </a>
+                    <% }); %>
                 </div>
+                <% } else { %>
+                <div class="text-center text-red-500">Aucun circuit à afficher</div>
+                <% } %>
             </div>
         </main>
         <%- include('../partials/footer.ejs') %>

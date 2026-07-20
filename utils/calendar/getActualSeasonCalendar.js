@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getActualSeasonCalendar() {
     try {
-        const currentYear = 2026;
+        const { currentYear } = require('../../config.json');
         const races = require('../../data/f1db/f1db-races.json').filter(r => r.year === currentYear);
         const grandPrix = require('../../data/f1db/f1db-grands-prix.json');
         const countries = require('../../data/f1db/f1db-countries.json');

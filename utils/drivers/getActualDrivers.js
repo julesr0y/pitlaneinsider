@@ -12,7 +12,7 @@ const entrantsDriversData = require('../../data/f1db/f1db-seasons-entrants-drive
  */
 async function getActualDrivers() {
     try {
-        const currentYear = 2026;
+        const { currentYear } = require('../../config.json');
 
         // Get all entrants for drivers in 2026, excluding test drivers
         const currentSeasonEntrants = entrantsDriversData.filter(item => item.year === currentYear && item.testDriver === false);

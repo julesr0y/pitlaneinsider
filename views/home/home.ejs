@@ -69,7 +69,7 @@
 
                     <div class="w-full h-full md:mt-0 mt-4">
                         <% if (homeData.lastPodiumLocalisation) { %>
-                        <a href="/retrogpdetails/2026/<%= homeData.lastPodiumLocalisation.id %>">
+                        <a href="/retrogpdetails/<%= currentYear %>/<%= homeData.lastPodiumLocalisation.id %>">
                             <div class="w-full bg-s-<%= theme %> rounded-3xl overflow-hidden">
                                 <span class="flex justify-center text-center mb-4 font-bold gap-2 pt-2">
                                     <%= __('home.last_race') %> - <%= homeData.lastPodiumLocalisation.name %>

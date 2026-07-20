@@ -30,7 +30,7 @@ async function getConstructorData(constructorId_param) {
 
         const numberOfSeasons = new Set(constructorSeasons.map(s => s.year)).size;
 
-        const currentYear = 2026;
+        const { currentYear } = require('../../config.json');
         const currentSeasonRecord = constructorSeasons.find(s => s.year === currentYear);
         let currentSeason = null;
 

@@ -30,7 +30,7 @@ async function getDriverData(driver_id) {
         const numberOfSeasons = new Set(driverEntrants.map(e => e.year)).size;
 
         // Current Season Info (2026)
-        const currentYear = 2026;
+        const { currentYear } = require('../../config.json');
         let currentSeason = null;
         const currentEntrant = driverEntrants.find(e => e.year === currentYear && e.testDriver === false);
         if (currentEntrant) {

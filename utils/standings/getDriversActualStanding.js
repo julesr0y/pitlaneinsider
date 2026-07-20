@@ -8,7 +8,7 @@ const path = require('path');
  */
 async function getDriversActualStandings() {
     try {
-        const currentYear = 2026;
+        const { currentYear } = require('../../config.json');
         
         // F1DB Files
         const races = require('../../data/f1db/f1db-races.json').filter(r => r.year === currentYear);

@@ -14,7 +14,7 @@ module.exports = {
     'border-scarab', 'border-schroeder', 'border-scirocco', 'border-shadow', 'border-shannon', 'border-sherman', 'border-simca-gordini', 'border-simtek', 'border-snowberger', 'border-spirit', 'border-spyker', 'border-stebro', 'border-stevens', 'border-stewart', 'border-super-aguri', 'border-surtees', 'border-sutton', 'border-talbot-lago', 'border-tec-mec', 'border-tecno', 'border-theodore', 'border-token', 'border-toleman', 'border-toro-rosso', 'border-toyota', 'border-trevis', 'border-trojan', 'border-turner', 'border-tyrrell', 'border-vanwall', 'border-venturi', 'border-veritas', 'border-virgin', 'border-watson', 'border-wetteroth', 'border-wolf-williams', 'border-wolf', 'border-zakspeed',
 
     // user theme
-    'main-color', 'bg-light', 'bg-b-light', 'bg-s-light', 'text-t-s-light', 'text-light', 'border-light', 'bg-dark', 'bg-b-dark', 'bg-s-dark', 'bg-t-dark', 'text-t-s-dark', 'text-dark', 'text-hasnt-finished-race', 'border-dark'
+    'main-color', 'bg-light', 'bg-b-light', 'bg-s-light', 'text-t-s-light', 'text-light', 'border-light', 'bg-dark', 'bg-b-dark', 'bg-s-dark', 'bg-t-dark', 'text-main-color', 'text-t-s-dark', 'text-dark', 'text-hasnt-finished-race', 'border-dark'
   ],
   theme: {
     extend: {
