@@ -29,12 +29,18 @@ main {
   position: absolute;
   display: block;
   width: 100%;
-  background-color: #058785;
+  /* Modern glassmorphism background */
+  background: rgba(5, 135, 133, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   height: 0;
+  opacity: 0;
+  visibility: hidden;
   top: 12vh;
   left: 0;
   overflow-y: hidden;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.4s;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links a {
@@ -43,8 +49,25 @@ main {
   color: white;
   text-decoration: none;
   font-size: 18px;
-  transition: background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
+
+#nav-check:checked ~ .nav-links a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#nav-check:checked ~ .nav-links tr:nth-child(1) a { transition-delay: 0.1s; }
+#nav-check:checked ~ .nav-links tr:nth-child(2) a { transition-delay: 0.15s; }
+#nav-check:checked ~ .nav-links tr:nth-child(3) a { transition-delay: 0.2s; }
+#nav-check:checked ~ .nav-links tr:nth-child(4) a { transition-delay: 0.25s; }
+#nav-check:checked ~ .nav-links tr:nth-child(5) a { transition-delay: 0.3s; }
+#nav-check:checked ~ .nav-links tr:nth-child(6) a { transition-delay: 0.35s; }
+#nav-check:checked ~ .nav-links tr:nth-child(7) a { transition-delay: 0.4s; }
+#nav-check:checked ~ .nav-links tr:nth-child(8) a { transition-delay: 0.45s; }
+
 
 .nav-links a::after {
   content: "";
@@ -94,6 +117,8 @@ main {
 /* Quand le menu hamburger est activé (checkbox coché) */
 #nav-check:checked ~ .nav-links {
   height: 100vh;
+  opacity: 1;
+  visibility: visible;
   overflow-y: auto;
 }
 
@@ -149,9 +174,13 @@ main {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #058785;
+    background: rgba(5, 135, 133, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     height: 0;
-    transition: height 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.4s;
     overflow-y: hidden;
     top: 8vh;
     left: 0;

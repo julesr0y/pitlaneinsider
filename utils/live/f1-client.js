@@ -39,9 +39,9 @@ class F1LiveClient {
         this.broadcast = broadcastCallback;
         this.ws = null;
         this.isConnected = false;
-        
+
         // Global State Cache
-        this.standings = {}; 
+        this.standings = {};
         this.timingAppData = {}; // Tires
         this.driverList = {}; // Driver data including team colors
         this.weather = {};
@@ -119,7 +119,7 @@ class F1LiveClient {
                         isHandshakeComplete = true;
                         this.isConnected = true;
                         console.log("[F1Client] Handshake complete. Subscribing to channels...");
-                        
+
                         try {
                             const logPath = path.join(__dirname, '../../signalr_connections.log');
                             const timestamp = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
@@ -228,7 +228,7 @@ class F1LiveClient {
 
     processDriverList(data) {
         if (!data) return;
-        
+
         let hasChanges = false;
         for (const [racingNumber, driverData] of Object.entries(data)) {
             if (!this.driverList[racingNumber]) this.driverList[racingNumber] = {};
@@ -237,7 +237,7 @@ class F1LiveClient {
                 hasChanges = true;
             }
         }
-        
+
         if (hasChanges) {
             this.broadcastStandings();
         }
@@ -245,11 +245,11 @@ class F1LiveClient {
 
     processTimingAppData(data) {
         if (!data || !data.Lines) return;
-        
+
         let hasChanges = false;
         for (const [racingNumber, driverData] of Object.entries(data.Lines)) {
             if (!this.timingAppData[racingNumber]) this.timingAppData[racingNumber] = { Stints: [] };
-            
+
             if (driverData.Stints) {
                 const stintsObj = Array.isArray(driverData.Stints) ? Object.assign({}, driverData.Stints) : driverData.Stints;
                 for (const [idx, stint] of Object.entries(stintsObj)) {
@@ -260,7 +260,7 @@ class F1LiveClient {
                 }
             }
         }
-        
+
         if (hasChanges) {
             this.broadcastStandings();
         }
@@ -289,7 +289,7 @@ class F1LiveClient {
             }
 
             const st = this.standings[racingNumber];
-            if (driverData.Position) { 
+            if (driverData.Position) {
                 const newPos = parseInt(driverData.Position, 10);
                 if (st.position !== 99 && newPos !== st.position) {
                     st.trend = newPos < st.position ? 'up' : 'down';
@@ -300,7 +300,7 @@ class F1LiveClient {
                     }, 5000);
                 }
                 st.position = newPos;
-                hasChanges = true; 
+                hasChanges = true;
             }
             if (driverData.GapToLeader && driverData.GapToLeader.Value) { st.gapToLeader = driverData.GapToLeader.Value; hasChanges = true; }
             if (driverData.IntervalToPositionAhead && driverData.IntervalToPositionAhead.Value) { st.interval = driverData.IntervalToPositionAhead.Value; hasChanges = true; }
@@ -319,7 +319,27 @@ class F1LiveClient {
 
     broadcastStandings() {
         if (!this.broadcast) return;
-        
+
+        let fastestLapDriver = null;
+        let minLapTime = Infinity;
+
+        // find the driver with the fastest lap
+        Object.values(this.standings).forEach(d => {
+            if (d.bestLap && d.position !== 99) {
+                const parts = d.bestLap.split(':');
+                let timeMs = 0;
+                if (parts.length === 2) {
+                    timeMs = parseFloat(parts[0]) * 60000 + parseFloat(parts[1]) * 1000;
+                } else if (parts.length === 1) {
+                    timeMs = parseFloat(parts[0]) * 1000;
+                }
+                if (timeMs > 0 && timeMs < minLapTime) {
+                    minLapTime = timeMs;
+                    fastestLapDriver = d.racingNumber;
+                }
+            }
+        });
+
         const standingsArray = Object.values(this.standings)
             .filter(d => d.position !== 99)
             .sort((a, b) => a.position - b.position)
@@ -337,13 +357,33 @@ class F1LiveClient {
                     }
                 }
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
-                return { ...d, currentTire, teamColor };
+                const hasFastestLap = (d.racingNumber === fastestLapDriver);
+                return { ...d, currentTire, teamColor, hasFastestLap };
             });
 
         this.broadcast({ type: 'standings', data: standingsArray });
     }
 
     getFullState() {
+        let fastestLapDriver = null;
+        let minLapTime = Infinity;
+
+        Object.values(this.standings).forEach(d => {
+            if (d.bestLap && d.position !== 99) {
+                const parts = d.bestLap.split(':');
+                let timeMs = 0;
+                if (parts.length === 2) {
+                    timeMs = parseFloat(parts[0]) * 60000 + parseFloat(parts[1]) * 1000;
+                } else if (parts.length === 1) {
+                    timeMs = parseFloat(parts[0]) * 1000;
+                }
+                if (timeMs > 0 && timeMs < minLapTime) {
+                    minLapTime = timeMs;
+                    fastestLapDriver = d.racingNumber;
+                }
+            }
+        });
+
         const standingsArray = Object.values(this.standings)
             .filter(d => d.position !== 99)
             .sort((a, b) => a.position - b.position)
@@ -359,7 +399,8 @@ class F1LiveClient {
                     }
                 }
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
-                return { ...d, currentTire, teamColor };
+                const hasFastestLap = (d.racingNumber === fastestLapDriver);
+                return { ...d, currentTire, teamColor, hasFastestLap };
             });
 
         return {

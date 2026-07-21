@@ -293,11 +293,10 @@
                 let html = '';
                 standings.forEach(driver => {
                     const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-2">PIT</span>' : '';
-                    
                     let statusHtml = '';
                     let posColor = 'text-gray-400';
-                    let rowBg = 'bg-s-<%= theme %>/30';
-                    let rowBorder = 'border-gray-400/50';
+                    let rowBg = 'bg-s-<%= theme %>/50';
+                    let rowBorder = 'border-gray-700/50';
 
                     if (driver.retired || driver.stopped) {
                         statusHtml = '<span class="text-red-500 text-xs font-black uppercase tracking-widest">OUT</span>';
@@ -305,11 +304,13 @@
                         rowBg = 'bg-red-950/10';
                         rowBorder = 'border-red-900/20';
                     } else {
-                        statusHtml = driver.gapToLeader || driver.interval || '<span class="text-purple-400 font-black tracking-widest">LEADER</span>';
-                        if (driver.position === 1) {
+                        statusHtml = driver.gapToLeader || driver.interval || '<span class="text-yellow-500 font-black tracking-widest">LEADER</span>';
+                        if (driver.hasFastestLap) {
                             posColor = 'text-purple-400';
-                            rowBg = 'bg-purple-900/10';
-                            rowBorder = 'border-purple-500/20';
+                            rowBg = 'bg-purple-900/20';
+                            rowBorder = 'border-purple-500/40';
+                        } else if (driver.position === 1) {
+                            posColor = 'text-yellow-500';
                         }
                     }
 

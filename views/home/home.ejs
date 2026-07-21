@@ -49,15 +49,15 @@
                         <div class="z-10 flex flex-col items-center text-center w-full mt-4">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <img id="flag" src="/img/countryFlags/<%= homeData.nextRaceInfo.country %>.svg" class="h-6 w-auto shadow-md rounded-sm" alt="Flag" />
-                                <h2 class="font-wide text-2xl m-0"><%= homeData.nextRaceInfo.name %></h2>
+                                <h2 class="font-wide text-lg md:text-2xl m-0"><%= homeData.nextRaceInfo.name %></h2>
                             </div>
                             <div class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-6"><%= homeData.nextRaceInfo.nextSessionName %></div>
 
                             <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm md:max-w-lg border border-gray-700">
-                                <div class="flex flex-col items-center"><span id="days" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
-                                <div class="flex flex-col items-center"><span id="hours" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
-                                <div class="flex flex-col items-center"><span id="minutes" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
-                                <div class="flex flex-col items-center"><span id="seconds" class="text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.seconds') %></span></div>
+                                <div class="flex flex-col items-center"><span id="days" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
+                                <div class="flex flex-col items-center"><span id="hours" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
+                                <div class="flex flex-col items-center"><span id="minutes" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
+                                <div class="flex flex-col items-center"><span id="seconds" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.seconds') %></span></div>
                             </div>
                         </div>
                         <% } else { %>
@@ -104,7 +104,7 @@
 
                         <div id="championnats" class="flex gap-4 w-full mt-4">
                             <a href="/driver/<%= homeData.driverLeader.driverId %>" class="w-full">
-                                <div id="chPilotes" class="h-48 md:h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl overflow-hidden">
+                                <div id="chPilotes" class="h-40 md:h-36 bg-s-<%= theme %> flex flex-col justify-center items-center font-bold rounded-3xl overflow-hidden">
                                     <span class="text-center pt-2"> <%= __('home.drivers_championship') %> </span>
                                     <span class="flex justify-evenly items-center mt-auto gap-2">
                                         <span class="flex flex-col items-center text-xl">
@@ -119,7 +119,7 @@
                             </a>
 
                             <a href="/constructor/<%= homeData.constructorLeader.constructorId %>" class="w-full">
-                                <div id="chContructeurs" class="h-48 md:h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
+                                <div id="chContructeurs" class="h-40 md:h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
                                     <span class="text-center font-bold pt-2"> <%= __('home.constructors_championship') %> </span>
                                     <span>
                                         <img src="/img/constructors/<%= homeData.constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
