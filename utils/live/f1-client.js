@@ -23,6 +23,8 @@ const driverMapping = {
 
 const SUBSCRIBE_CHANNELS = [
     'TimingData',
+    'TimingAppData',
+    'DriverList',
     'SessionInfo',
     'WeatherData',
     'RaceControlMessages',
@@ -35,9 +37,11 @@ class F1LiveClient {
         this.broadcast = broadcastCallback;
         this.ws = null;
         this.isConnected = false;
-
+        
         // Global State Cache
-        this.standings = {};
+        this.standings = {}; 
+        this.timingAppData = {}; // Tires
+        this.driverList = {}; // Driver data including team colors
         this.weather = {};
         this.session = {};
         this.raceControl = [];
@@ -160,6 +164,8 @@ class F1LiveClient {
     }
 
     handleSnapshot(result) {
+        if (result.DriverList) this.routeData('DriverList', result.DriverList);
+        if (result.TimingAppData) this.routeData('TimingAppData', result.TimingAppData);
         if (result.TimingData) this.routeData('TimingData', result.TimingData);
         if (result.SessionInfo) this.routeData('SessionInfo', result.SessionInfo);
         if (result.WeatherData) this.routeData('WeatherData', result.WeatherData);
@@ -173,6 +179,12 @@ class F1LiveClient {
         const data = typeof dataStr === 'string' ? JSON.parse(dataStr) : dataStr;
 
         switch (channel) {
+            case 'DriverList':
+                this.processDriverList(data);
+                break;
+            case 'TimingAppData':
+                this.processTimingAppData(data);
+                break;
             case 'TimingData':
                 this.processTimingData(data);
                 break;
@@ -203,6 +215,46 @@ class F1LiveClient {
         }
     }
 
+    processDriverList(data) {
+        if (!data) return;
+        
+        let hasChanges = false;
+        for (const [racingNumber, driverData] of Object.entries(data)) {
+            if (!this.driverList[racingNumber]) this.driverList[racingNumber] = {};
+            if (driverData.TeamColour) {
+                this.driverList[racingNumber].TeamColour = driverData.TeamColour;
+                hasChanges = true;
+            }
+        }
+        
+        if (hasChanges) {
+            this.broadcastStandings();
+        }
+    }
+
+    processTimingAppData(data) {
+        if (!data || !data.Lines) return;
+        
+        let hasChanges = false;
+        for (const [racingNumber, driverData] of Object.entries(data.Lines)) {
+            if (!this.timingAppData[racingNumber]) this.timingAppData[racingNumber] = { Stints: [] };
+            
+            if (driverData.Stints) {
+                const stintsObj = Array.isArray(driverData.Stints) ? Object.assign({}, driverData.Stints) : driverData.Stints;
+                for (const [idx, stint] of Object.entries(stintsObj)) {
+                    if (stint && stint.Compound) {
+                        this.timingAppData[racingNumber].Stints[idx] = stint.Compound.toLowerCase();
+                        hasChanges = true;
+                    }
+                }
+            }
+        }
+        
+        if (hasChanges) {
+            this.broadcastStandings();
+        }
+    }
+
     processTimingData(data) {
         if (!data || !data.Lines) return;
 
@@ -213,38 +265,95 @@ class F1LiveClient {
                     racingNumber,
                     driverCode: driverMapping[racingNumber] || racingNumber,
                     position: 99,
+                    trend: 'none',
                     gapToLeader: "",
                     interval: "",
                     inPit: false,
                     stopped: false,
-                    retired: false
+                    retired: false,
+                    lastLap: "",
+                    bestLap: "",
+                    pits: 0
                 };
             }
 
             const st = this.standings[racingNumber];
-            if (driverData.Position) { st.position = parseInt(driverData.Position, 10); hasChanges = true; }
+            if (driverData.Position) { 
+                const newPos = parseInt(driverData.Position, 10);
+                if (st.position !== 99 && newPos !== st.position) {
+                    st.trend = newPos < st.position ? 'up' : 'down';
+                    if (st.trendTimer) clearTimeout(st.trendTimer);
+                    st.trendTimer = setTimeout(() => {
+                        st.trend = 'none';
+                        this.broadcastStandings();
+                    }, 5000);
+                }
+                st.position = newPos;
+                hasChanges = true; 
+            }
             if (driverData.GapToLeader && driverData.GapToLeader.Value) { st.gapToLeader = driverData.GapToLeader.Value; hasChanges = true; }
             if (driverData.IntervalToPositionAhead && driverData.IntervalToPositionAhead.Value) { st.interval = driverData.IntervalToPositionAhead.Value; hasChanges = true; }
             if (driverData.InPit !== undefined) { st.inPit = driverData.InPit; hasChanges = true; }
             if (driverData.Stopped !== undefined) { st.stopped = driverData.Stopped; hasChanges = true; }
             if (driverData.Retired !== undefined) { st.retired = driverData.Retired; hasChanges = true; }
+            if (driverData.LastLapTime && driverData.LastLapTime.Value) { st.lastLap = driverData.LastLapTime.Value; hasChanges = true; }
+            if (driverData.BestLapTime && driverData.BestLapTime.Value) { st.bestLap = driverData.BestLapTime.Value; hasChanges = true; }
+            if (driverData.NumberOfPitStops !== undefined) { st.pits = driverData.NumberOfPitStops; hasChanges = true; }
         }
 
-        if (hasChanges && this.broadcast) {
-            const standingsArray = Object.values(this.standings)
-                .filter(d => d.position !== 99)
-                .sort((a, b) => a.position - b.position);
-
-            this.broadcast({ type: 'standings', data: standingsArray });
+        if (hasChanges) {
+            this.broadcastStandings();
         }
     }
 
+    broadcastStandings() {
+        if (!this.broadcast) return;
+        
+        const standingsArray = Object.values(this.standings)
+            .filter(d => d.position !== 99)
+            .sort((a, b) => a.position - b.position)
+            .map(d => {
+                // Attach tire data dynamically
+                let currentTire = 'unknown';
+                if (this.timingAppData[d.racingNumber] && this.timingAppData[d.racingNumber].Stints.length > 0) {
+                    const stints = this.timingAppData[d.racingNumber].Stints;
+                    // Get the last valid element
+                    for (let i = stints.length - 1; i >= 0; i--) {
+                        if (stints[i]) {
+                            currentTire = stints[i];
+                            break;
+                        }
+                    }
+                }
+                const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
+                return { ...d, currentTire, teamColor };
+            });
+
+        this.broadcast({ type: 'standings', data: standingsArray });
+    }
+
     getFullState() {
+        const standingsArray = Object.values(this.standings)
+            .filter(d => d.position !== 99)
+            .sort((a, b) => a.position - b.position)
+            .map(d => {
+                let currentTire = 'unknown';
+                if (this.timingAppData[d.racingNumber] && this.timingAppData[d.racingNumber].Stints.length > 0) {
+                    const stints = this.timingAppData[d.racingNumber].Stints;
+                    for (let i = stints.length - 1; i >= 0; i--) {
+                        if (stints[i]) {
+                            currentTire = stints[i];
+                            break;
+                        }
+                    }
+                }
+                const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
+                return { ...d, currentTire, teamColor };
+            });
+
         return {
             type: 'full_state',
-            standings: Object.values(this.standings)
-                .filter(d => d.position !== 99)
-                .sort((a, b) => a.position - b.position),
+            standings: standingsArray,
             weather: this.weather,
             session: this.session,
             raceControl: this.raceControl,
