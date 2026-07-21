@@ -8,6 +8,16 @@ const config = require('./config.json');
 const app = express();
 app.use(compression());
 
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minute
+    max: 60, // 60 requests per IP per minute
+    message: "Trop de requêtes depuis cette adresse IP, veuillez réessayer plus tard.",
+    standardHeaders: true, 
+    legacyHeaders: false,
+});
+app.use(limiter);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
