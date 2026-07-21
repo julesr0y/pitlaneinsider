@@ -6,114 +6,138 @@
         <title>PLI - <%= __('live.tab_title') %></title>
     </head>
 
-    <style>
-        .move {
-            transition: transform 2s ease-in-out;
-        }
-
-        .arrow-up img,
-        .arrow-down img {
-            width: 20px;
-            height: auto;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
-
-        .fade-out {
-            animation: fadeOut 0.5s ease-in-out forwards;
-        }
-
-        @keyframes highlightFirstPlace {
-            0% {
-                background-color: transparent;
-            }
-
-            25%,
-            75% {
-                background-color: #731c87;
-            }
-
-            100% {
-                background-color: transparent;
-            }
-        }
-
-        .first-place {
-            animation: highlightFirstPlace 1s ease-in-out forwards;
-        }
-    </style>
-
-    <body class="font-regular text-<%= theme %> bg-b-<%= theme %>">
-        <main>
-            <div class="text-center flex items-center justify-center gap-x-3 text-xl font-bold mt-8 mb-4">
-                <span>
-                    <span class="w-4 h-4 rounded-full bg-red-500 animate-pulse inline-block"></span>
-                    <span class="text-red-500"> <%= __('live.live_title') %> </span>
-                </span>
-                <span id="frontSession"></span>
-                <span id="frontLocation"></span>
+    <body class="font-regular text-gray-100 bg-gray-950 min-h-screen flex flex-col selection:bg-red-500/30">
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <!-- Header Section -->
+            <div class="flex flex-col items-center justify-center mb-10 gap-2">
+                <div class="flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-full px-6 py-2 shadow-lg">
+                    <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse inline-block"></span>
+                    <span class="text-red-500 font-bold uppercase tracking-widest text-sm"><%= __('live.live_title') %></span>
+                    <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status">Connecting...</span>
+                </div>
             </div>
 
-            <div class="flex justify-center mb-4">
-                <a href="/live" id="btnClassement" class="mr-4 underline"> <%= __('live.link_standings') %> </a>
-                <a href="/live/racecontrol" id="btnRaceControl" class="mr-4" onclick="openTab('RaceControl')"> <%= __('live.link_race_control') %> </a>
-                <a href="/live/radio" id="btnRadio" onclick="openTab('Radio')"> <%= __('live.link_radio') %> </a>
+            <!-- Navigation -->
+            <div class="flex justify-center mb-8 gap-4">
+                <a href="/live" class="px-5 py-2 rounded-lg bg-gray-800 text-white font-medium border border-gray-700 shadow-md hover:bg-gray-700 transition">Standings</a>
+                <a href="/live/racecontrol" class="px-5 py-2 rounded-lg bg-transparent text-gray-400 font-medium hover:text-white transition">Race Control</a>
+                <a href="/live/radio" class="px-5 py-2 rounded-lg bg-transparent text-gray-400 font-medium hover:text-white transition">Radio</a>
             </div>
 
-            <div class="flex mt-4">
-                <a href="/live/detailedstandings" id="Classement" class="bg-s-<%= theme %> py-4 shadow-md rounded-2xl mx-4 w-5/12">
-                    <div class="grid grid-cols-2 justify-center items-center px-4 pb-4 font-bold text-base">
-                        <span>Pos</span>
-                        <span>Drivers</span>
+            <!-- Standings Board -->
+            <div class="w-full max-w-4xl mx-auto bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-800/60 shadow-2xl overflow-hidden relative">
+                <!-- Ambient glow -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-32 bg-red-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+                
+                <div class="px-8 py-5 border-b border-gray-800/60 bg-gray-900/40 flex justify-between items-center">
+                    <h2 class="text-xl font-bold text-white tracking-wide">Live Classification</h2>
+                </div>
+                
+                <div class="p-6">
+                    <!-- Table Header -->
+                    <div class="grid grid-cols-12 gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
+                        <div class="col-span-2 text-center">Pos</div>
+                        <div class="col-span-5">Driver</div>
+                        <div class="col-span-5 text-right">Gap</div>
                     </div>
-                </a>
-
-                <div class="w-7/12 grid grid-rows-12 gap-4">
-                    <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
-                        <img src="/img/assets/track-<%= theme %>.svg" alt="track" class="h-16 w-auto" />
-                        <span id="track_temp"></span>
-                    </div>
-                    <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
-                        <img src="/img/assets/temperature-<%= theme %>.svg" alt="air-temp" class="h-16 w-auto" />
-                        <span id="air_temp"></span>
-                    </div>
-                    <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
-                        <img src="/img/assets/rain-<%= theme %>.svg" alt="rain" class="h-16 w-auto" />
-                        <span id="rain_fall"></span>
-                    </div>
-                    <div class="bg-s-<%= theme %> shadow-md rounded-2xl mx-4 row-span-3 flex flex-col justify-center gap-3 items-center px-2">
-                        <img src="/img/assets/wind-<%= theme %>.svg" alt="wind" class="h-16 w-auto" />
-                        <span id="wind_speed"></span>
+                    
+                    <!-- Standings Container -->
+                    <div id="standings-container" class="flex flex-col gap-2.5">
+                        <!-- Loading skeleton -->
+                        <div class="animate-pulse flex gap-4 px-4 py-4 bg-gray-800/30 rounded-2xl border border-gray-800/40">
+                            <div class="h-5 bg-gray-700/50 rounded-md w-1/12"></div>
+                            <div class="h-5 bg-gray-700/50 rounded-md w-4/12"></div>
+                            <div class="h-5 bg-gray-700/50 rounded-md w-full ml-auto"></div>
+                        </div>
+                        <div class="animate-pulse flex gap-4 px-4 py-4 bg-gray-800/20 rounded-2xl border border-gray-800/40">
+                            <div class="h-5 bg-gray-700/40 rounded-md w-1/12"></div>
+                            <div class="h-5 bg-gray-700/40 rounded-md w-4/12"></div>
+                            <div class="h-5 bg-gray-700/40 rounded-md w-full ml-auto"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
         <%- include('../partials/footer.ejs') %>
-    </body>
+        
+        <script>
+            const container = document.getElementById('standings-container');
+            const wsStatus = document.getElementById('ws-status');
+            let ws;
 
-    <script src="/js/liveTitle.js"></script>
-    <script src="/js/liveStandingsMin.js"></script>
-    <script src="/js/liveWeather.js"></script>
+            function connectWS() {
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                ws = new WebSocket(`${protocol}//${window.location.host}`);
+
+                ws.onopen = () => {
+                    wsStatus.textContent = 'CONNECTED';
+                    wsStatus.className = 'text-green-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest';
+                };
+
+                ws.onmessage = (event) => {
+                    try {
+                        const standings = JSON.parse(event.data);
+                        renderStandings(standings);
+                    } catch (e) {
+                        console.error("Error parsing F1 data", e);
+                    }
+                };
+
+                ws.onclose = () => {
+                    wsStatus.textContent = 'RECONNECTING...';
+                    wsStatus.className = 'text-orange-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest animate-pulse';
+                    setTimeout(connectWS, 3000);
+                };
+            }
+
+            function renderStandings(standings) {
+                if (!standings || standings.length === 0) {
+                    container.innerHTML = '<div class="text-center text-gray-500 py-10 italic tracking-wide">Waiting for session data...</div>';
+                    return;
+                }
+
+                let html = '';
+                standings.forEach(driver => {
+                    // Styles based on status
+                    const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-3 shadow-[0_0_10px_rgba(59,130,246,0.2)]">PIT</span>' : '';
+                    
+                    let statusHtml = '';
+                    let posColor = 'text-gray-400';
+                    let rowBg = 'bg-gray-800/30';
+                    let rowBorder = 'border-gray-800/50';
+
+                    if (driver.retired || driver.stopped) {
+                        statusHtml = '<span class="text-red-500 text-xs font-black uppercase tracking-widest">OUT</span>';
+                        posColor = 'text-gray-600';
+                        rowBg = 'bg-red-950/10';
+                        rowBorder = 'border-red-900/20';
+                    } else {
+                        statusHtml = driver.gapToLeader || driver.interval || '<span class="text-purple-400 font-black tracking-widest">LEADER</span>';
+                        if (driver.position === 1) {
+                            posColor = 'text-purple-400';
+                            rowBg = 'bg-purple-900/10';
+                            rowBorder = 'border-purple-500/20';
+                        }
+                    }
+
+                    html += `
+                    <div class="grid grid-cols-12 gap-4 items-center px-5 py-3.5 ${rowBg} hover:bg-gray-800/60 rounded-2xl transition-all duration-300 border ${rowBorder} hover:border-gray-700 hover:shadow-lg group">
+                        <div class="col-span-2 text-center font-mono text-lg font-black ${posColor}">${driver.position}</div>
+                        <div class="col-span-5 font-bold text-gray-100 flex items-center text-lg tracking-wide group-hover:text-white transition-colors">
+                            ${driver.driverCode}
+                            ${isPit}
+                        </div>
+                        <div class="col-span-5 text-right font-mono text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                            ${statusHtml}
+                        </div>
+                    </div>`;
+                });
+
+                container.innerHTML = html;
+            }
+
+            // Init connection
+            connectWS();
+        </script>
+    </body>
 </html>

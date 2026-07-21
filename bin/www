@@ -42,6 +42,31 @@ const asciiArt = `
 
 console.log(asciiArt);
 
+var { WebSocketServer } = require('ws');
+var F1LiveClient = require('../utils/live/f1-client');
+
+var wss = new WebSocketServer({ server });
+var clients = new Set();
+
+wss.on('connection', (ws) => {
+    clients.add(ws);
+    if (f1Client) {
+        ws.send(JSON.stringify(f1Client.getLatestStandings()));
+    }
+    ws.on('close', () => clients.delete(ws));
+});
+
+function broadcast(data) {
+    const payload = JSON.stringify(data);
+    for (const client of clients) {
+        if (client.readyState === 1) {
+            client.send(payload);
+        }
+    }
+}
+
+var f1Client = new F1LiveClient(broadcast);
+f1Client.connect();
 /**
  * Normalize a port into a number, string, or false.
  */

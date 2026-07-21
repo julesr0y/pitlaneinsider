@@ -21,7 +21,8 @@
         "helmet": "^8.3.0",
         "http-errors": "~2.0.1",
         "i18n": "^0.15.3",
-        "msgpack-lite": "^0.1.26"
+        "msgpack-lite": "^0.1.26",
+        "ws": "^8.21.1"
     },
     "devDependencies": {
         "jsdoc": "^4.0.5",
