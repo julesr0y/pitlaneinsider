@@ -1,4 +1,6 @@
 const WebSocket = require('ws');
+const fs = require('fs');
+const path = require('path');
 
 const F1_ORIGIN_URL = 'https://www.formula1.com';
 const F1_HTTP_URL = 'https://livetiming.formula1.com/signalrcore';
@@ -117,6 +119,15 @@ class F1LiveClient {
                         isHandshakeComplete = true;
                         this.isConnected = true;
                         console.log("[F1Client] Handshake complete. Subscribing to channels...");
+                        
+                        try {
+                            const logPath = path.join(__dirname, '../../signalr_connections.log');
+                            const timestamp = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
+                            fs.appendFileSync(logPath, `[${timestamp}] F1 SignalR connection successfully established.\n`);
+                        } catch (err) {
+                            console.error('[F1Client] Failed to write to connection log:', err.message);
+                        }
+
                         this.sendSubscribe();
                         return;
                     }

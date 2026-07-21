@@ -6,32 +6,25 @@ const compression = require('compression');
 const config = require('./config.json');
 
 const app = express();
-app.use(compression());
+const logger = require('morgan');
+app.use(logger('dev')); // 'dev' format is colorized and concise
 
-const rateLimit = require('express-rate-limit');
-const limiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 60, // 60 requests per IP per minute
-    message: "Trop de requêtes depuis cette adresse IP, veuillez réessayer plus tard.",
-    standardHeaders: true, 
-    legacyHeaders: false,
-});
-app.use(limiter);
+app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // app.set('view options', {
 //     compileDebug: true,
-//     debug: true // <--- Force l'affichage du code compilé dans la console
+//     debug: true // Force the display of compiled code in the console
 // });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configuration des middlewares
-app.use(helmet()); // Helmet middleware, permet de sécuriser l'application en configurant des en-têtes HTTP de manière sécurisée
+// middlewares configuration
+app.use(helmet()); // helmet security configuration
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
@@ -79,37 +72,55 @@ app.use(
             ],
         },
     })
-); // Middleware permettant de configurer la Content Security Policy (CSP) avec Helmet
+);
+
+// i18n configuration (language)
 i18n.configure({
-    locales: ['en'], // Langues supportées
-    directory: path.join(__dirname, 'locales'), // Répertoire des fichiers de langue
-    defaultLocale: 'en', // Langue par défaut
-    queryParameter: 'lang', // Paramètre de requête pour définir la langue (optionnel)
-    autoReload: true, // Rechargement automatique des fichiers de langue lorsqu'ils sont modifiés (optionnel)
-    syncFiles: true, // Synchronisation des fichiers de langue (optionnel)
-    cookie: 'lang', // Nom du cookie pour stocker la langue sélectionnée par l'utilisateur (optionnel)
-    objectNotation: true, // Utilisation de la notation d'objet pour accéder aux clés de traduction (optionnel)
+    locales: ['en'], // supported languages
+    directory: path.join(__dirname, 'locales'), // language files directory
+    defaultLocale: 'en', // default language
+    queryParameter: 'lang', // language query parameter
+    autoReload: true, // auto reload language files
+    syncFiles: true, // sync language files
+    cookie: 'lang', // cookie to store the selected language
+    objectNotation: true, // object notation for language keys
 });
 app.use(i18n.init);
 
-// Middleware pour gérer la langue de l'utilisateur
+// Middleware for user language management
 app.use(async (req, res, next) => {
 
-    req.setLocale(i18n.getLocale()); // Utiliser la langue par défaut de i18n pour les utilisateurs non authentifiés
-    res.locals.i18n = i18n; // Affecter i18n à res.locals pour le rendre disponible dans les templates EJS
-    res.locals.currentYear = config.currentYear;
+    req.setLocale(i18n.getLocale()); // set default language to i18n
+    res.locals.i18n = i18n; // set i18n to res.locals
+    res.locals.currentYear = config.currentYear; // set current year to res.locals
 
     next();
 });
 
-// Middleware pour gérer le thème de l'utilisateur
+// Middleware for user theme management
 app.use(async (req, res, next) => {
-    res.locals.theme = "dark";
+    res.locals.theme = "dark"; // set theme to dark
     next();
 });
 
-const getHomeData = require("./utils/home/getHomeData"); // Fonction permettant de récupérer les données de la page d'accueil
-const getNewsHomePage = require("./utils/news/getNewsHomePage");
+// Rate Limiter: placed AFTER static files AND AFTER i18n/theme so error.ejs can render properly
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minute
+    max: 120, // 120 requests per IP per minute
+    handler: (req, res, next, options) => {
+        res.status(options.statusCode).render('security/error', {
+            textError: "Trop de requêtes détectées",
+            error: "Vous avez dépassé la limite de requêtes autorisées par minute. Pour protéger le serveur, votre accès est temporairement suspendu. Veuillez patienter une minute avant de rafraîchir."
+        });
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+app.use(limiter);
+
+const getHomeData = require("./utils/home/getHomeData"); // call getHomeData function from utils/home/getHomeData.js
+const getNewsHomePage = require("./utils/news/getNewsHomePage"); // call getNewsHomePage function from utils/news/getNewsHomePage.js
 
 app.get("/", async (req, res) => { // home page
     try {
@@ -121,41 +132,42 @@ app.get("/", async (req, res) => { // home page
     }
 });
 
-const constructorsRoutes = require('./routes/constructors'); // Importation des routes concernant les écuries
+const constructorsRoutes = require('./routes/constructors'); // call constructorsRoutes function from routes/constructors.js
 app.use('/', constructorsRoutes);
 
-const driversRoutes = require('./routes/drivers'); // Importation des routes concernant les pilotes
+const driversRoutes = require('./routes/drivers'); // call driversRoutes function from routes/drivers.js
 app.use('/', driversRoutes);
 
-const chassisRoutes = require('./routes/chassis'); // Importation des routes concernant les voitures
+const chassisRoutes = require('./routes/chassis'); // call chassisRoutes function from routes/chassis.js
 app.use('/', chassisRoutes);
 
-const calendarRoutes = require('./routes/calendar'); // Importation des routes concernant le calendrier
+const calendarRoutes = require('./routes/calendar'); // call calendarRoutes function from routes/calendar.js
 app.use('/', calendarRoutes);
 
-const standingsRoutes = require('./routes/standings'); // Importation des routes concernant les écuries
+const standingsRoutes = require('./routes/standings'); // call standingsRoutes function from routes/standings.js
 app.use('/', standingsRoutes);
 
-const retroReglementations = require('./routes/reglementations'); // Importation des routes de la partie reglementations
+const retroReglementations = require('./routes/reglementations'); // call retroReglementations function from routes/reglementations.js
 app.use('/', retroReglementations);
 
-const retroRoutes = require('./routes/retro'); // Importation des routes de la partie rétro
+const retroRoutes = require('./routes/retro'); // call retroRoutes function from routes/retro.js
 app.use('/', retroRoutes);
 
-const liveRoutes = require('./routes/live'); // Importation des routes concernant le live
+const liveRoutes = require('./routes/live'); // call liveRoutes function from routes/live.js
 app.use('/', liveRoutes);
 
-const newsRoutes = require('./routes/news'); // Importation des routes concernant les news
+const newsRoutes = require('./routes/news'); // call newsRoutes function from routes/news.js
 app.use('/', newsRoutes);
 
-const aboutRoutes = require('./routes/about'); // Importation des routes de la partie  a propos
+const aboutRoutes = require('./routes/about'); // call aboutRoutes function from routes/about.js
 app.use('/', aboutRoutes);
 
-// Middleware pour gérer les routes inexistantes
+// Middleware for handling non-existent routes
 app.use((req, res, next) => {
     res.status(404).render('security/notFound');
 });
 
+// Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send(err.stack);
