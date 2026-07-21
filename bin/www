@@ -51,7 +51,7 @@ var clients = new Set();
 wss.on('connection', (ws) => {
     clients.add(ws);
     if (f1Client) {
-        ws.send(JSON.stringify(f1Client.getLatestStandings()));
+        ws.send(JSON.stringify(f1Client.getFullState()));
     }
     ws.on('close', () => clients.delete(ws));
 });

@@ -13,21 +13,36 @@ const MSG_COMPLETION = 3;
 
 const HANDSHAKE_MESSAGE = `{"protocol":"json","version":1}${RECORD_SEP}`;
 
-// Driver mapping
 const driverMapping = {
     3: "VER", 10: "GAS", 30: "LAW", 43: "COL", 44: "HAM",
     55: "SAI", 16: "LEC", 63: "RUS", 1: "NOR", 18: "STR",
     14: "ALO", 31: "OCO", 23: "ALB", 41: "LIN", 81: "PIA",
     27: "HUL", 5: "BOR", 6: "HAD", 12: "ANT", 87: "BEA",
-    11: "PER", 77: "BOT"
+    77: "BOT", 11: "PER"
 };
+
+const SUBSCRIBE_CHANNELS = [
+    'TimingData',
+    'SessionInfo',
+    'WeatherData',
+    'RaceControlMessages',
+    'LapCount',
+    'TeamRadio'
+];
 
 class F1LiveClient {
     constructor(broadcastCallback) {
         this.broadcast = broadcastCallback;
         this.ws = null;
         this.isConnected = false;
-        this.standings = {}; // Maintient l'état du classement
+
+        // Global State Cache
+        this.standings = {};
+        this.weather = {};
+        this.session = {};
+        this.raceControl = [];
+        this.lapCount = {};
+        this.teamRadio = [];
     }
 
     async connect() {
@@ -97,26 +112,28 @@ class F1LiveClient {
                         }
                         isHandshakeComplete = true;
                         this.isConnected = true;
-                        console.log("[F1Client] Handshake complete. Subscribing to TimingData...");
+                        console.log("[F1Client] Handshake complete. Subscribing to channels...");
                         this.sendSubscribe();
                         return;
                     }
 
                     if (frame.type === MSG_COMPLETION && frame.invocationId === SUBSCRIBE_INVOCATION_ID) {
-                        if (frame.result && frame.result.TimingData) {
-                            this.processTimingData(frame.result.TimingData);
+                        if (frame.result) {
+                            this.handleSnapshot(frame.result);
                         }
                     }
 
                     if (frame.type === MSG_INVOCATION && frame.target === 'feed') {
                         const args = frame.arguments;
-                        if (args && args.length >= 2 && args[0] === 'TimingData') {
-                            this.processTimingData(args[1]);
+                        if (args && args.length >= 2) {
+                            const channel = args[0];
+                            const payload = args[1];
+                            this.routeData(channel, payload);
                         }
                     }
                 }
             } catch (err) {
-                // Ignore silent errors for unparseable chunks
+                // Silent catch for partial frames
             }
         });
 
@@ -137,14 +154,56 @@ class F1LiveClient {
             type: MSG_INVOCATION,
             invocationId: SUBSCRIBE_INVOCATION_ID,
             target: 'Subscribe',
-            arguments: [['TimingData']],
+            arguments: [SUBSCRIBE_CHANNELS],
         });
         this.ws.send(`${msg}${RECORD_SEP}`);
     }
 
-    processTimingData(timingDataStr) {
-        if (!timingDataStr) return;
-        const data = typeof timingDataStr === 'string' ? JSON.parse(timingDataStr) : timingDataStr;
+    handleSnapshot(result) {
+        if (result.TimingData) this.routeData('TimingData', result.TimingData);
+        if (result.SessionInfo) this.routeData('SessionInfo', result.SessionInfo);
+        if (result.WeatherData) this.routeData('WeatherData', result.WeatherData);
+        if (result.RaceControlMessages) this.routeData('RaceControlMessages', result.RaceControlMessages);
+        if (result.LapCount) this.routeData('LapCount', result.LapCount);
+        if (result.TeamRadio) this.routeData('TeamRadio', result.TeamRadio);
+    }
+
+    routeData(channel, dataStr) {
+        if (!dataStr) return;
+        const data = typeof dataStr === 'string' ? JSON.parse(dataStr) : dataStr;
+
+        switch (channel) {
+            case 'TimingData':
+                this.processTimingData(data);
+                break;
+            case 'SessionInfo':
+                this.session = data;
+                if (this.broadcast) this.broadcast({ type: 'session', data: this.session });
+                break;
+            case 'WeatherData':
+                this.weather = { ...this.weather, ...data };
+                if (this.broadcast) this.broadcast({ type: 'weather', data: this.weather });
+                break;
+            case 'RaceControlMessages':
+                if (data.Messages && Array.isArray(data.Messages)) {
+                    this.raceControl = [...this.raceControl, ...data.Messages].slice(-50); // Keep last 50
+                    if (this.broadcast) this.broadcast({ type: 'race_control', data: this.raceControl });
+                }
+                break;
+            case 'LapCount':
+                this.lapCount = data;
+                if (this.broadcast) this.broadcast({ type: 'lap_count', data: this.lapCount });
+                break;
+            case 'TeamRadio':
+                if (data.Captures && Array.isArray(data.Captures)) {
+                    this.teamRadio = [...data.Captures, ...this.teamRadio].slice(0, 30);
+                    if (this.broadcast) this.broadcast({ type: 'team_radio', data: this.teamRadio });
+                }
+                break;
+        }
+    }
+
+    processTimingData(data) {
         if (!data || !data.Lines) return;
 
         let hasChanges = false;
@@ -176,14 +235,22 @@ class F1LiveClient {
                 .filter(d => d.position !== 99)
                 .sort((a, b) => a.position - b.position);
 
-            this.broadcast(standingsArray);
+            this.broadcast({ type: 'standings', data: standingsArray });
         }
     }
 
-    getLatestStandings() {
-        return Object.values(this.standings)
-            .filter(d => d.position !== 99)
-            .sort((a, b) => a.position - b.position);
+    getFullState() {
+        return {
+            type: 'full_state',
+            standings: Object.values(this.standings)
+                .filter(d => d.position !== 99)
+                .sort((a, b) => a.position - b.position),
+            weather: this.weather,
+            session: this.session,
+            raceControl: this.raceControl,
+            lapCount: this.lapCount,
+            teamRadio: this.teamRadio
+        };
     }
 }
 

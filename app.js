@@ -28,7 +28,6 @@ app.use(
             defaultSrc: ["'self'"],
             connectSrc: [
                 "'self'",
-                "https://api.openf1.org",
                 "https://www.motorsport.com/rss/f1/news/",
             ],
             styleSrc: [
@@ -51,7 +50,6 @@ app.use(
             scriptSrcAttr: ["'unsafe-inline'"],
             mediaSrc: [
                 "'self'",
-                "https://api.openf1.org",
                 "https://livetiming.formula1.com",
             ],
             imgSrc: [

@@ -9,97 +9,256 @@
     <body class="font-regular text-gray-100 bg-gray-950 min-h-screen flex flex-col selection:bg-red-500/30">
         <main class="flex-grow container mx-auto px-4 py-8">
             <!-- Header Section -->
-            <div class="flex flex-col items-center justify-center mb-10 gap-2">
+            <div class="flex flex-col items-center justify-center mb-10 gap-2 pt-4">
                 <div class="flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-full px-6 py-2 shadow-lg">
                     <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse inline-block"></span>
                     <span class="text-red-500 font-bold uppercase tracking-widest text-sm"><%= __('live.live_title') %></span>
                     <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status">Connecting...</span>
                 </div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="flex justify-center mb-8 gap-4">
-                <a href="/live" class="px-5 py-2 rounded-lg bg-gray-800 text-white font-medium border border-gray-700 shadow-md hover:bg-gray-700 transition">Standings</a>
-                <a href="/live/racecontrol" class="px-5 py-2 rounded-lg bg-transparent text-gray-400 font-medium hover:text-white transition">Race Control</a>
-                <a href="/live/radio" class="px-5 py-2 rounded-lg bg-transparent text-gray-400 font-medium hover:text-white transition">Radio</a>
-            </div>
-
-            <!-- Standings Board -->
-            <div class="w-full max-w-4xl mx-auto bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-800/60 shadow-2xl overflow-hidden relative">
-                <!-- Ambient glow -->
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-32 bg-red-500/10 blur-[80px] rounded-full pointer-events-none"></div>
-                
-                <div class="px-8 py-5 border-b border-gray-800/60 bg-gray-900/40 flex justify-between items-center">
-                    <h2 class="text-xl font-bold text-white tracking-wide">Live Classification</h2>
+                <!-- Session Title Widget (Updated dynamically) -->
+                <div id="session-title-container" class="text-center mt-2">
+                    <h1 id="session-name" class="text-3xl font-black text-white tracking-wider">Waiting for session...</h1>
+                    <p id="session-laps" class="text-gray-400 font-mono text-sm mt-1"></p>
                 </div>
+            </div>
+
+            <!-- Two-Column Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto relative">
                 
-                <div class="p-6">
-                    <!-- Table Header -->
-                    <div class="grid grid-cols-12 gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
-                        <div class="col-span-2 text-center">Pos</div>
-                        <div class="col-span-5">Driver</div>
-                        <div class="col-span-5 text-right">Gap</div>
+                <!-- Ambient glow -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-red-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+                <!-- LEFT COLUMN: STANDINGS (7/12) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-800/60 shadow-2xl overflow-hidden h-[800px] flex flex-col">
+                        <div class="px-6 py-4 border-b border-gray-800/60 bg-gray-900/40 flex justify-center items-center shrink-0">
+                            <h2 class="text-lg font-bold text-white tracking-wide uppercase">Live Classification</h2>
+                        </div>
+                        
+                        <div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+                            <div class="grid grid-cols-12 gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
+                                <div class="col-span-2 text-center">Pos</div>
+                                <div class="col-span-5">Driver</div>
+                                <div class="col-span-5 text-right">Gap</div>
+                            </div>
+                            
+                            <div id="standings-container" class="flex flex-col gap-2">
+                                <div class="text-center text-gray-500 py-10 italic tracking-wide">Waiting for session data...</div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <!-- RIGHT COLUMN: WIDGETS (5/12) -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
                     
-                    <!-- Standings Container -->
-                    <div id="standings-container" class="flex flex-col gap-2.5">
-                        <!-- Loading skeleton -->
-                        <div class="animate-pulse flex gap-4 px-4 py-4 bg-gray-800/30 rounded-2xl border border-gray-800/40">
-                            <div class="h-5 bg-gray-700/50 rounded-md w-1/12"></div>
-                            <div class="h-5 bg-gray-700/50 rounded-md w-4/12"></div>
-                            <div class="h-5 bg-gray-700/50 rounded-md w-full ml-auto"></div>
+                    <!-- WEATHER WIDGET -->
+                    <div class="bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-800/60 shadow-2xl overflow-hidden">
+                        <div class="px-6 py-3 border-b border-gray-800/60 bg-gray-900/40">
+                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Weather Conditions</h2>
                         </div>
-                        <div class="animate-pulse flex gap-4 px-4 py-4 bg-gray-800/20 rounded-2xl border border-gray-800/40">
-                            <div class="h-5 bg-gray-700/40 rounded-md w-1/12"></div>
-                            <div class="h-5 bg-gray-700/40 rounded-md w-4/12"></div>
-                            <div class="h-5 bg-gray-700/40 rounded-md w-full ml-auto"></div>
+                        <div class="p-5 grid grid-cols-2 gap-4" id="weather-container">
+                            <div class="bg-gray-800/30 rounded-2xl p-4 flex flex-col items-center border border-gray-800/50">
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Air Temp</span>
+                                <span id="w-air" class="text-2xl font-black text-white">--°C</span>
+                            </div>
+                            <div class="bg-gray-800/30 rounded-2xl p-4 flex flex-col items-center border border-gray-800/50">
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Track Temp</span>
+                                <span id="w-track" class="text-2xl font-black text-white">--°C</span>
+                            </div>
+                            <div class="bg-gray-800/30 rounded-2xl p-4 flex flex-col items-center border border-gray-800/50">
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Wind</span>
+                                <span id="w-wind" class="text-xl font-bold text-gray-200">-- m/s</span>
+                            </div>
+                            <div class="bg-gray-800/30 rounded-2xl p-4 flex flex-col items-center border border-gray-800/50">
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Rainfall</span>
+                                <span id="w-rain" class="text-xl font-bold text-gray-200">--</span>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- RACE CONTROL WIDGET -->
+                    <div class="bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-800/60 shadow-2xl overflow-hidden flex flex-col h-[300px]">
+                        <div class="px-6 py-3 border-b border-gray-800/60 bg-gray-900/40">
+                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Race Control</h2>
+                        </div>
+                        <div id="race-control-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
+                            <div class="text-center text-gray-600 text-sm py-4 italic">No messages yet.</div>
+                        </div>
+                    </div>
+
+                    <!-- TEAM RADIO WIDGET -->
+                    <div class="bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-800/60 shadow-2xl overflow-hidden flex flex-col h-[200px]">
+                        <div class="px-6 py-3 border-b border-gray-800/60 bg-gray-900/40">
+                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Team Radios</h2>
+                        </div>
+                        <div id="radio-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
+                            <div class="text-center text-gray-600 text-sm py-4 italic">No radios yet.</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </main>
         <%- include('../partials/footer.ejs') %>
         
+        <style>
+            .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+            .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+            .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(75, 85, 99, 0.4); border-radius: 10px; }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(75, 85, 99, 0.7); }
+        </style>
+
         <script>
-            const container = document.getElementById('standings-container');
-            const wsStatus = document.getElementById('ws-status');
+            const ui = {
+                wsStatus: document.getElementById('ws-status'),
+                sessionName: document.getElementById('session-name'),
+                sessionLaps: document.getElementById('session-laps'),
+                standings: document.getElementById('standings-container'),
+                wAir: document.getElementById('w-air'),
+                wTrack: document.getElementById('w-track'),
+                wWind: document.getElementById('w-wind'),
+                wRain: document.getElementById('w-rain'),
+                raceControl: document.getElementById('race-control-container'),
+                radio: document.getElementById('radio-container')
+            };
+
             let ws;
+            const knownRadios = new Set();
 
             function connectWS() {
                 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
                 ws = new WebSocket(`${protocol}//${window.location.host}`);
 
                 ws.onopen = () => {
-                    wsStatus.textContent = 'CONNECTED';
-                    wsStatus.className = 'text-green-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest';
+                    ui.wsStatus.textContent = 'CONNECTED';
+                    ui.wsStatus.className = 'text-green-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest';
                 };
 
                 ws.onmessage = (event) => {
                     try {
-                        const standings = JSON.parse(event.data);
-                        renderStandings(standings);
+                        const msg = JSON.parse(event.data);
+                        handleMessage(msg);
                     } catch (e) {
-                        console.error("Error parsing F1 data", e);
+                        console.error("Error parsing WS data", e);
                     }
                 };
 
                 ws.onclose = () => {
-                    wsStatus.textContent = 'RECONNECTING...';
-                    wsStatus.className = 'text-orange-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest animate-pulse';
+                    ui.wsStatus.textContent = 'RECONNECTING...';
+                    ui.wsStatus.className = 'text-orange-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest animate-pulse';
                     setTimeout(connectWS, 3000);
                 };
             }
 
-            function renderStandings(standings) {
-                if (!standings || standings.length === 0) {
-                    container.innerHTML = '<div class="text-center text-gray-500 py-10 italic tracking-wide">Waiting for session data...</div>';
-                    return;
+            function handleMessage(msg) {
+                if (msg.type === 'full_state') {
+                    if (msg.session) renderSession(msg.session);
+                    if (msg.lapCount) renderLapCount(msg.lapCount);
+                    if (msg.weather) renderWeather(msg.weather);
+                    if (msg.standings) renderStandings(msg.standings);
+                    if (msg.raceControl) renderRaceControl(msg.raceControl);
+                    if (msg.teamRadio) renderRadios(msg.teamRadio);
+                } else if (msg.type === 'session') {
+                    renderSession(msg.data);
+                } else if (msg.type === 'lap_count') {
+                    renderLapCount(msg.data);
+                } else if (msg.type === 'weather') {
+                    renderWeather(msg.data);
+                } else if (msg.type === 'standings') {
+                    renderStandings(msg.data);
+                } else if (msg.type === 'race_control') {
+                    renderRaceControl(msg.data);
+                } else if (msg.type === 'team_radio') {
+                    renderRadios(msg.data);
                 }
+            }
+
+            function renderSession(data) {
+                if (!data || !data.Name) return;
+                ui.sessionName.textContent = `${data.Meeting ? data.Meeting.Name : ''} - ${data.Name}`.toUpperCase();
+            }
+
+            function renderLapCount(data) {
+                if (!data || !data.CurrentLap) return;
+                ui.sessionLaps.textContent = `LAP ${data.CurrentLap} / ${data.TotalLaps || '--'}`;
+            }
+
+            function renderWeather(data) {
+                if (!data) return;
+                if (data.AirTemp) ui.wAir.textContent = `${data.AirTemp}°C`;
+                if (data.TrackTemp) ui.wTrack.textContent = `${data.TrackTemp}°C`;
+                if (data.WindSpeed) ui.wWind.textContent = `${data.WindSpeed} m/s`;
+                if (data.Rainfall !== undefined) ui.wRain.textContent = data.Rainfall === '1' ? 'YES' : 'NO';
+            }
+
+            function renderRaceControl(messages) {
+                if (!messages || messages.length === 0) return;
+                
+                // Keep the most recent at the top
+                const reversed = [...messages].reverse();
+                let html = '';
+                
+                reversed.forEach(msg => {
+                    let flagColor = 'bg-gray-800';
+                    if (msg.Flag === 'YELLOW' || msg.Flag === 'DOUBLE YELLOW') flagColor = 'bg-yellow-600/30 border-yellow-500/50';
+                    if (msg.Flag === 'RED') flagColor = 'bg-red-600/30 border-red-500/50';
+                    if (msg.Flag === 'GREEN' || msg.Flag === 'CLEAR') flagColor = 'bg-green-600/30 border-green-500/50';
+                    if (msg.Category === 'SafetyCar') flagColor = 'bg-orange-600/30 border-orange-500/50';
+
+                    html += `
+                    <div class="p-3 rounded-xl border border-gray-800 ${flagColor} text-sm">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-black text-gray-400 uppercase tracking-widest">${msg.Category}</span>
+                            <span class="text-xs text-gray-500 font-mono">${new Date(msg.Utc).toLocaleTimeString()}</span>
+                        </div>
+                        <div class="text-gray-200 font-medium">${msg.Message}</div>
+                    </div>`;
+                });
+                ui.raceControl.innerHTML = html;
+            }
+
+            function renderRadios(captures) {
+                if (!captures || captures.length === 0) return;
+                
+                let hasNew = false;
+                captures.forEach(cap => {
+                    const audioPath = cap.Path || cap.Url || cap.url;
+                    if (!audioPath) return; // Skip if no path is provided
+
+                    // Construct URL (F1 usually sends relative path)
+                    const fullUrl = audioPath.startsWith('http') ? audioPath : `https://livetiming.formula1.com/${audioPath.replace(/^\//, '')}`;
+
+                    if (!knownRadios.has(fullUrl)) {
+                        hasNew = true;
+                        knownRadios.add(fullUrl);
+                        
+                        const el = document.createElement('div');
+                        el.className = 'p-3 rounded-xl bg-gray-800/40 border border-gray-700/50 flex flex-col gap-2';
+                        el.innerHTML = `
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-black text-gray-300 uppercase tracking-widest">Driver ${cap.RacingNumber || 'Radio'}</span>
+                                <span class="text-xs text-gray-500 font-mono">${new Date(cap.Utc).toLocaleTimeString()}</span>
+                            </div>
+                            <audio controls src="${fullUrl}" class="w-full h-8 outline-none"></audio>
+                        `;
+                        // Insert at top
+                        if (ui.radio.firstChild && ui.radio.firstChild.className !== 'text-center text-gray-600 text-sm py-4 italic') {
+                            ui.radio.insertBefore(el, ui.radio.firstChild);
+                        } else {
+                            ui.radio.innerHTML = '';
+                            ui.radio.appendChild(el);
+                        }
+                    }
+                });
+            }
+
+            function renderStandings(standings) {
+                if (!standings || standings.length === 0) return;
 
                 let html = '';
                 standings.forEach(driver => {
-                    // Styles based on status
-                    const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-3 shadow-[0_0_10px_rgba(59,130,246,0.2)]">PIT</span>' : '';
+                    const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-3">PIT</span>' : '';
                     
                     let statusHtml = '';
                     let posColor = 'text-gray-400';
@@ -121,22 +280,20 @@
                     }
 
                     html += `
-                    <div class="grid grid-cols-12 gap-4 items-center px-5 py-3.5 ${rowBg} hover:bg-gray-800/60 rounded-2xl transition-all duration-300 border ${rowBorder} hover:border-gray-700 hover:shadow-lg group">
+                    <div class="grid grid-cols-12 gap-4 items-center px-4 py-3 ${rowBg} hover:bg-gray-800/60 rounded-xl transition-all border ${rowBorder}">
                         <div class="col-span-2 text-center font-mono text-lg font-black ${posColor}">${driver.position}</div>
-                        <div class="col-span-5 font-bold text-gray-100 flex items-center text-lg tracking-wide group-hover:text-white transition-colors">
-                            ${driver.driverCode}
-                            ${isPit}
+                        <div class="col-span-5 font-bold text-gray-100 flex items-center text-lg tracking-wide">
+                            ${driver.driverCode} ${isPit}
                         </div>
-                        <div class="col-span-5 text-right font-mono text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                        <div class="col-span-5 text-right font-mono text-sm text-gray-400">
                             ${statusHtml}
                         </div>
                     </div>`;
                 });
 
-                container.innerHTML = html;
+                ui.standings.innerHTML = html;
             }
 
-            // Init connection
             connectWS();
         </script>
     </body>
