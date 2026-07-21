@@ -1,6 +1,5 @@
 {
     "watch": [
-        "views/**/*.ejs",
         "./bin/www",
         "./**/*.js",
         "./utils/**/*.js"
