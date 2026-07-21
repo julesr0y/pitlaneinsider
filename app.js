@@ -117,7 +117,7 @@ const limiter = rateLimit({
     standardHeaders: true,
     legacyHeaders: false,
 });
-app.use(limiter);
+app.use('/live', limiter);
 
 const getHomeData = require("./utils/home/getHomeData"); // call getHomeData function from utils/home/getHomeData.js
 const getNewsHomePage = require("./utils/news/getNewsHomePage"); // call getNewsHomePage function from utils/news/getNewsHomePage.js
