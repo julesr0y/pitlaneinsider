@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: calendar/getActualSeasonCalendar.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: calendar/getActualSeasonCalendar.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const fs = require('fs');
+const path = require('path');
+
+/**
+ * @description Returns the actual season calendar from f1db
+ * @async
+ * @returns {Array}
+ */
+async function getActualSeasonCalendar() {
+    try {
+        const { currentYear } = require('../../config.json');
+        const races = require('../../data/f1db/f1db-races.json').filter(r => r.year === currentYear);
+        const grandPrix = require('../../data/f1db/f1db-grands-prix.json');
+        const countries = require('../../data/f1db/f1db-countries.json');
+
+        const getGP = (id) => grandPrix.find(g => g.id === id) || {};
+        const getCountry = (id) => countries.find(c => c.id === id) || {};
+
+        // Find next race based on current date
+        const now = Date.now();
+        let nextRaceId = null;
+
+        for (let r of races) {
+            // We use race date and time to find next gp
+            const raceDateStr = r.date + (r.time ? 'T' + r.time + 'Z' : 'T00:00:00Z');
+            const raceTime = new Date(raceDateStr).getTime();
+            if (raceTime > now) {
+                nextRaceId = r.id;
+                break;
+            }
+        }
+
+        const calendarFrontData = races.map(r => {
+            const gp = getGP(r.grandPrixId);
+            const country = getCountry(gp.countryId);
+
+            const formatD = (d) => {
+                if (!d) return null;
+                const parts = d.split('-');
+                if (parts.length === 3) {
+                    return parts[1] + '-' + parts[2];
+                }
+                return d;
+            };
+
+            const raceDateStr = r.date + (r.time ? 'T' + r.time + 'Z' : 'T00:00:00Z');
+            const raceTimeObj = new Date(raceDateStr).getTime();
+
+            return {
+                id: r.id,
+                raceId: r.id,
+                circuitId: r.circuitId,
+                round: r.round,
+                name: gp.shortName || gp.fullName,
+                country: country.id,
+                year: r.year,
+                isNextGp: r.id === nextRaceId,
+                hasOccurred: raceTimeObj &lt;= now,
+                
+                // Formatted dates
+                freePractice1Date: formatD(r.freePractice1Date),
+                freePractice1Time: r.freePractice1Time,
+                freePractice2Date: formatD(r.freePractice2Date),
+                freePractice2Time: r.freePractice2Time,
+                freePractice3Date: formatD(r.freePractice3Date),
+                freePractice3Time: r.freePractice3Time,
+                sprintQualifyingDate: formatD(r.sprintQualifyingDate),
+                sprintQualifyingTime: r.sprintQualifyingTime,
+                sprintRaceDate: formatD(r.sprintRaceDate),
+                sprintRaceTime: r.sprintRaceTime,
+                qualifyingDate: formatD(r.qualifyingDate),
+                qualifyingTime: r.qualifyingTime,
+                raceDate: formatD(r.date),
+                raceTime: r.time
+            };
+        });
+
+        return calendarFrontData;
+    } catch (error) {
+        console.error('getActualSeasonCalendar, error during execution :', error);
+        throw error;
+    }
+}
+
+module.exports = getActualSeasonCalendar;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jul 22 2026 11:56:34 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

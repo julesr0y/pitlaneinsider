@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: retro/getRetroCircuitData.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,42 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: retro/getRetroCircuitData.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const fs = require('fs');
+const path = require('path');
 
+/**
+ * @description Returns data of a specific circuit (using F1DB)
+ * @async
+ * @param {String} circuitId 
+ * @returns {Object}
+ */
+async function getRetroCircuitData(circuitId) {
+    try {
+        const circuitDataFilePath = path.join(__dirname, '../../data/f1db/f1db-circuits.json');
+        const circuitData = JSON.parse(fs.readFileSync(circuitDataFilePath, 'utf-8'));
+        const targetedCircuitData = circuitData.find(item => item.id === circuitId);
 
-    <h3> </h3>
+        return targetedCircuitData;
+    }
+    catch (error) {
+        console.error('getRetroCircuitData, error during execution :', error);
+        throw error;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = getRetroCircuitData;
+</code></pre>
+        </article>
+    </section>
 
 
 

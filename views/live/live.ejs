@@ -9,17 +9,18 @@
     <body class="font-regular text-gray-100 bg-b-<%= theme %> min-h-screen flex flex-col selection:bg-red-500/30">
         <main class="flex-grow container mx-auto px-4 py-8">
             <!-- Header Section -->
-            <div class="flex flex-col items-center justify-center mb-10 gap-2 pt-4">
-                <div class="flex items-center gap-3 bg-s-<%= theme %>/80 backdrop-blur-sm border border-gray-400 rounded-full px-6 py-2 shadow-lg">
+            <div class="flex flex-col items-center justify-center mb-4 gap-2 pt-4">
+                <div class="flex items-center gap-3 bg-s-<%= theme %>/80 border border-gray-400 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
                     <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse inline-block"></span>
-                    <span class="text-red-500 font-bold uppercase tracking-widest text-sm"><%= __('live.live_title') %></span>
-                    <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status">Connecting...</span>
+                    <span class="text-red-500 font-bold uppercase tracking-widest text-sm"> <%= __('live.live_title') %> </span>
+                    <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status"></span>
+                    <%= __('live.connecting') %>
                 </div>
                 <!-- Session Title Widget (Updated dynamically) -->
                 <div id="session-title-container" class="text-center mt-2">
                     <div class="flex items-center justify-center gap-3">
-                        <img id="session-flag" src="" class="w-auto h-10 rounded shadow-md hidden object-cover" alt="Flag" />
-                        <h1 id="session-name" class="text-3xl font-black text-white tracking-wider flex items-center justify-center gap-3">
+                        <img id="session-flag" src="" class="w-auto h-10 rounded shadow-md hidden object-cover" alt="<%= __('live.flag_alt') %>" />
+                        <h1 id="session-name" class="text-lg md:text-2xl font-black text-white tracking-wider flex items-center justify-center gap-3">
                             <span class="inline-block w-64 h-8 bg-gray-700/50 animate-pulse rounded-lg"></span>
                         </h1>
                     </div>
@@ -33,23 +34,23 @@
 
                 <!-- LEFT COLUMN: STANDINGS (7/12) -->
                 <div class="lg:col-span-7">
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl border border-gray-400 shadow-2xl overflow-hidden h-[800px] flex flex-col">
+                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden h-[800px] flex flex-col">
                         <div class="px-6 py-4 border-b border-gray-400 bg-s-<%= theme %>/40 flex justify-between items-center">
-                            <h2 class="text-lg font-bold text-white tracking-wide uppercase">Classification</h2>
+                            <h2 class="text-lg font-bold text-white tracking-wide uppercase"><%= __('live.classification') %></h2>
                             <p id="session-laps" class="text-gray-400 font-mono text-sm mt-1"></p>
                         </div>
 
                         <div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
                             <div class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
-                                <div class="col-span-1 text-center">P</div>
-                                <div class="col-span-2">Driver</div>
-                                <div class="col-span-4 text-center">Times / Pits</div>
-                                <div class="col-span-1 text-center">Tyre</div>
-                                <div class="col-span-4 text-right">Gap</div>
+                                <div class="col-span-1 text-center"><%= __('live.pos') %></div>
+                                <div class="col-span-2"><%= __('live.driver') %></div>
+                                <div class="col-span-4 text-center"><%= __('live.times_pits') %></div>
+                                <div class="col-span-1 text-center"><%= __('live.tyre') %></div>
+                                <div class="col-span-4 text-right"><%= __('live.gap') %></div>
                             </div>
 
                             <div id="standings-container" class="flex flex-col gap-2">
-                                <% for(let i = 0; i < 10; i++) { %>
+                                <% for(let i=0; i < 10; i++) { %>
                                 <div class="grid grid-cols-12 gap-2 items-center px-4 py-2.5 bg-s-<%= theme %>/30 rounded-xl border border-gray-700/30 animate-pulse">
                                     <div class="col-span-1 flex justify-center">
                                         <div class="w-6 h-5 bg-gray-700/60 rounded"></div>
@@ -77,34 +78,34 @@
                 <!-- RIGHT COLUMN: WIDGETS (5/12) -->
                 <div class="lg:col-span-5 flex flex-col gap-6">
                     <!-- WEATHER WIDGET -->
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl border border-gray-400 shadow-2xl overflow-hidden">
+                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>">
-                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Weather Conditions</h2>
+                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.weather_conditions') %></h2>
                         </div>
                         <div class="p-5 grid grid-cols-2 gap-4" id="weather-container">
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Air Temp</span>
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.air_temp') %> </span>
                                 <span id="w-air" class="text-2xl font-black text-white"><span class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Track Temp</span>
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.track_temp') %> </span>
                                 <span id="w-track" class="text-2xl font-black text-white"><span class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Wind</span>
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.wind') %> </span>
                                 <span id="w-wind" class="text-xl font-bold text-gray-200"><span class="inline-block w-16 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Rainfall</span>
+                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.rainfall') %> </span>
                                 <span id="w-rain" class="text-xl font-bold text-gray-200"><span class="inline-block w-10 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- RACE CONTROL WIDGET -->
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl border border-gray-400 shadow-2xl overflow-hidden flex flex-col h-[300px]">
+                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[300px]">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
-                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Race Control</h2>
+                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.race_control') %></h2>
                         </div>
                         <div id="race-control-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
                             <div class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
@@ -125,9 +126,9 @@
                     </div>
 
                     <!-- TEAM RADIO WIDGET -->
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl border border-gray-400 shadow-2xl overflow-hidden flex flex-col h-[200px]">
+                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[200px]">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
-                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Team Radios</h2>
+                            <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.team_radios') %></h2>
                         </div>
                         <div id="radio-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
                             <div class="p-3 rounded-xl bg-s-<%= theme %>/20 border border-gray-700/30 animate-pulse flex flex-col gap-2">
@@ -148,13 +149,16 @@
             .custom-scrollbar::-webkit-scrollbar {
                 width: 6px;
             }
+
             .custom-scrollbar::-webkit-scrollbar-track {
                 background: transparent;
             }
+
             .custom-scrollbar::-webkit-scrollbar-thumb {
                 background: rgba(75, 85, 99, 0.4);
                 border-radius: 10px;
             }
+
             .custom-scrollbar::-webkit-scrollbar-thumb:hover {
                 background: rgba(75, 85, 99, 0.7);
             }
@@ -182,7 +186,7 @@
                 ws = new WebSocket(`${protocol}//${window.location.host}`);
 
                 ws.onopen = () => {
-                    ui.wsStatus.textContent = 'CONNECTED';
+                    ui.wsStatus.textContent = `<%= __('live.connected') %>`;
                     ui.wsStatus.className = 'text-green-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest';
                 };
 
@@ -196,7 +200,7 @@
                 };
 
                 ws.onclose = () => {
-                    ui.wsStatus.textContent = 'RECONNECTING...';
+                    ui.wsStatus.textContent = `<%= __('live.reconnecting') %>`;
                     ui.wsStatus.className = 'text-orange-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1 tracking-widest animate-pulse';
                     setTimeout(connectWS, 3000);
                 };
@@ -207,7 +211,7 @@
                     if (msg.session && Object.keys(msg.session).length > 0) {
                         renderSession(msg.session);
                     } else {
-                        ui.sessionName.textContent = 'NO ACTIVE SESSION';
+                        ui.sessionName.textContent = `<%= __('live.no_active_session') %>`;
                     }
 
                     if (msg.lapCount) renderLapCount(msg.lapCount);
@@ -227,13 +231,13 @@
                     if (msg.raceControl && msg.raceControl.length > 0) {
                         renderRaceControl(msg.raceControl);
                     } else {
-                        ui.raceControl.innerHTML = '<div class="text-center text-gray-600 text-sm py-4 italic">No messages yet.</div>';
+                        ui.raceControl.innerHTML = '<div class="text-center text-gray-600 text-sm py-4 italic"><%= __('live.no_messages_yet') %></div>';
                     }
 
                     if (msg.teamRadio && msg.teamRadio.length > 0) {
                         renderRadios(msg.teamRadio);
                     } else {
-                        ui.radio.innerHTML = '<div class="text-center text-gray-600 text-sm py-4 italic">No radios yet.</div>';
+                        ui.radio.innerHTML = '<div class="text-center text-gray-600 text-sm py-4 italic"><%= __('live.no_radios_yet') %></div>';
                     }
                 } else if (msg.type === 'session') {
                     renderSession(msg.data);
@@ -259,7 +263,7 @@
                     const meetingName = data.Meeting ? `${data.Meeting.Name} - ` : '';
                     ui.sessionName.textContent = `${meetingName}${data.Name}`.toUpperCase();
                 } else {
-                    ui.sessionName.textContent = 'NO ACTIVE SESSION';
+                    ui.sessionName.textContent = `<%= __('live.no_active_session') %>`;
                 }
 
                 if (data.Meeting && data.Meeting.Country && data.Meeting.Country.Name) {
@@ -274,7 +278,7 @@
 
             function renderLapCount(data) {
                 if (!data || !data.CurrentLap) return;
-                ui.sessionLaps.textContent = `LAP ${data.CurrentLap} / ${data.TotalLaps || '--'}`;
+                ui.sessionLaps.textContent = `<%= __('live.lap') %> ${data.CurrentLap} / ${data.TotalLaps || '--'}`;
             }
 
             function renderWeather(data) {
@@ -282,7 +286,7 @@
                 if (data.AirTemp !== undefined) ui.wAir.textContent = `${data.AirTemp}°C`;
                 if (data.TrackTemp !== undefined) ui.wTrack.textContent = `${data.TrackTemp}°C`;
                 if (data.WindSpeed !== undefined) ui.wWind.textContent = `${data.WindSpeed} m/s`;
-                if (data.Rainfall !== undefined) ui.wRain.textContent = data.Rainfall === '1' ? 'YES' : 'NO';
+                if (data.Rainfall !== undefined) ui.wRain.textContent = data.Rainfall === '1' ? `<%= __('live.yes') %>` : `<%= __('live.no') %>`;
             }
 
             function renderDefaultWeather() {
@@ -296,8 +300,8 @@
                 ui.standings.innerHTML = `
                     <div class="text-center text-gray-500 py-16 flex flex-col items-center justify-center gap-2">
                         <svg class="w-10 h-10 text-gray-600 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                        <span class="font-bold text-gray-400">Aucune session en direct</span>
-                        <span class="text-xs text-gray-600 font-mono">En attente du prochain départ de session F1</span>
+                        <span class="font-bold text-gray-400"><%= __('live.no_live_session') %></span>
+                        <span class="text-xs text-gray-600 font-mono"><%= __('live.waiting_next_session') %></span>
                     </div>`;
             }
 
@@ -319,7 +323,7 @@
                     if (msg.Category === 'Other') flagColor = 'bg-stewardsbg text-stewardstxt';
 
                     html += `
-                    <div class="p-3 rounded-xl border border-gray-400 ${flagColor} text-sm">
+                    <div class="p-3 rounded-xl ${flagColor} text-sm">
                         <div class="flex justify-between items-center mb-1">
                             <span class="text-xs font-black uppercase tracking-widest">${msg.Category}</span>
                             <span class="text-xs font-mono">${new Date(msg.Utc).toLocaleTimeString()}</span>
@@ -366,7 +370,7 @@
                         el.className = 'p-3 rounded-xl bg-s-<%= theme %>/40 border border-gray-700/50 flex flex-col gap-2';
                         el.innerHTML = `
                             <div class="flex justify-between items-center">
-                                <span class="text-xs font-black text-gray-300 uppercase tracking-widest">Driver ${cap.RacingNumber || 'Radio'}</span>
+                                <span class="text-xs font-black text-gray-300 uppercase tracking-widest"><%= __('live.driver') %> ${cap.RacingNumber || `<%= __('live.radio_fallback') %>`}</span>
                                 <span class="text-xs text-gray-500 font-mono">${new Date(cap.Utc).toLocaleTimeString()}</span>
                             </div>
                             <audio controls src="${fullUrl}" class="w-full h-8 outline-none"></audio>
@@ -390,19 +394,19 @@
 
                 let html = '';
                 standings.forEach((driver) => {
-                    const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-2">PIT</span>' : '';
+                    const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-2"><%= __('live.pit') %></span>' : '';
                     let statusHtml = '';
                     let posColor = 'text-gray-400';
                     let rowBg = 'bg-s-<%= theme %>/50';
                     let rowBorder = 'border-gray-700/50';
 
                     if (driver.retired || driver.stopped) {
-                        statusHtml = '<span class="text-red-500 text-xs font-black uppercase tracking-widest">OUT</span>';
+                        statusHtml = '<span class="text-red-500 text-xs font-black uppercase tracking-widest"><%= __('live.out') %></span>';
                         posColor = 'text-gray-600';
                         rowBg = 'bg-red-950/10';
                         rowBorder = 'border-red-900/20';
                     } else {
-                        statusHtml = driver.gapToLeader || driver.interval || '<span class="text-yellow-500 font-black tracking-widest">LEADER</span>';
+                        statusHtml = driver.gapToLeader || driver.interval || '<span class="text-yellow-500 font-black tracking-widest"><%= __('live.leader') %></span>';
                         if (driver.hasFastestLap) {
                             posColor = 'text-purple-400';
                             rowBg = 'bg-purple-900/20';
@@ -416,9 +420,9 @@
 
                     let trendHtml = '';
                     if (driver.trend === 'up') {
-                        trendHtml = '<img src="/img/live/arrow-up.png" class="w-3 h-3 ml-1 animate-pulse" alt="Up">';
+                        trendHtml = '<img src="/img/live/arrow-up.png" class="w-3 h-3 ml-1 animate-pulse" alt="<%= __('live.up') %>">';
                     } else if (driver.trend === 'down') {
-                        trendHtml = '<img src="/img/live/arrow-down.png" class="w-3 h-3 ml-1 animate-pulse" alt="Down">';
+                        trendHtml = '<img src="/img/live/arrow-down.png" class="w-3 h-3 ml-1 animate-pulse" alt="<%= __('live.down') %>">';
                     }
 
                     html += `
@@ -427,12 +431,12 @@
                             ${String(driver.position).padStart(2, '0')} ${trendHtml}
                         </div>
                         <div class="col-span-2 font-bold flex items-center">
-                            <span class="px-2 py-0.5 rounded text-white text-sm font-black border-l-4" style="border-left-color: #${driver.teamColor}; background-color: #${driver.teamColor}40;">${driver.driverCode}</span>
+                            <span class="px-2.5 py-0.5 rounded text-white text-sm font-black border-l-4" style="border-left-color: #${driver.teamColor}; background-color: #${driver.teamColor}40;">${driver.driverCode}</span>
                             ${isPit}
                         </div>
                         <div class="col-span-4 text-[11px] font-mono text-gray-400 flex flex-col items-center">
-                            <span><span class="text-gray-600">L:</span> ${driver.lastLap || '--'}</span>
-                            <span><span class="text-gray-600">B:</span> ${driver.bestLap || '--'} <span class="text-gray-600 ml-1">PITS:</span> ${driver.pits || 0}</span>
+                            <span><span class="text-gray-600"><%= __('live.last_lap_short') %></span> ${driver.lastLap || '--'}</span>
+                            <span><span class="text-gray-600"><%= __('live.best_lap_short') %></span> ${driver.bestLap || '--'} <span class="text-gray-600 ml-1"><%= __('live.pits_short') %></span> ${driver.pits || 0}</span>
                         </div>
                         <div class="col-span-1 flex justify-center">
                             ${tireHtml}
