@@ -232,7 +232,7 @@
 		"classification": "Classification",
 		"pos": "P",
 		"driver": "Driver",
-		"times_pits": "Times / Pits",
+		"times": "Times",
 		"tyre": "Tyre",
 		"gap": "Gap",
 		"weather_conditions": "Weather Conditions",
@@ -262,7 +262,8 @@
 		"interval": "Interval",
 		"best_lap": "Best Lap",
 		"sectors": "S1 | S2 | S3",
-		"last_lap": "Last Lap"
+		"last_lap": "Last Lap",
+		"times_pits": "live.times_pits"
 	},
 	"news": {
 		"tab_title": "News",

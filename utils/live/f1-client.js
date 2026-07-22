@@ -220,7 +220,7 @@ class F1LiveClient {
             case 'TeamRadio':
                 if (data.Captures && Array.isArray(data.Captures)) {
                     this.teamRadio = [...data.Captures, ...this.teamRadio].slice(0, 30);
-                    if (this.broadcast) this.broadcast({ type: 'team_radio', data: this.teamRadio });
+                    if (this.broadcast) this.broadcast({ type: 'team_radio', data: this.getEnrichedTeamRadio() });
                 }
                 break;
         }
@@ -378,6 +378,14 @@ class F1LiveClient {
         return 'race';
     }
 
+    getEnrichedTeamRadio() {
+        return this.teamRadio.map(cap => {
+            const code = driverMapping[cap.RacingNumber] || cap.RacingNumber;
+            const color = (this.driverList[cap.RacingNumber] && this.driverList[cap.RacingNumber].TeamColour) ? this.driverList[cap.RacingNumber].TeamColour : '808080';
+            return { ...cap, driverCode: code, teamColor: color };
+        });
+    }
+
     getFullState() {
         let fastestLapDriver = null;
         let minLapTime = Infinity;
@@ -425,7 +433,7 @@ class F1LiveClient {
             session: this.session,
             raceControl: this.raceControl,
             lapCount: this.lapCount,
-            teamRadio: this.teamRadio
+            teamRadio: this.getEnrichedTeamRadio()
         };
     }
 }
