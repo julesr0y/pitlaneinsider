@@ -10,7 +10,7 @@
         <main class="flex-grow container mx-auto px-4 py-8">
             <!-- Header Section -->
             <div class="flex flex-col items-center justify-center gap-2 pt-4">
-                <div class="flex items-center gap-3 bg-s-<%= theme %>/80 border border-gray-400 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
+                <div class="flex items-center gap-3 bg-s-<%= theme %>/80 border border-gray-400 md:backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
                     <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse inline-block"></span>
                     <span class="text-red-500 font-bold uppercase tracking-widest text-sm"> <%= __('live.live_title') %> </span>
                     <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status"> <%= __('live.connecting') %> </span>
@@ -22,11 +22,11 @@
             <!-- Two-Column Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto relative">
                 <!-- Ambient glow -->
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-red-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+                <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-red-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
                 <!-- LEFT COLUMN: STANDINGS (7/12) -->
                 <div class="lg:col-span-7">
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden h-[800px] flex flex-col">
+                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden h-[800px] flex flex-col">
                         <div class="px-6 py-4 border-b border-gray-400 bg-s-<%= theme %>/40 flex justify-between items-center">
                             <span class="text-sm md:text-lg font-bold text-white tracking-wide">
                                 <div class="flex items-center justify-center gap-3">
@@ -76,7 +76,7 @@
                 <!-- RIGHT COLUMN: WIDGETS (5/12) -->
                 <div class="lg:col-span-5 flex flex-col gap-6">
                     <!-- WEATHER WIDGET -->
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden">
+                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>">
                             <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.weather_conditions') %></h2>
                         </div>
@@ -101,7 +101,7 @@
                     </div>
 
                     <!-- RACE CONTROL WIDGET -->
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[300px]">
+                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[300px]">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
                             <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.race_control') %></h2>
                         </div>
@@ -124,7 +124,7 @@
                     </div>
 
                     <!-- TEAM RADIO WIDGET -->
-                    <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[200px]">
+                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[200px]">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
                             <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.team_radios') %></h2>
                         </div>
@@ -408,7 +408,7 @@
                                 <span class="text-sm font-black text-white tracking-widest">${driverText}</span>
                                 <span class="text-xs text-gray-300 font-mono">${new Date(cap.Utc.endsWith('Z') ? cap.Utc : cap.Utc + 'Z').toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                             </div>
-                            <audio controls src="${fullUrl}" class="w-full h-8 outline-none mt-1 opacity-80 hover:opacity-100 transition-opacity"></audio>
+                            <audio preload="none" controls src="${fullUrl}" class="w-full h-8 outline-none mt-1 opacity-80 hover:opacity-100 transition-opacity"></audio>
                         `;
                         // Insert at top
                         if (ui.radio.firstChild && ui.radio.firstChild.className !== 'text-center text-gray-600 text-sm py-4 italic') {
