@@ -284,7 +284,8 @@ class F1LiveClient {
                     retired: false,
                     lastLap: "",
                     bestLap: "",
-                    pits: 0
+                    pits: 0,
+                    sectors: { s1: "", s2: "", s3: "" }
                 };
             }
 
@@ -310,6 +311,12 @@ class F1LiveClient {
             if (driverData.LastLapTime && driverData.LastLapTime.Value) { st.lastLap = driverData.LastLapTime.Value; hasChanges = true; }
             if (driverData.BestLapTime && driverData.BestLapTime.Value) { st.bestLap = driverData.BestLapTime.Value; hasChanges = true; }
             if (driverData.NumberOfPitStops !== undefined) { st.pits = driverData.NumberOfPitStops; hasChanges = true; }
+            
+            if (driverData.Sectors && Array.isArray(driverData.Sectors)) {
+                if (driverData.Sectors[0] && driverData.Sectors[0].Value) { st.sectors.s1 = driverData.Sectors[0].Value; hasChanges = true; }
+                if (driverData.Sectors[1] && driverData.Sectors[1].Value) { st.sectors.s2 = driverData.Sectors[1].Value; hasChanges = true; }
+                if (driverData.Sectors[2] && driverData.Sectors[2].Value) { st.sectors.s3 = driverData.Sectors[2].Value; hasChanges = true; }
+            }
         }
 
         if (hasChanges) {
@@ -361,7 +368,14 @@ class F1LiveClient {
                 return { ...d, currentTire, teamColor, hasFastestLap };
             });
 
-        this.broadcast({ type: 'standings', data: standingsArray });
+        this.broadcast({ type: 'standings', data: standingsArray, sessionMode: this.getSessionMode() });
+    }
+
+    getSessionMode() {
+        if (!this.session || !this.session.Type) return 'race';
+        const type = this.session.Type.toLowerCase();
+        if (type.includes('practice') || type.includes('qualifying') || type.includes('shootout')) return 'practice';
+        return 'race';
     }
 
     getFullState() {
@@ -405,6 +419,7 @@ class F1LiveClient {
 
         return {
             type: 'full_state',
+            sessionMode: this.getSessionMode(),
             standings: standingsArray,
             weather: this.weather,
             session: this.session,

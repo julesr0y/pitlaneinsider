@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
-                            <div class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
+                            <div id="standings-header" class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
                                 <div class="col-span-1 text-center"><%= __('live.pos') %></div>
                                 <div class="col-span-2"><%= __('live.driver') %></div>
                                 <div class="col-span-4 text-center"><%= __('live.times_pits') %></div>
@@ -179,6 +179,29 @@
 
             let ws;
             const knownRadios = new Set();
+            let currentSessionMode = 'race';
+
+            function renderHeaders() {
+                const header = document.getElementById('standings-header');
+                if (!header) return;
+                if (currentSessionMode === 'practice') {
+                    header.innerHTML = `
+                        <div class="col-span-1 text-center"><%= __('live.pos') %></div>
+                        <div class="col-span-2"><%= __('live.driver') %></div>
+                        <div class="col-span-4 text-center"><%= __('live.sectors') %></div>
+                        <div class="col-span-1 text-center"><%= __('live.tyre') %></div>
+                        <div class="col-span-4 text-right"><%= __('live.best_lap') %> / <%= __('live.gap') %></div>
+                    `;
+                } else {
+                    header.innerHTML = `
+                        <div class="col-span-1 text-center"><%= __('live.pos') %></div>
+                        <div class="col-span-2"><%= __('live.driver') %></div>
+                        <div class="col-span-4 text-center"><%= __('live.times_pits') %></div>
+                        <div class="col-span-1 text-center"><%= __('live.tyre') %></div>
+                        <div class="col-span-4 text-right"><%= __('live.interval') %> / <%= __('live.gap') %></div>
+                    `;
+                }
+            }
 
             function connectWS() {
                 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -206,6 +229,13 @@
             }
 
             function handleMessage(msg) {
+                if (msg.sessionMode) {
+                    if (currentSessionMode !== msg.sessionMode) {
+                        currentSessionMode = msg.sessionMode;
+                        renderHeaders();
+                    }
+                }
+
                 if (msg.type === 'full_state') {
                     if (msg.session && Object.keys(msg.session).length > 0) {
                         renderSession(msg.session);
@@ -405,7 +435,18 @@
                         rowBg = 'bg-red-950/10';
                         rowBorder = 'border-red-900/20';
                     } else {
-                        statusHtml = driver.gapToLeader || driver.interval || '<span class="text-yellow-500 font-black tracking-widest"><%= __('live.leader') %></span>';
+                        if (currentSessionMode === 'practice') {
+                             statusHtml = driver.position === 1 ? '<span class="text-purple-400 font-black tracking-widest"><%= __('live.leader') %></span>' : (driver.gapToLeader || '--');
+                        } else {
+                             if (driver.position === 1) {
+                                 statusHtml = '<span class="text-yellow-500 font-black tracking-widest"><%= __('live.leader') %></span>';
+                             } else {
+                                 let intHtml = driver.interval || '';
+                                 let gapHtml = driver.gapToLeader || '';
+                                 statusHtml = intHtml ? `${intHtml} <span class="text-gray-600 mx-1">|</span> ${gapHtml}` : gapHtml;
+                             }
+                        }
+
                         if (driver.hasFastestLap) {
                             posColor = 'text-purple-400';
                             rowBg = 'bg-purple-900/20';
@@ -424,6 +465,41 @@
                         trendHtml = '<img src="/img/live/arrow-down.png" class="w-3 h-3 ml-1 animate-pulse" alt="<%= __('live.down') %>">';
                     }
 
+                    let centerColHtml = '';
+                    if (currentSessionMode === 'practice') {
+                        const s1 = driver.sectors && driver.sectors.s1 ? driver.sectors.s1 : '--';
+                        const s2 = driver.sectors && driver.sectors.s2 ? driver.sectors.s2 : '--';
+                        const s3 = driver.sectors && driver.sectors.s3 ? driver.sectors.s3 : '--';
+                        centerColHtml = `
+                        <div class="col-span-4 text-[11px] font-mono text-gray-400 flex items-center justify-center gap-2">
+                            <span class="${s1!=='--'?'text-gray-200':''}">${s1}</span>
+                            <span class="${s2!=='--'?'text-gray-200':''}">${s2}</span>
+                            <span class="${s3!=='--'?'text-gray-200':''}">${s3}</span>
+                        </div>
+                        `;
+                    } else {
+                        centerColHtml = `
+                        <div class="col-span-4 text-[11px] font-mono text-gray-400 flex flex-col items-center">
+                            <span><span class="text-gray-600"><%= __('live.last_lap_short') %></span> ${driver.lastLap || '--'}</span>
+                            <span><span class="text-gray-600"><%= __('live.best_lap_short') %></span> ${driver.bestLap || '--'} <span class="text-gray-600 ml-1"><%= __('live.pits_short') %></span> ${driver.pits || 0}</span>
+                        </div>
+                        `;
+                    }
+
+                    let rightColHtml = '';
+                    if (currentSessionMode === 'practice' && !driver.retired && !driver.stopped) {
+                        rightColHtml = `
+                        <div class="col-span-4 text-right font-mono flex flex-col items-end">
+                            <span class="text-sm text-gray-200 font-bold">${driver.bestLap || '--'}</span>
+                            <span class="text-[11px] text-gray-500">${statusHtml}</span>
+                        </div>`;
+                    } else {
+                        rightColHtml = `
+                        <div class="col-span-4 text-right font-mono text-sm text-gray-300 font-medium">
+                            ${statusHtml}
+                        </div>`;
+                    }
+
                     html += `
                     <div class="grid grid-cols-12 gap-2 items-center px-4 py-2 ${rowBg} hover:bg-s-<%= theme %> rounded-xl transition-all border ${rowBorder}">
                         <div class="col-span-1 text-center font-mono text-lg font-black ${posColor} flex items-center justify-center">
@@ -433,16 +509,11 @@
                             <span class="px-2.5 py-0.5 rounded text-white text-sm font-black border-l-4" style="border-left-color: #${driver.teamColor}; background-color: #${driver.teamColor}40;">${driver.driverCode}</span>
                             ${isPit}
                         </div>
-                        <div class="col-span-4 text-[11px] font-mono text-gray-400 flex flex-col items-center">
-                            <span><span class="text-gray-600"><%= __('live.last_lap_short') %></span> ${driver.lastLap || '--'}</span>
-                            <span><span class="text-gray-600"><%= __('live.best_lap_short') %></span> ${driver.bestLap || '--'} <span class="text-gray-600 ml-1"><%= __('live.pits_short') %></span> ${driver.pits || 0}</span>
-                        </div>
+                        ${centerColHtml}
                         <div class="col-span-1 flex justify-center">
                             ${tireHtml}
                         </div>
-                        <div class="col-span-4 text-right font-mono text-sm text-gray-300 font-medium">
-                            ${statusHtml}
-                        </div>
+                        ${rightColHtml}
                     </div>`;
                 });
 

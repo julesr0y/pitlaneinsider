@@ -258,7 +258,11 @@
 		"down": "Down",
 		"last_lap_short": "L:",
 		"best_lap_short": "B:",
-		"pits_short": "PITS:"
+		"pits_short": "PITS:",
+		"interval": "Interval",
+		"best_lap": "Best Lap",
+		"sectors": "S1 | S2 | S3",
+		"last_lap": "Last Lap"
 	},
 	"news": {
 		"tab_title": "News",
