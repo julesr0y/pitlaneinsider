@@ -18,15 +18,16 @@
                 <!-- Session Title Widget (Updated dynamically) -->
                 <div id="session-title-container" class="text-center mt-2">
                     <div class="flex items-center justify-center gap-3">
-                        <img id="session-flag" src="" class="w-auto h-10 rounded shadow-md hidden object-cover" alt="Flag">
-                        <h1 id="session-name" class="text-3xl font-black text-white tracking-wider">Waiting for session...</h1>
+                        <img id="session-flag" src="" class="w-auto h-10 rounded shadow-md hidden object-cover" alt="Flag" />
+                        <h1 id="session-name" class="text-3xl font-black text-white tracking-wider flex items-center justify-center gap-3">
+                            <span class="inline-block w-64 h-8 bg-gray-700/50 animate-pulse rounded-lg"></span>
+                        </h1>
                     </div>
                 </div>
             </div>
 
             <!-- Two-Column Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto relative">
-                
                 <!-- Ambient glow -->
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-red-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -37,7 +38,7 @@
                             <h2 class="text-lg font-bold text-white tracking-wide uppercase">Classification</h2>
                             <p id="session-laps" class="text-gray-400 font-mono text-sm mt-1"></p>
                         </div>
-                        
+
                         <div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
                             <div class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
                                 <div class="col-span-1 text-center">P</div>
@@ -46,9 +47,28 @@
                                 <div class="col-span-1 text-center">Tyre</div>
                                 <div class="col-span-4 text-right">Gap</div>
                             </div>
-                            
+
                             <div id="standings-container" class="flex flex-col gap-2">
-                                <div class="text-center text-gray-500 py-10 italic tracking-wide">Waiting for session data...</div>
+                                <% for(let i = 0; i < 10; i++) { %>
+                                <div class="grid grid-cols-12 gap-2 items-center px-4 py-2.5 bg-s-<%= theme %>/30 rounded-xl border border-gray-700/30 animate-pulse">
+                                    <div class="col-span-1 flex justify-center">
+                                        <div class="w-6 h-5 bg-gray-700/60 rounded"></div>
+                                    </div>
+                                    <div class="col-span-2 flex items-center">
+                                        <div class="w-14 h-6 bg-gray-700/60 rounded"></div>
+                                    </div>
+                                    <div class="col-span-4 flex flex-col items-center gap-1">
+                                        <div class="w-24 h-3 bg-gray-700/50 rounded"></div>
+                                        <div class="w-20 h-3 bg-gray-700/40 rounded"></div>
+                                    </div>
+                                    <div class="col-span-1 flex justify-center">
+                                        <div class="w-6 h-6 bg-gray-700/50 rounded-full"></div>
+                                    </div>
+                                    <div class="col-span-4 flex justify-end">
+                                        <div class="w-16 h-5 bg-gray-700/50 rounded"></div>
+                                    </div>
+                                </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -56,7 +76,6 @@
 
                 <!-- RIGHT COLUMN: WIDGETS (5/12) -->
                 <div class="lg:col-span-5 flex flex-col gap-6">
-                    
                     <!-- WEATHER WIDGET -->
                     <div class="bg-s-<%= theme %> backdrop-blur-xl rounded-3xl border border-gray-400 shadow-2xl overflow-hidden">
                         <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>">
@@ -65,19 +84,19 @@
                         <div class="p-5 grid grid-cols-2 gap-4" id="weather-container">
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
                                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Air Temp</span>
-                                <span id="w-air" class="text-2xl font-black text-white">--°C</span>
+                                <span id="w-air" class="text-2xl font-black text-white"><span class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
                                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Track Temp</span>
-                                <span id="w-track" class="text-2xl font-black text-white">--°C</span>
+                                <span id="w-track" class="text-2xl font-black text-white"><span class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
                                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Wind</span>
-                                <span id="w-wind" class="text-xl font-bold text-gray-200">-- m/s</span>
+                                <span id="w-wind" class="text-xl font-bold text-gray-200"><span class="inline-block w-16 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                             <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
                                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Rainfall</span>
-                                <span id="w-rain" class="text-xl font-bold text-gray-200">--</span>
+                                <span id="w-rain" class="text-xl font-bold text-gray-200"><span class="inline-block w-10 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
                             </div>
                         </div>
                     </div>
@@ -88,7 +107,20 @@
                             <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Race Control</h2>
                         </div>
                         <div id="race-control-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
-                            <div class="text-center text-gray-600 text-sm py-4 italic">No messages yet.</div>
+                            <div class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
+                                <div class="flex justify-between items-center">
+                                    <div class="w-20 h-3 bg-gray-700/60 rounded"></div>
+                                    <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
+                                </div>
+                                <div class="w-3/4 h-4 bg-gray-700/50 rounded"></div>
+                            </div>
+                            <div class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
+                                <div class="flex justify-between items-center">
+                                    <div class="w-24 h-3 bg-gray-700/60 rounded"></div>
+                                    <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
+                                </div>
+                                <div class="w-2/3 h-4 bg-gray-700/50 rounded"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -98,20 +130,34 @@
                             <h2 class="text-sm font-bold text-gray-300 tracking-wider uppercase">Team Radios</h2>
                         </div>
                         <div id="radio-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
-                            <div class="text-center text-gray-600 text-sm py-4 italic">No radios yet.</div>
+                            <div class="p-3 rounded-xl bg-s-<%= theme %>/20 border border-gray-700/30 animate-pulse flex flex-col gap-2">
+                                <div class="flex justify-between items-center">
+                                    <div class="w-24 h-3 bg-gray-700/60 rounded"></div>
+                                    <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
+                                </div>
+                                <div class="w-full h-8 bg-gray-700/40 rounded-lg"></div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </main>
         <%- include('../partials/footer.ejs') %>
-        
+
         <style>
-            .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-            .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-            .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(75, 85, 99, 0.4); border-radius: 10px; }
-            .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(75, 85, 99, 0.7); }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 6px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(75, 85, 99, 0.4);
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(75, 85, 99, 0.7);
+            }
         </style>
 
         <script>
@@ -125,7 +171,7 @@
                 wWind: document.getElementById('w-wind'),
                 wRain: document.getElementById('w-rain'),
                 raceControl: document.getElementById('race-control-container'),
-                radio: document.getElementById('radio-container')
+                radio: document.getElementById('radio-container'),
             };
 
             let ws;
@@ -145,7 +191,7 @@
                         const msg = JSON.parse(event.data);
                         handleMessage(msg);
                     } catch (e) {
-                        console.error("Error parsing WS data", e);
+                        console.error('Error parsing WS data', e);
                     }
                 };
 
@@ -158,12 +204,37 @@
 
             function handleMessage(msg) {
                 if (msg.type === 'full_state') {
-                    if (msg.session) renderSession(msg.session);
+                    if (msg.session && Object.keys(msg.session).length > 0) {
+                        renderSession(msg.session);
+                    } else {
+                        ui.sessionName.textContent = 'NO ACTIVE SESSION';
+                    }
+
                     if (msg.lapCount) renderLapCount(msg.lapCount);
-                    if (msg.weather) renderWeather(msg.weather);
-                    if (msg.standings) renderStandings(msg.standings);
-                    if (msg.raceControl) renderRaceControl(msg.raceControl);
-                    if (msg.teamRadio) renderRadios(msg.teamRadio);
+
+                    if (msg.weather && Object.keys(msg.weather).length > 0) {
+                        renderWeather(msg.weather);
+                    } else {
+                        renderDefaultWeather();
+                    }
+
+                    if (msg.standings && msg.standings.length > 0) {
+                        renderStandings(msg.standings);
+                    } else {
+                        renderEmptyStandings();
+                    }
+
+                    if (msg.raceControl && msg.raceControl.length > 0) {
+                        renderRaceControl(msg.raceControl);
+                    } else {
+                        ui.raceControl.innerHTML = '<div class="text-center text-gray-600 text-sm py-4 italic">No messages yet.</div>';
+                    }
+
+                    if (msg.teamRadio && msg.teamRadio.length > 0) {
+                        renderRadios(msg.teamRadio);
+                    } else {
+                        ui.radio.innerHTML = '<div class="text-center text-gray-600 text-sm py-4 italic">No radios yet.</div>';
+                    }
                 } else if (msg.type === 'session') {
                     renderSession(msg.data);
                 } else if (msg.type === 'lap_count') {
@@ -184,8 +255,13 @@
             function renderSession(data) {
                 if (!data) return;
                 if (data.Path) sessionPath = data.Path;
-                if (data.Name) ui.sessionName.textContent = ` - ${data.Meeting ? data.Meeting.Name : ''} - ${data.Name}`.toUpperCase();
-                
+                if (data.Name) {
+                    const meetingName = data.Meeting ? `${data.Meeting.Name} - ` : '';
+                    ui.sessionName.textContent = `${meetingName}${data.Name}`.toUpperCase();
+                } else {
+                    ui.sessionName.textContent = 'NO ACTIVE SESSION';
+                }
+
                 if (data.Meeting && data.Meeting.Country && data.Meeting.Country.Name) {
                     const countryName = data.Meeting.Country.Name.toLowerCase().replace(/ /g, '-');
                     const flagImg = document.getElementById('session-flag');
@@ -203,20 +279,36 @@
 
             function renderWeather(data) {
                 if (!data) return;
-                if (data.AirTemp) ui.wAir.textContent = `${data.AirTemp}°C`;
-                if (data.TrackTemp) ui.wTrack.textContent = `${data.TrackTemp}°C`;
-                if (data.WindSpeed) ui.wWind.textContent = `${data.WindSpeed} m/s`;
+                if (data.AirTemp !== undefined) ui.wAir.textContent = `${data.AirTemp}°C`;
+                if (data.TrackTemp !== undefined) ui.wTrack.textContent = `${data.TrackTemp}°C`;
+                if (data.WindSpeed !== undefined) ui.wWind.textContent = `${data.WindSpeed} m/s`;
                 if (data.Rainfall !== undefined) ui.wRain.textContent = data.Rainfall === '1' ? 'YES' : 'NO';
+            }
+
+            function renderDefaultWeather() {
+                ui.wAir.textContent = '--°C';
+                ui.wTrack.textContent = '--°C';
+                ui.wWind.textContent = '-- m/s';
+                ui.wRain.textContent = '--';
+            }
+
+            function renderEmptyStandings() {
+                ui.standings.innerHTML = `
+                    <div class="text-center text-gray-500 py-16 flex flex-col items-center justify-center gap-2">
+                        <svg class="w-10 h-10 text-gray-600 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <span class="font-bold text-gray-400">Aucune session en direct</span>
+                        <span class="text-xs text-gray-600 font-mono">En attente du prochain départ de session F1</span>
+                    </div>`;
             }
 
             function renderRaceControl(messages) {
                 if (!messages || messages.length === 0) return;
-                
+
                 // Keep the most recent at the top
                 const reversed = [...messages].reverse();
                 let html = '';
-                
-                reversed.forEach(msg => {
+
+                reversed.forEach((msg) => {
                     let flagColor = 'bg-s-<%= theme %>';
                     if (msg.Flag === 'YELLOW' || msg.Flag === 'DOUBLE YELLOW') flagColor = 'bg-yellow-300 border-yellow-300';
                     if (msg.Flag === 'RED') flagColor = 'bg-red-600 border-red-600';
@@ -240,9 +332,13 @@
 
             function renderRadios(captures) {
                 if (!captures || captures.length === 0) return;
-                
-                let hasNew = false;
-                captures.forEach(cap => {
+
+                // Clear initial skeleton loader if present
+                if (ui.radio.querySelector('.animate-pulse')) {
+                    ui.radio.innerHTML = '';
+                }
+
+                captures.forEach((cap) => {
                     const audioPath = cap.Path || cap.Url || cap.url;
                     if (!audioPath) return; // Skip if no path is provided
 
@@ -255,7 +351,7 @@
                         if (sessionPath) {
                             basePath += sessionPath.replace(/^\//, '').replace(/\/$/, '') + '/';
                         }
-                        
+
                         if (cleanPath.startsWith(sessionPath.replace(/^\//, ''))) {
                             fullUrl = `https://livetiming.formula1.com/static/${cleanPath}`;
                         } else {
@@ -264,9 +360,8 @@
                     }
 
                     if (!knownRadios.has(fullUrl)) {
-                        hasNew = true;
                         knownRadios.add(fullUrl);
-                        
+
                         const el = document.createElement('div');
                         el.className = 'p-3 rounded-xl bg-s-<%= theme %>/40 border border-gray-700/50 flex flex-col gap-2';
                         el.innerHTML = `
@@ -288,10 +383,13 @@
             }
 
             function renderStandings(standings) {
-                if (!standings || standings.length === 0) return;
+                if (!standings || standings.length === 0) {
+                    renderEmptyStandings();
+                    return;
+                }
 
                 let html = '';
-                standings.forEach(driver => {
+                standings.forEach((driver) => {
                     const isPit = driver.inPit ? '<span class="bg-blue-900/40 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-md border border-blue-700/50 uppercase font-black ml-2">PIT</span>' : '';
                     let statusHtml = '';
                     let posColor = 'text-gray-400';
@@ -314,9 +412,7 @@
                         }
                     }
 
-                    const tireHtml = driver.currentTire && driver.currentTire !== 'unknown' 
-                        ? `<img src="/img/tires/${driver.currentTire}.svg" class="w-6 h-6 drop-shadow-md" alt="${driver.currentTire}" onerror="this.style.display='none'">` 
-                        : '';
+                    const tireHtml = driver.currentTire && driver.currentTire !== 'unknown' ? `<img src="/img/tires/${driver.currentTire}.svg" class="w-6 h-6 drop-shadow-md" alt="${driver.currentTire}" onerror="this.style.display='none'">` : '';
 
                     let trendHtml = '';
                     if (driver.trend === 'up') {

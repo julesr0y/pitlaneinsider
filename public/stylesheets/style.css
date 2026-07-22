@@ -550,14 +550,29 @@
   .w-9\/10 {
     width: calc(9 / 10 * 100%);
   }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
   .w-11\/12 {
     width: calc(11 / 12 * 100%);
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
+  .w-14 {
+    width: calc(var(--spacing) * 14);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-24 {
     width: calc(var(--spacing) * 24);
+  }
+  .w-64 {
+    width: calc(var(--spacing) * 64);
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
@@ -1065,6 +1080,12 @@
   }
   .border-gray-700 {
     border-color: var(--color-gray-700);
+  }
+  .border-gray-700\/30 {
+    border-color: color-mix(in srgb, oklch(37.3% 0.034 259.733) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-gray-700) 30%, transparent);
+    }
   }
   .border-gray-700\/50 {
     border-color: color-mix(in srgb, oklch(37.3% 0.034 259.733) 50%, transparent);
@@ -1678,6 +1699,24 @@
   .bg-gordini {
     background-color: #378cc4;
   }
+  .bg-gray-700\/40 {
+    background-color: color-mix(in srgb, oklch(37.3% 0.034 259.733) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-700) 40%, transparent);
+    }
+  }
+  .bg-gray-700\/50 {
+    background-color: color-mix(in srgb, oklch(37.3% 0.034 259.733) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-700) 50%, transparent);
+    }
+  }
+  .bg-gray-700\/60 {
+    background-color: color-mix(in srgb, oklch(37.3% 0.034 259.733) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-700) 60%, transparent);
+    }
+  }
   .bg-green-400 {
     background-color: var(--color-green-400);
   }
@@ -2128,6 +2167,9 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
@@ -2137,8 +2179,8 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
-  .py-10 {
-    padding-block: calc(var(--spacing) * 10);
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .pt-0 {
     padding-top: 0px;

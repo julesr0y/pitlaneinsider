@@ -47,15 +47,15 @@
 </header>
 <script>
     // Uncheck menu on page load/back
-    window.addEventListener('pageshow', function(event) {
+    window.addEventListener('pageshow', function (event) {
         const navCheck = document.getElementById('nav-check');
         if (navCheck) navCheck.checked = false;
         document.body.style.overflow = '';
     });
 
     // Uncheck menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(function(link) {
-        link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
             const navCheck = document.getElementById('nav-check');
             if (navCheck) navCheck.checked = false;
             document.body.style.overflow = '';
@@ -65,7 +65,7 @@
     // Prevent jump to top bug on some browsers when clicking the label
     const hamburgerLabel = document.getElementById('hamburger-menu-label');
     if (hamburgerLabel) {
-        hamburgerLabel.addEventListener('click', function(e) {
+        hamburgerLabel.addEventListener('click', function (e) {
             e.preventDefault(); // Empêche le comportement par défaut qui peut faire scroller en haut
             const navCheck = document.getElementById('nav-check');
             if (navCheck) {
