@@ -93,6 +93,7 @@ app.use(async (req, res, next) => {
     req.setLocale(i18n.getLocale()); // set default language to i18n
     res.locals.i18n = i18n; // set i18n to res.locals
     res.locals.currentYear = config.currentYear; // set current year to res.locals
+    res.locals.currentUrl = req.originalUrl; // set current url for canonical tags
 
     next();
 });

@@ -2,10 +2,7 @@
 <html lang="<%= __('lang.lang') %>">
     <head>
         <%- include('../partials/head.ejs') %>
-        <link rel="canonical" href="https://pitlaneinsider.fr/" />
-        <meta name="description" content="Everything about F1" />
         <%- include('../partials/header.ejs') %>
-        <title>PitLane Insider</title>
         <style>
             @keyframes slideUpDown {
                 0% {
@@ -77,21 +74,21 @@
                                 </span>
                                 <div class="flex justify-evenly items-end h-full">
                                     <div class="flex flex-col items-center">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[1].driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[1].driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                         <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
                                             <span class="text-lg font-bold">2</span>
                                             <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[1].abbreviation %> </span>
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[0].driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[0].driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                         <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
                                             <span class="text-lg font-bold">1</span>
                                             <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[0].abbreviation %> </span>
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[2].driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[2].driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                         <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
                                             <span class="text-lg font-bold">3</span>
                                             <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[2].abbreviation %> </span>
@@ -113,7 +110,7 @@
                                             </span>
                                             <span class="text-<%= homeData.driverLeader.constructorId %>"> <% if(homeData.driverLeader.permanentNumber==4) { %> <%= 1 %> <% } else { %> <%= homeData.driverLeader.permanentNumber %> <% } %> </span>
                                         </span>
-                                        <img src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
+                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.driverLeader.driverId %>.webp" class="h-20 md:h-24 w-auto" />
                                     </span>
                                 </div>
                             </a>
@@ -122,7 +119,7 @@
                                 <div id="chContructeurs" class="h-40 md:h-36 bg-s-<%= theme %> flex flex-col items-center rounded-3xl">
                                     <span class="text-center font-bold pt-2"> <%= __('home.constructors_championship') %> </span>
                                     <span>
-                                        <img src="/img/constructors/<%= homeData.constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
+                                        <img alt="F1 Image" src="/img/constructors/<%= homeData.constructorLeader.constructorId %>.webp" class="h-12 md:h-16 w-auto mt-5" />
                                     </span>
                                 </div>
                             </a>

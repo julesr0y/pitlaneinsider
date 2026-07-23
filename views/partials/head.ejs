@@ -1,7 +1,14 @@
+<%
+  const title = typeof pageTitle !== 'undefined' ? pageTitle : 'PitLane Insider';
+  const desc = typeof pageDescription !== 'undefined' ? pageDescription : 'Discover all the latest Formula 1 news in real-time on PitLane Insider: results, full standings, Grand Prix calendar, race analysis, detailed statistics, and tracking of F1 drivers and constructors.';
+  const canonicalUrl = `https://pitlaneinsider.alwaysdata.net${typeof currentUrl !== 'undefined' ? currentUrl : '/'}`;
+%>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title><%= title %></title>
 <meta name="author" content="La Remontée Formula 1 Team" />
-<meta name="description" content="Everything about F1" />
+<meta name="description" content="<%= desc %>" />
+<link rel="canonical" href="<%= canonicalUrl %>" />
 <meta name="keywords" content="Formula 1, F1, Grand Prix, F1 news, F1 analysis, F1 drivers, F1 teams, F1 circuits, F1 races, F1 results, F1 standings, F1 calendar, F1 schedule, F1 statistics, F1 history, F1 records, F1 champions, F1 constructors, F1 rules, F1 qualifying, F1 practice sessions, F1 highlights, PitLane Insider" />
 <meta name="theme-color" content="#058785" />
 
@@ -37,17 +44,17 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon/android-chrome-192x192.png" />
 <link rel="icon" type="image/png" sizes="512x512" href="/icon/android-chrome-512x512.png" />
 
-<!-- Pour partage sur systèmes avec OpenGraph (Facebook etc) -->
-<meta property="og:title" content="PitLane Insider" />
+<!-- OpenGraph (Facebook...) -->
+<meta property="og:title" content="<%= title %>" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://pitlaneinsider.fr/" />
-<meta property="og:image" content="https://pitlaneinsider.fr/icon/open-graph-icon-1200x630.png" />
-<meta property="og:description" content="Everything about F1" />
+<meta property="og:url" content="<%= canonicalUrl %>" />
+<meta property="og:image" content="https://pitlaneinsider.alwaysdata.net/icon/open-graph-icon-1200x630.png" />
+<meta property="og:description" content="<%= desc %>" />
 <meta property="og:site_name" content="PitLane Insider" />
 
-<!-- Pour partage sur Twitter -->
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="PitLane Insider" />
-<meta name="twitter:description" content="Everything about F1" />
-<meta name="twitter:image" content="https://pitlaneinsider.fr/icon/twitter-icon-800x418.png" />
+<meta name="twitter:title" content="<%= title %>" />
+<meta name="twitter:description" content="<%= desc %>" />
+<meta name="twitter:image" content="https://pitlaneinsider.alwaysdata.net/icon/twitter-icon-800x418.png" />
 <meta name="twitter:site" content="@pli_app" />
