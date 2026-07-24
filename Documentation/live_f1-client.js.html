@@ -1,4 +1,32 @@
-const WebSocket = require('ws');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: live/f1-client.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: live/f1-client.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
 
@@ -53,7 +81,7 @@ class F1LiveClient {
 
     /**
      * @description Initiates connection to F1 SignalR live timing endpoint.
-     * @returns {Promise<void>} Resolves when initial connection sequence completes.
+     * @returns {Promise&lt;void>} Resolves when initial connection sequence completes.
      */
     connect() {
         return new Promise((resolve) => {
@@ -74,7 +102,7 @@ class F1LiveClient {
      * @description Negotiates HTTP session and starts WebSocket connection.
      * @param {Function} [onReady] - Callback invoked when connection sequence finishes.
      * @param {NodeJS.Timeout} [timeout] - Safety timer for connection initialisation.
-     * @returns {Promise<void>} Resolves when connection attempt concludes.
+     * @returns {Promise&lt;void>} Resolves when connection attempt concludes.
      */
     async _startConnection(onReady, timeout) {
         try {
@@ -169,15 +197,15 @@ class F1LiveClient {
                         return;
                     }
 
-                    if (frame.type === MSG_COMPLETION && frame.invocationId === SUBSCRIBE_INVOCATION_ID) {
+                    if (frame.type === MSG_COMPLETION &amp;&amp; frame.invocationId === SUBSCRIBE_INVOCATION_ID) {
                         if (frame.result) {
                             this.handleSnapshot(frame.result);
                         }
                     }
 
-                    if (frame.type === MSG_INVOCATION && frame.target === 'feed') {
+                    if (frame.type === MSG_INVOCATION &amp;&amp; frame.target === 'feed') {
                         const args = frame.arguments;
-                        if (args && args.length >= 2) {
+                        if (args &amp;&amp; args.length >= 2) {
                             const channel = args[0];
                             const payload = args[1];
                             this.routeData(channel, payload);
@@ -247,7 +275,7 @@ class F1LiveClient {
                 if (this.broadcast) this.broadcast({ type: 'weather', data: this.weather });
                 break;
             case 'RaceControlMessages':
-                if (data.Messages && Array.isArray(data.Messages)) {
+                if (data.Messages &amp;&amp; Array.isArray(data.Messages)) {
                     this.raceControl = [...this.raceControl, ...data.Messages].slice(-50); // Keep last 50
                     if (this.broadcast) this.broadcast({ type: 'race_control', data: this.raceControl });
                 }
@@ -257,7 +285,7 @@ class F1LiveClient {
                 if (this.broadcast) this.broadcast({ type: 'lap_count', data: this.lapCount });
                 break;
             case 'TeamRadio':
-                if (data.Captures && Array.isArray(data.Captures)) {
+                if (data.Captures &amp;&amp; Array.isArray(data.Captures)) {
                     this.teamRadio = [...data.Captures, ...this.teamRadio].slice(0, 30);
                     if (this.broadcast) this.broadcast({ type: 'team_radio', data: this.getEnrichedTeamRadio() });
                 }
@@ -292,7 +320,7 @@ class F1LiveClient {
             if (driverData.Stints) {
                 const stintsObj = Array.isArray(driverData.Stints) ? Object.assign({}, driverData.Stints) : driverData.Stints;
                 for (const [idx, stint] of Object.entries(stintsObj)) {
-                    if (stint && stint.Compound) {
+                    if (stint &amp;&amp; stint.Compound) {
                         this.timingAppData[racingNumber].Stints[idx] = stint.Compound.toLowerCase();
                         hasChanges = true;
                     }
@@ -331,8 +359,8 @@ class F1LiveClient {
             const st = this.standings[racingNumber];
             if (driverData.Position) {
                 const newPos = parseInt(driverData.Position, 10);
-                if (st.position !== 99 && newPos !== st.position) {
-                    st.trend = newPos < st.position ? 'up' : 'down';
+                if (st.position !== 99 &amp;&amp; newPos !== st.position) {
+                    st.trend = newPos &lt; st.position ? 'up' : 'down';
                     if (st.trendTimer) clearTimeout(st.trendTimer);
                     st.trendTimer = setTimeout(() => {
                         st.trend = 'none';
@@ -342,19 +370,19 @@ class F1LiveClient {
                 st.position = newPos;
                 hasChanges = true;
             }
-            if (driverData.GapToLeader && driverData.GapToLeader.Value) { st.gapToLeader = driverData.GapToLeader.Value; hasChanges = true; }
-            if (driverData.IntervalToPositionAhead && driverData.IntervalToPositionAhead.Value) { st.interval = driverData.IntervalToPositionAhead.Value; hasChanges = true; }
+            if (driverData.GapToLeader &amp;&amp; driverData.GapToLeader.Value) { st.gapToLeader = driverData.GapToLeader.Value; hasChanges = true; }
+            if (driverData.IntervalToPositionAhead &amp;&amp; driverData.IntervalToPositionAhead.Value) { st.interval = driverData.IntervalToPositionAhead.Value; hasChanges = true; }
             if (driverData.InPit !== undefined) { st.inPit = driverData.InPit; hasChanges = true; }
             if (driverData.Stopped !== undefined) { st.stopped = driverData.Stopped; hasChanges = true; }
             if (driverData.Retired !== undefined) { st.retired = driverData.Retired; hasChanges = true; }
-            if (driverData.LastLapTime && driverData.LastLapTime.Value) { st.lastLap = driverData.LastLapTime.Value; hasChanges = true; }
-            if (driverData.BestLapTime && driverData.BestLapTime.Value) { st.bestLap = driverData.BestLapTime.Value; hasChanges = true; }
+            if (driverData.LastLapTime &amp;&amp; driverData.LastLapTime.Value) { st.lastLap = driverData.LastLapTime.Value; hasChanges = true; }
+            if (driverData.BestLapTime &amp;&amp; driverData.BestLapTime.Value) { st.bestLap = driverData.BestLapTime.Value; hasChanges = true; }
             if (driverData.NumberOfPitStops !== undefined) { st.pits = driverData.NumberOfPitStops; hasChanges = true; }
 
-            if (driverData.Sectors && Array.isArray(driverData.Sectors)) {
-                if (driverData.Sectors[0] && driverData.Sectors[0].Value) { st.sectors.s1 = driverData.Sectors[0].Value; hasChanges = true; }
-                if (driverData.Sectors[1] && driverData.Sectors[1].Value) { st.sectors.s2 = driverData.Sectors[1].Value; hasChanges = true; }
-                if (driverData.Sectors[2] && driverData.Sectors[2].Value) { st.sectors.s3 = driverData.Sectors[2].Value; hasChanges = true; }
+            if (driverData.Sectors &amp;&amp; Array.isArray(driverData.Sectors)) {
+                if (driverData.Sectors[0] &amp;&amp; driverData.Sectors[0].Value) { st.sectors.s1 = driverData.Sectors[0].Value; hasChanges = true; }
+                if (driverData.Sectors[1] &amp;&amp; driverData.Sectors[1].Value) { st.sectors.s2 = driverData.Sectors[1].Value; hasChanges = true; }
+                if (driverData.Sectors[2] &amp;&amp; driverData.Sectors[2].Value) { st.sectors.s3 = driverData.Sectors[2].Value; hasChanges = true; }
             }
         }
 
@@ -371,7 +399,7 @@ class F1LiveClient {
 
         // find the driver with the fastest lap
         Object.values(this.standings).forEach(d => {
-            if (d.bestLap && d.position !== 99) {
+            if (d.bestLap &amp;&amp; d.position !== 99) {
                 const parts = d.bestLap.split(':');
                 let timeMs = 0;
                 if (parts.length === 2) {
@@ -379,7 +407,7 @@ class F1LiveClient {
                 } else if (parts.length === 1) {
                     timeMs = parseFloat(parts[0]) * 1000;
                 }
-                if (timeMs > 0 && timeMs < minLapTime) {
+                if (timeMs > 0 &amp;&amp; timeMs &lt; minLapTime) {
                     minLapTime = timeMs;
                     fastestLapDriver = d.racingNumber;
                 }
@@ -392,7 +420,7 @@ class F1LiveClient {
             .map(d => {
                 // Attach tire data dynamically
                 let currentTire = 'unknown';
-                if (this.timingAppData[d.racingNumber] && this.timingAppData[d.racingNumber].Stints.length > 0) {
+                if (this.timingAppData[d.racingNumber] &amp;&amp; this.timingAppData[d.racingNumber].Stints.length > 0) {
                     const stints = this.timingAppData[d.racingNumber].Stints;
                     // Get the last valid element
                     for (let i = stints.length - 1; i >= 0; i--) {
@@ -420,7 +448,7 @@ class F1LiveClient {
     getEnrichedTeamRadio() {
         return this.teamRadio.map(cap => {
             const code = driverMapping[cap.RacingNumber] || cap.RacingNumber;
-            const color = (this.driverList[cap.RacingNumber] && this.driverList[cap.RacingNumber].TeamColour) ? this.driverList[cap.RacingNumber].TeamColour : '808080';
+            const color = (this.driverList[cap.RacingNumber] &amp;&amp; this.driverList[cap.RacingNumber].TeamColour) ? this.driverList[cap.RacingNumber].TeamColour : '808080';
             return { ...cap, driverCode: code, teamColor: color };
         });
     }
@@ -430,7 +458,7 @@ class F1LiveClient {
         let minLapTime = Infinity;
 
         Object.values(this.standings).forEach(d => {
-            if (d.bestLap && d.position !== 99) {
+            if (d.bestLap &amp;&amp; d.position !== 99) {
                 const parts = d.bestLap.split(':');
                 let timeMs = 0;
                 if (parts.length === 2) {
@@ -438,7 +466,7 @@ class F1LiveClient {
                 } else if (parts.length === 1) {
                     timeMs = parseFloat(parts[0]) * 1000;
                 }
-                if (timeMs > 0 && timeMs < minLapTime) {
+                if (timeMs > 0 &amp;&amp; timeMs &lt; minLapTime) {
                     minLapTime = timeMs;
                     fastestLapDriver = d.racingNumber;
                 }
@@ -450,7 +478,7 @@ class F1LiveClient {
             .sort((a, b) => a.position - b.position)
             .map(d => {
                 let currentTire = 'unknown';
-                if (this.timingAppData[d.racingNumber] && this.timingAppData[d.racingNumber].Stints.length > 0) {
+                if (this.timingAppData[d.racingNumber] &amp;&amp; this.timingAppData[d.racingNumber].Stints.length > 0) {
                     const stints = this.timingAppData[d.racingNumber].Stints;
                     for (let i = stints.length - 1; i >= 0; i--) {
                         if (stints[i]) {
@@ -478,3 +506,26 @@ class F1LiveClient {
 }
 
 module.exports = F1LiveClient;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Fri Jul 24 2026 10:26:30 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

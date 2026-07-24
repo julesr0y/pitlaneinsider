@@ -1,10 +1,19 @@
-# PitLane Insider
+```
+ ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________
+|\   __  \|\  \|\___   ___\\  \     |\   __  \|\   ___  \|\  ___ \         |\  \|\   ___  \|\   ____\|\  \|\   ___ \|\  ___ \ |\   __  \
+\ \  \|\  \ \  \|___ \  \_\ \  \    \ \  \|\  \ \  \\ \  \ \   __/|        \ \  \ \  \\ \  \ \  \___|\ \  \ \  \_|\ \ \   __/|\ \  \|\  \
+ \ \   ____\ \  \   \ \  \ \ \  \    \ \   __  \ \  \\ \  \ \  \_|/__       \ \  \ \  \\ \  \ \_____  \ \  \ \  \ \\ \ \  \_|/_\ \   _  _\
+  \ \  \___|\ \  \   \ \  \ \ \  \____\ \  \ \  \ \  \\ \  \ \  \_|\ \       \ \  \ \  \\ \  \|____|\  \ \  \ \  \_\\ \ \  \_|\ \ \  \\  \|
+   \ \__\    \ \__\   \ \__\ \ \_______\ \__\ \__\ \__\\ \__\ \_______\       \ \__\ \__\\ \__\____\_\  \ \__\ \_______\ \_______\ \__\\ _\
+    \|__|     \|__|    \|__|  \|_______|\|__|\|__|\|__| \|__|\|_______|        \|__|\|__| \|__|\_________\|__|\|_______|\|_______|\|__|\|__|
+                                                                                              \|_________|
+```
 
 ### _La Remontée Formula 1 Team_
 
 #### Presentation:
 
-**PitLane Insider** is an unofficial web application that provides access to a wide variety of data concerning the Formula 1 World Championship.
+[PitLane Insider](https://pitlaneinsider.alwaysdata.net/) is an unofficial web application that provides access to a wide variety of data concerning the Formula 1 World Championship.
 
 #### Lead developer:
 - [ROY Jules](https://julesr0y.xyz/)
@@ -20,11 +29,17 @@
 
 #### Technologies/Frameworks used:
 
-![Node.js](https://a11ybadges.com/badge?logo=nodedotjs) ![Express](https://a11ybadges.com/badge?logo=express) ![Tailwind CSS](https://a11ybadges.com/badge?logo=tailwindcss) ![JSON](https://a11ybadges.com/badge?logo=json)
+- Node.js
+- Express
+- EJS
+- Tailwind CSS
+- JSON
+- WebSockets
+- SignalR Core
 
 #### Data sources:
 
-For data retrieval, we used the [F1DB](https://github.com/f1db/f1db) repo. We also used [OpenF1 Api](https://openf1.org/) for live data.  
+For data retrieval, we used the [F1DB](https://github.com/f1db/f1db) repo. We also used SignalR Core and WebSockets via SignalR for live data.  
 `data/f1db` folder contains splitted .json files from the latest version of the f1db repo.
 
 For circuits layouts, we used [F1 Circuits SVG](https://github.com/julesr0y/f1-circuits-svg).
@@ -47,11 +62,9 @@ npm install
 npm run dev
 ```
 
-- To test in production mode :
+### Development rules and guidelines:
 
-```bash
-npm start
-```
+For more information about architecture, development rules and guidelines, please refer to the [CLAUDE.md](CLAUDE.md) / [AGENTS.md](AGENTS.md) files and [CONTRIBUTING.md](CONTRIBUTING.md).
 
 #### Documentation :
 
@@ -69,15 +82,4 @@ To format code before committing, please use :
 
 ```bash 
 npm run format:views
-```
-
-```
- ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________
-|\   __  \|\  \|\___   ___\\  \     |\   __  \|\   ___  \|\  ___ \         |\  \|\   ___  \|\   ____\|\  \|\   ___ \|\  ___ \ |\   __  \
-\ \  \|\  \ \  \|___ \  \_\ \  \    \ \  \|\  \ \  \\ \  \ \   __/|        \ \  \ \  \\ \  \ \  \___|\ \  \ \  \_|\ \ \   __/|\ \  \|\  \
- \ \   ____\ \  \   \ \  \ \ \  \    \ \   __  \ \  \\ \  \ \  \_|/__       \ \  \ \  \\ \  \ \_____  \ \  \ \  \ \\ \ \  \_|/_\ \   _  _\
-  \ \  \___|\ \  \   \ \  \ \ \  \____\ \  \ \  \ \  \\ \  \ \  \_|\ \       \ \  \ \  \\ \  \|____|\  \ \  \ \  \_\\ \ \  \_|\ \ \  \\  \|
-   \ \__\    \ \__\   \ \__\ \ \_______\ \__\ \__\ \__\\ \__\ \_______\       \ \__\ \__\\ \__\____\_\  \ \__\ \_______\ \_______\ \__\\ _\
-    \|__|     \|__|    \|__|  \|_______|\|__|\|__|\|__| \|__|\|_______|        \|__|\|__| \|__|\_________\|__|\|_______|\|_______|\|__|\|__|
-                                                                                              \|_________|
 ```

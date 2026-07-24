@@ -22,13 +22,65 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
+ * WebSocket Server
+ */
+var { WebSocketServer } = require('ws');
+var F1LiveClient = require('../utils/live/f1-client');
+
+var wss = new WebSocketServer({
+  server,
+  verifyClient: (info, cb) => {
+    const origin = info.origin;
+    const ALLOWED_ORIGINS = ['http://localhost:3000', 'https://pitlaneinsider.alwaysdata.net'];
+    // authorize known origins and undefined origin (local clients)
+
+    // in production we can force the origin
+    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+      console.warn(`[Security] Blocked WS connection from unknown origin: ${origin}`);
+      return cb(false, 403, 'Forbidden');
+    }
+    cb(true);
+  }
+});
+var clients = new Set();
+
+wss.on('connection', (ws) => {
+  clients.add(ws);
+  if (f1Client) {
+    ws.send(JSON.stringify(f1Client.getFullState()));
+  }
+
+  ws.on('error', (err) => {
+    // silently catch errors to not crash the server (e.g. ECONNRESET)
+    // console.error('[WS] Client connection error:', err.message);
+  });
+
+  ws.on('close', () => clients.delete(ws));
+});
+
+/**
+ * @description Broadcasts data payload to all active WebSocket clients.
+ * @param {Object} data - Payload object to send.
+ * @returns {void}
+ */
+function broadcast(data) {
+  const payload = JSON.stringify(data);
+  for (const client of clients) {
+    if (client.readyState === 1) {
+      client.send(payload);
+    }
+  }
+}
+
+var f1Client = new F1LiveClient(broadcast);
+
+/**
  * Listen on provided port, on all network interfaces.
  */
-
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-console.log("Server is running on port " + port);
+
 // useless but fun
 const asciiArt = `
          ________  ___  _________  ___       ________  ________   _______           ___  ________   ________  ___  ________  _______   ________     
@@ -40,52 +92,11 @@ const asciiArt = `
             \\|__|     \\|__|    \\|__|  \\|_______|\\|__|\\|__|\\|__| \\|__|\\|_______|        \\|__|\\|__| \\|__|\\_________\\|__|\\|_______|\\|_______|\\|__|\\|__|
                                                                                                       \\|_________|`;
 
-console.log(asciiArt);
-
-var { WebSocketServer } = require('ws');
-var F1LiveClient = require('../utils/live/f1-client');
-
-var wss = new WebSocketServer({ 
-    server,
-    verifyClient: (info, cb) => {
-        const origin = info.origin;
-        const ALLOWED_ORIGINS = ['http://localhost:3000', 'https://pitlaneinsider.alwaysdata.net'];
-        // On autorise si l'origine est reconnue, ou si c'est indéfini (certains clients locaux peuvent ne pas envoyer d'origine)
-        // En production on peut forcer l'origine
-        if (origin && !ALLOWED_ORIGINS.includes(origin)) {
-            console.warn(`[Security] Blocked WS connection from unknown origin: ${origin}`);
-            return cb(false, 403, 'Forbidden');
-        }
-        cb(true);
-    }
+// defer server logs output until f1 client initial connection sequence finishes
+f1Client.connect().then(() => {
+  console.log("\nServer is running on port " + port + " : http://localhost:" + port);
+  console.log(asciiArt);
 });
-var clients = new Set();
-
-wss.on('connection', (ws) => {
-    clients.add(ws);
-    if (f1Client) {
-        ws.send(JSON.stringify(f1Client.getFullState()));
-    }
-    
-    ws.on('error', (err) => {
-        // Étouffer silencieusement l'erreur pour ne pas crasher le serveur (ex: ECONNRESET)
-        // console.error('[WS] Client connection error:', err.message);
-    });
-
-    ws.on('close', () => clients.delete(ws));
-});
-
-function broadcast(data) {
-    const payload = JSON.stringify(data);
-    for (const client of clients) {
-        if (client.readyState === 1) {
-            client.send(payload);
-        }
-    }
-}
-
-var f1Client = new F1LiveClient(broadcast);
-f1Client.connect();
 /**
  * Normalize a port into a number, string, or false.
  */
