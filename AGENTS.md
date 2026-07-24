@@ -1,4 +1,4 @@
-# CLAUDE CODE RULES
+# AI AGENTS RULES
 
 This file defines the strict quality and development standards for this codebase. All rules must be followed at all times.
 
