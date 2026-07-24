@@ -404,7 +404,8 @@ class F1LiveClient {
                 }
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
                 const hasFastestLap = (d.racingNumber === fastestLapDriver);
-                return { ...d, currentTire, teamColor, hasFastestLap };
+                const { trendTimer, ...cleanDriver } = d;
+                return { ...cleanDriver, currentTire, teamColor, hasFastestLap };
             });
 
         this.broadcast({ type: 'standings', data: standingsArray, sessionMode: this.getSessionMode() });
@@ -461,7 +462,8 @@ class F1LiveClient {
                 }
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
                 const hasFastestLap = (d.racingNumber === fastestLapDriver);
-                return { ...d, currentTire, teamColor, hasFastestLap };
+                const { trendTimer, ...cleanDriver } = d;
+                return { ...cleanDriver, currentTire, teamColor, hasFastestLap };
             });
 
         return {

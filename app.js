@@ -104,22 +104,6 @@ app.use(async (req, res, next) => {
     next();
 });
 
-// Rate Limiter: placed AFTER static files AND AFTER i18n/theme so error.ejs can render properly
-const rateLimit = require('express-rate-limit');
-const limiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 120, // 120 requests per IP per minute
-    handler: (req, res, next, options) => {
-        res.status(options.statusCode).render('security/error', {
-            textError: "Trop de requêtes détectées",
-            error: "Vous avez dépassé la limite de requêtes autorisées par minute. Pour protéger le serveur, votre accès est temporairement suspendu. Veuillez patienter une minute avant de rafraîchir."
-        });
-    },
-    standardHeaders: true,
-    legacyHeaders: false,
-});
-app.use('/live', limiter);
-
 const getHomeData = require("./utils/home/getHomeData"); // call getHomeData function from utils/home/getHomeData.js
 const getNewsHomePage = require("./utils/news/getNewsHomePage"); // call getNewsHomePage function from utils/news/getNewsHomePage.js
 
