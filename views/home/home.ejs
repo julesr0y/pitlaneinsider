@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= __('lang.lang') %>">
+<html lang="<%= __('lang.lang') %>" class="bg-b-<%= theme %>">
     <head>
         <%- include('../partials/head.ejs') %>
         <%- include('../partials/header.ejs') %>
@@ -34,7 +34,7 @@
         </style>
     </head>
 
-    <body class="font-regular text-<%= theme %> flex flex-col min-h-screen">
+    <body class="font-regular text-<%= theme %> bg-b-<%= theme %> flex flex-col min-h-screen">
         <main class="bg-b-<%= theme %> grow">
             <div class="px-4 md:pt-4">
                 <div class="block md:grid grid-cols-2 gap-4 items-stretch">
