@@ -23,6 +23,14 @@ const driverMapping = {
     77: "BOT", 11: "PER"
 };
 
+const driverFullMapping = {
+    3: "VERSTAPPEN", 10: "GASLY", 30: "LAWSON", 43: "COLAPINTO", 44: "HAMILTON",
+    55: "SAINZ", 16: "LECLERC", 63: "RUSSELL", 1: "NORRIS", 18: "STROLL",
+    14: "ALONSO", 31: "OCON", 23: "ALBON", 41: "LINDBLAD", 81: "PIASTRI",
+    27: "HULKENBERG", 5: "BORTOLETTO", 6: "HADJAR", 12: "ANTONELLI", 87: "BEARMAN",
+    77: "BOTTAS", 11: "PEREZ"
+};
+
 const SUBSCRIBE_CHANNELS = [
     'TimingData',
     'TimingAppData',
@@ -143,7 +151,7 @@ class F1LiveClient {
             this.watchdogTimer = setTimeout(() => {
                 if (this.isConnected) {
                     console.error("[F1Client] Watchdog timeout: No data received for 20s. Forcing reconnect...");
-                    try { this.ws.terminate(); } catch (e) {}
+                    try { this.ws.terminate(); } catch (e) { }
                 }
             }, 20000);
 
@@ -258,8 +266,11 @@ class F1LiveClient {
                 if (this.broadcast) this.broadcast({ type: 'weather', data: this.weather });
                 break;
             case 'RaceControlMessages':
-                if (data.Messages && Array.isArray(data.Messages)) {
-                    this.raceControl = [...this.raceControl, ...data.Messages].slice(-50); // Keep last 50
+                if (data.Messages) {
+                    const msgs = Array.isArray(data.Messages) ? data.Messages : Object.values(data.Messages);
+                    let combined = [...this.raceControl, ...msgs];
+                    combined.sort((a, b) => new Date(a.Utc) - new Date(b.Utc));
+                    this.raceControl = combined.slice(-50); // Keep last 50
                     if (this.broadcast) this.broadcast({ type: 'race_control', data: this.raceControl });
                 }
                 break;
@@ -268,8 +279,11 @@ class F1LiveClient {
                 if (this.broadcast) this.broadcast({ type: 'lap_count', data: this.lapCount });
                 break;
             case 'TeamRadio':
-                if (data.Captures && Array.isArray(data.Captures)) {
-                    this.teamRadio = [...data.Captures, ...this.teamRadio].slice(0, 30);
+                if (data.Captures) {
+                    const caps = Array.isArray(data.Captures) ? data.Captures : Object.values(data.Captures);
+                    let combined = [...this.teamRadio, ...caps];
+                    combined.sort((a, b) => new Date(a.Utc) - new Date(b.Utc));
+                    this.teamRadio = combined.slice(-30);
                     if (this.broadcast) this.broadcast({ type: 'team_radio', data: this.getEnrichedTeamRadio() });
                 }
                 break;
@@ -325,6 +339,7 @@ class F1LiveClient {
                 this.standings[racingNumber] = {
                     racingNumber,
                     driverCode: driverMapping[racingNumber] || racingNumber,
+                    driverFullName: driverFullMapping[racingNumber] || racingNumber,
                     position: 99,
                     trend: 'none',
                     gapToLeader: "",
@@ -448,8 +463,9 @@ class F1LiveClient {
     getEnrichedTeamRadio() {
         return this.teamRadio.map(cap => {
             const code = driverMapping[cap.RacingNumber] || cap.RacingNumber;
+            const fullCode = driverFullMapping[cap.RacingNumber] || cap.RacingNumber;
             const color = (this.driverList[cap.RacingNumber] && this.driverList[cap.RacingNumber].TeamColour) ? this.driverList[cap.RacingNumber].TeamColour : '808080';
-            return { ...cap, driverCode: code, teamColor: color };
+            return { ...cap, driverCode: code, driverFullName: fullCode, teamColor: color };
         });
     }
 

@@ -1,55 +1,81 @@
 <!DOCTYPE html>
 <html lang="<%= __('lang.lang') %>" class="bg-b-<%= theme %>">
-    <head>
-        <%- include('../partials/head.ejs') %>
-        <%- include('../partials/header.ejs') %>
-        <title>PLI - <%= __('live.tab_title') %></title>
-    </head>
 
-    <body class="font-regular text-gray-100 bg-b-<%= theme %> min-h-screen flex flex-col selection:bg-red-500/30">
-        <main class="flex-grow container mx-auto px-4 py-8">
-            <!-- Header Section -->
-            <div class="flex flex-col items-center justify-center gap-2 pt-4">
-                <div class="flex items-center gap-3 bg-s-<%= theme %>/80 border border-gray-400 md:backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
-                    <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse inline-block"></span>
-                    <span class="text-red-500 font-bold uppercase tracking-widest text-[8px] md:text-sm"> <%= __('live.live_title') %> </span>
-                    <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status"> <%= __('live.connecting') %> </span>
-                </div>
-                <!-- Session Title Widget (Updated dynamically) -->
-                <div id="session-title-container" class="text-center mt-2"></div>
+<head>
+    <%- include('../partials/head.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <title>PLI - <%= __('live.tab_title') %>
+            </title>
+</head>
+
+<body class="font-regular text-gray-100 bg-b-<%= theme %> min-h-screen flex flex-col selection:bg-red-500/30">
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <!-- Header Section -->
+        <div class="flex flex-col items-center justify-center gap-2 pt-4">
+            <div
+                class="flex items-center gap-3 bg-s-<%= theme %>/80 border border-gray-400 md:backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
+                <span
+                    class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse inline-block"></span>
+                <span class="text-red-500 font-bold uppercase tracking-widest text-[8px] md:text-sm">
+                    <%= __('live.live_title') %>
+                </span>
+                <span class="text-gray-500 font-mono text-xs border-l border-gray-700 pl-3 ml-1" id="ws-status">
+                    <%= __('live.connecting') %>
+                </span>
+            </div>
+            <!-- Session Title Widget (Updated dynamically) -->
+            <div id="session-title-container" class="text-center mt-2"></div>
+        </div>
+
+        <!-- Two-Column Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto relative">
+            <!-- Ambient glow -->
+            <div
+                class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-red-500/5 blur-[120px] rounded-full pointer-events-none">
             </div>
 
-            <!-- Two-Column Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto relative">
-                <!-- Ambient glow -->
-                <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-red-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+            <!-- LEFT COLUMN: STANDINGS (7/12) -->
+            <div class="lg:col-span-7">
+                <div
+                    class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden h-[800px] flex flex-col">
+                    <div
+                        class="px-6 py-4 border-b border-gray-400 bg-s-<%= theme %>/40 flex justify-between items-center">
+                        <span class="text-[8px] md:text-sm md:text-lg font-bold text-white tracking-wide">
+                            <div class="flex items-center justify-center gap-3">
+                                <img id="session-flag" src=""
+                                    class="w-auto h-6 md:h-10 rounded shadow-md hidden object-cover"
+                                    alt="<%= __('live.flag_alt') %>" />
+                                <span id="session-name"></span>
+                            </div>
+                        </span>
+                        <span id="session-laps" class="text-gray-400 font-mono text-[8px] md:text-sm mt-1"></span>
+                    </div>
 
-                <!-- LEFT COLUMN: STANDINGS (7/12) -->
-                <div class="lg:col-span-7">
-                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden h-[800px] flex flex-col">
-                        <div class="px-6 py-4 border-b border-gray-400 bg-s-<%= theme %>/40 flex justify-between items-center">
-                            <span class="text-[8px] md:text-sm md:text-lg font-bold text-white tracking-wide">
-                                <div class="flex items-center justify-center gap-3">
-                                    <img id="session-flag" src="" class="w-auto h-6 md:h-10 rounded shadow-md hidden object-cover" alt="<%= __('live.flag_alt') %>" />
-                                    <span id="session-name"></span>
-                                </div>
-                            </span>
-                            <span id="session-laps" class="text-gray-400 font-mono text-[8px] md:text-sm mt-1"></span>
+                    <div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+                        <div id="standings-header"
+                            class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
+                            <div class="col-span-1 text-center text-[8px] md:text-sm"></div>
+                            <div class="col-span-2 text-[8px] md:text-sm">
+                                <%= __('live.driver') %>
+                            </div>
+                            <div class="col-span-4 md:col-span-3 text-center text-[8px] md:text-sm">
+                                <%= __('live.times') %>
+                            </div>
+                            <div class="col-span-1 md:col-span-2 text-center text-[8px] md:text-sm">
+                                <%= __('live.tyre') %>
+                            </div>
+                            <div class="col-span-2 text-center text-[8px] md:text-sm">
+                                <%= __('live.pit') %>
+                            </div>
+                            <div class="col-span-2 text-center text-[8px] md:text-sm">
+                                <%= __('live.gap') %>
+                            </div>
                         </div>
 
-                        <div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
-                            <div id="standings-header" class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-4 mb-3">
-                                <div class="col-span-1 text-center text-[8px] md:text-sm"></div>
-                                <div class="col-span-2 text-[8px] md:text-sm"><%= __('live.driver') %></div>
-                                <div class="col-span-4 md:col-span-3 text-center text-[8px] md:text-sm"><%= __('live.times') %></div>
-                                <div class="col-span-1 md:col-span-2 text-center text-[8px] md:text-sm"><%= __('live.tyre') %></div>
-                                <div class="col-span-2 text-center text-[8px] md:text-sm"><%= __('live.pit') %></div>
-                                <div class="col-span-2 text-center text-[8px] md:text-sm"><%= __('live.gap') %></div>
-                            </div>
-
-                            <div id="standings-container" class="flex flex-col gap-2">
-                                <% for(let i=0; i < 10; i++) { %>
-                                <div class="grid grid-cols-12 gap-2 items-center px-4 py-2.5 bg-s-<%= theme %>/30 rounded-xl border border-gray-700/30 animate-pulse">
+                        <div id="standings-container" class="flex flex-col gap-1">
+                            <% for(let i=0; i < 10; i++) { %>
+                                <div
+                                    class="grid grid-cols-12 gap-2 items-center px-4 py-2.5 bg-s-<%= theme %>/30 rounded-xl border border-gray-700/30 animate-pulse">
                                     <div class="col-span-1 flex justify-center">
                                         <div class="w-6 h-5 bg-gray-700/60 rounded"></div>
                                     </div>
@@ -68,80 +94,107 @@
                                     </div>
                                 </div>
                                 <% } %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RIGHT COLUMN: WIDGETS (5/12) -->
-                <div class="lg:col-span-5 flex flex-col gap-6">
-                    <!-- WEATHER WIDGET -->
-                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden">
-                        <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>">
-                            <h2 class="text-[8px] md:text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.weather_conditions') %></h2>
-                        </div>
-                        <div class="p-5 grid grid-cols-2 gap-4" id="weather-container">
-                            <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.air_temp') %> </span>
-                                <span id="w-air" class="text-2xl font-black text-white"><span class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
-                            </div>
-                            <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.track_temp') %> </span>
-                                <span id="w-track" class="text-2xl font-black text-white"><span class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
-                            </div>
-                            <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.wind') %> </span>
-                                <span id="w-wind" class="text-xl font-bold text-gray-200"><span class="inline-block w-16 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
-                            </div>
-                            <div class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
-                                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"> <%= __('live.rainfall') %> </span>
-                                <span id="w-rain" class="text-xl font-bold text-gray-200"><span class="inline-block w-10 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RACE CONTROL WIDGET -->
-                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[300px]">
-                        <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
-                            <h2 class="text-[8px] md:text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.race_control') %></h2>
-                        </div>
-                        <div id="race-control-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
-                            <div class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
-                                <div class="flex justify-between items-center">
-                                    <div class="w-20 h-3 bg-gray-700/60 rounded"></div>
-                                    <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
-                                </div>
-                                <div class="w-3/4 h-4 bg-gray-700/50 rounded"></div>
-                            </div>
-                            <div class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
-                                <div class="flex justify-between items-center">
-                                    <div class="w-24 h-3 bg-gray-700/60 rounded"></div>
-                                    <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
-                                </div>
-                                <div class="w-2/3 h-4 bg-gray-700/50 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TEAM RADIO WIDGET -->
-                    <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[200px]">
-                        <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
-                            <h2 class="text-[8px] md:text-sm font-bold text-gray-300 tracking-wider uppercase"><%= __('live.team_radios') %></h2>
-                        </div>
-                        <div id="radio-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
-                            <div class="p-3 rounded-xl bg-s-<%= theme %>/20 border border-gray-700/30 animate-pulse flex flex-col gap-2">
-                                <div class="flex justify-between items-center">
-                                    <div class="w-24 h-3 bg-gray-700/60 rounded"></div>
-                                    <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
-                                </div>
-                                <div class="w-full h-8 bg-gray-700/40 rounded-lg"></div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <%- include('../partials/footer.ejs') %>
+
+            <!-- RIGHT COLUMN: WIDGETS (5/12) -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <!-- WEATHER WIDGET -->
+                <div class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden">
+                    <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>">
+                        <h2 class="text-[8px] md:text-sm font-bold text-gray-300 tracking-wider uppercase">
+                            <%= __('live.weather_conditions') %>
+                        </h2>
+                    </div>
+                    <div class="p-5 grid grid-cols-2 gap-4" id="weather-container">
+                        <div
+                            class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
+                            <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">
+                                <%= __('live.air_temp') %>
+                            </span>
+                            <span id="w-air" class="text-2xl font-black text-white"><span
+                                    class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
+                        </div>
+                        <div
+                            class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
+                            <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">
+                                <%= __('live.track_temp') %>
+                            </span>
+                            <span id="w-track" class="text-2xl font-black text-white"><span
+                                    class="inline-block w-12 h-6 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
+                        </div>
+                        <div
+                            class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
+                            <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">
+                                <%= __('live.wind') %>
+                            </span>
+                            <span id="w-wind" class="text-xl font-bold text-gray-200"><span
+                                    class="inline-block w-16 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
+                        </div>
+                        <div
+                            class="bg-s-<%= theme %>/30 rounded-2xl p-4 flex flex-col items-center border border-gray-400/50">
+                            <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">
+                                <%= __('live.rainfall') %>
+                            </span>
+                            <span id="w-rain" class="text-xl font-bold text-gray-200"><span
+                                    class="inline-block w-10 h-5 bg-gray-700/50 animate-pulse rounded mt-1"></span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RACE CONTROL WIDGET -->
+                <div
+                    class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[300px]">
+                    <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
+                        <h2 class="text-[8px] md:text-sm font-bold text-gray-300 tracking-wider uppercase">
+                            <%= __('live.race_control') %>
+                        </h2>
+                    </div>
+                    <div id="race-control-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
+                        <div
+                            class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
+                            <div class="flex justify-between items-center">
+                                <div class="w-20 h-3 bg-gray-700/60 rounded"></div>
+                                <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
+                            </div>
+                            <div class="w-3/4 h-4 bg-gray-700/50 rounded"></div>
+                        </div>
+                        <div
+                            class="p-3 rounded-xl border border-gray-700/30 bg-s-<%= theme %>/20 animate-pulse flex flex-col gap-2">
+                            <div class="flex justify-between items-center">
+                                <div class="w-24 h-3 bg-gray-700/60 rounded"></div>
+                                <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
+                            </div>
+                            <div class="w-2/3 h-4 bg-gray-700/50 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEAM RADIO WIDGET -->
+                <div
+                    class="bg-s-<%= theme %> md:backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[200px]">
+                    <div class="px-6 py-3 border-b border-gray-400 bg-s-<%= theme %>/40">
+                        <h2 class="text-[8px] md:text-sm font-bold text-gray-300 tracking-wider uppercase">
+                            <%= __('live.team_radios') %>
+                        </h2>
+                    </div>
+                    <div id="radio-container" class="p-4 flex flex-col gap-3 overflow-y-auto custom-scrollbar">
+                        <div
+                            class="p-3 rounded-xl bg-s-<%= theme %>/20 border border-gray-700/30 animate-pulse flex flex-col gap-2">
+                            <div class="flex justify-between items-center">
+                                <div class="w-24 h-3 bg-gray-700/60 rounded"></div>
+                                <div class="w-12 h-3 bg-gray-700/40 rounded"></div>
+                            </div>
+                            <div class="w-full h-8 bg-gray-700/40 rounded-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
 
         <style>
             .custom-scrollbar::-webkit-scrollbar {
@@ -185,15 +238,15 @@
                 if (!header) return;
                 if (currentSessionMode === 'practice') {
                     header.innerHTML = `
-                        <div class="col-span-1 text-center"><%= __('live.pos') %></div>
+                        <div class="col-span-1 text-center"></div>
                         <div class="col-span-2"><%= __('live.driver') %></div>
-                        <div class="col-span-4 text-center"><%= __('live.sectors') %></div>
+                        <div class="col-span-4 text-center"><%= __('live.times') %></div>
                         <div class="col-span-1 text-center"><%= __('live.tyre') %></div>
-                        <div class="col-span-4 text-center justify-left"><%= __('live.best_lap') %> / <%= __('live.gap') %></div>
+                        <div class="col-span-4 text-right"><%= __('live.gap') %></div>
                     `;
                 } else {
                     header.innerHTML = `
-                        <div class="col-span-1 text-center"><%= __('live.pos') %></div>
+                        <div class="col-span-1 text-center"></div>
                         <div class="col-span-2"><%= __('live.driver') %></div>
                         <div class="col-span-4 md:col-span-3 text-center"><%= __('live.times_pits') %></div>
                         <div class="col-span-1 md:col-span-2 text-center"><%= __('live.tyre') %></div>
@@ -396,6 +449,7 @@
                         knownRadios.add(fullUrl);
 
                         const driverText = cap.driverCode || cap.RacingNumber || `<%= __('live.radio_fallback') %>`;
+                        const driverFullText = cap.driverFullName || driverText;
                         const teamColor = cap.teamColor || '808080';
 
                         const el = document.createElement('div');
@@ -405,7 +459,10 @@
 
                         el.innerHTML = `
                             <div class="flex justify-between items-center">
-                                <span class="text-[8px] md:text-sm font-black text-white tracking-widest">${driverText}</span>
+                                <span class="text-[8px] md:text-sm font-black text-white tracking-widest">
+                                    <span class="md:hidden">${driverText}</span>
+                                    <span class="hidden md:inline">${driverFullText}</span>
+                                </span>
                                 <span class="text-xs text-gray-300 font-mono">${new Date(cap.Utc.endsWith('Z') ? cap.Utc : cap.Utc + 'Z').toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                             </div>
                             <audio preload="none" controls src="${fullUrl}" class="w-full h-8 outline-none mt-1 opacity-80 hover:opacity-100 transition-opacity"></audio>
@@ -495,14 +552,10 @@
 
                     let centerColHtml = '';
                     if (currentSessionMode === 'practice') {
-                        const s1 = driver.sectors && driver.sectors.s1 ? driver.sectors.s1 : '--';
-                        const s2 = driver.sectors && driver.sectors.s2 ? driver.sectors.s2 : '--';
-                        const s3 = driver.sectors && driver.sectors.s3 ? driver.sectors.s3 : '--';
                         centerColHtml = `
-                        <div class="col-span-4 text-[11px] font-mono text-gray-400 flex items-center justify-center gap-2">
-                            <span class="${s1 !== '--' ? 'text-gray-200' : ''}">${s1}</span>
-                            <span class="${s2 !== '--' ? 'text-gray-200' : ''}">${s2}</span>
-                            <span class="${s3 !== '--' ? 'text-gray-200' : ''}">${s3}</span>
+                        <div class="col-span-4 text-[11px] font-mono text-gray-400 flex flex-col items-center justify-center gap-0.5">
+                            <span><span class="text-gray-600"><%= __('live.last_lap_short') %></span> ${driver.lastLap || '--'}</span>
+                            <span><span class="text-gray-600"><%= __('live.best_lap_short') %></span> ${driver.bestLap || '--'}</span>
                         </div>
                         `;
                     } else {
@@ -517,7 +570,7 @@
                     let rightColHtml = '';
                     if (currentSessionMode === 'practice' && !driver.retired && !driver.stopped) {
                         rightColHtml = `
-                        <div class="col-span-3 md:col-span-4 text-right font-mono flex flex-col items-end">
+                        <div class="col-span-4 text-right font-mono flex flex-col items-end">
                             <span class="text-[8px] md:text-sm text-gray-200 font-bold">${driver.bestLap || '--'}</span>
                             <span class="text-[11px] text-gray-500">${statusHtml}</span>
                         </div>`;
@@ -535,7 +588,10 @@
                             ${String(driver.position).padStart(2, '0')} ${trendHtml}
                         </div>
                         <div class="col-span-2 font-bold flex items-center">
-                            <span class="px-2.5 py-0.5 rounded text-white text-[8px] md:text-sm font-black border-l-4" style="border-left-color: #${driver.teamColor}; background-color: #${driver.teamColor}40;">${driver.driverCode}</span>
+                            <span class="px-2.5 py-0.5 rounded text-white text-[8px] md:text-sm font-black border-l-4" style="border-left-color: #${driver.teamColor}; background-color: #${driver.teamColor}40;">
+                                <span class="md:hidden">${driver.driverCode}</span>
+                                <span class="hidden md:inline">${driver.driverFullName || driver.driverCode}</span>
+                            </span>
                         </div>
                         ${centerColHtml}
                         <div class="col-span-1 flex justify-center">
@@ -546,7 +602,7 @@
                     `;
 
                     let rowEl = currentNodes.get(rowId);
-                    const className = `grid grid-cols-12 gap-2 items-center px-4 py-2 ${rowBg} hover:bg-s-<%= theme %> rounded-xl transition-all border ${rowBorder}`;
+                    const className = `grid grid-cols-12 gap-2 items-center px-2 py-1 ${rowBg} hover:bg-s-<%= theme %> rounded-lg transition-all border ${rowBorder}`;
 
                     if (!rowEl) {
                         rowEl = document.createElement('div');
@@ -605,5 +661,6 @@
 
             connectWS();
         </script>
-    </body>
+</body>
+
 </html>

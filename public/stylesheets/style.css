@@ -3209,6 +3209,9 @@
     .md\:hidden {
       display: none;
     }
+    .md\:inline {
+      display: inline;
+    }
     .md\:h-10 {
       height: calc(var(--spacing) * 10);
     }
