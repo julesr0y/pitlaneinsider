@@ -49,6 +49,8 @@ class F1LiveClient {
         this.raceControl = [];
         this.lapCount = {};
         this.teamRadio = [];
+
+        this.watchdogTimer = null;
     }
 
     /**
@@ -137,6 +139,14 @@ class F1LiveClient {
         });
 
         this.ws.on('message', (data) => {
+            if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
+            this.watchdogTimer = setTimeout(() => {
+                if (this.isConnected) {
+                    console.error("[F1Client] Watchdog timeout: No data received for 20s. Forcing reconnect...");
+                    try { this.ws.terminate(); } catch (e) {}
+                }
+            }, 20000);
+
             try {
                 const raw = data.toString('utf-8');
                 for (const segment of raw.split(RECORD_SEP)) {
@@ -191,6 +201,7 @@ class F1LiveClient {
 
         this.ws.on('close', () => {
             this.isConnected = false;
+            if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
             console.log("[F1Client] Disconnected. Reconnecting in 5s...");
             setTimeout(() => this.connect(), 5000);
         });
@@ -405,7 +416,23 @@ class F1LiveClient {
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
                 const hasFastestLap = (d.racingNumber === fastestLapDriver);
                 const { trendTimer, ...cleanDriver } = d;
-                return { ...cleanDriver, currentTire, teamColor, hasFastestLap };
+                let gapToLeader = cleanDriver.gapToLeader;
+
+                if (this.getSessionMode() === 'practice' && cleanDriver.position > 1 && cleanDriver.bestLap && minLapTime !== Infinity) {
+                    const parts = cleanDriver.bestLap.split(':');
+                    let timeMs = 0;
+                    if (parts.length === 2) {
+                        timeMs = parseFloat(parts[0]) * 60000 + parseFloat(parts[1]) * 1000;
+                    } else if (parts.length === 1) {
+                        timeMs = parseFloat(parts[0]) * 1000;
+                    }
+                    if (timeMs > 0) {
+                        const diff = (timeMs - minLapTime) / 1000;
+                        gapToLeader = "+" + diff.toFixed(3);
+                    }
+                }
+
+                return { ...cleanDriver, currentTire, teamColor, hasFastestLap, gapToLeader };
             });
 
         this.broadcast({ type: 'standings', data: standingsArray, sessionMode: this.getSessionMode() });
@@ -463,7 +490,23 @@ class F1LiveClient {
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
                 const hasFastestLap = (d.racingNumber === fastestLapDriver);
                 const { trendTimer, ...cleanDriver } = d;
-                return { ...cleanDriver, currentTire, teamColor, hasFastestLap };
+                let gapToLeader = cleanDriver.gapToLeader;
+
+                if (this.getSessionMode() === 'practice' && cleanDriver.position > 1 && cleanDriver.bestLap && minLapTime !== Infinity) {
+                    const parts = cleanDriver.bestLap.split(':');
+                    let timeMs = 0;
+                    if (parts.length === 2) {
+                        timeMs = parseFloat(parts[0]) * 60000 + parseFloat(parts[1]) * 1000;
+                    } else if (parts.length === 1) {
+                        timeMs = parseFloat(parts[0]) * 1000;
+                    }
+                    if (timeMs > 0) {
+                        const diff = (timeMs - minLapTime) / 1000;
+                        gapToLeader = "+" + diff.toFixed(3);
+                    }
+                }
+
+                return { ...cleanDriver, currentTire, teamColor, hasFastestLap, gapToLeader };
             });
 
         return {
