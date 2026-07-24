@@ -481,7 +481,10 @@
                         }
                     }
 
-                    const tireHtml = driver.currentTire && driver.currentTire !== 'unknown' ? `<img src="/img/tires/${driver.currentTire}.svg" class="w-6 h-6 drop-shadow-md" alt="${driver.currentTire}" onerror="this.style.display='none'">` : '';
+                    let tireHtml = driver.currentTire && driver.currentTire !== 'unknown' ? `<img src="/img/tires/${driver.currentTire}.svg" class="w-6 h-6 drop-shadow-md" alt="${driver.currentTire}" onerror="this.style.display='none'">` : '';
+                    if (currentSessionMode === 'practice' && driver.inPit) {
+                        tireHtml = isPitBadge;
+                    }
 
                     let trendHtml = '';
                     if (driver.trend === 'up') {
@@ -514,7 +517,7 @@
                     let rightColHtml = '';
                     if (currentSessionMode === 'practice' && !driver.retired && !driver.stopped) {
                         rightColHtml = `
-                        <div class="col-span-4 text-right font-mono flex flex-col items-end">
+                        <div class="col-span-3 md:col-span-4 text-right font-mono flex flex-col items-end">
                             <span class="text-[8px] md:text-sm text-gray-200 font-bold">${driver.bestLap || '--'}</span>
                             <span class="text-[11px] text-gray-500">${statusHtml}</span>
                         </div>`;
@@ -533,10 +536,9 @@
                         </div>
                         <div class="col-span-2 font-bold flex items-center">
                             <span class="px-2.5 py-0.5 rounded text-white text-[8px] md:text-sm font-black border-l-4" style="border-left-color: #${driver.teamColor}; background-color: #${driver.teamColor}40;">${driver.driverCode}</span>
-                            ${currentSessionMode === 'practice' && driver.inPit ? `<span class="ml-2">${isPitBadge}</span>` : ''}
                         </div>
                         ${centerColHtml}
-                        <div class="col-span-1 md:col-span-2 flex justify-center">
+                        <div class="col-span-1 flex justify-center">
                             ${tireHtml}
                         </div>
                         ${currentSessionMode === 'race' ? `<div class="col-span-2 flex justify-center items-center">${pitColumnHtml}</div>` : ''}
