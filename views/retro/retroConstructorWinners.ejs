@@ -22,6 +22,7 @@
                                         <span class="text-2xl font-bold"> <%= constructorWinners[index].name %> </span>
                                         <div class="bg-<%= constructorWinners[index].id %> h-1 w-12 mt-2"></div>
                                     </div>
+                                    <img src="/img/constructors/<%= constructorWinners[index].id %>.webp" alt="<%= constructorWinners[index].name %>" class="h-12 w-auto max-w-20 object-contain flex-shrink-0 ml-4" onerror="this.style.display = 'none'" />
                                 </div>
                                 <div class="flex items-center mt-4 text-t-s-<%= theme %>">
                                     <span class="text-lg"> <%= __('retro_f1.constructorwinners.number_of_titles') %> : </span>

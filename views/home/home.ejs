@@ -43,7 +43,7 @@
                         <!-- Circuit Background SVG -->
                         <img src="/img/circuits/<%= homeData.nextRaceInfo.circuitLayoutId %>.svg" class="absolute inset-0 m-auto h-3/4 opacity-10 pointer-events-none" alt="" />
 
-                        <div class="z-10 flex flex-col items-center text-center w-full mt-4">
+                        <div class="z-10 flex flex-col items-center text-center w-full mt-4 px-12 pb-4">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <img id="flag" src="/img/countryFlags/<%= homeData.nextRaceInfo.country %>.svg" class="h-6 w-auto shadow-md rounded-sm" alt="Flag" />
                                 <h2 class="font-wide text-lg md:text-2xl m-0"><%= homeData.nextRaceInfo.name %></h2>
@@ -51,10 +51,10 @@
                             <div class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-6"><%= homeData.nextRaceInfo.nextSessionName %></div>
 
                             <div id="countdown" class="grid grid-cols-4 gap-4 font-wide text-3xl m-0 bg-b-<%= theme %> px-6 py-4 rounded-2xl shadow-inner w-full max-w-sm md:max-w-lg border border-gray-700">
-                                <div class="flex flex-col items-center"><span id="days" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.days') %></span></div>
-                                <div class="flex flex-col items-center"><span id="hours" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.hours') %></span></div>
-                                <div class="flex flex-col items-center"><span id="minutes" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.minutes') %></span></div>
-                                <div class="flex flex-col items-center"><span id="seconds" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"><%= __('home.seconds') %></span></div>
+                                <div class="flex flex-col items-center"><span id="days" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"> <%= __('home.days') %> </span></div>
+                                <div class="flex flex-col items-center"><span id="hours" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"> <%= __('home.hours') %> </span></div>
+                                <div class="flex flex-col items-center"><span id="minutes" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"> <%= __('home.minutes') %> </span></div>
+                                <div class="flex flex-col items-center"><span id="seconds" class="text-xl md:text-2xl font-bold">00</span><span class="text-xs text-t-s-<%= theme %> tracking-wider"> <%= __('home.seconds') %> </span></div>
                             </div>
                         </div>
                         <% } else { %>
@@ -66,34 +66,36 @@
 
                     <div class="w-full h-full md:mt-0 mt-4">
                         <% if (homeData.lastPodiumLocalisation) { %>
-                        <a href="/retrogpdetails/<%= currentYear %>/<%= homeData.lastPodiumLocalisation.id %>">
-                            <div class="w-full bg-s-<%= theme %> rounded-3xl overflow-hidden">
-                                <span class="flex justify-center text-center mb-4 font-bold gap-2 pt-2">
-                                    <%= __('home.last_race') %> - <%= homeData.lastPodiumLocalisation.name %>
-                                    <img src="/img/countryFlags/<%= homeData.lastPodiumLocalisation.country %>.svg" alt="<%= homeData.lastPodiumLocalisation.country %>" class="h-6 w-auto" />
-                                </span>
-                                <div class="flex justify-evenly items-end h-full">
-                                    <div class="flex flex-col items-center">
-                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[1].driverId %>.webp" class="h-20 md:h-24 w-auto" />
-                                        <div class="w-24 h-24 silver rounded-t-lg flex flex-col items-center justify-center">
-                                            <span class="text-lg font-bold">2</span>
-                                            <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[1].abbreviation %> </span>
+                        <a href="/retrogpdetails/<%= currentYear %>/<%= homeData.lastPodiumLocalisation.id %>" class="block w-full bg-s-<%= theme %> rounded-3xl p-6 group transition duration-300 hover:shadow-xl">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-x-2 font-bold text-base md:text-lg">
+                                        <span>
+                                            <%= __('home.last_race') %>
+                                            -
+                                            <%= homeData.lastPodiumLocalisation.name %>
+                                        </span>
+                                        <img src="/img/countryFlags/<%= homeData.lastPodiumLocalisation.country %>.svg" alt="<%= homeData.lastPodiumLocalisation.country %>" class="h-5 w-auto rounded-xs shadow-xs" />
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                                <div class="space-y-3">
+                                    <% [0, 1, 2].forEach(index=> { %>
+                                    <% const driver=homeData.lastPodium[index]; %>
+                                    <% if (driver) { %>
+                                    <div class="flex items-center justify-between p-3 rounded-2xl bg-gray-500/10 transition group-hover:bg-gray-500/15">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-xs flex-shrink-0 <%= index === 0 ? 'gold text-black' : index === 1 ? 'silver text-black' : 'bronze text-white' %>"> <%= driver.position || index + 1 %> </span>
+                                            <img alt="<%= driver.driverName || driver.abbreviation %>" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= driver.driverId %>.webp" class="h-12 w-12 object-cover rounded-full flex-shrink-0 border border-gray-400/20" />
+                                            <div>
+                                                <div class="font-bold text-sm md:text-base leading-tight"><%= driver.driverName || driver.abbreviation %></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col items-center">
-                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[0].driverId %>.webp" class="h-20 md:h-24 w-auto" />
-                                        <div class="w-24 h-32 gold rounded-t-lg flex flex-col items-center justify-center">
-                                            <span class="text-lg font-bold">1</span>
-                                            <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[0].abbreviation %> </span>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col items-center">
-                                        <img alt="F1 Image" src="https://pitlaneinsider-data.alwaysdata.net/drivers_img/<%= homeData.lastPodium[2].driverId %>.webp" class="h-20 md:h-24 w-auto" />
-                                        <div class="w-24 h-20 bronze rounded-t-lg flex flex-col items-center justify-center">
-                                            <span class="text-lg font-bold">3</span>
-                                            <span class="text-sm font-bold mt-2"> <%= homeData.lastPodium[2].abbreviation %> </span>
-                                        </div>
-                                    </div>
+                                    <% } %>
+                                    <% }); %>
                                 </div>
                             </div>
                         </a>
@@ -131,8 +133,8 @@
                     <!-- Classements (Merged) -->
                     <div class="w-full lg:w-1/2 bg-s-<%= theme %> py-2 rounded-3xl p-4">
                         <div class="flex justify-around mb-4 border-b border-gray-600 pb-2">
-                            <a href="/driverstandings" class="text-center font-bold text-lg hover:underline"><%= __('home.drivers_standings') %></a>
-                            <a href="/constructorstandings" class="text-center font-bold text-lg hover:underline"><%= __('home.constructors_standings') %></a>
+                            <a href="/driverstandings" class="text-center font-bold text-lg hover:underline"> <%= __('home.drivers_standings') %> </a>
+                            <a href="/constructorstandings" class="text-center font-bold text-lg hover:underline"> <%= __('home.constructors_standings') %> </a>
                         </div>
                         <div class="flex justify-evenly gap-x-2">
                             <!-- Drivers -->
@@ -163,7 +165,7 @@
                                         <td class="pr-1 py-1">
                                             <span class="border-2 border-<%= constructor.constructorId %> h-auto w-1 box-border bg-<%= constructor.constructorId %> rounded-3xl"> </span>
                                         </td>
-                                        <td class="font-bold"><%= String(constructor.position).padStart(2, '0') %></td>
+                                        <td class="font-bold"><%= String(constructor.position).padStart(2, '0' ) %></td>
                                         <td class="truncate max-w-[60px]">
                                             <a href="/constructor/<%= constructor.constructorId %>" class="hover:underline"> <%= constructor.name %> </a>
                                         </td>

@@ -115,6 +115,7 @@ async function getHomeData() {
                 lastPodium.push({
                     position: r.positionNumber,
                     driverId: driver.id,
+                    driverName: driver.firstName ? `${driver.firstName} ${driver.lastName}` : driver.lastName || driver.id,
                     abbreviation: driver.threeLetterCode || driver.lastName.substring(0, 3).toUpperCase()
                 });
             });
