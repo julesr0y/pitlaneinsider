@@ -143,7 +143,9 @@
 			"driver_titles": "titles",
 			"all_data": "Drivers | Constructors | Circuits | Chassis",
 			"all_seasons": "List of seasons",
-			"winners_constructors_title": "List of champion constructors"
+			"winners_constructors_title": "List of champion constructors",
+			"wall_of_winners_title": "Wall of Winners",
+			"wall_of_winners_subtitle": "Race winner constructor from 1950 to present"
 		},
 		"winners": {
 			"tab_title": "Retro Champions",

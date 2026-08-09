@@ -129,6 +129,26 @@
                     </a>
                 </div>
             </div>
+
+            <div class="mt-8 px-4">
+                <div class="bg-s-<%= theme %> w-full mx-auto rounded-3xl p-6 lg:p-8">
+                    <h2 class="text-center text-xl lg:text-2xl font-bold mb-2"><%= __('retro_f1.home.wall_of_winners_title') %></h2>
+                    <p class="text-center text-sm opacity-75 mb-6"><%= __('retro_f1.home.wall_of_winners_subtitle') %></p>
+
+                    <div class="space-y-4">
+                        <% Object.keys(wallOfWinners).forEach(decade=> { %>
+                        <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 border-b border-gray-500/20 pb-4 last:border-b-0 last:pb-0">
+                            <div class="w-16 flex-shrink-0 font-bold text-base md:text-lg"><%= decade %>s</div>
+                            <div class="flex flex-wrap gap-1.5 flex-1 items-center">
+                                <% wallOfWinners[decade].forEach(race=> { %>
+                                <a href="/retrogpdetails/<%= race.year %>/<%= race.id %>" title="<%= race.year %> <%= race.gpName %> - <%= race.driverName %> (<%= race.constructorName %>)" class="bg-<%= race.constructorId %> w-5 h-5 md:w-6 md:h-6 rounded-xs transition-transform transform hover:scale-125 hover:z-10 relative block cursor-pointer flex-shrink-0"> </a>
+                                <% }); %>
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
         </main>
         <%- include('../partials/footer.ejs') %>
     </body>

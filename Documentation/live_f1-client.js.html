@@ -51,6 +51,14 @@ const driverMapping = {
     77: "BOT", 11: "PER"
 };
 
+const driverFullMapping = {
+    3: "VERSTAPPEN", 10: "GASLY", 30: "LAWSON", 43: "COLAPINTO", 44: "HAMILTON",
+    55: "SAINZ", 16: "LECLERC", 63: "RUSSELL", 1: "NORRIS", 18: "STROLL",
+    14: "ALONSO", 31: "OCON", 23: "ALBON", 41: "LINDBLAD", 81: "PIASTRI",
+    27: "HULKENBERG", 5: "BORTOLETTO", 6: "HADJAR", 12: "ANTONELLI", 87: "BEARMAN",
+    77: "BOTTAS", 11: "PEREZ"
+};
+
 const SUBSCRIBE_CHANNELS = [
     'TimingData',
     'TimingAppData',
@@ -77,6 +85,8 @@ class F1LiveClient {
         this.raceControl = [];
         this.lapCount = {};
         this.teamRadio = [];
+
+        this.watchdogTimer = null;
     }
 
     /**
@@ -165,6 +175,14 @@ class F1LiveClient {
         });
 
         this.ws.on('message', (data) => {
+            if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
+            this.watchdogTimer = setTimeout(() => {
+                if (this.isConnected) {
+                    console.error("[F1Client] Watchdog timeout: No data received for 20s. Forcing reconnect...");
+                    try { this.ws.terminate(); } catch (e) { }
+                }
+            }, 20000);
+
             try {
                 const raw = data.toString('utf-8');
                 for (const segment of raw.split(RECORD_SEP)) {
@@ -219,6 +237,7 @@ class F1LiveClient {
 
         this.ws.on('close', () => {
             this.isConnected = false;
+            if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
             console.log("[F1Client] Disconnected. Reconnecting in 5s...");
             setTimeout(() => this.connect(), 5000);
         });
@@ -275,8 +294,11 @@ class F1LiveClient {
                 if (this.broadcast) this.broadcast({ type: 'weather', data: this.weather });
                 break;
             case 'RaceControlMessages':
-                if (data.Messages &amp;&amp; Array.isArray(data.Messages)) {
-                    this.raceControl = [...this.raceControl, ...data.Messages].slice(-50); // Keep last 50
+                if (data.Messages) {
+                    const msgs = Array.isArray(data.Messages) ? data.Messages : Object.values(data.Messages);
+                    let combined = [...this.raceControl, ...msgs];
+                    combined.sort((a, b) => new Date(a.Utc) - new Date(b.Utc));
+                    this.raceControl = combined.slice(-50); // Keep last 50
                     if (this.broadcast) this.broadcast({ type: 'race_control', data: this.raceControl });
                 }
                 break;
@@ -285,8 +307,11 @@ class F1LiveClient {
                 if (this.broadcast) this.broadcast({ type: 'lap_count', data: this.lapCount });
                 break;
             case 'TeamRadio':
-                if (data.Captures &amp;&amp; Array.isArray(data.Captures)) {
-                    this.teamRadio = [...data.Captures, ...this.teamRadio].slice(0, 30);
+                if (data.Captures) {
+                    const caps = Array.isArray(data.Captures) ? data.Captures : Object.values(data.Captures);
+                    let combined = [...this.teamRadio, ...caps];
+                    combined.sort((a, b) => new Date(a.Utc) - new Date(b.Utc));
+                    this.teamRadio = combined.slice(-30);
                     if (this.broadcast) this.broadcast({ type: 'team_radio', data: this.getEnrichedTeamRadio() });
                 }
                 break;
@@ -342,6 +367,7 @@ class F1LiveClient {
                 this.standings[racingNumber] = {
                     racingNumber,
                     driverCode: driverMapping[racingNumber] || racingNumber,
+                    driverFullName: driverFullMapping[racingNumber] || racingNumber,
                     position: 99,
                     trend: 'none',
                     gapToLeader: "",
@@ -432,7 +458,24 @@ class F1LiveClient {
                 }
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
                 const hasFastestLap = (d.racingNumber === fastestLapDriver);
-                return { ...d, currentTire, teamColor, hasFastestLap };
+                const { trendTimer, ...cleanDriver } = d;
+                let gapToLeader = cleanDriver.gapToLeader;
+
+                if (this.getSessionMode() === 'practice' &amp;&amp; cleanDriver.position > 1 &amp;&amp; cleanDriver.bestLap &amp;&amp; minLapTime !== Infinity) {
+                    const parts = cleanDriver.bestLap.split(':');
+                    let timeMs = 0;
+                    if (parts.length === 2) {
+                        timeMs = parseFloat(parts[0]) * 60000 + parseFloat(parts[1]) * 1000;
+                    } else if (parts.length === 1) {
+                        timeMs = parseFloat(parts[0]) * 1000;
+                    }
+                    if (timeMs > 0) {
+                        const diff = (timeMs - minLapTime) / 1000;
+                        gapToLeader = "+" + diff.toFixed(3);
+                    }
+                }
+
+                return { ...cleanDriver, currentTire, teamColor, hasFastestLap, gapToLeader };
             });
 
         this.broadcast({ type: 'standings', data: standingsArray, sessionMode: this.getSessionMode() });
@@ -448,8 +491,9 @@ class F1LiveClient {
     getEnrichedTeamRadio() {
         return this.teamRadio.map(cap => {
             const code = driverMapping[cap.RacingNumber] || cap.RacingNumber;
+            const fullCode = driverFullMapping[cap.RacingNumber] || cap.RacingNumber;
             const color = (this.driverList[cap.RacingNumber] &amp;&amp; this.driverList[cap.RacingNumber].TeamColour) ? this.driverList[cap.RacingNumber].TeamColour : '808080';
-            return { ...cap, driverCode: code, teamColor: color };
+            return { ...cap, driverCode: code, driverFullName: fullCode, teamColor: color };
         });
     }
 
@@ -489,7 +533,24 @@ class F1LiveClient {
                 }
                 const teamColor = this.driverList[d.racingNumber]?.TeamColour || "808080";
                 const hasFastestLap = (d.racingNumber === fastestLapDriver);
-                return { ...d, currentTire, teamColor, hasFastestLap };
+                const { trendTimer, ...cleanDriver } = d;
+                let gapToLeader = cleanDriver.gapToLeader;
+
+                if (this.getSessionMode() === 'practice' &amp;&amp; cleanDriver.position > 1 &amp;&amp; cleanDriver.bestLap &amp;&amp; minLapTime !== Infinity) {
+                    const parts = cleanDriver.bestLap.split(':');
+                    let timeMs = 0;
+                    if (parts.length === 2) {
+                        timeMs = parseFloat(parts[0]) * 60000 + parseFloat(parts[1]) * 1000;
+                    } else if (parts.length === 1) {
+                        timeMs = parseFloat(parts[0]) * 1000;
+                    }
+                    if (timeMs > 0) {
+                        const diff = (timeMs - minLapTime) / 1000;
+                        gapToLeader = "+" + diff.toFixed(3);
+                    }
+                }
+
+                return { ...cleanDriver, currentTire, teamColor, hasFastestLap, gapToLeader };
             });
 
         return {
@@ -516,13 +577,13 @@ module.exports = F1LiveClient;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getActualConstructors">getActualConstructors</a></li><li><a href="global.html#getActualDrivers">getActualDrivers</a></li><li><a href="global.html#getActualSeasonCalendar">getActualSeasonCalendar</a></li><li><a href="global.html#getConstructorData">getConstructorData</a></li><li><a href="global.html#getDriverData">getDriverData</a></li><li><a href="global.html#getDriversActualStandings">getDriversActualStandings</a></li><li><a href="global.html#getGPDetail">getGPDetail</a></li><li><a href="global.html#getHomeData">getHomeData</a></li><li><a href="global.html#getRetroChassis">getRetroChassis</a></li><li><a href="global.html#getRetroCircuitData">getRetroCircuitData</a></li><li><a href="global.html#getRetroCircuits">getRetroCircuits</a></li><li><a href="global.html#getTeamsActualStandings">getTeamsActualStandings</a></li><li><a href="global.html#getWallOfWinners">getWallOfWinners</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Fri Jul 24 2026 10:49:01 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Sun Aug 09 2026 14:24:37 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

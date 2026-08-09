@@ -14,15 +14,17 @@ const getRetroConstructors = require('../utils/retro/getRetroConstructors');
 const getRetroTracks = require('../utils/retro/getRetroCircuits');
 const getRetroChassis = require('../utils/retro/getRetroChassis');
 const getRetroCircuitData = require('../utils/retro/getRetroCircuitData');
+const getWallOfWinners = require('../utils/retro/getWallOfWinners');
 
 router.get("/retrohome", cors(), async (req, res) => {
     try {
         var retroHome = await getDriverWinners();
         var constructorWinners = await getConstructorWinners();
+        var wallOfWinners = await getWallOfWinners();
         retroHome = Object.fromEntries(Object.entries(retroHome).slice(0, 3)); // keep only 3 first entries
         constructorWinners = Object.fromEntries(Object.entries(constructorWinners).slice(0, 3)); // keep only 3 first entries
 
-        res.render("retro/retroHome", { retroHome: retroHome, constructorWinners: constructorWinners });
+        res.render("retro/retroHome", { retroHome: retroHome, constructorWinners: constructorWinners, wallOfWinners: wallOfWinners });
     } catch (error) {
         res.render('security/error', { textError: '/retrohome route, error during execution', error: error });
     }
