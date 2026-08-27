@@ -1,67 +1,18 @@
-const { XMLParser } = require('fast-xml-parser');
+const getNews = require('./getNews');
 
 /**
- * @description Fetches and parses news from Motorsport.com RSS feed for home page.
+ * @description Fetches the latest news articles across all configured sources for the home page.
  * @async
- * @returns {Promise<Object[]>} A list of articles in JSON format.
+ * @returns {Promise<Object[]>} A list of the latest articles.
  */
 async function getNewsHomePage() {
-    const motorsportRSS = 'https://www.motorsport.com/rss/f1/news/';
-
     try {
-        // Fetch RSS feed
-        const response = await fetch(motorsportRSS);
-        if (!response.ok) {
-            throw new Error(`Erreur HTTP : ${response.status}`);
-        }
-
-        const rssText = await response.text();
-
-        // Parse XML
-        const parser = new XMLParser({
-            ignoreAttributes: false, // Keep XML attributes
-            attributeNamePrefix: '@_', // Prefix for attributes
-        });
-        const parsedData = parser.parse(rssText);
-
-        // Map articles
-        const articles = parsedData.rss.channel.item.map(item => ({
-            title: item.title,
-            link: item.link,
-            pubDate: convertRFC2822ToCustom(item.pubDate)
-        })).slice(0, 3);
-
-        return articles;
+        const articles = await getNews();
+        // limit the number of articles displayed on the home page widget
+        return articles.slice(0, 4);
     } catch (error) {
-        console.error('getNews, error during execution :', error);
-        throw error;
+        throw new Error('getNewsHomePage failed to retrieve articles', { cause: error });
     }
 }
 
-/**
- * @description Convertit une date RFC 2822 en format personnalisé YYYY/MM/DD HH:mm
- * @param {string} rfcDate - La date au format RFC 2822
- * @returns {string} La date au format YYYY/MM/DD HH:mm
- */
-function convertRFC2822ToCustom(rfcDate) {
-    try {
-        const date = new Date(rfcDate);
-
-        if (isNaN(date.getTime())) {
-            throw new Error("Date invalide !");
-        }
-
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // Les mois vont de 0 à 11
-        const day = String(date.getDate()).padStart(2, '0');
-        const hours = String(date.getHours()).padStart(2, '0');
-        const minutes = String(date.getMinutes()).padStart(2, '0');
-
-        return `${year}/${month}/${day} ${hours}:${minutes}`;
-    } catch (error) {
-        console.error('convertRFC2822ToCustom, error during execution :', error);
-        throw error;
-    }
-}
-
-module.exports = getNewsHomePage;
+module.exports = getNewsHomePage;

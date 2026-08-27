@@ -1,3 +1,30 @@
 {
-  "currentYear": 2026
+  "currentYear": 2026,
+  "newsFeeds": [
+    {
+      "name": "Motorsport.com",
+      "url": "https://www.motorsport.com/rss/f1/news/"
+    },
+    {
+      "name": "Autosport",
+      "url": "https://www.autosport.com/rss/f1/news/"
+    },
+    {
+      "name": "The Race",
+      "url": "https://the-race.com/category/formula-1/feed/"
+    },
+    {
+      "name": "Sky Sports",
+      "url": "https://www.skysports.com/rss/12433"
+    },
+    {
+      "name": "BBC Sport",
+      "url": "https://feeds.bbci.co.uk/sport/formula1/rss.xml"
+    },
+    {
+      "name": "RaceFans",
+      "url": "https://www.racefans.net/wp-json/wp/v2/posts?_embed&per_page=20",
+      "type": "wp-json"
+    }
+  ]
 }

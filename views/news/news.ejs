@@ -15,9 +15,19 @@
                     <% newsFront.forEach(function(article) { %>
                     <a href="<%= article.link %>" target="_blank">
                         <div class="bg-s-<%= theme %> rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                            <img src="<%= article.enclosure.url %>" alt="<%= article.title %>" class="rounded-t-lg w-full h-48 object-cover" />
+                            <img
+                                src="<%= article.enclosure ? article.enclosure.url : '/img/assets/pli-logo-dark.png' %>"
+                                alt="<%= article.title %>"
+                                referrerpolicy="no-referrer"
+                                loading="lazy"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = '/img/assets/pli-logo-dark.png';
+                                "
+                                class="rounded-t-lg w-full h-48 object-cover"
+                            />
                             <div class="pt-2 pb-4 px-4">
-                                <p class="text-xs text-t-s-<%= theme %> font-bold"><%= article.pubDate %></p>
+                                <p class="text-xs text-t-s-<%= theme %> font-bold"><%= article.pubDate %> - <%= article.source %></p>
                                 <h2 class="text-xl font-bold mb-2 pt-4"><%= article.title %></h2>
                             </div>
                         </div>

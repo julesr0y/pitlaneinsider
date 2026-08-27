@@ -69,6 +69,11 @@ app.use(
                 "https://cdn-7.motorsport.com/",
                 "https://cdn-8.motorsport.com/",
                 "https://cdn-9.motorsport.com/",
+                "https://*.motorsport.com",
+                "https://storage.ghost.io",
+                "https://*.365dm.com",
+                "https://ichef.bbci.co.uk",
+                "https://www.racefans.net",
             ],
         },
     })
