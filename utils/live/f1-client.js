@@ -20,7 +20,7 @@ const driverMapping = {
     55: "SAI", 16: "LEC", 63: "RUS", 1: "NOR", 18: "STR",
     14: "ALO", 31: "OCO", 23: "ALB", 41: "LIN", 81: "PIA",
     27: "HUL", 5: "BOR", 6: "HAD", 12: "ANT", 87: "BEA",
-    77: "BOT", 11: "PER"
+    77: "BOT", 11: "PER", 50: "HIR"
 };
 
 const driverFullMapping = {
@@ -28,7 +28,7 @@ const driverFullMapping = {
     55: "SAINZ", 16: "LECLERC", 63: "RUSSELL", 1: "NORRIS", 18: "STROLL",
     14: "ALONSO", 31: "OCON", 23: "ALBON", 41: "LINDBLAD", 81: "PIASTRI",
     27: "HULKENBERG", 5: "BORTOLETTO", 6: "HADJAR", 12: "ANTONELLI", 87: "BEARMAN",
-    77: "BOTTAS", 11: "PEREZ"
+    77: "BOTTAS", 11: "PEREZ", 50: "HIRAKAWA"
 };
 
 const SUBSCRIBE_CHANNELS = [

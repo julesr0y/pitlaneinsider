@@ -42,8 +42,6 @@
 For data retrieval, we used the [F1DB](https://github.com/f1db/f1db) repo. We also used SignalR Core and WebSockets via SignalR for live data.  
 `data/f1db` folder contains splitted .json files from the latest version of the f1db repo.
 
-For circuits layouts, we used [F1 Circuits SVG](https://github.com/julesr0y/f1-circuits-svg).
-
 #### Launching the web application:
 
 To launch the web application based on Node.JS (v24 min required), you need to go to the root of the project, then follow these steps:
